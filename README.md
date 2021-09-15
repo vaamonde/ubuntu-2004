@@ -1,3 +1,5 @@
+# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.X LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU 20.04.x LTS, NÃO SERÁ GRAVADO NOVOS VÍDEOS POIS O CONCEITO UTILIZADO NA VERSÃO 18.04.x É IGUAL NA VERSÃO 20.04.x. SERÁ GRAVADO SOMENTE NOVOS VÍDEOS E NOVAS SOLUÇÕES DE TI NESSA VERSÃO, EXEMPLO: FreeRADIUS, OnlyOffice Server, etc...
+
 # Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps
 
 ## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos gratuitos para o Canal, acessando o link de doação do PagSeguro: https://pag.ae/bjlSJcH
@@ -35,13 +37,18 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMRxzwCbAzmhj
 
 Vídeo mostrando os procedimentos básicos para instalar a nova versão do Sistema Operacional GNU/Linux Ubuntu Server 20.04 LTS codinome Focal Fossa no VirtualBOX.
 
-Lançado no dia: 23/04/2020 a nova versão do Ubuntu Server 20.04 LTS Focal Fossa possui vários recursos e melhorias com foco em desempenho e segurança, segue as principais:
-
+23/04/2020: Lançado a nova versão do Ubuntu Server 20.04 LTS Focal Fossa que possui vários recursos e melhorias com foco em desempenho e segurança, segue as principais:
 Suporte a arquitetura ARM;
 Suporte a arquitetura IBM Power;
 Suporte a arquitetura IBM Z e LinuxONE;
 Suporte a arquitetura MAAS;
 Suporte a OpenStack, Kubernetes, Kubeflow, IoT, etc.
+
+06/08/202: Lançado a nova versão do Ubuntu Server 20.04.1 LTS Focal Fossa que reúne todas as correções de bugs, atualizações de aplicativos, ajustes de desempenho e patches de segurança lançados no “Focal Fossa” desde seu lançamento em abril.
+
+05/02/2021: Com a atualização 20.04.2 LTS, todas as atualizações estáveis ​​de lançamento recentes agora são incorporadas à mídia de instalação para melhorar a experiência imediata em novas instalações. 
+
+26/08/2021: O lançamento pontual do Ubuntu 20.04.3 está aqui com kernel atualizado e pilhas de gráficos do lançamento do Ubuntu 21.04 (Hirsute Hippo).
 
 Versões LTS (Long-term support) do Ubuntu são recomendadas devido ao suporte de 5 anos da data de lançamento. A nova versão do GNU/Linux Ubuntu Server 18.04.1 LTS trás um novo instalador, vários recursos novos e várias tecnologias que facilitam a implementação de serviços em rede, Cloud e Segurança de forma rápida, fácil e eficiente para pequenas, médias e grandes empresas.
 
