@@ -1,0 +1,37 @@
+Autor: Robson Vaamonde
+Site: www.procedimentosemti.com.br
+Facebook: facebook.com/ProcedimentosEmTI
+Facebook: facebook.com/BoraParaPratica
+YouTube: youtube.com/BoraParaPratica
+Data de criação: 29/01/2019
+Data de atualização: 10/12/2020
+Versão: 0.07
+Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
+Kernel >= 4.15.x
+
+============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+10/12/2020 - Robson Vaamonde - Criação do script de automatização do Netdisco versão >=
+05/05/2019 - Robson Vaamonde - Criação do script de certificado para o LAMP Server usando OpenSSL
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do Certbot Client versão >=
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do NTP Server versão >=
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do FusionInventory version >=9.4
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do OpenProject versão >=8.0
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do Nextcloud versão >=16.0.0
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do OnlyOffice Document Server >=5.2.x
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do IPTables
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do GLPI versão >=9.42
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do Citadel versão >=
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do ISC Bind DNS versão >= 9.14 e ISC DHCP Server versão >=4.41
+05/05/2019 - Robson Vaamonde - Criação do script de automatização do ProFTPD versão >=1.3.6
+05/05/2019 - Robson Vaamonde - Trabalhando nos script de Adicionar Hard Disk - Formatar - RAID1
+05/05/2019 - Robson Vaamonde - Trabalhando nos script de Adicionar Hard Disk - Formatar
+28/02/2019 - Robson Vaamonde - Trabalhando na criação do script de configuração do OpenSSH Server versão >= 7.6.x
+15/02/2019 - Robson Vaamonde - Liberação do arquivo mysql.sh utilizado no vídeo de Básico de T-SQL e SQL Server
+15/02/2019 - Robson Vaamonde - Liberação do arquivo shell.sh utilizado no vídeo de Básico de Shell Script
+15/02/2019 - Robson Vaamonde - Trabalhando na criação do script de automatização do Rocket.Chat versão >= 0.70.0
+11/02/2019 - Robson Vaamonde - Trabalhando na criação do script de automatização do Fusion Inventory versão >= 9.x.x
+11/02/2019 - Robson Vaamonde - Trabalhando na criação do script de automatização do GLPI versão >= 9.4.x
+11/02/2019 - Robson Vaamonde - Trabalhando na criação do script de automatização do Ansible versão >= 2.7.x
+10/02/2019 - Robson Vaamonde - Trabalhando na criação do script de automatização do BareOS versão >= 18.2.x
+08/02/2019 - Robson Vaamonde - Trabalhando na criação do script de automatização do ownCloud versão >= 10.1.x
+29/01/2019 - Robson Vaamonde - Trabalhando na criação do script de automatização do SAMBA 4 versão >= 4.7.x

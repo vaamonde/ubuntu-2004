@@ -1,0 +1,105 @@
+Autor: Robson Vaamonde
+Site: www.procedimentosemti.com.br
+Facebook: facebook.com/ProcedimentosEmTI
+Facebook: facebook.com/BoraParaPratica
+YouTube: youtube.com/BoraParaPratica
+Data de criação: 29/01/2019
+Data de atualização: 15/09/2021
+Versão: 0.23
+Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
+Kernel >= 4.15.x
+
+============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+14/09/2021 - Robson Vaamonde - Criação do script: iptables.sh, atualização de vários script e correções de Bugs reportados
+na guia Issue do Github, finalizando todos os script do curso com objetivo de concluir a criação de novos scripts.
+
+09/09/2021 - Robson Vaamonde - Criação do script: ntp.sh, atualização do script dnsdhcp.sh
+
+18/07/2021 - Robson Vaamonde - Atualização do arquivo dhcpd.conf com as opções de: NTP Server e NetBIOS.
+
+12/06/2021 - Robson Vaamonde - Criação do script tftppxe.sh, melhorias nos arquivos de configuração dhcpd.conf, hosts.allow
+vsftpd.sh, vsftpd.conf e wordpress.sh.
+
+09/06/2021 - Robson Vaamonde - Criação do script vsftpd.sh, melhorias no script webmin.sh e atualização da versão
+do Zimbra no script zimbra.sh.
+
+27/05/2021 - Robson Vaamonde - Atualização do script loganalyzer.sh para a nova versão 4.1.12 conforme solicitação de usuários
+da Internet, feito melhoria no script (remoção de echo e acréscimo de \n)
+
+23/05/2021 - Robson Vaamonde - Melhoria no script webmin.sh, acréscimo da instalação do Usermin, atualização do arquivos
+pti.intra.hosts com suporte ao CNAME do Zimbra Server, criação do script zimbra.sh
+
+20/05/2021 - Robson Vaamonde - Melhoria no script netdata.sh, acréscimo do monitoramento do Bind9 e ISC DHCP.
+
+18/05/2021 - Robson Vaamonde - Criação do script dnsdhcp.sh, melhorias em vários scripts e arquivos confs.
+
+12/05/2021 - Robson Vaamonde - Atualização do script e arquivos confs do bacula.sh.
+
+04/05/2021 - Robson Vaamonde - Criação do script ocsinventory.sh, melhorias nos scripts rocketchat.sh
+
+18/04/2021 - Robson Vaamonde - Criação do script lemp.sh, melhorias no script HardDiskRaid.sh e Netplan.sh.
+
+24/03/2021 - Robson Vaamonde - melhoras nos scripts wordpress.sh, netdata.sh e atualização da versão do webmin no webmin.sh
+
+23/03/2021 - Robson Vaamonde - Correção da falha de consulta de tabelas do PhpMyAdmin, aplicação do Path de Correção do arquivo
+sql.lib.php e plugin_interface.lib.php no diretório /usr/share/phpmyadmin/libraries
+23/03/2021 - Robson Vaamonde - Melhoria no arquivos de configuração do Wordpress, acréscimo da linha de configuração de múltiplos
+endereços IP, hostname ou domain no Wordpress.
+
+20/03/2021 - Robson Vaamonde - Melhoria no script lamp.sh
+
+14/01/2021 - Robson Vaamonde - Substituição do comando service pelo systemctl nos script docker.sh, loganalyzer.sh, 
+zoneminder.sh, owncloud.sh e bareos.sh
+
+01/01/2021 - Robson Vaamonde - Melhorias e correções nos scripts: graylog.sh, ntopng.sh, zabbix.sh, fusion.sh, correções e 
+melhorias nos arquivos de configuração: jvm.options, ntopng.conf, ntopng.start, zabbix_agentd.conf e zabbix_server.conf
+
+27/12/2020 - Robson Vaamonde - Adicionado no arquivo hosts.allow a opção de liberação para acesso remoto do serviço do MySQL
+
+10/12/2020 - Robson Vaamonde - Melhoria no Bloco de Loop de verificação das dependências dos scripts, deixando de uma forma
+mais simples o entendimento
+
+09/12/2020 - Robson Vaamonde - Atualização do script glpi.sh com a nova versão e adicionado novos pacotes de dependências
+atualização do script fusion.sh com novas dependências e melhorias no script.
+
+14/08/2020 - Robson Vaamonde - Criação dos scripts: fusion.sh e rocketchat.sh
+
+03/08/2020 - Robson Vaamonde - Criação dos scripts: ansible.sh, glpi.sh, grafana.sh, graylog.sh, tomcat.sh, zabbix.sh.
+03/08/2020 - Robson Vaamonde - Criação da Variável PTBR no script do loganalyzer.sh para adicionar o recurso de tradução
+03/08/2020 - Robson Vaamonde - Criação do arquivo do Systemd do Portainer para inicializar automático o Container
+
+24/07/2020 - Robson Vaamonde - Correção das novas dependências do Netdata, resolvido as falhas de dependência do Cloud.
+
+22/07/2020 - Robson Vaamonde - Revisão de todos os scripts do repositório, atualização das versões dos aplicativos e 
+correções de português nos scripts.
+
+30/03/2020 - Robson Vaamonde - Atualização do arquivo de instalação do netdata.sh, acréscimo da dependência do libuv1-dev 
+
+09/11/2019 - Robson Vaamonde - Atualização do arquivo de configuração sshd_config, acréscimo das linha MaxSessions 3, 
+MaxStartups 5:60:10, AddressFamily inet, PrintLastLog yes
+
+15/10/2019 - Robosn Vaamonde - Atualização do script webmin.sh, acréscimo da dependência unzip e correção da linha de versão do 
+WEBMINVERSION=`echo webmin_*`;
+
+28/02/2019 - Robson Vaamonde - Atualizado arquivo wp-config.php, acrescentado linhas para trabalhar com dois domínios ou dois
+endereços IP diferentes no mesmo Wordpress;
+
+25/02/2019 - Robson Vaamonde - Falha no script owncloud.sh, erro nas linhas de criação do banco de dados e na opção de 
+descompactar o arquivo do owncloud.tar.bz2;
+
+18/02/2019 - Robson Vaamonde - Informado falha no script webmin.sh, erro relacionado a linha 110, tinha uma barra de espaço
+a mais no comando de apt -y install;
+
+18/02/2019 - Robson Vaamonde - Informado falha no script netdata.sh, erro relacionado a linha 128, tinha uma barra de espaço
+a mais no comando de apt -y install, acréscimo do bloco de verificação de dependências do MySQL e Apache2;
+
+10/02/2019 - Robson Vaamonde - Atualização wordpress.sh, loganalyzer.sh, openfire.sh, zoneminder.sh, acréscimo do bloco de
+verificação de dependências;
+
+10/02/2019 - Robson Vaamonde - Atualização de todos os scripts, melhorias na parte de documentação dos scripts;
+
+10/02/2019 - Robson Vaamonde - Atualização de todos os scripts, melhorias na parte de variável de arquivo de LOG;
+
+29/01/2019 - Robson Vaamonde - Atualização de todos os scripts, melhorias na parte de validação do bloco IF;
+
+29/01/2019 - Robson Vaamonde - Atualização de todos os scripts, melhorias na parte de variável de cálculo de tempo.

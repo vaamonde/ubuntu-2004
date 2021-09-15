@@ -1,0 +1,20 @@
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Data de criação: 12/06/2021
+# Data de atualização: 18/06/2021
+# Versão: 0.02
+# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
+# Kernel >= 4.15.x
+# Testado e homologado para a versão do TFTP-HPA v5.2.x e PXE Syslinux v
+
+default vesamenu.c32
+prompt 0
+timeout 300
+
+label puppy
+  menu label ^Live-CD do Puppy Linux via PXE
+  kernel puppy/vmlinuz
+  append initrd=puppy/initrd.gz

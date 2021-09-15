@@ -1,0 +1,26 @@
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Data de criação: 12/06/2021
+# Data de atualização: 15/06/2021
+# Versão: 0.03
+# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
+# Kernel >= 4.15.x
+# Testado e homologado para a versão do TFTP-HPA v5.2.x e PXE Syslinux v
+
+# configuração do usuário do serviço do TFTP
+TFTP_USERNAME="tftp"
+
+# localização do diretório padrão dos arquivos do TFTP
+TFTP_DIRECTORY="/var/lib/tftpboot"
+
+# configuração da porta do serviço do TFTP
+#TFTP_ADDRESS="172.16.1.20:69"
+TFTP_ADDRESS=":69"
+
+# configuração das opções de segurança do TFTP
+# opções: -4 (ipv4 only), -l (listen), -c (create), -s (secure), -v (verbose)
+#TFTP_OPTIONS="-4 -l -c -s -v"
+TFTP_OPTIONS="--ipv4 --listen --create --secure --verbose"

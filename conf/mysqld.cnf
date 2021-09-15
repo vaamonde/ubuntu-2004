@@ -1,0 +1,57 @@
+# Autor: Robson Vaamonde
+# Otimização: Fábio Berbert de Paula
+# Site: https://www.vivaolinux.com.br/etc/my.cnf-fabio
+# Otimização: Helvio Junior
+# Site: http://www.helviojunior.com.br/it/mysql/instalando-e-otimizando-mysql-para-alto-trafego-de-dados/
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Data de criação: 04/11/2018
+# Data de atualização: 23/07/2020
+# Versão: 0.03
+# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
+# Kernel >= 4.15.x
+
+# Configurações Globais do Servidor de MySQL
+[mysqld_safe]
+socket		= /var/run/mysqld/mysqld.sock
+nice		= 0
+
+# Configurações Padrões do Servidor de MySQL
+[mysqld]
+user		= mysql
+pid-file	= /var/run/mysqld/mysqld.pid
+socket		= /var/run/mysqld/mysqld.sock
+port		= 3306
+basedir		= /usr
+datadir		= /var/lib/mysql
+tmpdir		= /tmp
+lc-messages-dir	= /usr/share/mysql
+skip-external-locking
+skip-innodb
+
+# Configuração utilizada pelo ZoneMinder
+sql_mode = NO_ENGINE_SUBSTITUTION
+
+# Desativando a resolução de endereço local, permitindo acesso remoto
+#bind-address		= 127.0.0.1
+
+# Configurações de desempenho do MySQL, aumentar o tamanho do Buffer e Packet
+key_buffer_size		= 256M
+max_allowed_packet	= 16M
+thread_stack		= 192K
+thread_cache_size       = 8
+myisam-recover-options  = BACKUP
+#max_connections        = 100
+#table_cache            = 64
+#thread_concurrency     = 10
+
+# Configuração do Cache do MySQL
+query_cache_limit   = 16M
+query_cache_size    = 48M
+
+# Configuração do Arquivo de Log de Errors do MySQL
+log_error = /var/log/mysql/error.log
+expire_logs_days    = 10
+max_binlog_size     = 100M
