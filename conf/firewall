@@ -1,12 +1,12 @@
 #!/bin/bash
-# Modificado: Robson Vaamonde
+# Modificado por: Robson Vaamonde
 # Site: www.procedimentosemti.com.br
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
 # Data de criação: 14/09/2021
-# Data de atualização: 14/09/2021
-# Versão: 0.01
+# Data de atualização: 17/09/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
 # Kernel >= 4.15.x
 # Testado e homologado para a versão do IPTables v1.6.x
@@ -22,18 +22,19 @@ RULES="/etc/firewall"
 IPTABLES="/sbin/iptables"
 #
 # Declarando as variáveis das Portas Liberadas e Bloqueadas do IPTables
-PORTSLIBTCP="$RULES/portslibtcp"			#Portas liberadas TCP
-PORTSLIBUDP="$RULES/portslibudp"			#Portas liberadas UDP
-PORTSBLO="$RULES/portsblo"					#Portas bloqueadas
-MULTIPORTSLIBTCP="$RULES/multiportslibtcp"	#Multiplas Portas Liberadas TCP
-DNSSERVER="$RULES/dnsserver"				#Servidores DNS liberados
+PORTSLIBTCP="$RULES/portslibtcp"            #Portas liberadas TCP
+PORTSLIBUDP="$RULES/portslibudp"            #Portas liberadas UDP
+PORTSBLO="$RULES/portsblo"                  #Portas bloqueadas
+MULTIPORTSLIBTCP="$RULES/multiportslibtcp"  #Multiplas Portas Liberadas TCP
+DNSSERVER="$RULES/dnsserver"                #Servidores DNS liberados
 #
 # Declarando as variáveis da Interfaces de Rede e Subrede do IPTables
-LAN="enp0s3"
-REDE="172.16.1.0/24"
+LAN="enp0s3"           #Interface de Rede LAN
+REDE="172.16.1.0/24"   #Endereço da Subrede
 #
 # opção da variável $1: Parâmetro número 1 (da linha de comando ou função)
 case "$1" in
+	#
 	# Início do Script de Firewall IPTables, utilizando o comando case (opção: start)
 	start)
 	#
@@ -47,6 +48,10 @@ case "$1" in
 	#
 	# Limpando todas as regras existente das Tabelas do IPTables
 	# opções do comando iptables: -F (flush), -t (table), -X (delete-chain)
+	# 
+	# Tabela: Filter (INPUT, OUTPUT e FORWARD) - Opções da Tabela: (REJECT, ACCEPT, DROP e LOG)
+	# Tabela: NAT (PREROUTING, POSTROUTING e OUTPUT) - Opções da Tabela: (SNAT, DNAT, MASQUERADE e REDIRECT)
+	# Tabela: MANGLE (utiliza as Tabelas Filter e NAT) - Opções da Tabela: (PREROUTING, POSTROUTING, INPUT, OUTPUT e FORWARD)
 	$IPTABLES -F
 	$IPTABLES -F INPUT
 	$IPTABLES -F OUTPUT
@@ -104,9 +109,9 @@ case "$1" in
 	# -s (source), -j (jump), -o (out-interface)
 	for i in $(cat $DNSSERVER); do
 		$IPTABLES -A OUTPUT -p udp -d $i --dport 53 -m state --state NEW,ESTABLISHED -j ACCEPT
-		$IPTABLES -A INPUT  -p udp -s $i --sport 53 -m state --state ESTABLISHED     -j ACCEPT
+		$IPTABLES -A INPUT  -p udp -s $i --sport 53 -m state --state ESTABLISHED -j ACCEPT
 		$IPTABLES -A OUTPUT -p tcp -d $i --dport 53 -m state --state NEW,ESTABLISHED -j ACCEPT
-		$IPTABLES -A INPUT  -p tcp -s $i --sport 53 -m state --state ESTABLISHED     -j ACCEPT
+		$IPTABLES -A INPUT  -p tcp -s $i --sport 53 -m state --state ESTABLISHED -j ACCEPT
 	done
 		$IPTABLES -I INPUT -m state --state ESTABLISHED -j ACCEPT
 		$IPTABLES -I INPUT -m state --state RELATED -j ACCEPT
@@ -220,8 +225,8 @@ case "$1" in
 	echo -e "ON ............................................................[ OK ]\n"
 	#
 	# Habilitando os Log's de Bloqueio da Tabelas INPUT e OUTPUT no arquivo: /var/log/firewall.log
-	$IPTABLES -A INPUT  -j LOG  -m limit --limit 12/min --log-level 4 --log-prefix 'IP INPUT drop: '
-	$IPTABLES -A INPUT  -j DROP
+	$IPTABLES -A INPUT -j LOG  -m limit --limit 12/min --log-level 4 --log-prefix 'IP INPUT drop: '
+	$IPTABLES -A INPUT -j DROP
 	$IPTABLES -A OUTPUT -j LOG  -m limit --limit 12/min --log-level 4 --log-prefix 'IP OUTPUT drop: '
 	$IPTABLES -A OUTPUT -j DROP
 	echo "Habilitando os Log's de Bloqueio da Tabelas INPUT e OUTPUT no arquivo de Log..."
@@ -292,7 +297,7 @@ case "$1" in
 	#
 	# Listando todas as regras existente das Tabelas do IPTables
 	# opções do comando iptables: -L (list), -v (verbose), -n (numeric)
-	$FIREWALL -L -v -n | less
+	$IPTABLES -L -v -n | less
 	#
 	echo "======================================================================|"
 	echo ":FIM DA LISTAGEM DAS REGRAS DE FIREWALL NETFILTER ATRAVÉS DO IPTABLES:|"
