@@ -1,0 +1,23 @@
+#!/bin/bash
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Data de criação: 26/04/2021
+# Data de atualização: 26/04/2021
+# Versão: 0.1
+# Testado e homologado para a versão do Ubuntu Server 18.04 LTS x64
+# Kernel >= 4.15.x
+network:
+  ethernets:
+    enp0s3:
+      addresses:
+      - 172.16.1.20/24
+      gateway4: 172.16.1.254
+      nameservers:
+        addresses:
+        - 172.16.10.254
+        search:
+        - pti.intra
+  version: 2

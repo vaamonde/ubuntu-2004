@@ -1,0 +1,44 @@
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Data de criação: 28/02/2019
+# Data de atualização: 12/06/2021
+# Versão: 0.8
+# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
+# Kernel >= 4.15.x
+#
+# Comando para verificar se o serviço de rede tem suporte ao TCPWrappers: ldd /usr/sbin/sshd | grep libwrap
+# Logando as informações de acesso nos arquivos de log: /var/log/tcpwrappers-allow-*.log
+#
+# Permitido a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de SSH
+sshd: 172.16.1. : spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+#
+# Permitido a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de MySQL
+mysqld: 172.16.1. : spawn /bin/echo "$(date) Conexão Liberada - MySQL - IP %a" >> /var/log/tcpwrappers-allow-mysql.log
+#
+# Permitido a Rede 172.16.1.20/24 se autenticar remotamente no Servidor de Telnet
+in.telnetd: 172.16.1. : spawn /bin/echo "$(date) Conexão Liberada - Telnet - IP %a" >> /var/log/tcpwrappers-allow-telnet.log
+#
+# Permitido que todas as redes se autentiquem remotamente no Servidor de FTP
+vsftpd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Vsftpd - IP %a" >> /var/log/tcpwrappers-allow-vsftpd.log
+#
+# Permitido que todas as redes se conecte remotamente no Servidor de TFTP
+in.tftpd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Tftpd - IP %a" >> /var/log/tcpwrappers-allow-tftpd.log
+#
+# Permitido que todas as redes acesse os serviços remotos do Servidor Bacula
+bacula-fd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+bacula-sd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-SD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+bacula-dir: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-fd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-mon: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-MON - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-dir: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+
+# Exemplos de configuração:
+# Liberando uma subrede
+#sshd: 192.168.1. : spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+#sshd: 192.168.1.0/255.255.255.0: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+#sshd: 192.168.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+#sshd: *.pti.intra: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+#sshd: 192.168.1. EXCEPT 192.168.1.11: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log

@@ -1,0 +1,104 @@
+// Autor: Robson Vaamonde
+// Site: www.procedimentosemti.com.br
+// Facebook: facebook.com/ProcedimentosEmTI
+// Facebook: facebook.com/BoraParaPratica
+// YouTube: youtube.com/BoraParaPratica
+// Data de criação: 17/05/2021
+// Data de atualização: 18/05/2021
+// Versão: 0.2
+// Testado e homologado para a versão do Ubuntu Server 18.04 LTS x64
+// Kernel >= 4.15.x
+
+options {
+
+	// Diretório padrão do cache do Bind9 DNS Server
+	directory "/var/cache/bind";
+	
+	// Diretório e arquivo das estatística do Bind9 DNS Server
+	statistics-file "/var/log/named/named.stats";
+	
+	// Endereços IPv4 de encaminhamento para servidores de DNS externos
+	forwarders {
+		172.16.1.254;
+		8.8.8.8;
+		8.8.4.4;
+	};
+
+	// Número da porta de conexão do Bind9 DNS Server e Endereço IPv4 liberado
+	listen-on port 53 { 
+		127.0.0.1; 
+		172.16.1.20; 
+	};
+
+	// Configuração do Protocolo IPv6 no Bind9 DNS Server
+	listen-on-v6 { 
+		any; 
+	};
+
+	// Configurações Globais do Bind9 DNS Server
+	auth-nxdomain no;
+	datasize default;
+	version none;
+	server-id none;
+	empty-zones-enable no;
+	recursion yes;
+
+	//Liberações de consulta e atualização do Bind9 DNS Server
+	allow-query {
+		any;
+	};
+
+	allow-query-cache {
+		any;
+	};
+	
+	allow-recursion {
+		any;
+	};
+	
+	allow-update {
+		any;
+	};
+	
+	allow-transfer {
+		any;
+	};	
+};
+
+//Configuração da auditoria de Logs do Bind9 DNS Server, informações serão enviadas para Syslog
+logging {
+	channel named_log {
+		syslog local3;
+		severity info;
+	};
+	category security {
+		named_log;
+	};
+	category queries {
+		named_log;
+	};
+	category xfer-out {
+		named_log;
+	};
+	category xfer-in {
+		named_log;
+	};
+	category general {
+		named_log;
+	};
+	category dnssec {
+		named_log;
+	};
+	category default {
+		named_log;
+	};
+	category resolver {
+		named_log;
+	};
+	category client {
+		named_log;
+	};
+	category network {
+		named_log;
+	};
+};
