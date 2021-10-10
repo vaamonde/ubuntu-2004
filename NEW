@@ -4,10 +4,10 @@ Facebook: facebook.com/ProcedimentosEmTI
 Facebook: facebook.com/BoraParaPratica
 YouTube: youtube.com/BoraParaPratica
 Data de criação: 06/10/2021
-Data de atualização: 06/10/2021
-Versão: 0.01
+Data de atualização: 10/10/2021
+Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 Kernel >= 5.4.x
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
-06/10/2021 - Robson Vaamonde -
+10/10/2021 - Robson Vaamonde - Criação do arquivo: paramentros.sh para facilitar a configuração e instalação do serviços
