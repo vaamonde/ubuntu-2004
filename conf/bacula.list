@@ -1,5 +1,0 @@
-#Obs: para receber o código do repositório do Bacula Community, acesse o site Oficial do projeto no Link:
-#https://www.bacula.org/bacula-binary-package-download/, faça o seu cadastro no site, após o cadastro você
-#ira receberá por email o link com o ID para ser adicionado no Source List do Apt bacula.list
-
-deb [arch=amd64] http://www.bacula.org/packages/602ba8b976d0e/debs/11.0.2/bionic/amd64/ bionic main
