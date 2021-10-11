@@ -3,11 +3,16 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 28/02/2019
-# Data de atualização: 14/09/2021
-# Versão: 0.7
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 11/10/2021
+# Data de atualização: 11/10/2021
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do OpenSSH Server 8.2.x
+
+# Incluindo o diretorio de configuração personalizado do OpenSSH Server
+Include /etc/ssh/sshd_config.d/*.conf
 
 # Porta de conexão padrão do Servidor de OpenSSH, por segurança é recomendado mudar o número da porta
 # Caso você mude o número da porta, no cliente você precisa usar o comando: ssh -p porta usuário@ip_do_servidor
@@ -26,8 +31,8 @@ HostKey /etc/ssh/ssh_host_ed25519_key
 # hosts.allow e hosts.deny para geração de log´s detalhados das conexões ao Servidor de OpenSSH
 # Verificação dos log's de autenticação do OpenSSH: sudo cat -n /var/log/auth.log | grep -i sshd
 # Verificação dos log's de serviço do OpenSSH: sudo cat -n /var/log/syslog | grep -i ssh
-# Verificação do arquivo de Log do TCPWrappers Allow: sudo cat -n /var/log/tcpwrappers-allow-sh.log
-# Verificação do arquivo de Log do TCPWrappers Deny: sudo cat -n /var/log/tcpwrappers-deny-sh.log
+# Verificação do arquivo de Log do TCPWrappers Allow: sudo cat -n /var/log/tcpwrappers-allow-ssh.log
+# Verificação do arquivo de Log do TCPWrappers Deny: sudo cat -n /var/log/tcpwrappers-deny-ssh.log
 SyslogFacility AUTH
 LogLevel INFO
 
@@ -55,7 +60,7 @@ DenyGroups root
 # Banner que será apresentado no momento do acesso remoto ao Servidor de OpenSSH, não é recomendado utilizar acentuação
 Banner /etc/issue.net
 
-# O tempo após o qual o servidor será desconectado se o usuário não tiver efetuado login com êxito.
+# Tempo após o qual o servidor será desconectado se o usuário não tiver efetuado login com êxito.
 LoginGraceTime 50
 
 # Tempo de inatividade em segundos para que os usuários logados na sessão do Servidor de OpenSSH sejam desconectados.
@@ -74,10 +79,10 @@ MaxSessions 3
 MaxStartups 5:60:10
 
 # Especifica qual família de endereços IP o OpenSSH deve suportar.
-# Os argumentos válidos são: any, inet (somente IPv4), inet6 (apenas IPv6)
+# Os argumentos válidos são: any (IPv4 e IPV6), inet (somente IPv4), inet6 (somente IPv6)
 AddressFamily inet
 
-# Endereço IP do Servidor de OpenSSH que está liberado para permitir conexões remotas via protocolo SSH
+# Endereço IPv4 do Servidor de OpenSSH que está liberado para permitir conexões remotas via protocolo SSH
 ListenAddress 172.16.1.20
 
 # Não ler os arquivos de configurações ~/.rhosts e ~/.shosts
@@ -93,6 +98,10 @@ AllowTcpForwarding no
 
 # Não permitir encaminhamento de portas via Servidor de OpenSSH para os serviços de X11 (ambiente gráfico)
 X11Forwarding no
+
+# Especifica o primeiro número de exibição disponível para encaminhamento X11 do sshd. Isso evita que o sshd 
+# interfira nos servidores X11 reais. O padrão é 10.
+X11DisplayOffset 10
 
 # Métodos de Autenticação do OpenSSH, utilizar chaves públicas e autenticação por senha
 # Por padrão o Servidor de OpenSSH não trabalhar com Chaves Pública para autenticação, utilizando o arquivo /etc/passwd
@@ -130,8 +139,13 @@ PrintMotd no
 # Imprimir na tela o log da última autenticação válida da sessão do OpenSSH na tela
 PrintLastLog yes
 
-# Configurações Default (Padrão) do Servidor de OpenSSH (Não alterar)
-X11DisplayOffset 10
-TCPKeepAlive yes
+# Especifica quais variáveis ​​de ambiente enviadas pelo cliente serão copiadas para o ambiente da sessã
 AcceptEnv LANG LC_*
+
+# Configura um subsistema externo (por exemplo, daemon de transferência de arquivo). Os argumentos devem ser um 
+# nome de subsistema e um comando (com argumentos opcionais) para executar mediante solicitação do subsistema.
 Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Especifica se o sistema deve enviar mensagens de manutenção de atividade TCP para o outro lado. Se forem enviados, 
+# será devidamente notado a morte da conexão ou travamento de uma das máquinas.
+TCPKeepAlive yes

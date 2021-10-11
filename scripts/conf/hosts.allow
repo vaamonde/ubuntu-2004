@@ -3,23 +3,24 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 28/02/2019
-# Data de atualização: 12/06/2021
-# Versão: 0.8
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 11/10/2021
+# Data de atualização: 11/10/2021
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Comando para verificar se o serviço de rede tem suporte ao TCPWrappers: ldd /usr/sbin/sshd | grep libwrap
-# Logando as informações de acesso nos arquivos de log: /var/log/tcpwrappers-allow-*.log
+# Logando as informações de acesso nos arquivos de log de cada serviço: /var/log/tcpwrappers-allow-*.log
 #
-# Permitido a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de SSH
-sshd: 172.16.1. : spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+# Permitido a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de OpenSSH
+sshd: 172.16.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
 #
 # Permitido a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de MySQL
-mysqld: 172.16.1. : spawn /bin/echo "$(date) Conexão Liberada - MySQL - IP %a" >> /var/log/tcpwrappers-allow-mysql.log
+mysqld: 172.16.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - MySQL - IP %a" >> /var/log/tcpwrappers-allow-mysql.log
 #
 # Permitido a Rede 172.16.1.20/24 se autenticar remotamente no Servidor de Telnet
-in.telnetd: 172.16.1. : spawn /bin/echo "$(date) Conexão Liberada - Telnet - IP %a" >> /var/log/tcpwrappers-allow-telnet.log
+in.telnetd: 172.16.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - Telnet - IP %a" >> /var/log/tcpwrappers-allow-telnet.log
 #
 # Permitido que todas as redes se autentiquem remotamente no Servidor de FTP
 vsftpd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Vsftpd - IP %a" >> /var/log/tcpwrappers-allow-vsftpd.log

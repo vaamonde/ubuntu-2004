@@ -4,6 +4,8 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
 # Data de atualização: 11/10/2021
 # Versão: 0.02
@@ -16,7 +18,8 @@
 # Secure Shell, oferecido pela SSH Communications Security. OpenSSH foi desenvolvido como parte 
 # do projeto OpenBSD.
 #
-# Site Oficial do Projeto: https://www.openssh.com/
+# Site Oficial do Projeto OpenSSH: https://www.openssh.com/
+# Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -158,7 +161,7 @@ sleep 5
 #
 echo -e "Reinicializando o serviço do OpenSSH Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	systemctl restart ssh &>> $LOG
+	systemctl restart sshd &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
