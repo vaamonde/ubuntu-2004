@@ -21,14 +21,15 @@
 # opção do comando date: +%T (Time)
 HORAINICIAL=$(date +%T)
 #
-# Variáveis para validar o ambiente, verificando se o usuário e "root" e versão do "ubuntu"
+# Variáveis para validar o ambiente, verificando se o usuário é "root" e versão do "ubuntu"
 # opções do comando id: -u (user)
 # opções do comando: lsb_release: -r (release), -s (short), 
 USUARIO=$(id -u)
 UBUNTU=$(lsb_release -rs)
 #
 # Variável do caminho e nome do arquivo de Log utilizado nesse script
-# $0 (variável de ambiente do nome do comando/sript executado)
+# $0 (variável de ambiente do nome do comando/script executado)
+# opção do redirecionador | piper: Conecta a saída padrão com a entrada padrão de outro comando
 # opções do comando cut: -d (delimiter), -f (fields)
 LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2)"
 #
