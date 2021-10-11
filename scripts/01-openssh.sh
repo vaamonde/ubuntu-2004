@@ -5,10 +5,10 @@
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
 # Data de criação: 10/10/2021
-# Data de atualização: 10/10/2021
-# Versão: 0.01
+# Data de atualização: 11/10/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do OpenSSH Server 7.6.x
+# Testado e homologado para a versão do OpenSSH Server 8.2.x
 #
 # OpenSSH (Open Secure Shell) é um conjunto de utilitários de rede relacionado à segurança que 
 # provém a criptografia em sessões de comunicações em uma rede de computadores usando o protocolo 
@@ -45,7 +45,7 @@ fi
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do OpenSSH, aguarde... "
+echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
 	for name in openssh-server
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
@@ -146,6 +146,13 @@ echo -e "Editando o arquivo de configuração Banner issue.net, pressione <Enter
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/issue.net
+echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração da Tabela Estática de hosts, pressione <Enter> para continuar..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	read
+	vim /etc/hosts
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
