@@ -82,3 +82,10 @@ NETWORK="172.16.1."
 # Variável da senha utilizada na criação da chave de atualização dos ponteiros do DNS e DHCP
 USERUPDATE="vaamonde"
 #
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 05-ntp.sh                            #
+#=============================================================================================
+# 
+# Variável de sincronização do NTP Server com o Site ntp.br
+NTPSERVER="a.st1.ntp.br"
+#
