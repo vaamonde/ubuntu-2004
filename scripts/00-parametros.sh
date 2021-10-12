@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 11/10/2021
-# Versão: 0.02
+# Data de atualização: 12/10/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -39,7 +39,7 @@ LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2)"
 export DEBIAN_FRONTEND="noninteractive"
 #
 #=============================================================================================
-#                  VARIÁVEIS DO SERVIDOR UTILIZADAS EM TODOS OS SCRIPTS                      #
+#              VARIÁVEIS DE REDE DO SERVIDOR UTILIZADAS EM TODOS OS SCRIPTS                  #
 #=============================================================================================
 #
 # Variável do Nome (Hostname) do Servidor
@@ -58,14 +58,10 @@ IPV4SERVER="172.16.1.20"
 NETPLAN="/etc/netplan/00-installer-config.yaml"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dnsdhcp.sh                        #
+#                          VARIÁVEIS UTILIZADAS NO SCRIPT: 03-dns.sh                         #
 #=============================================================================================
 #
-# Declarando as variáveis de geração da chave de atualização dos registros do Bind9 DNS Server 
-# integrado no ISC DHCP Server e informações da Pesquisa Direta do Domínio e Reversa
-# 
-# Variável da senha utilizada na criação da chave de atualização dos ponteiros do DNS e DHCP
-USERUPDATE="vaamonde"
+# Declarando as variáveis de Pesquisa Direta do Domínio, Reversa e Subrede do Bind DNS Server
 #
 # Variável do nome do Domínio do Servidor DNS
 DOMAIN=$DOMINIOSERVER
@@ -75,4 +71,14 @@ DOMAINREV="1.16.172.in-addr.arpa"
 #
 # Variável do endereço IPv4 da Subrede do Servidor de DNS
 NETWORK="172.16.1."
+#
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 04-dhcpdns.sh                        #
+#=============================================================================================
+#
+# Declarando a variável de geração da chave de atualização dos registros do Bind DNS Server 
+# integrado no ISC DHCP Server
+# 
+# Variável da senha utilizada na criação da chave de atualização dos ponteiros do DNS e DHCP
+USERUPDATE="vaamonde"
 #
