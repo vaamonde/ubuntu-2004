@@ -16,9 +16,9 @@ configuração dos serviços de: hostname, hosts, nsswitch.conf, 00-installer-co
 named.conf.local, named.conf.options, pti.intra.hosts, 172.16.1.rev e dnsupdate-cron.
 
 11/10/2021 - Robson Vaamonde - Customização do script: 01-openssh.sh e dos arquivos de configuração dos serviços de: 
-issue.net, hosts, hosts.allow, hosts.deny e sshd_config, todos customizados para a versão 20.04.x do Ubuntu Server
+issue.net, hosts, hosts.allow, hosts.deny e sshd_config, todos customizados para a versão 20.04.x do Ubuntu Server.
 
-10/10/2021 - Robson Vaamonde - Criação do arquivo 00-paramentros.sh para facilitar as configurações dos scripts
-10/10/2021 - Robson Vaamonde - Copia dos scripts da versão 18.04.x e organização dos novos diretórios e 
+10/10/2021 - Robson Vaamonde - Criação do arquivo 00-paramentros.sh para facilitar as configurações dos scripts, copia
+dos scripts da versão 18.04.x e organização dos novos diretórios e arquivos de configuração.
 
-06/10/2021 - Robson Vaamonde - Criação do repositório e configuração dos script para a nova versão do Ubuntu 20.04.x
+06/10/2021 - Robson Vaamonde - Criação do repositório e configuração dos script para a nova versão do Ubuntu 20.04.x.
