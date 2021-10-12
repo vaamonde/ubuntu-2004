@@ -76,6 +76,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_	<OK>
 
 Terceira etapa: Iniciando a Instalação do Ubuntu Server 20.04.3 LTS (localizar a ISO)
+
 	_ 01. VM UbuntuServer-2004: Iniciar
 	_ 02. Selecione o disco rígido de boot
 	_ 		Selecionar um arquivo de disco óptico virtual
