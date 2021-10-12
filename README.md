@@ -56,4 +56,42 @@ Versões LTS (Long-term support) do Ubuntu são recomendadas devido ao suporte d
 
 Link da vídeo aula: https://www.youtube.com/watch?v=zZf_uzGpod4
 
-Link do script utilizado nesse vídeo: 
+Link do script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/01-InstalacaoDoUbuntuServer-20.04.3-LTS.md
+
+## **INSTALAÇÃO do UBUNTU SERVER 20.04.x LTS ARM x64 Bits no Raspberry Pi 3 B v1.2 🐧**
+
+OBSERVAÇÃO IMPORTANTE: NO VÍDEO AOS: 02:13 EU FALO QUE ESSE MODELO NÃO TEM PLACA DE REDE SEM-FIO (WI-FI/WIRELESS) - ESTÁ ERRADO!!! ELE TEM O CHIP: BROADCOM BCM43438 QUE FORNECE WI-FI E BLUETOOTH INTEGRADO, DESCONSIDERAR ESSA FALA (CONFUNDIR COM OUTRO MODELO). DOCUMENTAÇÃO ATUALIZADA NO GITHUB.
+
+Vídeo mostrando os procedimentos básicos para instalar a versão do Ubuntu Server 20.04.x LTS ARM no Raspberry Pi 3
+
+Raspberry Pi é uma série de computadores de placa única do tamanho reduzido, que se conecta a um monitor de computador ou TV, e usa um teclado e um mouse padrão, desenvolvido no Reino Unido pela Fundação Raspberry Pi. Todo o hardware é integrado numa única placa.
+
+ARM, originalmente Acorn RISC Machine, e depois Advanced RISC Machine, é uma família de arquiteturas RISC desenvolvida pela empresa britânica ARM Holdings. Tais arquiteturas são licenciadas pela ARM para outras empresas, que implementam-nas em seus próprios produtos.
+
+Mais informações acesse: https://www.raspberrypi.org/<br>
+Ubuntu Raspberry Pi: https://ubuntu.com/download/raspberry-pi
+
+[![Ubuntu Server Pi 3](http://img.youtube.com/vi/1xPJ9aXcmvc/0.jpg)](https://www.youtube.com/watch?v=1xPJ9aXcmvc "Ubuntu Server Pi 3")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=1xPJ9aXcmvc
+
+Script utilizado nesse vídeo: 
+
+## **INSTALAÇÃO do UBUNTU CORE 20 ARM x64 Bits no Raspberry Pi 3 B v1.2 🐧**
+
+Vídeo mostrando os procedimentos básicos para instalar a versão do Ubuntu Core 20 ARM no Raspberry Pi 3
+
+O Ubuntu Core é um sistema operacional enxuto, estritamente confinado e totalmente transacional. Nós o projetamos do zero, com foco na segurança e manutenção simplificada, para aparelhos e redes de grandes dispositivos. Ubuntu Core é movido por Snaps o formato de empacotamento universal do Linux.
+
+Snappy é um software de implantação e um sistema de gerenciamento de pacotes originalmente projetado e construído pela Canonical para o sistema operacional Ubuntu Touch.
+
+Mais informações acesse: https://www.raspberrypi.org/<br>
+Ubuntu Core: https://ubuntu.com/core<br>
+Download Ubuntu Core: https://cdimage.ubuntu.com/ubuntu-core/20/stable/current/<br>
+Snapcraft: https://snapcraft.io/
+
+[![Ubuntu Core Pi 3](http://img.youtube.com/vi/dYCBHpzgOdw/0.jpg)](https://www.youtube.com/watch?v=dYCBHpzgOdw "Ubuntu Core Pi 3")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=dYCBHpzgOdw
+
+Script utilizado nesse vídeo: 
