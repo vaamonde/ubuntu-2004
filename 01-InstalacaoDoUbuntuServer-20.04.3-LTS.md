@@ -1,24 +1,24 @@
-Autor: Robson Vaamonde
-Procedimentos em TI: http://procedimentosemti.com.br
-Bora para Prática: http://boraparapratica.com.br
-Robson Vaamonde: http://vaamonde.com.br
-Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi
-Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
-Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
-YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
-LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
-Data de criação: 10/10/2021
-Data de atualização: 10/10/2021
-Versão: 0.01
+Autor: Robson Vaamonde<br>
+Procedimentos em TI: http://procedimentosemti.com.br<br>
+Bora para Prática: http://boraparapratica.com.br<br>
+Robson Vaamonde: http://vaamonde.com.br<br>
+Facebook Procedimentos em TI: https://www.facebook.com/ProcedimentosEmTi<br>
+Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica<br>
+Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
+YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
+LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
+Data de criação: 10/10/2021<br>
+Data de atualização: 10/10/2021<br>
+Versão: 0.01<br>
 Testado e homologado no GNU/Linux Ubuntu Server 20.04.3 LTS
 
-Atualização da versão do Ubuntu Server 20.04.3: https://wiki.ubuntu.com/FocalFossa/ReleaseNotes
-Mudanças da versão do Ubuntu Server 20.04.3: https://wiki.ubuntu.com/FocalFossa/ReleaseNotes/ChangeSummary/20.04.3
+Atualização da versão do Ubuntu Server 20.04.3: https://wiki.ubuntu.com/FocalFossa/ReleaseNotes<br>
+Mudanças da versão do Ubuntu Server 20.04.3: https://wiki.ubuntu.com/FocalFossa/ReleaseNotes/ChangeSummary/20.04.3<br>
 Ciclo de Lançamento do Ubuntu Server: https://ubuntu.com/about/release-cycle
 
-OBS1 - lentidão da instalação e configuração do Ubuntu Server 20.04.x no Oracle VirtualBOX
-Link1: https://forums.virtualbox.org/viewtopic.php?f=3&t=98944
-Link2: https://forums.virtualbox.org/viewtopic.php?f=7&t=98586
+OBS1 - lentidão da instalação e configuração do Ubuntu Server 20.04.x no Oracle VirtualBOX<br>
+Link1: https://forums.virtualbox.org/viewtopic.php?f=3&t=98944<br>
+Link2: https://forums.virtualbox.org/viewtopic.php?f=7&t=98586<br>
 
 Primeira etapa: Download da ISO do Ubuntu Server 20.04.3 LTS
 01. Link de download do Ubuntu Server: https://releases.ubuntu.com/20.04.3/
@@ -26,7 +26,7 @@ Primeira etapa: Download da ISO do Ubuntu Server 20.04.3 LTS
 03. Arquitetura do Ubuntu Server: AMD64 (64-bit)
 04. Tipo de instalação: DVD Image (ISO) Installer
 
-Segunda etapa: Criação e Configuração da Máquina Virtual no Oracle VirtualBOX
+Segunda etapa: Criação e Configuração da Máquina Virtual no Oracle VirtualBOX<br>
 Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 01. Ferramentas;
 		Novo
