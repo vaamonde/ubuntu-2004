@@ -1,17 +1,24 @@
-Autor: Robson Vaamonde
-Site: www.procedimentosemti.com.br
-Facebook: facebook.com/ProcedimentosEmTI
-Facebook: facebook.com/BoraParaPratica
-YouTube: youtube.com/BoraParaPratica
-Data de criação: 06/10/2021
-Data de atualização: 11/10/2021
-Versão: 0.2
-Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-Kernel >= 5.4.x
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 10/10/2021
+# Data de atualização: 11/10/2021
+# Versão: 0.02
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-11/10/2021 - Robson Vaamonde - Customização do script: 01-openssh.sh e do arquivos de configuração dos serviços de: 
+12/10/2021 - Robson Vaamonde - Customização do script: 02-dnsdhcp.sh e dos arquivos de configuração dos serviços de:
+hostname, 00-installer-config.yaml, dhcpd.conf, named.conf, named.conf.local, named.conf.options, pti.intra.hosts, 
+172.16.1.rev e dnsupdate-cron.
+
+11/10/2021 - Robson Vaamonde - Customização do script: 01-openssh.sh e dos arquivos de configuração dos serviços de: 
 issue.net, hosts, hosts.allow, hosts.deny e sshd_config, todos customizados para a versão 20.04.x do Ubuntu Server
+
 10/10/2021 - Robson Vaamonde - Criação do arquivo 00-paramentros.sh para facilitar as configurações dos scripts
 10/10/2021 - Robson Vaamonde - Copia dos scripts da versão 18.04.x e organização dos novos diretórios e 
+
 06/10/2021 - Robson Vaamonde - Criação do repositório e configuração dos script para a nova versão do Ubuntu 20.04.x
