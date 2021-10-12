@@ -28,14 +28,16 @@ Primeira etapa: Download da ISO do Ubuntu Server 20.04.3 LTS
 
 Segunda etapa: Criação e Configuração da Máquina Virtual no Oracle VirtualBOX<br>
 Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
+
 	_ 01. Ferramentas;
-		Novo
-02. Nome e Sistema Operacional:<br>
-		Nome: UbuntuServer-2004<br>
-		Pasta da Máquina: (deixar o padrão do sistema) <br>
-		Tipo: Linux<br>
-		Versão: Ubuntu (64-bit)
-	<Próximo>
+	_		Novo
+	_ 02. Nome e Sistema Operacional:<br>
+	_		Nome: UbuntuServer-2004<br>
+	_		Pasta da Máquina: (deixar o padrão do sistema) <br>
+	_		Tipo: Linux<br>
+	_		Versão: Ubuntu (64-bit)
+	_	<Próximo>
+
 03. Tamanho da memória:<br>
 		Tamanho: 2048MB
 	<Próximo>
