@@ -31,49 +31,48 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 
 	_ 01. Ferramentas;
 	_		Novo
-	_ 02. Nome e Sistema Operacional:<br>
-	_		Nome: UbuntuServer-2004<br>
-	_		Pasta da Máquina: (deixar o padrão do sistema) <br>
+	_ 02. Nome e Sistema Operacional:
+	_		Nome: UbuntuServer-2004
+	_		Pasta da Máquina: (deixar o padrão do sistema)
 	_		Tipo: Linux<br>
 	_		Versão: Ubuntu (64-bit)
 	_	<Próximo>
-
-03. Tamanho da memória:<br>
-		Tamanho: 2048MB
-	<Próximo>
-04. Disco Rígido:
-		Criar um novo disco rígido virtual agora
-	<Criar>
-05. Tipo de arquivo de disco rígido<br>
-		VDI (VirtualBOX Disk Image)
-	<Próximo>
-06. Armazenamento em disco rígido físico
-		Dinamicamente alocado
-	<Próximo>
-07. Localização e tamanho do arquivo<br>
-		Localização: (deixar o padrão do sistema)<br>
-		Tamanho do disco: 50GB
-	<Criar>
-08. Configurações da Máquina Virtual UbuntuServer-2004 (Propriedades/Configurações)<br>
-	Sistema<br>
-		Placa Mãe<br>
-			Recurso Estendidos<br>
-				Relógio da máquina retorno hora UTC: Desabilitar<br>
-		Processador<br>
-			Processadores: 02 CPUs<br>
-			Recursos Estendidos: Habilitar PAE/NX<br>
-	Monitor<br>
-		Tela<br>
-			Memória de Vídeo: 128MB<br>
-			Aceleração: Habilitar Aceleração 3D<br>
-	Áudio<br>
-		Habilitar Áudio: Desabilitar<br>
-	Rede<br>
-		Adaptador 1 (LAN)<br>
-			Habilitar Placa de Rede<br>
-			Conectado a: Rede Interna<br>
-			Nome: (deixar o padrão do sistema: intnet)<br>
-<OK>
+	_ 03. Tamanho da memória:
+	_		Tamanho: 2048MB
+	_	<Próximo>
+	_04. Disco Rígido:
+	_		Criar um novo disco rígido virtual agora
+	_	<Criar>
+	_05. Tipo de arquivo de disco rígido
+	_		VDI (VirtualBOX Disk Image)
+	_	<Próximo>
+	_06. Armazenamento em disco rígido físico
+	_		Dinamicamente alocado
+	_	<Próximo>
+	_ 07. Localização e tamanho do arquivo
+	_		Localização: (deixar o padrão do sistema)
+	_		Tamanho do disco: 50GB
+	_	<Criar>
+	_ 08. Configurações da Máquina Virtual UbuntuServer-2004 (Propriedades/Configurações)
+	_	Sistema
+	_		Placa Mãe
+	_			Recurso Estendidos
+	_				Relógio da máquina retorno hora UTC: Desabilitar
+	_		Processador
+	_			Processadores: 02 CPUs
+	_			Recursos Estendidos: Habilitar PAE/NX
+	_	Monitor
+	_		Tela
+	_			Memória de Vídeo: 128MB
+	_			Aceleração: Habilitar Aceleração 3D
+	_	Áudio
+	_		Habilitar Áudio: Desabilitar
+	_	Rede
+	_		Adaptador 1 (LAN)
+	_			Habilitar Placa de Rede
+	_			Conectado a: Rede Interna
+	_			Nome: (deixar o padrão do sistema: intnet)
+	_	<OK>
 
 Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 
