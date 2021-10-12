@@ -30,47 +30,47 @@ Segunda etapa: Criação e Configuração da Máquina Virtual no Oracle VirtualB
 Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 01. Ferramentas;
 		Novo
-02. Nome e Sistema Operacional:
-		Nome: UbuntuServer-2004
-		Pasta da Máquina: (deixar o padrão do sistema) 
-		Tipo: Linux
+02. Nome e Sistema Operacional:<br>
+		Nome: UbuntuServer-2004<br>
+		Pasta da Máquina: (deixar o padrão do sistema) <br>
+		Tipo: Linux<br>
 		Versão: Ubuntu (64-bit)
 	<Próximo>
-03. Tamanho da memória:
+03. Tamanho da memória:<br>
 		Tamanho: 2048MB
 	<Próximo>
 04. Disco Rígido:
 		Criar um novo disco rígido virtual agora
 	<Criar>
-05. Tipo de arquivo de disco rígido
+05. Tipo de arquivo de disco rígido<br>
 		VDI (VirtualBOX Disk Image)
 	<Próximo>
 06. Armazenamento em disco rígido físico
 		Dinamicamente alocado
 	<Próximo>
-07. Localização e tamanho do arquivo
-		Localização: (deixar o padrão do sistema)
+07. Localização e tamanho do arquivo<br>
+		Localização: (deixar o padrão do sistema)<br>
 		Tamanho do disco: 50GB
 	<Criar>
-04. Configurações da Máquina Virtual UbuntuServer-2004 (Propriedades/Configurações)
-	Sistema
-		Placa Mãe
-			Recurso Estendidos
-				Relógio da máquina retorno hora UTC: Desabilitar
-		Processador
-			Processadores: 02 CPUs
-			Recursos Estendidos: Habilitar PAE/NX
-	Monitor
-		Tela
-			Memória de Vídeo: 128MB
-			Aceleração: Habilitar Aceleração 3D
-	Áudio
-		Habilitar Áudio: Desabilitar
-	Rede
-		Adaptador 1 (LAN)
-			Habilitar Placa de Rede
-			Conectado a: Rede Interna
-			Nome: (deixar o padrão do sistema: intnet)
+08. Configurações da Máquina Virtual UbuntuServer-2004 (Propriedades/Configurações)<br>
+	Sistema<br>
+		Placa Mãe<br>
+			Recurso Estendidos<br>
+				Relógio da máquina retorno hora UTC: Desabilitar<br>
+		Processador<br>
+			Processadores: 02 CPUs<br>
+			Recursos Estendidos: Habilitar PAE/NX<br>
+	Monitor<br>
+		Tela<br>
+			Memória de Vídeo: 128MB<br>
+			Aceleração: Habilitar Aceleração 3D<br>
+	Áudio<br>
+		Habilitar Áudio: Desabilitar<br>
+	Rede<br>
+		Adaptador 1 (LAN)<br>
+			Habilitar Placa de Rede<br>
+			Conectado a: Rede Interna<br>
+			Nome: (deixar o padrão do sistema: intnet)<br>
 <OK>
 
 Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
