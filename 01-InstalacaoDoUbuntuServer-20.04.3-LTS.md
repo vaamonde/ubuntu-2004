@@ -21,6 +21,7 @@ Link1: https://forums.virtualbox.org/viewtopic.php?f=3&t=98944<br>
 Link2: https://forums.virtualbox.org/viewtopic.php?f=7&t=98586<br>
 
 Primeira etapa: Download da ISO do Ubuntu Server 20.04.3 LTS
+
 01. Link de download do Ubuntu Server: https://releases.ubuntu.com/20.04.3/
 02. Versão do download Ubuntu Server: ubuntu-20.04.3-live-server-amd64.iso (24/08/2021)
 03. Arquitetura do Ubuntu Server: AMD64 (64-bit)
@@ -40,13 +41,13 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_ 03. Tamanho da memória:
 	_		Tamanho: 2048MB
 	_	<Próximo>
-	_04. Disco Rígido:
+	_ 04. Disco Rígido:
 	_		Criar um novo disco rígido virtual agora
 	_	<Criar>
-	_05. Tipo de arquivo de disco rígido
+	_ 05. Tipo de arquivo de disco rígido
 	_		VDI (VirtualBOX Disk Image)
 	_	<Próximo>
-	_06. Armazenamento em disco rígido físico
+	_ 06. Armazenamento em disco rígido físico
 	_		Dinamicamente alocado
 	_	<Próximo>
 	_ 07. Localização e tamanho do arquivo
@@ -74,54 +75,56 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_			Nome: (deixar o padrão do sistema: intnet)
 	_	<OK>
 
+Terceira etapa: Iniciando a Instalação do Ubuntu Server 20.04.3 LTS (localizar a ISO)
+	_ 01. VM UbuntuServer-2004: Iniciar
+	_ 02. Selecione o disco rígido de boot
+	_ 		Selecionar um arquivo de disco óptico virtual
+	_ 03. Seletor de Discos Ópticos
+	_ 		Acrescentar
+	_ 		Selecione o arquivo de disco óptico virtual: ubuntu-20.04.3-live-server-amd64.iso
+	_ 	<Abrir>
+	_ 04. Not Attached
+	_ 		Selecionar: ubuntu-20.04.3-live-server-amd64.iso
+	_ 	<Escolher>
+	_ <Iniciar>
+
+
+Quarta etapa: Instalação e Configuração do Ubuntu Server 20.04.3 LTS<br>
 Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 
-Terceira etapa: Instalação do Ubuntu Server 20.04.3 LTS (localizar a ISO)
-01. VM UbuntuServer-2004: Iniciar
-02. Selecione o disco rígido de boot
-		Selecionar um arquivo de disco óptico virtual
-03. Seletor de Discos Ópticos
-		Acrescentar
-		Selecione o arquivo de disco óptico virtual: ubuntu-20.04.3-live-server-amd64.iso
-	<Abrir>
-04. Not Attached
-		Selecionar: ubuntu-20.04.3-live-server-amd64.iso
-	<Escolher>
-<Iniciar>
-
-01. Use UP, DOWN and ENTER keys to select your language 
-		English - <Enter>
-02. Keyboard configuration
-		Layout: [English (US)]
-		Variant: [English (US)]
-	<Done>
-03. Network connections
-		enp0s3 eth <Enter>
-			Edit IPv4 <Enter>
-				IPv4 Method: Manual <Enter>
-					Subnet: 172.16.1.0/24 <Tab>
-					Address: 172.16.1.20 <Tab>
-					Gateway: 172.16.1.254 <Tab>
-					Name servers: 172.16.1.254 <Tab>
-					Search domains: pti.intra
-				<Save>
-	<Done>
-04. Configure proxy - <Done>
-05. Configure Ubuntu archive mirror - <Done>
-06. Guided storage configuration - <Done>
-07. Storage configuration - <Done>
-		Confirm destructive action - <Continue>
-08. Profile setup
-		Your name: Robson Vaamonde <Tab>
-		Your server's name: ptispo01ws01 <Tab>
-		Pick a username: vaamonde <Tab>
-		Choose a passwords: pti@2018 <Tab>
-		Confirm your passwords: pti@2018
-	<Done>
-09. SSH Setup
-		Install OpenSSH server: ON <Space>
-		Import SSH identity: No <Tab>
-	<Done>
-10. Featured Server Snaps - <Done>
-11. Reboot Now - <Enter>
-12. Please remove the installation medium, then press ENTER - <Enter>
+	_ 01. Use UP, DOWN and ENTER keys to select your language 
+	_ 		English - <Enter>
+	_ 02. Keyboard configuration
+	_ 		Layout: [English (US)]
+	_ 		Variant: [English (US)]
+	_ 	<Done>
+	_ 03. Network connections
+	_ 		enp0s3 eth <Enter>
+	_ 			Edit IPv4 <Enter>
+	_ 				IPv4 Method: Manual <Enter>
+	_ 					Subnet: 172.16.1.0/24 <Tab>
+	_ 					Address: 172.16.1.20 <Tab>
+	_ 					Gateway: 172.16.1.254 <Tab>
+	_ 					Name servers: 172.16.1.254 <Tab>
+	_ 					Search domains: pti.intra
+	_ 				<Save>
+	_ 	<Done>
+	_ 04. Configure proxy - <Done>
+	_ 05. Configure Ubuntu archive mirror - <Done>
+	_ 06. Guided storage configuration - <Done>
+	_ 07. Storage configuration - <Done>
+	_ 		Confirm destructive action - <Continue>
+	_ 08. Profile setup
+	_ 		Your name: Robson Vaamonde <Tab>
+	_ 		Your server's name: ptispo01ws01 <Tab>
+	_ 		Pick a username: vaamonde <Tab>
+	_ 		Choose a passwords: pti@2018 <Tab>
+	_ 		Confirm your passwords: pti@2018
+	_ 	<Done>
+	_ 09. SSH Setup
+	_ 		Install OpenSSH server: ON <Space>
+	_ 		Import SSH identity: No <Tab>
+	_ 	<Done>
+	_ 10. Featured Server Snaps - <Done>
+	_ 11. Reboot Now - <Enter>
+	_ 12. Please remove the installation medium, then press ENTER - <Enter>
