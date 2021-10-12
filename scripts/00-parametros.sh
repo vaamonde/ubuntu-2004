@@ -4,9 +4,11 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 10/10/2021
-# Versão: 0.01
+# Data de atualização: 11/10/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -53,7 +55,7 @@ DOMINIOSERVER="pti.intra"
 IPV4SERVER="172.16.1.20"
 #
 # Variável da Configuração do Netplan do Servidor
-NETPLAN="/etc/netplan/50-cloud-init.yaml"
+NETPLAN="/etc/netplan/00-installer-config.yaml"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dnsdhcp.sh                        #

@@ -4,11 +4,13 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 10/10/2021
-# Versão: 0.01
+# Data de atualização: 11/10/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do Bind9 v9.11.x e do ISC DHCP Server
+# Testado e homologado para a versão do Bind9 v e do ISC DHCP Server v
 #
 # O Bind DNS Server BIND (Berkeley Internet Name Domain ou, como chamado previamente, Berkeley Internet 
 # Name Daemon) é o servidor para o protocolo DNS mais utilizado na Internet, especialmente em sistemas 
@@ -128,13 +130,10 @@ echo -e "Editando o arquivo hosts, pressione <Enter> para continuar."
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo $(ls -lh /etc/netplan/ | cut -d' ' -f10 | sed '/^$/d'), pressione <Enter> para continuar."
+echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar."
 echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
-	# opções do comando ls: -l (listing), -h (human-readable)
-	# opções do comando -d (delimiter), -f (fields)
-	# opções do comando sed: /^$/ (Start and End), d (delete)
 	read
-	vim /etc/netplan/$(ls -lh /etc/netplan/ | cut -d' ' -f10 | sed '/^$/d')
+	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -142,7 +141,7 @@ echo -e "Atualizando o arquivo de configuração do ISC DHCP Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.bkp &>> $LOG
+	mv -v /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.old &>> $LOG
 	cp -v conf/dhcpd.conf /etc/dhcp/dhcpd.conf &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -155,9 +154,9 @@ echo -e "Atualizando os arquivos de configuração do Bind9 DNS Server, aguarde.
 	# opção do comando cp: -v (verbose)
 	mkdir -v /var/log/named/ &>> $LOG
 	chown -Rv bind:bind /var/log/named/ &>> $LOG
-	mv -v /etc/bind/named.conf /etc/bind/named.conf.bkp &>> $LOG
-	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.bkp &>> $LOG
-	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.bkp &>> $LOG
+	mv -v /etc/bind/named.conf /etc/bind/named.conf.old &>> $LOG
+	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.old &>> $LOG
+	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG
 	cp -v conf/named.conf /etc/bind/named.conf &>> $LOG
 	cp -v conf/named.conf.local /etc/bind/named.conf.local &>> $LOG
 	cp -v conf/named.conf.options /etc/bind/named.conf.options &>> $LOG
@@ -233,7 +232,7 @@ sleep 5
 #
 echo -e "Editando o arquivo dhcpd.conf, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando dhcpd: -T (test the configuration file)
+	# opção do comando dhcpd: -t (test the configuration file)
 	read
 	vim /etc/dhcp/dhcpd.conf
 	dhcpd -t &>> $LOG
