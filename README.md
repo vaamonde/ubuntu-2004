@@ -75,7 +75,7 @@ Ubuntu Raspberry Pi: https://ubuntu.com/download/raspberry-pi
 
 Link da vídeo aula: https://www.youtube.com/watch?v=1xPJ9aXcmvc
 
-Script utilizado nesse vídeo: 
+Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/02-InstalacaoDoUbuntuServer-20.04-RPI.md
 
 ## **INSTALAÇÃO do UBUNTU CORE 20 ARM x64 Bits no Raspberry Pi 3 B v1.2 🐧**
 
@@ -94,4 +94,4 @@ Snapcraft: https://snapcraft.io/
 
 Link da vídeo aula: https://www.youtube.com/watch?v=dYCBHpzgOdw
 
-Script utilizado nesse vídeo: 
+Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/03-InstalacaoDoUbuntuCore-20-RPI.md
