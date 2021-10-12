@@ -28,7 +28,7 @@ Primeira etapa: Download da ISO do Ubuntu Server 20.04.3 LTS
 
 Segunda etapa: Criação e Configuração da Máquina Virtual no Oracle VirtualBOX<br>
 Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
-01. Ferramentas;
+	_ 01. Ferramentas;
 		Novo
 02. Nome e Sistema Operacional:<br>
 		Nome: UbuntuServer-2004<br>
