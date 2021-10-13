@@ -4,91 +4,63 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 06/08/2021
-# Data de atualização: 13/09/2021
-# Versão: 0.03
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do NTP Server 
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 10/10/2021
+# Data de atualização: 13/10/2021
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do NTP Server 4.2.
 #
-# O NTP é um protocolo para sincronização dos relógios dos computadores baseado no protocolo UDP sob a
-# porta 123. É utilizado para sincronização do relógio de um conjunto de computadores e dispositivos em 
-# redes de dados com latência variável. 
+# O NTP é um protocolo para sincronização dos relógios dos computadores baseado no protocolo UDP sob 
+# a porta 123. É utilizado para sincronização do relógio de um conjunto de computadores e dispositivos 
+# em redes de dados com latência variável. 
 #
-# O projeto NTP.br tem por objetivo oferecer condições para que os servidores de Internet no Brasil estejam 
-# sincronizados com a Horal Legal Brasileira. Para isso foi firmado um acordo entre o Observatório Nacional 
-# (ON) e o NIC.br. 
+# O projeto NTP.br tem por objetivo oferecer condições para que os servidores de Internet no Brasil 
+# estejam sincronizados com a Horal Legal Brasileira. Para isso foi firmado um acordo entre o Observatório 
+# Nacional (ON) e o NIC.br. 
 #
-# Os servidores Stratum 1 (primários) de nível mais baixo são sincronizados diretamente com os serviços de 
-# horário nacional por meio de um modem de satélite, rádio ou telefone.
+# Os servidores Stratum 1 (primários) de nível mais baixo são sincronizados diretamente com os serviços 
+# de horário nacional por meio de um modem de satélite, rádio ou telefone.
 #
 # Os servidores Stratum 2 (secundários) são sincronizados com os servidores Stratum 1 e assim por diante, 
-# de forma que os clientes NTP e os servidores com um número relativamente pequeno de clientes não sincronizem 
-# com os servidores primários públicos.
+# de forma que os clientes NTP e os servidores com um número relativamente pequeno de clientes não 
+# sincronizem com os servidores primários públicos.
 #
 # Site Oficial do Projeto NTP: http://www.ntp.org/
 # Site Oficial do Projeto NTP.br: https://ntp.br/
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de configuração da Data e Hora no Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=laiuH1zgg3U
-# Vídeo de configuração do OpenSSH no GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=ecuol8Uf1EE&t
-# Vídeo de instalação e configuração do Bind DNS e do ISC DHCP Server: https://www.youtube.com/watch?v=NvD9Vchsvbk&t
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário é "root", versão do ubuntu e kernel
-# opções do comando id: -u (user)
-# opções do comando: lsb_release: -r (release), -s (short), 
-# opões do comando uname: -r (kernel release)
-# opções do comando cut: -d (delimiter), -f (fields)
-# opção do shell script: piper | = Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Variável de sincronização do NTP Server com o Site ntp.br
-NTPSERVER="a.st1.ntp.br"
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
 #
-# Script de instalação do NTP Server e Client no GNU/Linux Ubuntu Server 18.04.x
+# Script de instalação do NTP Server e Client no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-# opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
 echo
-echo -e "Instalação do NTP Server no GNU/Linux Ubuntu Server 18.04.x\n"
-echo -e "Porta padrão utilizada pelo NTP Server: 123\n"
+echo -e "Instalação do NTP Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo NTP Server: UDP 123\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -114,6 +86,8 @@ echo -e "Atualizando o sistema, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -121,24 +95,25 @@ echo -e "Removendo software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o NTP Server e Client, aguarde...\n"
+echo -e "Instalando e Configurando o NTP Server e Client, aguarde...\n"
 sleep 5
 #
-echo -e "Instalando o NTP Server, aguarde..."
+echo -e "Instalando o NTP Server e Client, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
 	apt -y install ntp ntpdate &>> $LOG
-echo -e "NTP Server instalado com sucesso!!!, continuando com o script...\n"
+echo -e "NTP Server e Client instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	# opção do comando chown: -v (verbose)
+	# opção do comando chown: -v (verbose), ntp (user), ntp (group)
 	mv -v /etc/ntp.conf /etc/ntp.conf.old &>> $LOG
 	cp -v conf/ntp.conf /etc/ &>> $LOG
 	cp -v conf/ntp.drift /var/lib/ntp/ntp.drift &>> $LOG
@@ -182,8 +157,11 @@ echo -e "Data e Hora do NTP Server e do Sistema Operacional verificadas com suce
 sleep 5
 #
 echo -e "Verificando a porta de Conexão do NTP Server, aguarde..."
-	# opção do comando netstat: -a (all), -n (numeric)
-	netstat -an | grep '123'
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iUDP:123 -sUDP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -8,35 +8,16 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
 # Data de atualização: 13/10/2021
-# Versão: 0.04
+# Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
+# Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
-# O Bind DNS Server BIND (Berkeley Internet Name Domain ou, como chamado previamente, Berkeley Internet 
-# Name Daemon) é o servidor para o protocolo DNS mais utilizado na Internet, especialmente em sistemas 
-# do tipo Unix, onde ele pode ser considerado um padrão de facto. Foi criado por quatro estudantes de 
-# graduação, membros de um grupo de pesquisas em ciência da computação da Universidade de Berkeley, e 
-# foi distribuído pela primeira vez com o sistema operacional 4.3 BSD. Atualmente o BIND é suportado e 
-# mantido pelo Internet Systems Consortium.
+# Trivial File Transfer Protocol (ou apenas TFTP) é um protocolo de transferência de arquivos, 
+# muito simples, semelhante ao FTP. É geralmente utilizado para transferir pequenos arquivos 
+# entre hosts numa rede, tal como quando um terminal remoto ou um cliente inicia o seu 
+# funcionamento, a partir do servidor.
 #
-# O ISC DHCP Server dhcpd (uma abreviação de "daemon DHCP") é um programa de servidor DHCP que opera
-# como um daemon em um servidor para fornecer serviço de protocolo de configuração dinâmica de hosts 
-# (DHCP) a uma rede. Essa implementação, também conhecida como ISC DHCP, é uma das primeiras e mais 
-# conhecidas, mas agora existem várias outras implementações de software de servidor DHCP disponíveis.
-#
-# Diretório e Arquivo de banco de dados do Leasing ofertados pelo ISC DHCP Server:
-# Localização: /var/lib/dhcp/dhcpd.leases
-# Monitoramento do Log: tail -f /var/log/syslog | grep dhcpd
-#
-# Diretório das Zonas de Pesquisa Direta e Reversa do Bind9 DNS Server:
-# Localização: /var/lib/bind/
-# Monitoramento do Log: tail -f /var/log/syslog | grep named
-#
-# Monitorando o Bind9 DNS Server e o ISC DHCP Server simultaneamente
-# Comando: tail -f /var/log/syslog | grep -E \(dhcpd\|named\)
-#
-# Site Oficial do Projeto Bind9: https://www.isc.org/bind/
-# Site Oficial do Projeto ICS DHCP: https://www.isc.org/dhcp/
+# Site Oficial do Projeto Tftpd-Hpa: https://git.kernel.org/pub/scm/network/tftp/tftp-hpa.git/about/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -60,16 +41,36 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		exit 1
 fi
 #
-# Script de integração do ICS DHCP Server com Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x
+# Verificando as dependências do Tftpd-Hpa Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retorna 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do Tftpd-Hpa Server e Client, aguarde... "
+	for name in bind9 bind9utils isc-dhcp-server
+	do
+		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
+			echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
+			deps=1; 
+			}
+	done
+		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
+			echo -en "\nInstale as dependências acima e execute novamente este script\n";
+			echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências do ISC DHCP"
+			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências do Bind9 DNS"
+			exit 1; 
+			}
+		sleep 5
+#
+# Script de instalação do Tftpd-Hpa Server e Client no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Integração do ICS DHCP Server com Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Bind9 DNS Server: UDP 53"
-echo -e "Porta padrão utilizada pelo ISC DHCP Server.: UDP 67\n"
+echo -e "Instalação do Tftpd-Hpa Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo NTP Server: UDP 69\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -91,7 +92,7 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando todo o sistema operacional, aguarde..."
+echo -e "Atualizando o sistema, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
@@ -100,73 +101,72 @@ echo -e "Atualizando todo o sistema operacional, aguarde..."
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo todos os software desnecessários, aguarde..."
+echo -e "Removendo software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
-	apt -y autoclean &>> $LOG
+	apt -y autoclean &>> $LO
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Integrando o ICS DHCP Server com Bind DNS Server, aguarde...\n"
+echo -e "Instalando e Configuração do Tftpd-Hpa Server e Client, aguarde...\n"
 sleep 5
 #
-echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando dnssec-keygen: Nas versões anteriores do BIND <9.13, os algoritmos HMAC podiam ser gerados 
-	# para uso como chaves TSIG, esse recurso foi removido a partir do BIND >9.13, nesse cenário e recomendado 
-	# utilizar o comando: tsig-keygen para gerar chaves TSIG. 
-	# opção do comando tsig-keygen: -a (algorithm)
-	# opção do comando cut: -d (delimiter), -f (fields)
-	# opção do comando tr: -d (delete)
-	# opção do comando sed: s (replacement)
+echo -e "Instalando o Serviço do Tftpd-Hpa Server e Client, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	apt -y install tftpd-hpa tftp-hpa &>> $LOG
+echo -e "Tftpd-Hpa Server e Client instalado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando o arquivo de configuração do Tftpd-Hpa Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	tsig-keygen -a hmac-md5 $USERUPDATE > tsig.key
-	KEYGEN=$(cat tsig.key | grep secret | cut -d' ' -f2 | tr -d ';|"')
-	sed "s@secret vaamonde;@secret $KEYGEN;@" /etc/dhcp/dhcpd.conf > /tmp/dhcpd.conf.old
-	sed 's@secret "vaamonde";@secret "'$KEYGEN'";@' /etc/bind/named.conf.local > /tmp/named.conf.local.old
-	cp -v /tmp/dhcpd.conf.old /etc/dhcp/dhcpd.conf &>> $LOG
-	cp -v /tmp/named.conf.local.old /etc/bind/named.conf.local &>> $LOG
-echo -e "Atualização da chave feita com sucesso!!!, continuando com o script...\n"
+	mv -v /etc/default/tftpd-hpa /etc/default/tftpd-hpa.old &>> $LOG
+	cp -v conf/tftpd-hpa /etc/default/tftpd-hpa &>> $LOG
+echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo named.conf.local, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração do Tftpd-Hpa Server, pressione <Enter> para continuar."
 	read
-	vim /etc/bind/named.conf.local
-	named-checkconf /etc/bind/named.conf.local &>> $LOG
+	vim /etc/default/tftpd-hpa
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo dhcpd.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando dhcpd: -t (test the configuration file)
+echo -e "Editando o arquivo de configuração do ISC-DHCP Server, pressione <Enter> para continuar."
 	read
 	vim /etc/dhcp/dhcpd.conf
-	dhcpd -t &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Inicializando os serviços do ISC DHCP Server e do Bind DNS Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	systemctl restart isc-dhcp-server &>> $LOG
-	systemctl restart bind9 &>> $LOG
-	systemctl reload bind9 &>> $LOG
-	rndc sync -clean &>> $LOG
-	rndc stats &>> $LOG
-echo -e "Serviços inicializados com com sucesso!!!, continuando com o script...\n"
+echo -e "Editando o arquivo de configuração do TCPWrappers host.allow, pressione <Enter> para continuar."
+	read
+	vim /etc/hosts.allow
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas do Bind9 DNS Server e do ISC DHCP Server, aguarde..."
+echo -e "Reinicializando o serviço do Tftpd-Hpa Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl restart tftpd-hpa &>> $LOG
+echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Reinicializando o serviço do ISC-DHCP Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl restart isc-dhcp-server &>> $LOG
+echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as portas do ISC-DHCP Server e do Tftpd-Hpa Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iUDP:53 -sUDP:LISTEN
-	lsof -nP -iUDP:67 -sUDP:LISTEN
-echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
+	lsof -nP -iUDP:"67,69" -sUDP:LISTEN
+echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
-#	
-echo -e "Integração do ICS DHCP Server com Bind DNS Server feita com Sucesso!!!."
+#
+echo -e "Instalação do Tftpd-Hpa Server e Client feita com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)

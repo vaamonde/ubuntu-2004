@@ -11,6 +11,6 @@ Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
-0001 - 04-dhcpdns.sh - Linha 122 (comando dnssec-keygen) conforme RFC 2136 o comando dnssec-keygen na versão do BIND 9.16
+0001 - 04-dhcpdns.sh - Linha 122 (comando dnssec-keygen) conforme RFC 2136 o comando dnssec-keygen na versão do BIND 9.13
 foi descontinuado, sendo substituido pelo comando tsig-keygen, adaptando as configurações do Bind e do DHCP server para o
 novo serviço de configuração da atualização dinâmica entre os serviços.
