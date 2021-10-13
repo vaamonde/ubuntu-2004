@@ -121,7 +121,7 @@ echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
 echo -e "Arquivos do NTP Server atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do NTP Server, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração ntp.conf, pressione <Enter> para continuar"
 	read
 	vim /etc/ntp.conf
 echo -e "NTP Server editado com sucesso!!!, continuando com o script...\n"
@@ -161,7 +161,7 @@ echo -e "Verificando a porta de Conexão do NTP Server, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iUDP:123 -sUDP:LISTEN
+	lsof -nP -iUDP:123
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

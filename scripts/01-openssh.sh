@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 11/10/2021
-# Versão: 0.02
+# Data de atualização: 13/10/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server 8.2.x
 #
@@ -126,8 +126,10 @@ sleep 5
 #
 echo -e "Editando o arquivo de configuração do OpenSSH Server sshd_config, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando sshd: -t (text mode check configuration)
 	read
 	vim /etc/ssh/sshd_config
+	sshd -t &>> $LOG
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

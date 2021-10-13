@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
 # Data de atualização: 13/10/2021
-# Versão: 0.01
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
@@ -70,7 +70,7 @@ clear
 echo
 #
 echo -e "Instalação do Tftpd-Hpa Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo NTP Server: UDP 69\n"
+echo -e "Porta padrão utilizada pelo Tftpd-Hpa Server: UDP 69\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -122,24 +122,28 @@ echo -e "Atualizando o arquivo de configuração do Tftpd-Hpa Server, aguarde...
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do comando mkdir: -v (verbose)
+	# opção do comando chown: -v (verbose), tftp (user), tftp (group)
 	mv -v /etc/default/tftpd-hpa /etc/default/tftpd-hpa.old &>> $LOG
 	cp -v conf/tftpd-hpa /etc/default/tftpd-hpa &>> $LOG
+	mkdir -v $TFTP &>> $LOG
+	chown -v tftp.tftp $TFTP &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Tftpd-Hpa Server, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração Tftpd-hpa Server tftpd-hpa, pressione <Enter> para continuar."
 	read
 	vim /etc/default/tftpd-hpa
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do ISC-DHCP Server, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração do ICS DHCP Server dhcpd.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/dhcp/dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do TCPWrappers host.allow, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração do TCPWrappers hosts.allow, pressione <Enter> para continuar."
 	read
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -162,7 +166,7 @@ echo -e "Verificando as portas do ISC-DHCP Server e do Tftpd-Hpa Server, aguarde
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iUDP:"67,69" -sUDP:LISTEN
+	lsof -nP -iUDP:"67,69"
 echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

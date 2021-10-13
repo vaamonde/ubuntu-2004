@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
 # Data de atualização: 13/10/2021
-# Versão: 0.03
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -88,4 +88,11 @@ USERUPDATE="vaamonde"
 # 
 # Variável de sincronização do NTP Server com o Site ntp.br
 NTPSERVER="a.st1.ntp.br"
+#
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 06-tftphpa.sh                        #
+#=============================================================================================
+# 
+# Variável de criação do diretório padrão utilizado pelo serviço do TFTP-HPA
+TFTP="/var/lib/tftpboot"
 #

@@ -7,7 +7,7 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 12/10/2021
+# Data de atualização: 13/10/2021
 # Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
@@ -116,6 +116,9 @@ sleep 5
 #
 echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar."
 echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
+echo -e "dependendo da versão do Ubuntu Server, verificar o conteúdo do diretório:"
+echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e mudar"
+echo -e "a variável NETPLAN no arquivo de configuração: 00-paramentros.sh"
 	read
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -151,7 +154,7 @@ echo -e "Verificando a porta de conexão do ISC DHCP Server, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iUDP:67 -sUDP:LISTEN
+	lsof -nP -iUDP:67
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #	
