@@ -17,4 +17,4 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 03-dns.sh			-v0.03		- Testado e homologado no dia 13/10/2021
 04-dhcpdns.sh		-v0.04		- Testado e homologado no dia 13/10/2021
 05-ntp.sh			-v0.01		- Testado e homologado no dia 13/10/2021
-06-tftp.sh			-v0.01		- Testado e homologado no dia 13/10/2021
+06-tftphpa.sh		-v0.01		- Testado e homologado no dia 13/10/2021
