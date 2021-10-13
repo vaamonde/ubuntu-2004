@@ -1,4 +1,4 @@
-# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT's "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.x LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU 20.04.x LTS, NÃO SERÁ REGRAVADO NOVOS VÍDEOS DOS SCRIPTS ANTIGOS NESSA VERSÃO, DEVIDO AO CONCEITO UTILIZADO NA VERSÃO 18.04.x SER IGUAL NESSA VERSÃO 20.04.x, SERÁ GRAVADO SOMENTE VÍDEOS E SOLUÇÕES/SERVIÇOS DE TI NOVOS USANDO A VERSÃO 20.04.x, EXEMPLO: FreeRADIUS, OnlyOffice Server, etc...
+# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT's "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.x LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU 20.04.x LTS, NÃO SERÁ REGRAVADO NOVOS VÍDEOS DOS SCRIPTS ANTIGOS NESSA VERSÃO, DEVIDO AO CONCEITO UTILIZADO NA VERSÃO 18.04.x SER IGUAL NESSA VERSÃO 20.04.x, SERÁ GRAVADO SOMENTE VÍDEOS E SOLUÇÕES/SERVIÇOS DE TI NOVOS USANDO A VERSÃO 20.04.x, EXEMPLO: NFS, Webdav, SAMBA-4, FreeRADIUS, OnlyOffice Server, etc...
 
 # Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps
 
@@ -44,7 +44,7 @@ Suporte a arquitetura IBM Z e LinuxONE;
 Suporte a arquitetura MAAS;
 Suporte a OpenStack, Kubernetes, Kubeflow, IoT, etc.
 
-06/08/202: Lançado a nova versão do Ubuntu Server 20.04.1 LTS Focal Fossa que reúne todas as correções de bugs, atualizações de aplicativos, ajustes de desempenho e patches de segurança lançados no “Focal Fossa” desde seu lançamento em abril.
+06/08/2020: Lançado a nova versão do Ubuntu Server 20.04.1 LTS Focal Fossa que reúne todas as correções de bugs, atualizações de aplicativos, ajustes de desempenho e patches de segurança lançados no “Focal Fossa” desde seu lançamento em abril.
 
 05/02/2021: Com a atualização 20.04.2 LTS, todas as atualizações estáveis ​​de lançamento recentes agora são incorporadas à mídia de instalação para melhorar a experiência imediata em novas instalações. 
 

@@ -7,7 +7,7 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 12/10/2021
+# Data de atualização: 13/10/2021
 # Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
