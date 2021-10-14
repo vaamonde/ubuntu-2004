@@ -89,10 +89,43 @@ USERUPDATE="vaamonde"
 # Variável de sincronização do NTP Server com o Site ntp.br
 NTPSERVER="a.st1.ntp.br"
 #
+# Variável do Zona de Horário do NTP Sever
+TIMEZONE="America/Sao_Paulo"
+#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 06-tftphpa.sh                        #
 #=============================================================================================
 # 
 # Variável de criação do diretório padrão utilizado pelo serviço do TFTP-HPA
 TFTP="/var/lib/tftpboot"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh                          #
+#=============================================================================================
+# 
+# Variável do usuário padrão do MySQL (Root do Mysql, diferente do Root do GNU/Linux)
+USERMYSQL="root"
+#
+# Variáveis da senha e confirmação da senha do usuário Root do Mysql 
+SENHAMYSQL="pti@2018"
+AGAIN=$SENHAMYSQL
+#
+# Variáveis de configuração e liberação da conexão remota para o usuário Root do MySQL
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
+# tabela), *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), identified 
+# by (identificado por - senha do usuário)
+# opção do comando FLUSH: privileges (recarregar as permissões)
+GRANTALL="GRANT ALL ON *.* TO $USERMYSQL@'%' IDENTIFIED BY '$SENHAMYSQL';"
+FLUSH="FLUSH PRIVILEGES;"
+#
+# Variável de configuração do usuário padrão de administração do PhpMyAdmin (Root do MySQL)
+ADMINUSER=$USERMYSQL
+#
+# Variáveis da senha do usuário Root do Mysql e senha de administração o PhpMyAdmin
+ADMIN_PASS=$SENHAMYSQL
+APP_PASSWORD=$SENHAMYSQL
+APP_PASS=$SENHAMYSQL
+#
+# Variável de configuração do serviço de hospedagem de site utilizado pelo PhpMyAdmin
+WEBSERVER="apache2"
 #

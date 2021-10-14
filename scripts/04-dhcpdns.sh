@@ -113,9 +113,9 @@ sleep 5
 #
 echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DHCP Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando dnssec-keygen: Nas versões anteriores do BIND <9.13, os algoritmos HMAC podiam ser gerados 
-	# para uso como chaves TSIG, esse recurso foi removido a partir do BIND >9.13, nesse cenário e recomendado 
-	# utilizar o comando: tsig-keygen para gerar chaves TSIG. 
+	# opção do comando dnssec-keygen: Nas versões anteriores do BIND <9.13, os algoritmos HMAC podiam 
+	# ser gerados para uso como chaves TSIG, esse recurso foi removido a partir do BIND >9.13, nesse 
+	# cenário é recomendado utilizar o comando: tsig-keygen para gerar chaves TSIG. 
 	# opção do comando tsig-keygen: -a (algorithm)
 	# opção do comando cut: -d (delimiter), -f (fields)
 	# opção do comando tr: -d (delete)
@@ -146,14 +146,14 @@ echo -e "Editando o arquivo dhcpd.conf, pressione <Enter> para continuar."
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Inicializando os serviços do ISC DHCP Server e do Bind DNS Server, aguarde..."
+echo -e "Reinicializando os serviços do ISC DHCP Server e do Bind DNS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	systemctl restart isc-dhcp-server &>> $LOG
 	systemctl restart bind9 &>> $LOG
 	systemctl reload bind9 &>> $LOG
 	rndc sync -clean &>> $LOG
 	rndc stats &>> $LOG
-echo -e "Serviços inicializados com com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços reinicializados com com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas do Bind9 DNS Server e do ISC DHCP Server, aguarde..."

@@ -154,7 +154,7 @@ echo -e "Editando o arquivo de configuração Banner issue.net, pressione <Enter
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração da Tabela Estática de hosts, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração da Tabela Estática hosts, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hosts

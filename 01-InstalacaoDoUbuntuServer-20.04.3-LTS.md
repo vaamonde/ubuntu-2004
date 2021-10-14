@@ -20,6 +20,11 @@ OBS1 - lentidão da instalação e configuração do Ubuntu Server 20.04.x no Or
 Link1: https://forums.virtualbox.org/viewtopic.php?f=3&t=98944<br>
 Link2: https://forums.virtualbox.org/viewtopic.php?f=7&t=98586<br>
 
+OBSERVAÇÃO IMPORTANTE: após vários testes na versão 20.04.3 LTS do Ubuntu Server x64 a falha de lentidão<br>
+no processo de atualização do sistema utilizando os comandos apt ou apt-get está associada ao Sources List<br>
+do BR (Brasil), após a alteração no arquivo: /etc/apt/sources.list de: https://br. para https://us. em <br>
+todas as linhas o processo de atualização ficou muito mais rápido.
+
 Primeira etapa: Download da ISO do Ubuntu Server 20.04.3 LTS
 
 01. Link de download do Ubuntu Server: https://releases.ubuntu.com/20.04.3/
