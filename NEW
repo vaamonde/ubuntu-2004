@@ -12,7 +12,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
 13/10/2021 - Robson Vaamonde - Remoção dos recursos de: Syslinux, Syslinux Utils, Syslinux EFI, PXE Linux e do Puppy
-Linux do script: 06-tfthpa.sh deixando mais imples, implementação do PXE Linux será feita utilizando o ThinStation.
+Linux do script: 06-tfthpa.sh deixando mais imples, a implementação do PXE Linux será feita utilizando o ThinStation.
 
 12/10/2021 - Robson Vaamonde - Separação dos scripts dos serviços de ICS DHCP Server, Bind DNS Server e integração
 dos serviços para facilitar a implementação: 02-dhcp.sh, 03-dns.sh e 04-dhcpdns.sh.

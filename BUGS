@@ -6,11 +6,24 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 11/10/2021
-Versão: 0.02
+Data de atualização: 14/10/2021
+Versão: 0.03
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0004 - pti.intra.hosts - Linhas 24 (MX) e 29 (MAIL) Correção da falha do Bind9 referente a mensagens no Systemctl de: MX is 
+a CNAME (illegal), alterado as configurações do MX Mail no arquivo de Zona de Pesquisa direta: pti.intra.hosts, retirado: 
+10 mail.pti.intra. deixado só: 10 mail, mudado a linha: mail IN CNAME ptispo01ws01 para: mail IN A	172.16.1.20.
+
+0003 - pti.intra.hosts - Linha 39 (linha em branco) Correção da falha do Bind9 referente a mensagens no Systemctl de: file 
+does not end with newline, adicionado uma linha no final do arquivo da Zona de Pesquisa direta: pti.intra.hosts (O Bind9 
+espera uma nova linha no final de seus arquivos de configuração. Adicione uma nova linha no final do arquivo após a entrada 
+que você adicionou manualmente.)
+
+0002 - 03-dns.sh - Linha 144 (comando chown) aplicado o Path de Correção da falha: rndc: connect failed: 127.0.0.1#953: 
+connection refused, referente as permissões de acesso ao arquivo /etc/bind/rndc.key, permissões: bind:bind alterado para:
+root:bind.
+
 0001 - 04-dhcpdns.sh - Linha 122 (comando dnssec-keygen) conforme RFC 2136 o comando dnssec-keygen na versão do BIND 9.13
 foi descontinuado, sendo substituido pelo comando tsig-keygen, adaptando as configurações do Bind e do DHCP server para o
 novo serviço de configuração da atualização dinâmica entre os serviços.
