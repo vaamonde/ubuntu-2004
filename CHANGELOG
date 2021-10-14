@@ -6,11 +6,24 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/10/2021
-# Versão: 0.03
+# Data de atualização: 14/10/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+14/10/2021 - Robson Vaamonde - Adicionado o comando: timedatectl set-timezone no script: 05-ntp.sh e criado a variável
+TIMEZONE="America/Sao_Paulo" no arquivo de parâmetros: 00-paramentros.sh. Melhoria na documentação da geração da chave
+TSIG no arquivo conf: named.conf.local, desabilitado o recurso do IPv6 no arquivo conf: named.conf.options, criação do
+arquivo named referente ao serviço do Bind9 DNS Server, adicionado a opção -4 para suportar somente IPv4, acrescentado
+o arquivo named no script: 03-dns.sh, aplicado o Path de Correção da falha: rndc: connect failed: 127.0.0.1#953: 
+connection refused no no script: 03-dns.sh comando: chown -v root:bind /etc/bind/rndc.key. Correção da falha do Bind9 
+referente a mensagens no Systemctl de: file does not end with newline, adicionado uma linha no final do arquivo da Zona
+de Pesquisa direta: pti.intra.hosts (O Bind espera um neline no final de seus arquivos de configuração. Adicione uma 
+nova linha no final do arquivo após a entrada que você adicionou manualmente.). Correção da falha do Bind9 referente a 
+mensagens no Systemctl de: MX is a CNAME (illegal), alterado as configurações do MX Mail no arquivo de Zona de Pesquisa
+direta: pti.intra.hosts, retirado: 10 mail.pti.intra. deixado só: 10 mail, mudado a linha: mail IN CNAME ptispo01ws01
+para: mail IN A	172.16.1.20.
+
 13/10/2021 - Robson Vaamonde - Substituição do comando dnssec-keygen pelo comando tsig-keygen no script: 04-dhcpdns.sh
 conforme documentação do MAN do comando dnssec-keygen o suporte ao HMAC-MD5 foi descontinuado a partir da versão 9.13
 do Bind9 DNS Server, para usar essa opção você precisa utilizar o comando tsig-keygen. Correções no script: 05-ntp.sh

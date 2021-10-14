@@ -6,8 +6,8 @@
 ; Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 ; Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 ; Data de criação: 10/10/2021
-; Data de atualização: 11/10/2021
-; Versão: 0.02
+; Data de atualização: 14/10/2021
+; Versão: 0.03
 ; Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 $ORIGIN pti.intra.
@@ -17,17 +17,17 @@ $TTL 3600 ; 1 (uma) semana de TTL (Time to Live) tempo de vida das respostas for
 				604800 ; tempo de atualizações entre master e slave (refresh) atualização 1 (uma) semana
 				86400 ; tempo de atualizações caso o refresh falhe retenção 1 (um) dia
 				2419200 ; tempo de expiração do slave caso não se contate com o master expiração 4 (quatro) semanas
-				604800 ; tempo de vida das repostas negativas do servidor minímo retenção de 1 (uma) semana
+				604800 ; tempo de vida das repostas negativas do servidor mínimo retenção de 1 (uma) semana
 				)
 ;
 @               IN 		NS		ptispo01ws01.pti.intra.
-@               IN 		MX		10 mail.pti.intra.
+@               IN 		MX		10 mail
 ;
 pti.intra.      IN 		A 		172.16.1.20
 ptispo01ws01    IN 		A		172.16.1.20
 ptispo01fw01    IN 		A		172.16.1.254
+mail            IN 		A 		172.16.1.20
 www             IN 		CNAME 	ptispo01ws01
-mail            IN 		CNAME 	ptispo01ws01
 pop3            IN 		CNAME 	ptispo01ws01
 imap            IN 		CNAME 	ptispo01ws01
 imap4           IN 		CNAME 	ptispo01ws01

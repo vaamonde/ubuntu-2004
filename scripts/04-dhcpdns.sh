@@ -161,8 +161,7 @@ echo -e "Verificando as portas do Bind9 DNS Server e do ISC DHCP Server, aguarde
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iUDP:53 -sUDP:LISTEN
-	lsof -nP -iUDP:67 -sUDP:LISTEN
+	lsof -nP -iUDP:"53,67"
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #	

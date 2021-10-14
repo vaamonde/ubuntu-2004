@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/10/2021
-# Versão: 0.03
+# Data de atualização: 14/10/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
@@ -135,20 +135,24 @@ sleep 5
 echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -R (recursive), -v (verbose), bind (user), bind (group)
+	# opção do comando chown: -R (recursive), -v (verbose), root (user), bind (user), bind (group)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mkdir -v /var/log/named/ &>> $LOG
 	chown -Rv bind:bind /var/log/named/ &>> $LOG
+	# Patch de correção da falha: rndc: connect failed: 127.0.0.1#953: connection refused
+	chown -v root:bind /etc/bind/rndc.key
 	mv -v /etc/bind/named.conf /etc/bind/named.conf.old &>> $LOG
 	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.old &>> $LOG
 	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG
+	mv -v /etc/default/named /etc/default/named.old &>> $LOG
 	cp -v conf/named.conf /etc/bind/named.conf &>> $LOG
 	cp -v conf/named.conf.local /etc/bind/named.conf.local &>> $LOG
 	cp -v conf/named.conf.options /etc/bind/named.conf.options &>> $LOG
 	cp -v conf/pti.intra.hosts /var/lib/bind/pti.intra.hosts &>> $LOG
 	cp -v conf/172.16.1.rev /var/lib/bind/172.16.1.rev &>> $LOG
 	cp -v conf/dnsupdate-cron /etc/cron.d/dnsupdate-cron &>> $LOG
+	cp -v conf/named /etc/default/named &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -196,6 +200,12 @@ sleep 5
 echo -e "Editando o arquivo dnsupdate-cron, pressione <Enter> para continuar."
 	read
 	vim /etc/cron.d/dnsupdate-cron
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo named, pressione <Enter> para continuar."
+	read
+	vim /etc/default/named
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
