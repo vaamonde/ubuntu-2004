@@ -11,7 +11,7 @@
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0x, PHP v7.4.x, 
-# Perl v5.30.x, Python v2 e 3, PhpMyAdmin v4.9
+# Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
 #
 # O Servidor HTTP Apache (do inglês Apache HTTP Server) ou Servidor Apache ou HTTP 
 # Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por Rob McCool. 
@@ -157,7 +157,7 @@ echo -e "Configurando as variáveis do Debconf do MySQL para o Apt, aguarde..."
 echo -e "Variáveis configuradas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o LAMP-SERVER completo, aguarde..."
+echo -e "Instalando o LAMP-SERVER (Linux, Apache2, MySQL, Php, Perl e Python), aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	# opção do comando ^ (circunflexo): (expressão regular - Casa o começo da linha)
@@ -182,21 +182,22 @@ sleep 5
 echo -e "Instalando o PhpMyAdmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install phpmyadmin php-bcmath php-mbstring php-gettext php-dev libmcrypt-dev php-pear pwgen &>> $LOG
+	apt -y install phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json \
+	libmcrypt-dev pwgen &>> $LOG
 echo -e "Instalação do PhpMyAdmin feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #				 
-#echo -e "Atualizando as dependências do PHP para o PhpMyAdmin, aguarde..."
+echo -e "Instalando a dependência do PHP Mcrypt para da suporte ao PhpMyAdmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando echo: | = (faz a função de Enter)
 	# opção do comando cp: -v (verbose)
-	#pecl channel-update pecl.php.net &>> $LOG
-	#	echo | pecl install mcrypt-1.0.1 &>> $LOG
-	#	cp -v conf/mcrypt.ini /etc/php/7.2/mods-available/ &>> $LOG
-	#phpenmod mcrypt &>> $LOG
-	#phpenmod mbstring &>> $LOG
-#echo -e "Atualização das dependências feita com sucesso!!!, continuando com o script...\n"
-#sleep 5
+	pecl channel-update pecl.php.net &>> $LOG
+		echo | pecl install mcrypt &>> $LOG
+		cp -v conf/mcrypt.ini /etc/php/7.4/mods-available/ &>> $LOG
+	phpenmod mcrypt &>> $LOG
+	phpenmod mbstring &>> $LOG
+echo -e "Atualização da dependência feita com sucesso!!!, continuando com o script...\n"
+sleep 5
 #
 #echo -e "Aplicando os Patch de Correção do PhpMyAdmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
@@ -286,7 +287,7 @@ sleep 5
 #
 echo -e "Editando o arquivo de teste teste.html, pressione <Enter> para continuar."
 	read
-	vim /var/www/html/teste.htm
+	vim /var/www/html/teste.html
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -295,8 +296,7 @@ echo -e "Verificando as portas do Apache2 e do MySQL, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:80 -sTCP:LISTEM
-	lsof -nP -iTCP:3306 -sTCP:LISTEM
+	lsof -nP -iTCP:'80,3306' -sTCP:LISTEN
 echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

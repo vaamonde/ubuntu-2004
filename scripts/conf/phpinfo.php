@@ -1,17 +1,18 @@
 <?php
 	/**
-	* Modificado por: Robson Vaamonde
+	* Autor: Robson Vaamonde
 	* Site: www.procedimentosemti.com.br
 	* Facebook: facebook.com/ProcedimentosEmTI
 	* Facebook: facebook.com/BoraParaPratica
 	* YouTube: youtube.com/BoraParaPratica
-	* Data de criação: 04/11/2018
-	* Data de atualização: 20/03/2021
-	* Versão: 0.04
-	* Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-	* Kernel >= 4.15.x
+	* Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+	* Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+	* Data de criação: 15/10/2021
+	* Data de atualização: 15/10/2021
+	* Versão: 0.01
+	* Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 	*/
 
-	/** Mostra muitas informações sobre a configuração PHP e do Apache*/
+	/** Módulo do PHP para gerar a página de documentação e parâmetros do PHP*/
 	phpinfo(); 
 ?>

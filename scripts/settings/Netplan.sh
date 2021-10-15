@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 # Autor: Robson Vaamonde
 # Site: www.procedimentosemti.com.br
 # Facebook: facebook.com/ProcedimentosEmTI

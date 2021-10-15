@@ -6,11 +6,17 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 14/10/2021
-Versão: 0.04
+Data de atualização: 15/10/2021
+Versão: 0.05
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+15/10/2021 - Robson Vaamonde - Melhorias no script: 07-lamp.sh, atualização da versão do Debconf do Mysql Server para
+a versão 8.0, acréscimo da dependência do PhpMyAdmin php-json e retirada do: php-gettext (no Ubuntu 20.04.x) o suporte
+ao php-getttext foi retirado dos repositórios oficiais, remoção da versão do pecl install mcrypt para facilitar o
+processo de instalação da dependência de criptografia do PHP, atualização da versão do PHP 7.4, atualização dos arquivos
+de configuração: apache2.conf, mcrypt.ini, mysqld.cnf, php.ini, phpinfo.php, teste.html.
+
 14/10/2021 - Robson Vaamonde - Adicionado o comando: timedatectl set-timezone no script: 05-ntp.sh e criado a variável
 TIMEZONE="America/Sao_Paulo" no arquivo de parâmetros: 00-paramentros.sh. Melhoria na documentação da geração da chave
 TSIG no arquivo conf: named.conf.local, desabilitado o recurso do IPv6 no arquivo conf: named.conf.options, criação do
