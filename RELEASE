@@ -6,15 +6,16 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 13/10/2021
-Data de atualização: 13/10/2021
-Versão: 0.01
+Data de atualização: 14/10/2021
+Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ========================================== LANÇAMENTO DAS VERSÕES DOS SCRIPTS ===========================================
-00-parametros.sh	-v0.03		- Customizado até o script: 05-ntp.sh no dia 13/10/2021
-01-openssh.sh		-v0.03		- Testado e homologado no dia 13/10/2021
-02-dhcp.sh			-v0.03		- Testado e homologado no dia 13/10/2021
-03-dns.sh			-v0.03		- Testado e homologado no dia 13/10/2021
-04-dhcpdns.sh		-v0.04		- Testado e homologado no dia 13/10/2021
-05-ntp.sh			-v0.01		- Testado e homologado no dia 13/10/2021
-06-tftphpa.sh		-v0.02		- Testado e homologado no dia 13/10/2021
+00-parametros.sh -v0.04		- Customizado até o script: 07-lamp.sh no dia 13/10/2021
+01-openssh.sh    -v0.03		- Testado e homologado no dia 13/10/2021
+02-dhcp.sh       -v0.03		- Testado e homologado no dia 13/10/2021
+03-dns.sh        -v0.04		- Testado e homologado no dia 14/10/2021
+04-dhcpdns.sh    -v0.04		- Testado e homologado no dia 13/10/2021
+05-ntp.sh        -v0.02		- Testado e homologado no dia 14/10/2021
+06-tftphpa.sh    -v0.02		- Testado e homologado no dia 13/10/2021
+07-lamp.sh       -v0.01   - Testado e homologado no dia 13/10/2021
