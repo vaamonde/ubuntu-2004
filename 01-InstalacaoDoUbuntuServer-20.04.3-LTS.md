@@ -94,7 +94,6 @@ Terceira etapa: Iniciando a Instalação do Ubuntu Server 20.04.3 LTS (localizar
 	_ 	<Escolher>
 	_ <Iniciar>
 
-
 Quarta etapa: Instalação e Configuração do Ubuntu Server 20.04.3 LTS<br>
 Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 
@@ -116,7 +115,9 @@ Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 	_ 				<Save>
 	_ 	<Done>
 	_ 04. Configure proxy - <Done>
-	_ 05. Configure Ubuntu archive mirror - <Done>
+	_ 05. Configure Ubuntu archive mirror
+			Mirror: http://us.archive.ubuntu.com/ubuntu <-- resolve o problema de lentidão -->
+		<Done>
 	_ 06. Guided storage configuration - <Done>
 	_ 07. Storage configuration - <Done>
 	_ 		Confirm destructive action - <Continue>
