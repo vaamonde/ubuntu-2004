@@ -7,11 +7,11 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 13/10/2021
-# Versão: 0.01
+# Data de atualização: 15/10/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Apache2 v, MySQL v, PHP v, Perl v, 
-# Python v, PhpMyAdmin v
+# Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0x, PHP v7.4.x, 
+# Perl v5.30.x, Python v2 e 3, PhpMyAdmin v4.9
 #
 # O Servidor HTTP Apache (do inglês Apache HTTP Server) ou Servidor Apache ou HTTP 
 # Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por Rob McCool. 
@@ -151,9 +151,9 @@ sleep 5
 echo -e "Configurando as variáveis do Debconf do MySQL para o Apt, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando | (piper): (Conecta a saída padrão com a entrada padrão de outro comando)
-	echo "mysql-server-5.7 mysql-server/root_password password $SENHAMYSQL" | debconf-set-selections
-	echo "mysql-server-5.7 mysql-server/root_password_again password $AGAIN" | debconf-set-selections
-	debconf-show mysql-server-5.7 &>> $LOG
+	echo "mysql-server-8.0 mysql-server/root_password password $SENHAMYSQL" | debconf-set-selections
+	echo "mysql-server-8.0 mysql-server/root_password_again password $AGAIN" | debconf-set-selections
+	debconf-show mysql-server-8.0 &>> $LOG
 echo -e "Variáveis configuradas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -212,8 +212,8 @@ echo -e "Atualizando os arquivos de configuração apache2.conf e php.ini, aguar
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/apache2/apache2.conf /etc/apache2/apache2.conf.old &>> $LOG
 	cp -v conf/apache2.conf /etc/apache2/apache2.conf &>> $LOG
-	mv -v /etc/php/7.2/apache2/php.ini /etc/php/7.2/apache2/php.ini.old &>> $LOG
-	cp -v conf/php.ini /etc/php/7.2/apache2/php.ini &>> $LOG
+	mv -v /etc/php/7.4/apache2/php.ini /etc/php/7.4/apache2/php.ini.old &>> $LOG
+	cp -v conf/php.ini /etc/php/7.4/apache2/php.ini &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -225,7 +225,7 @@ sleep 5
 #
 echo -e "Editando o arquivo de configuração php.ini, pressione <Enter> para continuar."
 	read
-	vim /etc/php/7.2/apache2/php.ini
+	vim /etc/php/7.4/apache2/php.ini
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
