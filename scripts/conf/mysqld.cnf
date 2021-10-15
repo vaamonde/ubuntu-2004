@@ -7,25 +7,35 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 15/10/2021
 # Data de atualização: 15/10/2021
-# Versão: 0.01
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 
+# Configurações do Servidor de MySQL
 [mysqld]
 user		= mysql
-# pid-file	= /var/run/mysqld/mysqld.pid
-# socket	= /var/run/mysqld/mysqld.sock
-# port		= 3306
-# datadir	= /var/lib/mysql
-# tmpdir		= /tmp
-bind-address		= 127.0.0.1
-mysqlx-bind-address	= 127.0.0.1
-key_buffer_size		= 16M
-# max_allowed_packet	= 64M
-# thread_stack		= 256K
-# thread_cache_size       = -1
-myisam-recover-options  = BACKUP
+pid-file	= /var/run/mysqld/mysqld.pid
+socket		= /var/run/mysqld/mysqld.sock
+port		= 3306
+datadir		= /var/lib/mysql
+tmpdir		= /tmp
+
+# Configuração utilizada pelo ZoneMinder
+sql_mode = NO_ENGINE_SUBSTITUTION
+
+# Desativando a resolução de endereço local, permitindo acesso remoto
+#bind-address			= 127.0.0.1
+#mysqlx-bind-address	= 127.0.0.1
+
+# Configurações de desempenho do MySQL, aumentar o tamanho do Buffer e Packet
+key_buffer_size			= 256M
+max_allowed_packet		= 16M
+thread_stack			= 192K
+thread_cache_size		= 8
+myisam-recover-options 	= BACKUP
 # max_connections        = 151
 # table_open_cache       = 4000
+
+# Configuração do Arquivo de Log de Errors do MySQL
 log_error = /var/log/mysql/error.log
 # slow_query_log		= 1
 # slow_query_log_file	= /var/log/mysql/mysql-slow.log

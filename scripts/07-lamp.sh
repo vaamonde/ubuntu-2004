@@ -8,9 +8,9 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
 # Data de atualização: 15/10/2021
-# Versão: 0.02
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0x, PHP v7.4.x, 
+# Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
 #
 # O Servidor HTTP Apache (do inglês Apache HTTP Server) ou Servidor Apache ou HTTP 
@@ -55,6 +55,7 @@
 # desenvolvedores estão migrando para o MariaDB, nesse script o mesmo deve ser 
 # reconfigurado para instalar e configurar o MariaDB no Ubuntu conforme o comando:
 # sudo apt update && sudo apt install mariadb-server mariadb-client mariadb-common
+# Instalação do MariaDB será feita no script: lemp.sh
 #
 # Site Oficial do Projeto Apache2: https://www.apache.org/
 # Site Oficial do Projeto Oracle MySQL: https://www.mysql.com/
@@ -199,14 +200,6 @@ echo -e "Instalando a dependência do PHP Mcrypt para da suporte ao PhpMyAdmin, 
 echo -e "Atualização da dependência feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-#echo -e "Aplicando os Patch de Correção do PhpMyAdmin, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando cp: -v (verbose)
-#	cp -v conf/sql.lib.php /usr/share/phpmyadmin/libraries/ &>> $LOG
-#	cp -v conf/plugin_interface.lib.php /usr/share/phpmyadmin/libraries/ &>> $LOG
-#echo -e "Patch de correção aplicados com sucesso!!!, continuando com o script...\n"
-#sleep 5
-#
 echo -e "Atualizando os arquivos de configuração apache2.conf e php.ini, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
@@ -258,7 +251,8 @@ sleep 5
 #
 echo -e "Permitindo o Root do MySQL se autenticar remotamente, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mysql: -u (user), -p (password) -e (execute)
+	# opção do comando mysql: -u (user), -p (password) -e (execute), mysql (database)
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATEUSER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANTALL" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH" mysql &>> $LOG
 echo -e "Permissão alterada com sucesso!!!, continuando com o script...\n"
