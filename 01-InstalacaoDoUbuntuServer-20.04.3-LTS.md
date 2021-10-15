@@ -8,8 +8,8 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
 Data de criação: 10/10/2021<br>
-Data de atualização: 10/10/2021<br>
-Versão: 0.01<br>
+Data de atualização: 14/10/2021<br>
+Versão: 0.02<br>
 Testado e homologado no GNU/Linux Ubuntu Server 20.04.3 LTS
 
 Atualização da versão do Ubuntu Server 20.04.3: https://wiki.ubuntu.com/FocalFossa/ReleaseNotes<br>
