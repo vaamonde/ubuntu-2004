@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 15/10/2021
-# Versão: 0.05
+# Data de atualização: 16/10/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -130,4 +130,23 @@ APP_PASS=$SENHAMYSQL
 #
 # Variável de configuração do serviço de hospedagem de site utilizado pelo PhpMyAdmin
 WEBSERVER="apache2"
+#
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 08-openssl.sh                        #
+#=============================================================================================
+#
+# Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
+
+PASSPHRASE="vaamonde"
+
+#opções: -aes128, -aes192, -aes256, -camellia128, -camellia192, -camellia256, -des, -des3 ou -idea
+CRIPTOKEY="aes256" 
+#
+
+#opções: 1024, 2048, 3072 ou 4096
+BITS="2048" 
+#
+
+#opções: md5, -sha1, sha224, sha256, sha384 ou sha512
+CRIPTOCERT="sha256" 
 #
