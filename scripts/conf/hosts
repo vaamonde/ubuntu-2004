@@ -11,13 +11,13 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 # Configuração do Banco de Dados de DNS Estático IPv4 do Servidor Local
-# IPv4		FQDN					CNAME	
+# IPv4		FQDN                    CNAME	
 127.0.0.1 	localhost.localdomain	localhost
 127.0.1.1 	ptispo01ws01.pti.intra	ptispo01ws01
 172.16.1.20	ptispo01ws01.pti.intra	ptispo01ws01
 
 # Configuração do Banco de Dados de DNS Estático IPv6 do Servidor Local
-# OBSERVAÇÃO: por padrão nesse curso não estou utilizando o IPv6
+# OBSERVAÇÃO: por padrão nesse curso não será utilizando o suporte ao IPv6
 # IPV6	FQDN			CNAME
 ::1 	ip6-localhost	ip6-loopback
 fe00::0 ip6-localnet

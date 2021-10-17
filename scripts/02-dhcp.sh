@@ -19,6 +19,7 @@
 #
 # Diretório e Arquivo de banco de dados do Leasing ofertados pelo ISC DHCP Server:
 # Localização: /var/lib/dhcp/dhcpd.leases
+#
 # Monitoramento do Log do ISC DHCP Server: tail -f /var/log/syslog | grep dhcpd
 #
 # Site Oficial do Projeto ICS DHCP: https://www.isc.org/dhcp/
@@ -100,18 +101,6 @@ echo -e "Instalando o ISC DHCP Server, aguarde..."
 	# opção do comando apt: -y (yes)
 	apt -y install net-tools isc-dhcp-server &>> $LOG
 echo -e "ISC DHCP Server instalado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar."
-	read
-	vim /etc/hostname
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar."
-	read
-	vim /etc/hosts
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar."

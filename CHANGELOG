@@ -12,7 +12,10 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 17/10/2021 - Robson Vaamonde - Melhorias no script: 08-openssl.sh com foco principal na documentação e organização do
-script nas variáveis do arquivo: 00-parametros.sh, remoção da criação do usuário: wordpress do script 09-vsftpd.sh
+script nas variáveis do arquivo: 00-parametros.sh, remoção da criação do usuário: wordpress do script 09-vsftpd.sh,
+acréscimo da cópia dos arquivos hosts, hostname e nsswitch.conf no script: 01-openssh.sh, retirado as linhas de edição 
+dos arquivos hosts e hostname do script: 02-dhcp.sh, criação do arquivo timesyncd.conf que será utilizado no script
+05-ntp.sh, 
 
 15/10/2021 - Robson Vaamonde - Melhorias no script: 07-lamp.sh, atualização da versão do Debconf do Mysql Server para
 a versão 8.0, acréscimo da dependência do PhpMyAdmin php-json e retirada do: php-gettext no Ubuntu 20.04.x o suporte

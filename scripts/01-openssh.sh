@@ -8,15 +8,25 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
 # Data de atualização: 17/10/2021
-# Versão: 0.04
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do OpenSSH Server 8.2.x
+# Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
 # OpenSSH (Open Secure Shell) é um conjunto de utilitários de rede relacionado à segurança que 
 # provém a criptografia em sessões de comunicações em uma rede de computadores usando o protocolo 
 # SSH. Foi criado com um código aberto alternativo ao código proprietário da suíte de softwares 
 # Secure Shell, oferecido pela SSH Communications Security. OpenSSH foi desenvolvido como parte 
 # do projeto OpenBSD.
+#
+# O TCP Wrapper é um sistema de rede ACL baseado em host, usado para filtrar acesso à rede a 
+# servidores de protocolo de Internet (IP) em sistemas operacionais do tipo Unix, como Linux ou 
+# BSD. Ele permite que o host, endereços IP de sub-rede, nomes e/ou respostas de consulta ident, 
+# sejam usados como tokens sobre os quais realizam-se filtros para propósitos de controle de acesso.
+#
+# Monitoramento do Log do OpenSSH Server: tail -f /var/log/syslog | grep sshd
+# Monitoramento das autenticação do OpenSSH Server: tail -f /var/log/auth.log | grep ssh
+# Monitoramento das conexões permitidas do OpenSSH Server: tail -f /var/log/tcpwrappers-allow-ssh.log
+# Monitoramento das conexões negadas do OpenSSH Server: tail -f /var/log/tcpwrappers-deny-ssh.log
 #
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
@@ -119,7 +129,7 @@ echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde...
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ssh/sshd_config /etc/ssh/sshd_config.old &>> $LOG
 	cp -v conf/sshd_config /etc/ssh/sshd_config &>> $LOG
-	cp -v conf/{hosts.allow,hosts.deny,issue.net} /etc/ &>> $LOG
+	cp -v conf/{hostname,hosts,hosts.allow,hosts.deny,issue.net,nsswitch.conf} /etc/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -156,7 +166,21 @@ sleep 5
 echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
+	vim /etc/hostname
+echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	read
 	vim /etc/hosts
+echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> para continuar..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	read
+	vim /etc/nsswitch.conf
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

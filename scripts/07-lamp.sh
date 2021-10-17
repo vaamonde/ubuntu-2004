@@ -285,7 +285,7 @@ echo -e "Editando o arquivo de teste teste.html, pressione <Enter> para continua
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas de conxão do Apache2 e do MySQL, aguarde..."
+echo -e "Verificando as portas de conexão do Apache2 e do MySQL, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 

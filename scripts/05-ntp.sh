@@ -7,10 +7,10 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 14/10/2021
-# Versão: 0.02
+# Data de atualização: 17/10/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do NTP Server 4.2.
+# Testado e homologado para a versão do NTP Server v4.2.
 #
 # O NTP é um protocolo para sincronização dos relógios dos computadores baseado no protocolo UDP sob 
 # a porta 123. É utilizado para sincronização do relógio de um conjunto de computadores e dispositivos 
@@ -115,16 +115,23 @@ echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
 	# opção do comando cp: -v (verbose)
 	# opção do comando chown: -v (verbose), ntp (user), ntp (group)
 	mv -v /etc/ntp.conf /etc/ntp.conf.old &>> $LOG
-	cp -v conf/ntp.conf /etc/ &>> $LOG
+	cp -v conf/ntp.conf /etc/ntp.conf &>> $LOG
 	cp -v conf/ntp.drift /var/lib/ntp/ntp.drift &>> $LOG
 	chown -v ntp.ntp /var/lib/ntp/ntp.drift &>> $LOG
+	cp -v conf/timesyncd.conf /etc/systemd/timesyncd.conf &>> $LOG
 echo -e "Arquivos do NTP Server atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração ntp.conf, pressione <Enter> para continuar"
 	read
 	vim /etc/ntp.conf
-echo -e "NTP Server editado com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração timesyncd.conf, pressione <Enter> para continuar"
+	read
+	/etc/systemd/timesyncd.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando a Data e Hora do NTP Server, aguarde..."
@@ -132,6 +139,7 @@ echo -e "Atualizando a Data e Hora do NTP Server, aguarde..."
 	# opção do comando ntpdate: d (debug), q (query), u (unprivileged), v (verbose)
 	systemctl stop ntp &>> $LOG
 	ntpdate -dquv $NTPSERVER &>> $LOG
+	timedatectl set-timezone "$TIMEZONE" &>> $LOG
 	systemctl start ntp &>> $LOG
 echo -e "Data e Hora do NTP Server atualizada com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -139,21 +147,15 @@ sleep 5
 echo -e "Verificando a Data e Hora do NTP Server e do Sistema Operacional, aguarde...\n"
 	echo -e "Consultando os servidor NTP Server configurados...\n"
 		# opção do comando ntpq: p (print), n (all address)
+		# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 		ntpq -pn
 		sleep 5
 		echo
 	echo -e "Verificando a Data e Hora do Sistema Operacional...\n"
-		timedatectl set-timezone "$TIMEZONE"
 		timedatectl
-		sleep 5
 		echo
-		date
-		sleep 5
-		echo
-	echo -e "Verificando a Data e Hora do Hardware...\n"
-		hwclock
-		sleep 5
-		echo
+		echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M")")\n"
+		echo -e "Data/hora do Hardware: $(hwclock)\n"
 echo -e "Data e Hora do NTP Server e do Sistema Operacional verificadas com sucesso!!!, continuando com o script..."
 sleep 5
 #

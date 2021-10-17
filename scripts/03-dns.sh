@@ -142,7 +142,7 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	mkdir -v /var/log/named/ &>> $LOG
 	chown -Rv bind:bind /var/log/named/ &>> $LOG
 	# Patch de correção da falha: rndc: connect failed: 127.0.0.1#953: connection refused
-	chown -v root:bind /etc/bind/rndc.key
+	chown -v root:bind /etc/bind/rndc.key &>> $LOG
 	mv -v /etc/bind/named.conf /etc/bind/named.conf.old &>> $LOG
 	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.old &>> $LOG
 	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG

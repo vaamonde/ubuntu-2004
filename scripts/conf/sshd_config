@@ -9,7 +9,7 @@
 # Data de atualização: 11/10/2021
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do OpenSSH Server 8.2.x
+# Testado e homologado para a versão do OpenSSH Server v8.2.x
 
 # Incluindo o diretorio de configuração personalizado do OpenSSH Server
 Include /etc/ssh/sshd_config.d/*.conf
