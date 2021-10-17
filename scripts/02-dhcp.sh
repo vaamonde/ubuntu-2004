@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/10/2021
-# Versão: 0.03
+# Data de atualização: 17/10/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -102,13 +102,13 @@ echo -e "Instalando o ISC DHCP Server, aguarde..."
 echo -e "ISC DHCP Server instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo hostname, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar."
 	read
 	vim /etc/hostname
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo hosts, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar."
 	read
 	vim /etc/hosts
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -118,7 +118,7 @@ echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar."
 echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
 echo -e "dependendo da versão do Ubuntu Server, verificar o conteúdo do diretório:"
 echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e mudar"
-echo -e "a variável NETPLAN no arquivo de configuração: 00-paramentros.sh"
+echo -e "a variável NETPLAN no arquivo de configuração: 00-parametros.sh"
 	read
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -133,7 +133,7 @@ echo -e "Atualizando o arquivo de configuração do ISC DHCP Server, aguarde..."
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo dhcpd.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando dhcpd: -t (test the configuration file)
 	read

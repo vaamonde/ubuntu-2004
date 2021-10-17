@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/10/2021
-# Versão: 0.02
+# Data de atualização: 17/10/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
@@ -70,7 +70,7 @@ clear
 echo
 #
 echo -e "Instalação do Tftpd-Hpa Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Tftpd-Hpa Server: UDP 69\n"
+echo -e "Porta padrão utilizada pelo Tftpd-Hpa Server.: UDP 69\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -131,19 +131,19 @@ echo -e "Atualizando o arquivo de configuração do Tftpd-Hpa Server, aguarde...
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração Tftpd-hpa Server tftpd-hpa, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração tftpd-hpa, pressione <Enter> para continuar."
 	read
 	vim /etc/default/tftpd-hpa
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do ICS DHCP Server dhcpd.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/dhcp/dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do TCPWrappers hosts.allow, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
 	read
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -161,7 +161,7 @@ echo -e "Reinicializando o serviço do ISC-DHCP Server, aguarde..."
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas do ISC-DHCP Server e do Tftpd-Hpa Server, aguarde..."
+echo -e "Verificando as portas de conexão do ISC-DHCP Server e do Tftpd-Hpa Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 

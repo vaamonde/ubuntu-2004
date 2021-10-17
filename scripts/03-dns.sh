@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 14/10/2021
-# Versão: 0.04
+# Data de atualização: 17/10/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
@@ -55,7 +55,7 @@ clear
 echo
 #
 echo -e "Instalação do Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Bind9 DNS Server: UDP 53\n"
+echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -104,19 +104,19 @@ echo -e "Instalando o Bind9 DNS Server, aguarde..."
 echo -e "Bind9 DNS Server instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo hostname, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar."
 	read
 	vim /etc/hostname
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo hosts, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar."
 	read
 	vim /etc/hosts
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo nsswitch.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/nsswitch.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -126,7 +126,7 @@ echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar."
 echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
 echo -e "dependendo da versão do Ubuntu Server, verificar o conteúdo do diretório:"
 echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e mudar"
-echo -e "a variável NETPLAN no arquivo de configuração: 00-paramentros.sh"
+echo -e "a variável NETPLAN no arquivo de configuração: 00-parametros.sh"
 	read
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -138,6 +138,7 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	# opção do comando chown: -R (recursive), -v (verbose), root (user), bind (user), bind (group)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mkdir -v /var/log/named/ &>> $LOG
 	chown -Rv bind:bind /var/log/named/ &>> $LOG
 	# Patch de correção da falha: rndc: connect failed: 127.0.0.1#953: connection refused
@@ -146,29 +147,27 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.old &>> $LOG
 	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG
 	mv -v /etc/default/named /etc/default/named.old &>> $LOG
-	cp -v conf/named.conf /etc/bind/named.conf &>> $LOG
-	cp -v conf/named.conf.local /etc/bind/named.conf.local &>> $LOG
-	cp -v conf/named.conf.options /etc/bind/named.conf.options &>> $LOG
-	cp -v conf/pti.intra.hosts /var/lib/bind/pti.intra.hosts &>> $LOG
-	cp -v conf/172.16.1.rev /var/lib/bind/172.16.1.rev &>> $LOG
+	cp -v conf/{named.conf,named.conf.local,named.conf.options} /etc/bind/ &>> $LOG
+	cp -v conf/{pti.intra.hosts,172.16.1.rev} /var/lib/bind/ &>> $LOG
+	chown -v root:bind /var/lib/bind/{pti.intra.hosts,172.16.1.rev} &>> $LOG
 	cp -v conf/dnsupdate-cron /etc/cron.d/dnsupdate-cron &>> $LOG
 	cp -v conf/named /etc/default/named &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo named.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração named.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/bind/named.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo named.conf.local, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração named.conf.local, pressione <Enter> para continuar."
 	read
 	vim /etc/bind/named.conf.local
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo named.conf.options, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração named.conf.options, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	read
 	vim /etc/bind/named.conf.options
@@ -176,34 +175,32 @@ echo -e "Editando o arquivo named.conf.options, pressione <Enter> para continuar
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo pti.intra.hosts, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração pti.intra.hosts, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando chown: -v (verbose), -root (user), bind (group)
 	read
 	vim /var/lib/bind/pti.intra.hosts
-	chown -v root:bind /var/lib/bind/pti.intra.hosts &>> $LOG
 	named-checkzone $DOMAIN /var/lib/bind/pti.intra.hosts &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo 172.16.1.rev, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração 172.16.1.rev, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando chown: -v (verbose), -root (user), bind (group)
 	read
 	vim /var/lib/bind/172.16.1.rev
-	chown -v root:bind /var/lib/bind/172.16.1.rev &>> $LOG
 	named-checkzone $DOMAINREV /var/lib/bind/172.16.1.rev &>> $LOG
 	named-checkzone $NETWORK /var/lib/bind/172.16.1.rev &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo dnsupdate-cron, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração dnsupdate-cron, pressione <Enter> para continuar."
 	read
 	vim /etc/cron.d/dnsupdate-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo named, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração named, pressione <Enter> para continuar."
 	read
 	vim /etc/default/named
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -219,7 +216,7 @@ echo -e "Inicializando os serviços do Bind DNS Server e do Netplan, aguarde..."
 echo -e "Serviços inicializados com com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta do Bind DNS Server, aguarde..."
+echo -e "Verificando a porta de conexão do Bind DNS Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 

@@ -60,7 +60,7 @@ clear
 #
 echo
 echo -e "Instalação do NTP Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo NTP Server: UDP 123\n"
+echo -e "Porta padrão utilizada pelo NTP Server.: UDP 123\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

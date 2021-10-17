@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 16/10/2021
-# Versão: 0.06
+# Data de atualização: 17/10/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -18,6 +18,8 @@
 #=============================================================================================
 #                    VARIÁVEIS GLOBAIS UTILIZADAS EM TODOS OS SCRIPTS                        #
 #=============================================================================================
+#
+# Declarando as variáveis utilizadas nas verificações e validação da versão do Servidor Ubuntu 
 #
 # Variável da Data Inicial do script, utilizada para calcular o tempo de execução do script
 # opção do comando date: +%T (Time)
@@ -42,6 +44,8 @@ export DEBIAN_FRONTEND="noninteractive"
 #              VARIÁVEIS DE REDE DO SERVIDOR UTILIZADAS EM TODOS OS SCRIPTS                  #
 #=============================================================================================
 #
+# Declarando as variáveis utilizadas nas configurações de Rede do Servidor Ubuntu 
+#
 # Variável do Nome (Hostname) do Servidor
 NOMESERVER="ptispo01ws01"
 #
@@ -54,7 +58,10 @@ DOMINIOSERVER="pti.intra"
 # Variável do Endereço IPv4 do Servidor
 IPV4SERVER="172.16.1.20"
 #
-# Variável da Configuração do Netplan do Servidor
+# Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor
+# CUIDADO!!! o nome do arquivo de configuração da placa de rede pode mudar dependendo da versão
+# do Ubuntu Server, verificar o conteúdo do diretório: /etc/netplan para saber o nome do arquivo
+# de configuração do Netplan e mudar a variável NETPLAN
 NETPLAN="/etc/netplan/00-installer-config.yaml"
 #
 #=============================================================================================
@@ -85,7 +92,9 @@ USERUPDATE="vaamonde"
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 05-ntp.sh                            #
 #=============================================================================================
-# 
+#
+# Declarando as variáveis utilizadas nas configurações do Serviço do NTP Server e Client
+
 # Variável de sincronização do NTP Server com o Site ntp.br
 NTPSERVER="a.st1.ntp.br"
 #
@@ -96,6 +105,8 @@ TIMEZONE="America/Sao_Paulo"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 06-tftphpa.sh                        #
 #=============================================================================================
 # 
+# Declarando as variáveis utilizadas nas configurações do Serviço do TFTP-HPA Server
+#
 # Variável de criação do diretório padrão utilizado pelo serviço do TFTP-HPA
 TFTP="/var/lib/tftpboot"
 #
@@ -103,6 +114,8 @@ TFTP="/var/lib/tftpboot"
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh                          #
 #=============================================================================================
 # 
+# Declarando as variáveis utilizadas nas configurações dos Serviços do LAMP-Server
+#
 # Variável do usuário padrão do MySQL (Root do Mysql, diferente do Root do GNU/Linux)
 USERMYSQL="root"
 #
@@ -136,17 +149,37 @@ WEBSERVER="apache2"
 #=============================================================================================
 #
 # Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
-
+#
+# Variável da senha utilizada na geração das chaves privadas/públicas da CA e dos certificados
 PASSPHRASE="vaamonde"
-
-#opções: -aes128, -aes192, -aes256, -camellia128, -camellia192, -camellia256, -des, -des3 ou -idea
+#
+# Variável do tipo de criptografia da chave privada com as opções de: -aes128, -aes192, -aes256, 
+# -camellia128, -camellia192, -camellia256, -des, -des3 ou -idea, padrão utilizado: -aes256
 CRIPTOKEY="aes256" 
 #
-
-#opções: 1024, 2048, 3072 ou 4096
+# Variável do tamanho da chave privada utilizada em todas as configurações dos certificados,
+# opções de: 1024, 2048, 3072 ou 4096, padrão utilizado: 2048
 BITS="2048" 
 #
-
-#opções: md5, -sha1, sha224, sha256, sha384 ou sha512
+# Variável da assinatura da chaves de criptografia privada com as opções de: md5, -sha1, sha224, 
+# sha256, sha384 ou sha512, padrão utilizado: sha256
 CRIPTOCERT="sha256" 
+#
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 09-vsftpd.sh                         #
+#=============================================================================================
+#
+# Declarando as variáveis utilizadas nas configurações do Serviço do VSFTPd Server
+#
+# Variável de criação do Grupo dos Usuários de acesso ao FTP
+GROUPFTP="ftpusers"
+#
+# Variável de criação do Usuário de acesso ao FTP
+USERFTP="ftpuser"
+#
+# Variável da senha do Usuário de FTP
+PASSWORDFTP="pti@2018"
+#
+# Variável da senha utilizada na geração das chaves privadas/públicas de criptografia do OpenSSL 
+PWDSSLFTP="pti@2018"
 #

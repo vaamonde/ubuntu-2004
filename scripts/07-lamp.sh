@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 15/10/2021
-# Versão: 0.03
+# Data de atualização: 17/10/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -182,7 +182,7 @@ sleep 5
 #
 echo -e "Instalando o PhpMyAdmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando apt: -y (yes)
+	# opção do comando apt: -y (yes), \ (quebra de linha)
 	apt -y install phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json \
 	libmcrypt-dev pwgen &>> $LOG
 echo -e "Instalação do PhpMyAdmin feita com sucesso!!!, continuando com o script...\n"
@@ -200,7 +200,7 @@ echo -e "Instalando a dependência do PHP Mcrypt para da suporte ao PhpMyAdmin, 
 echo -e "Atualização da dependência feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando os arquivos de configuração apache2.conf e php.ini, aguarde..."
+echo -e "Atualizando os arquivos de configuração do Apache2 e do PHP, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
@@ -228,7 +228,7 @@ echo -e "Reinicializando o serviço do Apache2, aguarde..."
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o arquivo de configuração do mysqld.cnf, aguarde..."
+echo -e "Atualizando o arquivo de configuração do MySQL, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
@@ -243,7 +243,7 @@ echo -e "Editando o arquivo de configuração mysqld.cnf, pressione <Enter> para
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do hosts.allow, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
 	read
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -266,9 +266,9 @@ sleep 5
 echo -e "Copiando os arquivos teste.html e phpinfo.php para o diretório raiz, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	cp -v conf/phpinfo.php /var/www/html/phpinfo.php &>> $LOG
-	cp -v conf/teste.html /var/www/html/teste.html &>> $LOG
+	cp -v conf/{phpinfo.php,teste.html} /var/www/html/ &>> $LOG
 	chown -v www-data.www-data /var/www/html/* &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -285,7 +285,7 @@ echo -e "Editando o arquivo de teste teste.html, pressione <Enter> para continua
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas do Apache2 e do MySQL, aguarde..."
+echo -e "Verificando as portas de conxão do Apache2 e do MySQL, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 

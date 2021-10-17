@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/10/2021
-# Versão: 0.04
+# Data de atualização: 17/10/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -68,7 +68,7 @@ clear
 echo
 #
 echo -e "Integração do ICS DHCP Server com Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Bind9 DNS Server: UDP 53"
+echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53"
 echo -e "Porta padrão utilizada pelo ISC DHCP Server.: UDP 67\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -130,14 +130,14 @@ echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DH
 echo -e "Atualização da chave feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo named.conf.local, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração named.conf.local, pressione <Enter> para continuar."
 	read
 	vim /etc/bind/named.conf.local
 	named-checkconf /etc/bind/named.conf.local &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo dhcpd.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando dhcpd: -t (test the configuration file)
 	read
@@ -156,7 +156,7 @@ echo -e "Reinicializando os serviços do ISC DHCP Server e do Bind DNS Server, a
 echo -e "Serviços reinicializados com com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas do Bind9 DNS Server e do ISC DHCP Server, aguarde..."
+echo -e "Verificando as portas de conexão do Bind9 DNS Server e do ISC DHCP Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 

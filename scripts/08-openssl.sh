@@ -7,10 +7,10 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 16/10/2021
-# Versão: 0.01
+# Data de atualização: 17/10/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do OpenSSL v
+# Testado e homologado para a versão do OpenSSL v1.1.x
 #
 # OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na 
 # linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias.
@@ -135,8 +135,8 @@ echo -n "Verificando as dependências do OpenSSL, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
+			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: dnsdhcp.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -197,18 +197,19 @@ sleep 5
 #
 echo -e "Criando a estrutura de diretórios do CA e dos Certificados, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mkdir: -v (verbose), {} (agrupa comandos em blocos)
+	# opção do comando mkdir: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mkdir -v /etc/ssl/{newcerts,certs,crl,private,requests} &>> $LOG
 echo -e "Estrutura de diretórios criada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração da CA e dos Certificados, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão adicionando)
-	# opção do comando touch: {} (agrupa comandos em blocos)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	touch /etc/ssl/{index.txt,index.txt.attr} &>> $LOG
 	echo "1234" > /etc/ssl/serial
-	cp -v conf/pti-ca.conf conf/pti-ssl.conf /etc/ssl/ &>> $LOG
+	cp -v conf/{pti-ca.conf,pti-ssl.conf} /etc/ssl/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -218,24 +219,28 @@ sleep 5
 echo -e "Criando o Chave Raiz de $BITS bits da CA, senha padrão: $PASSPHRASE, aguarde..." 
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
-	# opção do comando openssl: genrsa (command generates an RSA private key),
-	#							-criptokey (Encrypt the private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers)
-	#							-out (The output file to write to, or standard output if not specified), 
-	#							-passout (The output file password source), 
-	#							pass: (The actual password is password), 
-	#							bits (The size of the private key to generate in bits)
+	# opções do comando openssl: 
+	# genrsa (command generates an RSA private key),
+	# -criptokey (Encrypt the private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers)
+	# -out (The output file to write to, or standard output if not specified), 
+	# -passout (The output file password source), 
+	# pass: (The actual password is password), 
+	# bits (The size of the private key to generate in bits)
+	#
 	openssl genrsa -$CRIPTOKEY -out /etc/ssl/private/ca-ptikey.key.old -passout pass:$PASSPHRASE $BITS &>> $LOG
 echo -e "Chave Raiz da CA criada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Removendo a senha da Chave Raiz da CA, senha padrão: $PASSPHRASE, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: rsa (command processes RSA keys),
-	#							-in (The input file to read from, or standard input if not specified),
-	#							-out (The output file to write to, or standard output if not specified),
-	#							-passin (The key password source),
-	#							pass: (The actual password is password)
+	# opções do comando openssl: 
+	# rsa (command processes RSA keys),
+	# -in (The input file to read from, or standard input if not specified),
+	# -out (The output file to write to, or standard output if not specified),
+	# -passin (The key password source),
+	# pass: (The actual password is password)
 	# opção do comando rm: -v (verbose)
+	#
 	openssl rsa -in /etc/ssl/private/ca-ptikey.key.old -out /etc/ssl/private/ca-ptikey.key \
 	-passin pass:$PASSPHRASE &>> $LOG
 	rm -v /etc/ssl/private/ca-ptikey.key.old &>> $LOG
@@ -244,16 +249,18 @@ sleep 5
 #
 echo -e "Verificando o arquivo de Chave Raiz da CA, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: rsa (command processes RSA keys), 
-	#							-noout (Do not output the encoded version of the key), 
-	#							-modulus (Print the value of the modulus of the key), 
-	#							-in (The input file to read from, or standard input if not specified), 
-	#							md5 (The message digest to use MD5 checksums)
+	# opções do comando openssl: 
+	# rsa (command processes RSA keys), 
+	# -noout (Do not output the encoded version of the key), 
+	# -modulus (Print the value of the modulus of the key), 
+	# -in (The input file to read from, or standard input if not specified), 
+	# md5 (The message digest to use MD5 checksums)
+	#
 	openssl rsa -noout -modulus -in /etc/ssl/private/ca-ptikey.key | openssl md5 &>> $LOG
 echo -e "Arquivo de Chave Raiz da CA verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração da CA, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração da CA pti-ca.conf, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/ssl/pti-ca.conf
@@ -261,14 +268,16 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o arquivo CSR (Certificate Signing Request), confirme as mensagens do arquivo: pti-ca.conf, aguarde...\n"
-	# opção do comando openssl: req (command primarily creates and processes certificate requests in PKCS#10 format), 
-	#							-new (Generate a new certificate request),
-	#							-criptocert (The message digest to sign the request with)
-	#							-nodes (Do not encrypt the private key),
-	# 							-key (The file to read the private key from), 
-	#							-out (The output file to write to, or standard output if not specified),
-	#							-extensions (Specify alternative sections to include certificate extensions), 
-	#							-config (Specify an alternative configuration file)
+	# opções do comando openssl: 
+	# req (command primarily creates and processes certificate requests in PKCS#10 format), 
+	# -new (Generate a new certificate request),
+	# -criptocert (The message digest to sign the request with)
+	# -nodes (Do not encrypt the private key),
+	# -key (The file to read the private key from), 
+	# -out (The output file to write to, or standard output if not specified),
+	# -extensions (Specify alternative sections to include certificate extensions), 
+	# -config (Specify an alternative configuration file)
+	#
 	# Criando o arquivo CSR, mensagens que serão solicitadas na criação do CSR
 	# 	Country Name (2 letter code): BR <-- pressione <Enter>
 	# 	State or Province Name (full name): Brasil <-- pressione <Enter>
@@ -277,6 +286,7 @@ echo -e "Criando o arquivo CSR (Certificate Signing Request), confirme as mensag
 	# 	Organization Unit Name (eg, section): Procedimentos em TI <-- pressione <Enter>
 	# 	Common Name (eg, server FQDN or YOUR name): ptispo01ws01.pti.intra <-- pressione <Enter>
 	# 	Email Address: pti@pti.intra <-- pressione <Enter>
+	#
 	openssl req -new -$CRIPTOCERT -nodes -key /etc/ssl/private/ca-ptikey.key -out \
 	/etc/ssl/requests/ca-pticsr.csr -config /etc/ssl/pti-ca.conf
 	echo
@@ -285,17 +295,19 @@ sleep 5
 #
 echo -e "Criando o arquivo CRT (Certificate Request Trust), confirme as mensagens do arquivo: pti-ca.conf, aguarde...\n"
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: req (command primarily creates and processes certificate requests in PKCS#10 format),
-	#							-new (Generate a new certificate request),
-	#							-x509 (Output a self-signed certificate instead of a certificate request),
-	#							-criptocert (The message digest to sign the request with)
-	#							-days (Specify the number of days to certify the certificate for),
-	#							-in (The input file to read from, or standard input if not specified)
-	#							-key (The file to read the private key from),
-	#							-out (The output file to write to, or standard output if not specified),
-	#							-set_serial (Serial number to use when outputting a self-signed certificate),
-	#							-extensions (Specify alternative sections to include certificate extensions),
-	#							-config (Specify an alternative configuration file).
+	# opções do comando openssl: 
+	# req (command primarily creates and processes certificate requests in PKCS#10 format),
+	# -new (Generate a new certificate request),
+	# -x509 (Output a self-signed certificate instead of a certificate request),
+	# -criptocert (The message digest to sign the request with)
+	# -days (Specify the number of days to certify the certificate for),
+	# -in (The input file to read from, or standard input if not specified)
+	# -key (The file to read the private key from),
+	# -out (The output file to write to, or standard output if not specified),
+	# -set_serial (Serial number to use when outputting a self-signed certificate),
+	# -extensions (Specify alternative sections to include certificate extensions),
+	# -config (Specify an alternative configuration file).
+	#
 	# Criando o arquivo CRT, mensagens que serão solicitadas na criação da CA
 	# 	Country Name (2 letter code): BR <-- pressione <Enter>
 	# 	State or Province Name (full name): Brasil <-- pressione <Enter>
@@ -313,12 +325,14 @@ sleep 5
 #
 echo -e "Verificando o arquivo CRT (Certificate Request Trust) da CA, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: x509 (command is a multi-purpose certificate utility), 
-	#							-noout (Do not output the encoded version of the request), 
-	#							-modulus (Print the value of the modulus of the public key contained in the certificate),
-	#							-text (Print the full certificate in text form), 
-	#							-in (The input file to read from, or standard input if not specified), 
-	#							md5 (The message digest to use MD5 checksums)
+	# opções do comando openssl: 
+	# x509 (command is a multi-purpose certificate utility), 
+	# -noout (Do not output the encoded version of the request), 
+	# -modulus (Print the value of the modulus of the public key contained in the certificate),
+	# -text (Print the full certificate in text form), 
+	# -in (The input file to read from, or standard input if not specified), 
+	# md5 (The message digest to use MD5 checksums)
+	#
 	openssl x509 -noout -modulus -in /etc/ssl/newcerts/ca-pticrt.crt | openssl md5 &>> $LOG
 	openssl x509 -noout -text -in /etc/ssl/newcerts/ca-pticrt.crt &>> $LOG
 echo -e "Arquivo CRT da CA verificado com sucesso!!!, continuando com o script...\n"
@@ -339,24 +353,28 @@ sleep 5
 #
 echo -e "Criando o Chave Privada de $BITS do Apache2, senha padrão: $PASSPHRASE, aguarde..." 
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: genrsa (command generates an RSA private key),
-	#							-criptokey (Encrypt the private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers)
-	#							-out (The output file to write to, or standard output if not specified), 
-	#							-passout (The output file password source), 
-	#							pass: (The actual password is password), 
-	#							bits (The size of the private key to generate in bits)
+	# opções do comando openssl: 
+	# genrsa (command generates an RSA private key),
+	# -criptokey (Encrypt the private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers)
+	# -out (The output file to write to, or standard output if not specified), 
+	# -passout (The output file password source), 
+	# pass: (The actual password is password), 
+	# bits (The size of the private key to generate in bits)
+	#
 	openssl genrsa -$CRIPTOKEY -out /etc/ssl/private/apache2-ptikey.key.old -passout pass:$PASSPHRASE $BITS &>> $LOG
 echo -e "Chave Privada do Apache2 criada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Removendo a senha da Chave Privada do Apache2, senha padrão: $PASSPHRASE, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: rsa (command processes RSA keys),
-	#							-in (The input file to read from, or standard input if not specified),
-	#							-out (The output file to write to, or standard output if not specified),
-	#							-passin (The key password source),
-	#							pass: (The actual password is password)
+	# opções do comando openssl: 
+	# rsa (command processes RSA keys),
+	# -in (The input file to read from, or standard input if not specified),
+	# -out (The output file to write to, or standard output if not specified),
+	# -passin (The key password source),
+	# pass: (The actual password is password)
 	# opção do comando rm: -v (verbose)
+	#
 	openssl rsa -in /etc/ssl/private/apache2-ptikey.key.old -out /etc/ssl/private/apache2-ptikey.key \
 	-passin pass:$PASSPHRASE &>> $LOG
 	rm -v /etc/ssl/private/apache2-ptikey.key.old &>> $LOG
@@ -365,16 +383,18 @@ sleep 5
 #
 echo -e "Verificando o arquivo de Chave Privada do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: rsa (command processes RSA keys), 
-	#							-noout (Do not output the encoded version of the key), 
-	#							-modulus (Print the value of the modulus of the key), 
-	#							-in (The input file to read from, or standard input if not specified), 
-	#							md5 (The message digest to use MD5 checksums)
+	# opções do comando openssl: 
+	# rsa (command processes RSA keys), 
+	# -noout (Do not output the encoded version of the key), 
+	# -modulus (Print the value of the modulus of the key), 
+	# -in (The input file to read from, or standard input if not specified), 
+	# md5 (The message digest to use MD5 checksums)
+	#
 	openssl rsa -noout -modulus -in /etc/ssl/private/apache2-ptikey.key | openssl md5 &>> $LOG
 echo -e "Arquivo de Chave Privada do Apache2 verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo configuração do Certificado do Apache2, pressione <Enter> para continuar."
+echo -e "Editando o arquivo configuração do Certificado do Apache2 pti-ssl.conf, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/ssl/pti-ssl.conf
@@ -382,14 +402,16 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o arquivo CSR (Certificate Signing Request), confirme as mensagens do arquivo: pti-ssl.conf, aguarde...\n"
-	# opção do comando openssl: req (command primarily creates and processes certificate requests in PKCS#10 format), 
-	#							-new (Generate a new certificate request),
-	#							-criptocert (The message digest to sign the request with)
-	#							-nodes (Do not encrypt the private key),
-	# 							-key (The file to read the private key from), 
-	#							-out (The output file to write to, or standard output if not specified),
-	#							-extensions (Specify alternative sections to include certificate extensions), 
-	#							-config (Specify an alternative configuration file)
+	# opções do comando openssl: 
+	# req (command primarily creates and processes certificate requests in PKCS#10 format), 
+	# -new (Generate a new certificate request),
+	# -criptocert (The message digest to sign the request with)
+	# -nodes (Do not encrypt the private key),
+	# -key (The file to read the private key from), 
+	# -out (The output file to write to, or standard output if not specified),
+	# -extensions (Specify alternative sections to include certificate extensions), 
+	# -config (Specify an alternative configuration file)
+	#
 	# Criando o arquivo CSR, mensagens que serão solicitadas na criação do CSR
 	# 	Country Name (2 letter code): BR <-- pressione <Enter>
 	# 	State or Province Name (full name): Brasil <-- pressione <Enter>
@@ -398,6 +420,7 @@ echo -e "Criando o arquivo CSR (Certificate Signing Request), confirme as mensag
 	# 	Organization Unit Name (eg, section): Procedimentos em TI <-- pressione <Enter>
 	# 	Common Name (eg, server FQDN or YOUR name): pti.intra <-- pressione <Enter>
 	# 	Email Address: pti@pti.intra <-- pressione <Enter>
+	#
 	openssl req -new -$CRIPTOCERT -nodes -key /etc/ssl/private/apache2-ptikey.key -out \
 	/etc/ssl/requests/apache2-pticsr.csr -extensions v3_req -config /etc/ssl/pti-ssl.conf
 	echo
@@ -406,37 +429,40 @@ sleep 5
 #
 echo -e "Verificando o arquivo CSR (Certificate Signing Request) do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: req (command primarily creates and processes certificate requests in PKCS#10 format), 
-	# 							-noout (Do not output the encoded version of the request), 
-	#							-text (Print the certificate request in plain text), 
-	#							-in (The input file to read a request from, or standard input if not specified)
+	# opções do comando openssl: 
+	# req (command primarily creates and processes certificate requests in PKCS#10 format), 
+	# -noout (Do not output the encoded version of the request), 
+	# -text (Print the certificate request in plain text), 
+	# -in (The input file to read a request from, or standard input if not specified)
+	#
 	openssl req -noout -text -in /etc/ssl/requests/apache2-pticsr.csr &>> $LOG
 echo -e "Arquivo CSR verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o certificado assinado CRT (Certificate Request Trust), do Apache2, aguarde...\n"
 	# opção do comando: &>> (redirecionar a saída padrão
-	# opção do comando openssl: x509 (command is a multi-purpose certificate utility),
-	#							ca (command is a minimal certificate authority (CA) application)
-	#							-req (Expect a certificate request on input instead of a certificate),
-	#							-days (The number of days to make a certificate valid for),
-	#							-criptocert (The message digest to sign the request with),							
-	#							-in (The input file to read from, or standard input if not specified),
-	#							-CA (The CA certificate to be used for signing),
-	#							-CAkey (Set the CA private key to sign a certificate with),
-	#							-CAcreatesrial (Create the CA serial number file if it does not exist instead of generating an error),
-	#							-out (The output file to write to, or standard output if none is specified)
-	#							-config (Specify an alternative configuration file)
-	#							-extensions (The section to add certificate extensions from),
-	#							-extfile (File containing certificate extensions to use).
+	# opções do comando openssl: 
+	# x509 (command is a multi-purpose certificate utility),
+	# ca (command is a minimal certificate authority (CA) application)
+	# -req (Expect a certificate request on input instead of a certificate),
+	# -days (The number of days to make a certificate valid for),
+	# -criptocert (The message digest to sign the request with),							
+	# -in (The input file to read from, or standard input if not specified),
+	# -CA (The CA certificate to be used for signing),
+	# -CAkey (Set the CA private key to sign a certificate with),
+	# -CAcreatesrial (Create the CA serial number file if it does not exist instead of generating an error),
+	# -out (The output file to write to, or standard output if none is specified)
+	# -config (Specify an alternative configuration file)
+	# -extensions (The section to add certificate extensions from),
+	# -extfile (File containing certificate extensions to use).
 	#
 	# Sign the certificate? [y/n]: y <Enter>
 	# 1 out of 1 certificate request certified, commit? [y/n]: y <Enter>
 	#
 	# OPÇÃO DE ASSINATURA DO ARQUIVO CRT SEM UTILIZAR O WIZARD DO CA, CÓDIGO APENAS DE DEMONSTRAÇÃO
-	#openssl x509 -req -days 3650 -$CRIPTOCERT -in /etc/ssl/requests/apache2-pticsr.csr -CA \
-	#/etc/ssl/newcerts/ca-pticrt.crt -CAkey /etc/ssl/private/ca-ptikey.key -CAcreateserial \
-	#-out /etc/ssl/newcerts/apache2-pticrt.crt -extensions v3_req -extfile /etc/ssl/pti-ssl.conf &>> $LOG
+	# openssl x509 -req -days 3650 -$CRIPTOCERT -in /etc/ssl/requests/apache2-pticsr.csr -CA \
+	# /etc/ssl/newcerts/ca-pticrt.crt -CAkey /etc/ssl/private/ca-ptikey.key -CAcreateserial \
+	# -out /etc/ssl/newcerts/apache2-pticrt.crt -extensions v3_req -extfile /etc/ssl/pti-ssl.conf &>> $LOG
 	#
 	openssl ca -in /etc/ssl/requests/apache2-pticsr.csr -out /etc/ssl/newcerts/apache2-pticrt.crt \
 	-config /etc/ssl/pti-ca.conf -extensions v3_req -extfile /etc/ssl/pti-ssl.conf
@@ -446,12 +472,14 @@ sleep 5
 #
 echo -e "Verificando o arquivo CRT (Certificate Request Trust) do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando openssl: x509 (command is a multi-purpose certificate utility), 
-	#							-noout (Do not output the encoded version of the request),
-	#							-text (Print the full certificate in text form), 
-	#							-modulus (Print the value of the modulus of the public key contained in the certificate), 
-	#							-in (he input file to read from, or standard input if not specified), 
-	#							md5 (The message digest to use MD5 checksums)
+	# opções do comando openssl: 
+	# x509 (command is a multi-purpose certificate utility), 
+	# -noout (Do not output the encoded version of the request),
+	# -text (Print the full certificate in text form), 
+	# -modulus (Print the value of the modulus of the public key contained in the certificate), 
+	# -in (he input file to read from, or standard input if not specified), 
+	# md5 (The message digest to use MD5 checksums)
+	#
 	openssl x509 -noout -modulus -in /etc/ssl/newcerts/apache2-pticrt.crt | openssl md5 &>> $LOG
 	openssl x509 -noout -text -in /etc/ssl/newcerts/apache2-pticrt.crt &>> $LOG
 	cat /etc/ssl/index.txt &>> $LOG
@@ -466,12 +494,12 @@ echo -e "Atualizando o arquivo de configuração do Apache2 HTTPS, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bkp &>> $LOG
+	mv -v /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.old &>> $LOG
 	cp -v conf/default-ssl.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Apache2 HTTPS, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração default-ssl.conf, pressione <Enter> para continuar"
 	read
 	vim /etc/apache2/sites-available/default-ssl.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -503,7 +531,7 @@ echo -e "Reinicializando o serviço do Apache2, aguarde..."
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas de conexão do Apache2, aguarde..."
+echo -e "Verificando as portas de conexões do Apache2, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
@@ -512,13 +540,15 @@ echo -e "Verificando as portas de conexão do Apache2, aguarde..."
 echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Testando o Certificado do Apache2, aguarde..."
+echo -e "Testando o Certificado TLS/SSL do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando echo: | (piper, faz a função de Enter no comando)
-	# opção do comando openssl: s_client (command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS)
-	#							-connect (The host and port to connect to)
-	#							-servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello message)
-	#							-showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
+	# opções do comando openssl: 
+	# s_client (command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS)
+	# -connect (The host and port to connect to)
+	# -servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello message)
+	# -showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
+	#
 	echo | openssl s_client -connect localhost:443 -servername www.pti.intra -showcerts &>> $LOG
 echo -e "Certificado do Apache2 testando sucesso!!!, continuando com o script...\n"
 sleep 5

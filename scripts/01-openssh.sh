@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/10/2021
-# Versão: 0.03
+# Data de atualização: 17/10/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server 8.2.x
 #
@@ -70,7 +70,7 @@ clear
 echo
 #
 echo -e "Configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a configuração do OpenSSH Server sua porta de conexão padrão é: TCP 22\n"
+echo -e "Porta padrão utilizada pelo OpenSSH Server.: TCP 22\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -116,15 +116,14 @@ echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde...
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ssh/sshd_config /etc/ssh/sshd_config.old &>> $LOG
 	cp -v conf/sshd_config /etc/ssh/sshd_config &>> $LOG
-	cp -v conf/hosts.allow /etc/hosts.allow &>> $LOG
-	cp -v conf/hosts.deny /etc/hosts.deny &>> $LOG
-	cp -v conf/issue.net /etc/issue.net &>> $LOG
+	cp -v conf/{hosts.allow,hosts.deny,issue.ne} /etc/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do OpenSSH Server sshd_config, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração sshd_config, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando sshd: -t (text mode check configuration)
 	read
@@ -133,28 +132,28 @@ echo -e "Editando o arquivo de configuração do OpenSSH Server sshd_config, pre
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração TCPWrapped hosts.allow, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hosts.allow
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração TCPWrapped hosts.deny, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração hosts.deny, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hosts.deny
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração Banner issue.net, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração issue.net, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/issue.net
 echo -e "Arquivos editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração da Tabela Estática hosts, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hosts
