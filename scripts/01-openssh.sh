@@ -119,7 +119,7 @@ echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde...
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ssh/sshd_config /etc/ssh/sshd_config.old &>> $LOG
 	cp -v conf/sshd_config /etc/ssh/sshd_config &>> $LOG
-	cp -v conf/{hosts.allow,hosts.deny,issue.ne} /etc/ &>> $LOG
+	cp -v conf/{hosts.allow,hosts.deny,issue.net} /etc/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
