@@ -81,7 +81,7 @@ clear
 echo
 #
 echo -e "Instalação do Wordpress no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do Wordpress acessar a URL: http://$wp.(hostname -d)/\n"
+echo -e "Após a instalação do Wordpress acessar a URL: http://wp.$(hostname -d)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -133,8 +133,9 @@ sleep 5
 echo -e "Fazendo o download do Wordpress do site oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
+	# opção do comando wget: -O (output-document)
 	rm -v latest.zip &>> $LOG
-	wget $WORDPRESS &>> $LOG
+	wget -O latest.zip $WORDPRESS &>> $LOG
 echo -e "Download do Wordpress feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
