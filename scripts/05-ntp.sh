@@ -130,7 +130,7 @@ sleep 5
 #
 echo -e "Editando o arquivo de configuração timesyncd.conf, pressione <Enter> para continuar"
 	read
-	/etc/systemd/timesyncd.conf
+	vim /etc/systemd/timesyncd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

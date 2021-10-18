@@ -105,7 +105,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
-	apt -y autoclean &>> $LO
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

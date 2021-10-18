@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.05
+# Data de atualização: 18/10/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -60,6 +60,27 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		exit 1
 fi
 #
+# Verificando todas as dependências da Integração do do ICS DHCP Server com Bind DNS Server
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências da Integração do ICS DHCP Server com Bind DNS Server, aguarde... "
+	for name in isc-dhcp-server bind9 
+	do
+  		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
+              echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
+              deps=1; 
+              }
+	done
+		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
+            echo -en "\nInstale as dependências acima e execute novamente este script\n";
+			echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências"
+			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+            exit 1; 
+            }
+		sleep 5
+#
 # Script de integração do ICS DHCP Server com Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
@@ -108,7 +129,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Integrando o ICS DHCP Server com Bind DNS Server, aguarde...\n"
+echo -e "Configurando a Integração do ICS DHCP Server com Bind DNS Server, aguarde...\n"
 sleep 5
 #
 echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DHCP Server, aguarde..."

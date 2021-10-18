@@ -3,14 +3,15 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 09/06/2021
-# Data de atualização: 09/06/2021
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 18/10/2021
+# Data de atualização: 18/10/2021
 # Versão: 0.01
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do VSFTPD v3.0.x
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do Vsftpd Server v3.0.x
+#
 # /etc/shells: valid login shells (shell de login válido)
-
 /bin/sh
 /bin/bash
 /bin/rbash

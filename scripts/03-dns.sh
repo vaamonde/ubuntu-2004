@@ -94,7 +94,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalando o Bind9 DNS Server, aguarde...\n"
+echo -e "Iniciando a Instalando e Configuração do Bind9 DNS Server, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando o Bind9 DNS Server, aguarde..."
@@ -122,11 +122,11 @@ echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> p
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar."
+echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar.\n"
 echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
-echo -e "dependendo da versão do Ubuntu Server, verificar o conteúdo do diretório:"
-echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e mudar"
-echo -e "a variável NETPLAN no arquivo de configuração: 00-parametros.sh"
+echo -e "dependendo da versão do Ubuntu Server, verifique o conteúdo do diretório:"
+echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e altere"
+echo -e "o valor da variável NETPLAN no arquivo de configuração: 00-parametros.sh"
 	read
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"

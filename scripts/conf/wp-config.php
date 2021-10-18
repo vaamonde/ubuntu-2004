@@ -1,36 +1,40 @@
 <?php
 /**
- * Modificado por: Robson Vaamonde
- * Site: www.procedimentosemti.com.br
- * Facebook: facebook.com/ProcedimentosEmTI
- * Facebook: facebook.com/BoraParaPratica
- * YouTube: youtube.com/BoraParaPratica
- * Data de criação: 04/11/2018
- * Data de atualização: 23/03/2021
- * Versão: 0.04
- * Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
- * Kernel >= 4.15.x
+	* Autor: Robson Vaamonde
+	* Site: www.procedimentosemti.com.br
+	* Facebook: facebook.com/ProcedimentosEmTI
+	* Facebook: facebook.com/BoraParaPratica
+	* YouTube: youtube.com/BoraParaPratica
+	* Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+	* Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+	* Data de criação: 18/10/2021
+	* Data de atualização: 18/10/2021
+	* Versão: 0.01
+	* Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+	* Testado e homologado para a versão do Wordpress v5.8.x
 */
  
-/** Nome da base de dados do WordPress*/
+// ** Configurações do MySQL - Você pode pegar estas informações com o serviço de hospedagem ** //
+
+/** O nome do Banco de Dados do WordPress.*/
 define('DB_NAME', 'wordpress');
 
-/** Nome do usuário da Base de Dados do MySQL para WordPress*/
+/** Nome do usuário da Base de Dados do MySQL do WordPress.*/
 define('DB_USER', 'wordpress');
 
-/** Senha do usuário da Base de Dados do MySQL para WordPress*/
+/** Senha do usuário da Base de Dados do MySQL do WordPress.*/
 define('DB_PASSWORD', 'wordpress');
 
-/** Nome do Servidor do MySQL que é o Localhost*/
+/** Nome ou Endereço IP do Servidor do MySQL que é o Localhost.*/
 define('DB_HOST', 'localhost');
 
-/** Configuração dos caracteres da Base de Dados, deixar o padrão*/
+/** Charset do banco de dados a ser usado na criação das tabelas.*/
 define('DB_CHARSET', 'utf8');
 
-/** Configuração do Collate, deixar o padrão*/
+/** Configuração do Collate da Base de Dados do Wordpress, deixar o padrão.*/
 define('DB_COLLATE', '');
 
-/** Prefixo padrão das tabelas do Wordpress*/
+/** Prefixo padrão das tabelas da Base de Dados do Wordpress.*/
 $table_prefix  = 'wp_';
 
 /** Configuração para usar dois domínios ou dois IP's no mesmo site do Wordpress */
@@ -39,7 +43,7 @@ $table_prefix  = 'wp_';
 /** Site-01: https://www.filipemarques.net/diversos-dominios-mesmo-wordpress/ */
 /** Site-02: https://suporte.hostgator.com.br/hc/pt-br/articles/115003844573-Como-utilizar-dois-dom%C3%ADnios-em-um-mesmo-WordPress- */
 
-/** Habilitar dois domínios para uma única instalação */
+/** Habilitar dois domínios para uma única instalação - EM DESENVOLVIMENTO -*/
 /** define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']); */
 /** define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']); */
 
@@ -48,17 +52,20 @@ define('WP_DEBUG', false);
 
 /** Bloco de configuração Global do Wordpress, deixar o padrão*/
 
-/**#@+ */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
-/**#@-*/
+/** Chaves únicas de autenticação e salts.*/
+define( 'AUTH_KEY',         'coloque a sua frase única aqui' );
+define( 'SECURE_AUTH_KEY',  'coloque a sua frase única aqui' );
+define( 'LOGGED_IN_KEY',    'coloque a sua frase única aqui' );
+define( 'NONCE_KEY',        'coloque a sua frase única aqui' );
+define( 'AUTH_SALT',        'coloque a sua frase única aqui' );
+define( 'SECURE_AUTH_SALT', 'coloque a sua frase única aqui' );
+define( 'LOGGED_IN_SALT',   'coloque a sua frase única aqui' );
+define( 'NONCE_SALT',       'coloque a sua frase única aqui' );
 
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
-require_once(ABSPATH . 'wp-settings.php');
+/** Caminho absoluto para o diretório WordPress. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Configura as variáveis e arquivos do WordPress. */
+require_once ABSPATH . 'wp-settings.php';

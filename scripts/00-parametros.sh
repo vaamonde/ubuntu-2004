@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.07
+# Data de atualização: 18/10/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -182,4 +182,38 @@ PASSWORDFTP="pti@2018"
 #
 # Variável da senha utilizada na geração das chaves privadas/públicas de criptografia do OpenSSL 
 PWDSSLFTP="pti@2018"
+#
+#=============================================================================================
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 10-wordpress.sh                       #
+#=============================================================================================
+#
+# Declarando as variáveis utilizadas nas configurações do Site do Wordpress
+#
+# Declarando a variável do download do Wordpress (Link atualizado em: 18/10/2021)
+WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"
+#
+# Declarando as variáveis para criação da Base de Dados do Wordpress
+# opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
+# opções do comando CREATE: create (criação), user (usuário), identified by (identificado por
+# senha do usuário), password (senha)
+# opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
+# tabelas), to (para), user (usuário), identified by (identificado por - senha do usuário), 
+# password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
+# tabela), *.* (todos os bancos/tabelas), to (para), user@'%' (usuário @ localhost), identified 
+# by (identificado por - senha do usuário), password (senha)
+# opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+#
+# OBSERVAÇÃO: NO SCRIPT: 10-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO:  VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh LINHA: 114
+CREATE_DATABASE_WORDPRESS="CREATE DATABASE wordpress;"
+CREATE_USER_DATABASE_WORDPRESS="CREATE USER 'wordpress' IDENTIFIED BY 'wordpress';"
+GRANT_DATABASE_WORDPRESS="GRANT USAGE ON *.* TO 'wordpress' IDENTIFIED BY 'wordpress';"
+GRANT_ALL_DATABASE_WORDPRES="GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress';"
+FLUSH_WORDPRESS="FLUSH PRIVILEGES;"
+#
+# Variáveis de usuário e senha do FTP para acessar o diretório raiz da instalação do Wordpress
+USERFTPWORDPRESS="wordpress"
+PASSWORDFTPWORDPRESS="wordpress"
+PATHWORDPRESS="/var/www/html/wp"
 #

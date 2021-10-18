@@ -93,7 +93,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalando do ISC DHCP Server, aguarde...\n"
+echo -e "Iniciando a Instalando e Configuração do ISC DHCP Server, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando o ISC DHCP Server, aguarde..."
@@ -103,11 +103,11 @@ echo -e "Instalando o ISC DHCP Server, aguarde..."
 echo -e "ISC DHCP Server instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar."
+echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar.\n"
 echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
-echo -e "dependendo da versão do Ubuntu Server, verificar o conteúdo do diretório:"
-echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e mudar"
-echo -e "a variável NETPLAN no arquivo de configuração: 00-parametros.sh"
+echo -e "dependendo da versão do Ubuntu Server, verifique o conteúdo do diretório:"
+echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e altere"
+echo -e "o valor da variável NETPLAN no arquivo de configuração: 00-parametros.sh"
 	read
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -135,7 +135,7 @@ echo -e "Iniciando o serviço do ISC DHCP Server e do Netplan, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	netplan --debug apply &>> $LOG
 	systemctl start isc-dhcp-server &>> $LOG
-echo -e "Serviços inicializados com com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do ISC DHCP Server, aguarde..."

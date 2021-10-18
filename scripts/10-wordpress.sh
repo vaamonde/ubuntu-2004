@@ -4,17 +4,19 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 09/11/2018
-# Data de atualização: 09/06/2021
-# Versão: 0.11
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do Wordpress 5.4.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 18/10/2021
+# Data de atualização: 18/10/2021
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do Wordpress v5.8.x
 #
-# WordPress: é um sistema livre e aberto de gestão de conteúdo para internet (do inglês: Content Management System - CMS),
-# baseado em PHP com banco de dados MySQL, executado em um servidor interpretador, voltado principalmente para a criação de
-# páginas eletrônicas (sites) e blogs online. Criado a partir do extinto b2/cafelog, por Ryan Boren e Matthew Mullenweg, e
-# distribuído gratuitamente sob a GNU General Public License.
+# WordPress: é um sistema livre e aberto de gestão de conteúdo para internet (do inglês: 
+# Content Management System - CMS), baseado em PHP com banco de dados MySQL, executado em 
+# um servidor interpretador, voltado principalmente para a criação de páginas eletrônicas 
+# (sites) e blogs online. Criado a partir do extinto b2/cafelog, por Ryan Boren e Matthew 
+# Mullenweg, e distribuído gratuitamente sob a GNU General Public License.
 #
 # Informações que serão solicitadas na configuração via Web do WordPress
 # Português do Brasil: Continuar;
@@ -25,75 +27,37 @@
 #	Confirme a senha: Confirmar o uso de uma senha fraca;
 #	O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
 #
-# Site oficial: https://wordpress.org/
+# Site oficial do Wordpress: https://wordpress.org/
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de instalação do LAMP Server no Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=6EFUu-I3u4s
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário e "root", versão do ubuntu e kernel
-# opções do comando id: -u (user), opções do comando: lsb_release: -r (release), -s (short), 
-# opções do comando uname: -r (kernel release), opções do comando cut: -d (delimiter), -f (fields)
-# opção do carácter: | (piper) Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Declarando as variáveis para o download do Wordpress (Link atualizado no dia 22/07/2020)
-WORDPRESS="https://wordpress.org/latest.zip"
-#
-# Declarando as variáveis para criação da Base de Dados do Wordpress
-# opção do comando create: create (criação), database (base de dados), base (banco de dados)
-# opção do comando create: create (criação), user (usuário), identified by (identificado por - senha do usuário), password (senha)
-# opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas), to (para), user (usuário)
-# identified by (identificado por - senha do usuário), password (senha)
-# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), *.* (todos os bancos/tabelas)
-# to (para), user@'%' (usuário @ localhost), identified by (identificado por - senha do usuário), password (senha)
-# opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
-USER="root"
-PASSWORD="pti@2018"
-DATABASE="CREATE DATABASE wordpress;"
-USERDATABASE="CREATE USER 'wordpress' IDENTIFIED BY 'wordpress';"
-GRANTDATABASE="GRANT USAGE ON *.* TO 'wordpress' IDENTIFIED BY 'wordpress';"
-GRANTALL="GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress';"
-FLUSH="FLUSH PRIVILEGES;"
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
 #
 # Verificando se as dependências do Wordpress estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
-# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
-# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do Wordpress, aguarde... "
-	for name in mysql-server mysql-common apache2 php
+	for name in mysql-server mysql-common apache2 php vsftpd
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -102,23 +66,22 @@ echo -n "Verificando as dependências do Wordpress, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: lamp.sh para resolver as dependências."
+            echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
 #
-# Script de instalação do Wordpress no GNU/Linux Ubuntu Server 18.04.x
+# Script de instalação do Wordpress no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
-# opção do comando hostname: -I (all IP address)
-# opção do comando sleep: 5 (seconds
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-# opção do comando cut: -d (delimiter), -f (fields)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
-#
 echo
-echo -e "Instalação do Wordpress no GNU/Linux Ubuntu Server 18.04.x\n"
-echo -e "Após a instalação do Wordpress acessar a URL: http://`hostname -I | cut -d ' ' -f1`/wp/"
+#
+echo -e "Instalação do Wordpress no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Após a instalação do Wordpress acessar a URL: http://$wp.(hostname -d)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -144,6 +107,8 @@ echo -e "Atualizando o sistema, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -151,10 +116,12 @@ echo -e "Removendo software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Wordpress, aguarde...\n"
+echo -e "Instalando e Configurando o Wordpress no Apache2, aguarde...\n"
+sleep 5
 #
 echo -e "Instalando as dependências do Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
@@ -184,13 +151,14 @@ echo -e "Copiando os arquivos do Wordpress para site padrão do Apache2, aguarde
 	mv -v wordpress/ /var/www/html/wp &>> $LOG
 	cp -v conf/htaccess /var/www/html/wp/.htaccess &>> $LOG
 	cp -v conf/wp-config.php /var/www/html/wp/ &>> $LOG
+	cp -v conf/wordpress.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #				 
 echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -R (recursive), -f (silent), -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
-	# opção do comando chown: -R (recursive), -f (silent), -v (verbose), dono.grupo (alteração do dono e grupo)
+	# opção do comando chown: -R (recursive), -f (silent), -v (verbose), www-data (user), www-data (group)
 	chmod -Rfv 775 /var/www/html/wp/ &>> $LOG
 	chown -Rfv www-data.www-data /var/www/html/wp/ &>> $LOG
 echo -e "Permissões alteradas com sucesso!!!, continuando com o script...\n"
@@ -198,42 +166,64 @@ sleep 5
 #
 echo -e "Criando a Base de Dados do Wordpress no MySQL, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mysql: -u (user), -p (password) -e (execute)
-	mysql -u $USER -p$PASSWORD -e "$DATABASE" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$USERDATABASE" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$GRANTDATABASE" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$GRANTALL" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$FLUSH" mysql &>> $LOG
-echo -e "Base de Dados criada com sucesso!!!, continuando com o script...\n"
+	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_WORDPRESS" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_WORDPRESS" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_WORDPRESS" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_WORDPRES" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_WORDPRESS" mysql &>> $LOG
+echo -e "Base de Dados do Wordpress criada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração da Base de Dados do Wordpress."
-echo -e "Pressione <Enter> para editar o arquivo: wp-config.php"
+echo -e "Criando o Usuário de FTP do Wordpress, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando useradd: -d (home-dir), -s (shell), -G (Groups)
+	# opção do comando echo: -e (enable escapes), \n (new line), 
+	# opção do redirecionar | "piper": (Conecta a saída padrão com a entrada padrão de outro comando)
+	useradd -d $PATHWORDPRESS -s /bin/ftponly -G www-data,$GROUPFTP $USERFTPWORDPRESS &>> $LOG
+	echo -e "$PASSWORDFTPWORDPRESS\n$PASSWORDFTPWORDPRESS" | passwd $USERFTPWORDPRESS &>> $LOG
+echo -e "Usuário de FTP do Wordpress criado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração wp-config.php, Pressione <Enter> continuar."
 	read
 	vim /var/www/html/wp/wp-config.php
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do .htaccess do Wordpress."
-echo -e "Pressione <Enter> para editar o arquivo: .htaccess"
+echo -e "Editando o arquivo de configuração do .htaccess, Pressione <Enter> para continuar."
 	read
 	vim /var/www/html/wp/.htaccess
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de liberação vsftpd.allowed_users, pressione <Enter> para continuar."
+	read
+	vim /etc/vsftpd.allowed_users
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de virtual host wordpress.conf, pressione <Enter> para continuar."
+	read
+	vim /etc/apache2/sites-available/wordpress.conf
+	a2ensite wordpress &>> $LOG
+	systemctl reload apache2 &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do Wordpress feito com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
-	HORAFINAL=`date +%T`
+	HORAFINAL=$(date +%T)
 	# opção do comando date: -u (utc), -d (date), +%s (second since 1970)
 	HORAINICIAL01=$(date -u -d "$HORAINICIAL" +"%s")
 	HORAFINAL01=$(date -u -d "$HORAFINAL" +"%s")
 	# opção do comando date: -u (utc), -d (date), 0 (string command), sec (force second), +%H (hour), %M (minute), %S (second), 
-	TEMPO=`date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S"`
+	TEMPO=$(date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S")
 	# $0 (variável de ambiente do nome do comando)
 	echo -e "Tempo gasto para execução do script $0: $TEMPO"
 echo -e "Pressione <Enter> para concluir o processo."
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
 exit 1

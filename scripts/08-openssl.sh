@@ -122,9 +122,10 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 fi
 #
 # Verificando se as dependências do OpenSSL estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
-# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
-# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do OpenSSL, aguarde... "
 	for name in openssl apache2 bind9
 	do
