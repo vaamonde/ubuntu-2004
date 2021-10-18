@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
 # Data de atualização: 18/10/2021
-# Versão: 0.06
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -146,8 +146,10 @@ echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DH
 	KEYGEN=$(cat tsig.key | grep secret | cut -d' ' -f2 | tr -d ';|"')
 	sed "s@secret vaamonde;@secret $KEYGEN;@" /etc/dhcp/dhcpd.conf > /tmp/dhcpd.conf.old
 	sed 's@secret "vaamonde";@secret "'$KEYGEN'";@' /etc/bind/named.conf.local > /tmp/named.conf.local.old
+	sed 's@secret "vaamonde";@secret "'$KEYGEN'";@' /etc/bind/rndc.key > /tmp/rndc.key.old
 	cp -v /tmp/dhcpd.conf.old /etc/dhcp/dhcpd.conf &>> $LOG
 	cp -v /tmp/named.conf.local.old /etc/bind/named.conf.local &>> $LOG
+	cp -v /tmp/rndc.key.old /etc/bind/rndc.key &>> $LOG
 echo -e "Atualização da chave feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -155,6 +157,13 @@ echo -e "Editando o arquivo de configuração named.conf.local, pressione <Enter
 	read
 	vim /etc/bind/named.conf.local
 	named-checkconf /etc/bind/named.conf.local &>> $LOG
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração rndc.key, pressione <Enter> para continuar."
+	read
+	vim /etc/bind/rndc.key
+	named-checkconf /etc/bind/rndc.key &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -183,6 +192,7 @@ echo -e "Verificando as portas de conexão do Bind9 DNS Server e do ISC DHCP Ser
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iUDP:"53,67"
+	lsof -nP -iTCP:"953" -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #	

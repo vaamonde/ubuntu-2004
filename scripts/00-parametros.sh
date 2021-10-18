@@ -217,3 +217,14 @@ USERFTPWORDPRESS="wordpress"
 PASSWORDFTPWORDPRESS="wordpress"
 PATHWORDPRESS="/var/www/html/wp"
 #
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 11-netdata.sh                        #
+#=============================================================================================
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
+#
+# Declarando a variável de download do Netdata (Link atualizado no dia 18/10/2021)
+# opção do comando git clone --depth=1: Cria um clone superficial com um histórico truncado 
+# para o número especificado de confirmações (somente o último commit geral do repositório)
+NETDATA="https://github.com/firehol/netdata.git --depth=1"
+#

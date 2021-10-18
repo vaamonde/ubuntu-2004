@@ -6,11 +6,18 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 15/10/2021
-Versão: 0.06
+Data de atualização: 18/10/2021
+Versão: 0.07
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0007 - Falha na inicialização do serviço do Netdata referente ao erro do SystemD quado utilizado o comando: systemctl status
+netdata - erro: PROCFILE: Cannot open file '/etc/netdata/apps_groups.conf' e PROCFILE: Cannot open file '/proc/54579/status,
+essa falha está associado a Plugin do eBPF Plugin (Netdata's extended Berkeley Packet Filter) conforme documentação do 
+Netdata: https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin, essa mensagem de erro não causa problemas na execução
+do aplicativo, criando arquivos de configuração do eBPF, consultar arquivo CHANGELOG referente as mudanças do script de 
+instalação e configuração do Netdata: 11-netdata.sh
+
 0006 - Aplicação de todos os privilégios de acesso remoto ao usuário Root do Mysql, a partir da versão 8.0.x do MySQL o
 procedimento de aplicar as permissões GRANT no Banco de Dados MySQL mudou, sendo necessário criar o usuário root e depois
 aplicar as permissões de privilégios, correção feita no arquivo 00-parametros.sh.

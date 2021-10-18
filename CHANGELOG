@@ -11,12 +11,16 @@ Versão: 0.07
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-18/10/2021 - Robson Vaamonde - Acréscimo do Bloco de verificação de dependências no script: 04-dhcpdns.sh, correção
+18/10/2021 - Robson Vaamonde - Acréscimo do bloco de verificação de dependências no script: 04-dhcpdns.sh, correção
 e atualização dos arquivos de configuração do Vsftpd Server, customização do script 10-wordpress.sh, criação das
-variáveis no arquivo: 00-parametros.sh, melhoria no script do wordpress colocando o usuário do FTP do diretório wp,
-criação do Virtual Host do Wordpress utilizando ponteiros no Bind DNS, atualização dos arquivos de configuração do
-Wordpress, melhoria na documentação do arquivo wp-config.php do Wordpress, melhoria da segurança do Wordpress nos
-arquivos de Virtual Host e .Htaccess. 
+variáveis no arquivo: 00-parametros.sh, melhoria no script do wordpress adicionando a criação do usuário de FTP com 
+permissão de acesso ao diretório /var/www/html/wp, criação do Virtual Host do Wordpress utilizando ponteiros no Bind 
+DNS wp e portal, atualização dos arquivos de configuração do Wordpress wp-config.php, .htaccess e wordpress.conf, 
+melhoria na documentação do arquivo wp-config.php, melhoria da segurança do Wordpress nos arquivos de Virtual Host 
+.htaccess e wordpress.conf, correção da falha de rndc: connection failed: IP#953: Connection refused do Bind9 DNS,
+customização do arquivo de configuração rndc.key com a mesma chave do arquivo named.conf.local, acréscimo da cópia
+e edição do arquivo o script: 03-dns.sh, customização do script: 04-dhcpdns.sh adicionando a criação da chave TSIG
+hmac-md5 no arquivo rndc.key. Correção das dependências do Netdata no script: 11-netdata.sh, 
 
 17/10/2021 - Robson Vaamonde - Melhorias no script: 08-openssl.sh com foco principal na documentação e organização do
 script nas variáveis do arquivo: 00-parametros.sh, remoção da criação do usuário: wordpress do script 09-vsftpd.sh,

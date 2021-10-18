@@ -9,6 +9,7 @@
 ; Data de atualização: 11/10/2021
 ; Versão: 0.02
 ; Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+; Testado e homologado para a versão do Bind9 DNS Server v9.16.x
 
 $ORIGIN 1.16.172.in-addr.arpa.
 $TTL 3600 ; 1 (uma) semana de TTL (Time to Live) tempo de vida das respostas fornecidas pelo DNS

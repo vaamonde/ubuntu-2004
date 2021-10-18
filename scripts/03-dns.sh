@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.05
+# Data de atualização: 18/10/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
@@ -135,23 +135,23 @@ sleep 5
 echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -R (recursive), -v (verbose), root (user), bind (user), bind (group)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
+	# opção do comando chown: -R (recursive), -v (verbose), root (user), bind (user), bind (group)
 	mkdir -v /var/log/named/ &>> $LOG
 	chown -Rv bind:bind /var/log/named/ &>> $LOG
-	# Patch de correção da falha: rndc: connect failed: 127.0.0.1#953: connection refused
-	chown -v root:bind /etc/bind/rndc.key &>> $LOG
 	mv -v /etc/bind/named.conf /etc/bind/named.conf.old &>> $LOG
 	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.old &>> $LOG
 	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG
 	mv -v /etc/default/named /etc/default/named.old &>> $LOG
-	cp -v conf/{named.conf,named.conf.local,named.conf.options} /etc/bind/ &>> $LOG
+	mv -v /etc/default/rndc.key /etc/default/rndc.key.old &>> $LOG
+	cp -v conf/{named.conf,named.conf.local,named.conf.options,rndc.key} /etc/bind/ &>> $LOG
 	cp -v conf/{pti.intra.hosts,172.16.1.rev} /var/lib/bind/ &>> $LOG
-	chown -v root:bind /var/lib/bind/{pti.intra.hosts,172.16.1.rev} &>> $LOG
 	cp -v conf/dnsupdate-cron /etc/cron.d/dnsupdate-cron &>> $LOG
 	cp -v conf/named /etc/default/named &>> $LOG
+	chown -v root:bind /etc/bind/rndc.key &>> $LOG
+	chown -v root:bind /var/lib/bind/{pti.intra.hosts,172.16.1.rev} &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -172,6 +172,13 @@ echo -e "Editando o arquivo de configuração named.conf.options, pressione <Ent
 	read
 	vim /etc/bind/named.conf.options
 	named-checkconf &>> $LOG
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração rndc.key, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saida padrão)
+	read
+	vim /etc/default/rndc.key
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
