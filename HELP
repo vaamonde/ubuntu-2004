@@ -12,6 +12,19 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
 
+#00_ Arquivos e diretórios principais do curso do Ubuntu Server 20.04.x LTS x64
+	_ README: arquivo de documentação principal do curso, com os links para os vídeos e links extras
+	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts ou arquivos conf e na Guia Issue
+	_ CHANGELOG: arquivo de criação, mudança ou melhorias nos scripts ou arquivos conf
+	_ HELP: arquivo de ajuda desse curso, com procedimentos e documentação de utilização dos scripts
+	_ LICENSE: arquivo de licença de uso do scripts: MIT License
+	_ NEW: arquivo de novidades dos scripts, arquivos conf, serviço de rede, etc...
+	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise de Log
+	_ ??-InstalacaoDoUbuntuServer-?? - arquivos de procedimentos de instalação do Ubuntu Server
+	_ scripts/: diretório dos scripts desse curso, numerados pos sequência de uso
+	_ scripts/conf/: diretório dos arquivos de configuração (conf) desse curso
+	_ scripts/settings/: diretório dos arquivos de procedimentos e configurações desse curso
+
 #01_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
 	_ Todos os procedimentos de instalação e configuração básica do Ubuntu Server 20.04.x LTS
 	_ se encontra no diretório: ubuntu-2004/scripts/settings
@@ -32,35 +45,35 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ Arquivo de parâmetros (Variáveis) localizado em: /ubuntu-2004/scripts/00-parametros.sh
 	_ Esse arquivo é constituido de VARIÁVEL="VALOR", cada script tem um Bloco de Configuração
 	_ de Variáveis, algumas variáveis são reutilizadas em vários scripts ou adicionada na variável
-	_ do bloco de configuração VARIÁVEL=$VARIÁVEL.
-	_ Antes de iniciar as configurações do serviços de rede no Ubuntu Server, customizar primeiro
-	_ o arquivo de parâmetros: 00-parametros.sh e os arquivos de configuração (conf) no diretório
-	_ /ubuntu-2004/scripts/conf de cada serviço de rede.
+	_ do bloco de configuração do serviço: VARIÁVEL=$VARIÁVEL.
+	_ Antes de iniciar as configurações dos serviços de rede no Ubuntu Server, é recomendado 
+	_ customizar o arquivo de parâmetros: 00-parametros.sh e os arquivos de configurações (conf) 
+	_ no diretório /ubuntu-2004/scripts/conf de cada serviço de rede.
 
 #04_ Scripts de instalação e configuração dos serviços de rede
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server segue o
-	_ mesmo padrão, todos scripts estão interligados no arquivo: 00-parametros.sh na linha de
-	_ configuração: source, todos os script geram os arquivos de Log no diretório: /var/log/ com
-	_ o nome do arquivo do script configurado na linha: LOG, todos os script tem um Bloco de If
-	_ básico que verifica se o usuário é Root e se a Distribuição é 20.04, alguns scripts tem
-	_ o Bloco de Loop para verificar se as dependências estão instaladas.
+	_ mesmo padrão, todos os scripts estão interligados no arquivo: 00-parametros.sh na linha de
+	_ configuração: source, todos os script geram arquivos de Log no diretório: /var/log/ com o
+	_ nome do arquivo do script configurado na linha: LOG, todos os script tem um Bloco de Teste
+	_ Lógico (If) básico que verifica se o usuário é Root e se a Distribuição é 20.04, alguns 
+	_ scripts tem o Bloco de Loop para verificar se as dependências estão instaladas.
 
 #05_ Clonando o projeto de Github e executando os scripts
 	_ Para utilizar os scripts desse curso, é recomendado você se logar com o usuário Root do Ubuntu
 	_ Primeiro: se logar com o seu usuário que tem direitos administrativos no terminal do Ubuntu;
 	_ Segundo: se logar como Root utilizando o comando: sudo -i <Enter> digitar a sua senha;
-	_ Terceiro: clocar o projeto: git clone ttps://github.com/vaamonde/ubuntu-2004 --depth=1 <Enter>
+	_ Terceiro: clocar o projeto: git clone https://github.com/vaamonde/ubuntu-2004 --depth=1 <Enter>
 	_ OBS1: a opção do comando git: --depth=1 Cria um clone superficial com um histórico truncado para 
 	_ o número especificado de confirmações (somente o último commit geral do repositório).
-	_ Quarto: acessar o diretório clocado do Github: cd ubuntu-2004/ <Enter>
+	_ Quarto: acessar o diretório clonado do Github: cd ubuntu-2004/ <Enter>
 	_ Quinto: acessar o diretório dos scripts: cd scripts/ <Enter>
-	_ Sexto: rodando um script: bash 00-novoscript.sh <Enter>
+	_ Sexto: rodar um script de serviço: bash 00-nome_do_script.sh <Enter>
 
 #06_ Monitorando o Log em tempo real dos script
-	_ Todos os script redirecionada a saída padrão dos comandos utilizados para a variável: LOG que 
-	_ gera em arquivo no diretório: /var/log/ com o nome do script que está sendo executando, exemplo:
-	_ bash 01-openssh.sh - Log: /var/log/01-openssh.sh.
-	_ Para visualizar e tempo real o Log da instalação e configuração do serviço de rede você vai se
+	_ Todos os scripts redirecionada a saída padrão dos comandos utilizados para a variável: LOG que 
+	_ gera um arquivo no diretório: /var/log/ com o nome do script que está sendo executando, exemplo:
+	_ bash 01-openssh.sh - arquivo de Log: /var/log/01-openssh.sh.
+	_ Para visualizar em tempo real o Log da instalação e configuração do serviço de rede você vai se
 	_ logar em outro Terminal (Alt+F2), se logar com seu usuário que tem direitos administrativos e
 	_ executar o comando: sudo tail -f /var/log/01-openssh.sh, para sair do monitoramento do Log e
-	_ só precisar: Ctrl+C
+	_ só pressionar: Ctrl+C

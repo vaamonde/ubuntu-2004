@@ -6,11 +6,15 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 18/10/2021
-Versão: 0.07
+Data de atualização: 19/10/2021
+Versão: 0.08
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+19/10/2021 - Robson Vaamonde - Criação do arquivo HELP, nesse arquivo está os procedimentos básicos para utilizar os
+scripts desse curso, todo os procedimentos básicos de utilizar esse repositório para customizar os scripts ou arquivos
+confs para o seu cenário.
+
 18/10/2021 - Robson Vaamonde - Acréscimo do bloco de verificação de dependências no script: 04-dhcpdns.sh, correção
 e atualização dos arquivos de configuração do Vsftpd Server, customização do script 10-wordpress.sh, criação das
 variáveis no arquivo: 00-parametros.sh, melhoria no script do wordpress adicionando a criação do usuário de FTP com 
