@@ -1,0 +1,66 @@
+Autor: Robson Vaamonde
+Site: www.procedimentosemti.com.br
+Facebook: facebook.com/ProcedimentosEmTI
+Facebook: facebook.com/BoraParaPratica
+YouTube: youtube.com/BoraParaPratica
+Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+Data de criação: 19/10/2021
+Data de atualização: 19/10/2021
+Versão: 0.01
+Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+
+#===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
+
+#01_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
+	_ Todos os procedimentos de instalação e configuração básica do Ubuntu Server 20.04.x LTS
+	_ se encontra no diretório: ubuntu-2004/scripts/settings
+	_ Os principais arquivos de configuração são:
+	_ 	01-AtualizacaoDoSistema.sh
+	_ 	02-ConfiguracaoDoHostnameHosts.sh
+	_ 	03-ConfiguracaoDoLocaleTimezoneKeyboard.sh
+	_ 	04-ConfiguracaoDoNetplan.sh
+	_ 	05-DesligarReiniciar.sh
+
+#02_ Diretório dos scripts utilizados no Ubuntu Server 20.04.x LTS x64
+	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server 20.04.x
+	_ LTS se encontra no diretório: ubuntu-2004/scripts
+	_ Todos os arquivos de configuração dos serviços de rede no Ubuntu Server 20.04.x LTS se
+	_ encontra no diretório: /ubuntu-2004/scripts/conf
+
+#03_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts
+	_ Arquivo de parâmetros (Variáveis) localizado em: /ubuntu-2004/scripts/00-parametros.sh
+	_ Esse arquivo é constituido de VARIÁVEL="VALOR", cada script tem um Bloco de Configuração
+	_ de Variáveis, algumas variáveis são reutilizadas em vários scripts ou adicionada na variável
+	_ do bloco de configuração VARIÁVEL=$VARIÁVEL.
+	_ Antes de iniciar as configurações do serviços de rede no Ubuntu Server, customizar primeiro
+	_ o arquivo de parâmetros: 00-parametros.sh e os arquivos de configuração (conf) no diretório
+	_ /ubuntu-2004/scripts/conf de cada serviço de rede.
+
+#04_ Scripts de instalação e configuração dos serviços de rede
+	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server segue o
+	_ mesmo padrão, todos scripts estão interligados no arquivo: 00-parametros.sh na linha de
+	_ configuração: source, todos os script geram os arquivos de Log no diretório: /var/log/ com
+	_ o nome do arquivo do script configurado na linha: LOG, todos os script tem um Bloco de If
+	_ básico que verifica se o usuário é Root e se a Distribuição é 20.04, alguns scripts tem
+	_ o Bloco de Loop para verificar se as dependências estão instaladas.
+
+#05_ Clonando o projeto de Github e executando os scripts
+	_ Para utilizar os scripts desse curso, é recomendado você se logar com o usuário Root do Ubuntu
+	_ Primeiro: se logar com o seu usuário que tem direitos administrativos no terminal do Ubuntu;
+	_ Segundo: se logar como Root utilizando o comando: sudo -i <Enter> digitar a sua senha;
+	_ Terceiro: clocar o projeto: git clone ttps://github.com/vaamonde/ubuntu-2004 --depth=1 <Enter>
+	_ OBS1: a opção do comando git: --depth=1 Cria um clone superficial com um histórico truncado para 
+	_ o número especificado de confirmações (somente o último commit geral do repositório).
+	_ Quarto: acessar o diretório clocado do Github: cd ubuntu-2004/ <Enter>
+	_ Quinto: acessar o diretório dos scripts: cd scripts/ <Enter>
+	_ Sexto: rodando um script: bash 00-novoscript.sh <Enter>
+
+#06_ Monitorando o Log em tempo real dos script
+	_ Todos os script redirecionada a saída padrão dos comandos utilizados para a variável: LOG que 
+	_ gera em arquivo no diretório: /var/log/ com o nome do script que está sendo executando, exemplo:
+	_ bash 01-openssh.sh - Log: /var/log/01-openssh.sh.
+	_ Para visualizar e tempo real o Log da instalação e configuração do serviço de rede você vai se
+	_ logar em outro Terminal (Alt+F2), se logar com seu usuário que tem direitos administrativos e
+	_ executar o comando: sudo tail -f /var/log/01-openssh.sh, para sair do monitoramento do Log e
+	_ só precisar: Ctrl+C

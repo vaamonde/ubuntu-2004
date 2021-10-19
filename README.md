@@ -1,4 +1,4 @@
-# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT's "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.x LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU 20.04.x LTS, NÃO SERÁ REGRAVADO NOVOS VÍDEOS DOS SCRIPTS ANTIGOS NESSA VERSÃO, DEVIDO AO CONCEITO UTILIZADO NA VERSÃO 18.04.x SER IGUAL NESSA VERSÃO 20.04.x, SERÁ GRAVADO SOMENTE VÍDEOS E SOLUÇÕES/SERVIÇOS DE TI NOVOS USANDO A VERSÃO 20.04.x, EXEMPLO: NFS, Webdav, SAMBA-4, FreeRADIUS, OnlyOffice Server, etc...
+# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT's "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.x LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU SERVER 20.04.x LTS, NÃO SERÁ REGRAVADO NOVOS VÍDEOS DOS SCRIPTS ANTIGOS NESSA VERSÃO, DEVIDO AO CONCEITO UTILIZADO NA VERSÃO 18.04.x SER IGUAL NA VERSÃO 20.04.x, SERÁ GRAVADO SOMENTE VÍDEOS E SOLUÇÕES/SERVIÇOS DE TI NOVOS USANDO A VERSÃO 20.04.x, EXEMPLO: NFS, Webdav, SAMBA-4, FreeRADIUS, OnlyOffice Server, etc...
 
 # Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps
 
@@ -37,12 +37,7 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMRxzwCbAzmhj
 
 Vídeo mostrando os procedimentos básicos para instalar a nova versão do Sistema Operacional GNU/Linux Ubuntu Server 20.04 LTS codinome Focal Fossa no VirtualBOX.
 
-23/04/2020: Lançado a nova versão do Ubuntu Server 20.04 LTS Focal Fossa que possui vários recursos e melhorias com foco em desempenho e segurança, segue as principais:
-Suporte a arquitetura ARM;
-Suporte a arquitetura IBM Power;
-Suporte a arquitetura IBM Z e LinuxONE;
-Suporte a arquitetura MAAS;
-Suporte a OpenStack, Kubernetes, Kubeflow, IoT, etc.
+23/04/2020: Lançado a nova versão do Ubuntu Server 20.04 LTS Focal Fossa que possui vários recursos e melhorias com foco em desempenho e segurança, segue as principais: Suporte para as arquiteturas ARM, IBM Power, IBM Z, LinuxONE, MAAS, OpenStack, Kubernetes, Kubeflow, IoT, etc.
 
 06/08/2020: Lançado a nova versão do Ubuntu Server 20.04.1 LTS Focal Fossa que reúne todas as correções de bugs, atualizações de aplicativos, ajustes de desempenho e patches de segurança lançados no “Focal Fossa” desde seu lançamento em abril.
 
@@ -95,3 +90,21 @@ Snapcraft: https://snapcraft.io/
 Link da vídeo aula: https://www.youtube.com/watch?v=dYCBHpzgOdw
 
 Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/03-InstalacaoDoUbuntuCore-20-RPI.md
+
+## **INSTALAÇÃO do UBUNTU SERVER 20.04.3 LTS x64 no Oracle VirtualBOX 🐧**
+
+Vídeo mostrando os procedimentos básicos para instalar e configurar a nova versão do Ubuntu Server 20.04.3 LTS x64 no Oracle VirtialBOX.
+
+O Ubuntu Server Edition e o Ubuntu Desktop Edition usam os mesmos repositórios apt, tornando-o apenas tão fácil de instalar um aplicativo de servidor no Desktop Edition quanto no Server Edition. Uma diferença importante é que o ambiente gráfico usado para Desktop Edition não é instalado para o servidor. Isso inclui o próprio servidor gráfico, os utilitários e aplicativos gráficos e os diversos serviços de suporte ao usuário necessários para usuários de desktop.
+
+26/08/2021: O lançamento pontual do Ubuntu 20.04.3 LTS x64 está aqui com kernel atualizado e pilhas de gráficos do lançamento do Ubuntu 21.04 (Hirsute Hippo).
+
+Mais informações acesse:<br>
+Ubuntu Server: https://ubuntu.com/server/docs<br>
+Download Ubuntu Server 20.04.3: https://releases.ubuntu.com/20.04/
+
+[![Ubuntu Server 20.04.3](http://img.youtube.com/vi//0.jpg)]( "Ubuntu Server 20.04.3")
+
+Link da vídeo aula: 
+
+Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/01-InstalacaoDoUbuntuServer-20.04.3-LTS.md
