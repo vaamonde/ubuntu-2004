@@ -5,12 +5,13 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 22/11/2018
-# Data de atualização: 03/08/2020
-# Versão: 0.06
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do Tomcat 9.0.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 19/10/2021
+# Data de atualização: 20/10/2021
+# Versão: 0.02
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 -->
 <tomcat-users xmlns="http://tomcat.apache.org/xml"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -23,5 +24,5 @@
 	<role rolename="admin"/>
 	<role rolename="tomcat"/>
 	<role rolename="role1"/>
-	<user username="admin" password="pti@2018" roles="manager-gui,manager,admin-gui,admin,tomcat,role1"/>
+	<user username="admin" password="vaamonde" roles="manager-gui,manager,admin-gui,admin,tomcat,role1"/>
 </tomcat-users>

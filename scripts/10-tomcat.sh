@@ -7,10 +7,10 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 19/10/2021
-# Data de atualização: 19/10/2021
-# Versão: 0.01
+# Data de atualização: 20/10/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OPenJRE 11.x
+# Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 #
 # O software Tomcat, desenvolvido pela Fundação Apache, permite a execução de aplicações para 
 # web. Sua principal característica técnica é estar centrada na linguagem de programação Java, 
@@ -126,8 +126,10 @@ echo -e "Atualizando os arquivos de configuração do Tomcat, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/tomcat9/tomcat-users.xml /etc/tomcat9/tomcat-users.xml.old &>> $LOG
 	cp -v conf/tomcat-users.xml /etc/tomcat9/tomcat-users.xml &>> $LOG
+	#cp -v conf/{tomcat-users.xml,server.xml} /etc/tomcat9/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -139,7 +141,15 @@ echo -e "Editando o arquivo de configuração tomcat-users.xml, pressione <Enter
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Reinicializando o serviço do Tomcat9, agaurde..."
+echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para continuar"
+	# opção do comando: &>> (redirecionar de saída padrão)
+	# opção do comando cp: -v (verbose)
+	read
+	vim /etc/tomcat9/server.xml
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Reinicializando o serviço do Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	systemctl restart tomcat9 &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
