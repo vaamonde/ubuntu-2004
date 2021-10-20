@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.02
+# Data de atualização: 20/10/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -152,7 +152,9 @@ clear
 echo
 #
 echo -e "Configuração do OpenSSL no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Download da Autoridade Certificadora CA na URL: https://$(hostname -I | cut -d' ' -f1)/download"
+echo -e "Download da Autoridade Certificadora CA na URL: http://$(hostname -I | cut -d' ' -f1)/download\n"
+echo -e "Depois de executar a instalação da CA GNU/Linux e no Windows, testar o acesso seguro abaixo."
+echo -e "Confirmar o acesso com o Endereço IPv4 na URL: https://$(hostname -I | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome CNAME na URL: https://www.$(hostname -d | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome Domínio na URL: https://$(hostname -d | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome FQDN na URL: https://$(hostname -A | cut -d' ' -f1)/\n"

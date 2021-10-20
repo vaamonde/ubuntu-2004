@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.04
+# Data de atualização: 20/10/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -204,8 +204,11 @@ echo -e "Atualizando os arquivos de configuração do Apache2 e do PHP, aguarde.
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/apache2/apache2.conf /etc/apache2/apache2.conf.old &>> $LOG
-	cp -v conf/apache2.conf /etc/apache2/apache2.conf &>> $LOG
+	mv -v /etc/apache2/ports.conf /etc/apache2/ports.conf.old &>> $LOG
+	cp -v conf/{apache2.conf,ports.conf} /etc/apache2/ &>> $LOG
+	cp -v conf/000-default.conf /etc/apache2/sites-available/000-default.conf &>> $LOG
 	mv -v /etc/php/7.4/apache2/php.ini /etc/php/7.4/apache2/php.ini.old &>> $LOG
 	cp -v conf/php.ini /etc/php/7.4/apache2/php.ini &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
@@ -214,6 +217,18 @@ sleep 5
 echo -e "Editando o arquivo de configuração apache2.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/apache2/apache2.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração ports.conf, pressione <Enter> para continuar."
+	read
+	vim /etc/apache2/ports.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração 000-default.conf, pressione <Enter> para continuar."
+	read
+	vim /etc/apache2/sites-available/000-default.con
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

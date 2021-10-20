@@ -15,7 +15,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 script: 02-openssh.sh, backup e atualização do arquivo 00-installer-config.yaml customizado, correção da falha de 
 edição do arquivo rndc.key no script: 03-dns.sh, acréscimo da verificação da porta TCP 953 no script: 03-dns.sh,
 melhoria no script: 04-dhcpdns.sh na geração da chave TSIG, criação do arquivo ntp com suporte somente ao IPv4 e
-acréscimo da edição do arquivo no script: 05-ntp.sh, melhoria no arquivo de configuração ntp.conf, 
+acréscimo da edição do arquivo no script: 05-ntp.sh, melhoria no arquivo de configuração ntp.conf, criação do arquivo
+ports.conf do Apache2, configurado para suportar somente o protocolo IPv4, desabilitando o suporte ao IPv6, 
 
 19/10/2021 - Robson Vaamonde - Criação do arquivo HELP, nesse arquivo está os procedimentos básicos para utilizar os
 scripts desse curso, todo os procedimentos básicos para utilizar esse repositório e customizar os scripts ou arquivos
