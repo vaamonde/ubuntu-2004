@@ -21,7 +21,7 @@
 #
 # https://(ip do servidor):(porta de utilização). Exemplo: https://172.16.1.20:19999
 #
-# Site oficial: https://github.com/netdata/netdata
+# Site oficial do Netdata: https://github.com/netdata/netdata
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -77,7 +77,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação do Netdata no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Instalação e Configuração do Netdata no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Netdata.: TCP 19999"
 echo -e "Após a instalação do Netdata acessar a URL: http://$(hostname -I | cut -d ' ' -f1):19999/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
@@ -119,14 +119,16 @@ echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando e Configurando o Netdata, aguarde...\n"
+sleep 5
 #
 echo -e "Instalando as dependências do Netdata, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (bar left) quebra de linha na opção do apt
 	apt -y install zlib1g-dev gcc make git autoconf autogen automake pkg-config uuid-dev python3 \
-	python3-mysqldb python3-pip python3-dev libmysqlclient-dev python-ipaddress libuv1-dev \
+	python3-mysqldb python3-pip python3-dev libmysqlclient-dev python-ipaddress libuv1-dev netcat \
 	libwebsockets15 libwebsockets-dev libjson-c-dev libbpfcc-dev liblz4-dev libjudy-dev libelf-dev \
-	libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler &>> $LOG
+	libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler lm-sensors \
+	python-psycopg2 python3-pymysql &>> $LOG
 echo -e "Instalação das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
