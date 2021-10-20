@@ -178,10 +178,10 @@ GROUPFTP="ftpusers"
 USERFTP="ftpuser"
 #
 # Variável da senha do Usuário de FTP
-PASSWORDFTP="pti@2018"
+PASSWORDFTP="ftpuser"
 #
 # Variável da senha utilizada na geração das chaves privadas/públicas de criptografia do OpenSSL 
-PWDSSLFTP="pti@2018"
+PWDSSLFTP="vaamonde"
 #
 #=============================================================================================
 #                      VARIÁVEIS UTILIZADAS NO SCRIPT: 11-wordpress.sh                       #

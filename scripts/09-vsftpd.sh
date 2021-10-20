@@ -193,7 +193,7 @@ echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> par
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o Chave Privada/Pública e o Certificado Assinado do Vsftpd Server, aguarde..." 
+echo -e "Criando a Chave Privada/Pública e o Certificado Assinado do Vsftpd Server, aguarde..." 
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opções do comando openssl: 
@@ -245,16 +245,23 @@ echo -e "Criando o Chave Privada/Pública e o Certificado Assinado do Vsftpd Ser
 	openssl genrsa -aes256 -out /etc/ssl/private/vsftpd-ptikey.key.old \
 	-passout pass:$PWDSSLFTP 2048 &>> $LOG
 	echo -e "Chave Privada/Pública criada com sucesso!!!, continuando com o script..."
+	sleep 5
 	#
 	openssl rsa -in /etc/ssl/private/vsftpd-ptikey.key.old -out /etc/ssl/private/vsftpd-ptikey.key \
 	-passin pass:$PWDSSLFTP &>> $LOG
 	rm -v /etc/ssl/private/vsftpd-ptikey.key.old &>> $LOG
 	echo -e "Senha da Chave Privada/Pública removida com sucesso!!!, continuando com o script...\n"
+	sleep 5
 	#
+	echo -e "Gerando o Certificado CSR do Vsftpd Server, pressione <Enter> para continuar."
+	read
 	openssl req -new -sha256 -nodes -key /etc/ssl/private/vsftpd-ptikey.key -out /etc/ssl/requests/vsftpd-pticsr.csr \
 	-extensions v3_req -config /etc/ssl/vsftpd-ssl.conf
 	echo -e "Geração do Certificado CSR feito com sucesso!!!, continuando com o script...\n"
+	sleep 5
 	#
+	echo -e "Gerando o Certificado CRT do Vsftpd Server, pressione <Enter> para continuar."
+	read
 	openssl ca -in /etc/ssl/requests/vsftpd-pticsr.csr -out /etc/ssl/newcerts/vsftpd-pticrt.crt \
 	-config /etc/ssl/pti-ca.conf -extensions v3_req -extfile /etc/ssl/vsftpd-ssl.conf
 	echo -e "Geração do Certificado CRT feito com sucesso!!!, continuando com o script...\n"
