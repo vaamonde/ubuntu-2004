@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.05
+# Data de atualização: 20/10/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -24,9 +24,9 @@
 # sejam usados como tokens sobre os quais realizam-se filtros para propósitos de controle de acesso.
 #
 # Monitoramento do Log do OpenSSH Server: tail -f /var/log/syslog | grep sshd
-# Monitoramento das autenticação do OpenSSH Server: tail -f /var/log/auth.log | grep ssh
+# Monitoramento das autenticações do OpenSSH Server: tail -f /var/log/auth.log | grep ssh
 # Monitoramento das conexões permitidas do OpenSSH Server: tail -f /var/log/tcpwrappers-allow-ssh.log
-# Monitoramento das conexões negadas do OpenSSH Server: tail -f /var/log/tcpwrappers-deny-ssh.log
+# Monitoramento das conexões negadas do OpenSSH Server: tail -f /var/log/tcpwrappers-deny.log
 #
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
@@ -130,10 +130,43 @@ echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde...
 	mv -v /etc/ssh/sshd_config /etc/ssh/sshd_config.old &>> $LOG
 	cp -v conf/sshd_config /etc/ssh/sshd_config &>> $LOG
 	cp -v conf/{hostname,hosts,hosts.allow,hosts.deny,issue.net,nsswitch.conf} /etc/ &>> $LOG
+	cp -v $NETPLAN $NETPLAN.old &>> $LOG
+	cp -v conf/00-installer-config.yaml $NETPLAN &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração sshd_config, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar.\n"
+echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
+echo -e "dependendo da versão do Ubuntu Server, verifique o conteúdo do diretório:"
+echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e altere"
+echo -e "o valor da variável NETPLAN no arquivo de configuração: 00-parametros.sh"
+	read
+	vim $NETPLAN
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	read
+	vim /etc/hostname
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	read
+	vim /etc/hosts
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	read
+	vim /etc/nsswitch.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração sshd_config, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando sshd: -t (text mode check configuration)
 	read
@@ -142,50 +175,30 @@ echo -e "Editando o arquivo de configuração sshd_config, pressione <Enter> par
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração hosts.deny, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração hosts.deny, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hosts.deny
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração issue.net, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração issue.net, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/issue.net
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar..."
+echo -e "Reinicializando os serviços do Netplan e do OpenSSH Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	read
-	vim /etc/hostname
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	read
-	vim /etc/hosts
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> para continuar..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	read
-	vim /etc/nsswitch.conf
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Reinicializando o serviço do OpenSSH Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
+	netplan --debug apply &>> $LOG
 	systemctl restart sshd &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5

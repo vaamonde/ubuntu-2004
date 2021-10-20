@@ -26,3 +26,4 @@ $TTL 3600 ; 1 (uma) semana de TTL (Time to Live) tempo de vida das respostas for
 ;
 20		IN		PTR		ptispo01ws01.pti.intra.
 254		IN		PTR		ptispo01fw01.pti.intra.
+

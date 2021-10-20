@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.04
+# Data de atualização: 20/10/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -131,7 +131,7 @@ echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando o serviço do ISC DHCP Server e do Netplan, aguarde..."
+echo -e "Iniciando os serviços do Netplan e do ISC DHCP Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	netplan --debug apply &>> $LOG
 	systemctl start isc-dhcp-server &>> $LOG

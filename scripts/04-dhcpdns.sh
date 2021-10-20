@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 18/10/2021
-# Versão: 0.07
+# Data de atualização: 20/10/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -90,6 +90,7 @@ echo
 #
 echo -e "Integração do ICS DHCP Server com Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53"
+echo -e "Porta padrão utilizada pelo RNDC.: TCP 953\n"
 echo -e "Porta padrão utilizada pelo ISC DHCP Server.: UDP 67\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -135,22 +136,27 @@ sleep 5
 echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DHCP Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando dnssec-keygen: Nas versões anteriores do BIND <9.13, os algoritmos HMAC podiam 
-	# ser gerados para uso como chaves TSIG, esse recurso foi removido a partir do BIND >9.13, nesse 
+	# ser gerados para uso como chaves TSIG, esse recurso foi removido a partir do BIND > 9.13, nesse 
 	# cenário é recomendado utilizar o comando: tsig-keygen para gerar chaves TSIG. 
 	# opção do comando tsig-keygen: -a (algorithm)
 	# opção do comando cut: -d (delimiter), -f (fields)
 	# opção do comando tr: -d (delete)
-	# opção do comando sed: s (replacement)
-	# opção do comando cp: -v (verbose)
 	tsig-keygen -a hmac-md5 $USERUPDATE > tsig.key
 	KEYGEN=$(cat tsig.key | grep secret | cut -d' ' -f2 | tr -d ';|"')
+echo -e "Geração da chave feita com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando os arquivos de configuração do Bind DNS Server e do ISC DHCP Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando sed: s (replacement)
+	# opção do comando cp: -v (verbose)
 	sed "s@secret vaamonde;@secret $KEYGEN;@" /etc/dhcp/dhcpd.conf > /tmp/dhcpd.conf.old
 	sed 's@secret "vaamonde";@secret "'$KEYGEN'";@' /etc/bind/named.conf.local > /tmp/named.conf.local.old
 	sed 's@secret "vaamonde";@secret "'$KEYGEN'";@' /etc/bind/rndc.key > /tmp/rndc.key.old
 	cp -v /tmp/dhcpd.conf.old /etc/dhcp/dhcpd.conf &>> $LOG
 	cp -v /tmp/named.conf.local.old /etc/bind/named.conf.local &>> $LOG
 	cp -v /tmp/rndc.key.old /etc/bind/rndc.key &>> $LOG
-echo -e "Atualização da chave feita com sucesso!!!, continuando com o script...\n"
+echo -e "Atualização dos arquivos feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração named.conf.local, pressione <Enter> para continuar."

@@ -39,3 +39,4 @@ pxe             IN 		CNAME 	ptispo01ws01
 ssh             IN 		CNAME	ptispo01ws01
 wp              IN		CNAME	ptispo01ws01
 portal          IN		CNAME	ptispo01ws01
+
