@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 18/10/2021
-# Versão: 0.08
+# Data de atualização: 20/10/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -184,7 +184,7 @@ PASSWORDFTP="pti@2018"
 PWDSSLFTP="pti@2018"
 #
 #=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 10-wordpress.sh                       #
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 11-wordpress.sh                       #
 #=============================================================================================
 #
 # Declarando as variáveis utilizadas nas configurações do Site do Wordpress
@@ -218,7 +218,13 @@ PASSWORDFTPWORDPRESS="wordpress"
 PATHWORDPRESS="/var/www/html/wp"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 11-netdata.sh                        #
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                       #
+#=============================================================================================
+#
+# Declarando as variáveis utilizadas nas configurações do Sistema Webmin
+#
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 13-netdata.sh                        #
 #=============================================================================================
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
