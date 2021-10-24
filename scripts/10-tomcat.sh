@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 19/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.02
+# Data de atualização: 24/10/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 #
@@ -128,7 +128,8 @@ echo -e "Atualizando os arquivos de configuração do Tomcat, aguarde..."
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/tomcat9/tomcat-users.xml /etc/tomcat9/tomcat-users.xml.old &>> $LOG
-	cp -v conf/tomcat-users.xml /etc/tomcat9/tomcat-users.xml &>> $LOG
+	mv -v /etc/tomcat9/server.xml /etc/tomcat9/server.xml.old &>> $LOG
+	cp -v conf/{tomcat-users.xml,server.xml} /etc/tomcat9/ &>> $LOG
 	#cp -v conf/{tomcat-users.xml,server.xml} /etc/tomcat9/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
