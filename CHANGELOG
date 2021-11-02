@@ -6,11 +6,16 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 20/10/2021
-Versão: 0.09
+Data de atualização: 01/11/2021
+Versão: 0.10
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+02/11/2021 - Robson Vaamonde - Atualização do script: 11-wordpress.sh, customomização do script: 12-webmin.sh, 
+acréscimo das configurações de download do Webmin, Usermin e Virtualmin no script: 00-parametros.sh, melhoria do 
+script 13-netdata.sh, customização do script: 14-loganalyzer.sh e variáveis no arquivo 00-paramentros.sh, mudança das
+opções de criação de banco de dados do Rsyslog e do LogAnalyzer no MySQL.
+
 20/10/2021 - Robson Vaamonde - Acréscimo da configuração do arquivo de configuração da Placa de Rede do Netplan no
 script: 02-openssh.sh, backup e atualização do arquivo 00-installer-config.yaml customizado, correção da falha de 
 edição do arquivo rndc.key no script: 03-dns.sh, acréscimo da verificação da porta TCP 953 no script: 03-dns.sh,

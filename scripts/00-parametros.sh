@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.09
+# Data de atualização: 02/11/2021
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -221,7 +221,16 @@ PATHWORDPRESS="/var/www/html/wp"
 #                      VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                       #
 #=============================================================================================
 #
-# Declarando as variáveis utilizadas nas configurações do Sistema Webmin
+# Declarando as variáveis utilizadas nas configurações do Webmin, Usermin e do Virtualmin
+# 
+# Variável de download do Webmin (atualizada no dia: 02/11/2021)
+WEBMIN="https://prdownloads.sourceforge.net/webadmin/webmin_1.981_all.deb"
+#
+# Variável de download do Usermin (atualizada no dia: 02/11/2021)
+USERMIN="http://prdownloads.sourceforge.net/webadmin/usermin_1.830_all.deb"
+#
+# Variável de download do Virtualmin (atualizada no dia: 02/11/2021)
+VIRTUALMIN="https://download.webmin.com/download/virtualmin/webmin-virtual-server_6.17.gpl_all.deb"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 13-netdata.sh                        #
@@ -233,4 +242,58 @@ PATHWORDPRESS="/var/www/html/wp"
 # opção do comando git clone --depth=1: Cria um clone superficial com um histórico truncado 
 # para o número especificado de confirmações (somente o último commit geral do repositório)
 NETDATA="https://github.com/firehol/netdata.git --depth=1"
+#
+#=============================================================================================
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 14-loganalyzer.sh                      #
+#=============================================================================================
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de monitoramento LogAnalyzer
+#
+# Variável de download do LogAnalyzer (atualizada no dia: 02/11/2021)
+LOGANALYZER="http://download.adiscon.com/loganalyzer/loganalyzer-4.1.12.tar.gz"
+#
+# Variável de download do Plugin de Tradução PT-BR do LogAnalyzer (atualizada no dia: 02/11/2021)
+LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_lang_pt_BR_3.2.3.zip"
+#
+# Declarando as variáveis para criação da Base de Dados do Rsyslog
+# opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
+# opções do comando CREATE: create (criação), user (usuário), identified by (identificado por
+# senha do usuário), password (senha)
+# opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
+# tabelas), to (para), user (usuário), identified by (identificado por - senha do usuário), 
+# password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
+# tabela), *.* (todos os bancos/tabelas), to (para), user@'%' (usuário @ localhost), identified 
+# by (identificado por - senha do usuário), password (senha)
+# opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+#
+# OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO:  VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh LINHA: 114
+RSYSLOGDB="syslog"
+RSYSLOGDATABASE="CREATE DATABASE syslog;"
+RSYSLOGUSER="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
+RSYSLOGGRANTDATABASE="GRANT USAGE ON *.* TO 'syslog';"
+RSYSLOGGRANTALL="GRANT ALL PRIVILEGES ON syslog.* TO 'syslog';"
+RSYSLOGFLUSH="FLUSH PRIVILEGES;"
+RSYSLOGINSTALL="/usr/share/dbconfig-common/data/rsyslog-mysql/install/mysql"
+#
+# Declarando as variáveis para criação da Base de Dados do LogAnalyzer
+# opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
+# opções do comando CREATE: create (criação), user (usuário), identified by (identificado por
+# senha do usuário), password (senha)
+# opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
+# tabelas), to (para), user (usuário), identified by (identificado por - senha do usuário), 
+# password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
+# tabela), *.* (todos os bancos/tabelas), to (para), user@'%' (usuário @ localhost), identified 
+# by (identificado por - senha do usuário), password (senha)
+# opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+#
+# OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO:  VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh LINHA: 114
+LOGDATABASE="CREATE DATABASE loganalyzer;"
+LOGUSERDATABASE="CREATE USER 'loganalyzer' IDENTIFIED BY 'loganalyzer';"
+LOGGRANTDATABASE="GRANT USAGE ON *.* TO 'loganalyzer';"
+LOGGRANTALL="GRANT ALL PRIVILEGES ON loganalyzer.* TO 'loganalyzer';"
+LOGFLUSH="FLUSH PRIVILEGES;"
 #

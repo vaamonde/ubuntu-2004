@@ -6,20 +6,21 @@
 # YouTube: youtube.com/BoraParaPratica
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
-# Data de criação: 18/10/2021
-# Data de atualização: 18/10/2021
+# Data de criação: 02/11/2021
+# Data de atualização: 02/11/2021
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.31.x
 #
-# O Netdata é uma ferramenta para visualizar e monitorar métricas em tempo real, otimizado 
-# para acumular todos os tipos de dados, como uso da CPU, atividade do disco, consultas SQL, 
-# visitas a um site, etc. A ferramenta é projetada para visualizar o agora com o máximo de 
-# detalhes possível, permitindo que o usuário tenha uma visão do que está acontecendo e do 
-# que acaba de acontecer em seu sistema ou aplicativo, sendo uma opção ideal para resolver 
-# problemas de desempenho em tempo real.
+# O Netdata é uma ferramenta para visualizar e monitorar métricas em tempo real, 
+# otimizado para acumular todos os tipos de dados, como uso da CPU, atividade do 
+# disco, consultas SQL, visitas a um site, etc. A ferramenta é projetada para 
+# visualizar o agora com o máximo de detalhes possível, permitindo que o usuário 
+# tenha uma visão do que está acontecendo e do que acaba de acontecer em seu 
+# sistema ou aplicativo, sendo uma opção ideal para resolver problemas de desempenho
+# em tempo real.
 #
-# https://(ip do servidor):(porta de utilização). Exemplo: https://172.16.1.20:19999
+# Exemplo: https://(ip do servidor):(porta de utilização) - https://172.16.1.20:19999
 #
 # Site oficial do Netdata: https://github.com/netdata/netdata
 #
