@@ -139,3 +139,7 @@ git status
 git show
 git log
 git push
+
+
+#Automitizando no bash o Commit
+git pull && git add * && git commit -m "Atualiazacao" && git push
