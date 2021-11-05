@@ -33,6 +33,13 @@ Oracle VirtualBOX: https://www.virtualbox.org/
 ## **Playlist do YouTUBE com todos os Vídeos do GNU/Linux Ubuntu Server 20.04.x LTS DevOps:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMRxzwCbAzmhjNnkwr11p7I
 
+## **Como utilizar os scripts desse curso no GNU/Linux Ubuntu Server 20.04.x LTS**
+01. Se logar com seu usuário no Ubuntu Server;
+02. Após logado, alterar para Root com o comando: sudo -i <Enter>;
+03. No perfil do usuário Root clocar o projeto do Github com o comando: git clone https://github.com/vaamonde/ubuntu-2004 <Enter>;
+04. Acessar o diretório dos scripts co o comando: cd ubuntu-2004/scripts/ <Enter>;
+05. Para executar os scripts digite o comando: bash 00-nome_do_script.sh <Enter>.
+
 ## **🖥 Ubuntu SERVER 20.04 LTS Focal Fossa 👏👏👏 LANÇAMENTO OFICIAL - Instalação e Configuração**
 
 Vídeo mostrando os procedimentos básicos para instalar a nova versão do Sistema Operacional GNU/Linux Ubuntu Server 20.04 LTS codinome Focal Fossa no VirtualBOX.

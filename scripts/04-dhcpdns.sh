@@ -189,7 +189,7 @@ echo -e "Reinicializando os serviços do ISC DHCP Server e do Bind DNS Server, a
 	systemctl reload bind9 &>> $LOG
 	rndc sync -clean &>> $LOG
 	rndc stats &>> $LOG
-echo -e "Serviços reinicializados com com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexão do Bind9 DNS Server e do ISC DHCP Server, aguarde..."

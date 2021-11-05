@@ -82,7 +82,7 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
@@ -163,7 +163,7 @@ echo -e "Verificando a Data e Hora do NTP Server e do Sistema Operacional, aguar
 		echo
 		echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M")")\n"
 		echo -e "Data/hora do Hardware: $(hwclock)\n"
-echo -e "Data e Hora do NTP Server e do Sistema Operacional verificadas com sucesso!!!, continuando com o script..."
+echo -e "Data e Hora do NTP Server e do Sistema Operacional verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de Conexão do NTP Server, aguarde..."

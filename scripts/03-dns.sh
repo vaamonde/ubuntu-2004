@@ -222,7 +222,7 @@ echo -e "Inicializando os serviços do Bind DNS Server e do Netplan, aguarde..."
 	systemctl reload bind9 &>> $LOG
 	rndc sync -clean &>> $LOG
 	rndc stats &>> $LOG
-echo -e "Serviços inicializados com com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexões do Bind DNS Server, aguarde..."

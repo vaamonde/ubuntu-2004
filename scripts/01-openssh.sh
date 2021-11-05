@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.06
+# Data de atualização: 05/11/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -120,6 +120,13 @@ echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Iniciando a Configuração do OpenSSH Server, aguarde...\n"
+sleep 5
+#
+echo -e "Instalando as ferramentas básicas de rede, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando apt: -y (yes)
+	apt -y install net-tools ipcalc nmap
+echo -e "Ferramentas instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde..."

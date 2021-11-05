@@ -9,8 +9,8 @@
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 #LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 #Data de criação: 23/07/2021
-#Data de atualização: 28/07/2021
-#Versão: 0.03
+#Data de atualização: 05/11/2021
+#Versão: 0.04
 #Testado e homologado no Linux Mint 20.x e VSCode 1.58.x
 
 O Visual Studio Code é um editor de código-fonte desenvolvido pela Microsoft para Windows, 
@@ -77,12 +77,13 @@ Portuguese (Brazil) Language Pack for Visual Studio Code
 Brazilian Portuguese - Code Spell Checker (Corretor Ortográfico de Código)
 	F1
 		Show Spell Checker Configuration Info
-			Language
-				English (en_us)
-				Portuguese (pt_br)
-				Portuguese - Brazil (pt-br)
-			File Types and Programming Languages
-				shellscript, python, markdown, etc...
+			User
+				Language
+					English (en_us)
+					Portuguese (pt_br)
+					Portuguese - Brazil (pt-br)
+				File Types and Programming Languages
+					shellscript, python, markdown, etc...
 
 Gerenciar
 	Configurações
@@ -93,8 +94,8 @@ Gerenciar
 			C Spell: Max Number Of Problems: 100000
 		Editor
 			Editor: Tab Size: 4
-			Editor: Detect Indentation: False
-			Editor: Insert Spaces: False
+			Editor: Detect Indentation: False (Off)
+			Editor: Insert Spaces: False (Off)
 
 Bats (Bash Automated Testing System)
 	(Sem necessidade de configuração)
