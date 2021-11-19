@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 02/11/2021
-# Versão: 0.11
+# Data de atualização: 19/11/2021
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -204,8 +204,9 @@ WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"
 # by (identificado por - senha do usuário), password (senha)
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
-# OBSERVAÇÃO: NO SCRIPT: 10-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO:  VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh LINHA: 114
+# OBSERVAÇÃO: NO SCRIPT: 11-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 114
 CREATE_DATABASE_WORDPRESS="CREATE DATABASE wordpress;"
 CREATE_USER_DATABASE_WORDPRESS="CREATE USER 'wordpress' IDENTIFIED BY 'wordpress';"
 GRANT_DATABASE_WORDPRESS="GRANT USAGE ON *.* TO 'wordpress';"
@@ -268,7 +269,8 @@ LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO:  VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh LINHA: 114
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 114
 RSYSLOGDB="syslog"
 RSYSLOGDATABASE="CREATE DATABASE syslog;"
 RSYSLOGUSER="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
@@ -290,7 +292,8 @@ RSYSLOGINSTALL="/usr/share/dbconfig-common/data/rsyslog-mysql/install/mysql"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO:  VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh LINHA: 114
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 114
 LOGDATABASE="CREATE DATABASE loganalyzer;"
 LOGUSERDATABASE="CREATE USER 'loganalyzer' IDENTIFIED BY 'loganalyzer';"
 LOGGRANTDATABASE="GRANT USAGE ON *.* TO 'loganalyzer';"

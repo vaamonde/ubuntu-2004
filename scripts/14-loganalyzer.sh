@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 02/11/2021
-# Versão: 0.01
+# Data de atualização: 19/11/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -86,8 +86,8 @@ fi
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Netdata, aguarde... "
-	for name in mysql-server mysql-common apache2 php vsftpd bind9 isc-dhcp-server unzip
+echo -n "Verificando as dependências do LogAnalyzer, aguarde... "
+	for name in mysql-server mysql-common apache2 php
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -99,7 +99,6 @@ echo -n "Verificando as dependências do Netdata, aguarde... "
             echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
