@@ -6,12 +6,15 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 05/11/2021
-Versão: 0.11
+Data de atualização: 20/11/2021
+Versão: 0.12
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-05/11/2021 - Robson Vaamonde - Atualizando do script: 01-openssh.sh, acréscimo do bloco de instalação das ferramentas
+20/11/2021 - Robson Vaamonde - Atualização do script: 01-openssh.sh, falha do redirecionamento do LOG da instalação
+das ferramentas de rede ($LOG) na linha 128.
+
+05/11/2021 - Robson Vaamonde - Atualização do script: 01-openssh.sh, acréscimo do bloco de instalação das ferramentas
 de rede (net-tools, ipcalc, nmap, etc...). Correções de PT-BR em vários scripts. Tradução do arquivo apache2.conf, 
 correção do script 07-lamp.sh na linha 231 (erro do nome do arquivo 000-default.conf), 
 
