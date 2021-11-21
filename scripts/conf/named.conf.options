@@ -6,46 +6,55 @@
 // Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 // Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 // Data de criação: 10/10/2021
-// Data de atualização: 17/10/2021
-// Versão: 0.04
+// Data de atualização: 21/11/2021
+// Versão: 0.05
 // Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
-// Configuração das opções do Bind9 DNS Server
+// Configuração das opções do Bind9 DNS Server.
 options {
 
-	// Diretório padrão do cache do Bind9 DNS Server
+	// Diretório padrão do cache do Bind9 DNS Server.
 	directory "/var/cache/bind";
 	
-	// Diretório e arquivo das estatística do Bind9 DNS Server
+	// Diretório e arquivo das estatística do Bind9 DNS Server.
 	statistics-file "/var/log/named/named.stats";
 	
-	// Endereços IPv4 de encaminhamento para servidores de DNS externos
+	// Endereços IPv4 de encaminhamento para servidores de DNS externos.
 	forwarders {
 		172.16.1.254;
 		8.8.8.8;
 		8.8.4.4;
 	};
 
-	// Número da porta de conexão do Bind9 DNS Server e Endereço IPv4 liberado
+	// Número da porta de conexão do Bind9 DNS Server e Endereço IPv4 liberado.
 	listen-on port 53 { 
 		127.0.0.1; 
 		172.16.1.20; 
 	};
 
-	// Configuração do Protocolo IPv6 no Bind9 DNS Server (serviço desabilitado)
+	// Configuração do Protocolo IPv6 no Bind9 DNS Server (serviço desabilitado).
 	//listen-on-v6 { 
 	//	any; 
 	//};
 
-	// Configurações Globais do Bind9 DNS Server (deixar o padrão)
+	// Desativar a recursão no servidor DNS autoritativo.
+	recursion no;
+
+	// Ocultar o número da versão dos clientes por razões de segurança.
+	version none;
+
+	// Ocultar a identificação do servidor.
+	server-id none;
+	
+	// Habilitar o Log de consulta.
+	querylog yes;
+
+	// Configurações Globais do Bind9 DNS Server (deixar o padrão).
 	auth-nxdomain no;
 	datasize default;
-	version none;
-	server-id none;
 	empty-zones-enable no;
-	recursion yes;
 
-	//Liberações de consulta e atualização do Bind9 DNS Server
+	// Liberações de consulta e atualização do Bind9 DNS Server.
 	allow-query {
 		any;
 	};
@@ -67,7 +76,7 @@ options {
 	};	
 };
 
-//Configuração da auditoria de Logs do Bind9 DNS Server, informações serão enviadas para Syslog
+// Configuração da auditoria de Logs do Bind9 DNS Server, informações serão enviadas para Syslog
 logging {
 	channel named_log {
 		syslog local3;

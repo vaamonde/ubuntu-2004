@@ -13,7 +13,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 20/11/2021 - Robson Vaamonde - Atualização do script: 01-openssh.sh, falha do redirecionamento do LOG da instalação
 das ferramentas de rede ($LOG) na linha 128, atualização do arquivo de configuração do MySQL Server mysqld.cnf para
-suportar somente IPV4 (bind-address	= 0.0.0.0).
+suportar somente IPV4 (bind-address	= 0.0.0.0), atualização dos arquivos de configuração do Bind9 named.conf.options
+(recursion no;, version none;, server-id none;, querylog yes;) e named.conf.local (allow-transfer { none; };).
 
 05/11/2021 - Robson Vaamonde - Atualização do script: 01-openssh.sh, acréscimo do bloco de instalação das ferramentas
 de rede (net-tools, ipcalc, nmap, etc...). Correções de PT-BR em vários scripts. Tradução do arquivo apache2.conf, 
