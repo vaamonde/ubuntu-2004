@@ -130,7 +130,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Configurando a Integração do ICS DHCP Server com Bind DNS Server, aguarde...\n"
+echo -e "Iniciando a Configuração da Integração do ICS DHCP Server com Bind DNS Server, aguarde...\n"
 sleep 5
 #
 echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DHCP Server, aguarde..."

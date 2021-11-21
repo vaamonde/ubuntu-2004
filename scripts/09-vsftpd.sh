@@ -112,7 +112,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando e Configuração do Vsftpd Server, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Vsftpd Server, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando o Serviço do Vsftpd Server, aguarde..."

@@ -114,7 +114,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando e Configurando o Webmin, Usermin e Virtualmin, aguarde...\n"
+echo -e "Iniciando a Instalação e Configurando o Webmin, Usermin e Virtualmin, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Webmin, Usermin e Virtualmin, aguarde..."

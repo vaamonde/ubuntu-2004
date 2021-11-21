@@ -99,7 +99,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando e Configurando o NTP Server e Client, aguarde...\n"
+echo -e "Iniciando Instalando e Configurando o NTP Server e Client, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando o NTP Server e Client, aguarde..."

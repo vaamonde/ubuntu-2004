@@ -96,7 +96,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando e Configurando o Servidor Web Tomcat9, aguarde...\n"
+echo -e "Iniciando a Instalação e Configurando o Servidor Web Tomcat9, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Tomcat9, aguarde..."

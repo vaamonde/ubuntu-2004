@@ -146,7 +146,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando e Configuração do LAMP-Server, aguarde...\n"
+echo -e "Iniciando a Instalando e Configuração do LAMP-Server, aguarde...\n"
 sleep 5
 #
 echo -e "Configurando as variáveis do Debconf do MySQL para o Apt, aguarde..."

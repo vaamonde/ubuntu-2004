@@ -195,7 +195,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Configuração do OpenSSL, aguarde...\n"
+echo -e "Iniciando a Configuração do OpenSSL do Apache2, aguarde...\n"
 sleep 5
 #
 echo -e "Criando a estrutura de diretórios do CA e dos Certificados, aguarde..."

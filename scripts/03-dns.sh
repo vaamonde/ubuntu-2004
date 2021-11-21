@@ -96,7 +96,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalando e Configuração do Bind9 DNS Server, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Bind9 DNS Server, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando o Bind9 DNS Server, aguarde..."

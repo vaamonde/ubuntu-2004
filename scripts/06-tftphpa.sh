@@ -109,7 +109,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a instalação e configuração do Tftpd-Hpa Server e Client, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Tftpd-Hpa Server e Client, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando o Serviço do Tftpd-Hpa Server e Client, aguarde..."
