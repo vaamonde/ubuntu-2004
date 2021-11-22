@@ -1,4 +1,4 @@
-#!/bin/bash
+	#!/bin/bash
 #Autor: Robson Vaamonde
 #Site: www.procedimentosemti.com.br
 #Facebook: facebook.com/ProcedimentosEmTI
@@ -42,7 +42,7 @@ https://github.com
 	Description: Básico de Git e Github no Linux Mint
 	Public
 	Check: Initialize this repository with a README
-	Add a licence: GNU General Public License v3.0
+	Add a license: GNU General Public License v3.0
 	Edit: Description (Emoji) - Website: http://www.boraparapratica.com.br
 	(https://gist.github.com/rxaviers/7360908)
 	Manage topics: git github bash shell linux linux-mint
@@ -52,7 +52,7 @@ https://github.com
 	Create new file: 	teste01.sh
 						Edit new file: Criando nosso primeiro script em Shell
 						Preview
-						Commint new file: Criando nosso primeiro script em Shell
+						Commit new file: Criando nosso primeiro script em Shell
 						Add and optional: Criando nosso primeiro script em Shell
 						Check: Commit directly to the master branch
 
