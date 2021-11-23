@@ -168,23 +168,23 @@ sleep 5
 echo -e "Criando a Base de Dados do Rsyslog, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), -D (database), < (Redirecionador de entrada STDOUT)
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGDATABASE" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGUSERDATABASE" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGGRANTDATABASE" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGGRANTALL" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGFLUSH" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -D $RSYSLOGDB < $RSYSLOGINSTALL &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_SYSLOG" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_SYSLOG" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_SYSLOG" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_SYSLOG" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_SYSLOG" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -D $DATABASE_NAME_SYSLOG < $INSTALL_DATABASE_SYSLOG &>> $LOG
 echo -e "Base de Dados do Rsyslog criada com sucesso!!!, continuando o script...\n"
 sleep 5
 #
 echo -e "Criando a Base de Dados do LogAnalyzer, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute)
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGDATABASE" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGUSERDATABASE" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGGRANTDATABASE" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGGRANTALL" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGFLUSH" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_LOGANALYZER" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_LOGANALYZER" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_LOGANALYZER" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_LOGANALYZER" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_LOGANALYZER" mysql &>> $LOG
 echo -e "Base de Dados do LogAnalyzer criada com sucesso!!!, continuando o script...\n"
 sleep 5
 #

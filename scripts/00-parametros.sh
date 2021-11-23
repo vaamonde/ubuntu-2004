@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 19/11/2021
-# Versão: 0.12
+# Data de atualização: 23/11/2021
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -271,13 +271,13 @@ LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 114
-RSYSLOGDB="syslog"
-RSYSLOGDATABASE="CREATE DATABASE syslog;"
-RSYSLOGUSER="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
-RSYSLOGGRANTDATABASE="GRANT USAGE ON *.* TO 'syslog';"
-RSYSLOGGRANTALL="GRANT ALL PRIVILEGES ON syslog.* TO 'syslog';"
-RSYSLOGFLUSH="FLUSH PRIVILEGES;"
-RSYSLOGINSTALL="/usr/share/dbconfig-common/data/rsyslog-mysql/install/mysql"
+CREATE_DATABASE_SYSLOG="CREATE DATABASE syslog;"
+CREATE_USER_DATABASE_SYSLOG="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
+GRANT_DATABASE_SYSLOG="GRANT USAGE ON *.* TO 'syslog';"
+GRANT_ALL_DATABASE_SYSLOG="GRANT ALL PRIVILEGES ON syslog.* TO 'syslog';"
+FLUSH_SYSLOG="FLUSH PRIVILEGES;"
+DATABASE_NAME_SYSLOG="syslog"
+INSTALL_DATABASE_SYSLOG="/usr/share/dbconfig-common/data/rsyslog-mysql/install/mysql"
 #
 # Declarando as variáveis para criação da Base de Dados do LogAnalyzer
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
@@ -294,9 +294,9 @@ RSYSLOGINSTALL="/usr/share/dbconfig-common/data/rsyslog-mysql/install/mysql"
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 114
-LOGDATABASE="CREATE DATABASE loganalyzer;"
-LOGUSERDATABASE="CREATE USER 'loganalyzer' IDENTIFIED BY 'loganalyzer';"
-LOGGRANTDATABASE="GRANT USAGE ON *.* TO 'loganalyzer';"
-LOGGRANTALL="GRANT ALL PRIVILEGES ON loganalyzer.* TO 'loganalyzer';"
-LOGFLUSH="FLUSH PRIVILEGES;"
+CREATE_DATABASE_LOGANALYZER="CREATE DATABASE loganalyzer;"
+CREATE_USER_DATABASE_LOGANALYZER="CREATE USER 'loganalyzer' IDENTIFIED BY 'loganalyzer';"
+GRANT_DATABASE_LOGANALYZER="GRANT USAGE ON *.* TO 'loganalyzer';"
+GRANT_ALL_DATABASE_LOGANALYZER="GRANT ALL PRIVILEGES ON loganalyzer.* TO 'loganalyzer';"
+FLUSH_LOGANALYZER="FLUSH PRIVILEGES;"
 #
