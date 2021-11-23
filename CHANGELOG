@@ -14,6 +14,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 23/11/2021 - Robson Vaamonde - Correção da falha do nome do pacote no script: 13-netdata.sh (pacote python3-psycopg2)
 alteração das variáveis do script 14-loganalyzer.sh (USERMYSQL e SENHAMYSQL) para a criação das bases de dados do
 Rsyslog e do LogAnalyzer, atualizando dos nomes das variáveis de criação das Bases de Dados do Rsyslog e LogAnalyzer,
+acréscimo da remoção dos diretórios do LogAnalyzer e da tradução no script 14-loganalyzer.sh, 
 
 20/11/2021 - Robson Vaamonde - Atualização do script: 01-openssh.sh, falha do redirecionamento do LOG da instalação
 das ferramentas de rede ($LOG) na linha 128, atualização do arquivo de configuração do MySQL Server mysqld.cnf para
