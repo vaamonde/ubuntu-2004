@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 19/11/2021
-# Versão: 0.02
+# Data de atualização: 23/11/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -168,23 +168,23 @@ sleep 5
 echo -e "Criando a Base de Dados do Rsyslog, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), -D (database), < (Redirecionador de entrada STDOUT)
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$RSYSLOGDATABASE" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$RSYSLOGUSERDATABASE" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$RSYSLOGGRANTDATABASE" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$RSYSLOGGRANTALL" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$RSYSLOGFLUSH" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -D $RSYSLOGDB < $RSYSLOGINSTALL &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGDATABASE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGUSERDATABASE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGGRANTDATABASE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGGRANTALL" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$RSYSLOGFLUSH" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -D $RSYSLOGDB < $RSYSLOGINSTALL &>> $LOG
 echo -e "Base de Dados do Rsyslog criada com sucesso!!!, continuando o script...\n"
 sleep 5
 #
 echo -e "Criando a Base de Dados do LogAnalyzer, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute)
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$LOGDATABASE" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$LOGUSERDATABASE" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$LOGGRANTDATABASE" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$LOGGRANTALL" mysql &>> $LOG
-	mysql -u $MYSQLUSER -p$MYSQLPASS -e "$LOGFLUSH" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGDATABASE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGUSERDATABASE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGGRANTDATABASE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGGRANTALL" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$LOGFLUSH" mysql &>> $LOG
 echo -e "Base de Dados do LogAnalyzer criada com sucesso!!!, continuando o script...\n"
 sleep 5
 #
