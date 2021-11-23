@@ -8,8 +8,8 @@
 	* Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 	* Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 	* Data de criação: 18/10/2021
-	* Data de atualização: 18/10/2021
-	* Versão: 0.01
+	* Data de atualização: 23/11/2021
+	* Versão: 0.02
 	* Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 	* Testado e homologado para a versão do Wordpress v5.8.x
 */
@@ -43,7 +43,9 @@ $table_prefix  = 'wp_';
 /** Site-01: https://www.filipemarques.net/diversos-dominios-mesmo-wordpress/ */
 /** Site-02: https://suporte.hostgator.com.br/hc/pt-br/articles/115003844573-Como-utilizar-dois-dom%C3%ADnios-em-um-mesmo-WordPress- */
 
-/** Habilitar dois domínios para uma única instalação - EM DESENVOLVIMENTO -*/
+/** Procedimento de utilização de dois ou mais domínios no Wordpress: instale o Wordpress */
+/** normalmente no seu Domínio primário, após a instalação remova os comentários das linhas */
+/** abaixo, reinicie o Apache2 e teste o acesso ao seu Wordpress */
 /** define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']); */
 /** define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']); */
 

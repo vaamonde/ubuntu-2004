@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 02/11/2021
-# Versão: 0.01
+# Data de atualização: 23/11/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.31.x
 #
@@ -102,7 +102,7 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
@@ -129,7 +129,7 @@ echo -e "Instalando as dependências do Netdata, aguarde..."
 	python3-mysqldb python3-pip python3-dev libmysqlclient-dev python-ipaddress libuv1-dev netcat \
 	libwebsockets15 libwebsockets-dev libjson-c-dev libbpfcc-dev liblz4-dev libjudy-dev libelf-dev \
 	libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler lm-sensors \
-	python-psycopg2 python3-pymysql &>> $LOG
+	python3-psycopg2 python3-pymysql &>> $LOG
 echo -e "Instalação das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -149,7 +149,7 @@ sleep 5
 #
 echo -e "Editando o arquivo de monitoramento do MySQL mysql.conf, pressione <Enter> para editar"
 echo -e "Remover os comentários das variáveis: user e pass"
-echo -e "Adicionar o usuário: 'root' é a senha: 'pti@2018' nas configurações do tcp:"
+echo -e "Adicionar o usuário: $USERMYSQL é a senha: $SENHAMYSQL nas configurações do tcp:"
 	read
 	vim /usr/lib/netdata/conf.d/python.d/mysql.conf +151
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -165,7 +165,7 @@ sleep 5
 #
 echo -e "Editando o arquivo de estatísticas do Bind9 DNS Server bind_rndc.conf, pressione <Enter> para editar"
 echo -e "Remover os comentários das variáveis: job_name, name, named_stats_path"
-echo -e "Adicionar o name: dnsppti, named_stats_path: /var/log/named/named.stats"
+echo -e "Adicionar o name: dnspti, named_stats_path: /var/log/named/named.stats"
 	read
 	vim /usr/lib/netdata/conf.d/python.d/bind_rndc.conf +53
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
