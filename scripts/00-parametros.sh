@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 23/11/2021
-# Versão: 0.13
+# Data de atualização: 25/11/2021
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -94,7 +94,7 @@ USERUPDATE="vaamonde"
 #=============================================================================================
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do NTP Server e Client
-
+#
 # Variável de sincronização do NTP Server com o Site ntp.br
 NTPSERVER="a.st1.ntp.br"
 #
@@ -161,7 +161,7 @@ CRIPTOKEY="aes256"
 # opções de: 1024, 2048, 3072 ou 4096, padrão utilizado: 2048
 BITS="2048" 
 #
-# Variável da assinatura da chaves de criptografia privada com as opções de: md5, -sha1, sha224, 
+# Variável da assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, 
 # sha256, sha384 ou sha512, padrão utilizado: sha256
 CRIPTOCERT="sha256" 
 #
@@ -299,4 +299,34 @@ CREATE_USER_DATABASE_LOGANALYZER="CREATE USER 'loganalyzer' IDENTIFIED BY 'logan
 GRANT_DATABASE_LOGANALYZER="GRANT USAGE ON *.* TO 'loganalyzer';"
 GRANT_ALL_DATABASE_LOGANALYZER="GRANT ALL PRIVILEGES ON loganalyzer.* TO 'loganalyzer';"
 FLUSH_LOGANALYZER="FLUSH PRIVILEGES;"
+#
+#=============================================================================================
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 15-glpi.sh                         #
+#=============================================================================================
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de help desk GLPI
+#
+# Variável de download do GLPI (atualizada no dia: 25/11/2021)
+GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.6/glpi-9.5.6.tgz"
+#
+# Declarando as variáveis para criação da Base de Dados do GLPI
+# opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
+# opções do comando CREATE: create (criação), user (usuário), identified by (identificado por
+# senha do usuário), password (senha)
+# opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
+# tabelas), to (para), user (usuário), identified by (identificado por - senha do usuário), 
+# password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
+# tabela), *.* (todos os bancos/tabelas), to (para), user@'%' (usuário @ localhost), identified 
+# by (identificado por - senha do usuário), password (senha)
+# opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+#
+# OBSERVAÇÃO: NO SCRIPT: 15.GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA DO
+# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 114
+CREATE_DATABASE_GLPI="CREATE DATABASE glpi;"
+CREATE_USER_DATABASE_GLPI="CREATE USER 'glpi' IDENTIFIED BY 'glpi';"
+GRANT_DATABASE_GLPI="GRANT USAGE ON *.* TO 'glpi';"
+GRANT_ALL_DATABASE_GLPI="GRANT ALL PRIVILEGES ON glpi.* TO 'glpi';"
+FLUSH_GLPI="FLUSH PRIVILEGES;"
 #

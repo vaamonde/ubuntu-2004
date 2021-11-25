@@ -6,11 +6,14 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 23/11/2021
-Versão: 0.13
+Data de atualização: 25/11/2021
+Versão: 0.14
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+25/11/2021 - Robson Vaamonde - Customização do script 15-glpi.sh e criação das variáveis no arquivo 00-parametros.sh,
+correções de PT-BR no arquivo 14-loganalyzer.sh.
+
 23/11/2021 - Robson Vaamonde - Correção da falha do nome do pacote no script: 13-netdata.sh (pacote python3-psycopg2)
 alteração das variáveis do script 14-loganalyzer.sh (USERMYSQL e SENHAMYSQL) para a criação das bases de dados do
 Rsyslog e do LogAnalyzer, atualizando dos nomes das variáveis de criação das Bases de Dados do Rsyslog e LogAnalyzer,
