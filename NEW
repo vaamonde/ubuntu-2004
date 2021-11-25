@@ -6,16 +6,19 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 13/10/2021
-Versão: 0.03
+Data de atualização: 25/11/2021
+Versão: 0.04
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+25/11/2021 - Robson Vaamonde - Estudo para a criação dos script de configuração: 00-webdav.sh, 00-nfs.sh, 00-iscsi.sh
+00-samba4.sh, 00-dnsslave.sh, 
+
 13/10/2021 - Robson Vaamonde - Remoção dos recursos de: Syslinux, Syslinux Utils, Syslinux EFI, PXE Linux e do Puppy
-Linux do script: 06-tfthpa.sh deixando mais imples, a implementação do PXE Linux será feita utilizando o ThinStation.
+Linux do script: 06-tfthpa.sh deixando mais simples, a implementação do PXE Linux será feita utilizando o ThinStation.
 
 12/10/2021 - Robson Vaamonde - Separação dos scripts dos serviços de ICS DHCP Server, Bind DNS Server e integração
 dos serviços para facilitar a implementação: 02-dhcp.sh, 03-dns.sh e 04-dhcpdns.sh.
 
-10/10/2021 - Robson Vaamonde - Criação do arquivo: 00-paramentros.sh para facilitar a configuração e instalação dos 
-serviços de rede um cenários diferentes, facilitando a customização dos script e arquivos de configuração.
+10/10/2021 - Robson Vaamonde - Criação do arquivo: 00-parametros.sh para facilitar a configuração e instalação dos 
+serviços de rede em cenários diferentes, facilitando a customização dos script e arquivos de configuração.
