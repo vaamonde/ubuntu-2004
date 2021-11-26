@@ -86,19 +86,6 @@ Manter selecionado a extensão: Brazilian Portuguese - Code Spell Checker
 				File Types and Programming Languages
 					shellscript, python, markdown, etc...
 
-Gerenciar
-	Configurações
-		Code Spell Checker
-			C Spell: Enabled Language Ids: shellscript
-			C Spell: Language: en,pt,pt-BR
-			C Spell: Max Duplicate Problems: 5000
-			C Spell: Max Number Of Problems: 100000
-		Editor
-			Editor: Tab Size: 4
-			Editor: Detect Indentation: False (Off)
-			Editor: Insert Spaces: False (Off)
-			Files: Eol: \n (LF)
-
 Bats (Bash Automated Testing System)
 	(Sem necessidade de configuração)
 
@@ -125,3 +112,19 @@ Pylance
 
 Python
 	(Sem necessidade de configuração)
+
+#08_ Configurações principais do VSCode para funcionar perfeitamente no Linux Mint
+Gerenciar
+	Configurações
+		Code Spell Checker
+			C Spell: Enabled Language Ids: shellscript
+			C Spell: Language: en,pt,pt-BR
+			C Spell: Max Duplicate Problems: 5000
+			C Spell: Max Number Of Problems: 100000
+		Editor
+			Editor: Tab Size: 4
+			Editor: Detect Indentation: False (Off)
+			Editor: Insert Spaces: False (Off)
+		Files
+			Files: Eol: \n (LF)
+
