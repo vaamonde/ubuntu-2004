@@ -1,12 +1,12 @@
-	#!/bin/bash
+#!/bin/bash
 #Autor: Robson Vaamonde
 #Site: www.procedimentosemti.com.br
 #Facebook: facebook.com/ProcedimentosEmTI
 #Facebook: facebook.com/BoraParaPratica
 #YouTube: youtube.com/BoraParaPratica
 #Data de criação: 19/07/2019
-#Data de atualização: 22/07/2020
-#Versão: 0.02
+#Data de atualização: 25/11/2021
+#Versão: 0.03
 
 #Instalando o Git no Debian, Ubuntu ou Linux Mint
 sudo apt update && sudo apt install git vim
@@ -141,5 +141,5 @@ git log
 git push
 
 
-#Automitizando no bash o Commit
-git pull && git add * && git commit -m "Atualiazacao" && git push
+#Automatizando no bash o Commit do Git
+git pull && git add . && git commit -m "Atualizacao" && git push
