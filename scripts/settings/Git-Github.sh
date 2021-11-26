@@ -5,8 +5,11 @@
 #Facebook: facebook.com/BoraParaPratica
 #YouTube: youtube.com/BoraParaPratica
 #Data de criação: 19/07/2019
-#Data de atualização: 25/11/2021
-#Versão: 0.03
+#Data de atualização: 26/11/2021
+#Versão: 0.04
+
+#OBSERVAÇÃO IMPORTANTE: Desde 13 de agosto o Github não aceita mais senhas de contas para se autenticar utilizando o Git.
+#Agora e necessário criar um Token de acesso remoto para autenticar o repositório local com o remoto via git pul ou SSH.
 
 #Instalando o Git no Debian, Ubuntu ou Linux Mint
 sudo apt update && sudo apt install git vim
