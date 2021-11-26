@@ -6,11 +6,15 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 25/11/2021
-Versão: 0.14
+Data de atualização: 26/11/2021
+Versão: 0.15
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+26/11/2021 - Robson Vaamonde - Acréscimo da linha: option wpad "http://172.16.1.20/wpad.dat"; no arquivo de configuração
+dhcpd.conf para suporte o protocolo WPAD (Web Proxy Autodiscovery Protocol), criação do CNAME: wpad no arquivo de
+configuração pti.intra.hosts
+
 25/11/2021 - Robson Vaamonde - Customização do script 15-glpi.sh e criação das variáveis no arquivo 00-parametros.sh,
 correções de PT-BR no arquivo 14-loganalyzer.sh.
 
