@@ -13,7 +13,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
 26/11/2021 - Robson Vaamonde - Estudo para a criação dos script de configuração: 00-webdav.sh, 00-nfs.sh, 00-iscsi.sh
 00-samba4.sh, 00-dnsslave.sh, 00-netdisco.sh, 00-nextcloud.sh, 00-onlyoffice.sh, 00-freeradius.sh, 00-postfix.sh, 
-00-wpad.sh, 00-facilemanager.sh, 00-dhcpglass.sh, 
+00-wpad.sh, 00-facilemanager.sh, 00-dhcpglass.sh, 00-openvpn.sh, 
 
 13/10/2021 - Robson Vaamonde - Remoção dos recursos de: Syslinux, Syslinux Utils, Syslinux EFI, PXE Linux e do Puppy
 Linux do script: 06-tfthpa.sh deixando mais simples, a implementação do PXE Linux será feita utilizando o ThinStation.
@@ -22,4 +22,5 @@ Linux do script: 06-tfthpa.sh deixando mais simples, a implementação do PXE Li
 dos serviços para facilitar a implementação: 02-dhcp.sh, 03-dns.sh e 04-dhcpdns.sh.
 
 10/10/2021 - Robson Vaamonde - Criação do arquivo: 00-parametros.sh para facilitar a configuração e instalação dos 
-serviços de rede em cenários diferentes, facilitando a customização dos script e arquivos de configuração.
+serviços de rede em cenários diferentes, todas as variáveis ficaram centralizadas no arquivo 00-parametros.sh e os
+arquivos de configuração devem ser customizados a parte.
