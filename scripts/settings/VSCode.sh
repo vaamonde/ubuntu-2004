@@ -127,4 +127,3 @@ Gerenciar
 			Editor: Insert Spaces: False (Off)
 		Files
 			Files: Eol: \n (LF)
-

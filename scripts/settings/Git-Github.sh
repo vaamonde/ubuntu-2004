@@ -5,18 +5,18 @@
 #Facebook: facebook.com/BoraParaPratica
 #YouTube: youtube.com/BoraParaPratica
 #Data de criação: 19/07/2019
-#Data de atualização: 25/11/2021
-#Versão: 0.03
+#Data de atualização: 26/11/2021
+#Versão: 0.04
 
-#OBSERVAÇÃO IMPORTANTE:
-#Link: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-	
-	https://github.com/settings/profile
-	https://github.com/settings/apps
-	https://github.com/settings/tokens
-	
+#OBSERVAÇÃO IMPORTANTE: A partir do dia 13 de Agosto 2020 o Github não aceitará mais usuários e 
+#senhas de contas para se autenticar no github utilizando operações do comando Git (terminal).
+#Sendo necessário fazer a criação do Token de acesso para se autenticar no terminal e enviar os
+#commit para o github.
+
+Link: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
 #Instalando o Git no Debian, Ubuntu ou Linux Mint
-sudo apt update && sudo apt install git vim
+sudo apt update && sudo apt install git vim python
 
 #Configuração do Git Localmente
 	#Seu nome completo que vai ser utilizado em qualquer commit (confirmação) recém-criado.
@@ -45,16 +45,16 @@ sudo apt update && sudo apt install git vim
 https://github.com
 
 	New Repository
-	Repository name: devops
-	Description: Básico de Git e Github no Linux Mint
-	Public
-	Check: Initialize this repository with a README
-	Add a license: GNU General Public License v3.0
-	Edit: Description (Emoji) - Website: http://www.boraparapratica.com.br
-	(https://gist.github.com/rxaviers/7360908)
-	Manage topics: git github bash shell linux linux-mint
-	Link: https://github.com/vaamonde/devops.git
-	Link: https://github.com/vaamonde/devops
+		Repository name: devops
+		Description: Básico de Git e Github no Linux Mint
+		Public
+		Check: Initialize this repository with a README
+		Add a license: GNU General Public License v3.0
+		Edit: Description (Emoji) - Website: http://www.boraparapratica.com.br
+			(https://gist.github.com/rxaviers/7360908)
+		Manage topics: git github bash shell linux linux-mint
+			Link: https://github.com/vaamonde/devops.git
+			Link: https://github.com/vaamonde/devops
 	
 	Create new file: 	teste01.sh
 						Edit new file: Criando nosso primeiro script em Shell
@@ -74,6 +74,10 @@ https://github.com
 						Commit changes: Upload do diretório do nosso terceiro script
 						Add and optional: Upload do diretório do nosso terceiro script
 						Check: Commit directly to the master branch
+
+#Criando um Token para acesso remoto utilizando o comando git
+Link da geração do Token: https://github.com/settings/tokens
+Gerando um novo Token
 
 #Clonando um Repositório Remoto do Github.
 git clone https://github.com/vaamonde/devops.git
@@ -114,7 +118,7 @@ git pull
 
 #Editando um arquivo localmente e enviando as confirmações (commit) para o Repositório Remoto do Github
 vim README.md
-git add *
+git add * ou git add .
 git commit -m "Alteração do arquivo README.md"
 git status
 git show
@@ -123,30 +127,29 @@ git push
 
 #Criando um diretório e arquivo no Repositório Clonado, confirmando (commit) as modificações e atualizando o
 #Repositório Remoto do Github
-mkdir teste06
+mkdir -v teste06
 cd teste06
 echo "#Teste de versionamento utilizando o Git" > teste06.sh
-git add *
+git add * ou git add .
 git commit -m "Criação do Diretório teste06 e Arquivo teste06.sh"
 git status
 git show
 git log
 git push
 
-#Criando um novo Repositório Local com o Git e enviando as confirmações (commit) para um novo Repositório 
-#Remoto no Github
+#Criando um novo Repositório Local com o Git e enviando as confirmações (commit) para a criação de um novo 
+#Repositório Remoto no Github
 mkdir vaamonde
 cd vaamonde
 git init
 ls -lha
 echo "#Teste de versionamento utilizando o Git" > teste.sh
-git add *
+git add * ou git add .
 git commit -m "Criação do arquivo teste.sh"
 git status
 git show
 git log
-git push
-
+git push (utilizar o seu Token criado na etapa)
 
 #Automatizando no bash o Commit do Git
 git pull && git add . && git commit -m "Atualizacao" && git push
