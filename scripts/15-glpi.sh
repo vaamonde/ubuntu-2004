@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 25/11/2021
-# Versão: 0.01
+# Data de atualização: 30/11/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -147,8 +147,8 @@ echo -e "Instalando as dependências do GLPI, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (faz a função de quebra de pagina no comando apt)
 	apt -y install php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
-	php-mysql php-recode php-tidy php-xmlrpc php-xsl php-mbstring php-gettext php-ldap php-cas \
-	php-apcu libapache2-mod-php php-json php-iconv php-xml php-cli xmlrpc-api-utils &>> $LOG
+	php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json php-xml php-cli \
+	libapache2-mod-php xmlrpc-api-utils &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -171,6 +171,7 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 	mv -v glpi/ /var/www/html/glpi/ &>> $LOG
 	chown -Rv www-data:www-data /var/www/html/glpi/ &>> $LOG
 	chmod -Rv 755 /var/www/html/glpi/ &>> $LOG
+	chmod -Rv 777 /var/www/html/glpi/files/_log &>> $LOG
 echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

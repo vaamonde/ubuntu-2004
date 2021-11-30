@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 25/11/2021
-# Versão: 0.14
+# Data de atualização: 30/11/2021
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -19,25 +19,27 @@
 #                    VARIÁVEIS GLOBAIS UTILIZADAS EM TODOS OS SCRIPTS                        #
 #=============================================================================================
 #
-# Declarando as variáveis utilizadas nas verificações e validação da versão do Servidor Ubuntu 
+# Declarando as variáveis utilizadas na verificação e validação da versão do Ubuntu Server 
 #
-# Variável da Data Inicial do script, utilizada para calcular o tempo de execução do script
+# Variável da Hora Inicial do Script, utilizada para calcular o tempo de execução do script
 # opção do comando date: +%T (Time)
 HORAINICIAL=$(date +%T)
 #
-# Variáveis para validar o ambiente, verificando se o usuário é "root" e versão do "ubuntu"
+# Variáveis para validar o ambiente, verificando se o usuário é "Root" e versão do "Ubuntu"
 # opções do comando id: -u (user)
 # opções do comando: lsb_release: -r (release), -s (short), 
 USUARIO=$(id -u)
 UBUNTU=$(lsb_release -rs)
 #
-# Variável do caminho e nome do arquivo de Log utilizado nesse script
+# Variável do Caminho e Nome do arquivo de Log utilizado em todos os script
 # $0 (variável de ambiente do nome do comando/script executado)
 # opção do redirecionador | piper: Conecta a saída padrão com a entrada padrão de outro comando
 # opções do comando cut: -d (delimiter), -f (fields)
 LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2)"
 #
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
+# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração e
+# nenhuma interação durante a instalação ou atualização do sistema via apt. Ele aceita a resposta 
+# padrão para todas as perguntas. 
 export DEBIAN_FRONTEND="noninteractive"
 #
 #=============================================================================================
@@ -49,31 +51,67 @@ export DEBIAN_FRONTEND="noninteractive"
 # Variável do Nome (Hostname) do Servidor
 NOMESERVER="ptispo01ws01"
 #
-# Variável do Nome (Hostname) FQDN (Fully Qualified Domain Name) do Servidor
+# Variável do Nome (Hostname) FQDN (Fully Qualified Domain Name) do Servidor Ubuntu
 FQDNSERVER="ptispo01ws01.pti.intra"
 #
-# Variável do Nome de Domínio do Servidor
+# Variável do Nome de Domínio do Servidor Ubuntu
 DOMINIOSERVER="pti.intra"
 #
-# Variável do Endereço IPv4 do Servidor
+# Variável do Endereço IPv4 do Servidor Ubuntu
 IPV4SERVER="172.16.1.20"
 #
-# Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor
+# Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor Ubuntu
 # CUIDADO!!! o nome do arquivo de configuração da placa de rede pode mudar dependendo da versão
 # do Ubuntu Server, verificar o conteúdo do diretório: /etc/netplan para saber o nome do arquivo
-# de configuração do Netplan e mudar a variável NETPLAN
+# de configuração do Netplan e mudar a variável NETPLAN com o nome correspondente.
 NETPLAN="/etc/netplan/00-installer-config.yaml"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 01-openssh.sh                       #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Serviço de Rede OpenSSH utilizados nesse script
+# 01. /etc/ssh/sshd_config = arquivo de configuração do Servidor OpenSSH
+# 02. /etc/hostname = arquivo de configuração do Nome do Servidor
+# 03. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host 
+# 04. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 05. /etc/hosts.deny = arquivo de configuração de negação de hosts por serviço
+# 06. /etc/issue.net = arquivo de configuração do Baner utilizado pelo OpenSSH
+# 07. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes
+# 08. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
+#
+#=============================================================================================
+#                          VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dhcp.sh                        #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Serviço de Rede ISC DHCP Sever utilizados nesse script
+# 01. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
+# 02. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 #
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 03-dns.sh                         #
 #=============================================================================================
 #
+# Arquivos de configuração (conf) do Serviço de Rede BIND DNS Server utilizados nesse script
+# 01. /etc/hostname = arquivo de configuração do Nome do Servidor
+# 02. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host 
+# 03. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes
+# 04. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
+# 05. /etc/bind/named.conf = arquivo de configuração da localização dos Confs do Bind9
+# 06. /etc/bind/named.conf.local = arquivo de configuração das Zonas do Bind9
+# 07. /etc/bind/named.conf.options = arquivo de configuração do Serviço do Bind9
+# 08. /etc/bind/rndc.key = arquivo de configuração das Chaves RNDC de integração Bind9 e DHCP
+# 09. /var/lib/bind/pti.intra.hosts = arquivo de configuração da Zona de Pesquisa Direta
+# 10. /var/lib/bind/172.16.1.rev = arquivo de configuração da Zona de Pesquisa Inversa
+# 11. /etc/cron.d/dnsupdate-cron = arquivo de configuração das atualizações de Ponteiros
+# 12. /etc/default/named = arquivo de configuração do Daemon do Serviço do Bind9
+#
 # Declarando as variáveis de Pesquisa Direta do Domínio, Reversa e Subrede do Bind DNS Server
 #
-# Variável do nome do Domínio do Servidor DNS
+# Variável do nome do Domínio do Servidor DNS (veja a linha: 58 desse arquivo)
 DOMAIN=$DOMINIOSERVER
 #
-# Variável do nome da Pesquisa Reversar do Servidor de DNS
+# Variável do nome da Pesquisa Inversa do Servidor de DNS
 DOMAINREV="1.16.172.in-addr.arpa"
 #
 # Variável do endereço IPv4 da Subrede do Servidor de DNS
@@ -82,6 +120,12 @@ NETWORK="172.16.1."
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 04-dhcpdns.sh                        #
 #=============================================================================================
+#
+# Arquivos de configuração (conf) da integração do Bind9 e do DHCP utilizados nesse script
+# 01. tsig.key - arquivo de geração da chave TSIG de integração do Bind9 e do DHCP
+# 02. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
+# 03. /etc/bind/named.conf.local = arquivo de configuração das Zonas do Bind9
+# 04. /etc/bind/rndc.key = arquivo de configuração das Chaves RNDC de integração Bind9 e DHCP
 #
 # Declarando a variável de geração da chave de atualização dos registros do Bind DNS Server 
 # integrado no ISC DHCP Server
@@ -93,18 +137,30 @@ USERUPDATE="vaamonde"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 05-ntp.sh                            #
 #=============================================================================================
 #
+# Arquivos de configuração (conf) do Serviço de Rede NTP Server utilizados nesse script
+# 01. /etc/ntp.conf = arquivo de configuração do serviço de rede NTP Server
+# 02. /etc/default/ntp = arquivo de configuração do Daemon do NTP Server
+# 03. /var/lib/ntp/ntp.drift = arquivo de configuração do escorregamento de memória do NTP
+# 04. /etc/systemd/timesyncd.conf = arquivo de configuração do sincronismo de Data e Hora
+# 05. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
+#
 # Declarando as variáveis utilizadas nas configurações do Serviço do NTP Server e Client
 #
 # Variável de sincronização do NTP Server com o Site ntp.br
 NTPSERVER="a.st1.ntp.br"
 #
-# Variável do Zona de Horário do NTP Sever
+# Variável do Zona de Horário do NTP Server
 TIMEZONE="America/Sao_Paulo"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 06-tftphpa.sh                        #
 #=============================================================================================
-# 
+#
+# Arquivos de configuração (conf) do Serviço de Rede TFTPHPA utilizados nesse script
+# 01. /etc/default/tftpd-hpa = arquivo de configuração do Servidor TFTP-HPA
+# 02. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
+# 03. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+#
 # Declarando as variáveis utilizadas nas configurações do Serviço do TFTP-HPA Server
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do TFTP-HPA

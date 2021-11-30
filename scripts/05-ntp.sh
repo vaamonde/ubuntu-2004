@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.04
+# Data de atualização: 30/11/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -138,6 +138,12 @@ sleep 5
 echo -e "Editando o arquivo de configuração timesyncd.conf, pressione <Enter> para continuar"
 	read
 	vim /etc/systemd/timesyncd.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar"
+	read
+	vim /etc/dhcp/dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

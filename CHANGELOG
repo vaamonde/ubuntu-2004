@@ -6,11 +6,17 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 26/11/2021
-Versão: 0.15
+Data de atualização: 30/11/2021
+Versão: 0.16
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+30/11/2021 - Robson Vaamonde - Melhoria na documentação do arquivo: 00-parametros.sh adicionando as informações dos
+arquivo de configuração utilizados em cada script, melhoria na documentação do arquivo de virtual host: glpi.conf, 
+atualização da versão do PHP 7.4 no arquivo de agendamento: glpi.cron, retirado do script: 15-glpi.sh as dependências
+do PHP: php-recode php-xsl php-gettext php-iconv (analisando se essas dependências vai afetar diretamente o GLPI),
+adicionado no script: 05-ntp.sh a edição do arquivo de configuração: dhcpd.conf.
+
 26/11/2021 - Robson Vaamonde - Acréscimo da linha: option wpad "http://172.16.1.20/wpad.dat"; no arquivo de configuração
 dhcpd.conf para suporte o protocolo WPAD (Web Proxy Autodiscovery Protocol), criação do CNAME: wpad no arquivo de
 configuração pti.intra.hosts

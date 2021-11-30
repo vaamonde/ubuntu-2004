@@ -6,24 +6,24 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 26/11/2021
-Versão: 0.02
+Data de atualização: 30/11/2021
+Versão: 0.03
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
 
 #00_ Arquivos e diretórios principais do curso do Ubuntu Server 20.04.x LTS x64
 	_ README: arquivo de documentação principal do curso, contendo os links para os vídeos e links extras
-	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts ou arquivos de configuração ou na Guia Issue
+	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts, arquivos de configuração ou na Guia Issue
 	_ CHANGELOG: arquivo de criação, mudanças ou melhorias nos scripts ou arquivos configuração
 	_ HELP: arquivo de ajuda desse curso, com procedimentos e documentação de utilização dos scripts
-	_ LICENSE: arquivo de licença de uso do scripts: MIT License
+	_ LICENSE: arquivo de licença de uso dos scripts: MIT License
 	_ NEW: arquivo de novidades dos scripts, arquivos de configuração, serviço de rede, etc...
 	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise de Log
-	_ ??-InstalacaoDoUbuntuServer-?? - arquivos dos procedimentos de instalação e configuração do Ubuntu Server
+	_ ??-InstalacaoDoUbuntuServer-?? - arquivos de procedimentos de instalação e configuração do Ubuntu Server
 	_ scripts/: diretório dos scripts desse curso, numerados por sequência de uso e prioridade
-	_ scripts/conf/: diretório dos arquivos de configuração (conf) desse curso
-	_ scripts/settings/: diretório dos arquivos de procedimentos de configuração principal desse curso
+	_ scripts/conf/: diretório dos arquivos de configuração (conf) de serviços desse curso
+	_ scripts/settings/: diretório dos arquivos de configuração principal do servidor desse curso
 
 #01_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
 	_ Todos os procedimentos de instalação e configuração básica do Ubuntu Server 20.04.x LTS
@@ -34,15 +34,17 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ 	03-ConfiguracaoDoLocaleTimezoneKeyboard.sh
 	_ 	04-ConfiguracaoDoNetplan.sh
 	_ 	05-DesligarReiniciar.sh
+	_ OBSERVAÇÃO IMPORTANTE: É recomendado fazer a configuração básica do Ubuntu Server antes de 
+	_ executar os scripts desse curso.
 
 #02_ Diretório dos scripts utilizados no Ubuntu Server 20.04.x LTS x64
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server 20.04.x
-	_ LTS se encontra no diretório: ubuntu-2004/scripts
+	_ LTS se encontra no diretório: ubuntu-2004/scripts.
 	_ Todos os arquivos de configuração dos serviços de rede no Ubuntu Server 20.04.x LTS se
-	_ encontra no diretório: /ubuntu-2004/scripts/conf
-	_ Caso você queira adaptar os scripts ou arquivos de configuração para o seu cenário, editar o
-	_ script corresponde, verificar as principais variáveis e arquivos de configuração, alterar seus
-	_ valores primeiro antes de executar os script
+	_ encontra no diretório: /ubuntu-2004/scripts/conf.
+	_ Caso você queira adaptar os scripts ou arquivos de configuração para o seu cenário/servidor, 
+	_ primeiro editar o script corresponde, verificar as principais variáveis e arquivos de 
+	_ configuração, alterar seus valores primeiro antes de executar os script.
 
 #03_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts
 	_ Arquivo de parâmetros (Variáveis) localizado em: /ubuntu-2004/scripts/00-parametros.sh
