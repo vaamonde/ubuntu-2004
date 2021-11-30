@@ -280,14 +280,8 @@ PATHWORDPRESS="/var/www/html/wp"
 #
 # Declarando as variáveis utilizadas nas configurações do Webmin, Usermin e do Virtualmin
 # 
-# Variável de download do Webmin (atualizada no dia: 02/11/2021)
-WEBMIN="https://prdownloads.sourceforge.net/webadmin/webmin_1.981_all.deb"
-#
-# Variável de download do Usermin (atualizada no dia: 02/11/2021)
-USERMIN="http://prdownloads.sourceforge.net/webadmin/usermin_1.830_all.deb"
-#
-# Variável de download do Virtualmin (atualizada no dia: 02/11/2021)
-VIRTUALMIN="https://download.webmin.com/download/virtualmin/webmin-virtual-server_6.17.gpl_all.deb"
+# Variável de download da Chave PGP do Webmin (Link atualizado no dia 30/11/2021)
+WEBMINPGP="http://www.webmin.com/jcameron-key.asc"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 13-netdata.sh                        #

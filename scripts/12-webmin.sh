@@ -10,7 +10,7 @@
 # Data de atualização: 02/11/2021
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Webmin v1.9x, Usermin v1.8x, Virtualmin v6.17x, 
+# Testado e homologado para a versão do Webmin v1.9x e do Usermin v1.8x 
 #
 # Webmin é um programa de gerenciamento de servidor, que roda em plataformas Unix/Linux. 
 # Com ele você pode usar também o Usermin e o Virtualmin. O Webmin funciona como um 
@@ -76,7 +76,7 @@ if [ -f $LOG ]
 		sleep 5
 fi
 #
-# Script de instalação do Webmin, Usermin e Virtualmin no GNU/Linux Ubuntu Server 20.04.x
+# Script de instalação do Webmin e do Usermin no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
 # opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
@@ -86,11 +86,9 @@ echo
 #
 echo -e "Instalação do Webmin no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Webmin.: TCP 10000"
-echo -e "Porta padrão utilizada pelo Usermin.: TCP 20000"
-echo -e "Porta padrão utilizada pelo Virtualmin.: TCP \n"
+echo -e "Porta padrão utilizada pelo Usermin.: TCP 20000\n"
 echo -e "Após a instalação do Webmin acessar a URL: https://$(hostname -I | cut -d ' ' -f1):10000/"
-echo -e "Após a instalação do Usermin acessar a URL: https://$(hostname -I | cut -d ' ' -f1):20000/"
-echo -e "Após a instalação do Virtualmin acessar a URL: https://$(hostname -I | cut -d ' ' -f1):20000/\n"
+echo -e "Após a instalação do Usermin acessar a URL: https://$(hostname -I | cut -d ' ' -f1):20000/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -129,70 +127,68 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando o Webmin, Usermin e Virtualmin, aguarde...\n"
+echo -e "Iniciando a Instalação e Configurando o Webmin e do Usermin, aguarde...\n"
 sleep 5
 #
-echo -e "Instalando as dependências do Webmin, Usermin e Virtualmin, aguarde..."
+echo -e "Instalando as dependências do Webmin e do Usermin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (Bar, opção de quebra de linha no apt)
-	apt -y install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime \
-	libio-pty-perl apt-show-versions python unzip &>> $LOG
+	apt -y install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl \
+	apt-show-versions python unzip apt-transport-https software-properties-common &>> $LOG
 echo -e "Instalação das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download do Webmin, Usermin e Virtualmin do site Oficial, aguarde..."
+echo -e "Atualizando o arquivo do Source List do Apt com o repositório do Webmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# removendo versões anteriores baixadas do Webmin
-	# opção do comando rm: -v (verbose)
-	# opção do comando wget: -O (output document file)
-	rm -v webmin.deb &>> $LOG
-	rm -v usermin.deb &>> $LOG
-	rm -v virtualmin.deb &>> $LOG
-	wget $WEBMIN -O webmin.deb &>> $LOG
-	wget $USERMIN -O usermin.deb &>> $LOG
-	wget $VIRTUALMIN -O virtualmin.deb &>> $LOG
-echo -e "Download do feito com sucesso!!!, continuando com o script...\n"
+	# opção do comando cp: -v (verbose)
+	cp -v conf/webmin.list /etc/apt/sources.list.d/ &>> $LOG
+echo -e "Source List do Apt atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
-#				 
+#
+echo -e "Adicionando a chave PGP do Webmin, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando wget: -q (), -O- ()
+	wget -q -O- $WEBMINPGP | sudo apt-key add - &>> $LOG
+echo -e "Chave PGP do Webmin adicionada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando as Listas do Apt com o novo Repositório do Webmin, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	apt update &>> $LOG
+echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Instalando o Webmin, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando dpkg: -i (install)
-	dpkg -i webmin.deb &>> $LOG
+	# opção do comando apt: -y (yes)
+	apt -y instal webmin &>> $LOG
 echo -e "Instalação do Webmin feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o Usermin, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando dpkg: -i (install)
-	dpkg -i usermin.deb &>> $LOG
+	# opção do comando apt: -y (yes)
+	apt -y instal usermin &>> $LOG
 echo -e "Instalação do Usermin feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Virtualmin, esse processo demora um pouco, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando dpkg: -i (install)
-	dpkg -i virtulamin.deb &>> $LOG
-echo -e "Instalação do Virtualmin feita com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Iniciando os Serviços do Webmin, Usermin e do Virtualmin, aguarde..."
+echo -e "Iniciando os Serviços do Webmin e do Usermin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl start webmin &>> $LOG
 	systemctl start usermin &>> $LOG
-	systemctl start virtulamin &>> $LOG
 echo -e "Serviços iniciados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas de conexões do Webmin, Usermin e do Virtualmin, aguarde..."
+echo -e "Verificando as portas de conexões do Webmin e do Usermin, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:'10000,20000,30000' -sTCP:LISTEN
+	lsof -nP -iTCP:'10000,20000' -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação e Configuração do Webmin, Usermin e do Virtualmin feita com Sucesso!!!"
+echo -e "Instalação e Configuração do Webmin e do Usermin feita com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)

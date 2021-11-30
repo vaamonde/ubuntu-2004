@@ -16,7 +16,10 @@ arquivo de configuração utilizados em cada script, melhoria na documentação 
 atualização da versão do PHP 7.4 no arquivo de agendamento: glpi.cron, retirado do script: 15-glpi.sh as dependências
 do PHP: php-recode php-xsl php-gettext php-iconv (analisando se essas dependências vai afetar diretamente o GLPI),
 adicionado no script: 05-ntp.sh a edição do arquivo de configuração: dhcpd.conf. Criação da bloco de verificação If
-em todos os script para checar se o script já foi executado mais de uma vez no servidor.
+em todos os script para checar se o script já foi executado mais de uma vez no servidor, acréscimo da verificação de
+dependência do script: 01-openssh.sh para checar se o openssh-client está instalado, mudança do script: 12-webmin.sh
+agora trabalhando com source.list (webmin.list) não mais baixando do site oficial (devido a lentidão no Download dos
+arquivo binários do Webmin, Usermin e Virtualmin), 
 
 26/11/2021 - Robson Vaamonde - Acréscimo da linha: option wpad "http://172.16.1.20/wpad.dat"; no arquivo de configuração
 dhcpd.conf para suporte o protocolo WPAD (Web Proxy Autodiscovery Protocol), criação do CNAME: wpad no arquivo de
