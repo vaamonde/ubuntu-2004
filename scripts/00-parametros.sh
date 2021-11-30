@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
 # Data de atualização: 30/11/2021
-# Versão: 0.15
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -275,10 +275,10 @@ PASSWORDFTPWORDPRESS="wordpress"
 PATHWORDPRESS="/var/www/html/wp"
 #
 #=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                       #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                         #
 #=============================================================================================
 #
-# Declarando as variáveis utilizadas nas configurações do Webmin, Usermin e do Virtualmin
+# Declarando as variáveis utilizadas nas configurações do Webmin e do Usermin
 # 
 # Variável de download da Chave PGP do Webmin (Link atualizado no dia 30/11/2021)
 WEBMINPGP="http://www.webmin.com/jcameron-key.asc"
