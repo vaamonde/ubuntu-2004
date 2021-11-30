@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/11/2021
-# Versão: 0.08
+# Data de atualização: 30/11/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -59,7 +59,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
-	for name in openssh-server
+	for name in openssh-server openssh-client
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -71,6 +71,21 @@ echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
             exit 1; 
             }
 		sleep 5
+#
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: O SCRIPT FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
 #
 # Script de configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x LTS
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
