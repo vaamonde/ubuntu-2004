@@ -61,6 +61,21 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		exit 1
 fi
 #
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
 # Script de instalação do Webmin, Usermin e Virtualmin no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
 # opção do comando hostname: -d (domain)

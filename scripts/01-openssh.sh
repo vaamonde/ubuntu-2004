@@ -73,7 +73,7 @@ echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
 		sleep 5
 #
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
-# OBSERVAÇÃO IMPORTANTE: O SCRIPT FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
 if [ -f $LOG ]
 	then
 		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."

@@ -142,6 +142,21 @@ echo -n "Verificando as dependências do OpenSSL, aguarde... "
             }
 		sleep 5
 #
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
 # Script de configuração do OpenSSL no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando hostname: -I (all IP address), -A (all FQDN name), -d (domain)
