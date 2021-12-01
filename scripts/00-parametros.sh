@@ -80,6 +80,14 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 07. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes
 # 08. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 #
+# Arquivos de monitoramento (log) do Serviço de Rede OpenSSH Server utilizados nesse script
+# 01. systemctl status ssh = status do serviço do OpenSSH
+# 02. journalctl -t sshd = todas as mensagens referente ao serviço do OpenSSH
+# 03. tail -f /var/log/syslog | grep sshd = filtrando as mensagens do serviço do OpenSSH
+# 04. tail -f /var/log/auth.log | grep ssh = filtrando as mensagens de autenticação do OpenSSH
+# 05. tail -f /var/log/tcpwrappers-allow-ssh.log = filtrando as conexões permitias do OpenSSH
+# 06. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do OpenSSH
+#
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dhcp.sh                        #
 #=============================================================================================
@@ -87,6 +95,13 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # Arquivos de configuração (conf) do Serviço de Rede ISC DHCP Sever utilizados nesse script
 # 01. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
 # 02. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
+#
+# Arquivos de monitoramento (log) do Serviço de Rede ISC DHCP Server utilizados nesse script
+# 01. systemctl status isc-dhcp-server = status do serviço do ISC DHCP
+# 02. journalctl -t dhcpd = todas as mensagens referente ao serviço do ISC DHCP
+# 03. tail -f /var/log/syslog | grep dhcpd = filtrando as mensagens do serviço do ISC DHCP
+# 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
+# 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
 #
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 03-dns.sh                         #
@@ -106,6 +121,11 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 11. /etc/cron.d/dnsupdate-cron = arquivo de configuração das atualizações de Ponteiros
 # 12. /etc/default/named = arquivo de configuração do Daemon do Serviço do Bind9
 #
+# Arquivos de monitoramento (log) do Serviço de Rede Bind DNS Server utilizados nesse script
+# 01. systemctl status bind9 = status do serviço do Bind DNS
+# 02. journalctl -t named = todas as mensagens referente ao serviço do Bind DNS
+# 03. 
+
 # Declarando as variáveis de Pesquisa Direta do Domínio, Inversa e Subrede do Bind DNS Server
 #
 # Variável do nome do Domínio do Servidor DNS (veja a linha: 58 desse arquivo)

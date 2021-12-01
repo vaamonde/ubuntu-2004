@@ -6,8 +6,8 @@
 // Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 // Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 // Data de criação: 10/10/2021
-// Data de atualização: 21/11/2021
-// Versão: 0.05
+// Data de atualização: 01/12/2021
+// Versão: 0.06
 // Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 // Configuração das opções do Bind9 DNS Server.
@@ -37,10 +37,10 @@ options {
 	//	any; 
 	//};
 
-	// Desativar a recursão no servidor DNS autoritativo.
+	// Desativar a recursividade no servidor DNS autoritativo.
 	recursion no;
 
-	// Ocultar o número da versão dos clientes por razões de segurança.
+	// Ocultar o número da versão dos clientes por razão de segurança.
 	version none;
 
 	// Ocultar a identificação do servidor.
@@ -77,39 +77,97 @@ options {
 };
 
 // Configuração da auditoria de Logs do Bind9 DNS Server, informações serão enviadas para Syslog
+// também para os arquivos de Log de cada canal corresponde a sua configuração
 logging {
-	channel named_log {
-		syslog local3;
+	channel default_log {
+		file "/var/log/named/default" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
 		severity info;
 	};
-	category security {
-		named_log;
+	channel auth_servers_log {
+		file "/var/log/named/auth_servers" versions 100 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category queries {
-		named_log;
+	channel dnssec_log {
+		file "/var/log/named/dnssec" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category xfer-out {
-		named_log;
+	channel zone_transfers_log {
+		file "/var/log/named/zone_transfers" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category xfer-in {
-		named_log;
+	channel ddns_log {
+		file "/var/log/named/ddns" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category general {
-		named_log;
+	channel client_security_log {
+		file "/var/log/named/client_security" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category dnssec {
-		named_log;
+	channel rate_limiting_log {
+		file "/var/log/named/rate_limiting" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category default {
-		named_log;
+	channel rpz_log {
+		file "/var/log/named/rpz" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category resolver {
-		named_log;
+	channel dnstap_log {
+		file "/var/log/named/dnstap" versions 3 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category client {
-		named_log;
+	channel queries_log {
+		file "/var/log/named/queries" versions 600 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity info;
 	};
-	category network {
-		named_log;
+	channel query-errors_log {
+		file "/var/log/named/query-errors" versions 5 size 20m;
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		severity dynamic;
+	};
+	channel default_syslog {
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		syslog daemon;
+		severity info;
+	};
+	channel default_debug {
+		print-time yes;
+		print-category yes;
+		print-severity yes;
+		file "named.run";
+		severity dynamic;
 	};
 };

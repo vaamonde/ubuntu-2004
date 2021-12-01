@@ -12,7 +12,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 01/12/2021 - Robson Vaamonde - Customização do script: 16-fusioninventory.sh integrado com o GLPI, atualização das
-versões do FusionInventory Server e Agent, atualização da variável $PATHTFTP no script: 06-tftphpa.sh.
+versões do FusionInventory Server e Agent, atualização da variável $PATHTFTP no script: 06-tftphpa.sh, correção da
+linha: ddns-rev-domainname "1.16.172.in-addr.arpa."; no arquivo dhcpd.conf em relação a integração do DHCP e DNS,
+melhorias nas configurações do arquivo: named.conf.options em relação aos arquivos de Log do Bind9 DNS.
 
 30/11/2021 - Robson Vaamonde - Melhoria na documentação do arquivo: 00-parametros.sh adicionando as informações dos
 arquivos de configuração utilizados em cada script, melhoria na documentação do arquivo de virtual host: glpi.conf, 
