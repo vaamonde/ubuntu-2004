@@ -371,7 +371,7 @@ GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.6/glpi-9.5.6.tg
 # by (identificado por - senha do usuário), password (senha)
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
-# OBSERVAÇÃO: NO SCRIPT: 15.GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA DO
+# OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA DO
 # ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 114
 CREATE_DATABASE_GLPI="CREATE DATABASE glpi;"
@@ -379,4 +379,25 @@ CREATE_USER_DATABASE_GLPI="CREATE USER 'glpi' IDENTIFIED BY 'glpi';"
 GRANT_DATABASE_GLPI="GRANT USAGE ON *.* TO 'glpi';"
 GRANT_ALL_DATABASE_GLPI="GRANT ALL PRIVILEGES ON glpi.* TO 'glpi';"
 FLUSH_GLPI="FLUSH PRIVILEGES;"
+#
+#=============================================================================================
+#                    VARIÁVEIS UTILIZADAS NO SCRIPT: 16-fusioninventory.sh                   #
+#=============================================================================================
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de inventário FusionInventory
+#
+# Variável de localização da instalação do diretório do GLPI Help Desk
+PATHGLPI="/var/www/html/glpi"
+#
+# Variável de download do FusionInventory (atualizada no dia: 30/11/2021)
+# OBSERVAÇÃO: O FusionInventory depende do GLPI para funcionar corretamente, é recomendado sempre 
+# manter o GLPI é o FusionInventory atualizados para as últimas versões compativeis no site.
+FUSIONSERVER="https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B3.0/fusioninventory-9.5+3.0.tar.bz2"
+FUSIONAGENT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_2.6-1_all.deb"
+FUSIONCOLLECT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-collect_2.6-1_all.deb"
+FUSIONNETWORK="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-network_2.6-1_all.deb"
+FUSIONDEPLOY="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-deploy_2.6-1_all.deb"
+AGENTWINDOWS32="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_windows-x86_2.6.exe"
+AGENTWINDOWS64="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_windows-x64_2.6.exe"
+AGENTMACOS="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/FusionInventory-Agent-2.6-2.dmg"
 #

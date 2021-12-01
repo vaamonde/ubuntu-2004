@@ -115,7 +115,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação e Configuração do GLPI no GNU/Linux Ubuntu Server 20.04.x"
+echo -e "Instalação e Configuração do GLPI Help Desk no GNU/Linux Ubuntu Server 20.04.x"
 echo -e "Após a instalação do GLPI acessar a URL: http://$(hostname -I | cut -d' ' -f1)/glpi/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
