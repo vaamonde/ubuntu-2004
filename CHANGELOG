@@ -6,11 +6,14 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 30/11/2021
-Versão: 0.16
+Data de atualização: 01/12/2021
+Versão: 0.17
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+01/12/2021 - Robson Vaamonde - Customização do script: 16-fusioninventory.sh integrado com o GLPI, atualização das
+versões do FusionInventory Server e Agent, atualização da variável $PATHTFTP no script: 06-tftphpa.sh.
+
 30/11/2021 - Robson Vaamonde - Melhoria na documentação do arquivo: 00-parametros.sh adicionando as informações dos
 arquivos de configuração utilizados em cada script, melhoria na documentação do arquivo de virtual host: glpi.conf, 
 atualização da versão do PHP 7.4 no arquivo de agendamento: glpi.cron, retirado do script: 15-glpi.sh as dependências

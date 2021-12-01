@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 30/11/2021
-# Versão: 0.16
+# Data de atualização: 01/12/2021
+# Versão: 0.17
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -76,7 +76,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 03. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host 
 # 04. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 # 05. /etc/hosts.deny = arquivo de configuração de negação de hosts por serviço
-# 06. /etc/issue.net = arquivo de configuração do Baner utilizado pelo OpenSSH
+# 06. /etc/issue.net = arquivo de configuração do Banner utilizado pelo OpenSSH
 # 07. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes
 # 08. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 #
@@ -106,7 +106,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 11. /etc/cron.d/dnsupdate-cron = arquivo de configuração das atualizações de Ponteiros
 # 12. /etc/default/named = arquivo de configuração do Daemon do Serviço do Bind9
 #
-# Declarando as variáveis de Pesquisa Direta do Domínio, Reversa e Subrede do Bind DNS Server
+# Declarando as variáveis de Pesquisa Direta do Domínio, Inversa e Subrede do Bind DNS Server
 #
 # Variável do nome do Domínio do Servidor DNS (veja a linha: 58 desse arquivo)
 DOMAIN=$DOMINIOSERVER
@@ -164,12 +164,22 @@ TIMEZONE="America/Sao_Paulo"
 # Declarando as variáveis utilizadas nas configurações do Serviço do TFTP-HPA Server
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do TFTP-HPA
-TFTP="/var/lib/tftpboot"
+PATHTFTP="/var/lib/tftpboot"
 #
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh                          #
 #=============================================================================================
 # 
+# Arquivos de configuração (conf) do Serviço de Rede LAMP Server utilizados nesse script
+# 01. /etc/apache2/apache2.conf = arquivo de configuração do Servidor Apache2
+# 02. /etc/apache2/ports.conf = arquivo de configuração das portas do Servidor Apache2
+# 03. /etc/apache2/sites-available/000-default.conf = arquivo de configuração do site padrão HTTP
+# 04. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
+# 05. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do Servidor MySQL
+# 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 07. /var/www/html/phpinfo.php = arquivo de geração da documentação do PHP
+# 08. /var/www/html/teste.html = arquivo de teste de páginas HTML
+#
 # Declarando as variáveis utilizadas nas configurações dos Serviços do LAMP-Server
 #
 # Variável do usuário padrão do MySQL (Root do Mysql, diferente do Root do GNU/Linux)
@@ -204,6 +214,14 @@ WEBSERVER="apache2"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 08-openssl.sh                        #
 #=============================================================================================
 #
+# Arquivos de configuração (conf) do Serviço de Certificados OpenSSL utilizados nesse script
+# 01. /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
+# 02. /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
+# 03. /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
+# 04. /etc/ssl/pti-ca.conf = arquivo de configuração de Unidade Certificadora CA
+# 05. /etc/ssl/pti-ssl.conf = arquivo de configuração do certificado do Apache2
+# 06. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do site HTTPS do Apache2
+#
 # Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
 #
 # Variável da senha utilizada na geração das chaves privadas/públicas da CA e dos certificados
@@ -225,6 +243,14 @@ CRIPTOCERT="sha256"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 09-vsftpd.sh                         #
 #=============================================================================================
 #
+# Arquivos de configuração (conf) do Serviço de Rede VSFTPd utilizados nesse script
+# 01. /etc/vsftpd.conf = arquivo de configuração do servidor VSFTPd
+# 02. /etc/vsftpd.allowed_users = arquivo de configuração da base de dados de usuários do VSFTPd
+# 03. /etc/shells = arquivo de configuração do shells válidos
+# 04. /etc/ssl/vsftpd-ssl.conf = arquivo de configuração da geração do certificado TLS/SSL
+# 05. /bin/ftponly = arquivo de configuração da mensagem (banner) do VSFTPd
+# 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+#
 # Declarando as variáveis utilizadas nas configurações do Serviço do VSFTPd Server
 #
 # Variável de criação do Grupo dos Usuários de acesso ao FTP
@@ -240,8 +266,22 @@ PASSWORDFTP="ftpuser"
 PWDSSLFTP="vaamonde"
 #
 #=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 10-tomcat.sh                        #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Servidor Apache Tomcat utilizados nesse script
+# 01. /etc/tomcat9/tomcat-users.xml = arquivo de configuração dos usuários do Tomcat
+# 02. /etc/tomcat9/server.xml = arquivo de configuração do servidor Tomcat
+#
+#=============================================================================================
 #                      VARIÁVEIS UTILIZADAS NO SCRIPT: 11-wordpress.sh                       #
 #=============================================================================================
+#
+# Arquivos de configuração (conf) do Site CMS Wordpress utilizados nesse script
+# 01. /var/www/html/wp/wp-config.php = arquivo de configuração do site Wordpress
+# 02. /var/www/html/wp/.htaccess = arquivo de segurança de páginas e diretórios do Wordpress
+# 03. /etc/vsftpd.allowed_users = arquivo de configuração da base de dados de usuários do VSFTPd
+# 04. /etc/apache2/sites-available/wordpress.conf = arquivo de configuração do Virtual Host
 #
 # Declarando as variáveis utilizadas nas configurações do Site do Wordpress
 #
@@ -278,6 +318,10 @@ PATHWORDPRESS="/var/www/html/wp"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                         #
 #=============================================================================================
 #
+#
+# Arquivos de configuração (conf) do sistema Webmin e Urermin utilizados nesse script
+# 01. /etc/apt/sources.list.d/webmin.list = arquivo de configuração do source list do Apt
+#
 # Declarando as variáveis utilizadas nas configurações do Webmin e do Usermin
 # 
 # Variável de download da Chave PGP do Webmin (Link atualizado no dia 30/11/2021)
@@ -286,6 +330,11 @@ WEBMINPGP="http://www.webmin.com/jcameron-key.asc"
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 13-netdata.sh                        #
 #=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Netdata utilizados nesse script
+# 01. /usr/lib/netdata/conf.d/python.d/mysql.conf = arquivo de monitoramento do MySQL
+# 02. /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf = arquivo de monitoramento do ISC DHCP
+# 03. /usr/lib/netdata/conf.d/python.d/bind_rndc.conf = arquivo de monitoramento do Bind DNS
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
@@ -297,6 +346,10 @@ NETDATA="https://github.com/firehol/netdata.git --depth=1"
 #=============================================================================================
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 14-loganalyzer.sh                      #
 #=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema LogAnalyzer utilizados nesse script
+# 01. /etc/rsyslog.conf = arquivo de configuração do serviço de rede Rsyslog
+# 02. /etc/rsyslog.d/mysql.conf = arquivo de configuração da base de dados do Rsyslog
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento LogAnalyzer
 #
@@ -354,6 +407,10 @@ FLUSH_LOGANALYZER="FLUSH PRIVILEGES;"
 #                         VARIÁVEIS UTILIZADAS NO SCRIPT: 15-glpi.sh                         #
 #=============================================================================================
 #
+# Arquivos de configuração (conf) do sistema GLPI Help Desk utilizados nesse script
+# 01. /etc/apache2/conf-available/glpi.conf = arquivo de configuração do Virtual Host do GLPI
+# 02. /etc/cron.d/glpi-cron = arquivo de configuração do agendamento do CRON do GLPI
+#
 # Declarando as variáveis utilizadas nas configurações do sistema de help desk GLPI
 #
 # Variável de download do GLPI (atualizada no dia: 25/11/2021)
@@ -383,6 +440,10 @@ FLUSH_GLPI="FLUSH PRIVILEGES;"
 #=============================================================================================
 #                    VARIÁVEIS UTILIZADAS NO SCRIPT: 16-fusioninventory.sh                   #
 #=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema GLPI Help Desk utilizados nesse script
+# 01. /var/log/fusioninventory-agent/fusioninventory.log = arquivo de log do agent do FusionInventory
+# 02. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário FusionInventory
 #

@@ -145,7 +145,6 @@ echo -e "Atualizando os arquivos de configuração do Tomcat, aguarde..."
 	mv -v /etc/tomcat9/tomcat-users.xml /etc/tomcat9/tomcat-users.xml.old &>> $LOG
 	mv -v /etc/tomcat9/server.xml /etc/tomcat9/server.xml.old &>> $LOG
 	cp -v conf/{tomcat-users.xml,server.xml} /etc/tomcat9/ &>> $LOG
-	#cp -v conf/{tomcat-users.xml,server.xml} /etc/tomcat9/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

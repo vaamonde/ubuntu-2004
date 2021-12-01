@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.03
+# Data de atualização: 01/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
@@ -141,8 +141,8 @@ echo -e "Atualizando o arquivo de configuração do Tftpd-Hpa Server, aguarde...
 	# opção do comando chown: -v (verbose), tftp (user), tftp (group)
 	mv -v /etc/default/tftpd-hpa /etc/default/tftpd-hpa.old &>> $LOG
 	cp -v conf/tftpd-hpa /etc/default/tftpd-hpa &>> $LOG
-	mkdir -v $TFTP &>> $LOG
-	chown -v tftp.tftp $TFTP &>> $LOG
+	mkdir -v $PATHTFTP &>> $LOG
+	chown -v tftp.tftp $PATHTFTP &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

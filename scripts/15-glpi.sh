@@ -190,7 +190,7 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o Banco de Dados do GLPI, aguarde..."
+echo -e "Criando a Base de Dados do GLPI, aguarde..."
 	# criando a base de dados do GLPI
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute)
