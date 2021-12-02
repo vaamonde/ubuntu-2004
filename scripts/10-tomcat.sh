@@ -7,19 +7,21 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 19/10/2021
-# Data de atualização: 24/10/2021
-# Versão: 0.03
+# Data de atualização: 02/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 #
-# O software Tomcat, desenvolvido pela Fundação Apache, permite a execução de aplicações para 
-# web. Sua principal característica técnica é estar centrada na linguagem de programação Java, 
-# mais especificamente nas tecnologias de Servlets e de Java Server Pages (JSP).
+# O software Tomcat, desenvolvido pela Fundação Apache, permite a execução de 
+# aplicações para web. Sua principal característica técnica é estar centrada 
+# na linguagem de programação Java, mais especificamente nas tecnologias de 
+# Servlets e de Java Server Pages (JSP).
 #
-# OpenJDK é uma implementação livre e gratuita da plataforma Java, Edição Standard. É o resultado 
-# dos esforços da Comunidade Java para a evolução atemporal da linguagem. Serve como incubadora 
-# de novas ideias que normalmente são implementadas no JDK comercial da Oracle para serem 
-# rentabilizadas posteriormente.
+# OpenJDK é uma implementação livre e gratuita da plataforma Java, Edição 
+# Standard. É o resultado dos esforços da Comunidade Java para a evolução 
+# atemporal da linguagem. Serve como incubadora de novas ideias que normalmente 
+# são implementadas no JDK comercial da Oracle para serem rentabilizadas 
+# posteriormente.
 #
 # Site Oficial do Tomcat: http://tomcat.apache.org/
 # Site Oficial do OpenJDK: https://openjdk.java.net/
@@ -117,7 +119,7 @@ sleep 5
 echo -e "Instalando as dependências do Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install openjdk-11-jdk openjdk-11-jre default-jdk &>> $LOG
+	apt -y install $TOMCATDEP &>> $LOG
 echo -e "Instalação das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -132,8 +134,7 @@ sleep 5
 echo -e "Instalando o Servidor Web Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-examples \
-	tomcat9-user &>> $LOG
+	apt -y install $TOMCATINSTALL &>> $LOG
 echo -e "Servidor Web Tomcat9 instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 30/11/2021
-# Versão: 0.02
+# Data de atualização: 02/12/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x, Agent 2.6.x e GLPI 9.5.x
 #
@@ -63,7 +63,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do FusionInventory, aguarde... "
-	for name in mysql-server mysql-common apache2 php
+	for name in $FUSIONDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -188,18 +188,15 @@ echo -e "Instalando as Dependências do FusionInventory Server e Agent, aguarde.
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	# dependências do FusionInventory Agent
-	apt -y install dmidecode hwdata ucf hdparm perl libuniversal-require-perl libwww-perl libparse-edid-perl \
-	libproc-daemon-perl libfile-which-perl libhttp-daemon-perl libxml-treepp-perl libyaml-perl libnet-cups-perl \
-	libnet-ip-perl libdigest-sha-perl libsocket-getaddrinfo-perl libtext-template-perl libxml-xpath-perl \
-	libyaml-tiny-perl libio-socket-ssl-perl libnet-ssleay-perl libcrypt-ssleay-perl &>> $LOG
+	apt -y install $AGENTINSTALL &>> $LOG
 	# dependências do FusionInventory Task Network
-	apt -y install libnet-snmp-perl libcrypt-des-perl libnet-nbname-perl &>> $LOG
+	apt -y install $NETWORKINSTALL &>> $LOG
 	# dependências do FusionInventory Task Deploy
-	apt -y install libfile-copy-recursive-perl libparallel-forkmanager-perl &>> $LOG
+	apt -y install $DEPLOYINSTALL &>> $LOG
 	# dependências do FusionInventory Task WakeOnLan
-	apt -y install libwrite-net-perl &>> $LOG
+	apt -y install $WAKEINSTALL &>> $LOG
     # dependências do FusionInventory SNMPv3
-	apt -y install libdigest-hmac-perl &>> $LOG
+	apt -y install $SNMPNSTALL &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

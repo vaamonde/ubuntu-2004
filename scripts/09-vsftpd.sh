@@ -7,14 +7,15 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 17/10/2021
-# Data de atualização: 17/10/2021
-# Versão: 0.01
+# Data de atualização: 02/12/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do VSFTPD v3.0.x
 #
-# O VSFTPd, é um servidor FTP para sistemas do tipo Unix, incluindo Linux. É o servidor FTP 
-# padrão nas distribuições Ubuntu, CentOS, Fedora, NimbleX, Slackware e RHEL Linux. Está 
-# licenciado pela GNU General Public License. Suporta IPv4, IPv6, TLS e FTPS.
+# O VSFTPd, é um servidor FTP para sistemas do tipo Unix, incluindo Linux. 
+# É o servidor FTP padrão nas distribuições Ubuntu, CentOS, Fedora, NimbleX, 
+# Slackware e RHEL Linux. Está licenciado pela GNU General Public License. 
+# Suporta IPv4, IPv6, TLS e FTPS.
 #
 # Site Oficial do Projeto Vsftpd: https://security.appspot.com/vsftpd.html
 # Site Oficial do Projeto FileZilla: https://filezilla-project.org/
@@ -46,7 +47,7 @@ fi
 # || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
 # [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do Vsftpd Server, aguarde... "
-	for name in bind9 bind9utils apache2 openssl
+	for name in $FTPDEP
 	do
 		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
 			echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -132,13 +133,13 @@ sleep 5
 #
 echo -e "Instalando o Serviço do Vsftpd Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	apt -y install vsftpd &>> $LOG
+	apt -y install $FTPINSTALL &>> $LOG
 echo -e "Vsftpd Server instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o Grupo padrão dos Usuários do Vsftpd, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	groupadd ftpusers &>> $LOG
+	groupadd $GROUPFTP &>> $LOG
 echo -e "Grupo criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

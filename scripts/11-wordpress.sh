@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 18/10/2021
-# Versão: 0.02
+# Data de atualização: 02/12/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -57,7 +57,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do Wordpress, aguarde... "
-	for name in mysql-server mysql-common apache2 php vsftpd
+	for name in $WORDPRESSDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -136,7 +136,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando o Wordpress no Apache2, aguarde...\n"
+echo -e "Iniciando a Instalação e Configurando do Wordpress no Apache2, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Wordpress, aguarde..."

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 02/11/2021
-# Versão: 0.01
+# Data de atualização: 02/12/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Webmin v1.9x e do Usermin v1.8x 
 #
@@ -133,8 +133,7 @@ sleep 5
 echo -e "Instalando as dependências do Webmin e do Usermin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (Bar, opção de quebra de linha no apt)
-	apt -y install perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl \
-	apt-show-versions python unzip apt-transport-https software-properties-common &>> $LOG
+	apt -y install $WEBMINDEP &>> $LOG
 echo -e "Instalação das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -158,18 +157,11 @@ echo -e "Atualizando as Listas do Apt com o novo Repositório do Webmin, aguarde
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Webmin, esse processo demora um pouco, aguarde..."
+echo -e "Instalando o Webmin e Usermin, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y instal webmin &>> $LOG
-echo -e "Instalação do Webmin feita com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Instalando o Usermin, esse processo demora um pouco, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando apt: -y (yes)
-	apt -y instal usermin &>> $LOG
-echo -e "Instalação do Usermin feita com sucesso!!!, continuando com o script...\n"
+	apt -y instal $WEBMINNSTALL &>> $LOG
+echo -e "Instalação do Webmin e do Usermin feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Iniciando os Serviços do Webmin e do Usermin, aguarde..."

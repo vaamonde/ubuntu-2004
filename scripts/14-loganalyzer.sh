@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 25/11/2021
-# Versão: 0.04
+# Data de atualização: 02/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -87,7 +87,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do LogAnalyzer, aguarde... "
-	for name in mysql-server mysql-common apache2 php
+	for name in $LOGDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -176,7 +176,7 @@ echo -e "Instalando as dependências do LogAnalyzer, aguarde..."
 	# opção do comando apt: -y (yes)
 	echo "rsyslog-mysql rsyslog-mysql/dbconfig-install boolean false" | debconf-set-selections &>> $LOG
     debconf-show rsyslog-mysql &>> $LOG
-	apt -y install rsyslog-mysql &>> $LOG
+	apt -y install $LOGINSTALL &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

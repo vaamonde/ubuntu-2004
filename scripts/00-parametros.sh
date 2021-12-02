@@ -38,8 +38,8 @@ UBUNTU=$(lsb_release -rs)
 LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2)"
 #
 # Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração e
-# nenhuma interação durante a instalação ou atualização do sistema via apt. Ele aceita a resposta 
-# padrão para todas as perguntas. 
+# nenhuma interação durante a instalação ou atualização do sistema via Apt ou Apt-Get. Ele 
+# aceita a resposta padrão para todas as perguntas.
 export DEBIAN_FRONTEND="noninteractive"
 #
 #=============================================================================================
@@ -91,7 +91,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # Variável das dependências do laço de loop do OpenSSH Server
 SSHDEP="openssh-server openssh-client"
 #
-# Variável de instalação das dependências do OpenSSH Server
+# Variável de instalação dos softwares extras do OpenSSH Server
 SSHINSTALL="net-tools ipcalc nmap"
 #
 #=============================================================================================
@@ -109,7 +109,7 @@ SSHINSTALL="net-tools ipcalc nmap"
 # 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
 # 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
 #
-# Variável de instalação das dependências do ISC DHCP Server
+# Variável de instalação do serviço de rede ISC DHCP Server
 DHCPINSTALL="isc-dhcp-server net-tools"
 #
 #=============================================================================================
@@ -146,7 +146,7 @@ DOMAINREV="1.16.172.in-addr.arpa"
 # Variável do endereço IPv4 da Subrede do Servidor de DNS
 NETWORK="172.16.1."
 #
-# Variável de instalação das dependências do Bind DNS Server
+# Variável de instalação do serviço de rede Bind DNS Server
 DNSINSTALL="bind9 bind9utils bind9-doc dnsutils net-tools"
 #
 #=============================================================================================
@@ -190,7 +190,7 @@ TIMEZONE="America/Sao_Paulo"
 # Variável das dependências do laço de loop do NTP Server
 NTPDEP="isc-dhcp-server"
 #
-# Variável de instalação das dependências do NTP Server e Client
+# Variável de instalação do serviço de rede NTP Server e Client
 NTPINSTALL="ntp ntpdate"
 #
 #=============================================================================================
@@ -210,7 +210,7 @@ PATHTFTP="/var/lib/tftpboot"
 # Variável das dependências do laço de loop do TFTP-HPA Server
 TFTPDEP="bind9 bind9utils isc-dhcp-server"
 #
-# Variável de instalação das dependências do TFTP-HPA Server
+# Variável de instalação do serviço de rede TFTP-HPA Server
 TFTPINSTALL="tftpd-hpa tftp-hpa"
 #
 #=============================================================================================
@@ -257,10 +257,10 @@ APP_PASS=$SENHAMYSQL
 # Variável de configuração do serviço de hospedagem de site utilizado pelo PhpMyAdmin
 WEBSERVER="apache2"
 #
-# Variável de instalação das dependências do LAMP Server (^ (circunflexo): expressão regular)
+# Variável de instalação do serviço de rede LAMP Server (^ (circunflexo): expressão regular)
 LAMPINSTALL="lamp-server^ perl python apt-transport-https"
 #
-# Variável de instalação das dependências do LAMP Server (^ (circunflexo): expressão regular)
+# Variável de instalação do serviço de rede PhpMyAdmin
 PHPMYADMININSTALL="phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json libmcrypt-dev pwgen"
 #
 #=============================================================================================
@@ -309,17 +309,23 @@ SSLDEP="openssl apache2 bind9"
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do VSFTPd Server
 #
-# Variável de criação do Grupo dos Usuários de acesso ao FTP
+# Variável de criação do Grupo dos Usuários de acesso ao VSFTPd Server
 GROUPFTP="ftpusers"
 #
-# Variável de criação do Usuário de acesso ao FTP
+# Variável de criação do Usuário de acesso ao VSFTPd Server
 USERFTP="ftpuser"
 #
-# Variável da senha do Usuário de FTP
+# Variável da senha do Usuário de VSFTPd Server
 PASSWORDFTP="ftpuser"
 #
 # Variável da senha utilizada na geração das chaves privadas/públicas de criptografia do OpenSSL 
 PWDSSLFTP="vaamonde"
+#
+# Variável das dependências do laço de loop do VSFTPd Server
+FTPDEP="bind9 bind9utils apache2 openssl"
+#
+# Variável de instalação do serviço de rede VSFTPd Server
+FTPINSTALL="vsftpd"
 #
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 10-tomcat.sh                        #
@@ -328,6 +334,12 @@ PWDSSLFTP="vaamonde"
 # Arquivos de configuração (conf) do Servidor Apache Tomcat utilizados nesse script
 # 01. /etc/tomcat9/tomcat-users.xml = arquivo de configuração dos usuários do Tomcat
 # 02. /etc/tomcat9/server.xml = arquivo de configuração do servidor Tomcat
+#
+# Variável de instalação das dependências do Java do Apache Tomcat Server
+TOMCATDEP="openjdk-11-jdk openjdk-11-jre default-jdk"
+#
+# Variável de instalação do serviço de rede Apache Tomcat Server
+TOMCATINSTALL="tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-examples tomcat9-user"
 #
 #=============================================================================================
 #                      VARIÁVEIS UTILIZADAS NO SCRIPT: 11-wordpress.sh                       #
@@ -357,8 +369,8 @@ WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 11-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHA: 114
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 238, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 217
 CREATE_DATABASE_WORDPRESS="CREATE DATABASE wordpress;"
 CREATE_USER_DATABASE_WORDPRESS="CREATE USER 'wordpress' IDENTIFIED BY 'wordpress';"
 GRANT_DATABASE_WORDPRESS="GRANT USAGE ON *.* TO 'wordpress';"
@@ -370,18 +382,27 @@ USERFTPWORDPRESS="wordpress"
 PASSWORDFTPWORDPRESS="wordpress"
 PATHWORDPRESS="/var/www/html/wp"
 #
+# Variável das dependências do laço de loop do Wordpress
+WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
+#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                         #
 #=============================================================================================
 #
-#
-# Arquivos de configuração (conf) do sistema Webmin e Urermin utilizados nesse script
+# Arquivos de configuração (conf) do sistema Webmin e Userrmin utilizados nesse script
 # 01. /etc/apt/sources.list.d/webmin.list = arquivo de configuração do source list do Apt
 #
 # Declarando as variáveis utilizadas nas configurações do Webmin e do Usermin
 # 
 # Variável de download da Chave PGP do Webmin (Link atualizado no dia 30/11/2021)
 WEBMINPGP="http://www.webmin.com/jcameron-key.asc"
+#
+# Variável da instalação das dependências do Webmin e do Usermin (\ quebra de linha no apt)
+WEBMINDEP="perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl \
+apt-show-versions python unzip apt-transport-https software-properties-common"
+#
+# Variável de instalação do serviço de rede Webmin e Usermin
+WEBMINNSTALL="webmin usermin"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 13-netdata.sh                        #
@@ -398,6 +419,16 @@ WEBMINPGP="http://www.webmin.com/jcameron-key.asc"
 # opção do comando git clone --depth=1: Cria um clone superficial com um histórico truncado 
 # para o número especificado de confirmações (somente o último commit geral do repositório)
 NETDATA="https://github.com/firehol/netdata.git --depth=1"
+#
+# Variável das dependências do laço de loop do Netdata
+NETDATADEP="mysql-server mysql-common apache2 php vsftpd bind9 isc-dhcp-server"
+#
+# Variável de instalação das dependências do Netdata (\ quebra de linha no apt)
+NETDATAINSTALL="zlib1g-dev gcc make git autoconf autogen automake pkg-config uuid-dev python3 \
+python3-mysqldb python3-pip python3-dev libmysqlclient-dev python-ipaddress libuv1-dev netcat \
+libwebsockets15 libwebsockets-dev libjson-c-dev libbpfcc-dev liblz4-dev libjudy-dev libelf-dev \
+libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler lm-sensors \
+python3-psycopg2 python3-pymysql"
 #
 #=============================================================================================
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 14-loganalyzer.sh                      #
@@ -428,8 +459,8 @@ LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHA: 114
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 217
 CREATE_DATABASE_SYSLOG="CREATE DATABASE syslog;"
 CREATE_USER_DATABASE_SYSLOG="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
 GRANT_DATABASE_SYSLOG="GRANT USAGE ON *.* TO 'syslog';"
@@ -459,6 +490,12 @@ GRANT_DATABASE_LOGANALYZER="GRANT USAGE ON *.* TO 'loganalyzer';"
 GRANT_ALL_DATABASE_LOGANALYZER="GRANT ALL PRIVILEGES ON loganalyzer.* TO 'loganalyzer';"
 FLUSH_LOGANALYZER="FLUSH PRIVILEGES;"
 #
+# Variável das dependências do laço de loop do LogAnalyzer
+LOGDEP="mysql-server mysql-common apache2 php bind9"
+#
+# Variável de instalação das dependências do LogAnalyzer
+LOGINSTALL="rsyslog-mysql"
+#
 #=============================================================================================
 #                         VARIÁVEIS UTILIZADAS NO SCRIPT: 15-glpi.sh                         #
 #=============================================================================================
@@ -485,13 +522,21 @@ GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.6/glpi-9.5.6.tg
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA DO
-# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHA: 114
+# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 217
 CREATE_DATABASE_GLPI="CREATE DATABASE glpi;"
 CREATE_USER_DATABASE_GLPI="CREATE USER 'glpi' IDENTIFIED BY 'glpi';"
 GRANT_DATABASE_GLPI="GRANT USAGE ON *.* TO 'glpi';"
 GRANT_ALL_DATABASE_GLPI="GRANT ALL PRIVILEGES ON glpi.* TO 'glpi';"
 FLUSH_GLPI="FLUSH PRIVILEGES;"
+#
+# Variável das dependências do laço de loop do GLPI Help Desk
+GLPIDEP="mysql-server mysql-common apache2 php bind9"
+#
+# Variável de instalação das dependências do GLPI Help Desk (\ quebra de linha no apt)
+GLPIINSTALL="php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
+php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json php-xml php-cli \
+libapache2-mod-php xmlrpc-api-utils"
 #
 #=============================================================================================
 #                    VARIÁVEIS UTILIZADAS NO SCRIPT: 16-fusioninventory.sh                   #
@@ -518,3 +563,27 @@ AGENTWINDOWS32="https://github.com/fusioninventory/fusioninventory-agent/release
 AGENTWINDOWS64="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_windows-x64_2.6.exe"
 AGENTMACOS="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/FusionInventory-Agent-2.6-2.dmg"
 #
+# Variável das dependências do laço de loop do GLPI Help Desk
+FUSIONDEP="mysql-server mysql-common apache2 php bind9"
+#
+# Variável de instalação das dependências do FusionInventory Agent (\ quebra de linha no apt)
+AGENTINSTALL="dmidecode hwdata ucf hdparm perl libuniversal-require-perl libwww-perl libparse-edid-perl \
+libproc-daemon-perl libfile-which-perl libhttp-daemon-perl libxml-treepp-perl libyaml-perl libnet-cups-perl \
+libnet-ip-perl libdigest-sha-perl libsocket-getaddrinfo-perl libtext-template-perl libxml-xpath-perl \
+libyaml-tiny-perl libio-socket-ssl-perl libnet-ssleay-perl libcrypt-ssleay-perl"
+#
+# Variável de instalação das dependências do FusionInventory Task Network
+NETWORKINSTALL="libnet-snmp-perl libcrypt-des-perl libnet-nbname-perl"
+#
+# Variável de instalação das dependências do FusionInventory Task Deploy 
+DEPLOYINSTALL="libfile-copy-recursive-perl libparallel-forkmanager-perl"
+#
+# Variável de instalação das dependências do FusionInventory Task WakeOnLan
+WAKEINSTALL="libwrite-net-perl"
+#
+# Variável de instalação das dependências do FusionInventory SNMPv3
+SNMPNSTALL="libdigest-hmac-perl"
+#
+
+
+
