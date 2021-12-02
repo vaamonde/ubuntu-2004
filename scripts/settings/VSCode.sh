@@ -30,7 +30,7 @@ https://code.visualstudio.com/download
 		Salvar aquivo
 
 #02_ Instalando o Vim, Git e o Python no Linux Mint 20.x
-Terminal
+Terminal (Ctrl+Alt+T)
 	sudo apt update 
 	sudo apt install vim git python 
 	exit

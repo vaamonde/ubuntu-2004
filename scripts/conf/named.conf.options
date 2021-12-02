@@ -7,7 +7,7 @@
 // Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 // Data de criação: 10/10/2021
 // Data de atualização: 01/12/2021
-// Versão: 0.06
+// Versão: 0.07
 // Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 // Configuração das opções do Bind9 DNS Server.
@@ -170,4 +170,31 @@ logging {
 		file "named.run";
 		severity dynamic;
 	};
+	category default { default_syslog; default_debug; default_log; };
+	category config { default_syslog; default_debug; default_log; };
+	category dispatch { default_syslog; default_debug; default_log; };
+	category network { default_syslog; default_debug; default_log; };
+	category general { default_syslog; default_debug; default_log; };
+	category zoneload { default_syslog; default_debug; default_log; };
+	category resolver { auth_servers_log; default_debug; };       
+	category cname { auth_servers_log; default_debug; };       
+	category delegation-only { auth_servers_log; default_debug; };
+	category lame-servers { auth_servers_log; default_debug; };
+	category edns-disabled { auth_servers_log; default_debug; };
+	category dnssec { dnssec_log; default_debug; };
+	category notify { zone_transfers_log; default_debug; };       
+	category xfer-in { zone_transfers_log; default_debug; };       
+	category xfer-out { zone_transfers_log; default_debug; };
+	category update{ ddns_log; default_debug; };
+	category update-security { ddns_log; default_debug; };
+	category client{ client_security_log; default_debug; };       
+	category security { client_security_log; default_debug; };
+	category rate-limit { rate_limiting_log; default_debug; };       
+	category spill { rate_limiting_log; default_debug; };       
+	category database { rate_limiting_log; default_debug; };
+	category rpz { rpz_log; default_debug; };
+	category dnstap { dnstap_log; default_debug; };
+	category trust-anchor-telemetry { default_syslog; default_debug; default_log; };
+	category queries { queries_log; };
+	category query-errors {query-errors_log; };
 };
