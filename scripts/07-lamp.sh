@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 05/10/2021
-# Versão: 0.06
+# Data de atualização: 02/12/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -55,7 +55,7 @@
 # desenvolvedores estão migrando para o MariaDB, nesse script o mesmo deve ser 
 # reconfigurado para instalar e configurar o MariaDB no Ubuntu conforme o comando:
 # sudo apt update && sudo apt install mariadb-server mariadb-client mariadb-common
-# Instalação do MariaDB será feita no script: lemp.sh
+# Instalação do MariaDB será feita no script: 00-lemp.sh
 #
 # Site Oficial do Projeto Apache2: https://www.apache.org/
 # Site Oficial do Projeto Oracle MySQL: https://www.mysql.com/
@@ -161,7 +161,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalando e Configuração do LAMP-Server, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do LAMP-Server, aguarde...\n"
 sleep 5
 #
 echo -e "Configurando as variáveis do Debconf do MySQL para o Apt, aguarde..."
@@ -176,8 +176,7 @@ sleep 5
 echo -e "Instalando o LAMP-SERVER (Linux, Apache2, MySQL, Php, Perl e Python), aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	# opção do comando ^ (circunflexo): (expressão regular - Casa o começo da linha)
-	apt -y install lamp-server^ perl python apt-transport-https &>> $LOG
+	apt -y install $LAMPINSTALL &>> $LOG
 echo -e "Instalação do LAMP-SERVER feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -197,9 +196,8 @@ sleep 5
 #
 echo -e "Instalando o PhpMyAdmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando apt: -y (yes), \ (quebra de linha)
-	apt -y install phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json \
-	libmcrypt-dev pwgen &>> $LOG
+	# opção do comando apt: -y (yes),
+	apt -y install $PHPMYADMININSTALL &>> $LOG
 echo -e "Instalação do PhpMyAdmin feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #				 

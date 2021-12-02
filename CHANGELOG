@@ -6,11 +6,15 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 01/12/2021
-Versão: 0.17
+Data de atualização: 02/12/2021
+Versão: 0.18
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+02/12/2021 - Robson Vaamonde - Criação das variáveis do teste do laço de loop das dependências dos script e dos pacotes
+de instalação das dependências de cada script no arquivo: 00-parametros.sh, ficando mais simples adicionar novas
+dependências na instalação do software.
+
 01/12/2021 - Robson Vaamonde - Customização do script: 16-fusioninventory.sh integrado com o GLPI, atualização das
 versões do FusionInventory Server e Agent, atualização da variável $PATHTFTP no script: 06-tftphpa.sh, correção da
 linha: ddns-rev-domainname "1.16.172.in-addr.arpa."; no arquivo dhcpd.conf em relação a integração do DHCP e DNS,

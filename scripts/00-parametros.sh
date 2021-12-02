@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 01/12/2021
-# Versão: 0.17
+# Data de atualização: 02/12/2021
+# Versão: 0.18
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -61,9 +61,9 @@ DOMINIOSERVER="pti.intra"
 IPV4SERVER="172.16.1.20"
 #
 # Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor Ubuntu
-# CUIDADO!!! o nome do arquivo de configuração da placa de rede pode mudar dependendo da versão
-# do Ubuntu Server, verificar o conteúdo do diretório: /etc/netplan para saber o nome do arquivo
-# de configuração do Netplan e mudar a variável NETPLAN com o nome correspondente.
+# CUIDADO!!! o nome do arquivo de configuração da placa de rede pode mudar dependendo da 
+# versão do Ubuntu Server, verificar o conteúdo do diretório: /etc/netplan para saber o nome 
+# do arquivo de configuração do Netplan e mudar a variável NETPLAN com o nome correspondente.
 NETPLAN="/etc/netplan/00-installer-config.yaml"
 #
 #=============================================================================================
@@ -88,6 +88,12 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 05. tail -f /var/log/tcpwrappers-allow-ssh.log = filtrando as conexões permitias do OpenSSH
 # 06. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do OpenSSH
 #
+# Variável das dependências do laço de loop do OpenSSH Server
+SSHDEP="openssh-server openssh-client"
+#
+# Variável de instalação das dependências do OpenSSH Server
+SSHINSTALL="net-tools ipcalc nmap"
+#
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dhcp.sh                        #
 #=============================================================================================
@@ -102,6 +108,9 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 03. tail -f /var/log/syslog | grep dhcpd = filtrando as mensagens do serviço do ISC DHCP
 # 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
 # 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
+#
+# Variável de instalação das dependências do ISC DHCP Server
+DHCPINSTALL="isc-dhcp-server net-tools"
 #
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 03-dns.sh                         #
@@ -137,6 +146,9 @@ DOMAINREV="1.16.172.in-addr.arpa"
 # Variável do endereço IPv4 da Subrede do Servidor de DNS
 NETWORK="172.16.1."
 #
+# Variável de instalação das dependências do Bind DNS Server
+DNSINSTALL="bind9 bind9utils bind9-doc dnsutils net-tools"
+#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 04-dhcpdns.sh                        #
 #=============================================================================================
@@ -152,6 +164,9 @@ NETWORK="172.16.1."
 # 
 # Variável da senha utilizada na criação da chave de atualização dos ponteiros do DNS e DHCP
 USERUPDATE="vaamonde"
+#
+# Variável das dependências do laço de loop da integração do Bind DNS e do ISC DHCP Server
+DHCPDNSDEP="isc-dhcp-server bind9"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 05-ntp.sh                            #
@@ -172,6 +187,12 @@ NTPSERVER="a.st1.ntp.br"
 # Variável do Zona de Horário do NTP Server
 TIMEZONE="America/Sao_Paulo"
 #
+# Variável das dependências do laço de loop do NTP Server
+NTPDEP="isc-dhcp-server"
+#
+# Variável de instalação das dependências do NTP Server e Client
+NTPINSTALL="ntp ntpdate"
+#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 06-tftphpa.sh                        #
 #=============================================================================================
@@ -185,6 +206,12 @@ TIMEZONE="America/Sao_Paulo"
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do TFTP-HPA
 PATHTFTP="/var/lib/tftpboot"
+#
+# Variável das dependências do laço de loop do TFTP-HPA Server
+TFTPDEP="bind9 bind9utils isc-dhcp-server"
+#
+# Variável de instalação das dependências do TFTP-HPA Server
+TFTPINSTALL="tftpd-hpa tftp-hpa"
 #
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh                          #
@@ -230,6 +257,12 @@ APP_PASS=$SENHAMYSQL
 # Variável de configuração do serviço de hospedagem de site utilizado pelo PhpMyAdmin
 WEBSERVER="apache2"
 #
+# Variável de instalação das dependências do LAMP Server (^ (circunflexo): expressão regular)
+LAMPINSTALL="lamp-server^ perl python apt-transport-https"
+#
+# Variável de instalação das dependências do LAMP Server (^ (circunflexo): expressão regular)
+PHPMYADMININSTALL="phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json libmcrypt-dev pwgen"
+#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 08-openssl.sh                        #
 #=============================================================================================
@@ -258,6 +291,9 @@ BITS="2048"
 # Variável da assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, 
 # sha256, sha384 ou sha512, padrão utilizado: sha256
 CRIPTOCERT="sha256" 
+#
+# Variável das dependências do laço de loop do OpenSSL
+SSLDEP="openssl apache2 bind9"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 09-vsftpd.sh                         #

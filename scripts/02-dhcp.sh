@@ -7,15 +7,16 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.05
+# Data de atualização: 02/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
-# O ISC DHCP Server dhcpd (uma abreviação de "daemon DHCP") é um programa de servidor DHCP que opera
-# como um daemon em um servidor para fornecer serviço de protocolo de configuração dinâmica de hosts 
-# (DHCP) a uma rede. Essa implementação, também conhecida como ISC DHCP, é uma das primeiras e mais 
-# conhecidas, mas agora existem várias outras implementações de software de servidor DHCP disponíveis.
+# O ISC DHCP Server dhcpd (uma abreviação de "daemon DHCP") é um programa de servidor 
+# DHCP que opera como um daemon em um servidor para fornecer serviço de protocolo de 
+# configuração dinâmica de hosts (DHCP) a uma rede. Essa implementação, também conhecida 
+# como ISC DHCP, é uma das primeiras e mais conhecidas, mas agora existem várias outras 
+# implementações de software de servidor DHCP disponíveis.
 #
 # Diretório e Arquivo de banco de dados do Leasing ofertados pelo ISC DHCP Server:
 # Localização: /var/lib/dhcp/dhcpd.leases
@@ -114,7 +115,7 @@ sleep 5
 echo -e "Instalando o ISC DHCP Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install net-tools isc-dhcp-server &>> $LOG
+	apt -y install $DHCPINSTALL &>> $LOG
 echo -e "ISC DHCP Server instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

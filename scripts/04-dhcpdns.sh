@@ -7,22 +7,24 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.08
+# Data de atualização: 02/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
-# O Bind DNS Server BIND (Berkeley Internet Name Domain ou, como chamado previamente, Berkeley Internet 
-# Name Daemon) é o servidor para o protocolo DNS mais utilizado na Internet, especialmente em sistemas 
-# do tipo Unix, onde ele pode ser considerado um padrão de facto. Foi criado por quatro estudantes de 
-# graduação, membros de um grupo de pesquisas em ciência da computação da Universidade de Berkeley, e 
-# foi distribuído pela primeira vez com o sistema operacional 4.3 BSD. Atualmente o BIND é suportado e 
+# O Bind DNS Server BIND (Berkeley Internet Name Domain ou, como chamado previamente, 
+# Berkeley Internet Name Daemon) é o servidor para o protocolo DNS mais utilizado na 
+# Internet, especialmente em sistemas do tipo Unix, onde ele pode ser considerado um 
+# padrão de facto. Foi criado por quatro estudantes de graduação, membros de um grupo 
+# de pesquisas em ciência da computação da Universidade de Berkeley, e foi distribuído 
+# pela primeira vez com o sistema operacional 4.3 BSD. Atualmente o BIND é suportado e 
 # mantido pelo Internet Systems Consortium.
 #
-# O ISC DHCP Server dhcpd (uma abreviação de "daemon DHCP") é um programa de servidor DHCP que opera
-# como um daemon em um servidor para fornecer serviço de protocolo de configuração dinâmica de hosts 
-# (DHCP) a uma rede. Essa implementação, também conhecida como ISC DHCP, é uma das primeiras e mais 
-# conhecidas, mas agora existem várias outras implementações de software de servidor DHCP disponíveis.
+# O ISC DHCP Server dhcpd (uma abreviação de "daemon DHCP") é um programa de servidor 
+# DHCP que opera como um daemon em um servidor para fornecer serviço de protocolo de 
+# configuração dinâmica de hosts (DHCP) a uma rede. Essa implementação, também conhecida 
+# como ISC DHCP, é uma das primeiras e mais conhecidas, mas agora existem várias outras 
+# implementações de software de servidor DHCP disponíveis.
 #
 # Diretório e Arquivo de banco de dados do Leasing ofertados pelo ISC DHCP Server:
 # Localização: /var/lib/dhcp/dhcpd.leases
@@ -66,7 +68,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências da Integração do ICS DHCP Server com Bind DNS Server, aguarde... "
-	for name in isc-dhcp-server bind9 
+	for name in $DHCPDNSDEP 
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -213,6 +215,7 @@ echo -e "Verificando as portas de conexão do Bind9 DNS Server e do ISC DHCP Ser
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iUDP:"53,67"
+	echo -e "============================================================="
 	lsof -nP -iTCP:"953" -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5

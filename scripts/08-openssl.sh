@@ -7,25 +7,27 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.03
+# Data de atualização: 02/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
-# OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na 
-# linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias.
-# Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
+# OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca 
+# (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza 
+# várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta 
+# biblioteca em várias outras linguagens. 
 #
-# O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as 
-# quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no 
-# SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação 
-# de serviços/protocolos em servidores (servers).
+# O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, 
+# Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. 
+# O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para 
+# gerar certificados de autenticação de serviços/protocolos em servidores (servers).
 #
-# O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um 
-# protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de 
-# computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, 
-# email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas 
-# as comunicações entre seus servidores e navegadores web.
+# O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer 
+# (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações 
+# sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em 
+# aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). 
+# Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e 
+# navegadores web.
 #
 # Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)
 # Abrir menu de Aplicativo
@@ -127,7 +129,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do OpenSSL, aguarde... "
-	for name in openssl apache2 bind9
+	for name in $SSLDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -210,7 +212,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Configuração do OpenSSL do Apache2, aguarde...\n"
+echo -e "Iniciando a Configuração do OpenSSL no Apache2, aguarde...\n"
 sleep 5
 #
 echo -e "Criando a estrutura de diretórios do CA e dos Certificados, aguarde..."

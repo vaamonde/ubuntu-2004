@@ -7,15 +7,15 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 01/12/2021
-# Versão: 0.04
+# Data de atualização: 02/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
-# Trivial File Transfer Protocol (ou apenas TFTP) é um protocolo de transferência de arquivos, 
-# muito simples, semelhante ao FTP. É geralmente utilizado para transferir pequenos arquivos 
-# entre hosts numa rede, tal como quando um terminal remoto ou um cliente inicia o seu 
-# funcionamento, a partir do servidor.
+# Trivial File Transfer Protocol (ou apenas TFTP) é um protocolo de transferência 
+# de arquivos, muito simples, semelhante ao FTP. É geralmente utilizado para transferir 
+# pequenos arquivos entre hosts numa rede, tal como quando um terminal remoto ou um 
+# cliente inicia o seu funcionamento, a partir do servidor.
 #
 # Site Oficial do Projeto Tftpd-Hpa: https://git.kernel.org/pub/scm/network/tftp/tftp-hpa.git/about/
 #
@@ -47,7 +47,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retorna 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do Tftpd-Hpa Server e Client, aguarde... "
-	for name in bind9 bind9utils isc-dhcp-server
+	for name in $TFTPDEP
 	do
 		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
 			echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -129,7 +129,7 @@ sleep 5
 #
 echo -e "Instalando o Serviço do Tftpd-Hpa Server e Client, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	apt -y install tftpd-hpa tftp-hpa &>> $LOG
+	apt -y install $TFTPINSTALL &>> $LOG
 echo -e "Tftpd-Hpa Server e Client instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

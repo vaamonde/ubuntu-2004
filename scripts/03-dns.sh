@@ -7,16 +7,17 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.07
+# Data de atualização: 02/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
-# O Bind DNS Server BIND (Berkeley Internet Name Domain ou, como chamado previamente, Berkeley Internet 
-# Name Daemon) é o servidor para o protocolo DNS mais utilizado na Internet, especialmente em sistemas 
-# do tipo Unix, onde ele pode ser considerado um padrão de facto. Foi criado por quatro estudantes de 
-# graduação, membros de um grupo de pesquisas em ciência da computação da Universidade de Berkeley, e 
-# foi distribuído pela primeira vez com o sistema operacional 4.3 BSD. Atualmente o BIND é suportado e 
+# O Bind DNS Server BIND (Berkeley Internet Name Domain ou, como chamado previamente, 
+# Berkeley Internet Name Daemon) é o servidor para o protocolo DNS mais utilizado na 
+# Internet, especialmente em sistemas do tipo Unix, onde ele pode ser considerado um 
+# padrão de facto. Foi criado por quatro estudantes de graduação, membros de um grupo 
+# de pesquisas em ciência da computação da Universidade de Berkeley, e foi distribuído 
+# pela primeira vez com o sistema operacional 4.3 BSD. Atualmente o BIND é suportado e 
 # mantido pelo Internet Systems Consortium.
 #
 # Diretório das Zonas de Pesquisa Direta e Reversa do Bind DNS Server:
@@ -117,7 +118,7 @@ sleep 5
 echo -e "Instalando o Bind9 DNS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install bind9 bind9utils bind9-doc dnsutils net-tools &>> $LOG
+	apt -y install $DNSINSTALL &>> $LOG
 echo -e "Bind9 DNS Server instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -246,7 +247,7 @@ echo -e "Verificando as portas de conexões do Bind DNS Server, aguarde..."
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iUDP:53
-	echo
+	echo -e "============================================================="
 	lsof -nP -iTCP:953 -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5

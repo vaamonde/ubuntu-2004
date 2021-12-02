@@ -7,25 +7,25 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 30/11/2021
-# Versão: 0.05
+# Data de atualização: 02/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
-# O NTP é um protocolo para sincronização dos relógios dos computadores baseado no protocolo UDP sob 
-# a porta 123. É utilizado para sincronização do relógio de um conjunto de computadores e dispositivos 
-# em redes de dados com latência variável. 
+# O NTP é um protocolo para sincronização dos relógios dos computadores baseado 
+# no protocolo UDP sob a porta 123. É utilizado para sincronização do relógio de 
+# um conjunto de computadores e dispositivos em redes de dados com latência variável. 
 #
-# O projeto NTP.br tem por objetivo oferecer condições para que os servidores de Internet no Brasil 
-# estejam sincronizados com a Horal Legal Brasileira. Para isso foi firmado um acordo entre o Observatório 
-# Nacional (ON) e o NIC.br. 
+# O projeto NTP.br tem por objetivo oferecer condições para que os servidores de 
+# Internet no Brasil estejam sincronizados com a Horal Legal Brasileira. Para isso 
+# foi firmado um acordo entre o Observatório Nacional (ON) e o NIC.br. 
 #
-# Os servidores Stratum 1 (primários) de nível mais baixo são sincronizados diretamente com os serviços 
-# de horário nacional por meio de um modem de satélite, rádio ou telefone.
+# Os servidores Stratum 1 (primários) de nível mais baixo são sincronizados diretamente 
+# com os serviços de horário nacional por meio de um modem de satélite, rádio ou telefone.
 #
-# Os servidores Stratum 2 (secundários) são sincronizados com os servidores Stratum 1 e assim por diante, 
-# de forma que os clientes NTP e os servidores com um número relativamente pequeno de clientes não 
-# sincronizem com os servidores primários públicos.
+# Os servidores Stratum 2 (secundários) são sincronizados com os servidores Stratum 1 
+# e assim por diante, de forma que os clientes NTP e os servidores com um número 
+# relativamente pequeno de clientes não sincronizem com os servidores primários públicos.
 #
 # Site Oficial do Projeto NTP: http://www.ntp.org/
 # Site Oficial do Projeto NTP.br: https://ntp.br/
@@ -51,6 +51,26 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
+#
+# Verificando as dependências do NTP Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retorna 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do NTP Server e Client, aguarde... "
+	for name in $NTPDEP
+	do
+		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
+			echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
+			deps=1; 
+			}
+	done
+		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
+			echo -en "\nInstale as dependências acima e execute novamente este script\n";
+			echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências do ISC DHCP"
+			exit 1; 
+			}
+		sleep 5
 #
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
 # OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
@@ -114,13 +134,13 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando Instalando e Configurando o NTP Server e Client, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração o NTP Server e Client, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando o NTP Server e Client, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install ntp ntpdate &>> $LOG
+	apt -y install $NTPINSTALL &>> $LOG
 echo -e "NTP Server e Client instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
