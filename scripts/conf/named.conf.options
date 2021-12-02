@@ -22,8 +22,8 @@ options {
 	// Endereços IPv4 de encaminhamento para servidores de DNS externos.
 	forwarders {
 		172.16.1.254;
-		8.8.8.8;
-		8.8.4.4;
+		//8.8.8.8;
+		//8.8.4.4;
 	};
 
 	// Número da porta de conexão do Bind9 DNS Server e Endereço IPv4 liberado.
@@ -49,9 +49,13 @@ options {
 	// Habilitar o Log de consulta.
 	querylog yes;
 
-	// Configurações Globais do Bind9 DNS Server (deixar o padrão).
+	// Servidor desativado conforme RFC1035 (bit AA é sempre definido nas respostas NXDOMAIN)
 	auth-nxdomain no;
+
+	// Configuração da quantidade máxima de memória de dados do servidor
 	datasize default;
+
+	// Desativando todas as zonas vazias (padrão é ativado)
 	empty-zones-enable no;
 
 	// Liberações de consulta e atualização do Bind9 DNS Server.
@@ -77,7 +81,7 @@ options {
 };
 
 // Configuração da auditoria de Logs do Bind9 DNS Server, informações serão enviadas para Syslog
-// também para os arquivos de Log de cada canal corresponde a sua configuração
+// e também para os arquivos de Log de cada canal corresponde a sua configuração
 logging {
 	channel default_log {
 		file "/var/log/named/default" versions 3 size 20m;
@@ -170,6 +174,8 @@ logging {
 		file "named.run";
 		severity dynamic;
 	};
+
+	// Configuração das categorias de Log e envio para os arquivos de canal
 	category default { default_syslog; default_debug; default_log; };
 	category config { default_syslog; default_debug; default_log; };
 	category dispatch { default_syslog; default_debug; default_log; };

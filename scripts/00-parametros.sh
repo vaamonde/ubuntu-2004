@@ -124,8 +124,8 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # Arquivos de monitoramento (log) do Serviço de Rede Bind DNS Server utilizados nesse script
 # 01. systemctl status bind9 = status do serviço do Bind DNS
 # 02. journalctl -t named = todas as mensagens referente ao serviço do Bind DNS
-# 03. 
-
+# 03. tail -f /var/log/named/* = vários arquivos de Log do serviço do Bind DNS
+#
 # Declarando as variáveis de Pesquisa Direta do Domínio, Inversa e Subrede do Bind DNS Server
 #
 # Variável do nome do Domínio do Servidor DNS (veja a linha: 58 desse arquivo)
