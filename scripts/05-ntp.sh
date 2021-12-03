@@ -204,7 +204,7 @@ echo -e "Verificando a Data e Hora do NTP Server e do Sistema Operacional, aguar
 		echo
 		echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M")")\n"
 		echo -e "Data/hora do Hardware: $(hwclock)\n"
-echo -e "Data e Hora do NTP Server e do Sistema Operacional verificadas com sucesso!!!, continuando com o script...\n"
+echo -e "Data e Hora do verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de Conexão do NTP Server, aguarde..."

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.07
+# Data de atualização: 03/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -87,6 +87,26 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		exit 1
 fi
 #
+# Verificando todas as dependências do LAMP-Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do LAMP-Server, aguarde... "
+	for name in $LAMPDEP
+	do
+  		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
+              echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
+              deps=1; 
+              }
+	done
+		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
+            echo -en "\nInstale as dependências acima e execute novamente este script\n";
+			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+            exit 1; 
+            }
+		sleep 5
+#
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
 # OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
 if [ -f $LOG ]
@@ -104,7 +124,7 @@ fi
 #
 # Script de instalação e configuração do LAMP-Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
@@ -113,16 +133,16 @@ echo
 #
 echo -e "Instalação e configuração do LAMP-SERVER no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo APACHE (Apache HTTP Server): TCP 80"
-echo -e "Após a instalação do Apache2 acessar a URL: http://$(hostname -I | cut -d ' ' -f1)/"
-echo -e "Testar a linguagem HTML acessando a URL: http://$(hostname -I | cut -d ' ' -f1)/teste.html\n"
+echo -e "Após a instalação do Apache2 acessar a URL: http://www.$(hostname -d | cut -d' ' -f1)/"
+echo -e "Testar a linguagem HTML acessando a URL: http://www.$(hostname -d | cut -d' ' -f1)/teste.html\n"
 echo -e "Porta padrão utilizada pelo Oracle MySQL (SGBD): TCP 3306"
 echo -e "Após a instalação do MySQL acessar o console: mysql -u root -p (senha: $SENHAMYSQL)\n"
 echo -e "PHP (Personal Home Page - PHP: Hypertext Preprocessor)"
-echo -e "Após a instalação do PHP acessar a URL: http://$(hostname -I | cut -d ' ' -f1)/phpinfo.php\n"
+echo -e "Após a instalação do PHP acessar a URL: http://www.$(hostname -d | cut -d' ' -f1)/phpinfo.php\n"
 echo -e "PERL - Linguagem de programação multi-plataforma\n"
 echo -e "PYTHON - Linguagem de programação de alto nível\n"
 echo -e "PhpMyAdmin - Aplicativo desenvolvido em PHP para administração do MySQL"
-echo -e "Após a instalação do PhpMyAdmin acessar a URL: http://$(hostname -I | cut -d ' ' -f1)/phpmyadmin\n"
+echo -e "Após a instalação do PhpMyAdmin acessar a URL: http://www.$(hostname -d | cut -d' ' -f1)/phpmyadmin\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

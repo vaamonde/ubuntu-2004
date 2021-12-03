@@ -6,45 +6,47 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 15/10/2021
-# Data de atualização: 21/11/2021
-# Versão: 0.03
+# Data de atualização: 03/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 
-# Configurações do Servidor de MySQL
+# Configurações principais do Servidor de MySQL
 [mysqld]
-user		= mysql
-pid-file	= /var/run/mysqld/mysqld.pid
-socket		= /var/run/mysqld/mysqld.sock
-port		= 3306
-datadir		= /var/lib/mysql
-tmpdir		= /tmp
+user      = mysql
+pid-file  = /var/run/mysqld/mysqld.pid
+socket    = /var/run/mysqld/mysqld.sock
+port      = 3306
+datadir   = /var/lib/mysql
+tmpdir    = /tmp
 
-# Configuração utilizada pelo ZoneMinder
+# Configuração utilizada pelo serviço do ZoneMinder
 sql_mode = NO_ENGINE_SUBSTITUTION
 
 # Desativando a resolução de endereço local, permitindo acesso remoto e suportando
 # somente conexões IPv4
-bind-address			= 0.0.0.0
-#mysqlx-bind-address	= 127.0.0.1
+bind-address         = 0.0.0.0
+#mysqlx-bind-address = 127.0.0.1
 
 # Configurações de desempenho do MySQL, aumentar o tamanho do Buffer e Packet
-key_buffer_size			 = 256M
-max_allowed_packet		 = 16M
-thread_stack			 = 192K
-thread_cache_size		 = 8
-myisam-recover-options 	 = BACKUP
-# max_connections        = 151
-# table_open_cache       = 4000
+key_buffer_size        = 256M
+max_allowed_packet     = 16M
+thread_stack           = 192K
+thread_cache_size      = 8
+myisam-recover-options = BACKUP
+# max_connections      = 151
+# table_open_cache     = 4000
 
 # Configuração do Arquivo de Log de Errors do MySQL
-log_error 				= /var/log/mysql/error.log
-max_binlog_size   		= 100M
-# slow_query_log		= 1
-# slow_query_log_file	= /var/log/mysql/mysql-slow.log
-# long_query_time 		= 2
+log_error        = /var/log/mysql/error.log
+max_binlog_size  = 100M
+
+# Configurações avançadas do Log do Mysql (padrão desativadas)
+# slow_query_log             = 1
+# slow_query_log_file        = /var/log/mysql/mysql-slow.log
+# long_query_time            = 2
+# server-id                  = 1
+# log_bin                    = /var/log/mysql/mysql-bin.log
+# binlog_do_db               = include_database_name
+# binlog_ignore_db           = include_database_name
+# binlog_expire_logs_seconds = 2592000
 # log-queries-not-using-indexes
-# server-id				= 1
-# log_bin				= /var/log/mysql/mysql-bin.log
-# binlog_do_db			= include_database_name
-# binlog_ignore_db		= include_database_name
-# binlog_expire_logs_seconds	= 2592000

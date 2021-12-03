@@ -8,8 +8,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 19/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.02
+# Data de atualização: 03/12/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 -->
@@ -17,12 +17,13 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
               version="1.0">
-	<!-- Configuração dos Papéis (Roles) e do Usuário/Senha do administrador do Tomcat -->
+	<!-- Configuração dos Papéis (Roles) de administração do Servidor Web Tomcat -->
 	<role rolename="manager-gui"/>
 	<role rolename="manager"/>
 	<role rolename="admin-gui"/>
 	<role rolename="admin"/>
 	<role rolename="tomcat"/>
 	<role rolename="role1"/>
+	<!-- Configuração do Usuário, Senha e Papeis do administrador do Servidor Web Tomcat -->
 	<user username="admin" password="vaamonde" roles="manager-gui,manager,admin-gui,admin,tomcat,role1"/>
 </tomcat-users>

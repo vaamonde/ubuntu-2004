@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.03
+# Data de atualização: 03/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -223,12 +223,20 @@ sleep 5
 echo -e "Editando o arquivo de virtual host wordpress.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/apache2/sites-available/wordpress.conf
-	a2ensite wordpress &>> $LOG
-	systemctl reload apache2 &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação do Wordpress feito com Sucesso!!!"
+echo -e "Habilitando o Virtual Host do Wordpress no Apache2, aguarde..."
+	a2ensite wordpress &>> $LOG
+echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Fazendo o reload do Apache2, aguarde..."
+	systemctl reload apache2 &>> $LOG
+echo -e "Reload do Apache2 feito com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Instalação do CMS Wordpress feito com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)

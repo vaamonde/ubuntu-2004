@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.18
+# Data de atualização: 03/12/2021
+# Versão: 0.19
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -48,16 +48,22 @@ export DEBIAN_FRONTEND="noninteractive"
 #
 # Declarando as variáveis utilizadas nas configurações de Rede do Servidor Ubuntu 
 #
-# Variável do Nome (Hostname) do Servidor
+# Variável do Usuário padrão utilizado no Servidor Ubuntu desse curso
+USUARIODEFAULT="vaamonde"
+#
+# Variável da Senha padrão utilizado no Servidor Ubuntu desse curso
+SENHADEAFAULT="pti@2018"
+#
+# Variável do Nome (Hostname) do Servidor Ubuntu desse curso
 NOMESERVER="ptispo01ws01"
 #
-# Variável do Nome (Hostname) FQDN (Fully Qualified Domain Name) do Servidor Ubuntu
+# Variável do Nome (Hostname) FQDN (Fully Qualified Domain Name) do Servidor Ubuntu desse curso
 FQDNSERVER="ptispo01ws01.pti.intra"
 #
-# Variável do Nome de Domínio do Servidor Ubuntu
+# Variável do Nome de Domínio do Servidor Ubuntu desse curso
 DOMINIOSERVER="pti.intra"
 #
-# Variável do Endereço IPv4 do Servidor Ubuntu
+# Variável do Endereço IPv4 principal (padrão) do Servidor Ubuntu desse curso
 IPV4SERVER="172.16.1.20"
 #
 # Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor Ubuntu
@@ -256,6 +262,9 @@ APP_PASS=$SENHAMYSQL
 #
 # Variável de configuração do serviço de hospedagem de site utilizado pelo PhpMyAdmin
 WEBSERVER="apache2"
+#
+# Variável das dependências do laço de loop do LAMP Server
+LAMPDEP="bind9 bind9utils"
 #
 # Variável de instalação do serviço de rede LAMP Server (^ (circunflexo): expressão regular)
 LAMPINSTALL="lamp-server^ perl python apt-transport-https"

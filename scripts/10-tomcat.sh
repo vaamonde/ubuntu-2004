@@ -65,16 +65,16 @@ fi
 #
 # Script de instalação e configuração do Tomcat9 no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação e Configuração do Tomcat9 no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Tomcat9.: TCP 8080"
-echo -e "Após a instalação do Tomcat acessar a URL: http://$(hostname -I | cut -d ' ' -f1):8080/\n"
+echo -e "Instalação e Configuração do Apache Tomcat9 no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo Apache Tomcat9.: TCP 8080"
+echo -e "Após a instalação do Apache Tomcat acessar a URL: http://www.$(hostname -d | cut -d' ' -f1):8080/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -113,10 +113,10 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando o Servidor Web Tomcat9, aguarde...\n"
+echo -e "Iniciando a Instalação e Configurando o Servidor Web Apache Tomcat9, aguarde...\n"
 sleep 5
 #
-echo -e "Instalando as dependências do Tomcat9, aguarde..."
+echo -e "Instalando as dependências do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y install $TOMCATDEP &>> $LOG
@@ -131,14 +131,14 @@ echo -e "Verificando a versão do Java instalada, aguarde..."
 echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Servidor Web Tomcat9, aguarde..."
+echo -e "Instalando o Servidor Web Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y install $TOMCATINSTALL &>> $LOG
-echo -e "Servidor Web Tomcat9 instalado com sucesso!!!, continuando com o script...\n"
+echo -e "Servidor Web Apache Tomcat9 instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando os arquivos de configuração do Tomcat, aguarde..."
+echo -e "Atualizando os arquivos de configuração do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
@@ -165,13 +165,13 @@ echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Reinicializando o serviço do Tomcat9, aguarde..."
+echo -e "Reinicializando o serviço do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	systemctl restart tomcat9 &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do Tomcat9, aguarde..."
+echo -e "Verificando a porta de conexão do Apache Tomcat9, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
@@ -180,7 +180,7 @@ echo -e "Verificando a porta de conexão do Tomcat9, aguarde..."
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação e Configuração do Tomcat9 feita com Sucesso!!!"
+echo -e "Instalação e Configuração do Apache Tomcat9 feita com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)

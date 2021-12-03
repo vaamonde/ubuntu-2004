@@ -7,7 +7,7 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 02/12/2021
+# Data de atualização: 03/12/2021
 # Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
@@ -72,7 +72,7 @@ clear
 echo
 #
 echo -e "Instalação do Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53"
+echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53 e TCP 53"
 echo -e "Porta padrão utilizada pelo RNDC.: TCP 953\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -247,6 +247,8 @@ echo -e "Verificando as portas de conexões do Bind DNS Server, aguarde..."
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iUDP:53
+	echo -e "============================================================="
+	lsof -nP -iTCP:53 -sTCP:LISTEN
 	echo -e "============================================================="
 	lsof -nP -iTCP:953 -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
