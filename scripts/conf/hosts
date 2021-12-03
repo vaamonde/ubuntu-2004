@@ -19,7 +19,7 @@
 # Configuração do Banco de Dados de DNS Estático IPv6 do Servidor Local
 # OBSERVAÇÃO: por padrão nesse curso não será utilizando o suporte ao IPv6
 # IPV6	FQDN			CNAME
-::1 	ip6-localhost	ip6-loopback
+::1 	ip6-localhost   ip6-loopback
 fe00::0 ip6-localnet
 ff00::0 ip6-mcastprefix
 ff02::1 ip6-allnodes

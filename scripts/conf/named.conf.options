@@ -20,6 +20,7 @@ options {
 	statistics-file "/var/log/named/named.stats";
 	
 	// Endereços IPv4 de encaminhamento para servidores de DNS externos.
+	// Padrão do encaminhamento enviar as consultas para o servidor de Firewall pfSense
 	forwarders {
 		172.16.1.254;
 		//8.8.8.8;
@@ -37,13 +38,13 @@ options {
 	//	any; 
 	//};
 
-	// Ativando a recursividade no servidor DNS autoritativo.
+	// Ativando a recursividade de consultas no servidor Bind9 DNS autoritativo.
 	recursion yes;
 
-	// Ocultar o número da versão dos clientes por razão de segurança.
+	// Ocultar o número da versão do servidor Bind9 DNS por razão de segurança.
 	version none;
 
-	// Ocultar a identificação do servidor.
+	// Ocultar a identificação do servidor Bind9 DNS Server nas consultas
 	server-id none;
 	
 	// Habilitar o Log de consulta.
@@ -52,13 +53,13 @@ options {
 	// Servidor desativado conforme RFC1035 (bit AA é sempre definido nas respostas NXDOMAIN)
 	auth-nxdomain no;
 
-	// Configuração da quantidade máxima de memória de dados do servidor
+	// Configuração da quantidade máxima de memória de dados utilizado pelo bind DNS Server
 	datasize default;
 
-	// Desativando todas as zonas vazias (padrão é ativado)
+	// Desativando todas as zonas vazias (padrão é ativado) do Bind9 DNS Server
 	empty-zones-enable no;
 
-	// Liberações de consulta e atualização do Bind9 DNS Server.
+	// Liberação das consultas e atualização padrão do Bind9 DNS Server.
 	allow-query {
 		any;
 	};
@@ -81,7 +82,7 @@ options {
 };
 
 // Configuração da auditoria de Logs do Bind9 DNS Server, informações serão enviadas para Syslog
-// e também para os arquivos de Log de cada canal corresponde a sua configuração
+// e também para os arquivos de Log de cada canal corresponde a sua configuração.
 logging {
 	channel default_log {
 		file "/var/log/named/default" versions 3 size 20m;
@@ -175,7 +176,7 @@ logging {
 		severity dynamic;
 	};
 
-	// Configuração das categorias de Log e envio para os arquivos de canal
+	// Configuração das categorias de Log's que serão enviadas para os arquivos de cada canal
 	category default { default_syslog; default_debug; default_log; };
 	category config { default_syslog; default_debug; default_log; };
 	category dispatch { default_syslog; default_debug; default_log; };

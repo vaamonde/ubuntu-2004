@@ -117,7 +117,8 @@ Python
 Gerenciar
 	Configurações
 		Code Spell Checker
-			C Spell: Enabled Language Ids: shellscript
+			C Spell: Enabled Language Ids: 
+				Adicionar Item: shellscript
 			C Spell: Language: en,pt,pt-BR
 			C Spell: Max Duplicate Problems: 5000
 			C Spell: Max Number Of Problems: 100000

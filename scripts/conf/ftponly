@@ -12,4 +12,4 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Vsftpd Server v3.0.x
 
-echo "Esta conta é limitada apenas para acesso ao Servidor FTP."
+echo "Esta conta é limitada apenas para acesso remoto ao Servidor FTP."
