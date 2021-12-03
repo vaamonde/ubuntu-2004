@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.03
+# Data de atualização: 03/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -108,7 +108,7 @@ fi
 #
 # Script de instalação do GLPI no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
@@ -116,7 +116,7 @@ clear
 echo
 #
 echo -e "Instalação e Configuração do GLPI Help Desk no GNU/Linux Ubuntu Server 20.04.x"
-echo -e "Após a instalação do GLPI acessar a URL: http://$(hostname -I | cut -d' ' -f1)/glpi/\n"
+echo -e "Após a instalação do GLPI acessar a URL: http://glpi.$(hostname -d | cut -d' ' -f1)\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
