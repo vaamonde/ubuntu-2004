@@ -67,7 +67,7 @@ fi
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências da Integração do ICS DHCP Server com Bind DNS Server, aguarde... "
+echo -n "Verificando as dependências da Integração do DHCP e DNS Server, aguarde... "
 	for name in $DHCPDNSDEP 
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
