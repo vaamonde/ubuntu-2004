@@ -97,7 +97,7 @@ clear
 echo
 #
 echo -e "Instalação do Wordpress no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do Wordpress acessar a URL: http://wp.$(hostname -d)/\n"
+echo -e "Após a instalação do Wordpress acessar a URL: http://wp.$(hostname -d | cut -d' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
