@@ -139,7 +139,7 @@ DHCPINSTALL="isc-dhcp-server net-tools"
 # Arquivos de monitoramento (log) do Serviço de Rede Bind DNS Server utilizados nesse script
 # 01. systemctl status bind9 = status do serviço do Bind DNS
 # 02. journalctl -t named = todas as mensagens referente ao serviço do Bind DNS
-# 03. tail -f /var/log/named/* = vários arquivos de Log do serviço do Bind DNS
+# 03. tail -f /var/log/named/* = vários arquivos de Log's dos serviços do Bind DNS
 #
 # Declarando as variáveis de Pesquisa Direta do Domínio, Inversa e Subrede do Bind DNS Server
 #
@@ -184,6 +184,11 @@ DHCPDNSDEP="isc-dhcp-server bind9"
 # 03. /var/lib/ntp/ntp.drift = arquivo de configuração do escorregamento de memória do NTP
 # 04. /etc/systemd/timesyncd.conf = arquivo de configuração do sincronismo de Data e Hora
 # 05. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
+#
+# Arquivos de monitoramento (log) do Serviço de Rede NTP Server utilizados nesse script
+# 01. systemctl status ntp = status do serviço do Bind DNS
+# 02. journalctl -t ntp = todas as mensagens referente ao serviço do Bind DNS
+# 03. tail -f /var/log/ = vários arquivos de Log's dos serviços do Bind DNS
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do NTP Server e Client
 #
@@ -551,7 +556,7 @@ libapache2-mod-php xmlrpc-api-utils"
 #                    VARIÁVEIS UTILIZADAS NO SCRIPT: 16-fusioninventory.sh                   #
 #=============================================================================================
 #
-# Arquivos de configuração (conf) do sistema GLPI Help Desk utilizados nesse script
+# Arquivos de configuração (conf) do sistema FusionInventory utilizados nesse script
 # 01. /var/log/fusioninventory-agent/fusioninventory.log = arquivo de log do agent do FusionInventory
 # 02. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
 #
@@ -560,9 +565,9 @@ libapache2-mod-php xmlrpc-api-utils"
 # Variável de localização da instalação do diretório do GLPI Help Desk
 PATHGLPI="/var/www/html/glpi"
 #
-# Variável de download do FusionInventory (atualizada no dia: 30/11/2021)
+# Variável de download do FusionInventory Server e Agent (atualizada no dia: 30/11/2021)
 # OBSERVAÇÃO: O FusionInventory depende do GLPI para funcionar corretamente, é recomendado sempre 
-# manter o GLPI é o FusionInventory atualizados para as últimas versões compativeis no site.
+# manter o GLPI é o FusionInventory atualizados para as últimas versões compatíveis no site.
 FUSIONSERVER="https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B3.0/fusioninventory-9.5+3.0.tar.bz2"
 FUSIONAGENT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_2.6-1_all.deb"
 FUSIONCOLLECT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-collect_2.6-1_all.deb"
@@ -572,7 +577,7 @@ AGENTWINDOWS32="https://github.com/fusioninventory/fusioninventory-agent/release
 AGENTWINDOWS64="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_windows-x64_2.6.exe"
 AGENTMACOS="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/FusionInventory-Agent-2.6-2.dmg"
 #
-# Variável das dependências do laço de loop do GLPI Help Desk
+# Variável das dependências do laço de loop do FusionInventory Server
 FUSIONDEP="mysql-server mysql-common apache2 php bind9"
 #
 # Variável de instalação das dependências do FusionInventory Agent (\ quebra de linha no apt)
@@ -593,6 +598,36 @@ WAKEINSTALL="libwrite-net-perl"
 # Variável de instalação das dependências do FusionInventory SNMPv3
 SNMPNSTALL="libdigest-hmac-perl"
 #
-
-
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 17-zoneminder.sh                     #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema ZoneMinder utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de Câmeras ZoneMinder
+#
+# Variável do PPA (Personal Package Archive) do ZoneMinder (Link atualizado no dia 03/12/2021)
+ZONEMINDER="ppa:iconnor/zoneminder-master"
+#
+# Declarando as variáveis para criação da Base de Dados do ZoneMinder
+# opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
+# tabelas), to (para), user (usuário), identified by (identificado por - senha do usuário), 
+# password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
+# tabela), *.* (todos os bancos/tabelas), to (para), user@'%' (usuário @ localhost), identified 
+# by (identificado por - senha do usuário), password (senha)
+# opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+#
+# OBSERVAÇÃO: NO SCRIPT: 15-ZONEMINDER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA DO
+# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 217
+CREATE_DATABASE_ZONEMINDER="/usr/share/zoneminder/db/zm_create.sql"
+GRANT_DATABASE_ZONEMINDER="GRANT USAGE ON *.* TO 'zmuser';"
+GRANT_ALL_DATABASE_ZONEMINDER="GRANT ALL PRIVILEGES ON zm.* TO 'zmuser';"
+FLUSH_ZONEMINDER="FLUSH PRIVILEGES;"
+#
+# Variável das dependências do laço de loop do ZoneMinder
+ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php bind9"
+#
 

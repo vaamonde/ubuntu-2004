@@ -118,7 +118,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
 echo -e "Instalação e Configuração do FusionInventory no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do FusionInventory acesse a URL: http://$(hostname -I | cut -d' ' -f1)/glpi\n"
+echo -e "Após a instalação do FusionInventory acesse a URL: http://glpi.$(hostname -I | cut -d' ' -f1)/\n"
 echo -e "As configurações do FusionInventory Server e feita dentro do GLPI Help Desk\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -263,8 +263,8 @@ echo -e "Criando o repositório local e fazendo o download dos Agentes do Fusion
 	wget $AGENTWINDOWS32 -O /var/www/html/agentes/agent_windows32.exe &>> $LOG
 	wget $AGENTWINDOWS64 -O /var/www/html/agentes/agent_windows64.exe &>> $LOG
 	wget $AGENTMACOS -O /var/www/html/agentes/agent_macos.dmg &>> $LOG
-	wget $FUSIONAGENT -O agent_linux.deb &>> $LOG
-echo -e "Download dos FusionInventory Agent feito com sucesso!!!, continuando com o script...\n"
+	wget $FUSIONAGENT -O /var/www/html/agentes/agent_linux.deb &>> $LOG
+echo -e "Download dos Agentes do FusionInventory feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do FusionInventory Server e Agent feita com Sucesso!!!."
