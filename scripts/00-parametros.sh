@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 03/12/2021
-# Versão: 0.19
+# Data de atualização: 06/12/2021
+# Versão: 0.21
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -78,12 +78,12 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 #
 # Arquivos de configuração (conf) do Serviço de Rede OpenSSH utilizados nesse script
 # 01. /etc/ssh/sshd_config = arquivo de configuração do Servidor OpenSSH
-# 02. /etc/hostname = arquivo de configuração do Nome do Servidor
-# 03. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host 
-# 04. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
-# 05. /etc/hosts.deny = arquivo de configuração de negação de hosts por serviço
-# 06. /etc/issue.net = arquivo de configuração do Banner utilizado pelo OpenSSH
-# 07. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes
+# 02. /etc/hostname = arquivo de configuração do Nome FQDN do Servidor
+# 03. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host local
+# 04. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço de rede
+# 05. /etc/hosts.deny = arquivo de configuração de negação de hosts por serviço de rede
+# 06. /etc/issue.net = arquivo de configuração do Banner utilizado pelo OpenSSH no login
+# 07. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes de serviço
 # 08. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 #
 # Arquivos de monitoramento (log) do Serviço de Rede OpenSSH Server utilizados nesse script
@@ -91,7 +91,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 02. journalctl -t sshd = todas as mensagens referente ao serviço do OpenSSH
 # 03. tail -f /var/log/syslog | grep sshd = filtrando as mensagens do serviço do OpenSSH
 # 04. tail -f /var/log/auth.log | grep ssh = filtrando as mensagens de autenticação do OpenSSH
-# 05. tail -f /var/log/tcpwrappers-allow-ssh.log = filtrando as conexões permitias do OpenSSH
+# 05. tail -f /var/log/tcpwrappers-allow-ssh.log = filtrando as conexões permitidas do OpenSSH
 # 06. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do OpenSSH
 #
 # Variável das dependências do laço de loop do OpenSSH Server
@@ -123,8 +123,8 @@ DHCPINSTALL="isc-dhcp-server net-tools"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço de Rede BIND DNS Server utilizados nesse script
-# 01. /etc/hostname = arquivo de configuração do Nome do Servidor
-# 02. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host 
+# 01. /etc/hostname = arquivo de configuração do Nome FQDN do Servidor
+# 02. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host local
 # 03. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes
 # 04. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 # 05. /etc/bind/named.conf = arquivo de configuração da localização dos Confs do Bind9
@@ -143,7 +143,7 @@ DHCPINSTALL="isc-dhcp-server net-tools"
 #
 # Declarando as variáveis de Pesquisa Direta do Domínio, Inversa e Subrede do Bind DNS Server
 #
-# Variável do nome do Domínio do Servidor DNS (veja a linha: 58 desse arquivo)
+# Variável do nome do Domínio do Servidor DNS (veja a linha: 64 desse arquivo)
 DOMAIN=$DOMINIOSERVER
 #
 # Variável do nome da Pesquisa Inversa do Servidor de DNS
@@ -186,9 +186,10 @@ DHCPDNSDEP="isc-dhcp-server bind9"
 # 05. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
 #
 # Arquivos de monitoramento (log) do Serviço de Rede NTP Server utilizados nesse script
-# 01. systemctl status ntp = status do serviço do Bind DNS
-# 02. journalctl -t ntp = todas as mensagens referente ao serviço do Bind DNS
-# 03. tail -f /var/log/ = vários arquivos de Log's dos serviços do Bind DNS
+# 01. systemctl status ntp = status do serviço do NTP Server
+# 02. journalctl -t ntpd = todas as mensagens referente ao serviço do NTP Server
+# 03. tail -f /var/log/syslog | grep ntpd = vários arquivos de Log's dos serviços do NTP Server
+# 04. tail -f /var/log/ntpstats/* = vários arquivos de monitoramento de tempo do NTP Server
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do NTP Server e Client
 #
@@ -208,10 +209,17 @@ NTPINSTALL="ntp ntpdate"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 06-tftphpa.sh                        #
 #=============================================================================================
 #
-# Arquivos de configuração (conf) do Serviço de Rede TFTPHPA utilizados nesse script
+# Arquivos de configuração (conf) do Serviço de Rede TFTP-HPA utilizados nesse script
 # 01. /etc/default/tftpd-hpa = arquivo de configuração do Servidor TFTP-HPA
 # 02. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
 # 03. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+#
+# Arquivos de monitoramento (log) do Serviço de Rede TFTP-HPA Server utilizados nesse script
+# 01. systemctl status tftpd-hpa = status do serviço do TFTP-HPA
+# 02. journalctl -t tftpd-hpa = todas as mensagens referente ao serviço do TFTP-HPA
+# 03. tail -f /var/log/syslog | grep tftp = filtrando as mensagens do serviço do TFTP-HPA
+# 05. tail -f /var/log/tcpwrappers-allow-tftp.log = filtrando as conexões permitidas do TFTP-HPA
+# 06. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do TFTP-HPA
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do TFTP-HPA Server
 #
@@ -237,6 +245,16 @@ TFTPINSTALL="tftpd-hpa tftp-hpa"
 # 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 # 07. /var/www/html/phpinfo.php = arquivo de geração da documentação do PHP
 # 08. /var/www/html/teste.html = arquivo de teste de páginas HTML
+#
+# Arquivos de monitoramento (log) do Serviço de Rede LAMP Server utilizados nesse script
+# 01. systemctl status apache2 = status do serviço do Apache2
+# 02. journalctl -t apache2.postinst = todas as mensagens referente ao serviço do Apache2
+# 03. tail -f /var/log/apache2/* = vários arquivos de Log's do serviço do Apache2
+# 04. systemctl status mysql = status do serviço do Oracle MySQL
+# 05. tail -f /var/log/mysql/* = vários arquivos de Log's do serviço do MySQL
+# 06. tail -f /var/log/tcpwrappers-allow-mysql.log = filtrando as conexões permitidas do MySQL
+# 07. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do MySQL
+# 08. journalctl -t phpmyadmin = todas as mensagens referente ao serviço do PhpMyAdmin
 #
 # Declarando as variáveis utilizadas nas configurações dos Serviços do LAMP-Server
 #
@@ -321,6 +339,10 @@ SSLDEP="openssl apache2 bind9"
 # 05. /bin/ftponly = arquivo de configuração da mensagem (banner) do VSFTPd
 # 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 #
+# Arquivos de monitoramento (log) do Serviço de Rede VSFTPd Server utilizados nesse script
+# 01. systemctl status vsftpd = status do serviço do VSFTPd Server
+# 02. tail -f /var/log/vsftpd.log = arquivo de Log's principal do serviço do VSFTPd Server
+#
 # Declarando as variáveis utilizadas nas configurações do Serviço do VSFTPd Server
 #
 # Variável de criação do Grupo dos Usuários de acesso ao VSFTPd Server
@@ -348,6 +370,12 @@ FTPINSTALL="vsftpd"
 # Arquivos de configuração (conf) do Servidor Apache Tomcat utilizados nesse script
 # 01. /etc/tomcat9/tomcat-users.xml = arquivo de configuração dos usuários do Tomcat
 # 02. /etc/tomcat9/server.xml = arquivo de configuração do servidor Tomcat
+#
+# Arquivos de monitoramento (log) do Serviço de Rede Tomcat Server utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
+# 02. journalctl -t tomcat9 = todas as mensagens referente ao serviço do Tomcat9
+# 03. tail -f /var/log/syslog | grep tomcat9 = filtrando as mensagens do serviço do Tomcat9
+# 04. tail -f /var/log/tomcat9/* = vários arquivos de Log's do serviço do Tomcat9
 #
 # Variável de instalação das dependências do Java do Apache Tomcat Server
 TOMCATDEP="openjdk-11-jdk openjdk-11-jre default-jdk"

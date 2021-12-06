@@ -6,11 +6,14 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 02/12/2021
-Versão: 0.18
+Data de atualização: 06/12/2021
+Versão: 0.19
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+06/12/2021 - Robson Vaamonde - Melhoria na documentação do monitoramento de Log's dos serviços de rede utilizando o
+script: 00-paramentros.sh, correção do Bug do Log do VSFTPd criando o arquivo o script: 09-vsftp.sh, 
+
 02/12/2021 - Robson Vaamonde - Criação das variáveis do teste do laço de loop das dependências dos script e dos pacotes
 de instalação das dependências de cada script no arquivo: 00-parametros.sh, ficando mais simples adicionar novas
 dependências na instalação do software.
