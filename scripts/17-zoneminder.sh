@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 03/12/2021
-# Data de atualização: 03/12/2021
-# Versão: 0.1
+# Data de atualização: 06/12/2021
+# Versão: 0.2
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.36.x
 #
@@ -155,7 +155,7 @@ sleep 5
 echo -e "Editando as Configurações do Servidor de MySQL, pressione <Enter> para continuar"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
-	vim /etc/mysql/mysql.conf.d/mysqld.cnf
+	vim +/sql_mode /etc/mysql/mysql.conf.d/mysqld.cnf 
 	systemctl restart mysql &>> $LOG
 echo -e "Servidor MySQL editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -163,7 +163,7 @@ sleep 5
 echo -e "Editando as Configurações do PHP, pressione <Enter> para continuar"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
-	vim /etc/php/7.4/apache2/php.ini
+	vim +/date.timezone /etc/php/7.4/apache2/php.ini
 	systemctl restart apache2 &>> $LOG
 echo -e "Arquivo do PHP editado com sucesso!!!, continuando com o script...\n"
 sleep 5

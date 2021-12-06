@@ -111,14 +111,14 @@ fi
 #
 # Script de instalação do FusionInventory Server e Agent no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
 echo -e "Instalação e Configuração do FusionInventory no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do FusionInventory acesse a URL: http://glpi.$(hostname -I | cut -d' ' -f1)/\n"
+echo -e "Após a instalação do FusionInventory acesse a URL: http://glpi.$(hostname -d | cut -d' ' -f1)/\n"
 echo -e "As configurações do FusionInventory Server e feita dentro do GLPI Help Desk\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
