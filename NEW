@@ -6,14 +6,15 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 26/11/2021
-Versão: 0.05
+Data de atualização: 06/12/2021
+Versão: 0.06
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
-26/11/2021 - Robson Vaamonde - Estudo para a criação dos script de configuração: 00-webdav.sh, 00-nfs.sh, 00-iscsi.sh
-00-samba4.sh, 00-dnsslave.sh, 00-netdisco.sh, 00-nextcloud.sh, 00-onlyoffice.sh, 00-freeradius.sh, 00-postfix.sh, 
-00-wpad.sh, 00-facilemanager.sh, 00-dhcpglass.sh, 00-openvpn.sh, 00-thinstation.sh, 
+26/11/2021 - Robson Vaamonde - Estudo para a criação dos script de configuração: 00-webdav.sh, 00-thinstation.sh,
+00-nfs.sh, 00-iscsi.sh, 00-samba4.sh, 00-dnsslave.sh, 00-netdisco.sh, 00-nextcloud.sh, 00-onlyoffice.sh, 00-wpad.sh, 
+00-freeradius.sh, 00-postfix.sh, 00-facilemanager.sh, 00-dhcpglass.sh, 00-openvpn.sh, 00-netbox.sh, 00-pam.sh, 
+00-ldap.sh, 00-mrtg.sh
 
 13/10/2021 - Robson Vaamonde - Remoção dos recursos de: Syslinux, Syslinux Utils, Syslinux EFI, PXE Linux e do Puppy
 Linux do script: 06-tfthpa.sh deixando mais simples, a implementação do PXE Linux será feita utilizando o ThinStation.
