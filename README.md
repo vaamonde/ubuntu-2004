@@ -1,8 +1,10 @@
-# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT's "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.x LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU SERVER 20.04.x LTS, NÃO SERÁ REGRAVADO NOVOS VÍDEOS DOS SCRIPTS ANTIGOS NESSA VERSÃO, DEVIDO AO CONCEITO UTILIZADO NA VERSÃO 18.04.x SER IGUAL NA VERSÃO 20.04.x, SERÁ GRAVADO SOMENTE VÍDEOS E SOLUÇÕES/SERVIÇOS DE TI NOVOS USANDO A VERSÃO 20.04.x, EXEMPLO: NFS, Webdav, SAMBA-4, FreeRADIUS, OnlyOffice Server, etc...
+# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT's "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.x LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU SERVER 20.04.x LTS, SERÁ REGRAVADO OS NOVOS VÍDEOS EM 2022.
 
 # Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps
 
-## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos gratuitos para o Canal, acessando o link de doação do PagSeguro: https://pag.ae/bjlSJcH
+## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos e materiais gratuitos para o Canal
+## 💰 Chave PIX do projeto: robsonvaamonde@gmail.com
+## 💰 Link de doação do PagSeguro: https://pag.ae/bjlSJcH
 
 Robson Vaamonde<br>
 Procedimentos em TI: http://procedimentosemti.com.br<br>
@@ -14,11 +16,11 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 Linkedin Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
 
-Esse curso tem como objetivo demonstrar a instalação e configuração da nova versão de Servidor da Canonical o GNU/Linux Ubuntu Server 20.04.x, essa versão foi projetada para uma fácil implementação, administração e configuração dos principais serviços de rede de utilizados no nosso dia a dia.
+Esse curso tem como objetivo demonstrar a instalação e configuração da nova versão de Servidor da Canonical o GNU/Linux Ubuntu Server 20.04.x, essa versão foi projetada para uma fácil implementação, administração e configuração dos principais serviços de rede utilizados no nosso dia a dia.
 
-Projetado para suportar implementações On-Premise (Servidores Locais) ou Cloud (Nuvens), essa versão possui várias ferramentas integradas e soluções desenvolvidas pela Canonical que facilita a implementação em larga escala e suporte a Hosts Virtual e Cloud melhorados.
+Projetado para suportar implementações On-Premise (Servidores Locais) ou Cloud (Nuvens), essa versão possui várias ferramentas integradas e soluções desenvolvidas pela Canonical que facilita a implementação em larga escala com suporte a Hosts Virtual e Cloud melhorados.
 
-Para esse curso as metodologias de DevOps, utilizando o Git e Github serão empregadas de forma dinâmica, desenvolvendo scripts e automatizando todo os processos de instalação e configuração.
+Para esse curso as metodologias de DevOps, utilizando Shell Script, Git e Github serão empregadas de forma dinâmica, desenvolvendo scripts e automatizando todos os processos de instalação e configuração.
 
 Ideal para Estudantes e Profissionais de Redes que desejam se aprofundar nos pré-requisitos técnicos e práticos para Implementar Servidores GNU/Linux Ubuntu Server em cenários On-Premise ou Cloud.
 
@@ -100,7 +102,7 @@ Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main
 
 ## **INSTALAÇÃO do UBUNTU SERVER 20.04.3 LTS x64 no Oracle VirtualBOX 🐧**
 
-Vídeo mostrando os procedimentos básicos para instalar e configurar a nova versão do Ubuntu Server 20.04.3 LTS x64 no Oracle VirtialBOX.
+Vídeo mostrando os procedimentos básicos para instalar e configurar a nova versão do Ubuntu Server 20.04.3 LTS x64 no Oracle VirtualBOX.
 
 O Ubuntu Server Edition e o Ubuntu Desktop Edition usam os mesmos repositórios apt, tornando-o apenas tão fácil de instalar um aplicativo de servidor no Desktop Edition quanto no Server Edition. Uma diferença importante é que o ambiente gráfico usado para Desktop Edition não é instalado para o servidor. Isso inclui o próprio servidor gráfico, os utilitários e aplicativos gráficos e os diversos serviços de suporte ao usuário necessários para usuários de desktop.
 
