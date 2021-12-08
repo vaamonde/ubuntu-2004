@@ -199,15 +199,17 @@ sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando vim: +/ (search-pattern)
 	read
-	vim /etc/hosts.allow +/sshd
+	vim /etc/hosts.allow +/sshd:
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.deny, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando vim: +/ (search-pattern)
 	read
-	vim /etc/hosts.deny +/ALL
+	vim /etc/hosts.deny +/ALL:
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
