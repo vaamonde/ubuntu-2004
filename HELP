@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 30/11/2021
-Versão: 0.03
+Data de atualização: 08/12/2021
+Versão: 0.04
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
@@ -22,7 +22,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise de Log
 	_ ??-InstalacaoDoUbuntuServer-?? - arquivos de procedimentos de instalação e configuração do Ubuntu Server
 	_ scripts/: diretório dos scripts desse curso, numerados por sequência de uso e prioridade
-	_ scripts/conf/: diretório dos arquivos de configuração (conf) de serviços desse curso
+	_ scripts/conf/: diretório dos arquivos de configuração (conf) dos serviços de rede desse curso
 	_ scripts/settings/: diretório dos arquivos de configuração principal do servidor desse curso
 
 #01_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
@@ -43,7 +43,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ Todos os arquivos de configuração dos serviços de rede no Ubuntu Server 20.04.x LTS se
 	_ encontra no diretório: /ubuntu-2004/scripts/conf.
 	_ Caso você queira adaptar os scripts ou arquivos de configuração para o seu cenário/servidor, 
-	_ primeiro editar o script corresponde, verificar as principais variáveis e arquivos de 
+	_ primeiro etapa é editar o script corresponde, verificar as principais variáveis e arquivos de 
 	_ configuração, alterar seus valores primeiro antes de executar os script.
 
 #03_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts
@@ -53,15 +53,16 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ do bloco de configuração do serviço: VARIÁVEL=$VARIÁVEL.
 	_ Antes de iniciar as configurações dos serviços de rede no Ubuntu Server, é recomendado 
 	_ customizar o arquivo de parâmetros: 00-parametros.sh e os arquivos de configurações (conf) 
-	_ no diretório /ubuntu-2004/scripts/conf de cada serviço de rede.
+	_ no diretório /ubuntu-2004/scripts/conf de cada serviço de rede corresponde a seu scripts.
 
 #04_ Scripts de instalação e configuração dos serviços de rede
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server segue o
 	_ mesmo padrão, todos os scripts estão interligados no arquivo: 00-parametros.sh na linha de
-	_ configuração: source, todos os script geram arquivos de Log no diretório: /var/log/ com o
+	_ configuração: source, todos os scripts geram arquivos de Log no diretório: /var/log/ com o
 	_ nome do arquivo do script configurado na linha: LOG, todos os script tem um Bloco de Teste
 	_ Lógico (If) básico que verifica se o usuário é Root e se a Distribuição é 20.04, alguns 
-	_ scripts tem o Bloco de Loop para verificar se as dependências estão instaladas.
+	_ scripts tem o Bloco de Loop para verificar se as dependências estão instaladas, todos os 
+	_ scripts foram desenvolvidos para serem executados apenas 1 (uma) vez.
 
 #05_ Clonando o projeto de Github e executando os scripts
 	_ Para utilizar os scripts desse curso, é recomendado você se logar com o usuário Root do Ubuntu
@@ -82,9 +83,11 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ logar em outro Terminal (Alt+F2), se logar com seu usuário que tem direitos administrativos e
 	_ executar o comando: sudo tail -f /var/log/01-openssh.sh, para sair do monitoramento do Log e
 	_ só pressionar: Ctrl+C
+	_ Para analisar o Log após a instalação utilize o comando: less /var/log/01-openssh.sh, para sair
+	_ o arquivo de Log e sõ pressionar: q (quit).
 
 #06_ Atualizando os scripts para o seu cenário
 	_ É recomendado você fazer um Fork do projeto para manter o seu repositório atualizado com as suas
-	_ modificações, sempre verificar os mudanças no repositório principal em relação a BUGS ou melhorias
+	_ modificações, sempre verificar as mudanças no repositório principal em relação a BUGS ou melhorias
 	_ nos script e arquivos de configuração analisando sempre a versão do arquivo nas linhas: Data de 
-	_ atualização e Versão.
+	_ atualização e Versão juntamente com o arquivo CHANGELOG.
