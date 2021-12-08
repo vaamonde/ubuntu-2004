@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.10
+# Data de atualização: 08/12/2021
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -200,14 +200,14 @@ sleep 5
 echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
-	vim /etc/hosts.allow
+	vim /etc/hosts.allow +/sshd
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.deny, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
-	vim /etc/hosts.deny
+	vim /etc/hosts.deny +/ALL
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

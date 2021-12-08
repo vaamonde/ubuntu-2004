@@ -52,7 +52,7 @@ export DEBIAN_FRONTEND="noninteractive"
 USUARIODEFAULT="vaamonde"
 #
 # Variável da Senha padrão utilizado no Servidor Ubuntu desse curso
-SENHADEAFAULT="pti@2018"
+SENHADEFAULT="pti@2018"
 #
 # Variável do Nome (Hostname) do Servidor Ubuntu desse curso
 NOMESERVER="ptispo01ws01"
