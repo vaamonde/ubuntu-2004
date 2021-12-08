@@ -12,7 +12,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 06/12/2021 - Robson Vaamonde - Melhoria na documentação do monitoramento de Log's dos serviços de rede utilizando o
-script: 00-paramentros.sh, correção do Bug do Log do VSFTPd criando o arquivo o script: 09-vsftp.sh, 
+script: 00-paramentros.sh, correção do Bug do Log do VSFTPd criando o arquivo no script: 09-vsftp.sh, 
 
 02/12/2021 - Robson Vaamonde - Criação das variáveis do teste do laço de loop das dependências dos script e dos pacotes
 de instalação das dependências de cada script no arquivo: 00-parametros.sh, ficando mais simples adicionar novas
