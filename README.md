@@ -16,6 +16,15 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 Linkedin Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
 
+<div align="center">
+<a href="https://github.com/vaamonde/ubuntu-2004/stargazers"><img src="https://img.shields.io/github/stars/vaamonde/ubuntu-2004" alt="Stars Badge"/></a>
+<a href="https://github.com/vaamonde/ubuntu-2004/network/members"><img src="https://img.shields.io/github/forks/vaamonde/ubuntu-2004" alt="Forks Badge"/></a>
+<a href="https://github.com/vaamonde/ubuntu-2004/pulls"><img src="https://img.shields.io/github/issues-pr/vaamonde/ubuntu-2004" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/vaamonde/ubuntu-2004/issues"><img src="https://img.shields.io/github/issues/vaamonde/ubuntu-2004" alt="Issues Badge"/></a>
+<a href="https://github.com/vaamonde/ubuntu-2004/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/vaamonde/ubuntu-2004?color=2b9348"></a>
+<a href="https://github.com/vaamonde/ubuntu-2004/blob/master/LICENSE"><img src="https://img.shields.io/github/license/vaamonde/ubuntu-2004?color=2b9348" alt="License Badge"/></a>
+</div>
+
 Esse curso tem como objetivo demonstrar a instalação e configuração da nova versão de Servidor da Canonical o GNU/Linux Ubuntu Server 20.04.x, essa versão foi projetada para uma fácil implementação, administração e configuração dos principais serviços de rede utilizados no nosso dia a dia.
 
 Projetado para suportar implementações On-Premise (Servidores Locais) ou Cloud (Nuvens), essa versão possui várias ferramentas integradas e soluções desenvolvidas pela Canonical que facilita a implementação em larga escala com suporte a Hosts Virtual e Cloud melhorados.
