@@ -673,8 +673,8 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
 # Variável de download do Apache Guacamole (Links atualizados no dia 09/12/2021)
-GUACAMOLESERVER="https://apachemirror.wuchna.com/guacamole/1.3.0/source/guacamole-server-1.3.0.tar.gz"
-GUACAMOLECLIENT="https://apachemirror.wuchna.com/guacamole/1.3.0/binary/guacamole-1.3.0.war"
+GUACAMOLESERVER="https://dlcdn.apache.org/guacamole/1.3.0/source/guacamole-server-1.3.0.tar.gz"
+GUACAMOLECLIENT="https://dlcdn.apache.org/guacamole/1.3.0/binary/guacamole-1.3.0.war"
 #
 # Localização padrão do diretório de configuração e do webapp do Tomcat9 
 PATHTOMCAT9="/usr/share/tomcat9/"
@@ -687,5 +687,5 @@ GUACAMOLERDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
 GUACAMOLEINSTALL="libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin libossp-uuid-dev \
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
-libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp-dev freerdp2-x11 libguac-client-rdp0"
+libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreeerdp2-2 freerdp2-dev freerdp2-x11"
 #
