@@ -196,7 +196,7 @@ echo -e "Instalando as Dependências do FusionInventory Server e Agent, aguarde.
 	# dependências do FusionInventory Task WakeOnLan
 	apt -y install $WAKEINSTALL &>> $LOG
     # dependências do FusionInventory SNMPv3
-	apt -y install $SNMPNSTALL &>> $LOG
+	apt -y install $SNMPINSTALL &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

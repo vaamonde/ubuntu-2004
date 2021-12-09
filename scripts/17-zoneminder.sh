@@ -29,6 +29,7 @@
 # Privacy: Accept: Apply
 #
 # Site Oficial do ZoneMinder: https://zoneminder.com/
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #

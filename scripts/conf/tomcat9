@@ -3,14 +3,17 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 04/01/2021
-# Data de atualização: 04/01/2021
-# Versão: 0.1
-# Testado e homologado para a versão do Ubuntu Server 18.04 LTS x64
-# Kernel >= 4.15.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 03/12/2021
+# Data de atualização: 09/12/2021
+# Versão: 0.3
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
+# Testado e homologado para a versão do Apache Guacamole Server 1.3.x e Cliente 1.3.x
 
 # Parâmetros de inicialização padrão do JAVA do Tomcat9 
 JAVA_OPTS="-Djava.awt.headless=true -XX:+UseG1GC"
 
-# Configuração do Webapp do Apache Guacamole
+# Configuração do Webapp do Apache Guacamole Server e Client
 GUACAMOLE_HOME=/etc/guacamole

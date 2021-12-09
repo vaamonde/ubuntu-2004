@@ -14,7 +14,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 09/12/2021 - Robson Vaamonde - Melhorias gerais no PT-BR em vários arquivos Conf e Script, acréscimo da linha de 
 verificação da consultado do domínio: dig no script: 03-dns.sh, criação da variável: SECRETUPDATE no arquivos de: 
 00-paramentros.sh para facilitar a atualização das chaves de integração do Bind DNS e do ISC DHCP Server, acréscimo
-da linha de verificar do Status dos serviços em todos os scripts, criação do Virtual Host do LogAnalyzer, 
+da linha de verificar do Status dos serviços em todos os scripts, criação do Virtual Host do LogAnalyzer, customização
+do script: 18-guacamole.sh com suas variáveis no arquivo: 00-parametros.sh.
 
 06/12/2021 - Robson Vaamonde - Melhoria na documentação do monitoramento de Log's dos serviços de rede utilizando o
 script: 00-paramentros.sh, correção do Bug do Log do VSFTPd criando o arquivo no script: 09-vsftp.sh, 
