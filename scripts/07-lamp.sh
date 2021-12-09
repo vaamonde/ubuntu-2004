@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 03/12/2021
-# Versão: 0.08
+# Data de atualização: 09/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -331,6 +331,13 @@ echo -e "Editando o arquivo de teste teste.html, pressione <Enter> para continua
 	read
 	vim /var/www/html/teste.html
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando os serviços do Apache2 e do MySQL, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
+	echo -e "MySQL..: $(systemctl status mysql | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexão do Apache2 e do MySQL, aguarde..."

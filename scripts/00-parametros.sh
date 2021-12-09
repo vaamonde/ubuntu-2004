@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 06/12/2021
-# Versão: 0.21
+# Data de atualização: 09/12/2021
+# Versão: 0.22
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -168,6 +168,10 @@ DNSINSTALL="bind9 bind9utils bind9-doc dnsutils net-tools"
 # Declarando a variável de geração da chave de atualização dos registros do Bind DNS Server 
 # integrado no ISC DHCP Server
 # 
+# Variável da senha em modo texto que está configurada nos arquivos: dhcpd.conf, named.conf.local
+# e rndc.key que será substituida para nova chave criptografada da variável USERUPDATE
+SECRETUPDATE="vaamonde"
+#
 # Variável da senha utilizada na criação da chave de atualização dos ponteiros do DNS e DHCP
 USERUPDATE="vaamonde"
 #

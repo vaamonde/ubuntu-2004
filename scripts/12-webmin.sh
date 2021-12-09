@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 03/12/2021
-# Versão: 0.03
+# Data de atualização: 09/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Webmin v1.9x e do Usermin v1.8x 
 #
@@ -127,7 +127,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando o Webmin e do Usermin, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Webmin e do Usermin, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Webmin e do Usermin, aguarde..."
@@ -169,6 +169,13 @@ echo -e "Iniciando os Serviços do Webmin e do Usermin, aguarde..."
 	systemctl start webmin &>> $LOG
 	systemctl start usermin &>> $LOG
 echo -e "Serviços iniciados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando os serviços do Webmin e do Usermin, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	echo -e "Webmin.: $(systemctl status webmin | grep Active)"
+	echo -e "Usermin: $(systemctl status usermin | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexões do Webmin e do Usermin, aguarde..."

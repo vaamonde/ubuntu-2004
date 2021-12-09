@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 08/12/2021
-# Versão: 0.11
+# Data de atualização: 09/12/2021
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -225,6 +225,12 @@ echo -e "Reinicializando os serviços do Netplan e do OpenSSH Server, aguarde...
 	netplan --debug apply &>> $LOG
 	systemctl restart sshd &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do OpenSSH Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl status sshd | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do OpenSSH Server, aguarde..."

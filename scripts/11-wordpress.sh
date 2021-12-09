@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 03/12/2021
-# Versão: 0.04
+# Data de atualização: 09/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -136,7 +136,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando do Wordpress no Apache2, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Wordpress no Apache2, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Wordpress, aguarde..."
@@ -146,7 +146,7 @@ echo -e "Instalando as dependências do Wordpress, aguarde..."
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download do Wordpress do site oficial, aguarde..."
+echo -e "Fazendo o download do Wordpress do site oficial PT-BR, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output-document)
@@ -220,7 +220,7 @@ echo -e "Editando o arquivo de liberação vsftpd.allowed_users, pressione <Ente
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de virtual host wordpress.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de Virtual Host wordpress.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/apache2/sites-available/wordpress.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"

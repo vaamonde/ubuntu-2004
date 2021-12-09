@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.04
+# Data de atualização: 09/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -551,13 +551,19 @@ echo -e "Reinicializando o serviço do Apache2, aguarde..."
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas de conexões do Apache2, aguarde..."
+echo -e "Verificando o serviço do Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl status apache2 | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a porta de conexão do Apache2, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:'80,443' -sTCP:LISTEN
-echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
+	lsof -nP -iTCP:'443' -sTCP:LISTEN
+echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Testando o Certificado TLS/SSL do Apache2, aguarde..."

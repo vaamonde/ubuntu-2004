@@ -10,7 +10,7 @@
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
-# Agendamento das atualização dos Registros do Bind9 DNS Server a cada 1 minuto, todos os dias
+# Agendamento das atualizações dos Registros do Bind9 DNS Server a cada 1 minuto, todos os dias
 # Obs: esse agendamento resolve o problema dos arquivo *.jnl de atualização dinâmica do Bind9
 */1 * * * * root /usr/sbin/rndc sync -clean &> /dev/null
 

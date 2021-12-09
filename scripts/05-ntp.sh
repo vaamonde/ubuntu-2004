@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.06
+# Data de atualização: 09/12/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -205,6 +205,12 @@ echo -e "Verificando a Data e Hora do NTP Server e do Sistema Operacional, aguar
 		echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M")")\n"
 		echo -e "Data/hora do Hardware: $(hwclock)\n"
 echo -e "Data e Hora do verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do NTP Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl status ntp | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de Conexão do NTP Server, aguarde..."

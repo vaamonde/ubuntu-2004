@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.09
+# Data de atualização: 09/12/2021
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -106,7 +106,7 @@ clear
 echo
 #
 echo -e "Integração do ICS DHCP Server com Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53"
+echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53 e TCP 53"
 echo -e "Porta padrão utilizada pelo RNDC.: TCP 953\n"
 echo -e "Porta padrão utilizada pelo ISC DHCP Server.: UDP 67\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
@@ -167,9 +167,9 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server e do ISC D
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando sed: s (replacement)
 	# opção do comando cp: -v (verbose)
-	sed "s@secret vaamonde;@secret $KEYGEN;@" /etc/dhcp/dhcpd.conf > /tmp/dhcpd.conf.old
-	sed 's@secret "vaamonde";@secret "'$KEYGEN'";@' /etc/bind/named.conf.local > /tmp/named.conf.local.old
-	sed 's@secret "vaamonde";@secret "'$KEYGEN'";@' /etc/bind/rndc.key > /tmp/rndc.key.old
+	sed "s@secret $SECRETUPDATE;@secret $KEYGEN;@" /etc/dhcp/dhcpd.conf > /tmp/dhcpd.conf.old
+	sed 's@secret "'$SECRETUPDATE'";@secret "'$KEYGEN'";@' /etc/bind/named.conf.local > /tmp/named.conf.local.old
+	sed 's@secret "'$SECRETUPDATE'";@secret "'$KEYGEN'";@' /etc/bind/rndc.key > /tmp/rndc.key.old
 	cp -v /tmp/dhcpd.conf.old /etc/dhcp/dhcpd.conf &>> $LOG
 	cp -v /tmp/named.conf.local.old /etc/bind/named.conf.local &>> $LOG
 	cp -v /tmp/rndc.key.old /etc/bind/rndc.key &>> $LOG
@@ -209,6 +209,13 @@ echo -e "Reinicializando os serviços do ISC DHCP Server e do Bind DNS Server, a
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando os serviços do ISC DHCP Server e do Bind DNS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	echo -e "ISC DHCP: $(systemctl status isc-dhcp-server | grep Active)"
+	echo -e "Bind DNS: $(systemctl status bind9 | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando as portas de conexão do Bind9 DNS Server e do ISC DHCP Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
@@ -216,7 +223,9 @@ echo -e "Verificando as portas de conexão do Bind9 DNS Server e do ISC DHCP Ser
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iUDP:"53,67"
 	echo -e "============================================================="
-	lsof -nP -iTCP:"953" -sTCP:LISTEN
+	lsof -nP -iTCP:53 -sTCP:LISTEN
+	echo -e "============================================================="
+	lsof -nP -iTCP:953 -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #	

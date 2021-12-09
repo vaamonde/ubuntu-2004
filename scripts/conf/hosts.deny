@@ -11,14 +11,16 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Comando para verificar se o Servidor OpenSSH tem suporte ao TCPWrappers: ldd /usr/sbin/sshd | grep libwrap
-# Negando todas as redes acessarem o Servidor Ubuntu remotamente, somente os serviços liberados no arquivo
-# Host.Allow estão liberados para acessar o servidor
-# Logando as informações de acesso no arquivo de log: /var/log/tcpwrappers-deny.log
 #
+# Negando todas as redes acessarem o Servidor Ubuntu remotamente, somente os serviços configurados no arquivo
+# host.allow estão liberados para acessar o servidor remotamente.
+# Logando as informações de acesso no arquivo de Log: /var/log/tcpwrappers-deny.log
+#
+# Negando todas as Redes de acessar remotamente os serviços no Servidor Ubuntu
 ALL: ALL: spawn /bin/echo "$(date) Conexão Recusada - IP %a" >> /var/log/tcpwrappers-deny.log
-
+#
 # Exemplos de configuração do TCPWrappers do arquivo hosts.deny:
-# Negando uma subrede ou nome de domínio FQDN
+# Negando uma subrede ou nome de domínio FQDN para um serviço
 #sshd: 192.168.1. : spawn /bin/echo "$(date) Conexão Recusada - SSH - IP %a" >> /var/log/tcpwrappers-deny.log
 #sshd: 192.168.1.0/255.255.255.0: spawn /bin/echo "$(date) Conexão Recusada - SSH - IP %a" >> /var/log/tcpwrappers-deny.logg
 #sshd: *.pti.intra: spawn /bin/echo "$(date) Conexão Recusada - SSH - IP %a" >> /var/log/tcpwrappers-deny.log

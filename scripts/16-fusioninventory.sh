@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.03
+# Data de atualização: 09/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x, Agent 2.6.x e GLPI 9.5.x
 #
@@ -82,7 +82,7 @@ echo -n "Verificando as dependências do FusionInventory, aguarde... "
 # Verificando se o GLPI Help Desk está instalado (dependência principal do FusionInventory)
 # opção do comando: echo: -e (interpretador de escapes de barra invertida)
 # opção do comando if: [ ] = testa uma expressão, -e = testa se é diretório existe
-echo -e "Verificando se o GLPI Help Desk está instalado, aguarde...\n"
+echo -e "Verificando se o GLPI Help Desk está instalado, aguarde..."
 	if [ -e "$PATHGLPI" ]
 		then
     		echo -e "O GLPI Help Desk está instalado, tudo OK, continuando com o script...\n"
@@ -118,7 +118,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
 echo -e "Instalação e Configuração do FusionInventory no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do FusionInventory acesse a URL: http://glpi.$(hostname -d | cut -d' ' -f1)/\n"
+echo -e "Após a instalação do FusionInventory acesse a URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
 echo -e "As configurações do FusionInventory Server e feita dentro do GLPI Help Desk\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -158,7 +158,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando e Configurando o FusionInventory Server e Agent, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do FusionInventory Server e Agent, aguarde...\n"
 sleep 5
 #
 echo -e "Fazendo o download do FusionInventory Server do site Oficial, aguarde..."
@@ -241,6 +241,12 @@ echo -e "Iniciando o serviço do FusionInventory Agent, aguarde..."
 	systemctl enable fusioninventory-agent &>> $LOG
 	systemctl start fusioninventory-agent &>> $LOG
 echo -e "Serviço do iniciado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do FusionInventory Agent, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl status fusioninventory-agent | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Executando o primeiro Inventário do FusionInventory Agent, aguarde..."

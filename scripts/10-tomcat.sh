@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 19/10/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.04
+# Data de atualização: 09/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 #
@@ -113,7 +113,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando o Servidor Web Apache Tomcat9, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Servidor Web Apache Tomcat9, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Apache Tomcat9, aguarde..."
@@ -169,6 +169,12 @@ echo -e "Reinicializando o serviço do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	systemctl restart tomcat9 &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do Apache Tomcat9, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl restart tomcat9 | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Apache Tomcat9, aguarde..."

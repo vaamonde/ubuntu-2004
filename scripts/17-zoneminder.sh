@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 03/12/2021
-# Data de atualização: 06/12/2021
-# Versão: 0.2
+# Data de atualização: 09/12/2021
+# Versão: 0.3
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.36.x
 #
@@ -212,6 +212,12 @@ echo -e "Habilitando o Serviço do ZoneMinder, aguarde..."
 	systemctl enable zoneminder &>> $LOG
 	systemctl restart zoneminder &>> $LOG
 echo -e "Serviço habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do ZoneMinder, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl status zoneminder | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do ZoneMinder feita com Sucesso!!!"

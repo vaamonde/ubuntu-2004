@@ -7,10 +7,10 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.03
+# Data de atualização: 09/12/2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Netdata v1.31.x
+# Testado e homologado para a versão do Netdata v1.32.x
 #
 # O Netdata é uma ferramenta para visualizar e monitorar métricas em tempo real, 
 # otimizado para acumular todos os tipos de dados, como uso da CPU, atividade do 
@@ -134,7 +134,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando o Netdata, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Netdata, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Netdata, aguarde..."
@@ -186,6 +186,12 @@ echo -e "Reinicializando o serviço do Netdata, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart netdata &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do Netdata, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl status netdata | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Netdata, aguarde..."

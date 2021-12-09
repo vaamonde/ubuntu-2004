@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 02/12/2021
-# Versão: 0.05
+# Data de atualização: 09/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -129,7 +129,7 @@ echo
 #
 echo -e "Instalação e Configuração do LogAnalyzer no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Syslog/Rsyslog.: UDP 514"
-echo -e "Após a instalação do LogAnalyzer acessar a URL: http://$(hostname -d | cut -d' ' -f1)/log/\n"
+echo -e "Após a instalação do LogAnalyzer acessar a URL: http://log.$(hostname -d | cut -d' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -168,7 +168,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando do LogAnalyzer, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do LogAnalyzer, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do LogAnalyzer, aguarde..."
@@ -223,7 +223,7 @@ echo -e "Descompactando o LogAnalyzer, aguarde..."
 echo -e "Descompactação do LogAnalyzer feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Copiando os arquivos de configuração do LogAnalyzer, aguarde..."
+echo -e "Copiando os arquivos de configuração do LogAnalyzer para o Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando cp: -R (recurse), -v (verbose)
@@ -237,6 +237,7 @@ echo -e "Copiando os arquivos de configuração do LogAnalyzer, aguarde..."
 	touch /var/www/html/log/config.php &>> $LOG
 	chmod -v 666 /var/www/html/log/config.php &>> $LOG
 	chown -Rv www-data.www-data /var/www/html/log/ &>> $LOG
+	cp -v conf/loganalyzer.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -264,6 +265,29 @@ echo -e "Reinicializando o Serviço do Rsyslog, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart rsyslog &>> $LOG
 echo -e "Serviço do Rsyslog reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de Virtual Host loganalyzer.conf, pressione <Enter> para continuar."
+	read
+	vim /etc/apache2/sites-available/loganalyzer.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Habilitando o Virtual Host do LogAnalyzer no Apache2, aguarde..."
+	a2ensite loganalyzer &>> $LOG
+echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Fazendo o reload do Apache2, aguarde..."
+	systemctl reload apache2 &>> $LOG
+echo -e "Reload do Apache2 feito com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando os serviços do Syslog e do Rsyslog, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	echo -e "Syslog.: $(systemctl status syslog | grep Active)"
+	echo -e "Rsyslog: $(systemctl status rsyslog | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Syslog/Rsyslog, aguarde..."

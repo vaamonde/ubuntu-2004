@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 03/12/2021
-# Versão: 0.08
+# Data de atualização: 09/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
@@ -241,6 +241,12 @@ echo -e "Inicializando os serviços do Bind DNS Server e do Netplan, aguarde..."
 echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando o serviço do Bind DNS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl status bind9 | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando as portas de conexões do Bind DNS Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
@@ -253,7 +259,14 @@ echo -e "Verificando as portas de conexões do Bind DNS Server, aguarde..."
 	lsof -nP -iTCP:953 -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
-#	
+#
+echo -e "Verificando a resolução do Domínio: $DOMAIN, aguarde..."
+	# opção do comando dig: +noall (set or clean all display flags), +answer (display the answer 
+	# section of a reply)
+	dig $DOMAIN +noall +answer
+echo -e "Domínio verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Instalação do Bind DNS Server feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)

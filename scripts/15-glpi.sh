@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 03/12/2021
-# Versão: 0.04
+# Data de atualização: 09/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -155,7 +155,7 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configurando do GLPI Help Desk, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do GLPI Help Desk, aguarde...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do GLPI, aguarde..."
