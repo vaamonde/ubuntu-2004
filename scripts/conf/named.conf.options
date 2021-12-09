@@ -18,6 +18,7 @@ options {
 	
 	// Diretório e arquivo das estatística do Bind9 DNS Server.
 	statistics-file "/var/log/named/named.stats";
+	zone-statistics yes;
 	
 	// Endereços IPv4 de encaminhamento para servidores de DNS externos.
 	// Padrão do encaminhamento enviar as consultas para o servidor de Firewall pfSense
