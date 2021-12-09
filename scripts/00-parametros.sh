@@ -687,5 +687,5 @@ GUACAMOLERDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
 GUACAMOLEINSTALL="libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin libossp-uuid-dev \
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
-libvorbis-dev libwebp-dev gcc-6 g++-6 make libfreerdp-dev freerdp2-x11 libguac-client-rdp0"
+libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp-dev freerdp2-x11 libguac-client-rdp0"
 #
