@@ -6,11 +6,13 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 18/10/2021
-Versão: 0.07
+Data de atualização: 09/12/2021
+Versão: 0.08
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0008 - Falha de atualização do serviço ZoneMinder, executar os comandos:  zmupdate.pl -f depois: apt -f install
+
 0007 - Falha na inicialização do serviço do Netdata referente ao erro do SystemD quado utilizado o comando: systemctl status
 netdata - erro: PROCFILE: Cannot open file '/etc/netdata/apps_groups.conf' e PROCFILE: Cannot open file '/proc/54579/status,
 essa falha está associada ao plugin do eBPF Plugin (Netdata's extended Berkeley Packet Filter) conforme documentação do 
