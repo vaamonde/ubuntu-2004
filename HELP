@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 08/12/2021
-Versão: 0.04
+Data de atualização: 09/12/2021
+Versão: 0.05
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
@@ -91,3 +91,32 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ modificações, sempre verificar as mudanças no repositório principal em relação a BUGS ou melhorias
 	_ nos script e arquivos de configuração analisando sempre a versão do arquivo nas linhas: Data de 
 	_ atualização e Versão juntamente com o arquivo CHANGELOG.
+
+#======================== COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS =======================
+
+#00_ Ajudando no "DEBUG" dos scripts
+	_ Para ajudar no DEBUG dos scripts é recomendado você criar o mesmo cenário das vídeos aulas e das
+	_ configurações dos scripts e arquivos de configuração, mantendo o mesmo padrão e testando se está
+	_ tudo funcionando corretamente, caso encontre alguma falha nos scripts ou arquivos de configuração
+	_ enviar as correções na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
+	_ OBS2: antes de enviar o BUG veja o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS
+	_ se essa falha já consta lá e se já foi resolvida
+	_ OBS3: veja sempre o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/CHANGELOG sobre as
+	_ correções dos scripts e arquivos de configuração. 
+
+#01_ Ajudando na "MELHORIA" dos scripts
+	_ Para ajudar na MELHORIA dos scripts é recomendado você criar um novo cenário, adaptar os scripts
+	_ para esse cenário e testar se tudo vai funcionar perfeitamente, depois acrescentar suas melhorias
+	_ e mandar as sugestões na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
+
+#02_ Ajudando na "MELHORIA" dos arquivos de configuração
+	_ Para ajudar na MELHORIA dos arquivos de configuração, esse procedimento é o mais importante, pois
+	_ afeta vários serviços de rede, as melhorias muitas vezes ajuda no cenário ou prejudica dependendo
+	_ da integração ou da finalidade do serviço que está sendo implementado, para isso é recomendado
+	_ criar um novo cenário, testar as melhorias nos arquivos de configuração e mandar as sugestões na
+	_ Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
+
+#03_ Ajudando na "SEGURANÇA" dos scripts ou arquivos de configuração
+	_ Para ajudar na SEGURANÇA dos scripts e arquivos de configuração é recomendado criar o mesmo cenário
+	_ ou um novo cenário e testar as falhas de segurança principalmente dos serviços de rede, documentar
+	_ as melhorias ou correções e enviar na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues

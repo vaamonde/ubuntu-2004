@@ -2,7 +2,7 @@
 
 # Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps
 
-## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos e materiais gratuitos para o Canal
+## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos e materiais gratuitos para o Canal do YouTUBE
 ## 💰 Chave PIX do projeto: robsonvaamonde@gmail.com
 ## 💰 Link de doação do PagSeguro: https://pag.ae/bjlSJcH
 
@@ -50,7 +50,8 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMRxzwCbAzmhj
 02. Após logado, alterar para Root com o comando: sudo -i <Enter>;
 03. No perfil do usuário Root clocar o projeto do Github com o comando: git clone https://github.com/vaamonde/ubuntu-2004 <Enter>;
 04. Acessar o diretório dos scripts co o comando: cd ubuntu-2004/scripts/ <Enter>;
-05. Para executar os scripts digite o comando: bash 00-nome_do_script.sh <Enter>.
+05. Para executar os scripts digite o comando: bash 00-nome_do_script.sh <Enter>;
+06. Dúvidas veja o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/HELP.
 
 ## **🖥 Ubuntu SERVER 20.04 LTS Focal Fossa 👏👏👏 LANÇAMENTO OFICIAL - Instalação e Configuração**
 
