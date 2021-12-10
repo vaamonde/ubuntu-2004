@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.22
+# Data de atualização: 10/12/2021
+# Versão: 0.23
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -402,13 +402,29 @@ PATHWEBAPPS="/var/lib/tomcat9/webapps"
 AGENDAJAVAEE="https://github.com/professorjosedeassis/javaEE/raw/main/agendaVaamonde.war"
 #
 # Variáveis de criação da Base de Dados da Agenda de Contatos no MySQL
+# opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
+# opções do comando CREATE: create (criação), user (usuário), identified by (identificado por
+# senha do usuário), password (senha)
+# opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
+# tabelas), to (para), user (usuário), identified by (identificado por - senha do usuário), 
+# password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
+# tabela), *.* (todos os bancos/tabelas), to (para), user@'%' (usuário @ localhost), identified 
+# by (identificado por - senha do usuário), password (senha)
+# opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+# opções do domando CREATE: create (criação), table (tabela), colunas da tabela, primary key
+# (coluna da chave primária)
+#
+# OBSERVAÇÃO: NO SCRIPT: 10-TOMCAT.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 217
 NAME_DATABASE_JAVAEE="dbagenda"
 USERNAME_JAVAEE=$NAME_DATABASE_JAVAEE
 PASSWORD_JAVAEE=$NAME_DATABASE_JAVAEE
 CREATE_DATABASE_JAVAEE="CREATE DATABASE dbagenda;"
 CREATE_USER_DATABASE_JAVAEE="CREATE USER 'dbagenda' IDENTIFIED BY 'dbagenda';"
 GRANT_DATABASE_JAVAEE="GRANT USAGE ON *.* TO 'dbagenda';"
-GRANT_ALL_DATABASE_JAVAEE="GRANT ALL PRIVILEGES ON wordpress.* TO 'dbagenda';"
+GRANT_ALL_DATABASE_JAVAEE="GRANT ALL PRIVILEGES ON 'dbagenda'.* TO 'dbagenda';"
 FLUSH_JAVAEE="FLUSH PRIVILEGES;"
 CREATE_TABLE_JAVAEE="CREATE TABLE 'contatos' (
 	'idcon' int NOT NULL AUTO_INCREMENT,
@@ -428,6 +444,10 @@ CREATE_TABLE_JAVAEE="CREATE TABLE 'contatos' (
 # 03. /etc/vsftpd.allowed_users = arquivo de configuração da base de dados de usuários do VSFTPd
 # 04. /etc/apache2/sites-available/wordpress.conf = arquivo de configuração do Virtual Host
 #
+# Arquivos de monitoramento (log) do Site do Wordpress utilizado nesse script
+# 01. tail -f /var/log/apache2/access-wordpress.log = log de acesso ao Wordpress
+# 02. tail -f /var/log/apache2/error-wordpress.log = log de erro de acesso ao Wordpress
+#
 # Declarando as variáveis utilizadas nas configurações do Site do Wordpress
 #
 # Declarando a variável do download do Wordpress (Link atualizado em: 18/10/2021)
@@ -446,7 +466,7 @@ WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 11-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 238, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 217
 CREATE_DATABASE_WORDPRESS="CREATE DATABASE wordpress;"
 CREATE_USER_DATABASE_WORDPRESS="CREATE USER 'wordpress' IDENTIFIED BY 'wordpress';"
@@ -513,11 +533,11 @@ python3-psycopg2 python3-pymysql"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 13-NETDATA.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 217
 CREATE_USER_NETDATA="CREATE USER 'netdata'@'localhost';"
 GRANT_USAGE_NETDATA="GRANT USAGE, REPLICATION CLIENT ON *.* TO 'netdata'@'localhost';"
-FLUSH_NETADA="FLUSH PRIVILEGES;"
+FLUSH_NETDATA="FLUSH PRIVILEGES;"
 #
 #=============================================================================================
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 14-loganalyzer.sh                      #
@@ -548,7 +568,7 @@ LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 217
 CREATE_DATABASE_SYSLOG="CREATE DATABASE syslog;"
 CREATE_USER_DATABASE_SYSLOG="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
@@ -571,7 +591,7 @@ INSTALL_DATABASE_SYSLOG="/usr/share/dbconfig-common/data/rsyslog-mysql/install/m
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 119 até 124, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 114
 CREATE_DATABASE_LOGANALYZER="CREATE DATABASE loganalyzer;"
 CREATE_USER_DATABASE_LOGANALYZER="CREATE USER 'loganalyzer' IDENTIFIED BY 'loganalyzer';"
@@ -611,7 +631,7 @@ GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.6/glpi-9.5.6.tg
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA DO
-# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 217
 CREATE_DATABASE_GLPI="CREATE DATABASE glpi;"
 CREATE_USER_DATABASE_GLPI="CREATE USER 'glpi' IDENTIFIED BY 'glpi';"
@@ -695,7 +715,7 @@ ZONEMINDER="ppa:iconnor/zoneminder-master"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-ZONEMINDER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA DO
-# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 217
 CREATE_DATABASE_ZONEMINDER="/usr/share/zoneminder/db/zm_create.sql"
 GRANT_DATABASE_ZONEMINDER="GRANT USAGE ON *.* TO 'zmuser';"
