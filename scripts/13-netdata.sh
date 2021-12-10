@@ -158,6 +158,15 @@ echo -e "Instalando o Netdata, esse processo demora um pouco, aguarde..."
 echo -e "Instalação do Netdata feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Criando o Usuário de monitoramento do MySQL do Netdata, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_NETDATA" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_USAGE_NETDATA" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_NETDATA" mysql &>> $LOG
+echo -e "Usuário de monitoramento criado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Editando o arquivo de monitoramento do MySQL mysql.conf, pressione <Enter> para editar"
 echo -e "Remover os comentários das variáveis: user e pass"
 echo -e "Adicionar o usuário: $USERMYSQL é a senha: $SENHAMYSQL nas configurações do tcp:"

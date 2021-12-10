@@ -486,8 +486,11 @@ WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                         #
 #=============================================================================================
 #
-# Arquivos de configuração (conf) do sistema Webmin e Userrmin utilizados nesse script
+# Arquivos de configuração (conf) do sistema Webmin e Usermin utilizados nesse script
 # 01. /etc/apt/sources.list.d/webmin.list = arquivo de configuração do source list do Apt
+#
+# Arquivos de monitoramento (log) do Serviço do Webmin e do Usermin utilizados nesse script
+# 01. journalctl -t webmin = todas as mensagens referente ao serviço do Webmin
 #
 # Declarando as variáveis utilizadas nas configurações do Webmin e do Usermin
 # 
@@ -528,8 +531,9 @@ libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler lm-
 python3-psycopg2 python3-pymysql"
 #
 # Declarando as variáveis para criação do usuário de monitoramento do Netdata no MySQL
-# opções do comando CREATE:
-# opções do comando GRANT:
+# opções do comando CREATE: create (criação), user (usuário)
+# opções do comando GRANT: grant (permissão), usage (uso em | uso na), replication cliente (),
+# *.* (todos os bancos/tabelas), to (para), user (usuário)
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 13-NETDATA.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
