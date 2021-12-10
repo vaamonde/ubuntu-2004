@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 19/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.05
+# Data de atualização: 10/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 #
@@ -47,6 +47,26 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
+#
+# Verificando se as dependências do Apache Tomcat9 Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
+# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
+# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do Apache Tomcat9 Server, aguarde... "
+	for name in $TOMCATDEP
+	do
+		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
+			echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
+			deps=1; 
+			}
+	done
+		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
+			echo -en "\nInstale as dependências acima e execute novamente este script\n";
+			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+			exit 1; 
+			}
+		sleep 5
 #
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
 # OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
@@ -119,7 +139,7 @@ sleep 5
 echo -e "Instalando as dependências do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install $TOMCATDEP &>> $LOG
+	apt -y install $TOMCATDEPINSTALL &>> $LOG
 echo -e "Instalação das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -165,6 +185,35 @@ echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para continuar"
+	# opção do comando: &>> (redirecionar de saída padrão)
+	# opção do comando cp: -v (verbose)
+	read
+	vim /etc/tomcat9/server.xml
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando a Base de Dados da Agenda de Contatos no MySQL, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_JAVAEE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_JAVAEE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_JAVAEE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_JAVAEE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_JAVAEE" mysql &>> $LOG
+	mysql -u $USERNAME_JAVAEE -p$PASSWORD_JAVAEE -e "$CREATE_TABLE_JAVAEE" $NAME_DATABASE_JAVAEE &>> $LOG
+echo -e "Base de Dados do Agenda de Contatos criada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Fazendo o download da Agenda de Contatos do projeto do Github, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando rm: -v (verbose)
+	# opção do comando wget: -O (output-document)
+	rm -v $PATHWEBAPPS/agenda.war &>> $LOG
+	wget -O $PATHWEBAPPS/agenda.war $AGENDAJAVAEE &>> $LOG
+echo -e "Download do Wordpress feito com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Reinicializando o serviço do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	systemctl restart tomcat9 &>> $LOG
@@ -173,7 +222,7 @@ sleep 5
 #
 echo -e "Verificando o serviço do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	systemctl restart tomcat9 | grep Active
+	systemctl status tomcat9 | grep Active
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

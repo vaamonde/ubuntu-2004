@@ -18,12 +18,11 @@
 # como ISC DHCP, é uma das primeiras e mais conhecidas, mas agora existem várias outras 
 # implementações de software de servidor DHCP disponíveis.
 #
-# Diretório e Arquivo de banco de dados do Leasing ofertados pelo ISC DHCP Server:
-# Localização: /var/lib/dhcp/dhcpd.leases
-#
-# Monitoramento do Log do ISC DHCP Server: tail -f /var/log/syslog | grep dhcpd
-#
 # Site Oficial do Projeto ICS DHCP: https://www.isc.org/dhcp/
+#
+# Configuração do DHCP Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Gráfico: NetworkManager - Icone da Placa de Rede
+# Windows Powershell: ipconfig /release - ipconfig /renew
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

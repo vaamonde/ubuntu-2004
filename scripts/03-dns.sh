@@ -20,12 +20,11 @@
 # pela primeira vez com o sistema operacional 4.3 BSD. Atualmente o BIND é suportado e 
 # mantido pelo Internet Systems Consortium.
 #
-# Diretório das Zonas de Pesquisa Direta e Reversa do Bind DNS Server:
-# Localização: /var/lib/bind/
-#
-# Monitoramento do Log do Bind DNS Server: tail -f /var/log/syslog | grep named
-#
 # Site Oficial do Projeto Bind: https://www.isc.org/bind/
+#
+# Testando o DNS no GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: nslookup pti.intra, dig pti.intra
+# Windows Powershell.: nslookup pti.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

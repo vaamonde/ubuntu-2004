@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.03
+# Data de atualização: 10/12//2021
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Mais informações veja o arquivo: scripts/settings/04-ConfiguracaoDoNetplan.sh
 #
@@ -26,13 +26,15 @@ network:
       # Configuração do Endereço de Gateway IPv4 do Ubuntu Server
       gateway4: 172.16.1.254
       # Configuração dos Endereços de DNS Server IPv4 do Ubuntu Server
+      # Após a instalação e configuração do Bind DNS Server configurar o endereço
+      # principal de resolução do DNS para o servidor Ubuntu Server
       nameservers:
         addresses:
         #- 172.16.1.20
         - 172.16.1.254
         #- 8.8.8.8
         #- 8.8.8.8
-        # Configuração do Nome de Pesquisa DNS do Ubuntu Server
+        # Configuração do Nome de Pesquisa do Domínio DNS do Ubuntu Server
         search:
         - pti.intra
   version: 2

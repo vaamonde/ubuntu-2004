@@ -114,6 +114,7 @@ SSHINSTALL="net-tools ipcalc nmap"
 # 03. tail -f /var/log/syslog | grep dhcpd = filtrando as mensagens do serviço do ISC DHCP
 # 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
 # 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
+# 06. dhcp-lease-list = comando que mostrar os leases dos endereços IPv4 do ISC DHCP
 #
 # Variável de instalação do serviço de rede ISC DHCP Server
 DHCPINSTALL="isc-dhcp-server net-tools"
@@ -381,15 +382,20 @@ FTPINSTALL="vsftpd"
 # 03. tail -f /var/log/syslog | grep tomcat9 = filtrando as mensagens do serviço do Tomcat9
 # 04. tail -f /var/log/tomcat9/* = vários arquivos de Log's do serviço do Tomcat9
 #
+# Declarando as variáveis utilizadas nas configurações do Serviço do Apache Tomcat9 Server
+#
+# Variável das dependências do laço de loop do Apache Tomcat9 Server
+TOMCATDEP="bind9 bind9utils mysql-server mysql-common apache2 php vsftpd"
+#
 # Variável de instalação das dependências do Java do Apache Tomcat Server
-TOMCATDEP="openjdk-11-jdk openjdk-11-jre default-jdk"
+TOMCATDEPINSTALL="openjdk-11-jdk openjdk-11-jre default-jdk"
 #
 # Variável de instalação do serviço de rede Apache Tomcat Server
 TOMCATINSTALL="tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-examples tomcat9-user"
 #
 # Variáveis de localização do diretório de Configuração e do Webapp do Tomcat9
 PATHTOMCAT9="/usr/share/tomcat9/"
-PATHWEBAPPS="/var/lib/tomcat9/webapps/"
+PATHWEBAPPS="/var/lib/tomcat9/webapps"
 #
 # Variável de download da aplicação Agenda de Contatos em Java feita pelo Prof. José de Assis
 # Link do Github do projeto: https://github.com/professorjosedeassis/javaEE
@@ -397,17 +403,19 @@ AGENDAJAVAEE="https://github.com/professorjosedeassis/javaEE/raw/main/agendaVaam
 #
 # Variáveis de criação da Base de Dados da Agenda de Contatos no MySQL
 NAME_DATABASE_JAVAEE="dbagenda"
+USERNAME_JAVAEE=$NAME_DATABASE_JAVAEE
+PASSWORD_JAVAEE=$NAME_DATABASE_JAVAEE
 CREATE_DATABASE_JAVAEE="CREATE DATABASE dbagenda;"
 CREATE_USER_DATABASE_JAVAEE="CREATE USER 'dbagenda' IDENTIFIED BY 'dbagenda';"
 GRANT_DATABASE_JAVAEE="GRANT USAGE ON *.* TO 'dbagenda';"
 GRANT_ALL_DATABASE_JAVAEE="GRANT ALL PRIVILEGES ON wordpress.* TO 'dbagenda';"
-FLUSH_JAVESS="FLUSH PRIVILEGES;"
-CREATE_TABLE_JAVAEE="CREATE TABLE `contatos` (
-  `idcon` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
-  `fone` varchar(15) NOT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`idcon`)
+FLUSH_JAVAEE="FLUSH PRIVILEGES;"
+CREATE_TABLE_JAVAEE="CREATE TABLE 'contatos' (
+	'idcon' int NOT NULL AUTO_INCREMENT,
+	'nome' varchar(50) NOT NULL,
+	'fone' varchar(15) NOT NULL,
+	'email' varchar(50) DEFAULT NULL,
+	PRIMARY KEY ('idcon')
 );"
 #
 #=============================================================================================

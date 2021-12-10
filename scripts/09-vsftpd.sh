@@ -294,7 +294,7 @@ sleep 5
 #
 echo -e "Verificando o serviço do Vsftpd Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	systemctl restart vsftpd | grep Active
+	systemctl status vsftpd | grep Active
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

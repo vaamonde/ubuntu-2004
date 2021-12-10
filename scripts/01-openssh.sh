@@ -23,13 +23,12 @@
 # BSD. Ele permite que o host, endereços IP de sub-rede, nomes e/ou respostas de consulta ident, 
 # sejam usados como tokens sobre os quais realizam-se filtros para propósitos de controle de acesso.
 #
-# Monitoramento do Log do OpenSSH Server: tail -f /var/log/syslog | grep sshd
-# Monitoramento das autenticações do OpenSSH Server: tail -f /var/log/auth.log | grep ssh
-# Monitoramento das conexões permitidas do OpenSSH Server: tail -f /var/log/tcpwrappers-allow-ssh.log
-# Monitoramento das conexões negadas do OpenSSH Server: tail -f /var/log/tcpwrappers-deny.log
-#
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
+#
+# Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: ssh vaamonde@172.16.1.10 ou ssh vaamonde@ssh.pti.intra
+# Windows Powershell.: ssh vaamonde@172.16.1.10 ou ssh vaamonde@ssh.pti.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

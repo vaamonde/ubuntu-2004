@@ -15,6 +15,7 @@
 // TSIG utilizando o comando: dnssec-keygen -r /dev/urandom -a HMAC-MD5 -b 128 -n USER vaamonde, 
 // esse recurso foi removido a partir do BIND >9.13, nesse cenário é recomendado utilizar o comando: 
 // tsig-keygen -a hmac-md5 vaamonde > tsig.key para gerar chaves TSIG de integração do DNS e DHCP.
+// Mais informações veja o script: 04-dhcpdns.sh (Integração do ISC DHCP Server e Bind9 DNS Server)
 key "rndc-key" {
 	algorithm hmac-md5;
 	secret "vaamonde";
@@ -28,7 +29,7 @@ zone "pti.intra" IN {
 	allow-query { any; };
 	allow-transfer { none; };
 	notify yes;
-	// zone-statistics yes;
+	zone-statistics yes;
 };
 
 // Configuração da Zona de Pesquisa Reversa do Bind9 DNS Server
@@ -39,5 +40,5 @@ zone "1.16.172.in-addr.arpa" IN {
 	allow-query { any; };
 	allow-transfer { none; };
 	notify yes;
-	// zone-statistics yes;
+	zone-statistics yes;
 };

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.07
+# Data de atualização: 10/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -193,8 +193,13 @@ echo -e "Data e Hora do NTP Server atualizada com sucesso!!!, continuando com o 
 sleep 5
 #
 echo -e "Verificando a Data e Hora do NTP Server e do Sistema Operacional, aguarde...\n"
-	echo -e "Consultando os servidor NTP Server configurados...\n"
-		# opção do comando ntpq: p (print), n (all address)
+	echo -e "Verificando as configuração do NTP Server...\n"
+		# opção do comando ntpq: -c (command) sysinfo (display system operational summary)
+		ntpq -c sysinfo
+		sleep 5
+		echo
+	echo -e "Consultando os servidores NTP Server configurados...\n"
+		# opção do comando ntpq: -p (print), -n (all address)
 		# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 		ntpq -pn
 		sleep 5

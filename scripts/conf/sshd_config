@@ -6,7 +6,7 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
-# Data de atualização: 08/12/2021
+# Data de atualização: 10/12/2021
 # Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
@@ -25,6 +25,31 @@ Protocol 2
 # Endereço IPv4 do Servidor de OpenSSH que está liberado para permitir conexões remotas 
 # via protocolo SSH
 ListenAddress 172.16.1.20
+
+# Métodos de Autenticação do OpenSSH, utilizar chaves públicas e autenticação por senha
+# Por padrão o Servidor de OpenSSH não trabalhar com Chaves Pública para autenticação, 
+# utilizando o arquivo /etc/passwd para se autenticar no servidor, por motivos de segurança, 
+# é recomendado utilizar chaves públicas e senhas para se autenticar no servidor
+# Descomentar essa opção depois de configurar e publicar a chave pública no servidor
+#AuthenticationMethods publickey,password
+
+# Autenticação utilizando chaves públicas geradas no cliente com o comando: ssh-keygen 
+# e exportada para o servidor com o comando: ssh-copy-id, chaves localizadas no diretório: 
+# /home/nome_usuário/.ssh/authorized_keys. Essa opção será utiliza em conjunto com a 
+# opção: AuthenticationMethods para verificar a chave pública.
+PubkeyAuthentication yes
+
+# Especifica se a autenticação por senha é permitida. O padrão é yes. Não é recomendado 
+#alterar essa opção.
+PasswordAuthentication yes
+
+# Configuração do diretório de chaves públicas para autenticar os usuários, as chaves 
+# devem ser exportada para o Servidor de OpenSSH utilizando o comando: ssh-copy-id
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Evitar o uso de diretórios residenciais inseguros e permissões de arquivos de chaves 
+# não confiáveis
+StrictModes yes
 
 # Localização das configurações das Chaves Públicas e Privadas do Servidor de OpenSSH
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -112,31 +137,6 @@ X11Forwarding no
 # Especifica o primeiro número de exibição disponível para encaminhamento X11 do 
 # sshd. Isso evita que o sshd interfira nos servidores X11 reais. O padrão é 10.
 X11DisplayOffset 10
-
-# Métodos de Autenticação do OpenSSH, utilizar chaves públicas e autenticação por senha
-# Por padrão o Servidor de OpenSSH não trabalhar com Chaves Pública para autenticação, 
-# utilizando o arquivo /etc/passwd para se autenticar no servidor, por motivos de segurança, 
-# é recomendado utilizar chaves públicas e senhas para se autenticar no servidor
-# Descomentar essa opção depois de configurar e publicar a chave pública no servidor
-#AuthenticationMethods publickey,password
-
-# Autenticação utilizando chaves públicas geradas no cliente com o comando: ssh-keygen 
-# e exportada para o servidor com o comando: ssh-copy-id, chaves localizadas no diretório: 
-# /home/nome_usuário/.ssh/authorized_keys. Essa opção será utiliza em conjunto com a 
-# opção: AuthenticationMethods para verificar a chave pública.
-PubkeyAuthentication yes
-
-# Especifica se a autenticação por senha é permitida. O padrão é yes. Não é recomendado 
-#alterar essa opção.
-PasswordAuthentication yes
-
-# Configuração do diretório de chaves públicas para autenticar os usuários, as chaves 
-# devem ser exportada para o Servidor de OpenSSH utilizando o comando: ssh-copy-id
-AuthorizedKeysFile .ssh/authorized_keys
-
-# Evitar o uso de diretórios residenciais inseguros e permissões de arquivos de chaves 
-# não confiáveis
-StrictModes yes
 
 # Controla o suporte para o esquema de autenticação "keyboard-interactive" definido 
 # no RFC-4256. Utilizar um desafio para se autenticar, muito utilizado com QRCode
