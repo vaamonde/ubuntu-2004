@@ -499,6 +499,18 @@ libwebsockets15 libwebsockets-dev libjson-c-dev libbpfcc-dev liblz4-dev libjudy-
 libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler lm-sensors \
 python3-psycopg2 python3-pymysql"
 #
+# Declarando as variáveis para criação do usuário de monitoramento do Netdata no MySQL
+# opções do comando CREATE:
+# opções do comando GRANT:
+# opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+#
+# OBSERVAÇÃO: NO SCRIPT: 13-NETDATA.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 232 até 236, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHA: 217
+CREATE_USER_NETDATA="CREATE USER 'netdata'@'localhost';"
+GRANT_USAGE_NETDATA="GRANT USAGE, REPLICATION CLIENT ON *.* TO 'netdata'@'localhost';"
+FLUSH_NETADA="FLUSH PRIVILEGES;"
+#
 #=============================================================================================
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 14-loganalyzer.sh                      #
 #=============================================================================================
