@@ -387,6 +387,29 @@ TOMCATDEP="openjdk-11-jdk openjdk-11-jre default-jdk"
 # Variável de instalação do serviço de rede Apache Tomcat Server
 TOMCATINSTALL="tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-examples tomcat9-user"
 #
+# Variáveis de localização do diretório de Configuração e do Webapp do Tomcat9
+PATHTOMCAT9="/usr/share/tomcat9/"
+PATHWEBAPPS="/var/lib/tomcat9/webapps/"
+#
+# Variável de download da aplicação Agenda de Contatos em Java feita pelo Prof. José de Assis
+# Link do Github do projeto: https://github.com/professorjosedeassis/javaEE
+AGENDAJAVAEE="https://github.com/professorjosedeassis/javaEE/raw/main/agendaVaamonde.war"
+#
+# Variáveis de criação da Base de Dados da Agenda de Contatos no MySQL
+NAME_DATABASE_JAVAEE="dbagenda"
+CREATE_DATABASE_JAVAEE="CREATE DATABASE dbagenda;"
+CREATE_USER_DATABASE_JAVAEE="CREATE USER 'dbagenda' IDENTIFIED BY 'dbagenda';"
+GRANT_DATABASE_JAVAEE="GRANT USAGE ON *.* TO 'dbagenda';"
+GRANT_ALL_DATABASE_JAVAEE="GRANT ALL PRIVILEGES ON wordpress.* TO 'dbagenda';"
+FLUSH_JAVESS="FLUSH PRIVILEGES;"
+CREATE_TABLE_JAVAEE="CREATE TABLE `contatos` (
+  `idcon` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `fone` varchar(15) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`idcon`)
+);"
+#
 #=============================================================================================
 #                      VARIÁVEIS UTILIZADAS NO SCRIPT: 11-wordpress.sh                       #
 #=============================================================================================
@@ -662,7 +685,6 @@ FLUSH_ZONEMINDER="FLUSH PRIVILEGES;"
 # Variável das dependências do laço de loop do ZoneMinder
 ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php bind9"
 #
-#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 18-guacamole.sh                      #
 #=============================================================================================
@@ -675,10 +697,6 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 # Variável de download do Apache Guacamole (Links atualizados no dia 09/12/2021)
 GUACAMOLESERVER="https://dlcdn.apache.org/guacamole/1.3.0/source/guacamole-server-1.3.0.tar.gz"
 GUACAMOLECLIENT="https://dlcdn.apache.org/guacamole/1.3.0/binary/guacamole-1.3.0.war"
-#
-# Localização padrão do diretório de configuração e do webapp do Tomcat9 
-PATHTOMCAT9="/usr/share/tomcat9/"
-PATHWEBAPPS="/var/lib/tomcat9/webapps/"
 #
 # Variável das dependências do laço de loop do Guacamole
 GUACAMOLERDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
