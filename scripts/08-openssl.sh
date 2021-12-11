@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.05
+# Data de atualização: 11/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -530,9 +530,9 @@ echo -e "Criando o diretório de Download para baixar a Unidade Certificadora CA
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
 	# opção do comando cp: -v (verbose)
-	mkdir -v /var/www/html/download/ &>> $LOG
-	chown -v www-data:www-data /var/www/html/download/ &>> $LOG
-	cp -v /etc/ssl/newcerts/ca-pticrt.crt /var/www/html/download/ &>> $LOG
+	mkdir -v $DOWNLOADCERT &>> $LOG
+	chown -v www-data:www-data $DOWNLOADCERT &>> $LOG
+	cp -v /etc/ssl/newcerts/ca-pticrt.crt $DOWNLOADCERT &>> $LOG
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 2
 #

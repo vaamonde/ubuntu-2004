@@ -329,6 +329,9 @@ BITS="2048"
 # sha256, sha384 ou sha512, padrão utilizado: sha256
 CRIPTOCERT="sha256" 
 #
+# Variável do diretório de download da CA para instalação nos Desktops Windows e GNU/Linux
+DOWNLOADCERT="/var/www/html/download/"
+#
 # Variável das dependências do laço de loop do OpenSSL
 SSLDEP="openssl apache2 bind9"
 #
@@ -424,7 +427,7 @@ PASSWORD_JAVAEE=$NAME_DATABASE_JAVAEE
 CREATE_DATABASE_JAVAEE="CREATE DATABASE dbagenda;"
 CREATE_USER_DATABASE_JAVAEE="CREATE USER 'dbagenda' IDENTIFIED BY 'dbagenda';"
 GRANT_DATABASE_JAVAEE="GRANT USAGE ON *.* TO 'dbagenda';"
-GRANT_ALL_DATABASE_JAVAEE="GRANT ALL PRIVILEGES ON 'dbagenda'.* TO 'dbagenda';"
+GRANT_ALL_DATABASE_JAVAEE="GRANT ALL PRIVILEGES ON dbagenda.* TO 'dbagenda';"
 FLUSH_JAVAEE="FLUSH PRIVILEGES;"
 CREATE_TABLE_JAVAEE="CREATE TABLE 'contatos' (
 	'idcon' int NOT NULL AUTO_INCREMENT,
@@ -493,6 +496,8 @@ WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
 #
 # Arquivos de monitoramento (log) do Serviço do Webmin e do Usermin utilizados nesse script
 # 01. journalctl -t webmin = todas as mensagens referente ao serviço do Webmin
+# 02. tail -f /var/webmin/* = vários arquivos de Log's do serviço do Webmin
+# 03. tail -f /var/usermin/* = vários arquivos de Log's do serviço do Usermin
 #
 # Declarando as variáveis utilizadas nas configurações do Webmin e do Usermin
 # 
@@ -717,6 +722,9 @@ WAKEINSTALL="libwrite-net-perl"
 #
 # Variável de instalação das dependências do FusionInventory SNMPv3
 SNMPINSTALL="libdigest-hmac-perl"
+#
+# Variável do diretório de Download dos Agentes e arquivos de cofiguração do FusionInventory
+DOWNLOADAGENT="/var/www/html/agentes"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 17-zoneminder.sh                     #

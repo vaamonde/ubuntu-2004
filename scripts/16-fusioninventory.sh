@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.04
+# Data de atualização: 11/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x, Agent 2.6.x e GLPI 9.5.x
 #
@@ -18,11 +18,14 @@
 # servidor compatível (OCS Inventory, GLPI, OTRS, Uranos, etc..) atuando como um ponto 
 # de controle centralizado.
 #
-# Informações que serão solicitadas na configuração via Web do FusionInventory no GLPI
+# Informações que serão solicitadas na configuração via Web do FusionInventory Server no GLPI
 # Configurar
 #   Plug-ins
 #       FusionInventory: Instalar
-#       FusionInventory: Habilitar 
+#       FusionInventory: Habilitar
+# OBSERVAÇÃO: existe várias configurações para serem feitas no FusionInventory Server no GLPI,
+# apenas habilitando o serviço os Agentes do FusionInventory já consegue enviar os inventários
+# para o GLPI Help Desk.
 #
 # Software utilizados pelo FusionInventory:
 # fusioninventory-agent: Agente de Inventário e Tarefas Local do FusionInventory
@@ -222,16 +225,21 @@ echo -e "Instalando o FusionInventory Agent e seus aplicativos extras, aguarde..
 echo -e "FusionInventory Agent instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do FusionInventory Agent, pressione <Enter> para continuar."
+echo -e "Atualizando arquivo de configuração do FusionInventory Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-    # opção do comando mkdir: -v (verbose)
+	# opção do comando mkdir: -v (verbose)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	read
-    mkdir -v /var/log/fusioninventory-agent/ &>> $LOG
-    touch /var/log/fusioninventory-agent/fusioninventory.log &>> $LOG
+	mkdir -v /var/log/fusioninventory-agent/ &>> $LOG
+	touch /var/log/fusioninventory-agent/fusioninventory.log &>> $LOG
 	mv -v /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old &>> $LOG
 	cp -v conf/agent.cfg /etc/fusioninventory/agent.cfg &>> $LOG
+echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração agent.cfg, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	read
 	vim /etc/fusioninventory/agent.cfg
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -249,6 +257,12 @@ echo -e "Verificando o serviço do FusionInventory Agent, aguarde..."
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO FUSIONINVENTORY SERVER, APÓS A CONFIGURAÇÃO"
+echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 21 DO SCRIPT $0"
+read
+sleep 5
+#
 echo -e "Executando o primeiro Inventário do FusionInventory Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	fusioninventory-agent --debug &>> $LOG
@@ -262,14 +276,14 @@ echo -e "Criando o repositório local e fazendo o download dos Agentes do Fusion
 	# opção do comando chmod: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do comando wget: -O (output document file)
-	mkdir -v /var/www/html/agentes &>> $LOG
-	chown -v www-data.www-data /var/www/html/agentes &>> $LOG
-	chmod -v 755 /var/www/html/agentes &>> $LOG
-	cp -v conf/agent.cfg /var/www/html/agentes &>> $LOG
-	wget $AGENTWINDOWS32 -O /var/www/html/agentes/agent_windows32.exe &>> $LOG
-	wget $AGENTWINDOWS64 -O /var/www/html/agentes/agent_windows64.exe &>> $LOG
-	wget $AGENTMACOS -O /var/www/html/agentes/agent_macos.dmg &>> $LOG
-	wget $FUSIONAGENT -O /var/www/html/agentes/agent_linux.deb &>> $LOG
+	mkdir -v $DOWNLOADAGENT &>> $LOG
+	chown -v www-data.www-data $DOWNLOADAGENT &>> $LOG
+	chmod -v 755 $DOWNLOADAGENT &>> $LOG
+	cp -v conf/agent.cfg $DOWNLOADAGENT &>> $LOG
+	wget $AGENTWINDOWS32 -O $DOWNLOADAGENT/agent_windows32.exe &>> $LOG
+	wget $AGENTWINDOWS64 -O $DOWNLOADAGENT/agent_windows64.exe &>> $LOG
+	wget $AGENTMACOS -O $DOWNLOADAGENT/agent_macos.dmg &>> $LOG
+	wget $FUSIONAGENT -O $DOWNLOADAGENT/agent_linux.deb &>> $LOG
 echo -e "Download dos Agentes do FusionInventory feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
