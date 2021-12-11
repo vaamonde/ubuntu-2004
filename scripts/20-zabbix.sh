@@ -1,20 +1,21 @@
-#!/bin/bash
 # Autor: Robson Vaamonde
 # Site: www.procedimentosemti.com.br
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 25/07/2020
-# Data de atualização: 09/06/2021
-# Versão: 0.04
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do Zabbix 5.2.x 
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 11/12/2021
+# Data de atualização: 11/12/2021
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do Zabbix Server e Agent V5.5.x 
 #
-# O Zabbix é uma ferramenta de software de monitoramento de código aberto para diversos componentes de TI, 
-# incluindo redes, servidores, máquinas virtuais e serviços em nuvem. O Zabbix fornece métricas de monitoramento, 
-# utilização da largura de banda da rede, carga de uso CPU e consumo de espaço em disco, entre vários outros
-# recursos de monitoramento e alertas.
+# O Zabbix é uma ferramenta de software de monitoramento de código aberto para diversos 
+# componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. 
+# O Zabbix fornece métricas de monitoramento, utilização da largura de banda da rede, 
+# carga de uso CPU e consumo de espaço em disco, entre vários outros recursos de monitoramento 
+# e alertas.
 #
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
 # Welcome to Zabbix 5.2: 
@@ -42,78 +43,35 @@
 #
 # Site Oficial do Projeto: https://www.zabbix.com/
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de instalação do LAMP Server no Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=6EFUu-I3u4s
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário e "root", versão do ubuntu e kernel
-# opções do comando id: -u (user)
-# opções do comando: lsb_release: -r (release), -s (short), 
-# opões do comando uname: -r (kernel release)
-# opções do comando cut: -d (delimiter), -f (fields)
-# opção do shell script: piper | = Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Declarando as variáveis para criação da Base de Dados do Zabbix Server
-USER="root"
-PASSWORD="pti@2018"
-#
-# opção do comando create: create (criação), database (base de dados), base (banco de dados), character set (conjunto de caracteres), 
-# collate (comparar)
-# opção do comando create: create (criação), user (usuário), identified by (identificado por - senha do usuário), password (senha)
-# opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas), to (para), user (usuário)
-# identified by (identificado por - senha do usuário), password (senha)
-# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), *.* (todos os bancos/tabelas)
-# to (para), user@'%' (usuário @ localhost), identified by (identificado por - senha do usuário), password (senha)
-# opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
-DATABASE="CREATE DATABASE zabbix character set utf8 collate utf8_bin;"
-CREATETABLE="/usr/share/doc/zabbix-server-mysql/create.sql.gz"
-USERDATABASE="CREATE USER 'zabbix' IDENTIFIED BY 'zabbix';"
-GRANTDATABASE="GRANT USAGE ON *.* TO 'zabbix' IDENTIFIED BY 'zabbix';"
-GRANTALL="GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix' IDENTIFIED BY 'zabbix';"
-FLUSH="FLUSH PRIVILEGES;"
-#
-# Declarando as variáveis para o download do Zabbix Server (Link atualizado no dia 09/06/2021)
-ZABBIX="https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1%2Bubuntu18.04_all.deb"
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
 #
-# Verificando se as dependências do Zabbix estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
-# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
-# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Zabbix, aguarde... "
-	for name in mysql-server mysql-common apache2 php
+# Verificando se as dependências do Zabbix Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do Zabbix Server, aguarde... "
+	for name in $ZABBIXDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -122,22 +80,38 @@ echo -n "Verificando as dependências do Zabbix, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: lamp.sh para resolver as dependências."
+            echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
 #
-# Script de instalação do Zabbix Server no GNU/Linux Ubuntu Server 18.04.x
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
+# Script de instalação do Zabbix Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 #
 clear
 echo
-echo -e "Instalação do Zabbix Server no GNU/Linux Ubuntu Server 18.04.x\n"
-echo -e "Após a instalação do Zabbix Server acesse a URL: http://`hostname -I | cut -d' ' -f1`/zabbix/"
+echo -e "Instalação do Zabbix Server e Agent no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Após a instalação do Zabbix Server acesse a URL: http://$(hostname -d | cut -d' ' -f1)/zabbix/"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -159,10 +133,12 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -173,7 +149,8 @@ echo -e "Removendo software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Zabbix Server, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Zabbix Server e Agent, aguarde...\n"
+sleep 5
 #
 echo -e "Fazendo o download e instalando o Repositório do Zabbix Server, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
@@ -181,7 +158,7 @@ echo -e "Fazendo o download e instalando o Repositório do Zabbix Server, aguard
 	# opção do comando rm: -v (verbose)
 	# opção do comando dpkg: -i (install)
 	rm -v zabbix.deb &>> $LOG
-	wget $ZABBIX -O zabbix.deb &>> $LOG
+	wget $ZABBIXIREP -O zabbix.deb &>> $LOG
 	dpkg -i zabbix.deb &>> $LOG
 echo -e "Repositório instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -192,12 +169,11 @@ echo -e "Atualizando as listas do Apt com o novo Repositório do Zabbix Server, 
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Zabbix Server, aguarde..."
+echo -e "Instalando o Zabbix Server e Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent \
-	traceroute nmap snmp snmpd snmp-mibs-downloader &>> $LOG
-echo -e "Zabbix Server instalado com sucesso!!!, continuando com o script...\n"
+	apt -y $ZABBIXINSTALL &>> $LOG
+echo -e "Zabbix Server e Agent instalados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o Banco de Dados e Populando as Tabelas do Zabbix Server, aguarde esse processo demora um pouco..."
@@ -205,60 +181,70 @@ echo -e "Criando o Banco de Dados e Populando as Tabelas do Zabbix Server, aguar
 	# opção do comando: | piper (conecta a saída padrão com a entrada padrão de outro comando)
 	# opção do comando mysql: -u (user), -p (password), -e (execute)
 	# opção do comando zcat: -v (verbose)
-	mysql -u $USER -p$PASSWORD -e "$DATABASE" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$USERDATABASE" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$GRANTDATABASE" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$GRANTALL" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$FLUSH" mysql &>> $LOG
-	zcat -v $CREATETABLE | mysql -uzabbix -pzabbix zabbix &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_ZABBIX" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_ZABBIX" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_ZABBIX" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_ZABBIX" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_ZABBIX" mysql &>> $LOG
+	zcat -v $CREATE_TABLE_ZABBIX | mysql -uzabbix -pzabbix zabbix &>> $LOG
 echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração da Base de Dados do Zabbix Server, pressione <Enter> para continuar..."
+echo -e "Atualizando os arquivos de configuração do Zabbix Server e Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	read
-	cp -v /etc/zabbix/zabbix_server.conf /etc/zabbix/zabbix_server.conf.bkp &>> $LOG
+	mv -v /etc/zabbix/zabbix_server.conf /etc/zabbix/zabbix_server.conf.old &>> $LOG
 	cp -v conf/zabbix_server.conf /etc/zabbix/zabbix_server.conf &>> $LOG
+	mv -v /etc/zabbix/apache.conf /etc/zabbix/apache.conf.old &>> $LOG
+	cp -v conf/apache.conf /etc/zabbix/apache.conf &>> $LOG
+	mv -v /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.old &>> $LOG
+	cp -v conf/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf &>> $LOG
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração zabbix_server.conf, pressione <Enter> para continuar..."
+	read
 	vim /etc/zabbix/zabbix_server.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do PHP do Zabbix Server, pressione <Enter> para continuar..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando cp: -v (verbose)
+echo -e "Editando o arquivo de configuração do PHP apache.conf, pressione <Enter> para continuar..."
 	read
-	cp -v /etc/zabbix/apache.conf /etc/zabbix/apache.conf.bkp &>> $LOG
-	cp -v conf/apache.conf /etc/zabbix/apache.conf &>> $LOG
 	vim /etc/zabbix/apache.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Zabbix Agent, pressione <Enter> para continuar..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando cp: -v (verbose)
+echo -e "Editando o arquivo de configuração zabbix_agentd.conf, pressione <Enter> para continuar..."
 	read
-	cp -v /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.bkp &>> $LOG
-	cp -v conf/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf &>> $LOG
 	vim /etc/zabbix/zabbix_agentd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Reinicializando os serviços do Zabbix Server, aguarde..."
+echo -e "Reinicializando os serviços do Zabbix Server e Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl enable zabbix-server zabbix-agent &>> $LOG
 	systemctl restart zabbix-server zabbix-agent apache2 &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas de conexões do Zabbix Server, aguarde..."
-	# opção do comando netstat: a (all), n (numeric)
-	# opção do comando grep: -i (ignore case), \| (função OU)
-	netstat -an | grep -i tcp | grep '10050\|10051'
-echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
+echo -e "Verificando os serviços do Zabbix Server e Agent, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	echo -e "Zabbix Server: $(systemctl status zabbix-server | grep Active)"
+	echo -e "Zabbix Agent.: $(systemctl status zabbix-agent | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação do Zabbix Server feita com Sucesso!!!."
+echo -e "Verificando as portas de conexão do Zabbix Server, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:'10050,10051' -sTCP:LISTEN
+echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Instalação do Zabbix Server e Agent feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
@@ -271,6 +257,6 @@ echo -e "Instalação do Zabbix Server feita com Sucesso!!!."
 	echo -e "Tempo gasto para execução do script $0: $TEMPO"
 echo -e "Pressione <Enter> para concluir o processo."
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
 exit 1

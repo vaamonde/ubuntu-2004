@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 10/12/2021
-# Versão: 0.23
+# Data de atualização: 11/12/2021
+# Versão: 0.24
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -453,7 +453,7 @@ CREATE_TABLE_JAVAEE="CREATE TABLE 'contatos' (
 # Variável de localização da instalação do diretório do Wordpress
 PATHWORDPRESS="/var/www/html/wp"
 #
-# Declarando a variável do download do Wordpress (Link atualizado em: 18/10/2021)
+# Variável do download do Wordpress (Link atualizado em: 18/10/2021)
 WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"
 #
 # Declarando as variáveis para criação da Base de Dados do Wordpress
@@ -521,7 +521,7 @@ WEBMINNSTALL="webmin usermin"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
-# Declarando a variável de download do Netdata (Link atualizado no dia 18/10/2021)
+# Variável de download do Netdata (Link atualizado no dia 18/10/2021)
 # opção do comando git clone --depth=1: Cria um clone superficial com um histórico truncado 
 # para o número especificado de confirmações (somente o último commit geral do repositório)
 NETDATA="https://github.com/firehol/netdata.git --depth=1"
@@ -771,4 +771,57 @@ GUACAMOLEINSTALL="libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin liboss
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
 libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-dev freerdp2-x11"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 19-grafana.sh                       #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Grafana Server utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de gráficos Grafana
+#
+# Variável da Chave GPG do Repositório do Grafana Server (Links atualizados no dia 09/12/2021)
+GRAFANAGPGKEY="https://packages.grafana.com/gpg.key"
+GRAFANAAPT="deb https://packages.grafana.com/oss/deb stable main"
+#
+# Variável das dependências do laço de loop do Grafana Server
+GRAFANADEP="mysql-server mysql-common bind9 apt-transport-https software-properties-common"
+#
+#=============================================================================================
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 20-zabbix.sh                       #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Zabbix Server utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
+#
+# Variável de download do Repositório do Zabbix Server (Link atualizado no dia 11/12/2021)
+ZABBIXIREP="https://repo.zabbix.com/zabbix/5.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.5-1%2Bubuntu20.04_all.deb"
+#
+# Variável de instalação do Zabbix Server e suas Dependências.
+ZABBIXINSTALL="install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent \
+traceroute nmap snmp snmpd snmp-mibs-downloader"
+#
+# Declarando as variáveis para criação da Base de Dados do Zabbix Server
+# opção do comando create: create (criação), database (base de dados), base (banco de dados), 
+# character set (conjunto de caracteres), collate (comparar)
+# opção do comando create: create (criação), user (usuário), identified by (identificado por - 
+# senha do usuário), password (senha)
+# opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas),
+# to (para), user (usuário), identified by (identificado por - senha do usuário), password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), 
+# *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), identified by (identificado 
+# por - senha do usuário), password (senha)
+# opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+CREATE_DATABASE_ZABBIX="CREATE DATABASE zabbix character set utf8 collate utf8_bin;"
+CREATE_USER_DATABASE_ZABBIX="CREATE USER 'zabbix' IDENTIFIED BY 'zabbix';"
+GRANT_DATABASE_ZABBIX="GRANT USAGE ON *.* TO 'zabbix';"
+GRANT_ALL_DATABASE_ZABBIX="GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix';"
+FLUSH_ZABBIX="FLUSH PRIVILEGES;"
+CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-server-mysql/create.sql.gz"
+#
+# Variável das dependências do laço de loop do Zabbix Server
+ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"
 #
