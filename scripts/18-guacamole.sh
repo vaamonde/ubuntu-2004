@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 03/12/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.3
+# Data de atualização: 11/12/2021
+# Versão: 0.4
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache Guacamole Server 1.3.x e Cliente 1.3.x
 #
@@ -109,6 +109,8 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
 echo -e "Instalação do Apache Guacamole Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo Apache Tomcat9.: TCP 8080"
+echo -e "Porta padrão utilizada pelo Guacamole Server.: TCP 4822\n"
 echo -e "Após a instalação do Apache Guacamole acesse a URL: http://www.$(hostname -d | cut -d' ' -f1):8080/guacamole\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -261,7 +263,7 @@ echo -e "Verificando a porta de conexão do Apache Tomcat9 e do Guacamole Server
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:'80,4822' -sTCP:LISTEN
+	lsof -nP -iTCP:'8080,4822' -sTCP:LISTEN
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

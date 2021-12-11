@@ -6,8 +6,8 @@
 // Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 // Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 // Data de criação: 10/10/2021
-// Data de atualização: 10/12/2021
-// Versão: 0.08
+// Data de atualização: 11/12/2021
+// Versão: 0.09
 // Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 // Configuração das opções do Bind9 DNS Server.
@@ -50,22 +50,22 @@ options {
 	// Ocultar o número da versão do servidor Bind9 DNS por razão de segurança.
 	version none;
 
-	// Ocultar a identificação do servidor Bind9 DNS Server nas consultas
+	// Ocultar a identificação do servidor Bind9 DNS Server nas consultas por razão de segurança.
 	server-id none;
 	
-	// Habilitar o Log de consulta.
+	// Habilitar o Log de consulta do servidor Bind9 DNS Server.
 	querylog yes;
 
-	// Servidor desativado conforme RFC1035 (bit AA é sempre definido nas respostas NXDOMAIN)
+	// Desabilitar as consultas recursivas conforme RFC1035 (bit AA é sempre definido nas respostas NXDOMAIN)
 	auth-nxdomain no;
 
-	// Configuração da quantidade máxima de memória de dados utilizado pelo bind DNS Server
+	// Configuração da quantidade máxima de memória de dados utilizado pelo Bind9 DNS Server.
 	datasize default;
 
-	// Desativando todas as zonas vazias (padrão é ativado) do Bind9 DNS Server
+	// Desativando todas as Zonas Vazias (padrão é ativado) do Bind9 DNS Server.
 	empty-zones-enable no;
 
-	// Liberação das consultas e atualização padrão do Bind9 DNS Server.
+	// Liberação das consultas e atualizações padrão do Bind9 DNS Server.
 	allow-query {
 		any;
 	};
@@ -88,7 +88,7 @@ options {
 };
 
 // Configuração da auditoria de Logs do Bind9 DNS Server, informações serão enviadas para Syslog
-// e também para os arquivos de Log de cada canal corresponde a sua configuração.
+// e também para os arquivos de Log de cada canal corresponde a sua configuração do Bind9 DNS Server.
 logging {
 	channel default_log {
 		file "/var/log/named/default" versions 3 size 20m;

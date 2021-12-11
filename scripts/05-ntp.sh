@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 10/12/2021
-# Versão: 0.08
+# Data de atualização: 11/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -193,23 +193,30 @@ echo -e "Data e Hora do NTP Server atualizada com sucesso!!!, continuando com o 
 sleep 5
 #
 echo -e "Verificando a Data e Hora do NTP Server e do Sistema Operacional, aguarde...\n"
-	echo -e "Verificando as configuração do NTP Server...\n"
-		# opção do comando ntpq: -c (command) sysinfo (display system operational summary)
-		ntpq -c sysinfo
-		sleep 5
-		echo
-	echo -e "Consultando os servidores NTP Server configurados...\n"
-		# opção do comando ntpq: -p (print), -n (all address)
-		# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-		ntpq -pn
-		sleep 5
-		echo
-	echo -e "Verificando a Data e Hora do Sistema Operacional...\n"
-		timedatectl
-		echo
-		echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M")")\n"
-		echo -e "Data/hora do Hardware: $(hwclock)\n"
-echo -e "Data e Hora do verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Consultando os servidores NTP Server configurados, agaurde...\n"
+	# opção do comando ntpq: -p (print), -n (all address)
+	ntpq -pn
+echo -e "Consulta realizada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a Data e Hora do Sistema Operacional Ubuntu Server, aguarde...\n"
+	timedatectl
+echo -e "Data e Hora verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a Data e Hora de Software e Hardware do Ubuntu Server, aguarde..."
+	# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
+	echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M")")\n"
+	echo -e "Data/hora do Hardware: $(hwclock)\n"
+echo -e "Data e Hora verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configuração do NTP Server, aguarde...\n"
+	# opção do comando ntpq: -c (command) sysinfo (display system operational summary)
+	ntpq -c sysinfo
+echo -e "Configurações verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do NTP Server, aguarde..."

@@ -6,8 +6,8 @@
 ; Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 ; Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 ; Data de criação: 10/10/2021
-; Data de atualização: 09/12/2021
-; Versão: 0.07
+; Data de atualização: 11/12/2021
+; Versão: 0.08
 ; Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ; Testado e homologado para a versão do Bind9 DNS Server v9.16.x
 
@@ -23,6 +23,7 @@ $TTL 3600 ; 1 (uma) semana de TTL (Time to Live) tempo de vida das respostas for
 ;
 @               IN 		NS		ptispo01ws01.pti.intra.
 @               IN 		MX		10 mail
+@               IN		TXT		"v=spf1 a mx -all"
 ;
 pti.intra.      IN 		A 		172.16.1.20
 ptispo01ws01    IN 		A		172.16.1.20
@@ -39,9 +40,10 @@ pxe             IN		CNAME	ptispo01ws01
 ssh             IN		CNAME	ptispo01ws01
 wp              IN		CNAME	ptispo01ws01
 portal          IN		CNAME	ptispo01ws01
-wpad            IN		CNAME	ptispo01fw01
+wpad            IN		CNAME	ptispo01ws01
 glpi            IN		CNAME	ptispo01ws01
 log             IN		CNAME	ptispo01ws01
 loganalyzer     IN		CNAME	ptispo01ws01
 zm              IN		CNAME	ptispo01ws01
+ntp             IN		CNAME	ptispo01ws01
 

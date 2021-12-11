@@ -152,7 +152,7 @@ PrintMotd no
 # Imprimir na tela o Log da última autenticação válida da sessão do OpenSSH na tela
 PrintLastLog yes
 
-# Especifica quais variáveis ​​de ambiente enviadas pelo cliente serão copiadas para 
+# Especifica quais variáveis de ambiente enviadas pelo cliente serão copiadas para 
 # o ambiente da sessão após se autenticar no SSH
 AcceptEnv LANG LC_*
 
