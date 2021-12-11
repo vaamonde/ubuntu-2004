@@ -18,7 +18,7 @@
 # e alertas.
 #
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
-# Welcome to Zabbix 5.2: 
+# Welcome to Zabbix 5.5: 
 #   Default language: English (en_US): Next step;
 # Check of pre-requisites: Next step;
 # Configure DB connection:
@@ -111,7 +111,8 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 echo -e "Instalação do Zabbix Server e Agent no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do Zabbix Server acesse a URL: http://$(hostname -d | cut -d' ' -f1)/zabbix/"
+echo -e "Porta padrão utilizada pelo Zabbix Server.: TCP 10050 e 10051"
+echo -e "Após a instalação do Zabbix Server acesse a URL: http://$(hostname -d | cut -d' ' -f1)/zabbix/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

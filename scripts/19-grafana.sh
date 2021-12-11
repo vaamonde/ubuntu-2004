@@ -166,7 +166,7 @@ echo -e "Atualizando o arquivo de configuração Grafana Server, aguarde..."
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração Grafana Server, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração grafana-server, pressione <Enter> para continuar..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/default/grafana-server

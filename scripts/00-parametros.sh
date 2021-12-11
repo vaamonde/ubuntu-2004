@@ -731,7 +731,8 @@ DOWNLOADAGENT="/var/www/html/agentes"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema ZoneMinder utilizados nesse script
-# 01. 
+# 01. /etc/mysql/mysql.conf.d/mysqld.cnf =
+# 02. /etc/php/7.4/apache2/php.ini =  
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Câmeras ZoneMinder
 #
@@ -763,7 +764,9 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Guacamole utilizados nesse script
-# 01. 
+# 01. /etc/guacamole/guacamole.properties = 
+# 02. /etc/guacamole/user-mapping.xml =
+# 03. /etc/default/tomcat9 = 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
@@ -785,7 +788,7 @@ libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-dev freerdp2
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Grafana Server utilizados nesse script
-# 01. 
+# 01. /etc/default/grafana-server
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de gráficos Grafana
 #
@@ -801,7 +804,9 @@ GRAFANADEP="mysql-server mysql-common bind9 apt-transport-https software-propert
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Zabbix Server utilizados nesse script
-# 01. 
+# 01. /etc/zabbix/zabbix_server.conf = 
+# 02. /etc/zabbix/apache.conf =
+# 03. /etc/zabbix/zabbix_agentd.conf = 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
 #

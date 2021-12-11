@@ -227,19 +227,19 @@ echo -e "Atualizando os arquivos de configuração do Apache Guacamole Client, a
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Apache Guacamole Properties, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração guacamole.properties, pressione <Enter> para continuar"
 	read
 	vim /etc/guacamole/guacamole.properties
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Apache Guacamole User Mapping, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração user-mapping.xml, pressione <Enter> para continuar"
 	read
 	vim /etc/guacamole/user-mapping.xml
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Tomcat9, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração tomcat9, pressione <Enter> para continuar"
 	read
 	vim /etc/default/tomcat9
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -255,16 +255,16 @@ echo -e "Verificando os serviços do Tomcat9 e do Apache Guacamole, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	echo -e "Tomcat9..: $(systemctl status tomcat9 | grep Active)"
 	echo -e "Guacamole: $(systemctl status guacd | grep Active)"
-echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do Apache Tomcat9 e do Guacamole Server, aguarde..."
+echo -e "Verificando as portas de conexões do Apache Tomcat9 e do Guacamole Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iTCP:'8080,4822' -sTCP:LISTEN
-echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do Apache Guacamole Server e Client feita com Sucesso!!!."
