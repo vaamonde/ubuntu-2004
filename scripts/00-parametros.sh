@@ -450,6 +450,9 @@ CREATE_TABLE_JAVAEE="CREATE TABLE 'contatos' (
 #
 # Declarando as variáveis utilizadas nas configurações do Site do Wordpress
 #
+# Variável de localização da instalação do diretório do Wordpress
+PATHWORDPRESS="/var/www/html/wp"
+#
 # Declarando a variável do download do Wordpress (Link atualizado em: 18/10/2021)
 WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"
 #
@@ -477,7 +480,6 @@ FLUSH_WORDPRESS="FLUSH PRIVILEGES;"
 # Variáveis de usuário e senha do FTP para acessar o diretório raiz da instalação do Wordpress
 USERFTPWORDPRESS="wordpress"
 PASSWORDFTPWORDPRESS="wordpress"
-PATHWORDPRESS="/var/www/html/wp"
 #
 # Variável das dependências do laço de loop do Wordpress
 WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
@@ -564,6 +566,9 @@ FLUSH_NETDATA="FLUSH PRIVILEGES;"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento LogAnalyzer
 #
+# Variável de localização da instalação do diretório do LogAnalyzer
+PATHLOGANALYZER="/var/www/html/log"
+#
 # Variável de download do LogAnalyzer (atualizada no dia: 02/11/2021)
 LOGANALYZER="http://download.adiscon.com/loganalyzer/loganalyzer-4.1.12.tar.gz"
 #
@@ -625,10 +630,18 @@ LOGINSTALL="rsyslog-mysql"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema GLPI Help Desk utilizados nesse script
-# 01. /etc/apache2/conf-available/glpi.conf = arquivo de configuração do Virtual Host do GLPI
-# 02. /etc/cron.d/glpi-cron = arquivo de configuração do agendamento do CRON do GLPI
+# 01. /etc/apache2/conf-available/glpi.conf = arquivo de configuração do GLPI
+# 02. /etc/apache2/sites-available/glpi.conf = arquivo de configuração do Virtual Host do GLPI
+# 03. /etc/cron.d/glpi-cron = arquivo de configuração do agendamento do CRON do GLPI
 #
-# Declarando as variáveis utilizadas nas configurações do sistema de help desk GLPI
+# Arquivos de monitoramento (log) do Serviço do LogAnalyzer utilizados nesse script
+# 01. tail -f /var/log/apache2/access-glpi.log = log de acesso ao GLPI Help Desk
+# 02. tail -f /var/log/apache2/error-glpi.log = log de erro de acesso ao GLPI Help Desk
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de Help Desk GLPI
+#
+# Variável de localização da instalação do diretório do GLPI Help Desk
+PATHGLPI="/var/www/html/glpi"
 #
 # Variável de download do GLPI (atualizada no dia: 25/11/2021)
 GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.6/glpi-9.5.6.tgz"
@@ -671,9 +684,6 @@ libapache2-mod-php xmlrpc-api-utils"
 # 02. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário FusionInventory
-#
-# Variável de localização da instalação do diretório do GLPI Help Desk
-PATHGLPI="/var/www/html/glpi"
 #
 # Variável de download do FusionInventory Server e Agent (atualizada no dia: 30/11/2021)
 # OBSERVAÇÃO: O FusionInventory depende do GLPI para funcionar corretamente, é recomendado sempre 

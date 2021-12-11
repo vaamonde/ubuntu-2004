@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.05
+# Data de atualização: 10/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -165,9 +165,9 @@ echo -e "Copiando os arquivos do Wordpress para site padrão do Apache2, aguarde
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v wordpress/ /var/www/html/wp &>> $LOG
-	cp -v conf/htaccess /var/www/html/wp/.htaccess &>> $LOG
-	cp -v conf/wp-config.php /var/www/html/wp/ &>> $LOG
+	mv -v wordpress/ $PATHWORDPRESS &>> $LOG
+	cp -v conf/htaccess $PATHWORDPRESS/.htaccess &>> $LOG
+	cp -v conf/wp-config.php $PATHWORDPRESS &>> $LOG
 	cp -v conf/wordpress.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -176,8 +176,8 @@ echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguar
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -R (recursive), -f (silent), -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
 	# opção do comando chown: -R (recursive), -f (silent), -v (verbose), www-data (user), www-data (group)
-	chmod -Rfv 775 /var/www/html/wp/ &>> $LOG
-	chown -Rfv www-data.www-data /var/www/html/wp/ &>> $LOG
+	chmod -Rfv 775 $PATHWORDPRESS &>> $LOG
+	chown -Rfv www-data.www-data $PATHWORDPRESS &>> $LOG
 echo -e "Permissões alteradas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

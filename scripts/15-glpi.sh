@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.05
+# Data de atualização: 10/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -181,10 +181,10 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
 	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)
 	tar -zxvf glpi.tgz &>> $LOG
-	mv -v glpi/ /var/www/html/glpi/ &>> $LOG
-	chown -Rv www-data:www-data /var/www/html/glpi/ &>> $LOG
-	chmod -Rv 755 /var/www/html/glpi/ &>> $LOG
-	chmod -Rv 777 /var/www/html/glpi/files/_log &>> $LOG
+	mv -v glpi/ $PATHGLPI &>> $LOG
+	chown -Rv www-data:www-data $PATHGLPI &>> $LOG
+	chmod -Rv 755 $PATHGLPI &>> $LOG
+	chmod -Rv 777 $PATHGLPI/files/_log &>> $LOG
 echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -205,18 +205,27 @@ echo -e "Habilitando os recursos do Apache2 para suportar o GLPI, aguarde..."
 	# opção do comando cp: -v (verbose)
 	# opção do comando phpenmod: (habilitar módulos do PHP)
 	# opção do comando a2enconf: (habilitar arquivo de configuração de site do Apache2)
+	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
 	# opção do comando systemctl: restart (reinicializar o serviço)
 	cp -v conf/glpi.conf /etc/apache2/conf-available/ &>> $LOG
+	cp -v conf/glpi1.conf /etc/apache2/sites-available/glpi.conf &>> $LOG
 	cp -v conf/glpi-cron /etc/cron.d/ &>> $LOG
 	phpenmod apcu &>> $LOG
 	a2enconf glpi &>> $LOG
+	a2ensite glpi &>> $LOG
 echo -e "Recursos habilitados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do Apache2 do GLPI, pressione <Enter> para continuar"
 	read
 	vim /etc/apache2/conf-available/glpi.conf
-	systemctl restart apache2 &>> $LOG
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de Virtual Host do GLPI, pressione <Enter> para continuar"
+	read
+	vim /etc/apache2/sites-available/glpi.conf
+	systemctl reload apache2 &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
