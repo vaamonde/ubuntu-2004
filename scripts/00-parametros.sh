@@ -114,7 +114,7 @@ SSHINSTALL="net-tools ipcalc nmap"
 # 03. tail -f /var/log/syslog | grep dhcpd = filtrando as mensagens do serviço do ISC DHCP
 # 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
 # 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
-# 06. dhcp-lease-list = comando que mostrar os leases dos endereços IPv4 do ISC DHCP
+# 06. dhcp-lease-list = comando utilizado para mostrar os leases dos endereços IPv4 do ISC DHCP
 #
 # Variável de instalação do serviço de rede ISC DHCP Server
 DHCPINSTALL="isc-dhcp-server net-tools"
