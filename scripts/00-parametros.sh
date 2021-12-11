@@ -513,6 +513,10 @@ WEBMINNSTALL="webmin usermin"
 # 02. /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf = arquivo de monitoramento do ISC DHCP
 # 03. /usr/lib/netdata/conf.d/python.d/bind_rndc.conf = arquivo de monitoramento do Bind DNS
 #
+# Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
+# 01. journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
+# 02. tail -f /var/log/netdata/* = vários arquivos de Log's do serviço do Netdata
+#
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
 # Declarando a variável de download do Netdata (Link atualizado no dia 18/10/2021)
@@ -550,6 +554,13 @@ FLUSH_NETDATA="FLUSH PRIVILEGES;"
 # Arquivos de configuração (conf) do sistema LogAnalyzer utilizados nesse script
 # 01. /etc/rsyslog.conf = arquivo de configuração do serviço de rede Rsyslog
 # 02. /etc/rsyslog.d/mysql.conf = arquivo de configuração da base de dados do Rsyslog
+# 03. /etc/apache2/sites-available/loganalyzer.conf = arquivo de configuração do Virtual host
+#
+# Arquivos de monitoramento (log) do Serviço do LogAnalyzer utilizados nesse script
+# 01. journalctl -t rsyslogd = todas as mensagens referente ao serviço do Rsyslogd
+# 02. tail -f /var/log/syslog = todos os Log's de serviços do Rsyslog
+# 03. tail -f /var/log/apache2/access-loganalyzer.log = log de acesso ao LogAnalyzer
+# 04. tail -f /var/log/apache2/error-loganalyzer.log = log de erro de acesso ao LogAnalyzer
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento LogAnalyzer
 #
