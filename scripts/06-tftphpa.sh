@@ -57,8 +57,9 @@ fi
 #
 # Verificando o acesso a Internet do servidor Ubuntu Server
 # [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
-if [ nc -zw1 google.com 443 ]
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5

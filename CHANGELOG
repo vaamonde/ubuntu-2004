@@ -14,7 +14,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 13/12/2021 - Robson Vaamonde - Mudança na estrutura de diretório dos arquivos de configuração dos serviços de rede,
 criação dos sub-diretórios de cada serviço para facilitar a administração e customomização para cenários diferentes.
 Váras melhorias nos scripts e arquivos de configuração nos dias 10 até 12/12/2021 com foco mais em documentação e 
-tradução, criação da validação de uso de porta nos scripts para facilitar o diagnóstico de uso de porta de serviço.
+tradução, criação da validação de uso de porta nos scripts para facilitar o diagnóstico de uso de porta de serviço,
+criação da validação de uso da Internet nos scripts para facilitar o diagnóstico de falha de instalação dos serviços.
 
 09/12/2021 - Robson Vaamonde - Melhorias gerais no PT-BR em vários arquivos Conf e Script, acréscimo da linha de 
 verificação da consultado do domínio: dig no script: 03-dns.sh, criação da variável: SECRETUPDATE no arquivos de: 

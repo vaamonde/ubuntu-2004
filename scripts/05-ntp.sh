@@ -69,6 +69,7 @@ fi
 #
 # Verificando o acesso a Internet do servidor Ubuntu Server
 # [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
 if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 	then
@@ -239,7 +240,7 @@ sleep 5
 echo -e "Verificando a Data e Hora do NTP Server e do Sistema Operacional, aguarde...\n"
 sleep 5
 #
-echo -e "Consultando os servidores NTP Server configurados, agaurde...\n"
+echo -e "Consultando os servidores NTP Server configurados, aguarde...\n"
 	# opção do comando ntpq: -p (print), -n (all address)
 	ntpq -pn
 echo -e "Consulta realizada com sucesso!!!, continuando com o script...\n"
