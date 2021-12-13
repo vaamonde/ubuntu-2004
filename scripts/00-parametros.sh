@@ -315,6 +315,12 @@ LAMPINSTALL="lamp-server^ perl python apt-transport-https"
 # Variável de instalação do serviço de rede PhpMyAdmin
 PHPMYADMININSTALL="phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json libmcrypt-dev pwgen"
 #
+# Variável da porta de conexão padrão do Apache2 Server
+PORTPAPACHE="80"
+#
+# Variável da porta de conexão padrão do MySQL Server
+PORTMYSQL="3306"
+#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 08-openssl.sh                        #
 #=============================================================================================

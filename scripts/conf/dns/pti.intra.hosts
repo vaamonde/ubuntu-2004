@@ -6,8 +6,8 @@
 ; Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 ; Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 ; Data de criação: 10/10/2021
-; Data de atualização: 11/12/2021
-; Versão: 0.08
+; Data de atualização: 13/12/2021
+; Versão: 0.09
 ; Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ; Testado e homologado para a versão do Bind9 DNS Server v9.16.x
 
@@ -29,22 +29,23 @@ pti.intra.      IN 		A 		172.16.1.20
 ptispo01ws01    IN 		A		172.16.1.20
 ptispo01fw01    IN 		A		172.16.1.254
 mail            IN 		A 		172.16.1.20
-www             IN		CNAME	ptispo01ws01
-pop3            IN		CNAME	ptispo01ws01
-imap            IN		CNAME	ptispo01ws01
-imap4           IN		CNAME	ptispo01ws01
-smtp            IN		CNAME	ptispo01ws01
+;
 ftp             IN		CNAME	ptispo01ws01
-tftp            IN		CNAME	ptispo01ws01
-pxe             IN		CNAME	ptispo01ws01
-ssh             IN		CNAME	ptispo01ws01
-wp              IN		CNAME	ptispo01ws01
-portal          IN		CNAME	ptispo01ws01
-wpad            IN		CNAME	ptispo01ws01
 glpi            IN		CNAME	ptispo01ws01
-log             IN		CNAME	ptispo01ws01
+imap4           IN		CNAME	ptispo01ws01
+imap            IN		CNAME	ptispo01ws01
 loganalyzer     IN		CNAME	ptispo01ws01
-zm              IN		CNAME	ptispo01ws01
-ntp             IN		CNAME	ptispo01ws01
+log             IN		CNAME	ptispo01ws01
 mysql           IN		CNAME	ptispo01ws01
+ntp             IN		CNAME	ptispo01ws01
+pop3            IN		CNAME	ptispo01ws01
+portal          IN		CNAME	ptispo01ws01
+pxe             IN		CNAME	ptispo01ws01
+smtp            IN		CNAME	ptispo01ws01
+ssh             IN		CNAME	ptispo01ws01
+tftp            IN		CNAME	ptispo01ws01
+wpad            IN		CNAME	ptispo01ws01
+wp              IN		CNAME	ptispo01ws01
+www             IN		CNAME	ptispo01ws01
+zm              IN		CNAME	ptispo01ws01
 
