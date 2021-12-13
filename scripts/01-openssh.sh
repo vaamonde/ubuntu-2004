@@ -85,6 +85,21 @@ echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
             }
 		sleep 5
 #
+# Verificando se a porta 22 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 22 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: 22 já está sendo utilizada nesse servidor, continuando com o script..."
+		sleep 5
+	else
+		echo -e "A porta: 22 não está sendo utilizada nesse servidor."
+		echo -e "Verifique as dependências desse serviço e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+fi
+#
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
 # OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
 if [ -f $LOG ]
