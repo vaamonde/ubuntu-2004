@@ -89,12 +89,12 @@ echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
-if [ "$(nc -vz 127.0.0.1 22 &> /dev/null ; echo $?)" == "0" ]
+if [ "$(nc -vz 127.0.0.1 $PORTSSH &> /dev/null ; echo $?)" == "0" ]
 	then
-		echo -e "A porta: 22 já está sendo utilizada nesse servidor, continuando com o script..."
+		echo -e "A porta: $PORTSSH já está sendo utilizada nesse servidor, continuando com o script..."
 		sleep 5
 	else
-		echo -e "A porta: 22 não está sendo utilizada nesse servidor."
+		echo -e "A porta: $PORTSSH não está sendo utilizada nesse servidor."
 		echo -e "Verifique as dependências desse serviço e execute novamente esse script.\n"
 		sleep 5
 		exit 1

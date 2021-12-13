@@ -61,14 +61,14 @@ fi
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
-if [ "$(nc -vz 127.0.0.1 53 &> /dev/null ; echo $?)" == "0" ]
+if [ "$(nc -vz 127.0.0.1 $PORTDNS &> /dev/null ; echo $?)" == "0" ]
 	then
-		echo -e "A porta: 53 já está sendo utilizada nesse servidor."
+		echo -e "A porta: $PORTDNS já está sendo utilizada nesse servidor."
 		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
 		sleep 5
 		exit 1
 	else
-		echo -e "A porta: 53 está disponível, continuando com o script..."
+		echo -e "A porta: $PORTDNS está disponível, continuando com o script..."
 		sleep 5
 fi
 #

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 11/12/2021
-# Versão: 0.24
+# Data de atualização: 13/12/2021
+# Versão: 0.25
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -100,6 +100,9 @@ SSHDEP="openssh-server openssh-client"
 # Variável de instalação dos softwares extras do OpenSSH Server
 SSHINSTALL="net-tools ipcalc nmap"
 #
+# Variável da porta de conexão padrão do OpenSSH Server
+PORTSSH="22"
+#
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dhcp.sh                        #
 #=============================================================================================
@@ -118,6 +121,9 @@ SSHINSTALL="net-tools ipcalc nmap"
 #
 # Variável de instalação do serviço de rede ISC DHCP Server
 DHCPINSTALL="isc-dhcp-server net-tools"
+#
+# Variável da porta de conexão padrão do ISC DHCP Server
+PORTDHCP="67"
 #
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 03-dns.sh                         #
@@ -155,6 +161,9 @@ NETWORK="172.16.1."
 #
 # Variável de instalação do serviço de rede Bind DNS Server
 DNSINSTALL="bind9 bind9utils bind9-doc dnsutils net-tools"
+#
+# Variável da porta de conexão padrão do Bind DNS Server
+PORTDNS="53"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 04-dhcpdns.sh                        #
@@ -210,6 +219,9 @@ NTPDEP="isc-dhcp-server"
 # Variável de instalação do serviço de rede NTP Server e Client
 NTPINSTALL="ntp ntpdate"
 #
+# Variável da porta de conexão padrão do NTP Server
+PORTNTP="123"
+#
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 06-tftphpa.sh                        #
 #=============================================================================================
@@ -236,6 +248,9 @@ TFTPDEP="bind9 bind9utils isc-dhcp-server"
 #
 # Variável de instalação do serviço de rede TFTP-HPA Server
 TFTPINSTALL="tftpd-hpa tftp-hpa"
+#
+# Variável da porta de conexão padrão do TFTP-HPA Server
+PORTTFTP="69"
 #
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh                          #
