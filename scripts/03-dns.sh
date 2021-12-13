@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 12/12/2021
-# Versão: 0.10
+# Data de atualização: 13/12/2021
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
@@ -172,10 +172,10 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG
 	mv -v /etc/bind/rndc.key /etc/bind/rndc.key.old &>> $LOG
 	mv -v /etc/default/named /etc/default/named.old &>> $LOG
-	cp -v conf/{named.conf,named.conf.local,named.conf.options,rndc.key} /etc/bind/ &>> $LOG
-	cp -v conf/{pti.intra.hosts,172.16.1.rev} /var/lib/bind/ &>> $LOG
-	cp -v conf/dnsupdate-cron /etc/cron.d/dnsupdate-cron &>> $LOG
-	cp -v conf/named /etc/default/named &>> $LOG
+	cp -v conf/dns/{named.conf,named.conf.local,named.conf.options,rndc.key} /etc/bind/ &>> $LOG
+	cp -v conf/dns/{pti.intra.hosts,172.16.1.rev} /var/lib/bind/ &>> $LOG
+	cp -v conf/dns/dnsupdate-cron /etc/cron.d/dnsupdate-cron &>> $LOG
+	cp -v conf/dns/named /etc/default/named &>> $LOG
 	chown -v root:bind /etc/bind/rndc.key &>> $LOG
 	chown -v root:bind /var/lib/bind/{pti.intra.hosts,172.16.1.rev} &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"

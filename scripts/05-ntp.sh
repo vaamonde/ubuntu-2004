@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 11/12/2021
-# Versão: 0.09
+# Data de atualização: 13/12/2021
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -165,10 +165,10 @@ echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
 	# opção do comando cp: -v (verbose)
 	# opção do comando chown: -v (verbose), ntp (user), ntp (group)
 	mv -v /etc/ntp.conf /etc/ntp.conf.old &>> $LOG
-	cp -v conf/ntp.conf /etc/ntp.conf &>> $LOG
-	cp -v conf/ntp.drift /var/lib/ntp/ntp.drift &>> $LOG
-	cp -v conf/ntp /etc/default/ntp &>> $LOG
-	cp -v conf/timesyncd.conf /etc/systemd/timesyncd.conf &>> $LOG
+	cp -v conf/ntp/ntp.conf /etc/ntp.conf &>> $LOG
+	cp -v conf/ntp/ntp.drift /var/lib/ntp/ntp.drift &>> $LOG
+	cp -v conf/ntp/ntp /etc/default/ntp &>> $LOG
+	cp -v conf/ntp/timesyncd.conf /etc/systemd/timesyncd.conf &>> $LOG
 	chown -v ntp.ntp /var/lib/ntp/ntp.drift &>> $LOG
 echo -e "Arquivos do NTP Server atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5

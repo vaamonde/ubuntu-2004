@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 12/12/2021
-# Versão: 0.14
+# Data de atualização: 13/12/2021
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -163,10 +163,10 @@ echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde...
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ssh/sshd_config /etc/ssh/sshd_config.old &>> $LOG
-	cp -v conf/sshd_config /etc/ssh/sshd_config &>> $LOG
-	cp -v conf/{hostname,hosts,hosts.allow,hosts.deny,issue.net,nsswitch.conf} /etc/ &>> $LOG
+	cp -v conf/ssh/sshd_config /etc/ssh/sshd_config &>> $LOG
+	cp -v conf/ubuntu/{hostname,hosts,hosts.allow,hosts.deny,issue.net,nsswitch.conf} /etc/ &>> $LOG
 	cp -v $NETPLAN $NETPLAN.old &>> $LOG
-	cp -v conf/00-installer-config.yaml $NETPLAN &>> $LOG
+	cp -v conf/ubuntu/00-installer-config.yaml $NETPLAN &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

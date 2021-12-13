@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 11/12/2021
-# Versão: 0.06
+# Data de atualização: 13/12/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -229,7 +229,7 @@ echo -e "Atualizando os arquivos de configuração da CA e dos Certificados, agu
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	touch /etc/ssl/{index.txt,index.txt.attr} &>> $LOG
 	echo "1234" > /etc/ssl/serial
-	cp -v conf/{pti-ca.conf,pti-ssl.conf} /etc/ssl/ &>> $LOG
+	cp -v conf/ssl/{pti-ca.conf,pti-ssl.conf} /etc/ssl/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -515,7 +515,7 @@ echo -e "Atualizando o arquivo de configuração do Apache2 HTTPS, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.old &>> $LOG
-	cp -v conf/default-ssl.conf /etc/apache2/sites-available/ &>> $LOG
+	cp -v conf/lamp/default-ssl.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

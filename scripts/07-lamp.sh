@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 12/12/2021
-# Versão: 0.010
+# Data de atualização: 13/12/2021
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -237,7 +237,7 @@ echo -e "Instalando a dependência do PHP Mcrypt para da suporte ao PhpMyAdmin, 
 	# opção do comando cp: -v (verbose)
 	pecl channel-update pecl.php.net &>> $LOG
 		echo | pecl install mcrypt &>> $LOG
-		cp -v conf/mcrypt.ini /etc/php/7.4/mods-available/ &>> $LOG
+		cp -v conf/lamp/mcrypt.ini /etc/php/7.4/mods-available/ &>> $LOG
 	phpenmod mcrypt &>> $LOG
 	phpenmod mbstring &>> $LOG
 echo -e "Atualização da dependência feita com sucesso!!!, continuando com o script...\n"
@@ -250,10 +250,10 @@ echo -e "Atualizando os arquivos de configuração do Apache2 e do PHP, aguarde.
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/apache2/apache2.conf /etc/apache2/apache2.conf.old &>> $LOG
 	mv -v /etc/apache2/ports.conf /etc/apache2/ports.conf.old &>> $LOG
-	cp -v conf/{apache2.conf,ports.conf} /etc/apache2/ &>> $LOG
-	cp -v conf/000-default.conf /etc/apache2/sites-available/000-default.conf &>> $LOG
 	mv -v /etc/php/7.4/apache2/php.ini /etc/php/7.4/apache2/php.ini.old &>> $LOG
-	cp -v conf/php.ini /etc/php/7.4/apache2/php.ini &>> $LOG
+	cp -v conf/lamp/{apache2.conf,ports.conf} /etc/apache2/ &>> $LOG
+	cp -v conf/lamp/000-default.conf /etc/apache2/sites-available/000-default.conf &>> $LOG
+	cp -v conf/lamp/php.ini /etc/php/7.4/apache2/php.ini &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -291,7 +291,7 @@ echo -e "Atualizando o arquivo de configuração do MySQL, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf.old &>> $LOG
-	cp -v conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf &>> $LOG
+	cp -v conf/lamp/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -326,7 +326,7 @@ echo -e "Copiando os arquivos teste.html e phpinfo.php para o diretório raiz, a
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	cp -v conf/{phpinfo.php,teste.html} /var/www/html/ &>> $LOG
+	cp -v conf/lamp/{phpinfo.php,teste.html} /var/www/html/ &>> $LOG
 	chown -v www-data.www-data /var/www/html/* &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5

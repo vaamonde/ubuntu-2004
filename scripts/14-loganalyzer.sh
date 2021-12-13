@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 10/12/2021
-# Versão: 0.07
+# Data de atualização: 13/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -237,15 +237,15 @@ echo -e "Copiando os arquivos de configuração do LogAnalyzer para o Apache2, a
 	touch $PATHLOGANALYZER/config.php &>> $LOG
 	chmod -v 666 $PATHLOGANALYZER/config.php &>> $LOG
 	chown -Rv www-data.www-data $PATHLOGANALYZER &>> $LOG
-	cp -v conf/loganalyzer.conf /etc/apache2/sites-available/ &>> $LOG
+	cp -v conf/loganalyzer/loganalyzer.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do Rsyslog, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/rsyslog.conf /etc/rsyslog.conf >> $LOG
-	cp -v conf/mysql.conf /etc/rsyslog.d/mysql.conf >> $LOG
+	cp -v conf/loganalyzer/rsyslog.conf /etc/rsyslog.conf >> $LOG
+	cp -v conf/loganalyzer/mysql.conf /etc/rsyslog.d/mysql.conf >> $LOG
 echo -e "Arquivos atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

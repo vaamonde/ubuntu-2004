@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 17/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.04
+# Data de atualização: 13/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do VSFTPD v3.0.x
 #
@@ -166,9 +166,9 @@ echo -e "Atualizando o arquivo de configuração do Vsftpd Server, aguarde..."
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	# opção do comando chmod: a (all user), + (bits to be added), x (execute/search only)
 	mv -v /etc/vsftpd.conf /etc/vsftpd.conf.old &>> $LOG
-	cp -v conf/{vsftpd.conf,vsftpd.allowed_users,shells} /etc/ &>> $LOG
-	cp -v conf/vsftpd-ssl.conf /etc/ssl/vsftpd-ssl.conf &>> $LOG
-	cp -v conf/ftponly /bin/ftponly &>> $LOG
+	cp -v conf/ftp/{vsftpd.conf,vsftpd.allowed_users,shells} /etc/ &>> $LOG
+	cp -v conf/ftp/vsftpd-ssl.conf /etc/ssl/vsftpd-ssl.conf &>> $LOG
+	cp -v conf/ftp/ftponly /bin/ftponly &>> $LOG
 	touch /var/log/vsftpd.log &>> $LOG
 	chmod -v a+x /bin/ftponly &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
