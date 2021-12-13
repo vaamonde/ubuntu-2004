@@ -204,8 +204,9 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	mv -v /etc/default/named /etc/default/named.old &>> $LOG
 	cp -v conf/dns/{named.conf,named.conf.local,named.conf.options,rndc.key} /etc/bind/ &>> $LOG
 	cp -v conf/dns/{pti.intra.hosts,172.16.1.rev} /var/lib/bind/ &>> $LOG
-	cp -v conf/dns/dnsupdate-cron /etc/cron.d/dnsupdate-cron &>> $LOG
-	cp -v conf/dns/named /etc/default/named &>> $LOG
+	cp -v conf/dns/dnsupdate-cron /etc/cron.d/ &>> $LOG
+	cp -v conf/dns/named /etc/default/ &>> $LOG
+	cp -v conf/dns/bind-rndc.conf /etc/logrotate.d/ &>> $LOG
 	chown -v root:bind /etc/bind/rndc.key &>> $LOG
 	chown -v root:bind /var/lib/bind/{pti.intra.hosts,172.16.1.rev} &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
@@ -269,6 +270,12 @@ echo -e "Editando o arquivo de configuração named, pressione <Enter> para cont
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Editando o arquivo de configuração bind-rndc.conf, pressione <Enter> para continuar."
+	read
+	vim /etc/logrotate.d/bind-rndc.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Inicializando os serviços do Bind DNS Server e do Netplan, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	netplan --debug apply &>> $LOG
@@ -276,6 +283,7 @@ echo -e "Inicializando os serviços do Bind DNS Server e do Netplan, aguarde..."
 	systemctl reload bind9 &>> $LOG
 	rndc sync -clean &>> $LOG
 	rndc stats &>> $LOG
+	logrotate /etc/logrotate.d/bind-rndc -d &>> $LOG
 echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

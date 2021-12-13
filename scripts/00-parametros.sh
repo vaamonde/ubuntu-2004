@@ -572,6 +572,9 @@ libwebsockets15 libwebsockets-dev libjson-c-dev libbpfcc-dev liblz4-dev libjudy-
 libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler lm-sensors \
 python3-psycopg2 python3-pymysql"
 #
+# Variáveis das portas de conexão padrão do Webmin e Usermin
+PORTNETDATA="19999"
+#
 # Declarando as variáveis para criação do usuário de monitoramento do Netdata no MySQL
 # opções do comando CREATE: create (criação), user (usuário)
 # opções do comando GRANT: grant (permissão), usage (uso em | uso na), replication cliente (),

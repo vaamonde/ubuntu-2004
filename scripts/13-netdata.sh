@@ -196,27 +196,28 @@ echo -e "Criando o Usuário de monitoramento do MySQL do Netdata, aguarde..."
 echo -e "Usuário de monitoramento criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de monitoramento do MySQL mysql.conf, pressione <Enter> para editar"
-echo -e "Remover os comentários das variáveis: user e pass"
-echo -e "Adicionar o usuário: $USERMYSQL é a senha: $SENHAMYSQL nas configurações do tcp:"
+echo -e "Atualizando os arquivos de configuração do Netdata, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando cp: -v (verbose)
+	cp -v conf/netdata/*.conf /usr/lib/netdata/conf.d/python.d/ &>> $LOG
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de monitoramento mysql.conf, pressione <Enter> para editar"
 	read
-	vim /usr/lib/netdata/conf.d/python.d/mysql.conf +151
+	vim /usr/lib/netdata/conf.d/python.d/mysql.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de monitoramento do ISC DHCP Server isc_dhcpd.conf, pressione <Enter> para editar"
-echo -e "Remover os comentários das variáveis: job_name, name, leases_path, pools e office"
-echo -e "Adicionar o name: dhcppti, leases_path: /var/lib/dhcp/dhcpd.leases e office: 172.16.1.0/24"
+echo -e "Editando o arquivo de monitoramento isc_dhcpd.conf, pressione <Enter> para editar"
 	read
-	vim /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf +53
+	vim /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de estatísticas do Bind9 DNS Server bind_rndc.conf, pressione <Enter> para editar"
-echo -e "Remover os comentários das variáveis: job_name, name, named_stats_path"
-echo -e "Adicionar o name: dnspti, named_stats_path: /var/log/named/named.stats"
+echo -e "Editando o arquivo de estatísticas bind_rndc.conf, pressione <Enter> para editar"
 	read
-	vim /usr/lib/netdata/conf.d/python.d/bind_rndc.conf +53
+	vim /usr/lib/netdata/conf.d/python.d/bind_rndc.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
