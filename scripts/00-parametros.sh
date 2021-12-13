@@ -392,6 +392,9 @@ FTPDEP="bind9 bind9utils apache2 openssl"
 # Variável de instalação do serviço de rede VSFTPd Server
 FTPINSTALL="vsftpd"
 #
+# Variável da porta de conexão padrão do VSFTPd Server
+PORTFTP="21"
+#
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 10-tomcat.sh                        #
 #=============================================================================================
@@ -420,6 +423,9 @@ TOMCATINSTALL="tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-example
 # Variáveis de localização do diretório de Configuração e do Webapp do Tomcat9
 PATHTOMCAT9="/usr/share/tomcat9/"
 PATHWEBAPPS="/var/lib/tomcat9/webapps"
+#
+# Variável da porta de conexão padrão do Apache Tomcat Server
+PORTTOMCAT="8080"
 #
 # Variável de download da aplicação Agenda de Contatos em Java feita pelo Prof. José de Assis
 # Link do Github do projeto: https://github.com/professorjosedeassis/javaEE
