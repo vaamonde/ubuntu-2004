@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/12/2021
-# Data de atualização: 11/12/2021
-# Versão: 0.01
+# Data de atualização: 13/12/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Zabbix Server e Agent V5.5.x 
 #
@@ -196,11 +196,11 @@ echo -e "Atualizando os arquivos de configuração do Zabbix Server e Agent, agu
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/zabbix/zabbix_server.conf /etc/zabbix/zabbix_server.conf.old &>> $LOG
-	cp -v conf/zabbix_server.conf /etc/zabbix/zabbix_server.conf &>> $LOG
 	mv -v /etc/zabbix/apache.conf /etc/zabbix/apache.conf.old &>> $LOG
-	cp -v conf/apache.conf /etc/zabbix/apache.conf &>> $LOG
 	mv -v /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.old &>> $LOG
-	cp -v conf/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf &>> $LOG
+	cp -v conf/zabbix/zabbix_server.conf /etc/zabbix/zabbix_server.conf &>> $LOG
+	cp -v conf/zabbix/apache.conf /etc/zabbix/apache.conf &>> $LOG
+	cp -v conf/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

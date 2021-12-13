@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 11/12/2021
-# Versão: 0.07
+# Data de atualização: 13/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -207,9 +207,9 @@ echo -e "Habilitando os recursos do Apache2 para suportar o GLPI, aguarde..."
 	# opção do comando a2enconf: (habilitar arquivo de configuração de site do Apache2)
 	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
 	# opção do comando systemctl: restart (reinicializar o serviço)
-	cp -v conf/glpi.conf /etc/apache2/conf-available/ &>> $LOG
-	cp -v conf/glpi1.conf /etc/apache2/sites-available/glpi.conf &>> $LOG
-	cp -v conf/glpi-cron /etc/cron.d/ &>> $LOG
+	cp -v conf/glpi/glpi.conf /etc/apache2/conf-available/ &>> $LOG
+	cp -v conf/glpi/glpi1.conf /etc/apache2/sites-available/glpi.conf &>> $LOG
+	cp -v conf/glpi/glpi-cron /etc/cron.d/ &>> $LOG
 	phpenmod apcu &>> $LOG
 	a2enconf glpi &>> $LOG
 	a2ensite glpi &>> $LOG

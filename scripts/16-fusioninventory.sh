@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 11/12/2021
-# Versão: 0.05
+# Data de atualização: 13/12/2021
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x, Agent 2.6.x e GLPI 9.5.x
 #
@@ -233,7 +233,7 @@ echo -e "Atualizando arquivo de configuração do FusionInventory Agent, aguarde
 	mkdir -v /var/log/fusioninventory-agent/ &>> $LOG
 	touch /var/log/fusioninventory-agent/fusioninventory.log &>> $LOG
 	mv -v /etc/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg.old &>> $LOG
-	cp -v conf/agent.cfg /etc/fusioninventory/agent.cfg &>> $LOG
+	cp -v conf/fusioninventory/agent.cfg /etc/fusioninventory/agent.cfg &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -279,7 +279,7 @@ echo -e "Criando o repositório local e fazendo o download dos Agentes do Fusion
 	mkdir -v $DOWNLOADAGENT &>> $LOG
 	chown -v www-data.www-data $DOWNLOADAGENT &>> $LOG
 	chmod -v 755 $DOWNLOADAGENT &>> $LOG
-	cp -v conf/agent.cfg $DOWNLOADAGENT &>> $LOG
+	cp -v conf/fusioninventory/agent.cfg $DOWNLOADAGENT &>> $LOG
 	wget $AGENTWINDOWS32 -O $DOWNLOADAGENT/agent_windows32.exe &>> $LOG
 	wget $AGENTWINDOWS64 -O $DOWNLOADAGENT/agent_windows64.exe &>> $LOG
 	wget $AGENTMACOS -O $DOWNLOADAGENT/agent_macos.dmg &>> $LOG

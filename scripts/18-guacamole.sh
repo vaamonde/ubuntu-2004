@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 03/12/2021
-# Data de atualização: 11/12/2021
-# Versão: 0.4
+# Data de atualização: 13/12/2021
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache Guacamole Server 1.3.x e Cliente 1.3.x
 #
@@ -218,12 +218,11 @@ sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do Apache Guacamole Client, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando cp: -v (verbose)
 	# opção do comando mv: -v (verbose)
-	cp -v conf/guacamole.properties /etc/guacamole/guacamole.properties &>> $LOG
-	cp -v conf/user-mapping.xml /etc/guacamole/user-mapping.xml &>> $LOG
+	# opção do comando cp: -v (verbose)
 	mv -v /etc/default/tomcat9 /etc/default/tomcat9.old &>> $LOG
-	cp -v conf/tomcat9 /etc/default/tomcat9 &>> $LOG
+	cp -v conf/guacamole/{guacamole.properties,user-mapping.xml} /etc/guacamole/ &>> $LOG
+	cp -v conf/guacamole/tomcat9 /etc/default/tomcat9 &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
