@@ -238,7 +238,7 @@ echo -e "Descompactando o LogAnalyzer, aguarde..."
 echo -e "Descompactação do LogAnalyzer feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Copiando os arquivos de configuração do LogAnalyzer para o Apache2, aguarde..."
+echo -e "Copiando os arquivos de configuração do LogAnalyzer para o site do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando cp: -R (recurse), -v (verbose)
@@ -289,11 +289,14 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Habilitando o Virtual Host do LogAnalyzer no Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
 	a2ensite loganalyzer &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Fazendo o reload do Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl reload apache2 &>> $LOG
 echo -e "Reload do Apache2 feito com sucesso!!!, continuando com o script...\n"
 sleep 5

@@ -69,6 +69,21 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		exit 1
 fi
 #
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
 # Verificando se as dependências do GLPI estão instaladas
 # opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
@@ -200,20 +215,13 @@ echo -e "Criando a Base de Dados do GLPI, aguarde..."
 echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando os recursos do Apache2 para suportar o GLPI, aguarde..."
+echo -e "Atualizando os arquivos de configuração do GLPI, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	# opção do comando phpenmod: (habilitar módulos do PHP)
-	# opção do comando a2enconf: (habilitar arquivo de configuração de site do Apache2)
-	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
-	# opção do comando systemctl: restart (reinicializar o serviço)
 	cp -v conf/glpi/glpi.conf /etc/apache2/conf-available/ &>> $LOG
 	cp -v conf/glpi/glpi1.conf /etc/apache2/sites-available/glpi.conf &>> $LOG
 	cp -v conf/glpi/glpi-cron /etc/cron.d/ &>> $LOG
-	phpenmod apcu &>> $LOG
-	a2enconf glpi &>> $LOG
-	a2ensite glpi &>> $LOG
-echo -e "Recursos habilitados com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do glpi.conf, pressione <Enter> para continuar"
@@ -225,7 +233,6 @@ sleep 5
 echo -e "Editando o arquivo de Virtual Host glpi.conf, pressione <Enter> para continuar"
 	read
 	vim /etc/apache2/sites-available/glpi.conf
-	systemctl reload apache2 &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -233,6 +240,24 @@ echo -e "Editando o arquivo de agendamento glpi-cron, pressione <Enter> para con
 	read
 	vim /etc/cron.d/glpi-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Habilitando o Virtual Host do GLPI no Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando phpenmod: (habilitar módulos do PHP)
+	# opção do comando a2enconf: (habilitar arquivo de configuração de site do Apache2)
+	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
+	# opção do comando systemctl: restart (reinicializar o serviço)
+	phpenmod apcu &>> $LOG
+	a2enconf glpi &>> $LOG
+	a2ensite glpi &>> $LOG
+echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Fazendo o reload do Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl reload apache2 &>> $LOG
+echo -e "Reload do Apache2 feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do GLPI Help Desk feita com Sucesso!!!."
