@@ -24,7 +24,7 @@ do script: 18-guacamole.sh com suas variáveis no arquivo: 00-parametros.sh, acr
 no arquivo: named.conf.options, criação do usuário do Netdata no Banco de Dados do MySQL no script: 13-netdata.sh e
 no bloco de configuração do arquivo: 00-parametros.sh.
 
-06/12/2021 - Robson Vaamonde - Melhoria na documentação do monitoramento de Log's dos serviços de rede utilizando o
+06/12/2021 - Robson Vaamonde - Melhoria na documentação do monitoramento de Logs dos serviços de rede utilizando o
 script: 00-paramentros.sh, correção do Bug do Log do VSFTPd criando o arquivo no script: 09-vsftp.sh, 
 
 02/12/2021 - Robson Vaamonde - Criação das variáveis do teste do laço de loop das dependências dos script e dos pacotes
