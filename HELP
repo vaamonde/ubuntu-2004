@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 09/12/2021
-Versão: 0.05
+Data de atualização: 13/12/2021
+Versão: 0.06
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
@@ -41,10 +41,10 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server 20.04.x
 	_ LTS se encontra no diretório: ubuntu-2004/scripts.
 	_ Todos os arquivos de configuração dos serviços de rede no Ubuntu Server 20.04.x LTS se
-	_ encontra no diretório: /ubuntu-2004/scripts/conf.
+	_ encontra no diretório: /ubuntu-2004/scripts/conf/.
 	_ Caso você queira adaptar os scripts ou arquivos de configuração para o seu cenário/servidor, 
-	_ primeiro etapa é editar o script corresponde, verificar as principais variáveis e arquivos de 
-	_ configuração, alterar seus valores primeiro antes de executar os script.
+	_ primeira etapa é editar o script correspondente, verificar as principais variáveis e arquivos 
+	_ de configuração, alterar seus valores primeiro antes de executar os script.
 
 #03_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts
 	_ Arquivo de parâmetros (Variáveis) localizado em: /ubuntu-2004/scripts/00-parametros.sh
@@ -53,7 +53,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ do bloco de configuração do serviço: VARIÁVEL=$VARIÁVEL.
 	_ Antes de iniciar as configurações dos serviços de rede no Ubuntu Server, é recomendado 
 	_ customizar o arquivo de parâmetros: 00-parametros.sh e os arquivos de configurações (conf) 
-	_ no diretório /ubuntu-2004/scripts/conf de cada serviço de rede corresponde a seu scripts.
+	_ no diretório /ubuntu-2004/scripts/conf/ de cada serviço de rede corresponde a seu scripts.
 
 #04_ Scripts de instalação e configuração dos serviços de rede
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server segue o
