@@ -456,12 +456,12 @@ CREATE_USER_DATABASE_JAVAEE="CREATE USER 'dbagenda' IDENTIFIED BY 'dbagenda';"
 GRANT_DATABASE_JAVAEE="GRANT USAGE ON *.* TO 'dbagenda';"
 GRANT_ALL_DATABASE_JAVAEE="GRANT ALL PRIVILEGES ON dbagenda.* TO 'dbagenda';"
 FLUSH_JAVAEE="FLUSH PRIVILEGES;"
-CREATE_TABLE_JAVAEE="CREATE TABLE 'contatos' (
-	'idcon' int NOT NULL AUTO_INCREMENT,
-	'nome' varchar(50) NOT NULL,
-	'fone' varchar(15) NOT NULL,
-	'email' varchar(50) DEFAULT NULL,
-	PRIMARY KEY ('idcon')
+CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
+	idcon int NOT NULL AUTO_INCREMENT,
+	nome varchar(50) NOT NULL,
+	fone varchar(15) NOT NULL,
+	email varchar(50) DEFAULT NULL,
+	PRIMARY KEY (idcon)
 );"
 #
 #=============================================================================================
@@ -537,6 +537,10 @@ apt-show-versions python unzip apt-transport-https software-properties-common"
 #
 # Variável de instalação do serviço de rede Webmin e Usermin
 WEBMINNSTALL="webmin usermin"
+#
+# Variáveis das portas de conexão padrão do Webmin e Usermin
+PORTWEBMIN="10000"
+PORTUSERMIN="20000"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 13-netdata.sh                        #
