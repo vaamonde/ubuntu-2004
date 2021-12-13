@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.12
+# Data de atualização: 12/12/2021
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -27,8 +27,22 @@
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 #
 # Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
-# Linux Mint Terminal: ssh vaamonde@172.16.1.10 ou ssh vaamonde@ssh.pti.intra
-# Windows Powershell.: ssh vaamonde@172.16.1.10 ou ssh vaamonde@ssh.pti.intra
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	ssh vaamonde@172.16.1.10
+#	ssh vaamonde@ssh.pti.intra
+# Windows Powershell.: 
+#	ssh vaamonde@172.16.1.10
+#	ssh vaamonde@ssh.pti.intra
+#
+# Verificando os usuários logados na sessão do OpenSSH Server
+# Terminal:
+#	who -a (show who is logged on)
+#	w (Show who is logged on and what they are doing)
+#	users (print the user names of users currently logged in to the current host)
+#	last | grep 'still logged in' (show a listing of last logged in users)
+#	ss | grep ssh (another utility to investigate sockets)
+#	netstat | grep 'ESTABLISHED.*sshd' (show networking connection)
+#	ps -axfj | grep sshd (report a snapshot of the current processes)
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.10
+# Data de atualização: 12/12/2021
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -26,19 +26,39 @@
 # como ISC DHCP, é uma das primeiras e mais conhecidas, mas agora existem várias outras 
 # implementações de software de servidor DHCP disponíveis.
 #
-# Diretório e Arquivo de banco de dados do Leasing ofertados pelo ISC DHCP Server:
-# Localização: /var/lib/dhcp/dhcpd.leases
-# Monitoramento do Log: tail -f /var/log/syslog | grep dhcpd
-#
-# Diretório das Zonas de Pesquisa Direta e Reversa do Bind9 DNS Server:
-# Localização: /var/lib/bind/
-# Monitoramento do Log: tail -f /var/log/syslog | grep named
-#
-# Monitorando o Bind9 DNS Server e o ISC DHCP Server simultaneamente
-# Comando: tail -f /var/log/syslog | grep -E \(dhcpd\|named\)
-#
 # Site Oficial do Projeto Bind9: https://www.isc.org/bind/
 # Site Oficial do Projeto ICS DHCP: https://www.isc.org/dhcp/
+#
+# Configuração do DHCP Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Gráfico: NetworkManager - Icone da Placa de Rede
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	sudo NetworkManager --print-config
+# 	sudo nmcli device status
+# 	sudo nmcli device show enp0s3 
+# 	sudo networkctl status enp0s3 
+# 	sudo ifconfig enp0s3
+# 	sudo ip address show enp0s3
+# 	sudo route -n
+# 	sudo systemd-resolve --status
+# 	sudo dhclient -r enp0s3
+# 	sudo dhclient enp0s3
+# 	sudo cat /var/lib/dhcp/dhclient.leases
+#	nslookup pti.intra
+#	dig pti.intra
+#	host pti.intra
+#	ping pti.intra
+# Windows Powershell: 
+#	ipconfig /all
+#	ipconfig /release
+#	ipconfig /renew
+#	netsh interface show interface
+#	netsh interface ip show interface
+#	netsh interface ip show config
+#	nslookup pti.intra
+#	ipconfig /displaydns
+#	ping pti.intra
+#	Resolve-DnsName pti.intra
+#	Test-Connection pti.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

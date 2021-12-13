@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.09
+# Data de atualização: 12/12/2021
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
@@ -23,8 +23,17 @@
 # Site Oficial do Projeto Bind: https://www.isc.org/bind/
 #
 # Testando o DNS no GNU/Linux ou Microsoft Windows
-# Linux Mint Terminal: nslookup pti.intra, dig pti.intra
-# Windows Powershell.: nslookup pti.intra
+# Linux Mint Terminal: Ctrl+Alt+T 
+#	nslookup pti.intra
+#	dig pti.intra
+#	host pti.intra
+#	ping pti.intra
+# Windows Powershell.: 
+#	nslookup pti.intra
+#	ipconfig /displaydns
+#	ping pti.intra
+#	Resolve-DnsName pti.intra
+#	Test-Connection pti.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

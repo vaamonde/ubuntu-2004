@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.07
+# Data de atualização: 12/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -22,7 +22,25 @@
 #
 # Configuração do DHCP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Gráfico: NetworkManager - Icone da Placa de Rede
-# Windows Powershell: ipconfig /release - ipconfig /renew
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	sudo NetworkManager --print-config
+# 	sudo nmcli device status
+# 	sudo nmcli device show enp0s3 
+# 	sudo networkctl status enp0s3 
+# 	sudo ifconfig enp0s3
+# 	sudo ip address show enp0s3
+# 	sudo route -n
+# 	sudo systemd-resolve --status
+# 	sudo dhclient -r enp0s3
+# 	sudo dhclient enp0s3
+# 	sudo cat /var/lib/dhcp/dhclient.leases
+# Windows Powershell: 
+#	ipconfig /all
+#	ipconfig /release
+#	ipconfig /renew
+#	netsh interface show interface
+#	netsh interface ip show interface
+#	netsh interface ip show config
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

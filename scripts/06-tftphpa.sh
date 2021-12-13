@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.06
+# Data de atualização: 12/12/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
@@ -18,6 +18,20 @@
 # cliente inicia o seu funcionamento, a partir do servidor.
 #
 # Site Oficial do Projeto Tftpd-Hpa: https://git.kernel.org/pub/scm/network/tftp/tftp-hpa.git/about/
+#
+# Utilização do TFTP Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	tftp tftp.pti.intra
+#		verbose
+#		status
+#		get robson.txt
+#		put vaamonde.txt
+# Windows Powershell:
+# 	tftp tftp.pti.intra
+#		verbose
+#		status
+#		get robson.txt
+#		put vaamonde.txt
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

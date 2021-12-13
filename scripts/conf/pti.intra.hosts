@@ -46,4 +46,5 @@ log             IN		CNAME	ptispo01ws01
 loganalyzer     IN		CNAME	ptispo01ws01
 zm              IN		CNAME	ptispo01ws01
 ntp             IN		CNAME	ptispo01ws01
+mysql           IN		CNAME	ptispo01ws01
 

@@ -101,7 +101,7 @@ LoginGraceTime 50
 # Tempo de inatividade em segundos para que os usuários logados na sessão do 
 # Servidor de OpenSSH sejam desconectados. Se você utiliza o recurso do Visual 
 # Studio Code VSCode com Remote SSH, recomendo comentar ou aumentar o tempo da sessão
-ClientAliveInterval 18000
+ClientAliveInterval 1800
 ClientAliveCountMax 0
 
 # Tentativa máxima de conexões simultâneas no Servidor de OpenSSH

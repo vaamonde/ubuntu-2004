@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 09/12/2021
-# Versão: 0.09
+# Data de atualização: 12/12/2021
+# Versão: 0.010
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -64,6 +64,16 @@
 # Site Oficial do Projeto Perl: https://www.perl.org/
 # Site Oficial do Projeto Python: https://www.python.org/
 # Site Oficial do Projeto PhpMyAdmin: https://www.phpmyadmin.net/
+#
+# Utilização do MySQL Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	sudo apt update && sudo apt install mysql-client
+#	mysql -u root -p -h pti.intra
+#
+# Utilização do Links2 Client no GNU/Linux
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	sudo apt update && sudo apt install links2
+#	links2 http://pti.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
