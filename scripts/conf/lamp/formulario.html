@@ -28,10 +28,11 @@
 			YouTube: <a href="youtube.com/BoraParaPratica">Bora Para Pratica</a><br>
 			Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 			<hr>
-			<form action="/formpost.html" method="post">
+			<form name="frmFormpost">
 				<label for="username">Nome de Usuário:</label><input type="text" id="username" name="username"/><br>
 				<label for="password">Senha do Usuário:</label><input type="password" id="password" name="password"/><br>
-				<button type="submit">Entrar</button>
+				<input type="button" value="Entrar" onclick="validar()">
 			</form>
+			<script src="validador.js"></script>
 		</body>
 	</html>
