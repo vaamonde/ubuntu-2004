@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.11
+# Data de atualização: 14/12/2021
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
@@ -204,9 +204,9 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	mv -v /etc/default/named /etc/default/named.old &>> $LOG
 	cp -v conf/dns/{named.conf,named.conf.local,named.conf.options,rndc.key} /etc/bind/ &>> $LOG
 	cp -v conf/dns/{pti.intra.hosts,172.16.1.rev} /var/lib/bind/ &>> $LOG
-	cp -v conf/dns/dnsupdate-cron /etc/cron.d/ &>> $LOG
+	cp -v conf/dns/{dnsupdate-cron,rndcupdate-cron} /etc/cron.d/ &>> $LOG
 	cp -v conf/dns/named /etc/default/ &>> $LOG
-	cp -v conf/dns/bind-rndc.conf /etc/logrotate.d/ &>> $LOG
+	cp -v conf/dns/rndcstats /etc/logrotate.d/ &>> $LOG
 	chown -v root:bind /etc/bind/rndc.key &>> $LOG
 	chown -v root:bind /var/lib/bind/{pti.intra.hosts,172.16.1.rev} &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
@@ -258,32 +258,40 @@ echo -e "Editando o arquivo de configuração 172.16.1.rev, pressione <Enter> pa
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração dnsupdate-cron, pressione <Enter> para continuar."
-	read
-	vim /etc/cron.d/dnsupdate-cron
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
 echo -e "Editando o arquivo de configuração named, pressione <Enter> para continuar."
 	read
 	vim /etc/default/named
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração bind-rndc.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração dnsupdate-cron, pressione <Enter> para continuar."
 	read
-	vim /etc/logrotate.d/bind-rndc.conf
+	vim /etc/cron.d/dnsupdate-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Inicializando os serviços do Bind DNS Server e do Netplan, aguarde..."
+echo -e "Editando o arquivo de configuração rndcupdate-cron, pressione <Enter> para continuar."
+	read
+	vim /etc/cron.d/rndcupdate-cron
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração bind-rndc.conf, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando logrotate: -d (debug)
+	read
+	vim /etc/logrotate.d/rndcstats
+	logrotate /etc/logrotate.d/rndcstats -d &>> $LOG
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Inicializando os serviços do Netplan e do Bind DNS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	netplan --debug apply &>> $LOG
 	systemctl restart bind9 &>> $LOG
 	systemctl reload bind9 &>> $LOG
 	rndc sync -clean &>> $LOG
 	rndc stats &>> $LOG
-	logrotate /etc/logrotate.d/bind-rndc -d &>> $LOG
 echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

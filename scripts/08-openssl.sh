@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.07
+# Data de atualização: 14/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -123,6 +123,21 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		exit 1
 fi
 #
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
 # Verificando se as dependências do OpenSSL estão instaladas
 # opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
@@ -195,7 +210,7 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando todo o sistema, aguarde..."
+echo -e "Atualizando todo o sistema operacional, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
@@ -204,7 +219,7 @@ echo -e "Atualizando todo o sistema, aguarde..."
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo software desnecessários, aguarde..."
+echo -e "Removendo todos os software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG

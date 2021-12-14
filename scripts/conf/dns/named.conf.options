@@ -6,8 +6,8 @@
 // Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 // Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 // Data de criação: 10/10/2021
-// Data de atualização: 11/12/2021
-// Versão: 0.09
+// Data de atualização: 14/12/2021
+// Versão: 0.10
 // Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 // Configuração das opções do Bind9 DNS Server.
@@ -19,11 +19,6 @@ options {
 	// Diretório e arquivo das estatística do Bind9 DNS Server.
 	statistics-file "/var/log/named/named.stats";
 	zone-statistics yes;
-
-	// Configuração do Canal de estatística utilizada pelo Netdata
-	// statistics-channels {
-        // inet 127.0.0.1 port 8653 allow { 127.0.0.1; };
-	//};
 
 	// Endereços IPv4 de encaminhamento para servidores de DNS externos.
 	// Padrão do encaminhamento é enviar as consultas para o servidor de Firewall pfSense

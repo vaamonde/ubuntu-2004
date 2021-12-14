@@ -151,7 +151,7 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando todo o sistema, aguarde..."
+echo -e "Atualizando todo o sistema operacional, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
@@ -160,7 +160,7 @@ echo -e "Atualizando todo o sistema, aguarde..."
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo software desnecessários, aguarde..."
+echo -e "Removendo todos os software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG

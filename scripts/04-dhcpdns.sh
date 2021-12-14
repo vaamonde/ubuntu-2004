@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 12/12/2021
-# Versão: 0.11
+# Data de atualização: 14/12/2021
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -79,6 +79,21 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
+		exit 1
+fi
+#
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
 		exit 1
 fi
 #
