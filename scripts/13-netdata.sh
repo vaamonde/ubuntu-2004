@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.06
+# Data de atualização: 14/12/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.32.x
 #
@@ -19,8 +19,6 @@
 # tenha uma visão do que está acontecendo e do que acaba de acontecer em seu 
 # sistema ou aplicativo, sendo uma opção ideal para resolver problemas de desempenho
 # em tempo real.
-#
-# Exemplo: https://(ip do servidor):(porta de utilização) - https://172.16.1.20:19999
 #
 # Site oficial do Netdata: https://github.com/netdata/netdata
 #
@@ -200,6 +198,7 @@ echo -e "Atualizando os arquivos de configuração do Netdata, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
 	cp -v conf/netdata/*.conf /usr/lib/netdata/conf.d/python.d/ &>> $LOG
+	cp -v conf/netdata/apps_groups.conf /etc/netdata/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -216,8 +215,11 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de estatísticas bind_rndc.conf, pressione <Enter> para editar"
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando chown: -v (verbose), :netdata (group netdata)
 	read
 	vim /usr/lib/netdata/conf.d/python.d/bind_rndc.conf
+	#chown -v :netdata /etc/bind/rndc.key &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
