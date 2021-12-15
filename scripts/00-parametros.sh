@@ -813,9 +813,14 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Guacamole utilizados nesse script
-# 01. /etc/guacamole/guacamole.properties = 
-# 02. /etc/guacamole/user-mapping.xml =
-# 03. /etc/default/tomcat9 = 
+# 01. /etc/guacamole/guacamole.properties = arquivo de configuração do serviço do Guacamole Server
+# 02. /etc/guacamole/user-mapping.xml = arquivo de configuração do usuário e acesso remoto
+# 03. /etc/default/tomcat9 = arquivo de configuração do serviço do Apache Tomcat
+#
+# Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
+# 01. journalctl -t guacd = todas as mensagens referente ao serviço do Guacamole
+# 02. tail -f /var/log/syslog | grep -i guacamole = filtrando as mensagens do serviço do Guacamole
+# 03. tail -f /var/log/syslog | grep -i guacd = filtrando as mensagens do serviço do Guacamole
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
@@ -840,7 +845,7 @@ PORTGUACAMOLE="4822"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Grafana Server utilizados nesse script
-# 01. /etc/default/grafana-server
+# 01. /etc/default/grafana-server = 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de gráficos Grafana
 #
