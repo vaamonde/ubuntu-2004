@@ -10,7 +10,7 @@
 # Data de atualização: 13/12/2021
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Zabbix Server e Agent V5.5.x 
+# Testado e homologado para a versão do Zabbix Server e Agent V5.4.x 
 #
 # O Zabbix é uma ferramenta de software de monitoramento de código aberto para diversos 
 # componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. 
@@ -19,7 +19,7 @@
 # monitoramento e alertas.
 #
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
-# Welcome to Zabbix 5.5: 
+# Welcome to Zabbix 5.4: 
 #   Default language: English (en_US): Next step;
 # Check of pre-requisites: Next step;
 # Configure DB connection:
@@ -127,7 +127,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 echo -e "Instalação do Zabbix Server e Agent no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Zabbix Server.: TCP 10050 e 10051"
+echo -e "Porta padrão utilizada pelo Zabbix Server.: TCP 10050 e 10051\n"
 echo -e "Após a instalação do Zabbix Server acesse a URL: http://$(hostname -d | cut -d' ' -f1)/zabbix/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5

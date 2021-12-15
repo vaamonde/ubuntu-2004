@@ -115,7 +115,7 @@ clear
 #
 echo
 echo -e "Instalação do Docker Community e do Portainer.io no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Portainer.io.: TCP 9000"
+echo -e "Porta padrão utilizada pelo Portainer.io.: TCP 9000\n"
 echo -e "Após a instalação do Portainer.io acessar a URL: http://$(hostname -d | cut -d ' ' -f1):9000/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet..."
 sleep 5
@@ -169,7 +169,7 @@ sleep 5
 echo -e "Adicionando a Chave GPG do Docker Community, aguarde..."
 	# opção do comando curl: -f (fail), -s (silent), -S (show-error), -L (location)
 	# opção do comando apt-key add: - (file name recebido do redirecionador | )
-	curl -fsSL $DOCKERGPG | apt-key add -
+	curl -fsSL $DOCKERGPG | apt-key add - &>> $LOG
 echo -e "Chave adicionada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #				 
@@ -181,7 +181,7 @@ sleep 5
 #
 echo -e "Adicionando o repositório do Docker Community, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	add-apt-repository "$DOCKERDEB" &>> $LOG
+	add-apt-repository "$DOCKERREP" &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

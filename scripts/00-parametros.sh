@@ -875,12 +875,12 @@ PORTGRAFANA="3000"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
 #
-# Variável de download do Repositório do Zabbix Server (Link atualizado no dia 11/12/2021)
-ZABBIXIREP="https://repo.zabbix.com/zabbix/5.5/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.5-1%2Bubuntu20.04_all.deb"
+# Variável de download do Repositório do Zabbix Server (Link atualizado no dia 15/12/2021)
+ZABBIXIREP="wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb"
 #
 # Variável de instalação do Zabbix Server e suas Dependências.
 ZABBIXINSTALL="install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent \
-traceroute nmap snmp snmpd snmp-mibs-downloader"
+zabbix-sql-scripts traceroute nmap snmp snmpd snmp-mibs-downloader"
 #
 # Declarando as variáveis para criação da Base de Dados do Zabbix Server
 # opção do comando create: create (criação), database (base de dados), base (banco de dados), 
