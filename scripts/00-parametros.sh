@@ -898,7 +898,7 @@ CREATE_USER_DATABASE_ZABBIX="CREATE USER 'zabbix' IDENTIFIED BY 'zabbix';"
 GRANT_DATABASE_ZABBIX="GRANT USAGE ON *.* TO 'zabbix';"
 GRANT_ALL_DATABASE_ZABBIX="GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix';"
 FLUSH_ZABBIX="FLUSH PRIVILEGES;"
-CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-server-mysql/create.sql.gz"
+CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz"
 #
 # Variável das dependências do laço de loop do Zabbix Server
 ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"
