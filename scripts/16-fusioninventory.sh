@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.06
+# Data de atualização: 14/12/2021
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x, Agent 2.6.x e GLPI 9.5.x
 #
@@ -103,7 +103,7 @@ echo -n "Verificando as dependências do FusionInventory, aguarde... "
 echo -e "Verificando se o GLPI Help Desk está instalado, aguarde..."
 	if [ -e "$PATHGLPI" ]
 		then
-    		echo -e "O GLPI Help Desk está instalado, tudo OK, continuando com o script...\n"
+    		echo -e "O GLPI Help Desk está instalado, tudo OK, continuando com o script..."
 			sleep 5
 	else
     		echo "O GLPI Help Desk não está instalado, instale o GLPI com o script: 15-glpi.sh"
@@ -276,6 +276,15 @@ echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://glpi.$(hostname -d
 echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO FUSIONINVENTORY SERVER, APÓS A CONFIGURAÇÃO"
 echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 21 DO SCRIPT $0"
 read
+sleep 5
+#
+echo -e "Verificando a porta de conexão do FusionInventory, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:"62354" -sTCP:LISTEN
+echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Executando o primeiro Inventário do FusionInventory Agent, aguarde..."
