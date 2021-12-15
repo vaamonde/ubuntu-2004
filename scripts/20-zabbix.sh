@@ -1,3 +1,4 @@
+#!/bin/bash
 # Autor: Robson Vaamonde
 # Site: www.procedimentosemti.com.br
 # Facebook: facebook.com/ProcedimentosEmTI
@@ -14,8 +15,8 @@
 # O Zabbix é uma ferramenta de software de monitoramento de código aberto para diversos 
 # componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. 
 # O Zabbix fornece métricas de monitoramento, utilização da largura de banda da rede, 
-# carga de uso CPU e consumo de espaço em disco, entre vários outros recursos de monitoramento 
-# e alertas.
+# carga de uso CPU e consumo de espaço em disco, entre vários outros recursos de 
+# monitoramento e alertas.
 #
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
 # Welcome to Zabbix 5.5: 
@@ -62,6 +63,21 @@ if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
+		exit 1
+fi
+#
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
 		exit 1
 fi
 #
@@ -231,7 +247,6 @@ echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n
 sleep 5
 #
 echo -e "Verificando os serviços do Zabbix Server e Agent, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	echo -e "Zabbix Server: $(systemctl status zabbix-server | grep Active)"
 	echo -e "Zabbix Agent.: $(systemctl status zabbix-agent | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"

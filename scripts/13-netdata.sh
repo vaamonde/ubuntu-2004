@@ -73,6 +73,7 @@ if [ "$(nc -vz 127.0.0.1 $PORTNETDATA &> /dev/null ; echo $?)" == "0" ]
 		echo -e "A porta: $PORTNETDATA está disponível, continuando com o script..."
 		sleep 5
 fi
+#
 # Verificando se as dependências do Netdata estão instaladas
 # opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 

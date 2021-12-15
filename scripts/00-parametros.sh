@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.25
+# Data de atualização: 15/12/2021
+# Versão: 0.26
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -572,7 +572,7 @@ libwebsockets15 libwebsockets-dev libjson-c-dev libbpfcc-dev liblz4-dev libjudy-
 libmnl-dev autoconf-archive curl cmake protobuf-compiler protobuf-c-compiler lm-sensors \
 python3-psycopg2 python3-pymysql"
 #
-# Variáveis das portas de conexão padrão do Webmin e Usermin
+# Variável da porta de conexão padrão do Netdata
 PORTNETDATA="19999"
 #
 # Declarando as variáveis para criação do usuário de monitoramento do Netdata no MySQL
@@ -757,8 +757,11 @@ WAKEINSTALL="libwrite-net-perl"
 # Variável de instalação das dependências do FusionInventory SNMPv3
 SNMPINSTALL="libdigest-hmac-perl"
 #
-# Variável do diretório de Download dos Agentes e arquivos de cofiguração do FusionInventory
+# Variável do diretório de Download dos Agentes e arquivos de configuração do FusionInventory
 DOWNLOADAGENT="/var/www/html/agentes"
+#
+# Variável da porta de conexão padrão do FusionInventory Server
+PORTFUSION="62354"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 17-zoneminder.sh                     #
@@ -817,6 +820,9 @@ libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpang
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
 libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-dev freerdp2-x11"
 #
+# Variável da porta de conexão padrão do Guacamole Server
+PORTGUACAMOLE="4822"
+#
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 19-grafana.sh                       #
 #=============================================================================================
@@ -832,6 +838,9 @@ GRAFANAAPT="deb https://packages.grafana.com/oss/deb stable main"
 #
 # Variável das dependências do laço de loop do Grafana Server
 GRAFANADEP="mysql-server mysql-common bind9 apt-transport-https software-properties-common"
+#
+# Variável da porta de conexão padrão do Grafana Server
+PORTGRAFANA="3000"
 #
 #=============================================================================================
 #                         VARIÁVEIS UTILIZADAS NO SCRIPT: 20-zabbix.sh                       #
@@ -871,4 +880,28 @@ CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-server-mysql/create.sql.gz"
 #
 # Variável das dependências do laço de loop do Zabbix Server
 ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"
+#
+#=============================================================================================
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 21-docker.sh                       #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Docker e do Portainer utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de container Docker e Portainer
+#
+# Variável de download da chave GPG do Docker Community (Link atualizado no dia 15/12/2021)
+DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
+DOCKERKEY="0EBFCD88"
+DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+#
+# Variável das dependências do laço de loop do Docker Community 
+DOCKERDEP="bind9"
+#
+# Variável de instalação das Dependências do Docker Community e do Portainer.
+DOCKERINSTALLDEP="apt-transport-https ca-certificates curl software-properties-common \
+linux-image-generic linux-image-extra-virtual"
+#
+# Variável de instalação do Docker Community CE.
+DOCKERINSTALL="docker-ce cgroup-lite"
 #
