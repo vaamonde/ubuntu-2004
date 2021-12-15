@@ -19,43 +19,55 @@
 # de fácil leitura. Os gráficos ajudam a ver as coisas importantes de relance.
 #
 # Informações que serão solicitadas na configuração via Web do LogAnalyzer
-# Step 0 - Errordetails: Click here to Install Adiscon LogAnalyzer!
-# Step 1 - Prerequisites: Next;
-# Step 2 - Verify File Permissions: 
-#		   file './config.php' Writeable: Next;
-# Step 3 - Basic Configuration: 
-#		   Number of syslog messages per page: 50
-#		   Message character limit for the main view: 80
-#          Character display limit for all string type fields: 30
-#          Show message details popup: Yes
-#          Automatically resolved IP Addresses (inline): Yes
-#		   Enable User Database: Yes
-#		   Database Host: localhost
-#		   Database Port: 3306
-#		   Database Name: loganalyzer
-#		   Table prefix: logcon_
-#		   Database User: loganalyzer
-#		   Database Password: loganalyzer
-#		   Require user to be logged in: Yes
-#		   Authentication method: Internal Authentication: Next;
-# Step 4 - Create Tables: Next;
-# Step 5 - Check SQL Results: Next;
-# Step 6 - Creating the Main Useraccount
-#		   Username: admin
-#		   Password: pti@2018
-#		   Repeat Password: pti@2018: Next;
-# Step 7 - Create the first source for syslog messages
-#		   Name of the Source: ptispo01ws01
-#		   Source Type: MYSQL Native
-#          Select View: Syslog Fields
-#		   Table type: MonitorWare
-#		   Database Host: localhost
-#		   Database Name: syslog
-#		   Database Tablename: SystemEvents
-#		   Database User: syslog
-#		   Database Password: syslog: Next;
-#          Enable Row Counting: Yes
-# Step 8 - Done: Finish.
+# Step 0 -	Errordetails: Click "here" to Install Adiscon LogAnalyzer!
+# Step 1 -	Prerequisites
+#				Next;
+# Step 2 -	Verify File Permissions: 
+#				file './config.php' Writeable 
+#				Next;
+# Step 3 -	Basic Configuration:
+#				Frontend Options
+#					Number of syslog messages per page: 50
+#					Message character limit for the main view: 80
+#					Character display limit for all string type fields: 30
+#					Show message details popup: Yes
+#					Automatically resolved IP Addresses (inline): Yes
+#				User Database Options
+#					Enable User Database: Yes
+#					Database Host: localhost
+#					Database Port: 3306
+#					Database Name: loganalyzer
+#					Table prefix: logcon_
+#					Database User: loganalyzer
+#					Database Password: loganalyzer
+#					Require user to be logged in: Yes
+#					Authentication method: Internal Authentication
+#				Next;
+# Step 4 -	Create Tables
+#				Next;
+# Step 5 -	Check SQL Results
+#				Next;
+# Step 6 -	Creating the Main Useraccount
+#				Create User Account
+#					Username: admin
+#					Password: pti@2018
+#					Repeat Password: pti@2018: Next;
+# Step 7 -	Create the first source for syslog messages
+#				First Syslog Source
+#					Name of the Source: ptispo01ws01
+#					Source Type: MYSQL Native
+#					Select View: Syslog Fields
+#				Database Type Options
+#					Table type: MonitorWare
+#					Database Host: localhost
+#					Database Name: syslog
+#					Database Tablename: SystemEvents
+#					Database User: syslog
+#					Database Password: syslog
+#					Enable Row Counting: Yes
+#				Next;
+# Step 8 -	Done
+#				Finish.
 #
 # Site oficial do LogAnalyzer: https://loganalyzer.adiscon.com/
 #

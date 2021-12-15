@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
 # Data de atualização: 14/12/2021
-# Versão: 0.07
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.32.x
 #
@@ -181,7 +181,8 @@ echo -e "Instalando o Netdata, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando echo |: faz a função de Enter no Script
 	cd netdata/
-	echo | ./netdata-installer.sh &>> $LOG
+		echo | ./netdata-installer.sh &>> $LOG
+	cd ..
 echo -e "Instalação do Netdata feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -214,12 +215,19 @@ echo -e "Editando o arquivo de monitoramento isc_dhcpd.conf, pressione <Enter> p
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Editando o arquivo de monitoramento tomcat.conf, pressione <Enter> para editar"
+	read
+	vim /usr/lib/netdata/conf.d/python.d/tomcat.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Editando o arquivo de estatísticas bind_rndc.conf, pressione <Enter> para editar"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chown: -v (verbose), :netdata (group netdata)
 	read
 	vim /usr/lib/netdata/conf.d/python.d/bind_rndc.conf
-	#chown -v :netdata /etc/bind/rndc.key &>> $LOG
+	chown -v :netdata /etc/bind/rndc.key &>> $LOG
+	rndc stats &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
