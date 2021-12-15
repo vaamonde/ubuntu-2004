@@ -828,10 +828,10 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 GUACAMOLESERVER="https://dlcdn.apache.org/guacamole/1.3.0/source/guacamole-server-1.3.0.tar.gz"
 GUACAMOLECLIENT="https://dlcdn.apache.org/guacamole/1.3.0/binary/guacamole-1.3.0.war"
 #
-# Variável das dependências do laço de loop do Guacamole
+# Variável das dependências do laço de loop do Guacamole Server e Client
 GUACAMOLERDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
 #
-# Variável de instalação das dependências do Guacamole (\ quebra de linha no apt)
+# Variável de instalação das dependências do Guacamole Server (\ quebra de linha no apt)
 GUACAMOLEINSTALL="libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin libossp-uuid-dev \
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
@@ -845,9 +845,14 @@ PORTGUACAMOLE="4822"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Grafana Server utilizados nesse script
-# 01. /etc/default/grafana-server = 
+# 01. /etc/default/grafana-server = arquivo de configuração do serviço do Grafana Server
 #
-# Declarando as variáveis utilizadas nas configurações do sistema de gráficos Grafana
+# Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
+# 01. journalctl -t grafana-server = todas as mensagens referente ao serviço do Grafana Server
+# 02. tail -f /var/log/grafana/grafana.log = arquivo de Log do serviço do Grafana Server
+# 03. tail -f /var/log/syslog | grep -i grafana = filtrando as mensagens do serviço do Grafana
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de gráficos Grafana 
 #
 # Variável da Chave GPG do Repositório do Grafana Server (Links atualizados no dia 09/12/2021)
 GRAFANAGPGKEY="https://packages.grafana.com/gpg.key"

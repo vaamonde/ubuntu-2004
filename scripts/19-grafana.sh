@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/12/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.02
+# Data de atualização: 15/12/2021
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Grafana Server v8.3.x
 #
@@ -165,13 +165,11 @@ sleep 5
 echo -e "Iniciando a Instalação e Configuração do Grafana Server, aguarde...\n"
 sleep 5
 #
-echo -e "Fazendo o download e instalando o Repositório do Grafana Server, aguarde..."
+echo -e "Instalando o Repositório do Grafana Server, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando: | piper (conecta a saída padrão com a entrada padrão de outro comando)
 	# opção do comando wget: -q (quiet) -O (output document file)
-	# opção do comando apt-key: - (keyring)
 	wget -q -O - $GRAFANAGPGKEY | apt-key add - &>> $LOG
-	apt-key list | grep grafana &>> $LOG
 	add-apt-repository "$GRAFANAAPT" &>> $LOG
 echo -e "Repositório instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
