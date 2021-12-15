@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.08
+# Data de atualização: 15/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -258,6 +258,20 @@ echo -e "Fazendo o reload do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl reload apache2 &>> $LOG
 echo -e "Reload do Apache2 feito com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO GLPI HELP DESK, APÓS A"
+echo -e "CONFIGURAÇÃO PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT."
+echo -e "MAIS INFORMAÇÕES NA LINHA 27 DO SCRIPT: $0"
+read
+sleep 5
+#
+echo -e "Removendo o script de instalação do GLPI Help Desk, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mv: -v (verbose)
+	mv -v $PATHGLPI/install/install.php $PATHGLPI/install/install.php.old &>> $LOG
+echo -e "Arquivo removido com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do GLPI Help Desk feita com Sucesso!!!."

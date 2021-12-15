@@ -6,11 +6,15 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 13/12/2021
-Versão: 0.21
+Data de atualização: 15/12/2021
+Versão: 0.22
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+15/12/2021 - Robson Vaamonde - Várias melhorias nos scripts em geral para facilitar os procedimentos de gravação dos
+vídeos em 2022, correções dos Bugs do Netdata, GLPI, Tomcat na Base de Dados da Agenda, e melhorias na documentação e 
+tradução dos scripts.
+
 13/12/2021 - Robson Vaamonde - Mudança na estrutura de diretório dos arquivos de configuração dos serviços de rede,
 criação dos sub-diretórios de cada serviço para facilitar a administração e customomização para cenários diferentes.
 Váras melhorias nos scripts e arquivos de configuração nos dias 10 até 12/12/2021 com foco mais em documentação e 

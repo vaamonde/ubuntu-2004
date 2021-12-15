@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 14/12/2021
-# Versão: 0.07
+# Data de atualização: 15/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x, Agent 2.6.x e GLPI 9.5.x
 #
@@ -289,8 +289,9 @@ echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
-echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO FUSIONINVENTORY SERVER, APÓS A CONFIGURAÇÃO"
-echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 21 DO SCRIPT $0"
+echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO FUSIONINVENTORY SERVER, APÓS A"
+echo -e "CONFIGURAÇÃO PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT."
+echo -e "MAIS INFORMAÇÕES NA LINHA 21 DO SCRIPT: $0"
 read
 sleep 5
 #
@@ -309,7 +310,7 @@ echo -e "Executando o primeiro Inventário do FusionInventory Agent, aguarde..."
 echo -e "Inventário feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o repositório local e fazendo o download dos Agentes do FusionInventory, aguarde..."
+echo -e "Criando o diretório de download dos Agentes do FusionInventory, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -v (verbose)
@@ -324,7 +325,12 @@ echo -e "Criando o repositório local e fazendo o download dos Agentes do Fusion
 	wget $AGENTWINDOWS64 -O $DOWNLOADAGENT/agent_windows64.exe &>> $LOG
 	wget $AGENTMACOS -O $DOWNLOADAGENT/agent_macos.dmg &>> $LOG
 	wget $FUSIONAGENT -O $DOWNLOADAGENT/agent_linux.deb &>> $LOG
-echo -e "Download dos Agentes do FusionInventory feito com sucesso!!!, continuando com o script...\n"
+echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o diretório de agentes: http://.$(hostname -d | cut -d' ' -f1)/agentes/, aguarde..."
+	tree $DOWNLOADAGENT
+echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do FusionInventory Server e Agent feita com Sucesso!!!."

@@ -98,7 +98,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 SSHDEP="openssh-server openssh-client"
 #
 # Variável de instalação dos softwares extras do OpenSSH Server
-SSHINSTALL="net-tools ipcalc nmap"
+SSHINSTALL="net-tools ipcalc nmap tree"
 #
 # Variável da porta de conexão padrão do OpenSSH Server
 PORTSSH="22"
@@ -554,6 +554,7 @@ PORTUSERMIN="20000"
 # Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
 # 01. journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
 # 02. tail -f /var/log/netdata/* = vários arquivos de Log's do serviço do Netdata
+# 03. tail -f /var/log/syslog | grep netdata = filtrando as mensagens do serviço do Netdata
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
@@ -676,6 +677,7 @@ LOGINSTALL="rsyslog-mysql"
 # Arquivos de monitoramento (log) do Serviço do LogAnalyzer utilizados nesse script
 # 01. tail -f /var/log/apache2/access-glpi.log = log de acesso ao GLPI Help Desk
 # 02. tail -f /var/log/apache2/error-glpi.log = log de erro de acesso ao GLPI Help Desk
+# 03. tail -f /var/log/syslog | grep -i glpi = filtrando as mensagens do serviço do GLPI Help Desk
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Help Desk GLPI
 #
@@ -719,8 +721,12 @@ libapache2-mod-php xmlrpc-api-utils"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema FusionInventory utilizados nesse script
-# 01. /var/log/fusioninventory-agent/fusioninventory.log = arquivo de log do agent do FusionInventory
-# 02. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
+# 01. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
+#
+# Arquivos de monitoramento (log) do Serviço do FusionInventory utilizados nesse script
+# 01. journalctl -t fusioninventory-agent = todas as mensagens referente ao serviço do FusionInventory
+# 02. tail -f /var/log/fusioninventory-agent/fusioninventory.log = arquivo de log do agent do FusionInventory
+# 03. tail -f /var/log/syslog | grep -i fusioninventory = filtrando as mensagens do serviço do FusionInventory
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário FusionInventory
 #
@@ -768,8 +774,13 @@ PORTFUSION="62354"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema ZoneMinder utilizados nesse script
-# 01. /etc/mysql/mysql.conf.d/mysqld.cnf =
-# 02. /etc/php/7.4/apache2/php.ini =  
+# 01. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do Servidor MySQL
+# 02. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
+#
+# Arquivos de monitoramento (log) do Serviço do ZoneMinder utilizados nesse script
+# 01. journalctl -t zoneminder = todas as mensagens referente ao serviço do ZoneMinder
+# 02. tail -f /var/log/zm/* = vários arquivos de Log's do serviço do ZoneMinder
+# 03. tail -f /var/log/syslog | grep -i zoneminder = filtrando as mensagens do serviço do ZoneMinder
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Câmeras ZoneMinder
 #
@@ -789,8 +800,9 @@ ZONEMINDER="ppa:iconnor/zoneminder-master"
 # ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 267 até 270, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHA: 217
 CREATE_DATABASE_ZONEMINDER="/usr/share/zoneminder/db/zm_create.sql"
-GRANT_DATABASE_ZONEMINDER="GRANT USAGE ON *.* TO 'zmuser';"
-GRANT_ALL_DATABASE_ZONEMINDER="GRANT ALL PRIVILEGES ON zm.* TO 'zmuser';"
+CREATE_USER_DATABASE_ZONEMINDER="CREATE USER 'zmuser'@localhost IDENTIFIED BY 'zmpass';"
+GRANT_DATABASE_ZONEMINDER="GRANT USAGE ON *.* TO 'zmuser'@'localhost';"
+GRANT_ALL_DATABASE_ZONEMINDER="GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;"
 FLUSH_ZONEMINDER="FLUSH PRIVILEGES;"
 #
 # Variável das dependências do laço de loop do ZoneMinder

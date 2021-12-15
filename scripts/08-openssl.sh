@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/10/2021
-# Data de atualização: 14/12/2021
-# Versão: 0.08
+# Data de atualização: 15/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -551,6 +551,11 @@ echo -e "Criando o diretório de Download para baixar a Unidade Certificadora CA
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 2
 #
+echo -e "Verificando o diretório de download: http://.$(hostname -d | cut -d' ' -f1)/download/, aguarde..."
+	tree $DOWNLOADCERT
+echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Habilitando o suporte ao TLS/SSL e o Site HTTPS do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	a2enmod ssl &>> $LOG
@@ -567,7 +572,6 @@ echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl status apache2 | grep Active
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
