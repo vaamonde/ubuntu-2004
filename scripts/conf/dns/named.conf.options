@@ -9,6 +9,7 @@
 // Data de atualização: 14/12/2021
 // Versão: 0.10
 // Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+// Testado e homologado para a versão do Bind9 DNS Server v9.16.x
 
 // Configuração das opções do Bind9 DNS Server.
 options {

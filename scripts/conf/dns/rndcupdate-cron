@@ -9,6 +9,7 @@
 # Data de atualização: 14/12/2021
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do Bind9 DNS Server v9.16.x
 #
 # Agendamento das atualizações das estatísticas do Bind DNS Server a cada 10 minutos, todos os dias.
 # Obs: esse agendamento é utilizado junto com as rotinas de monitoramento do Netdata em conjunto com

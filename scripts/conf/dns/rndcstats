@@ -9,6 +9,7 @@
 # Data de atualização: 11/10/2021
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do Bind9 DNS Server v9.16.x
 #
 # Rotacionando os Logs das Estatísticas do RNDC Stats do Bind DNS Server utilizadas
 # pelo sistema de monitoramento Netdata

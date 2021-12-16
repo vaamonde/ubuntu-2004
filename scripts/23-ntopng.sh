@@ -237,6 +237,11 @@ echo -e "Configurando a Interface de Rede em Modo Promíscuo, aguarde..."
 echo -e "Interface de Rede configurada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando o serviço do NTop-NG, aguarde..."
+	systemctl status ntopng | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando a porta de conexão do NTop-NG, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 

@@ -267,6 +267,11 @@ echo -e "Iniciando o serviço do Rundeck, pressione <Enter> para continuar"
 echo -e "Serviço iniciado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando o serviço do Rundeck, aguarde..."
+	systemctl status rundeckd | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando a porta de conexão do Rundeck, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
