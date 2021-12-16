@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 15/12/2021
-# Data de atualização: 15/12/2021
-# Versão: 0.01
+# Data de atualização: 16/12/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Docker v20.10.x e Portainer v2.9.x
 #
@@ -68,6 +68,21 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
+fi
+#
+# Verificando se a porta 3001 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $PORTPORTAINER &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTPORTAINER já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTPORTAINER está disponível, continuando com o script..."
+		sleep 5
 fi
 #
 # Verificando se as dependências do Docker Community estão instaladas

@@ -66,6 +66,9 @@ DOMINIOSERVER="pti.intra"
 # Variável do Endereço IPv4 principal (padrão) do Servidor Ubuntu desse curso
 IPV4SERVER="172.16.1.20"
 #
+# Variável do Nome da Interface Lógica do Servidor Ubuntu Server desse curso
+INTERFACE="enp0s3"
+#
 # Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor Ubuntu
 # CUIDADO!!! o nome do arquivo de configuração da placa de rede pode mudar dependendo da 
 # versão do Ubuntu Server, verificar o conteúdo do diretório: /etc/netplan para saber o nome 
@@ -873,6 +876,9 @@ PORTGRAFANA="3000"
 # 02. /etc/zabbix/apache.conf =
 # 03. /etc/zabbix/zabbix_agentd.conf = 
 #
+# Arquivos de monitoramento (log) do Serviço do Zabbix Server utilizados nesse script
+# 01.
+#
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
 #
 # Variável de download do Repositório do Zabbix Server (Link atualizado no dia 15/12/2021)
@@ -903,8 +909,9 @@ CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz"
 # Variável das dependências do laço de loop do Zabbix Server
 ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"
 #
-# Variável das portas de conexão padrão do Zabbix Server
-PORTZABBIX="3000"
+# Variáveis das portas de conexão padrão do Zabbix Server
+PORTZABBIX1="10050"
+PORTZABBIX2="10051"
 #
 #=============================================================================================
 #                         VARIÁVEIS UTILIZADAS NO SCRIPT: 21-docker.sh                       #
@@ -912,6 +919,9 @@ PORTZABBIX="3000"
 #
 # Arquivos de configuração (conf) do sistema Docker e do Portainer utilizados nesse script
 # 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do Docker e do Portainer utilizados nesse script
+# 01.
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de container Docker e Portainer
 #
@@ -931,7 +941,36 @@ linux-image-generic linux-image-extra-virtual"
 DOCKERINSTALL="docker-ce cgroup-lite"
 #
 # Variáve da porta de conexão padrão do Portainer.io
-PORTPORTAINER="3000"
+PORTPORTAINER="9000"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 22-ansible.sh                       #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Ansible e Rundeck utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do Ansible e Rundec utilizados nesse script
+# 01.
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de DevOps Ansible e Rundec
+#
+# Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
+ANSIBLEPPA="ppa:ansible/ansible"
+#
+# Variável de download do Rundeck (Link atualizado no dia 16/12/2021)
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_3.4.8.20211214-1_all.deb/download.deb"
+#
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 16/12/2021)
+PLUGINANSIBLE="https://github.com/Batix/rundeck-ansible-plugin/releases/download/3.1.1/ansible-plugin-3.1.1.jar"
+#
+# Variável das dependências do laço de loop do Rundeck
+RUNDECKDEP="bind9 software-properties-common openjdk-11-jdk openjdk-11-jre default-jdk"
+#
+RUNDECKDEPINSTALL="python openjdk-11-jdk-headless"
+#
+# Variável da porta de conexão padrão do Rundeck
+PORTRUNDECK="4440"
 #
 #=============================================================================================
 #                         VARIÁVEIS UTILIZADAS NO SCRIPT: 23-ntopng.sh                       #
@@ -939,6 +978,9 @@ PORTPORTAINER="3000"
 #
 # Arquivos de configuração (conf) do sistema NTop-NG utilizados nesse script
 # 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do NTop-NG utilizados nesse script
+# 01.
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento NTop-NG
 #
@@ -952,4 +994,5 @@ NTOPNGDEP="bind9 software-properties-common"
 NTOPNGINSTALL="ntopng ntopng-data"
 #
 # Variável da porta de conexão padrão do NTop-NG
-PORTZABBIX="3001"
+PORTNTOPNG="3001"
+#
