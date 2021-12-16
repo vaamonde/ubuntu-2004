@@ -10,6 +10,7 @@
 # Data de atualização: 14/12/2021
 # Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do ISC DHCP Server v4.4.x
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
 #
 # O Bind DNS Server BIND (Berkeley Internet Name Domain ou, como chamado previamente, 

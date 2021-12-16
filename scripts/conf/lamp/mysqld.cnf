@@ -9,6 +9,7 @@
 # Data de atualização: 03/12/2021
 # Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do MySQL v8.0.x
 
 # Configurações principais do Servidor de MySQL
 [mysqld]
