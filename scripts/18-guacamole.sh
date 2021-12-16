@@ -141,7 +141,7 @@ clear
 echo -e "Instalação do Apache Guacamole Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Apache Tomcat9.: TCP 8080"
 echo -e "Porta padrão utilizada pelo Guacamole Server.: TCP 4822\n"
-echo -e "Após a instalação do Apache Guacamole acesse a URL: http://www.$(hostname -d | cut -d' ' -f1):8080/guacamole\n"
+echo -e "Após a instalação do Apache Guacamole acesse a URL: http://$(hostname -d | cut -d' ' -f1):8080/guacamole\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

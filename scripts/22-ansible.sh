@@ -63,7 +63,8 @@ LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
 #
 # Declarando a variável de download do Ansible e do Rundeck (Link atualizado no dia 15/05/2020)
 PPA="ppa:ansible/ansible"
-RUNDECK="https://dl.bintray.com/rundeck/rundeck-deb/rundeck_3.3.9.20210201-1_all.deb"
+
+RUNDECK="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_3.4.8.20211214-1_all.deb/download.deb"
 PLUGIN="https://github.com/Batix/rundeck-ansible-plugin/releases/download/3.1.1/ansible-plugin-3.1.1.jar"
 #
 # Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração

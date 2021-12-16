@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 15/12/2021
-# Versão: 0.26
+# Data de atualização: 16/12/2021
+# Versão: 0.27
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -903,6 +903,9 @@ CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz"
 # Variável das dependências do laço de loop do Zabbix Server
 ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"
 #
+# Variável das portas de conexão padrão do Zabbix Server
+PORTZABBIX="3000"
+#
 #=============================================================================================
 #                         VARIÁVEIS UTILIZADAS NO SCRIPT: 21-docker.sh                       #
 #=============================================================================================
@@ -927,3 +930,26 @@ linux-image-generic linux-image-extra-virtual"
 # Variável de instalação do Docker Community CE.
 DOCKERINSTALL="docker-ce cgroup-lite"
 #
+# Variáve da porta de conexão padrão do Portainer.io
+PORTPORTAINER="3000"
+#
+#=============================================================================================
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 23-ntopng.sh                       #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema NTop-NG utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de monitoramento NTop-NG
+#
+# Variável de download do Repositório do NTop-NG (Link atualizado no dia 16/12/2021)
+NTOPNGREP="https://packages.ntop.org/apt-stable/20.04/all/apt-ntop-stable.deb"
+#
+# Variável das dependências do laço de loop do NTop-NG
+NTOPNGDEP="bind9 software-properties-common"
+#
+# Variável de instalação do NTop-NG.
+NTOPNGINSTALL="ntopng ntopng-data"
+#
+# Variável da porta de conexão padrão do NTop-NG
+PORTZABBIX="3001"

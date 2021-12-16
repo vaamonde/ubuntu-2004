@@ -117,9 +117,8 @@ echo
 echo -e "Instalação do Docker Community e do Portainer.io no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Portainer.io.: TCP 9000\n"
 echo -e "Após a instalação do Portainer.io acessar a URL: http://$(hostname -d | cut -d ' ' -f1):9000/\n"
-echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet..."
+echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
-echo
 #
 echo -e "Adicionando o Repositório Universal do Apt, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)

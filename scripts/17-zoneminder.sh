@@ -112,7 +112,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
 echo -e "Instalação do ZoneMinder no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do ZoneMinder acessar a URL: http://.$(hostname -d | cut -d ' ' -f1)/zm\n"
+echo -e "Após a instalação do ZoneMinder acessar a URL: http://$(hostname -d | cut -d ' ' -f1)/zm\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet..."
 sleep 5
 echo
