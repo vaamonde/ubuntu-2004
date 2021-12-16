@@ -11,6 +11,7 @@
 	* Data de atualização: 23/11/2021
 	* Versão: 0.02
 	* Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+	* Testado e homologado para a versão do Apache2 v2.4.x
 	* Testado e homologado para a versão do Wordpress v5.8.x
 */
  
