@@ -279,7 +279,7 @@ echo -e "Iniciando o serviço do FusionInventory Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl enable fusioninventory-agent &>> $LOG
 	systemctl start fusioninventory-agent &>> $LOG
-echo -e "Serviço do iniciado com sucesso!!!, continuando com o script...\n"
+echo -e "Serviço iniciado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do FusionInventory Agent, aguarde..."
