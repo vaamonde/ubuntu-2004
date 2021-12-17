@@ -135,7 +135,7 @@ clear
 #
 echo -e "Instalação do NTop-NG no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo NTop-NG.: TCP 3001\n"
-echo -e "Após a instalação do NTop-NG acesse a URL: http://$(hostname -I | cut -d' ' -f1):3001\n"
+echo -e "Após a instalação do NTop-NG acesse a URL: http://$(hostname -d | cut -d' ' -f1):3001\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
