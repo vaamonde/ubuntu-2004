@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 25/11/2021
-# Data de atualização: 15/12/2021
-# Versão: 0.09
+# Data de atualização: 18/12/2021
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -254,10 +254,29 @@ echo -e "Habilitando o Virtual Host do GLPI no Apache2, aguarde..."
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o reload do Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
+echo -e "Reinicializando o serviço do Apache2, aguarde..."
 	systemctl reload apache2 &>> $LOG
-echo -e "Reload do Apache2 feito com sucesso!!!, continuando com o script...\n"
+echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do Apache2, aguarde..."
+	systemctl status apache2 | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a porta de conexão do Apache2, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:80 -sTCP:LISTEN
+echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o Virtual Host do GLPI no Apache2, aguarde..."
+	# opção do comando apachectl: -s (a synonym)
+	apache2ctl -S | grep glpi.$DOMINIOSERVER
+echo -e "Virtual Host verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
