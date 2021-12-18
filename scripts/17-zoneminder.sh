@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 03/12/2021
-# Data de atualização: 16/12/2021
-# Versão: 0.07
+# Data de atualização: 18/12/2021
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -171,15 +171,15 @@ sleep 5
 echo -e "Editando as configurações MySQL mysqld.cnf, pressione <Enter> para continuar"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
-	vim +/sql_mode /etc/mysql/mysql.conf.d/mysqld.cnf 
+	vim /etc/mysql/mysql.conf.d/mysqld.cnf 
 	systemctl restart mysql &>> $LOG
-echo -e "Servidor MySQL editado com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivo do MySQL editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando as configurações do PHP php.ini, pressione <Enter> para continuar"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	read
-	vim +/date.timezone /etc/php/7.4/apache2/php.ini
+	vim /etc/php/7.4/apache2/php.ini
 	systemctl restart apache2 &>> $LOG
 echo -e "Arquivo do PHP editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -194,7 +194,7 @@ sleep 5
 echo -e "Criando o Banco de Dados do ZoneMinder, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), < (Redirecionador de Saída STDOUT)
-	mysql -u $USERMYSQL -p$SENHAMYSQL < $CREATE_DATABASE_ZONEMINDER &>> $LOG
+	#mysql -u $USERMYSQL -p$SENHAMYSQL < $CREATE_DATABASE_ZONEMINDER &>> $LOG
 	#mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$ALTER_USER_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_ZONEMINDER" mysql &>> $LOG
