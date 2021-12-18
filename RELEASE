@@ -11,7 +11,7 @@ Versão: 0.04
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh      -v0.27		- Customizado até o script: 23-ntopng.sh no dia 18/12/2021
+00-parametros.sh      -v0.27		- Customizado até o script: 24-openfire.sh no dia 18/12/2021
 01-openssh.sh         -v0.15		- Testado e homologado no dia 18/12/2021
 02-dhcp.sh            -v0.10		- Testado e homologado no dia 18/12/2021
 03-dns.sh             -v0.12		- Testado e homologado no dia 18/12/2021
