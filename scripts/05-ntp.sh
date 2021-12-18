@@ -30,7 +30,7 @@
 # Site Oficial do Projeto NTP: http://www.ntp.org/
 # Site Oficial do Projeto NTP.br: https://ntp.br/
 #
-# Configuração do NTP Server no GNU/Linux ou Microsoft Windows
+# Configuração do NTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo ntpdate -s 172.16.1.20
 #	sudo ntpq -pn

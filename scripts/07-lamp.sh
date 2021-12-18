@@ -112,26 +112,6 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		exit 1
 fi
 #
-# Verificando todas as dependências do LAMP-Server estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
-# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
-# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
-# 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do LAMP-Server, aguarde... "
-	for name in $LAMPDEP
-	do
-  		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
-              echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
-              deps=1; 
-              }
-	done
-		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
-            echo -en "\nInstale as dependências acima e execute novamente este script\n";
-			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
-            exit 1; 
-            }
-		sleep 5
-#
 # Verificando se as portas 80 e 3306 está sendo utilizada no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
@@ -156,6 +136,26 @@ if [ "$(nc -vz 127.0.0.1 $PORTMYSQL &> /dev/null ; echo $?)" == "0" ]
 		echo -e "A porta: $PORTMYSQL está disponível, continuando com o script..."
 		sleep 5
 fi
+#
+# Verificando todas as dependências do LAMP-Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do LAMP-Server, aguarde... "
+	for name in $LAMPDEP
+	do
+  		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
+              echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
+              deps=1; 
+              }
+	done
+		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
+            echo -en "\nInstale as dependências acima e execute novamente este script\n";
+			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+            exit 1; 
+            }
+		sleep 5
 #
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
 # OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
@@ -384,7 +384,6 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando os serviços do Apache2 e do MySQL, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
 	echo -e "MySQL..: $(systemctl status mysql | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"

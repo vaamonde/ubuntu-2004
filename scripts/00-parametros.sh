@@ -61,6 +61,7 @@ NOMESERVER="ptispo01ws01"
 FQDNSERVER="ptispo01ws01.pti.intra"
 #
 # Variável do Nome de Domínio do Servidor Ubuntu desse curso
+# OBSERVAÇÃO IMPORTANTE: esse variável será utilizada em outros variáveis desse curso
 DOMINIOSERVER="pti.intra"
 #
 # Variável do Endereço IPv4 principal (padrão) do Servidor Ubuntu desse curso

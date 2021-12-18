@@ -10,34 +10,43 @@
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
-# Comando para verificar se o serviço de rede tem suporte ao TCPWrappers: ldd /usr/sbin/sshd | grep libwrap
-# Logando as informações de acesso nos arquivos de Log de cada serviço: /var/log/tcpwrappers-allow-*.log
+# Comando utilizado para verificar se o serviço (daemon) de rede tem suporte ao 
+# TCPWrappers: ldd /usr/sbin/sshd | grep libwrap (Biblioteca LibWrap)
+# Logando todas as informações de acesso nos arquivos de Log's de cada serviço
+# em: /var/log/tcpwrappers-allow-*.log (* nome do serviço)
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de OpenSSH
-sshd: 172.16.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+#DAEMON   CLIENT     OPTION
+sshd: 172.16.1.0/24: spawn /bin/echo "$(date) - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de MySQL
-mysqld: 172.16.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - MySQL - IP %a" >> /var/log/tcpwrappers-allow-mysql.log
+#DAEMON   CLIENT     OPTION
+mysqld: 172.16.1.0/24: spawn /bin/echo "$(date) - MySQL - IP %a" >> /var/log/tcpwrappers-allow-mysql.log
 #
 # Permitindo a Rede 172.16.1.20/24 se autenticar remotamente no Servidor de Telnet
-in.telnetd: 172.16.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - Telnet - IP %a" >> /var/log/tcpwrappers-allow-telnet.log
+#DAEMON   CLIENT     OPTION
+in.telnetd: 172.16.1.0/24: spawn /bin/echo "$(date) - Telnet - IP %a" >> /var/log/tcpwrappers-allow-telnet.log
 #
 # Permitindo que todas as redes se autentiquem remotamente no Servidor de FTP
-vsftpd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Vsftpd - IP %a" >> /var/log/tcpwrappers-allow-vsftpd.log
+#DAEMON   CLIENT     OPTION
+vsftpd: ALL: spawn /bin/echo "$(date) - Vsftpd - IP %a" >> /var/log/tcpwrappers-allow-vsftpd.log
 #
 # Permitindo que todas as redes se conecte remotamente no Servidor de TFTP
-in.tftpd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Tftpd - IP %a" >> /var/log/tcpwrappers-allow-tftpd.log
+#DAEMON   CLIENT     OPTION
+in.tftpd: ALL: spawn /bin/echo "$(date) - Tftpd - IP %a" >> /var/log/tcpwrappers-allow-tftpd.log
 #
 # Permitindo que todas as redes acesse os serviços remotos do Servidor Bacula
-bacula-fd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-bacula-sd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-SD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-bacula-dir: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-ptispo01ws01.pti.intra-fd: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-ptispo01ws01.pti.intra-mon: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-MON - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-ptispo01ws01.pti.intra-dir: ALL: spawn /bin/echo "$(date) Conexão Liberada - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+#DAEMON   CLIENT     OPTION
+bacula-fd: ALL: spawn /bin/echo "$(date) - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+bacula-sd: ALL: spawn /bin/echo "$(date) - Bacula-SD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+bacula-dir: ALL: spawn /bin/echo "$(date) - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-fd: ALL: spawn /bin/echo "$(date) - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-mon: ALL: spawn /bin/echo "$(date) - Bacula-MON - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-dir: ALL: spawn /bin/echo "$(date) - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
 #
 # Exemplos de configuração do TCPWrappers do arquivo hosts.allow:
 # Permitindo uma Subrede ou nome de domínio FQDN
+#DAEMON   CLIENT     OPTION
 #sshd: 192.168.1. : spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
 #sshd: 192.168.1.0/255.255.255.0: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
 #sshd: 192.168.1.0/24: spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log

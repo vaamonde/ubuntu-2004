@@ -125,7 +125,7 @@ clear
 echo
 #
 echo -e "Instalação do Webmin no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Webmin.: TCP 10000"
+echo -e "Porta padrão utilizada pelo Webmin..: TCP 10000"
 echo -e "Porta padrão utilizada pelo Usermin.: TCP 20000\n"
 echo -e "Após a instalação do Webmin acessar a URL: https://$(hostname -d | cut -d' ' -f1):10000/"
 echo -e "Após a instalação do Usermin acessar a URL: https://$(hostname -d | cut -d' ' -f1):20000/\n"
