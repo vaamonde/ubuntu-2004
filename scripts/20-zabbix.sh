@@ -10,7 +10,7 @@
 # Data de atualização: 16/12/2021
 # Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Zabbix Server e Agent V5.4.x 
+# Testado e homologado para a versão do Zabbix Server e Agent v5.4.x 
 #
 # O Zabbix é uma ferramenta de software de monitoramento de código aberto para diversos 
 # componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. 
@@ -20,25 +20,33 @@
 #
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
 # Welcome to Zabbix 5.4: 
-#   Default language: English (en_US): Next step;
-# Check of pre-requisites: Next step;
+#   	Default language: English (en_US): 
+#	Next step;
+# Check of pre-requisites: 
+#	Next step;
 # Configure DB connection:
-#	Database type: MySQL
-#	Database host: localhost
-#	Database port: 0 (use default port: 3306)
-#	Database name: zabbix
-#	Store credentials in: Plain text 
-#	User: zabbix
-#	Password: zabbix: Next step;
+#		Database type: MySQL
+#		Database host: localhost
+#		Database port: 0 (use default port: 3306)
+#		Database name: zabbix
+#		Store credentials in: Plain text 
+#		User: zabbix
+#		Password: zabbix: 
+#	Next step;
 # Zabbix server details
-#	Host: localhost
-#	Port: 10051
-#	Name: ptispo01ws01: Next step;
+#		Host: localhost
+#		Port: 10051
+#		Name: ptispo01ws01
+#	Next step;
 # GUI settings
-#	Default time zone: System
-#	Default theme: Dark: NExt step;
-# Pre-installation summary: Next step.
-# Install: Finish
+#		Default time zone: System
+#		Default theme: Dark
+#	Next step;
+# Pre-installation summary
+#	Next step.
+# Install
+#	Finish
+#
 # User Default: Admin (com A maiúsculo)
 # Password Default: zabbix
 #

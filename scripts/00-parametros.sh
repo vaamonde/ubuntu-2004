@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 16/12/2021
-# Versão: 0.27
+# Data de atualização: 18/12/2021
+# Versão: 0.28
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -874,12 +874,14 @@ PORTGRAFANA="3000"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Zabbix Server utilizados nesse script
-# 01. /etc/zabbix/zabbix_server.conf = 
-# 02. /etc/zabbix/apache.conf =
-# 03. /etc/zabbix/zabbix_agentd.conf = 
+# 01. /etc/zabbix/zabbix_server.conf = arquivo de configuração do serviço do Zabbix Server
+# 02. /etc/zabbix/apache.conf = arquivo de configuração do Virtual host e PHP do Zabbix Server
+# 03. /etc/zabbix/zabbix_agentd.conf = arquivo de configuração do serviço do Zabbix Agent
 #
 # Arquivos de monitoramento (log) do Serviço do Zabbix Server utilizados nesse script
-# 01.
+# 01. tail -f /var/log/zabbix/zabbix_server.log = arquivo de Log do serviço do Zabbix Server
+# 02. tail -f /var/log/zabbix/zabbix_agentd.log = arquivo de Log do serviço do Zabbix Agent
+# 03. tail -f /var/log/syslog | grep -i zabbix = filtrando as mensagens do serviço do Zabbix
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
 #
@@ -920,10 +922,12 @@ PORTZABBIX2="10051"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Docker e do Portainer utilizados nesse script
-# 01. 
+# 01. /etc/systemd/system/portainer.service = arquivo de configuração do serviço do Portainer
 #
 # Arquivos de monitoramento (log) do Serviço do Docker e do Portainer utilizados nesse script
-# 01.
+# 01. journalctl -t docker = todas as mensagens referente ao serviço do Docker
+# 02. tail -f /var/log/syslog | grep -i docker = filtrando as mensagens do serviço do Docker
+# 02. tail -f /var/log/syslog | grep -i portainer = filtrando as mensagens do serviço do Portainer
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de container Docker e Portainer
 #
@@ -950,10 +954,12 @@ PORTPORTAINER="9000"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Ansible e Rundeck utilizados nesse script
-# 01. 
+# 01. /etc/rundeck/rundeck-config.properties = arquivo de configuração do serviço do Rundeck
 #
-# Arquivos de monitoramento (log) do Serviço do Ansible e Rundec utilizados nesse script
-# 01.
+# Arquivos de monitoramento (log) do Serviço do Ansible e Rundeck utilizados nesse script
+# 01. journalctl -t rundeckd = todas as mensagens referente ao serviço do Rundeck
+# 02. tail -f /var/log/rundeck/*.log = vários arquivos de Logs do serviço do Rundeck
+# 03. tail -f /var/log/syslog | grep -i rundeck = filtrando as mensagens do serviço do Rundeck
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de DevOps Ansible e Rundec
 #
@@ -979,10 +985,12 @@ PORTRUNDECK="4440"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema NTop-NG utilizados nesse script
-# 01. 
+# 01. /etc/ntopng/ntopng.conf = arquivo de configuração do serviço do NTop-NG
+# 02. /etc/ntopng/ntopng.start = arquivo de inicialização do serviço do NTop-NG
 #
 # Arquivos de monitoramento (log) do Serviço do NTop-NG utilizados nesse script
-# 01.
+# 01. journalctl -t ntopng = todas as mensagens referente ao serviço do NTop-NG
+# 02. tail -f /var/log/syslog | grep -i ntopng = filtrando as mensagens do serviço do NTop-NG
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento NTop-NG
 #
@@ -998,3 +1006,47 @@ NTOPNGINSTALL="ntopng ntopng-data"
 # Variável da porta de conexão padrão do NTop-NG
 PORTNTOPNG="3001"
 #
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 24-openfire.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema OpenFire utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do OpenFire utilizados nesse script
+# 01. journalctl -t 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de mensageria OpenFire
+#
+# Variável de download do instalador do OpenFire (Link atualizado no dia 18/12/2021).
+OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.6.6_all.deb"
+#
+# Variável da instalação das dependências do OpenFire
+OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-headless"
+#
+# Declarando as variáveis para criação da Base de Dados do OpenFire
+# opção do comando create: create (criação), database (base de dados), base (banco de dados), 
+# character set (conjunto de caracteres), collate (comparar)
+# opção do comando create: create (criação), user (usuário), identified by (identificado por - 
+# senha do usuário), password (senha)
+# opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas),
+# to (para), user (usuário), identified by (identificado por - senha do usuário), password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), 
+# *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), identified by (identificado 
+# por - senha do usuário), password (senha)
+# opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+DATABASE_OPENFIRE="openfire"
+CREATE_DATABASE_OPENFIRE="CREATE DATABASE openfire;"
+CREATE_USER_DATABASE_OPENFIRE="CREATE USER 'openfire' IDENTIFIED BY 'openfire';"
+GRANT_DATABASE_OPENFIRE="GRANT USAGE ON *.* TO 'openfire';"
+GRANT_ALL_DATABASE_OPENFIRE="GRANT ALL PRIVILEGES ON openfire.* TO 'openfire';"
+FLUSH_OPENFIRE="FLUSH PRIVILEGES;"
+CREATE_TABLE_OPENFIRE="/usr/share/openfire/resources/database/openfire_mysql.sql"
+#
+# Variável das dependências do laço de loop do OpenFire
+OPENFIREDEP="bind9 mysql-server mysql-common"
+#
+# Variável da porta de conexão padrão do OpenFire
+PORTOPENFIRE="9090"
+#
+

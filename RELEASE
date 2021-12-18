@@ -31,3 +31,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 17-zoneminder.sh      -v0.08		- Testado e homologado no dia 18/12/2021
 18-guacamole.sh       -v0.05		- Testado e homologado no dia 18/12/2021
 19-grafana.sh         -v0.03		- Testado e homologado no dia 18/12/2021
+20-zabbix.sh          -v0.03		- Testado e homologado no dia 18/12/2021
+21-docker.sh          -v0.02		- Testado e homologado no dia 18/12/2021
+22-ansible.sh         -v0.01		- Testado e homologado no dia 18/12/2021
+23-ntopng.sh          -v0.01		- Testado e homologado no dia 18/12/2021
+24-openfire.sh        -v0.01		- Testado e homologado no dia 18/12/2021
