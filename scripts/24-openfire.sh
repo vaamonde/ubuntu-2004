@@ -43,6 +43,9 @@
 #		URL do banco de dados: jdbc:mysql://localhost:3306/openfire?rewriteBatchedStatements=true&characterEncoding=UTF-8&characterSetResults=UTF-8&serverTimezone=UTC
 #		Nome do Usuário: openfire
 #		Senha: openfire
+#		Minimum Connections: 5
+#		Maximum Connections: 25
+#		Tempo de expiração da Conexão: 1
 #	Continuar;
 # Configurações de Perfis:
 #		Padrão
@@ -52,6 +55,9 @@
 #		Nova senha: pti@2018
 #		Confirme a senha: pti@2018
 #	Continuar;
+# Loge-se no console de administração.
+#
+# Usuário padrão: admin
 #
 # Site Oficial do OpenFire: https://www.igniterealtime.org/projects/openfire/
 #
@@ -107,12 +113,12 @@ if [ "$(nc -vz 127.0.0.1 $PORTOPENFIRE &> /dev/null ; echo $?)" == "0" ]
 		sleep 5
 fi
 #
-# Verificando se as dependências do NTop-NG estão instaladas
+# Verificando se as dependências do OpenFire estão instaladas
 # opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do NTop-NG, aguarde... "
+echo -n "Verificando as dependências do OpenFire, aguarde... "
 	for name in $OPENFIREDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
