@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 14/12/2021
-# Versão: 0.08
+# Data de atualização: 18/12/2021
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.32.x
 #
@@ -202,6 +202,12 @@ echo -e "Atualizando os arquivos de configuração do Netdata, aguarde..."
 	cp -v conf/netdata/*.conf /usr/lib/netdata/conf.d/python.d/ &>> $LOG
 	cp -v conf/netdata/apps_groups.conf /etc/netdata/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de monitoramento apache.conf, pressione <Enter> para editar"
+	read
+	vim /usr/lib/netdata/conf.d/python.d/apache.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de monitoramento mysql.conf, pressione <Enter> para editar"
