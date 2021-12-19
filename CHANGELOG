@@ -6,11 +6,13 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 15/12/2021
-Versão: 0.22
+Data de atualização: 19/12/2021
+Versão: 0.23
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+19/12/2021 - Robson Vaamonde - Correções de vários scripts e homologação dos scripts até 27-bacula, 
+
 15/12/2021 - Robson Vaamonde - Várias melhorias nos scripts em geral para facilitar os procedimentos de gravação dos
 vídeos em 2022, correções dos Bugs do Netdata, GLPI, Tomcat na Base de Dados da Agenda, e melhorias na documentação e 
 tradução dos scripts.

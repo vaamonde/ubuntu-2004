@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 18/12/2021
-# Versão: 0.28
+# Data de atualização: 19/12/2021
+# Versão: 0.29
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -678,7 +678,7 @@ LOGINSTALL="rsyslog-mysql"
 # 02. /etc/apache2/sites-available/glpi.conf = arquivo de configuração do Virtual Host do GLPI
 # 03. /etc/cron.d/glpi-cron = arquivo de configuração do agendamento do CRON do GLPI
 #
-# Arquivos de monitoramento (log) do Serviço do LogAnalyzer utilizados nesse script
+# Arquivos de monitoramento (log) do Serviço do GLPI Help Desk utilizados nesse script
 # 01. tail -f /var/log/apache2/access-glpi.log = log de acesso ao GLPI Help Desk
 # 02. tail -f /var/log/apache2/error-glpi.log = log de erro de acesso ao GLPI Help Desk
 # 03. tail -f /var/log/syslog | grep -i glpi = filtrando as mensagens do serviço do GLPI Help Desk
@@ -1011,10 +1011,12 @@ PORTNTOPNG="3001"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema OpenFire utilizados nesse script
-# 01. 
+# 01. /etc/openfire/openfire.xml = arquivo de configuração do OpenFire (gerado na configuração)
 #
 # Arquivos de monitoramento (log) do Serviço do OpenFire utilizados nesse script
-# 01. journalctl -t 
+# 01. journalctl -t openfire = todas as mensagens referente ao serviço do OpenFire
+# 02. tail -f /var/log/openfire/* = vários arquivos de Logs do serviço do OpenFire
+# 03. tail -f /var/log/syslog | grep -i openfire = filtrando as mensagens do serviço do OpenFire
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de mensageria OpenFire
 #
@@ -1049,4 +1051,47 @@ OPENFIREDEP="bind9 mysql-server mysql-common"
 # Variável da porta de conexão padrão do OpenFire
 PORTOPENFIRE="9090"
 #
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 25-owncloud.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema ownCloud utilizados nesse script
+# 01. /etc/apache2/sites-available/glpi.conf = arquivo de configuração do Virtual Host do ownCloud
+#
+# Arquivos de monitoramento (log) do Serviço do ownCloud utilizados nesse script
+# 01. tail -f /var/log/apache2/access-owncloud.log = log de acesso ao ownCloud
+# 02. tail -f /var/log/apache2/error-owncloud.log = log de erro de acesso ao ownCloud
+# 03. tail -f /var/log/syslog | grep -i owncloud = filtrando as mensagens do serviço do ownCloud
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de cloud ownCloud
+#
+# Variável de download do instalador do ownCloud (Link atualizado no dia 19/12/2021).
+OWNCLOUDINSTALL="https://download.owncloud.org/community/owncloud-complete-20210721.tar.bz2"
+#
+# Variável da instalação das dependências do ownCloud
+OWNCLOUDINSTALLDEP="software-properties-common php-cli php-common php-mbstring php-gd php-intl \
+php-xml php-mysql php-zip php-curl php-xmlrpc"
+#
+# Declarando as variáveis para criação da Base de Dados do ownCloud
+# opção do comando create: create (criação), database (base de dados), base (banco de dados), 
+# character set (conjunto de caracteres), collate (comparar)
+# opção do comando create: create (criação), user (usuário), identified by (identificado por - 
+# senha do usuário), password (senha)
+# opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas),
+# to (para), user (usuário), identified by (identificado por - senha do usuário), password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), 
+# *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), identified by (identificado 
+# por - senha do usuário), password (senha)
+# opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+CREATE_DATABASE_OWNCLOUD="CREATE DATABASE owncloud;"
+CREATE_USER_DATABASE_OWNCLOUD="CREATE USER 'owncloud' IDENTIFIED BY 'owncloud';"
+GRANT_DATABASE_OWNCLOUD="GRANT USAGE ON *.* TO 'owncloud';"
+GRANT_ALL_DATABASE_OWNCLOUD="GRANT ALL PRIVILEGES ON owncloud.* TO 'owncloud' WITH GRANT OPTION;"
+FLUSH_OWNCLOUD="FLUSH PRIVILEGES;"
+#
+# Variável das dependências do laço de loop do ownCloud
+OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
+#
+
+
 
