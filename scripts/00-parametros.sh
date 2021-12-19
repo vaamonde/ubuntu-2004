@@ -1148,7 +1148,9 @@ libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libso
 # PASSWORD('pti@2018') nova senha do usuário ocs
 # CUIDADO!!!!: essa senha será utilizada nos arquivos de configuração do OCS Inventory: dbconfig.inc.php, 
 # z-ocsinventory-server.conf e zz-ocsinventory-restapi.conf
-SETOCSINVENTORYPWD="SET PASSWORD FOR 'ocs'@'localhost' = PASSWORD('$SENHADEFAULT');"
+CREATE_USER_DATABASE_OCSINVENTORY="CREATE USER 'ocsweb' IDENTIFIED BY 'ocsweb';"
+GRANT_DATABASE_OCSINVENTORY="GRANT USAGE ON *.* TO 'ocsweb';"
+GRANT_ALL_DATABASE_OCSINVENTORY="GRANT ALL PRIVILEGES ON ocsweb.* TO 'ocsweb' WITH GRANT OPTION;"
 FLUSH_OCSINVENTORY="FLUSH PRIVILEGES;"
 #
 # Variável das dependências do laço de loop do ownCloud

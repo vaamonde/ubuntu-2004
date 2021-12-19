@@ -34,7 +34,7 @@
 # 12. Where to put Communication server plugins configuration files [/etc/ocsinventory-server/plugins]? Deixe o padrão pressione <Enter>;
 # 13. Where to put Communication server plugins Perl modules files [/etc/ocsinventory-server/perl]? Deixe o padrão pressione <Enter>;
 # 14. Do you wish to setup Rest API server on this computer ([y]/n)? y <-- digite y pressione <Enter>;
-# 15. Where do you want the API code to be store [/usr/local/share/perl/5.26.1]? Deixe o padrão pressione <Enter>;
+# 15. Where do you want the API code to be store [/usr/local/share/perl/5.30.1]? Deixe o padrão pressione <Enter>;
 # 16. Do you allow Setup renaming Communication Server Apache configuration file to 'z-ocsinventory-server.conf' ([y]/n)?: y <-- digite y pressione <Enter>;
 # 17. Do you wish to setup Administration Server (Web Administration Console) on this computer ([y]/n)?: y <-- digite y pressione <Enter>;
 # 18. Do you wish to continue ([y]/n)?: y <-- digite y pressione <Enter>;
@@ -42,22 +42,26 @@
 # 16. Where to create writable/cache directories for deployment packages administration console logs, IPDiscover and SNMP [/var/lib/ocsinventory-reports]?: Deixe o padrão pressione <Enter>;
 #
 # INFORMAÇÕES QUE SERÃO SOLICITADAS VIA WEB (NAVEGADOR) DO OCS INVENTORY SERVER E REPORTS:
-# 01. MySQL login: root (usuário padrão do MySQL)
-# 02. MySQL password: pti@2018 (senha criada no arquivo lamp.sh)
-# 03. Name of Database: ocsweb (base de dados padrão do OCS Inventory, não mudar)
-# 04. MySQL HostName: localhost (servidor local do MySQL)
-# 05. MySQL Port: 3306 (porta padrão do MySQL)
-# 06. Enable SSL: no
-# 07. SSL mode: default
-# 08. SSL key path: default
-# 09. SSL certificate path: default
-# 10. CA certificate path: default
-# 11. Perform the update
+# 	01. MySQL login: root (usuário padrão do MySQL)
+#	02. MySQL password: pti@2018 (senha criada nos arquivos 00-parametros.sh e 07-lamp.sh)
+#	03. Name of Database: ocsweb (base de dados padrão do OCS Inventory, não mudar)
+# 	04. MySQL HostName: localhost (servidor local do MySQL)
+# 	05. MySQL Port: 3306 (porta padrão do MySQL)
+# 	06. Enable SSL: NO
+# 	07. SSL mode: default
+# 	08. SSL key path: default
+# 	09. SSL certificate path: default
+# 	10. CA certificate path: default
+# <Send>
+#	11. Click here to enter OCS-NG GUI
+#	12. Perform the update
+# <Click here to enter OCS-NG GUI>
 #
 # USUÁRIO E SENHA PADRÃO DO OCS INVENTORY SERVER E REPORTS: 
-# LANGUAGE: English
-# USER: admin
-# PASSWORD: admin
+# 	LANGUAGE: English
+# 	USER: admin
+# 	PASSWORD: admin
+# <Send>
 #
 # MENSAGENS QUE SERÃO SOLICITADAS NA INSTALAÇÃO DO OCS INVENTORY AGENT:
 # 01: Please enter 'y' or 'n'?> [y] <-- pressione <Enter>
@@ -216,7 +220,7 @@ echo -e "Instalação das Dependências do OCS Inventory Server e Agent, aguarde
 echo -e "Instalação das dependências feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação das Dependências do PHP  OCS Inventory Server, aguarde..."
+echo -e "Instalação das Dependências do PHP do OCS Inventory Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y install $OCSINVENTORYINSTALLPHP &>> $LOG
@@ -374,7 +378,6 @@ echo -e "Configurando as opções do OCS Inventory Server e Reports no Apache2, 
 	# opção do comando chown: -R (recursive), -v (verbose), www-data (user), www-data (group)
 	# opção do comando cp: -v (verbose)
 	# opção do comando cd: .. (retorne to root folder)
-	a2dissite 000-default &>> $LOG
 	a2enconf ocsinventory-reports &>> $LOG
 	a2enconf z-ocsinventory-server &>> $LOG
 	chmod -Rv 775 /var/lib/ocsinventory-reports/ &>> $LOG
@@ -390,12 +393,14 @@ echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LI
 read
 sleep 5
 #
-echo -e "Alterando a senha do usuário OCS no MySQL, aguarde..."
+echo -e "Criando o usuário no MySQL do OCS Inventory Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$SETOCSINVENTORYPWD" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_OCSINVENTORY" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_OCSINVENTORY" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_OCSINVENTORY" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_OCSINVENTORY" mysql &>> $LOG
-echo -e "Senha alterada com sucesso!!!, continuando com o script...\n"
+echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Removendo o arquivo install.php do OCS Inventory Reports, aguarde..."
@@ -413,7 +418,7 @@ echo -e "Atualizando os arquivos de configuração do OCS Inventory Server e Rep
 	mv -v /etc/apache2/conf-available/zz-ocsinventory-restapi.conf /etc/apache2/conf-available/zz-ocsinventory-restapi.conf.old &>> $LOG
 	mv -v /etc/apache2/conf-available/ocsinventory-reports.conf /etc/apache2/conf-available/ocsinventory-reports.conf.old &>> $LOG
 	mv -v /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php.old &>> $LOG
-	cp -v conf/ocsinvetory/dbconfig.inc.php /usr/share/ocsinventory-reports/ocsreports/ &>> $LOG
+	cp -v conf/ocsinventory/dbconfig.inc.php /usr/share/ocsinventory-reports/ocsreports/ &>> $LOG
 	cp -v conf/ocsinventory/{ocsinventory-reports.conf,zz-ocsinventory-restapi.conf,z-ocsinventory-server.conf} /etc/apache2/conf-available/ &>> $LOG
 	cp -v conf/ocsinventory/ocsinventory-server /etc/logrotate.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
@@ -453,15 +458,15 @@ echo -e "Editando o arquivo de configuração ocsinventory-server, pressione <En
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://$(hostname -I | cut -d' ' -f1)/ocsreports"
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://$(hostname -d | cut -d' ' -f1)/ocsreports"
 echo -e "PARA CONFIRMAR AS ATUALIZAÇÕES VIA WEB DO OCS INVENTORY SERVER E REPORTS, APÓS A CONFIRMAÇÃO"
-echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 62 DO SCRIPT $0"
+echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 66 DO SCRIPT $0"
 read
 sleep 5
 #
 echo -e "Instalando o OCS Inventory Agent, pressione <Enter> para instalar.\n"
 echo -e "CUIDADO!!! com as opções que serão solicitadas no decorrer da instalação do OCS Inventory Agent."
-echo -e "Veja a documentação das opções de instalação a partir da linha: 62 do arquivo $0"
+echo -e "Veja a documentação das opções de instalação a partir da linha: 66 do arquivo $0"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando cd: .. (retorne to root folder)
@@ -483,7 +488,7 @@ echo -e "Atualizando os arquivos de configuração do OCS Inventory Agent, aguar
 	mv -v /etc/ocsinventory-agent/ocsinventory-agent.cfg /etc/ocsinventory-agent/ocsinventory-agent.cfg.old &>> $LOG
 	mv -v /etc/ocsinventory-agent/modules.conf /etc/ocsinventory-agent/modules.conf.old &>> $LOG
 	cp -v conf/ocsinventory/{ocsinventory-agent.cfg,modules.conf} /etc/ocsinventory-agent/ &>> $LOG
-	cp -v conf/ocsinventory-agent /etc/cron.d/ &>> $LOG
+	cp -v conf/ocsinventory/ocsinventory-agent /etc/cron.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -27,10 +27,10 @@ define("SERVER_WRITE","localhost");
 define("SERVER_PORT","3306");
 //
 // Nome do Usuário de autenticação na Base de Dados do OCS Inventory Server
-define("COMPTE_BASE","ocs");
+define("COMPTE_BASE","ocsweb");
 //
 // Senha do Usuário de autenticação na Base de Dados do OCS Inventory Server
-define("PSWD_BASE","pti@2018");
+define("PSWD_BASE","ocsweb");
 //
 // Configurações do Suporte ao SSL HTTPS do OCS Inventory Server (desativado)
 define("ENABLE_SSL","0");
