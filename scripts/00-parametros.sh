@@ -1118,8 +1118,8 @@ OCSINVENTORYAGENTNVIDIA=$(lshw -class display | grep NVIDIA | cut -d':' -f2 | cu
 # Variável da instalação das dependências do OCS Inventory Server
 OCSINVENTORYINSTALLDEP="gcc make autoconf autogen automake pkg-config uuid-dev net-tools pciutils \
 smartmontools read-edid nmap ipmitool dmidecode samba samba-common samba-testsuite snmp \
-snmp-mibs-downloader snmpd unzip hwdata perl-modules python-dev python3-dev python-pip \
-apache2-dev mysql-client python-pymssql python-mysqldb"
+snmp-mibs-downloader snmpd unzip hwdata perl-modules python-dev python3-dev python3-pip \
+apache2-dev mysql-client python3-pymssql python3-mysqldb"
 #
 # Variável de instalação das dependências do PHP do OCS Inventory Server
 OCSINVENTORYINSTALLPHP="php-snmp php-mysql php-dev php-soap php-apcu php-xmlrpc php-zip php-gd \
