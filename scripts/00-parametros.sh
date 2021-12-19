@@ -1097,10 +1097,18 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema OCS Inventory utilizados nesse script
-# 01. 
+# 01. /etc/apache2/conf-available/z-ocsinventory-server.conf = arquivo do virtual host do OCS Inventory
+# 02. /etc/apache2/conf-available/zz-ocsinventory-restapi.conf = arquivo do RestAPI do OCS Inventory
+# 03. /etc/apache2/conf-available/ocsinventory-reports.conf = arquivo do Reports do OCS Inventory
+# 04. /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php = arquivo do Database do OCS Inventory
+# 05. /etc/ocsinventory-agent/ocsinventory-agent.cfg = arquivo de configuração do OCS Inventory Agent
+# 06. /etc/ocsinventory-agent/modules.conf = arquivo de configuração dos módulos do OCS Inventory Agent
+# 07. /etc/cron.d/ocsinventory-agent = arquivo de configuração do CRON do OCS Inventory Agent
 #
 # Arquivos de monitoramento (log) do Serviço do OCS Inventory utilizados nesse script
-# 01. 
+# 01. /var/log/ocs_server_setup.log = arquivo de log da instalação do OCS Inventory
+# 01. /var/log/ocsinventory-server/activity.log = arquivo de log do Servidor OCS Inventory
+# 02. /var/log/ocsinventory-agent/ocsagent.logo = arquivo de log do Agent OCS Inventory
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário OCS Inventory
 #
@@ -1156,6 +1164,3 @@ FLUSH_OCSINVENTORY="FLUSH PRIVILEGES;"
 # Variável das dependências do laço de loop do ownCloud
 OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #
-
-
-
