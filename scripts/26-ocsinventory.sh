@@ -4,12 +4,13 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 04/05/2021
-# Data de atualização: 10/05/2021
-# Versão: 0.05
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do OCS Inventory Server 2.9, Agent 2.8.1
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 25/11/2021
+# Data de atualização: 19/12/2021
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do OCS Inventory Server v2.9.x e Agent 2.9.x
 #
 # O OCS Inventory (Open Computer and Software Inventory Next Generation) é um software livre que permite 
 # aos usuários inventariar ativos de TI. O OCS-NG coleta informações sobre o hardware e o software das 
@@ -83,88 +84,50 @@
 # Site Oficial do Projeto: https://ocsinventory-ng.org/
 # Projeto no Github: https://github.com/OCSInventory-NG
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de configuração do OpenSSH no GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=ecuol8Uf1EE&t
-# Vídeo de instalação do LAMP Server: https://www.youtube.com/watch?v=6EFUu-I3u4s&t
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário e "root", versão do ubuntu e kernel
-# opções do comando id: -u (user)
-# opções do comando: lsb_release: -r (release), -s (short), 
-# opões do comando uname: -r (kernel release)
-# opções do comando cut: -d (delimiter), -f (fields)
-# opção do shell script: piper | = Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Declarando as variáveis de download do OCS Inventory (Links atualizados no dia 07/05/2021)
-#
-# Variáveis de configuração do usuário root e senha do MySQL para acesso via console e do PhpMyAdmin
-# Observação: essa senha será utilizada no usuário: ocs do Banco de Dados do OCS Inventory
-USER="root"
-PASSWORD="pti@2018"
-#
-# Variável de download do OCS Inventory Server e Reports
-# Site: https://www.ocsinventory-ng.org/en/
-# Github: https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases
-OCSSERVER="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.9/OCSNG_UNIX_SERVER-2.9.tar.gz"
-#
-# Variável de download do OCS Inventory Agent
-# Site: https://www.ocsinventory-ng.org/en/
-# Github: https://github.com/OCSInventory-NG/UnixAgent/releases
-OCSAGENT="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.8.1/Ocsinventory-Unix-Agent-2.8.1.tar.gz"
-#
-# Variável de verificação do Chip Gráfico da NVIDIA
-# opção do comando lshw: -class display (lista as informações da placa de vídeo)
-# opção do comando grep: NVIDIA (filtra as linhas que contém a palavra NVIDIA) 
-# opção do comando cut: -d':' (delimitador) -f2 (mostrar segunda coluna)
-NVIDIA=`lshw -class display | grep NVIDIA | cut -d':' -f2 | cut -d' ' -f2`
-#
-# Variáveis de alteração de senha do OCS Inventory Reports no Banco de Dados do MySQL
-# 'ocs'@'localhost' usuário de administração do banco de dados do OCS Inventory
-# PASSWORD('pti@2018') nova senha do usuário ocs
-# CUIDADO!!!!: essa senha será utilizada nos arquivos de configuração do OCS Inventory: dbconfig.inc.php, 
-# z-ocsinventory-server.conf e zz-ocsinventory-restapi.conf
-SETOCSPWD="SET PASSWORD FOR 'ocs'@'localhost' = PASSWORD('$PASSWORD');"
-FLUSH="FLUSH PRIVILEGES;"
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
 #
-# Verificando se as dependências do OCS Inventory estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
-# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
-# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do OCS Inventory, aguarde... "
-	for name in mysql-server mysql-common apache2 php
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
+# Verificando se as dependências do OCS Inventory Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do OCS Inventory Server, aguarde... "
+	for name in $OCSINVENTORYDDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -173,21 +136,37 @@ echo -n "Verificando as dependências do OCS Inventory, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: lamp.sh para resolver as dependências."
+            echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
 #
-# Script de instalação do OCS Inventory no GNU/Linux Ubuntu Server 18.04.x
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
+# Script de instalação do OCS Inventory no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
-echo -e "Instalação do OCS Inventory no GNU/Linux Ubuntu Server 18.04.x\n"
-echo -e "Após a instalação do OCS Inventory acesse a URL: http://`hostname -I | cut -d' ' -f1`/ocsreports\n"
+echo -e "Instalação do OCS Inventory no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Após a instalação do OCS Inventory acesse a URL: http://$(hostname -d | cut -d' ' -f1)/ocsreports\n"
 echo -e "Usuário padrão após a instalação do OCS Inventory Reports: admin | Senha padrão: admin\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -210,61 +189,45 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema operacional, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo software desnecessários, aguarde..."
+echo -e "Removendo todos os software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando as Dependências do OCS Inventory, PHP e Perl, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do OCS Inventory Server e Agent, aguarde...\n"
+sleep 5
 #
 echo -e "Instalação das Dependências do OCS Inventory Server e Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install gcc make autoconf autogen automake pkg-config uuid-dev net-tools pciutils \
-	smartmontools read-edid nmap ipmitool dmidecode samba samba-common samba-testsuite snmp \
-	snmp-mibs-downloader snmpd unzip hwdata perl-modules python-dev python3-dev python-pip \
-	apache2-dev mysql-client python-pymssql python-mysqldb &>> $LOG
-echo -e "Instalação das Dependências feito com sucesso!!!, continuando com o script...\n"
+	apt -y install $OCSINVENTORYINSTALLDEP &>> $LOG
+echo -e "Instalação das dependências feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação das Dependências do PHP, aguarde..."
+echo -e "Instalação das Dependências do PHP  OCS Inventory Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install php-snmp php-mysql php-dev php-soap php-apcu php-xmlrpc php-zip php-gd \
-	php-mysql php-pclzip php-json php-mbstring php-curl php-imap php-ldap zlib1g-dev php-cas \
-	php-curl &>> $LOG
-echo -e "Instalação das Dependências feito com sucesso!!!, continuando com o script...\n"
+	apt -y install $OCSINVENTORYINSTALLPHP &>> $LOG
+echo -e "Instalação das dependências feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação das Dependências do PERL, aguarde..."
+echo -e "Instalação das Dependências do PERL do OCS Inventory Server e Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install libc6-dev libcompress-raw-zlib-perl libwww-perl libdigest-md5-file-perl \
-	libnet-ssleay-perl libcrypt-ssleay-perl libnet-snmp-perl libproc-pid-file-perl libproc-daemon-perl \
-	libarchive-zip-perl libnet-cups-perl libmysqlclient-dev libapache2-mod-perl2 \
-	libapache2-mod-php libnet-netmask-perl libio-compress-perl libxml-simple-perl libdbi-perl \
-	libdbd-mysql-perl libapache-dbi-perl libsoap-lite-perl libnet-ip-perl libmodule-build-perl \
-	libmodule-install-perl libfile-which-perl libfile-copy-recursive-perl libuniversal-require-perl \
-	libtest-http-server-simple-perl libhttp-server-simple-authen-perl libhttp-proxy-perl libio-capture-perl \
-	libipc-run-perl libnet-telnet-cisco-perl libtest-compile-perl libtest-deep-perl libtest-exception-perl \
-	libtest-mockmodule-perl libtest-mockobject-perl libtest-nowarnings-perl libxml-treepp-perl \
-	libparallel-forkmanager-perl libparse-edid-perl libdigest-sha-perl libtext-template-perl \
-	libsocket-getaddrinfo-perl libcrypt-des-perl libnet-nbname-perl libyaml-perl libyaml-shell-perl \
-	libyaml-libyaml-perl libdata-structure-util-perl liblwp-useragent-determined-perl libio-socket-ssl-perl \
-	libdatetime-perl libthread-queue-any-perl libnet-write-perl libarchive-extract-perl libjson-pp-perl \
-	liburi-escape-xs-perl liblwp-protocol-https-perl libnmap-parser-perl \
-	libmojolicious-perl libswitch-perl libplack-perl liblwp-useragent-determined-perl \
-	libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libsoap-lite-perl &>> $LOG
-echo -e "Instalação das Dependências feito com sucesso!!!, continuando com o script...\n"
+	apt -y install $OCSINVENTORYINSTALLPERL &>> $LOG
+echo -e "Instalação das dependências feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação das dependências do Perl XML::Entities via CPAN, aguarde..."
@@ -312,7 +275,7 @@ echo -e "Instalação das dependências do Perl nvidia::ml via CPAN, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando perl: -e (single line command)
 	# opção do comando if: [ ] = testa uma expressão, == comparação de string 
-	if [ "$NVIDIA" == "NVIDIA" ]; then
+	if [ "$OCSINVENTORYAGENTNVIDIA" == "NVIDIA" ]; then
 		echo -e "Você tem o Chip Gráfico da NVIDIA, instalando o Módulo Perl, aguarde..."
 			perl -MCPAN -e 'install nvidia::ml' &>> $LOG
 		echo -e "Instalação concluída com sucesso!!!, continuando com o script...\n"
@@ -372,17 +335,15 @@ echo -e "Instalação das dependências do Perl Sys::Syslog via CPAN, aguarde...
 echo -e "Instalação concluída com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Download do OCS Inventory Server e Agent, aguarde...\n"
-#
 echo -e "Fazendo o download do OCS Inventory Server e Report, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
 	# opção do comando: tar z (gzip), x (extract), v (verbose) e f (file)
 	rm -v ocsserver.tar.gz &>> $LOG
-	wget $OCSSERVER -O ocsserver.tar.gz &>> $LOG
+	wget $OCSINVENTORYSERVERINSTALL -O ocsserver.tar.gz &>> $LOG
 	tar -zxvf ocsserver.tar.gz &>> $LOG
-echo -e "Download do OCS Inventory Server e Report feito com sucesso!!!, continuando com o script...\n"
+echo -e "Download feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Fazendo o download do OCS Inventory Agent, aguarde..."
@@ -391,19 +352,19 @@ echo -e "Fazendo o download do OCS Inventory Agent, aguarde..."
 	# opção do comando wget: -O (output document file)
 	# opção do comando: tar z (gzip), x (extract), v (verbose) e f (file)
 	rm -v ocsagent.tar.gz &>> $LOG
-	wget $OCSAGENT -O ocsagent.tar.gz &>> $LOG
+	wget $OCSINVENTORYAGENTINSTALL -O ocsagent.tar.gz &>> $LOG
 	tar -zxvf ocsagent.tar.gz &>> $LOG
-echo -e "Download do OCS Inventory Agent feito com sucesso!!!, continuando com o script...\n"
+echo -e "Download feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o OCS Inventory Server e Reports, pressione <Enter> para instalar."
+echo -e "Instalando o OCS Inventory Server e Reports, pressione <Enter> para continuar.\n"
 echo -e "CUIDADO!!! com as opções que serão solicitadas no decorrer da instalação do OCS Inventory Server."
-echo -e "Veja a documentação das opções de instalação a partir da linha: 21 do arquivo $0"
+echo -e "Veja a documentação das opções de instalação a partir da linha: 22 do script $0"
+	# opção do comando cd: .. (retorne to root folder)
 	read
-	sleep 2
 	cd OCSNG_UNIX_SERVER-*
-	./setup.sh
-echo
+		./setup.sh
+	cd ..
 echo -e "Instalação do OCS Inventory Server e Reports feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -418,30 +379,29 @@ echo -e "Configurando as opções do OCS Inventory Server e Reports no Apache2, 
 	a2enconf z-ocsinventory-server &>> $LOG
 	chmod -Rv 775 /var/lib/ocsinventory-reports/ &>> $LOG
 	chown -Rv www-data.www-data /var/lib/ocsinventory-reports/ &>> $LOG
-	cp -v *.log /var/log/ &>> $LOG
+	cp -v OCSNG_UNIX_SERVER-*/*.log /var/log/ &>> $LOG
 	systemctl restart apache2 &>> $LOG
-	cd ..
 echo -e "Configurações do OCS Inventory Server e Reports feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://`hostname -I | cut -d' ' -f1`/ocsreports"
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://$(hostname -d | cut -d' ' -f1)/ocsreports"
 echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO OCS INVENTORY SERVER E REPORTS, APÓS A CONFIGURAÇÃO"
-echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 56 DO SCRIPT $0"
+echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 44 DO SCRIPT $0"
 read
 sleep 5
 #
 echo -e "Alterando a senha do usuário OCS no MySQL, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
-	mysql -u $USER -p$PASSWORD -e "$SETOCSPWD" mysql &>> $LOG
-	mysql -u $USER -p$PASSWORD -e "$FLUSH" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$SETOCSINVENTORYPWD" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_OCSINVENTORY" mysql &>> $LOG
 echo -e "Senha alterada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Removendo o arquivo install.php do OCS Inventory Reports, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
-	mv -v /usr/share/ocsinventory-reports/ocsreports/install.php /usr/share/ocsinventory-reports/ocsreports/install.php.bkp &>> $LOG
+	mv -v /usr/share/ocsinventory-reports/ocsreports/install.php /usr/share/ocsinventory-reports/ocsreports/install.php.old &>> $LOG
 echo -e "Arquivo removido com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -449,75 +409,70 @@ echo -e "Atualizando os arquivos de configuração do OCS Inventory Server e Rep
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v /etc/apache2/conf-available/z-ocsinventory-server.conf /etc/apache2/conf-available/z-ocsinventory-server.conf.bkp &>> $LOG
-	cp -v conf/z-ocsinventory-server.conf /etc/apache2/conf-available/ &>> $LOG
-	mv -v /etc/apache2/conf-available/zz-ocsinventory-restapi.conf /etc/apache2/conf-available/zz-ocsinventory-restapi.conf.bkp &>> $LOG
-	cp -v conf/zz-ocsinventory-restapi.conf /etc/apache2/conf-available/ &>> $LOG
-	mv -v /etc/apache2/conf-available/ocsinventory-reports.conf /etc/apache2/conf-available/ocsinventory-reports.conf.bkp &>> $LOG
-	cp -v conf/ocsinventory-reports.conf /etc/apache2/conf-available/ &>> $LOG
-	mv -v /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php.bkp &>> $LOG
-	cp -v conf/dbconfig.inc.php /usr/share/ocsinventory-reports/ocsreports/ &>> $LOG
-	mv -v /etc/logrotate.d/ocsinventory-server /etc/logrotate.d/ocsinventory-server.bkp &>> $LOG
-	cp -v conf/ocsinventory-server /etc/logrotate.d/ocsinventory-server &>> $LOG
+	mv -v /etc/apache2/conf-available/z-ocsinventory-server.conf /etc/apache2/conf-available/z-ocsinventory-server.conf.old &>> $LOG
+	mv -v /etc/apache2/conf-available/zz-ocsinventory-restapi.conf /etc/apache2/conf-available/zz-ocsinventory-restapi.conf.old &>> $LOG
+	mv -v /etc/apache2/conf-available/ocsinventory-reports.conf /etc/apache2/conf-available/ocsinventory-reports.conf.old &>> $LOG
+	mv -v /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php.old &>> $LOG
+	cp -v conf/ocsinvetory/dbconfig.inc.php /usr/share/ocsinventory-reports/ocsreports/ &>> $LOG
+	cp -v conf/ocsinventory/{ocsinventory-reports.conf,zz-ocsinventory-restapi.conf,z-ocsinventory-server.conf} /etc/apache2/conf-available/ &>> $LOG
+	cp -v conf/ocsinventory/ocsinventory-server /etc/logrotate.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando os arquivos de configuração do OCS Inventory Server e Reports, aguarde...\n"
-sleep 5
-#
-echo -e "Editando o arquivo: z-ocsinventory-server.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração z-ocsinventory-server.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/apache2/conf-available/z-ocsinventory-server.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo: zz-ocsinventory-restapi.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração zz-ocsinventory-restapi.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/apache2/conf-available/zz-ocsinventory-restapi.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo: ocsinventory-reports.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração ocsinventory-reports.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/apache2/conf-available/ocsinventory-reports.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo: dbconfig.inc.php, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração dbconfig.inc.php, pressione <Enter> para continuar."
 	read
 	vim /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo: ocsinventory-server, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração ocsinventory-server, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando logrotate: -d (debug)
 	read
 	vim /etc/logrotate.d/ocsinventory-server
+	logrotate /etc/logrotate.d/ocsinventory-server -d &>> $LOG
 	systemctl restart apache2 &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://`hostname -I | cut -d' ' -f1`/ocsreports"
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://$(hostname -I | cut -d' ' -f1)/ocsreports"
 echo -e "PARA CONFIRMAR AS ATUALIZAÇÕES VIA WEB DO OCS INVENTORY SERVER E REPORTS, APÓS A CONFIRMAÇÃO"
-echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 56 DO SCRIPT $0"
+echo -e "PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT. MAIS INFORMAÇÕES NA LINHA 62 DO SCRIPT $0"
 read
 sleep 5
 #
-echo -e "Instalando o OCS Inventory Agent, pressione <Enter> para instalar."
+echo -e "Instalando o OCS Inventory Agent, pressione <Enter> para instalar.\n"
 echo -e "CUIDADO!!! com as opções que serão solicitadas no decorrer da instalação do OCS Inventory Agent."
-echo -e "Veja a documentação das opções de instalação a partir da linha: 61 do arquivo $0"
+echo -e "Veja a documentação das opções de instalação a partir da linha: 62 do arquivo $0"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando cd: .. (retorne to root folder)
 	read
-	sleep 2
 	mkdir -v /var/log/ocsinventory-agent/ &>> $LOG
 	touch /var/log/ocsinventory-agent/ocsagent.log &>> $LOG
 	cd Ocsinventory-Unix-Agent-*
-	perl Makefile.PL &>> $LOG
-	make &>> $LOG
-	make install
+		perl Makefile.PL &>> $LOG
+		make &>> $LOG
+		make install
 	cd ..
-echo
 echo -e "Instalação do OCS Inventory Agent feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -525,42 +480,38 @@ echo -e "Atualizando os arquivos de configuração do OCS Inventory Agent, aguar
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v /etc/ocsinventory-agent/ocsinventory-agent.cfg /etc/ocsinventory-agent/ocsinventory-agent.cfg.bkp &>> $LOG
-	cp -v conf/ocsinventory-agent.cfg /etc/ocsinventory-agent/ &>> $LOG
-	mv -v /etc/ocsinventory-agent/modules.conf /etc/ocsinventory-agent/modules.conf.bkp &>> $LOG
-	cp -v conf/modules.conf /etc/ocsinventory-agent/ &>> $LOG
-	cp -v conf/ocsinventory-agent /etc/cron.d/ocsinventory-agent &>> $LOG
+	mv -v /etc/ocsinventory-agent/ocsinventory-agent.cfg /etc/ocsinventory-agent/ocsinventory-agent.cfg.old &>> $LOG
+	mv -v /etc/ocsinventory-agent/modules.conf /etc/ocsinventory-agent/modules.conf.old &>> $LOG
+	cp -v conf/ocsinventory/{ocsinventory-agent.cfg,modules.conf} /etc/ocsinventory-agent/ &>> $LOG
+	cp -v conf/ocsinventory-agent /etc/cron.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando os arquivos de configuração do OCS Inventory Agent, aguarde...\n"
-sleep 5
-#
-echo -e "Editando o arquivo: ocsinventory-agent.cfg, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração ocsinventory-agent.cfg, pressione <Enter> para continuar."
 	read
 	vim /etc/ocsinventory-agent/ocsinventory-agent.cfg
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo: modules.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração modules.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/ocsinventory-agent/modules.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo: ocsinventory-agent, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração ocsinventory-agent, pressione <Enter> para continuar."
 	read
 	vim /etc/cron.d/ocsinventory-agent
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Forçando o inventário do OCS Inventory Agent com as novas configurações, aguarde..."
+echo -e "Forçando o primeiro inventário do OCS Inventory Agent com as novas configurações, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	ocsinventory-agent --debug --info &>> $LOG
 echo -e "Inventário do OCS Inventory Agent feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação do OCS Inventory Server, Reports e Agent feita com Sucesso!!!."
+echo -e "Instalação do OCS Inventory Server e Agent feita com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
@@ -573,6 +524,6 @@ echo -e "Instalação do OCS Inventory Server, Reports e Agent feita com Sucesso
 	echo -e "Tempo gasto para execução do script $0: $TEMPO"
 echo -e "Pressione <Enter> para concluir o processo."
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
 exit 1

@@ -1056,12 +1056,12 @@ PORTOPENFIRE="9090"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema ownCloud utilizados nesse script
-# 01. /etc/apache2/sites-available/glpi.conf = arquivo de configuração do Virtual Host do ownCloud
+# 01. /var/www/html/own/config/config.php = arquivo de configuração do ownCloud (gerado na instalação)
+# 02. /etc/apache2/sites-available/owncloud.conf = arquivo de configuração do Virtual Host do ownCloud
 #
 # Arquivos de monitoramento (log) do Serviço do ownCloud utilizados nesse script
 # 01. tail -f /var/log/apache2/access-owncloud.log = log de acesso ao ownCloud
 # 02. tail -f /var/log/apache2/error-owncloud.log = log de erro de acesso ao ownCloud
-# 03. tail -f /var/log/syslog | grep -i owncloud = filtrando as mensagens do serviço do ownCloud
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud ownCloud
 #
@@ -1091,6 +1091,68 @@ FLUSH_OWNCLOUD="FLUSH PRIVILEGES;"
 #
 # Variável das dependências do laço de loop do ownCloud
 OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
+#
+#=============================================================================================
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 26-ocsinventory.sh                    #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema OCS Inventory utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do OCS Inventory utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de inventário OCS Inventory
+#
+# Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 19/12/2021).
+OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.9.2/OCSNG_UNIX_SERVER-2.9.2.tar.gz"
+#
+# Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 19/12/2021).
+OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.9.0/Ocsinventory-Unix-Agent-2.9.0.tar.gz"
+#
+# Variável de verificação do Chip Gráfico da NVIDIA
+# opção do comando lshw: -class display (lista as informações da placa de vídeo)
+# opção do comando cut: -d':' (delimitador) -f2 (mostrar segunda coluna)
+OCSINVENTORYAGENTNVIDIA=$(lshw -class display | grep NVIDIA | cut -d':' -f2 | cut -d' ' -f2)
+#
+# Variável da instalação das dependências do OCS Inventory Server
+OCSINVENTORYINSTALLDEP="gcc make autoconf autogen automake pkg-config uuid-dev net-tools pciutils \
+smartmontools read-edid nmap ipmitool dmidecode samba samba-common samba-testsuite snmp \
+snmp-mibs-downloader snmpd unzip hwdata perl-modules python-dev python3-dev python-pip \
+apache2-dev mysql-client python-pymssql python-mysqldb"
+#
+# Variável de instalação das dependências do PHP do OCS Inventory Server
+OCSINVENTORYINSTALLPHP="php-snmp php-mysql php-dev php-soap php-apcu php-xmlrpc php-zip php-gd \
+php-mysql php-pclzip php-json php-mbstring php-curl php-imap php-ldap zlib1g-dev php-cas php-curl"
+#
+# Variável de instalação das dependências do Perl do OCS Inventory Server
+OCSINVENTORYINSTALLPERL="libc6-dev libcompress-raw-zlib-perl libwww-perl libdigest-md5-file-perl \
+libnet-ssleay-perl libcrypt-ssleay-perl libnet-snmp-perl libproc-pid-file-perl libproc-daemon-perl \
+libarchive-zip-perl libnet-cups-perl libmysqlclient-dev libapache2-mod-perl2 \
+libapache2-mod-php libnet-netmask-perl libio-compress-perl libxml-simple-perl libdbi-perl \
+libdbd-mysql-perl libapache-dbi-perl libsoap-lite-perl libnet-ip-perl libmodule-build-perl \
+libmodule-install-perl libfile-which-perl libfile-copy-recursive-perl libuniversal-require-perl \
+libtest-http-server-simple-perl libhttp-server-simple-authen-perl libhttp-proxy-perl libio-capture-perl \
+libipc-run-perl libnet-telnet-cisco-perl libtest-compile-perl libtest-deep-perl libtest-exception-perl \
+libtest-mockmodule-perl libtest-mockobject-perl libtest-nowarnings-perl libxml-treepp-perl \
+libparallel-forkmanager-perl libparse-edid-perl libdigest-sha-perl libtext-template-perl \
+libsocket-getaddrinfo-perl libcrypt-des-perl libnet-nbname-perl libyaml-perl libyaml-shell-perl \
+libyaml-libyaml-perl libdata-structure-util-perl liblwp-useragent-determined-perl libio-socket-ssl-perl \
+libdatetime-perl libthread-queue-any-perl libnet-write-perl libarchive-extract-perl libjson-pp-perl \
+liburi-escape-xs-perl liblwp-protocol-https-perl libnmap-parser-perl \
+libmojolicious-perl libswitch-perl libplack-perl liblwp-useragent-determined-perl \
+libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libsoap-lite-perl"
+#
+# Variável de alteração de senha do OCS Inventory Reports no Banco de Dados do MySQL
+# 'ocs'@'localhost' usuário de administração do banco de dados do OCS Inventory
+# PASSWORD('pti@2018') nova senha do usuário ocs
+# CUIDADO!!!!: essa senha será utilizada nos arquivos de configuração do OCS Inventory: dbconfig.inc.php, 
+# z-ocsinventory-server.conf e zz-ocsinventory-restapi.conf
+SETOCSINVENTORYPWD="SET PASSWORD FOR 'ocs'@'localhost' = PASSWORD('$SENHADEFAULT');"
+FLUSH_OCSINVENTORY="FLUSH PRIVILEGES;"
+#
+# Variável das dependências do laço de loop do ownCloud
+OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 
 

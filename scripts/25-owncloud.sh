@@ -196,6 +196,7 @@ echo -e "Movendo o diretório do ownCloud para o Apache2, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
 	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)
+	mv -v owncloud/ /var/www/html/own/ &>> $LOG
 	chown -Rv www-data:www-data /var/www/html/own/ &>> $LOG
 	chmod -Rv 755 /var/www/html/own/ &>> $LOG
 echo -e "Diretório movido com sucesso!!!, continuando com o script...\n"
