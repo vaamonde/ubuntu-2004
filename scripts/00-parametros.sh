@@ -1192,5 +1192,5 @@ BACULUMWEBINSTALL="baculum-web baculum-web-apache2"
 BACULUMAPIINSTALL="baculum-common baculum-api-apache2"
 #
 # Variável das dependências do laço de loop do ownCloud
-BACULUMDEP="bind9 mysql-server mysql-common apache2 php python apt-transport-https"
+BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-transport-https"
 #
