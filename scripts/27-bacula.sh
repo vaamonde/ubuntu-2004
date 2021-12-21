@@ -27,9 +27,10 @@
 # Informações que serão solicitadas na configuração via Web do Baculum WEB/API
 # Endereço padrão do Baculum WEB: http://localhost:9095
 # Endereço padrão do Baculum API: http://localhost:9096
-# Usuário padrão: admin - Senha padrão: admin
+
 #
 # PRIMEIRA ETAPA: CONFIGURAR O BACULUM API: http://localhost:9096
+# Usuário padrão: admin - Senha padrão: admin
 # 01. Step 1 - select language
 #	Language: English 
 #	<Next>
@@ -81,7 +82,7 @@
 # 06. @@Step 7 - Finish@@
 #	<save>
 #
-# SEGUNDA ETAPA: CONFIGURAR O BACULUM WEB: http://localhost:9096
+# SEGUNDA ETAPA: CONFIGURAR O BACULUM WEB: http://localhost:9095
 # 01. Step 1 - select language
 #	Language: English 
 #	<Next>
@@ -149,7 +150,7 @@ fi
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
+echo -n "Verificando as dependências do Bacula Server e do Baculum WEB/API, aguarde... "
 	for name in $BACULUMDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
@@ -191,7 +192,7 @@ echo -e "Instalação do Bacula Server e do Baculum WEB/API GNU/Linux Ubuntu Ser
 echo -e "Portas padrão utilizadas pelo Bacula Server.: TCP 9101, 9102 e 9103"
 echo -e "Portas padrão utilizadas pelo Baculum WEB/API.: TCP 9095 e 9096\n"
 echo -e "Após a instalação do Baculum WEB acessar a URL: http://$(hostname -d | cut -d' ' -f1):9095"
-echo -e "Após a instalação do Baculum API acessar a URL: http://$(hostname -I | cut -d' ' -f1):9096\n"
+echo -e "Após a instalação do Baculum API acessar a URL: http://$(hostname -d | cut -d' ' -f1):9096\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -303,7 +304,7 @@ sleep 5
 echo -e "Atualizando o arquivo baculum.api do Sudoers, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/baculum/baculum-api /etc/sudoers.d/ &>> $LOG
+	cp -v conf/bacula/baculum-api /etc/sudoers.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
