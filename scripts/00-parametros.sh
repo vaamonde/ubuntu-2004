@@ -1164,3 +1164,33 @@ FLUSH_OCSINVENTORY="FLUSH PRIVILEGES;"
 # Variável das dependências do laço de loop do ownCloud
 OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #
+#=============================================================================================
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 27-bacula.sh                       #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Bacula Server e Baculum utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do Bacula Server e Baculum utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de backup Bacula e Baculum
+#
+# Variável de download da chave de autenticação do repositório do Bacula Server
+BACULAKEY="https://www.bacula.org/downloads/Bacula-4096-Distribution-Verification-key.asc"
+#
+# Variável de download da chave de autenticação do repositório do Baculum WEP/API
+BACULUMKEY="http://bacula.org/downloads/baculum/baculum.pub"
+#
+# Variável de instalação do Bacula Server
+BACULAINSTALL="bacula-client bacula-common bacula-mysql bacula-console"
+#
+# Variável de instalação do Baculum WEB
+BACULUMWEBINSTALL="baculum-web baculum-web-apache2"
+#
+# Variável de instalação do Baculum API
+BACULUMAPIINSTALL="baculum-common baculum-api-apache2"
+#
+# Variável das dependências do laço de loop do ownCloud
+BACULUMDEP="bind9 mysql-server mysql-common apache2 php python apt-transport-https"
+#

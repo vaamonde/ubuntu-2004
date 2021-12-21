@@ -1,5 +1,23 @@
-#Obs: para receber o código do repositório do Bacula Community, acesse o site Oficial do projeto no Link:
-#https://www.bacula.org/bacula-binary-package-download/, faça o seu cadastro no site, após o cadastro você
-#ira receberá por email o link com o ID para ser adicionado no Source List do Apt bacula.list
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 21/12/2021
+# Data de atualização: 21/12/2021
+# Versão: 0.1
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do Bacula Server 11.x e do Baculum 11.x
 
-deb [arch=amd64] http://www.bacula.org/packages/602ba8b976d0e/debs/11.0.2/bionic/amd64/ bionic main
+# Obs: para receber o código do repositório do Bacula Community, acesse o site Oficial do 
+# projeto no Link: https://www.bacula.org/bacula-binary-package-download/, faça o seu 
+# cadastro no site, após o cadastro você ira receber por email o link com o ID para ser 
+# adicionado no seu Source List do Apt bacula.list
+
+# Repositório da versão do Ubuntu Server 18.04.x LTS (desativado)
+#deb [arch=amd64] http://www.bacula.org/packages/602ba8b976d0e/debs/11.0.2/bionic/amd64/ bionic main
+#
+# Repositório da versão do Ubuntu Server 20.04.x LTS (ativado)
+deb [arch=amd64] https://www.bacula.org/packages/602ba8b976d0e/debs/11.0.5/focal/amd64/ focal main

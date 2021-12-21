@@ -4,24 +4,27 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 21/03/2021
-# Data de atualização: 12/05/2021
-# Versão: 0.06
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do Bacula 11.x e do Baculum 11.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 21/12/2021
+# Data de atualização: 21/12/2021
+# Versão: 0.1
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do Bacula Server 11.x e do Baculum 11.x
 #
-# O Bacula é um conjunto de software de código aberto que permitem o gerenciamento de backups, restaurações
-# e verificação de dados através de uma rede de computadores de diversos tipos. É relativamente fácil de 
-# usar e muito eficiente, enquanto oferece muitas funcionalidades avançadas de gerenciamento de armazenamento, 
-# as quais facilitam a encontrar e recuperar arquivos perdidos ou corrompidos. Com ele é possível fazer 
-# backup remotamente de Linux, Solaris, FreeBSD, NetBSD, Windows, Mac OS X, etc... 
+# O Bacula é um conjunto de software de código aberto que permitem o gerenciamento 
+# de backups, restaurações e verificação de dados através de uma rede de computadores 
+# de diversos tipos. É relativamente fácil de usar e muito eficiente, enquanto 
+# oferece muitas funcionalidades avançadas de gerenciamento de armazenamento, as quais 
+# facilitam a encontrar e recuperar arquivos perdidos ou corrompidos. Com ele é possível 
+# fazer backup remotamente de Linux, Solaris, FreeBSD, NetBSD, Windows, Mac OS X, etc... 
 #
-# O Baculum fornece duas aplicações web: o Baculum Web como interface web para gerenciar o Bacula e a API 
-# do Baculum, que é a interface de programação do Bacula. Ambas as ferramentas conectadas criam um ambiente
-# web para facilitar o trabalho com os programas da Comunidade Bacula. 
+# O Baculum fornece duas aplicações web: o Baculum Web como interface web para gerenciar 
+# o Bacula e a API do Baculum, que é a interface de programação do Bacula. Ambas as 
+# ferramentas conectadas criam um ambiente web para facilitar o trabalho com os programas 
+# da Comunidade Bacula. 
 #
-# Informações que serão solicitadas na configuração via Web do Baculum
+# Informações que serão solicitadas na configuração via Web do Baculum WEB/API
 # Endereço padrão do Baculum WEB: http://localhost:9095
 # Endereço padrão do Baculum API: http://localhost:9096
 # Usuário padrão: admin - Senha padrão: admin
@@ -104,61 +107,50 @@
 # Site Oficial do Projeto Bacula: https://www.bacula.org/
 # Site Oficial do Projeto Baculum: https://baculum.app/
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de configuração do OpenSSH no GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=ecuol8Uf1EE&t
-# Vídeo de instalação do LAMP Server no Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=6EFUu-I3
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário é "root", versão do ubuntu e kernel
-# opções do comando id: -u (user)
-# opções do comando: lsb_release: -r (release), -s (short), 
-# opões do comando uname: -r (kernel release)
-# opções do comando cut: -d (delimiter), -f (fields)
-# opção do shell script: piper | = Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Declarando as variáveis de download do Bacula (Link atualizado no dia 12/05/2021)
-BACULAKEY="https://www.bacula.org/downloads/Bacula-4096-Distribution-Verification-key.asc"
-BACULUMKEY="http://bacula.org/downloads/baculum/baculum.pub"
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
 #
-# Verificando se as dependências do Bacula estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
-# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
-# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Bacula, aguarde... "
-	for name in apt-transport-https apache2 php python mysql-server mysql-common
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
+# Verificando todas as dependências do Bacula e Baculum Server
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do OpenSSH Server, aguarde... "
+	for name in $BACULUMDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -167,23 +159,39 @@ echo -n "Verificando as dependências do Bacula, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-			echo -en "Recomendo utilizar o script: lamp.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
 #
-# Script de instalação do Bacula no GNU/Linux Ubuntu Server 18.04.x
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
+# Script de instalação do Bacula Server e do Baculum WEB/API no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
 echo
-echo -e "Instalação do Bacula e Baculum no GNU/Linux Ubuntu Server 18.04.x\n"
-echo -e "Após a instalação do Baculum WEB acessar a URL: http://`hostname -I | cut -d' ' -f1`:9095"
-echo -e "Após a instalação do Baculum API acessar a URL: http://`hostname -I | cut -d' ' -f1`:9096\n"
+echo -e "Instalação do Bacula Server e do Baculum WEB/API GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Portas padrão utilizadas pelo Bacula Server.: TCP 9101, 9102 e 9103"
+echo -e "Portas padrão utilizadas pelo Baculum WEB/API.: TCP 9095 e 9096\n"
+echo -e "Após a instalação do Baculum WEB acessar a URL: http://$(hostname -d | cut -d' ' -f1):9095"
+echo -e "Após a instalação do Baculum API acessar a URL: http://$(hostname -I | cut -d' ' -f1):9096\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -205,21 +213,24 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema operacional, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo software desnecessários, aguarde..."
+echo -e "Removendo todos os software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Bacula Server e Baculum WEB/API, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Bacula Server e do Baculum WEB/API, aguarde...\n"
 sleep 5
 #
 echo -e "Adicionando o repositório do Bacula Server, aguarde..."
@@ -228,7 +239,7 @@ echo -e "Adicionando o repositório do Bacula Server, aguarde..."
 	# opção do comando wget: -q -O- (file)
 	# opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
 	# opção do comando apt-key: add (file name), - (arquivo recebido do redirecionar | piper)
-	cp -v conf/bacula.list /etc/apt/sources.list.d/bacula.list &>> $LOG
+	cp -v conf/bacula/bacula.list /etc/apt/sources.list.d/bacula.list &>> $LOG
 	wget -q $BACULAKEY -O- | apt-key add - &>> $LOG
 echo -e "Repositório do Bacula adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -239,7 +250,7 @@ echo -e "Adicionando o repositório do Baculum WEB/API, aguarde..."
 	# opção do comando wget: -q -O- (file)
 	# opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
 	# opção do comando apt-key: add (file name), - (arquivo recebido dO redirecionar | piper)
-	cp -v conf/baculum.list /etc/apt/sources.list.d/baculum.list &>> $LOG
+	cp -v conf/bacula/baculum.list /etc/apt/sources.list.d/baculum.list &>> $LOG
 	wget -q $BACULUMKEY -O- | apt-key add - &>> $LOG
 echo -e "Repositório do Baculum adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -253,25 +264,25 @@ sleep 5
 echo -e "Instalando o Bacula Server e Console com suporte ao MySQL, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install bacula-client bacula-common bacula-mysql bacula-console &>> $LOG
+	apt -y install $BACULAINSTALL &>> $LOG
 echo -e "Bacula Server e Console instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o Baculum WEB com suporte ao Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install baculum-web baculum-web-apache2 &>> $LOG
+	apt -y install $BACULUMWEBINSTALL &>> $LOG
 echo -e "Baculum WEB instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o Baculum API com suporte ao Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install baculum-common baculum-api-apache2 &>> $LOG
+	apt -y install $BACULUMAPIINSTALL &>> $LOG
 echo -e "Baculum API instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando os Sites do Baculum WEB e API no Apache2, aguarde..."
+echo -e "Habilitando os sites do Baculum WEB/API no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	a2enmod rewrite &>> $LOG
 	a2ensite baculum-web.conf &>> $LOG
@@ -283,30 +294,27 @@ sleep 5
 echo -e "Criando os atalhos em: /usr/sbin dos binários do Bacula Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando ln: -s (symbolic), -v (verbose)
-	for i in `ls /opt/bacula/bin`; do
+	for i in $(ls /opt/bacula/bin); do
 		ln -sv /opt/bacula/bin/$i /usr/sbin/$i &>> $LOG;
 	done
 echo -e "Atalhos criados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o arquivo baculum.api do Sudoers e hosts.allow do TCPWrappers, aguarde..."
+echo -e "Atualizando o arquivo baculum.api do Sudoers, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/baculum-api /etc/sudoers.d/ &>> $LOG
-	cp -v conf/hosts.allow /etc/ &>> $LOG
+	cp -v conf/baculum/baculum-api /etc/sudoers.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo baculum.api, pressione: <Enter> para continuar"
+echo -e "Editando o arquivo de configuração baculum.api, pressione: <Enter> para continuar"
 	read
-	sleep 3
 	vim /etc/sudoers.d/baculum-api
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo hosts.allow, pressione: <Enter> para continuar"
+echo -e "Editando o arquivo de configuração hosts.allow, pressione: <Enter> para continuar"
 	read
-	sleep 3
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -327,17 +335,28 @@ echo -e "Iniciando os Serviços do Bacula Server (FD, SD e DIR), aguarde..."
 echo -e "Serviços iniciados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Testando o acesso ao Bacula BConsole, pressione <Enter> para continuar."
-echo -e "Para sair do Bacula BConsole digite: quit <Enter>."
-	read
-	bconsole
-echo -e "Bacula BConsole testado com sucesso!!!, continuando com o script...\n"
+echo -e "Verificando os serviços do Bacula Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	echo -e "Bacula-FD.: $(systemctl status bacula-fd.service | grep Active)"
+	echo -e "Bacula-SD.: $(systemctl status bacula-sd.service | grep Active)"
+	echo -e "Bacula-DIR: $(systemctl status bacula-dir.service | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as portas de Conexões do Bacula Server e do Baculum WEB/API, aguarde..."
-	# opção do comando netstat: -a (all), -n (numeric)
-	netstat -an | grep '9101\|9102\|9103\|9095\|9096'
-echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
+echo -e "Verificando as portas de conexão do Bacula Server e do Baculum WEB/API, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:'9101,9102,9103,9095,9096' -sTCP:LISTEN
+echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Testando o acesso ao console do Bacula Server, pressione <Enter> para continuar."
+echo -e "Para sair do BConsole do Bacula Server digite: quit <Enter>."
+	read
+	bconsole
+echo -e "Bacula Server BConsole testado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do Bacula Server e Baculum WEB/API feita com Sucesso!!!."
@@ -353,6 +372,6 @@ echo -e "Instalação do Bacula Server e Baculum WEB/API feita com Sucesso!!!."
 	echo -e "Tempo gasto para execução do script $0: $TEMPO"
 echo -e "Pressione <Enter> para concluir o processo."
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
 exit 1
