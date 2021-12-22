@@ -73,7 +73,7 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
@@ -227,7 +227,6 @@ echo -e "Serviço do Apache Guacamole Server iniciado com sucesso!!!, continuand
 sleep 5
 #
 echo -e "Verificando o serviço do Apache Guacamole Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl status guacd | grep Active
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -250,6 +249,7 @@ echo -e "Atualizando os arquivos de configuração do Apache Guacamole Client, a
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/default/tomcat9 /etc/default/tomcat9.old &>> $LOG
 	cp -v conf/guacamole/{guacamole.properties,user-mapping.xml} /etc/guacamole/ &>> $LOG
 	cp -v conf/guacamole/tomcat9 /etc/default/tomcat9 &>> $LOG
@@ -275,13 +275,13 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reiniciando os Serviços do Tomcat9 e do Apache Guacamole, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart tomcat9 &>> $LOG
 	systemctl restart guacd &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando os serviços do Tomcat9 e do Apache Guacamole, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	echo -e "Tomcat9..: $(systemctl status tomcat9 | grep Active)"
 	echo -e "Guacamole: $(systemctl status guacd | grep Active)"
 echo -e "Serviços verificado com sucesso!!!, continuando com o script...\n"

@@ -75,7 +75,7 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
@@ -211,21 +211,18 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hostname
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/hosts
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/nsswitch.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -241,23 +238,18 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando vim: +/ (search-pattern)
 	read
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.deny, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando vim: +/ (search-pattern)
 	read
 	vim /etc/hosts.deny
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração issue.net, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/issue.net
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -271,7 +263,6 @@ echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do OpenSSH Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl status sshd | grep Active
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5

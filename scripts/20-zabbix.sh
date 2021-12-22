@@ -83,7 +83,7 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
@@ -245,12 +245,11 @@ echo -e "Atualizando os arquivos de configuração do Zabbix Server e Agent, agu
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/zabbix/zabbix_server.conf /etc/zabbix/zabbix_server.conf.old &>> $LOG
 	mv -v /etc/zabbix/apache.conf /etc/zabbix/apache.conf.old &>> $LOG
 	mv -v /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.old &>> $LOG
-	cp -v conf/zabbix/zabbix_server.conf /etc/zabbix/zabbix_server.conf &>> $LOG
-	cp -v conf/zabbix/apache.conf /etc/zabbix/apache.conf &>> $LOG
-	cp -v conf/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf &>> $LOG
+	cp -v conf/zabbix/{zabbix_server.conf,apache.conf,zabbix_agentd.conf} /etc/zabbix/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

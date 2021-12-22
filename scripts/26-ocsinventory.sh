@@ -119,7 +119,7 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
@@ -485,6 +485,7 @@ echo -e "Atualizando os arquivos de configuração do OCS Inventory Agent, aguar
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ocsinventory-agent/ocsinventory-agent.cfg /etc/ocsinventory-agent/ocsinventory-agent.cfg.old &>> $LOG
 	mv -v /etc/ocsinventory-agent/modules.conf /etc/ocsinventory-agent/modules.conf.old &>> $LOG
 	cp -v conf/ocsinventory/{ocsinventory-agent.cfg,modules.conf} /etc/ocsinventory-agent/ &>> $LOG

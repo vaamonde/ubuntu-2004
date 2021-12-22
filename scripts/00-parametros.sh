@@ -515,6 +515,9 @@ FLUSH_WORDPRESS="FLUSH PRIVILEGES;"
 USERFTPWORDPRESS="wordpress"
 PASSWORDFTPWORDPRESS="wordpress"
 #
+# Variável da instalação das dependências do Wordpress
+WORDPRESSDEPINSTALL="unzip"
+#
 # Variável das dependências do laço de loop do Wordpress
 WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
 #

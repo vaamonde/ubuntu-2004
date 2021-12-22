@@ -67,7 +67,7 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
@@ -234,7 +234,6 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração rndc.key, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
 	read
 	vim /etc/bind/rndc.key
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -242,7 +241,6 @@ sleep 5
 #
 echo -e "Editando o arquivo de configuração pti.intra.hosts, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando chown: -v (verbose), -root (user), bind (group)
 	read
 	vim /var/lib/bind/pti.intra.hosts
 	named-checkzone $DOMAIN /var/lib/bind/pti.intra.hosts &>> $LOG
@@ -251,7 +249,6 @@ sleep 5
 #
 echo -e "Editando o arquivo de configuração 172.16.1.rev, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando chown: -v (verbose), -root (user), bind (group)
 	read
 	vim /var/lib/bind/172.16.1.rev
 	named-checkzone $DOMAINREV /var/lib/bind/172.16.1.rev &>> $LOG
@@ -297,7 +294,6 @@ echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do Bind DNS Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl status bind9 | grep Active
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5

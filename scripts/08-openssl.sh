@@ -132,7 +132,7 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
@@ -297,7 +297,6 @@ echo -e "Arquivo de Chave Raiz da CA verificado com sucesso!!!, continuando com 
 sleep 5
 #
 echo -e "Editando o arquivo de configuração da CA pti-ca.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/ssl/pti-ca.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
@@ -431,7 +430,6 @@ echo -e "Arquivo de Chave Privada do Apache2 verificado com sucesso!!!, continua
 sleep 5
 #
 echo -e "Editando o arquivo configuração do Certificado do Apache2 pti-ssl.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	read
 	vim /etc/ssl/pti-ssl.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"

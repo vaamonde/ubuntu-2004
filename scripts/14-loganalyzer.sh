@@ -102,7 +102,7 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		echo -e "Você tem acesso a Internet, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Você NÃO tema acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
 		echo -e "e execute novamente este script."
 		sleep 5
 		exit 1
@@ -254,6 +254,7 @@ echo -e "Copiando os arquivos de configuração do LogAnalyzer para o site do Ap
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando cp: -R (recurse), -v (verbose)
+	# opção do comando mv: -v (verbose)
 	# opção do comando chmod: -v (verbose), 775 (Dono=R-X,Grupo=R-X=Outros=R-X)
 	# opção do comando chown: -R (recursive), -v (verbose), www-data (user), www-data (group)
 	LOGANALYZERDIR=$(echo loganalyzer*/)
@@ -308,12 +309,12 @@ echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl reload apache2 &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando os serviços do Syslog e do Rsyslog, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
 	echo -e "Syslog.: $(systemctl status syslog | grep Active)"
 	echo -e "Rsyslog: $(systemctl status rsyslog | grep Active)"
 	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
