@@ -1277,7 +1277,7 @@ PASSWORDPOSTGRESQL="postgres"
 KEYPGADMIN4="https://www.pgadmin.org/static/packages_pgadmin_org.pub"
 EMAILPGADMIN="$USERPOSTGRESQL@localhost"
 EMAILPASSPGADMIN=$PASSWORDPOSTGRESQL
-PGADMIN4DEP="apache2 php python"
+PGADMIN4DEP="apache2 php python2.7 python3"
 POSTGRESQLDEPINSTALL="build-essential libssl-dev libffi-dev libgmp3-dev virtualenv python-pip \
 libpq-dev python-dev apache2-utils libapache2-mod-wsgi libexpat1 ssl-cert python"
 POSTGRESQLINSTALL="postgresql postgresql-contrib postgresql-client"
