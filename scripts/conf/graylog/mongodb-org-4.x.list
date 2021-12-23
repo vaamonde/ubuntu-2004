@@ -9,8 +9,12 @@
 # Data de atualização: 21/12/2021
 # Versão: 0.1
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do Graylog v4.2.x
+# Testado e homologado para a versão do Graylog v4.2
 # Testado e homologado para a versão do MongoDB v4.4.x
 # Testado e homologado para a versão do ElasticSearch v6.0.x
 
-deb https://artifacts.elastic.co/packages/oss-6.x/apt stable main
+# Repositório da versão do MongoDB Server 4.2 desativado
+#deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.2 multiverse
+
+# Repositório da versão do MongoDB Server 4.4 habilitado
+deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu/ focal/mongodb-org/4.4 multiverse

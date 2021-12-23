@@ -102,7 +102,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 SSHDEP="openssh-server openssh-client"
 #
 # Variável de instalação dos softwares extras do OpenSSH Server
-SSHINSTALL="net-tools ipcalc nmap tree"
+SSHINSTALL="net-tools ipcalc nmap tree pwgen"
 #
 # Variável da porta de conexão padrão do OpenSSH Server
 PORTSSH="22"
@@ -1197,3 +1197,32 @@ BACULUMAPIINSTALL="baculum-common baculum-api-apache2"
 # Variável das dependências do laço de loop do ownCloud
 BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-transport-https"
 #
+#=============================================================================================
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 28-graylog.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Graylog Server utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do Graylog Server  utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de Log Graylog Server 
+#
+KEYSRVMONGODB="https://www.mongodb.org/static/pgp/server-4.4.asc"
+GPGKEYELASTICSEARCH="https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-4.2-repository_latest.deb"
+USERGRAYLOG="graylog"
+SECRETGRAYLOG=$(pwgen -N 1 -s 96)
+SHA2GRAYLOG=$(echo $USERGRAYLOG | tr -d '\n' | sha256sum | cut -d" " -f1)
+MONGODBINSTALL="mongodb-org"
+ELASTICSEARCHINSTALL="elasticsearch-oss"
+GRAYLOGINSTALLDEP="apt-transport-https openjdk-11-jdk openjdk-11-jre openjdk-11-jre-headless \
+default-jdk default-jre ca-certificates-javaopenjdk-11-jre-headless uuid-runtime pwgen gnupg \
+curl dirmngr"
+GRAYLOGINSTALL="graylog-server graylog-enterprise-plugins graylog-integrations-plugins \
+graylog-enterprise-integrations-plugins"
+GRAYLOGDEP="apt-transport-https pwgen"
+GRAYLOGPORT="19000"
+MONGODBPORT="27017"
+ELASTICSEARCHPORT="9200"

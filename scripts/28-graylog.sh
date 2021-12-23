@@ -4,17 +4,22 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 26/07/2020
-# Data de atualização: 18/05/2021
-# Versão: 0.04
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do Graylog 3.3.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 21/12/2021
+# Data de atualização: 21/12/2021
+# Versão: 0.1
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do Graylog v4.2
+# Testado e homologado para a versão do MongoDB v4.4.x
+# Testado e homologado para a versão do ElasticSearch v6.0.x
 #
-# O Graylog captura, armazena e permite centralizar a pesquisa e a análise de logs em tempo real de qualquer 
-# componente da infraestrutura e aplicativos de TI. O software utiliza uma arquitetura de três camadas de 
-# armazenamento escalável baseado no ElasticSearch (Elasticsearch é um servidor de buscas distribuído baseado 
-# no Apache Lucene)e no MongoDB (MongoDB é um software de banco de dados orientado a documentos NoSQL).
+# O Graylog captura, armazena e permite centralizar a pesquisa e a análise de logs 
+# em tempo real de qualquer componente da infraestrutura e aplicativos de TI. O 
+# software utiliza uma arquitetura de três camadas de armazenamento escalável baseado 
+# no ElasticSearch (Elasticsearch é um servidor de buscas distribuído baseado no 
+# Apache Lucene)e no MongoDB (MongoDB é um software de banco de dados orientado a 
+# documentos NoSQL).
 #
 # Informações que serão solicitadas na configuração via Web do Graylog
 # Username: admin
@@ -24,66 +29,50 @@
 # Site Oficial do MongoDB: https://www.mongodb.com/
 # Site Oficial do Elasticsearch: https://www.elastic.co/pt/
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário é "root", versão do ubuntu e kernel
-# opções do comando id: -u (user)
-# opções do comando: lsb_release: -r (release), -s (short), 
-# opões do comando uname: -r (kernel release)
-# opções do comando cut: -d (delimiter), -f (fields)
-# opção do shell script: piper | = Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Declarando as variáveis de download do Graylog (Links atualizados no dia 22/07/2020)
-# opção do comando pwgen: -N (num passwords), -s (secure)
-# opção do comando tr: -d (delete)
-# opção do comando cut: -d (delimiter), -f (fields)
-KEYSRVMONGODB="https://www.mongodb.org/static/pgp/server-4.2.asc"
-KEYELASTICSEARCH="https://artifacts.elastic.co/GPG-KEY-elasticsearch"
-REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-3.3-repository_latest.deb"
-USERGRAYLOG="graylog"
-SECRET=$(pwgen -N 1 -s 96)
-SHA2=$(echo $USERGRAYLOG | tr -d '\n' | sha256sum | cut -d" " -f1)
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
 #
-# Verificando se as dependências do Graylog estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
-# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
-# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Graylog, aguarde... "
-	for name in pwgen 
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
+# Verificando se as dependências do Graylog Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do Wordpress, aguarde... "
+	for name in $GRAYLOGDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -96,17 +85,69 @@ echo -n "Verificando as dependências do Graylog, aguarde... "
             }
 		sleep 5
 #
-# Script de instalação do Graylog no GNU/Linux Ubuntu Server 18.04.x
+# Verificando se as portas 19000, 27017 e 9200 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $GRAYLOGPORT &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $GRAYLOGPORT já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $GRAYLOGPORT está disponível, continuando com o script..."
+		sleep 5
+fi
+if [ "$(nc -vz 127.0.0.1 $MONGODBPORT &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $MONGODBPORT já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $MONGODBPORT está disponível, continuando com o script..."
+		sleep 5
+fi
+if [ "$(nc -vz 127.0.0.1 $ELASTICSEARCHPORT &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $ELASTICSEARCHPORT já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $ELASTICSEARCHPORT está disponível, continuando com o script..."
+		sleep 5
+fi
+#
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
+# Script de instalação do Graylog no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
-echo
-echo -e "Instalação do Graylog no GNU/Linux Ubuntu Server 18.04.x"
-echo -e "Após a instalação do Graylog acessar a URL: http://`hostname -I | cut -d' ' -f1`:19000/\n"
+echo -e "Instalação do Graylog no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo Graylog Server.: TCP 19000"
+echo -e "Porta padrão utilizada pelo MongoDB Server.: TCP 27017"
+echo -e "Porta padrão utilizada pelo ElasticSearch..: TCP 9200\n"
+echo -e "Após a instalação do Graylog acessar a URL: http://$(hostname -d | cut -d' ' -f1):19000/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -128,48 +169,45 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema operacional, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo software desnecessários, aguarde..."
+echo -e "Removendo todos os software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Graylog, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Graylog Server, aguarde...\n"
+sleep 5
 #
-echo -e "Adicionando o repositório do MongoDB, aguarde..."
-	# baixando e instalando a chave GPG do MongoDB
-	# copiando o source list do MongoDB para o diretório do Apt
+echo -e "Adicionando o repositório do MongoDB Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando wget: -q (quiet), -O (output document file)
 	# opção do comando cp: -v (verbose)
 	wget -qO - $KEYSRVMONGODB | apt-key add - &>> $LOG
-	cp -v conf/mongodb-org-4.2.list /etc/apt/sources.list.d/ &>> $LOG
-echo -e "Repositório do MongoDB adicionado com sucesso!!!, continuando com o script...\n"
+	cp -v conf/graylog/mongodb-org-4.x.list /etc/apt/sources.list.d/ &>> $LOG
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Adicionando o repositório do Elasticsearch, aguarde..."
-	# baixando e instalando a chave GPG do Elasticsearch
-	# copiando o source list do Elasticsearch para o diretório do Apt
+echo -e "Adicionando o repositório do ElasticSearch, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando wget: -q (quiet), -O (output document file)
 	# opção do comando cp: -v (verbose)
-	wget -qO - $KEYELASTICSEARCH | apt-key add - &>> $LOG
-	cp -v conf/elastic-6.x.list /etc/apt/sources.list.d/ &>> $LOG
-echo -e "Repositório do Elasticsearch adicionado com sucesso!!!, continuando com o script...\n"
+	wget -qO - $GPGKEYELASTICSEARCH | apt-key add - &>> $LOG
+	cp -v conf/graylog/elastic-6.x.list /etc/apt/sources.list.d/ &>> $LOG
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Adicionando o repositório do Graylog, aguarde..."
-	# removendo o download da versão anterior do repositório do Graylog
-	# baixando o repositório do Graylog
-	# instalando o repositório do Graylog
+echo -e "Adicionando o repositório do Graylog Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
@@ -177,120 +215,133 @@ echo -e "Adicionando o repositório do Graylog, aguarde..."
 	rm -v graylog.deb &>> $LOG
 	wget $REPGRAYLOG -O graylog.deb &>> $LOG
 	dpkg -i graylog.deb &>> $LOG
-echo -e "Repositório do Graylog adicionado com sucesso!!!, continuando com o script...\n"
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando as dependências do Graylog, aguarde..."
+echo -e "Atualizando as listas do Apt com os novos Repositórios, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando apt: -y (yes)
+	apt update &>> $LOG
+	apt -y upgrade &>> $LOG
+echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Instalando as dependências do Graylog Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	# opção do comando update-java-alternatives: -l (list)
-	apt update &>> $LOG
-	apt -y upgrade &>> $LOG
-  	apt -y install gnupg apt-transport-https openjdk-8-jdk openjdk-8-jre openjdk-8-jre-headless default-jdk \
-	default-jre uuid-runtime pwgen ca-certificates-java &>> $LOG
+  	apt -y install $GRAYLOGINSTALLDEP &>> $LOG
 	java -version &>> $LOG
 	update-java-alternatives -l &>> $LOG
-echo -e "Dependências do Graylog instaladas com sucesso!!!, continuando com o script...\n"
+echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o MongoDB, aguarde..."
+echo -e "Instalando o MongoDB Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando apt: -y (yes)
-  	apt -y install mongodb-org &>> $LOG
-	systemctl enable mongod &>> $LOG
-	systemctl restart mongod &>> $LOG
+  	apt -y install $MONGODBINSTALL &>> $LOG
 echo -e "MongoDB instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Elasticsearch, aguarde..."
+echo -e "Instalando o ElasticSearch, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	# opção do comando cp: -v (verbose)
-	apt -y install elasticsearch-oss &>> $LOG
-echo -e "Elasticsearch instalado com sucesso!!!, continuando com o script...\n"
+	apt -y install $ELASTICSEARCHINSTALL &>> $LOG
+echo -e "ElasticSearch instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando os arquivos de configuração do Elasticsearch, aguarde..."
+echo -e "Atualizando os arquivos de configuração do ElasticSearch, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	# opção do comando vim: + (number line)
-	cp -v /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bkp &>> $LOG
-	cp -v /etc/elasticsearch/jvm.options /etc/elasticsearch/jvm.options.bkp &>> $LOG
-	cp -v conf/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml &>> $LOG
-	cp -v conf/jvm.options /etc/elasticsearch/jvm.options &>> $LOG
+	mv -v /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.old &>> $LOG
+	mv -v /etc/elasticsearch/jvm.options /etc/elasticsearch/jvm.options.old &>> $LOG
+	cp -v conf/graylog/{elasticsearch.yml,jvm.options} /etc/elasticsearch/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Elasticsearch, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração elasticsearch.yml, pressione <Enter> para continuar"
 	read
-	sleep 3
-	vim /etc/elasticsearch/elasticsearch.yml +14
+	vim /etc/elasticsearch/elasticsearch.yml
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Java do Elasticsearch, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração jvm.options, pressione <Enter> para continuar"
 	read
-	sleep 3
-	vim /etc/elasticsearch/jvm.options +15
+	vim /etc/elasticsearch/jvm.options
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Inicializando o serviço do Elasticsearch, aguarde..."
+echo -e "Inicializando os serviços do MongoDB e do ElasticSearch, aguarde..."
+	systemctl enable mongod &>> $LOG
+	systemctl restart mongod &>> $LOG
 	systemctl enable elasticsearch &>> $LOG
 	systemctl restart elasticsearch &>> $LOG
-echo -e "Serviço inicializado com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Graylog, aguarde..."
+echo -e "Instalando o Graylog Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando: | piper (conecta a saída padrão com a entrada padrão de outro comando)
 	# opção do comando apt: -y (yes)
-	apt install -y graylog-server graylog-integrations-plugins &>> $LOG
+	apt install -y $GRAYLOGINSTALL &>> $LOG
 echo -e "Graylog instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Graylog, pressione <Enter> para editar..."
+echo -e "Atualizando os arquivos de configuração do Graylog Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando cut: -d (delimiter), -f (fields)
+	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do comando sed: s (replacement)
-	read
-	cp -v /etc/graylog/server/server.conf /etc/graylog/server/server.conf.bkp &>> $LOG
-	cp -v conf/server.conf /etc/graylog/server/server.conf &>> $LOG
-	sed "s/password_secret =/password_secret = $SECRET/" /etc/graylog/server/server.conf > /tmp/server.conf.old
-	sed "s/root_password_sha2 =/root_password_sha2 = $SHA2/" /tmp/server.conf.old > /etc/graylog/server/server.conf
-	vim /etc/graylog/server/server.conf
-echo -e "Arquivo do Graylog editado com sucesso!!!, continuando com o script...\n"
+	mv -v /etc/graylog/server/server.conf /etc/graylog/server/server.conf.old &>> $LOG
+	cp -v conf/graylog/server.conf /etc/graylog/server/server.conf &>> $LOG
+	sed "s/password_secret =/password_secret = $SECRETGRAYLOG/" /etc/graylog/server/server.conf > /tmp/server.conf.old
+	sed "s/root_password_sha2 =/root_password_sha2 = $SHA2GRAYLOG/" /tmp/server.conf.old > /etc/graylog/server/server.conf
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando e Iniciando o Serviço Graylog, aguarde..."
+echo -e "Editando o arquivo de configuração do Graylog, pressione <Enter> para editar..."
+	read
+	vim /etc/graylog/server/server.conf
+echo -e "Arquivo do editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Inicializando o Serviço Graylog Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl enable graylog-server &>> $LOG
 	systemctl restart graylog-server &>> $LOG
-    systemctl status graylog-server &>> $LOG
 echo -e "Serviço do Graylog iniciado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do Graylog, MongoDB e Elasticsearch, aguarde..."
-	# opção do comando netstat: -a (all), -n (numeric)
-	# opção do comando grep: \| (função OU)
-	netstat -an | grep ':19000\|27017\|9200'
+echo -e "Verificando os serviços do Graylog, MongoDB e do ElasticSearch, aguarde..."
+	echo -e "Graylog: $(systemctl status graylog-server | grep Active)"
+	echo -e "MongoDB: $(systemctl status mongod | grep Active)"
+	echo -e "Elastic: $(systemctl status elasticsearch | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as portas de conexão do Graylog, MongoDB e do ElasticSearch, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:'9200,19000,27017' -sTCP:LISTEN
 echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação do Graylog feita com Sucesso!!!."
+echo -e "Instalação do Graylog Server feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
-	HORAFINAL=`date +%T`
+	HORAFINAL=$(date +%T)
 	# opção do comando date: -u (utc), -d (date), +%s (second since 1970)
 	HORAINICIAL01=$(date -u -d "$HORAINICIAL" +"%s")
 	HORAFINAL01=$(date -u -d "$HORAFINAL" +"%s")
 	# opção do comando date: -u (utc), -d (date), 0 (string command), sec (force second), +%H (hour), %M (minute), %S (second), 
-	TEMPO=`date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S"`
+	TEMPO=$(date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S")
 	# $0 (variável de ambiente do nome do comando)
 	echo -e "Tempo gasto para execução do script $0: $TEMPO"
 echo -e "Pressione <Enter> para concluir o processo."
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
 exit 1
