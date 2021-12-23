@@ -1256,3 +1256,30 @@ GRAYLOGPORT="19000"
 MONGODBPORT="27017"
 ELASTICSEARCHPORT="9200"
 #
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 29-postgresl.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema PostgreSQL Server utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço do PostgreSQL Server utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de Database PostgreSQL Server
+#
+# Variáveis de configuração do PostgreSQL
+KEYPOSTGRESQL="https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+USERPOSTGRESQL="postgres"
+PASSWORDPOSTGRESQL="postgres"
+#
+# Variáveis de configuração do PgAdmin4 Web
+KEYPGADMIN4="https://www.pgadmin.org/static/packages_pgadmin_org.pub"
+EMAILPGADMIN="$USERPOSTGRESQL@localhost"
+EMAILPASSPGADMIN=$PASSWORDPOSTGRESQL
+PGADMIN4DEP="apache2 php python"
+POSTGRESQLDEPINSTALL="build-essential libssl-dev libffi-dev libgmp3-dev virtualenv python-pip \
+libpq-dev python-dev apache2-utils libapache2-mod-wsgi libexpat1 ssl-cert python"
+POSTGRESQLINSTALL="postgresql postgresql-contrib postgresql-client"
+PGADMININSTALL="pgadmin4 pgadmin4-web"
+POSTGRESQLPORT="5432"

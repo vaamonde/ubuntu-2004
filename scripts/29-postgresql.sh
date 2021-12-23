@@ -4,19 +4,23 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 11/01/2021
-# Data de atualização: 10/05/2021
-# Versão: 0.05
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do PostgreSQL 13.x e PgAdmin 4.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 23/12/2021
+# Data de atualização: 23/12/2021
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do PostgreSQL v15.x
+# Testado e homologado para a versão do PgAdmin v6.x
 #
-# PostgreSQL é um sistema gerenciador de banco de dados objeto relacional (SGBD), desenvolvido como projeto de 
-# código aberto. O PostgreSQL possui recursos mais avançados para o gerenciamento de Banco de Dados disponível
-# no mercado em relação aos seus concorrente (por exemplo: MySQL, MariaDB, Firebird, etc...)
+# PostgreSQL é um sistema gerenciador de banco de dados objeto relacional (SGBD), 
+# desenvolvido como projeto de código aberto. O PostgreSQL possui recursos mais 
+# avançados para o gerenciamento de Banco de Dados disponível no mercado em 
+# relação aos seus concorrente (por exemplo: MySQL, MariaDB, Firebird, etc...)
 #
-# O pgAdmin é uma plataforma Open Source de administração do PostgreSQL e seus banco de dados relacionados. Escrito 
-# em Python e jQuery, ele suporta todos os recursos encontrados no PostgreSQL por linha de comando (console).
+# O pgAdmin é uma plataforma Open Source de administração do PostgreSQL e seus 
+# banco de dados relacionados. Escrito em Python e jQuery, ele suporta todos os 
+# recursos encontrados no PostgreSQL por linha de comando (console).
 # 
 # Mensagem da configuração da senha do PostgreSQL
 # Enter new password: postgres
@@ -33,64 +37,50 @@
 # Site oficial: https://www.postgresql.org/
 # Site oficial: https://www.pgadmin.org/
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de instalação do LAMP Server no GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=6EFUu-I3u4s&t
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário e "root", versão do ubuntu e kernel
-# opções do comando id: -u (user), opções do comando: lsb_release: -r (release), -s (short), 
-# opções do comando uname: -r (kernel release), opções do comando cut: -d (delimiter), -f (fields)
-# opção do carácter: | (piper) Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Variáveis de configuração do PostgreSQL
-KEYPOSTGRESQL="https://www.postgresql.org/media/keys/ACCC4CF8.asc"
-USER="postgres"
-PASSWORD="postgres"
-#
-# Variáveis de configuração do PgAdmin4 Web
-KEYPGADMIN4="https://www.pgadmin.org/static/packages_pgadmin_org.pub"
-EMAIL="$USER@localhost"
-EMAILPASS=$PASSWORD
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
 #
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
 # Verificando se as dependências do PgAdmin4 estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), -n (permite nova linha)
-# || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), && = operador lógico AND, { } = agrupa comandos em blocos
-# [ ] = testa uma expressão, retornando 0 ou 1, -ne = é diferente (NotEqual)
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do PgAdmin4, aguarde... "
-	for name in apache2 php python
+	for name in $PGADMIN4DEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -98,27 +88,55 @@ echo -n "Verificando as dependências do PgAdmin4, aguarde... "
               }
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
-			echo -en "\nInstale as dependências acima e execute novamente este script\n";
-			echo -en "Recomendo utilizar o script: lamp.sh para resolver as dependências."
+            echo -en "\nInstale as dependências acima e execute novamente este script\n";
             exit 1; 
             }
 		sleep 5
 #
-# Script de instalação do PostgreSQL e PgAdmin4 no GNU/Linux Ubuntu Server 18.04.x
+# Verificando se a porta 19000 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $POSTGRESQLPORT &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $POSTGRESQLPORT já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $POSTGRESQLPORT está disponível, continuando com o script..."
+		sleep 5
+fi
+#
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
+# Script de instalação do PostgreSQL e PgAdmin4 no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
-# opção do comando hostname: -I (all IP address)
+# opção do comando hostname: -d (domain)
 # opção do comando sleep: 5 (seconds)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
-echo
-echo -e "Instalação do PostgreSQL e PgAdmin4 no GNU/Linux Ubuntu Server 18.04.x"
-echo -e "Após a instalação do PgAdmin4 acessar a URL: http://`hostname -I | cut -d ' ' -f1`/pgadmin4\n"
-echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet..."
+echo -e "Instalação do PostgreSQL e do PgAdmin4 no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo PostgreSQL Server.: TCP 5432"
+echo -e "Após a instalação do PgAdmin4 acessar a URL: http://$(hostname -d | cut -d ' ' -f1)/pgadmin4\n"
+echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
-echo
 #
 echo -e "Adicionando o Repositório Universal do Apt, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
@@ -138,28 +156,32 @@ echo -e "Atualizando as listas do Apt, aguarde..."
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema operacional, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo software desnecessários, aguarde..."
+echo -e "Removendo todos os software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com Sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o PostgreSQL e PgAdmin4, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do PostgreSQL e do PgAdmin4, aguarde...\n"
+sleep 5
 #
-echo -e "Adicionando o Repositório do PostgreSQL, aguarde..."
+echo -e "Adicionando o Repositório do PostgreSQL Server, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando wget: -q (quiet) -O (output document file)
 	# opção do comando cp: -v (verbose)
     wget -qO - $KEYPOSTGRESQL | sudo apt-key add - &>> $LOG
-    cp -v conf/pgdg.list /etc/apt/sources.list.d/pgdg.list &>> $LOG
+    cp -v conf/postgresql/pgdg.list /etc/apt/sources.list.d/ &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -168,48 +190,49 @@ echo -e "Adicionando o Repositório do PgAdmin4, aguarde..."
 	# opção do comando wget: -q (quiet) -O (output document file)
 	# opção do comando cp: -v (verbose)
     wget -qO - $KEYPGADMIN4 | sudo apt-key add - &>> $LOG
-    cp -v conf/pgadmin4.list /etc/apt/sources.list.d/pgadmin4.list &>> $LOG
+    cp -v conf/postgresql/pgadmin4.list /etc/apt/sources.list.d/ &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando as Lista do Apt com os novos Repositórios, aguarde..."
+echo -e "Atualizando as listas do Apt com os novos Repositórios, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
+	# opção do comando apt: -y (yes)
     apt update &>> $LOG
+	apt -y upgrade &>> $LOG
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do PostgreSQL e do PgAdmin4, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install build-essential libssl-dev libffi-dev libgmp3-dev virtualenv python-pip \
-    libpq-dev python-dev apache2-utils libapache2-mod-wsgi libexpat1 ssl-cert python &>> $LOG
+	apt -y install $POSTGRESQLDEPINSTALL &>> $LOG
 echo -e "Instalação das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o PostgreSQL Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install postgresql postgresql-contrib postgresql-client &>> $LOG
+	apt -y install $POSTGRESQLINSTALL &>> $LOG
 echo -e "Instalação do PostgreSQL Server feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Configurando a senha do usuário: $USER do PostgreSQL Server, pressione <Enter> para continuar"
-echo -e "Senha que será configurada do usuário $USER: $PASSWORD"
+echo -e "Configurando a senha do usuário: $USERPOSTGRESQL do PostgreSQL Server, pressione <Enter> para continuar"
+echo -e "Senha que será configurada do usuário $USERPOSTGRESQL é: $PASSWORDPOSTGRESQL"
 	# opção do comando sudo: -u (user)
     read
-	sudo -u $USER psql --command '\password postgres'
+	sudo -u $USERPOSTGRESQL psql --command '\password postgres'
 echo -e "Senha configurada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o PgAdmin4 e PgAdmin4 Web, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install pgadmin4 pgadmin4-web &>> $LOG
+	apt -y install $PGADMININSTALL &>> $LOG
 echo -e "Instalação do PgAdmin4 feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configurando o PgAdmin4 Web, pressione <Enter> para continuar"
-echo -e "Cuidado com as mensagens que serão solicitadas: email: $EMAIL - senha: $EMAILPASS"
+echo -e "Cuidado com as mensagens que serão solicitadas: email: $EMAILPGADMIN - senha: $EMAILPASSPGADMIN"
 echo -e "Dúvidas veja a linha: 25 do script: $0"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
@@ -218,31 +241,40 @@ echo -e "Dúvidas veja a linha: 25 do script: $0"
 echo -e "Configuração do PgAdmin4 Web feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #			 
-echo -e "Reinicializando os serviços do Apache2, aguarde..."
+echo -e "Reinicializando os serviços do Apache2 e do PostgreSQL, aguarde..."
 	systemctl restart apache2 &>> $LOG
-echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+	systemctl restart postgresql &>> $LOG
+echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do PostgreSQL, aguarde..."
-	# opção do comando netstat: a (all), n (numeric)
-	# opção do comando grep: ' ' (aspas simples)
-	netstat -an | grep '5432'
-echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+echo -e "Verificando os serviços do PostgreSQL e do Apache2, aguarde..."
+	echo -e "PostgreSQL: $(systemctl status postgresql | grep Active)"
+	echo -e "Apache2...: $(systemctl status apache2 | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação do PostgreSQL e PgAdmin4 feito com Sucesso!!!"
+echo -e "Verificando a porta de conexão do PostgreSQL Server, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:'5432' -sTCP:LISTEN
+echo -e "Porta de conexõe verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Instalação do PostgreSQL Server e do PgAdmin4 feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
-	HORAFINAL=`date +%T`
+	HORAFINAL=$(date +%T)
 	# opção do comando date: -u (utc), -d (date), +%s (second since 1970)
 	HORAINICIAL01=$(date -u -d "$HORAINICIAL" +"%s")
 	HORAFINAL01=$(date -u -d "$HORAFINAL" +"%s")
 	# opção do comando date: -u (utc), -d (date), 0 (string command), sec (force second), +%H (hour), %M (minute), %S (second), 
-	TEMPO=`date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S"`
+	TEMPO=$(date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S")
 	# $0 (variável de ambiente do nome do comando)
 	echo -e "Tempo gasto para execução do script $0: $TEMPO"
 echo -e "Pressione <Enter> para concluir o processo."
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
-exit 1
+exit 
