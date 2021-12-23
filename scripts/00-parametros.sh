@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 19/12/2021
-# Versão: 0.29
+# Data de atualização: 23/12/2021
+# Versão: 0.30
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1172,7 +1172,8 @@ OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Bacula Server e Baculum utilizados nesse script
-# 01. 
+# 01. /etc/sudoers.d/baculum-api =
+# 02. /etc/hosts.allow = 
 #
 # Arquivos de monitoramento (log) do Serviço do Bacula Server e Baculum utilizados nesse script
 # 01. 
@@ -1202,27 +1203,56 @@ BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-tr
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Graylog Server utilizados nesse script
-# 01. 
+# 01. /etc/elasticsearch/elasticsearch.yml = 
+# 02. /etc/elasticsearch/jvm.options = 
+# 03. /etc/graylog/server/server.conf =
 #
-# Arquivos de monitoramento (log) do Serviço do Graylog Server  utilizados nesse script
+# Arquivos de monitoramento (log) do Serviço do Graylog Server utilizados nesse script
 # 01. 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Log Graylog Server 
 #
+# Variável da chave do repositório do MongoDB Server
 KEYSRVMONGODB="https://www.mongodb.org/static/pgp/server-4.4.asc"
-GPGKEYELASTICSEARCH="https://artifacts.elastic.co/GPG-KEY-elasticsearch"
-REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-4.2-repository_latest.deb"
-USERGRAYLOG="graylog"
-SECRETGRAYLOG=$(pwgen -N 1 -s 96)
-SHA2GRAYLOG=$(echo $USERGRAYLOG | tr -d '\n' | sha256sum | cut -d" " -f1)
+#
+# Variável da instalação do MongoDB Server
 MONGODBINSTALL="mongodb-org"
+#
+# Variável da chave GPG do repositório do ElastickSearch
+GPGKEYELASTICSEARCH="https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+#
+# Variável da instalação do ElasticSearch
 ELASTICSEARCHINSTALL="elasticsearch-oss"
+#
+# Variável do download do repositório do Graylog Server
+REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-4.2-repository_latest.deb"
+#
+# Variável do usuário do serviço do Graylog Server
+USERGRAYLOG="graylog"
+#
+# Variável da senha do usuário de serviço do Graylog Server
+# opção do comando pwgen: -N (num passwords), -s (secure)
+SECRETGRAYLOG=$(pwgen -N 1 -s 96)
+#
+# Variável do HASH da senha do usuário de serviço do Graylog Server
+# opção do comando tr: -d (delete)
+# opção do comando cut: -d (delimiter), -f (fields)
+SHA2GRAYLOG=$(echo $USERGRAYLOG | tr -d '\n' | sha256sum | cut -d" " -f1)
+#
+# Variável da instalação das dependências do Graylog Server
 GRAYLOGINSTALLDEP="apt-transport-https openjdk-11-jdk openjdk-11-jre openjdk-11-jre-headless \
 default-jdk default-jre ca-certificates-javaopenjdk-11-jre-headless uuid-runtime pwgen gnupg \
 curl dirmngr"
+#
+# Variável da instalação do Graylog Server
 GRAYLOGINSTALL="graylog-server graylog-enterprise-plugins graylog-integrations-plugins \
 graylog-enterprise-integrations-plugins"
+#
+# Variável das dependências do laço de loop do Graylog Server
 GRAYLOGDEP="apt-transport-https pwgen"
+#
+# Variáveis das portas de serviço do Graylog, MongoDB e do ElasticSearch
 GRAYLOGPORT="19000"
 MONGODBPORT="27017"
 ELASTICSEARCHPORT="9200"
+#

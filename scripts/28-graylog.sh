@@ -71,7 +71,7 @@ fi
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Wordpress, aguarde... "
+echo -n "Verificando as dependências do Graylog Server, aguarde... "
 	for name in $GRAYLOGDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
@@ -278,6 +278,7 @@ echo -e "Inicializando os serviços do MongoDB e do ElasticSearch, aguarde..."
 	systemctl restart mongod &>> $LOG
 	systemctl enable elasticsearch &>> $LOG
 	systemctl restart elasticsearch &>> $LOG
+	#curl -X GET http://localhost:9200
 echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
