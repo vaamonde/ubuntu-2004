@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 21/12/2021
-# Data de atualização: 21/12/2021
-# Versão: 0.1
+# Data de atualização: 23/12/2021
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Graylog v4.2
 # Testado e homologado para a versão do MongoDB v4.4.x
@@ -85,7 +85,7 @@ echo -n "Verificando as dependências do Graylog Server, aguarde... "
             }
 		sleep 5
 #
-# Verificando se as portas 19000, 27017 e 9200 está sendo utilizada no servidor Ubuntu Server
+# Verificando se as portas 19000, 27017 e 9200 estão sendo utilizadas no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
@@ -135,7 +135,7 @@ if [ -f $LOG ]
 		sleep 5
 fi
 #
-# Script de instalação do Graylog no GNU/Linux Ubuntu Server 20.04.x
+# Script de instalação do Graylog Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
@@ -143,7 +143,7 @@ fi
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 #
-echo -e "Instalação do Graylog no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Instalação do Graylog Server no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Graylog Server.: TCP 19000"
 echo -e "Porta padrão utilizada pelo MongoDB Server.: TCP 27017"
 echo -e "Porta padrão utilizada pelo ElasticSearch..: TCP 9200\n"
@@ -274,11 +274,13 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Inicializando os serviços do MongoDB e do ElasticSearch, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando curl: -X (request)
 	systemctl enable mongod &>> $LOG
 	systemctl restart mongod &>> $LOG
 	systemctl enable elasticsearch &>> $LOG
 	systemctl restart elasticsearch &>> $LOG
-	#curl -X GET http://localhost:9200
+	curl -X GET http://localhost:9200 &>> $LOG
 echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -326,6 +328,7 @@ echo -e "Verificando as portas de conexão do Graylog, MongoDB e do ElasticSearc
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
+	echo -e "OBS: a porta de serviço do Graylog Server demora para iniciar."
 	lsof -nP -iTCP:'9200,19000,27017' -sTCP:LISTEN
 echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
