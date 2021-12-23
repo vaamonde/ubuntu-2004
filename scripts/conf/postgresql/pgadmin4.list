@@ -9,7 +9,7 @@
 # Data de atualização: 23/12/2021
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do PostgreSQL v15.x
+# Testado e homologado para a versão do PostgreSQL v14.x
 # Testado e homologado para a versão do PgAdmin v6.x
 
 deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal pgadmin4 main

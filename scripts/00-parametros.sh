@@ -1268,18 +1268,36 @@ ELASTICSEARCHPORT="9200"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Database PostgreSQL Server
 #
-# Variáveis de configuração do PostgreSQL
+# Variável de download da chave de autenticação do repositório do PostgreSQL Server
 KEYPOSTGRESQL="https://www.postgresql.org/media/keys/ACCC4CF8.asc"
+#
+# Variável do nome do usuário padrão do PostgreSQL Server
 USERPOSTGRESQL="postgres"
+#
+# Variável da senha do usuário padrão do PostgreSQL Server
 PASSWORDPOSTGRESQL="postgres"
 #
-# Variáveis de configuração do PgAdmin4 Web
-KEYPGADMIN4="https://www.pgadmin.org/static/packages_pgadmin_org.pub"
-EMAILPGADMIN="$USERPOSTGRESQL@localhost"
-EMAILPASSPGADMIN=$PASSWORDPOSTGRESQL
-PGADMIN4DEP="apache2 php python2.7 python3"
-POSTGRESQLDEPINSTALL="build-essential libssl-dev libffi-dev libgmp3-dev virtualenv python-pip \
-libpq-dev python-dev apache2-utils libapache2-mod-wsgi libexpat1 ssl-cert python"
+# Variável da instalação das dependências do PostgreSQL Server
+POSTGRESQLDEPINSTALL="build-essential libssl-dev libffi-dev libgmp3-dev virtualenv python3-pip \
+libpq-dev python-dev apache2-utils libapache2-mod-wsgi libexpat1 ssl-cert"
+#
+# Variável da instalação do PostgreSQL Server
 POSTGRESQLINSTALL="postgresql postgresql-contrib postgresql-client"
-PGADMININSTALL="pgadmin4 pgadmin4-web"
+#
+# Variável da porta padrão do PostgreSQL Server
 POSTGRESQLPORT="5432"
+#
+# Variável de download da chave de autenticação do repositório do PgAdmin4
+KEYPGADMIN4="https://www.pgadmin.org/static/packages_pgadmin_org.pub"
+#
+# Variável do email do usuário de autenticação padrão do PgAdmin4
+EMAILPGADMIN="$USERPOSTGRESQL@$DOMINIOSERVER"
+#
+# Variável da senha do email do usuário de autenticação padrão do PgAdmin4
+EMAILPASSPGADMIN=$PASSWORDPOSTGRESQL
+#
+# Variável das dependências do laço de loop do PgAdmin4
+PGADMIN4DEP="apache2 php python2.7 python3"
+#
+# Variável da instalação do PgAdmin4
+PGADMININSTALL="pgadmin4 pgadmin4-web"

@@ -10,7 +10,7 @@
 # Data de atualização: 23/12/2021
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do PostgreSQL v15.x
+# Testado e homologado para a versão do PostgreSQL v14.x
 # Testado e homologado para a versão do PgAdmin v6.x
 #
 # PostgreSQL é um sistema gerenciador de banco de dados objeto relacional (SGBD), 
@@ -27,12 +27,13 @@
 # Enter it again: postgres
 #
 # Mensagem da configuração do email e senha do PgAdmin4 Web
-# Email address: postgres@localhost
+# Email address: postgres@pti.intra
 # Password: postgres
 # Retype password: postgres
-# We can now configure the Apache Web server for you. This involves enabling the wsgi module and configuring the 
-# pgAdmin 4 application to mount at /pgadmin4. Do you wish to continue (y/n)? y <Enter>
-# The Apache web server is running and must be restarted for the pgAdmin 4 installation to complete. Continue (y/n)? y <Enter>
+# We can now configure the Apache Web server for you. This involves enabling the wsgi module and 
+# configuring the pgAdmin 4 application to mount at /pgadmin4. Do you wish to continue (y/n)? y <Enter>
+# The Apache web server is running and must be restarted for the pgAdmin 4 installation to complete. 
+# Continue (y/n)? y <Enter>
 # 
 # Site oficial: https://www.postgresql.org/
 # Site oficial: https://www.pgadmin.org/
@@ -93,7 +94,7 @@ echo -n "Verificando as dependências do PgAdmin4, aguarde... "
             }
 		sleep 5
 #
-# Verificando se a porta 19000 está sendo utilizada no servidor Ubuntu Server
+# Verificando se a porta 5432 está sendo utilizada no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
@@ -231,9 +232,9 @@ echo -e "Instalando o PgAdmin4 e PgAdmin4 Web, aguarde..."
 echo -e "Instalação do PgAdmin4 feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Configurando o PgAdmin4 Web, pressione <Enter> para continuar"
-echo -e "Cuidado com as mensagens que serão solicitadas: email: $EMAILPGADMIN - senha: $EMAILPASSPGADMIN"
-echo -e "Dúvidas veja a linha: 25 do script: $0"
+echo -e "Configurando o PgAdmin4 Web, pressione <Enter> para continuar\n"
+echo -e "CUIDADO!!! com as mensagens que serão solicitadas: email: $EMAILPGADMIN - senha: $EMAILPASSPGADMIN"
+echo -e "Dúvidas veja a documentação na linha: 29 do script: $0"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	read
@@ -259,7 +260,7 @@ echo -e "Verificando a porta de conexão do PostgreSQL Server, aguarde..."
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iTCP:'5432' -sTCP:LISTEN
-echo -e "Porta de conexõe verificada com sucesso!!!, continuando com o script...\n"
+echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do PostgreSQL Server e do PgAdmin4 feita com Sucesso!!!."
