@@ -281,7 +281,7 @@ echo -e "Inicializando os serviços do MongoDB e do ElasticSearch, aguarde..."
 echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Graylog Server, aguarde..."
+echo -e "Instalando o Graylog Server, aguarde esse processo demora um pouco..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt install -y $GRAYLOGINSTALL &>> $LOG
@@ -300,7 +300,7 @@ echo -e "Atualizando os arquivos de configuração do Graylog Server, aguarde...
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do Graylog, pressione <Enter> para editar..."
+echo -e "Editando o arquivo de configuração server.conf, pressione <Enter> para editar..."
 	read
 	vim /etc/graylog/server/server.conf
 echo -e "Arquivo do editado com sucesso!!!, continuando com o script...\n"
