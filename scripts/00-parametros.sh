@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 23/12/2021
-# Versão: 0.30
+# Data de atualização: 06/01/2022
+# Versão: 0.31
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1111,7 +1111,7 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 # Arquivos de monitoramento (log) do Serviço do OCS Inventory utilizados nesse script
 # 01. /var/log/ocs_server_setup.log = arquivo de log da instalação do OCS Inventory
 # 01. /var/log/ocsinventory-server/activity.log = arquivo de log do Servidor OCS Inventory
-# 02. /var/log/ocsinventory-agent/ocsagent.logo = arquivo de log do Agent OCS Inventory
+# 02. /var/log/ocsinventory-agent/ocsagent.log = arquivo de log do Agent OCS Inventory
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário OCS Inventory
 #
@@ -1159,6 +1159,16 @@ libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libso
 # PASSWORD('pti@2018') nova senha do usuário ocs
 # CUIDADO!!!!: essa senha será utilizada nos arquivos de configuração do OCS Inventory: dbconfig.inc.php, 
 # z-ocsinventory-server.conf e zz-ocsinventory-restapi.conf
+# opção do comando create: create (criação), database (base de dados), base (banco de dados), 
+# character set (conjunto de caracteres), collate (comparar)
+# opção do comando create: create (criação), user (usuário), identified by (identificado por - 
+# senha do usuário), password (senha)
+# opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas),
+# to (para), user (usuário), identified by (identificado por - senha do usuário), password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), 
+# *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), identified by (identificado 
+# por - senha do usuário), password (senha)
+# opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 CREATE_USER_DATABASE_OCSINVENTORY="CREATE USER 'ocsweb' IDENTIFIED BY 'ocsweb';"
 GRANT_DATABASE_OCSINVENTORY="GRANT USAGE ON *.* TO 'ocsweb';"
 GRANT_ALL_DATABASE_OCSINVENTORY="GRANT ALL PRIVILEGES ON ocsweb.* TO 'ocsweb' WITH GRANT OPTION;"
@@ -1172,8 +1182,8 @@ OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Bacula Server e Baculum utilizados nesse script
-# 01. /etc/sudoers.d/baculum-api =
-# 02. /etc/hosts.allow = 
+# 01. /etc/sudoers.d/baculum-api = arquivo de configuração de liberação do SUDOERS da API do Bacula
+# 02. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço de rede 
 #
 # Arquivos de monitoramento (log) do Serviço do Bacula Server e Baculum utilizados nesse script
 # 01. 
@@ -1203,9 +1213,9 @@ BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-tr
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Graylog Server utilizados nesse script
-# 01. /etc/elasticsearch/elasticsearch.yml = 
-# 02. /etc/elasticsearch/jvm.options = 
-# 03. /etc/graylog/server/server.conf =
+# 01. /etc/elasticsearch/elasticsearch.yml = arquivo de configuração do serviço do ElasticSearch
+# 02. /etc/elasticsearch/jvm.options = arquivo de configuração do Java do ElasticSearch
+# 03. /etc/graylog/server/server.conf = arquivo de configuração do Graylog Server
 #
 # Arquivos de monitoramento (log) do Serviço do Graylog Server utilizados nesse script
 # 01. 
@@ -1260,9 +1270,6 @@ ELASTICSEARCHPORT="9200"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 29-postgresl.sh                      #
 #=============================================================================================
 #
-# Arquivos de configuração (conf) do sistema PostgreSQL Server utilizados nesse script
-# 01. 
-#
 # Arquivos de monitoramento (log) do Serviço do PostgreSQL Server utilizados nesse script
 # 01. 
 #
@@ -1284,9 +1291,6 @@ libpq-dev python-dev apache2-utils libapache2-mod-wsgi libexpat1 ssl-cert"
 # Variável da instalação do PostgreSQL Server
 POSTGRESQLINSTALL="postgresql postgresql-contrib postgresql-client"
 #
-# Variável da porta padrão do PostgreSQL Server
-POSTGRESQLPORT="5432"
-#
 # Variável de download da chave de autenticação do repositório do PgAdmin4
 KEYPGADMIN4="https://www.pgadmin.org/static/packages_pgadmin_org.pub"
 #
@@ -1301,3 +1305,6 @@ PGADMIN4DEP="apache2 php python2.7 python3"
 #
 # Variável da instalação do PgAdmin4
 PGADMININSTALL="pgadmin4 pgadmin4-web"
+#
+# Variável da porta padrão do PostgreSQL Server
+POSTGRESQLPORT="5432"

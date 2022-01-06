@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 21/12/2021
-# Data de atualização: 21/12/2021
-# Versão: 0.1
+# Data de atualização: 06/01/2022
+# Versão: 0.2
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Bacula Server 11.x e do Baculum 11.x
 #
@@ -240,7 +240,7 @@ echo -e "Adicionando o repositório do Bacula Server, aguarde..."
 	# opção do comando wget: -q -O- (file)
 	# opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
 	# opção do comando apt-key: add (file name), - (arquivo recebido do redirecionar | piper)
-	cp -v conf/bacula/bacula.list /etc/apt/sources.list.d/bacula.list &>> $LOG
+	cp -v conf/bacula/bacula.list /etc/apt/sources.list.d/ &>> $LOG
 	wget -q $BACULAKEY -O- | apt-key add - &>> $LOG
 echo -e "Repositório do Bacula adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -251,7 +251,7 @@ echo -e "Adicionando o repositório do Baculum WEB/API, aguarde..."
 	# opção do comando wget: -q -O- (file)
 	# opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
 	# opção do comando apt-key: add (file name), - (arquivo recebido dO redirecionar | piper)
-	cp -v conf/bacula/baculum.list /etc/apt/sources.list.d/baculum.list &>> $LOG
+	cp -v conf/bacula/baculum.list /etc/apt/sources.list.d/ &>> $LOG
 	wget -q $BACULUMKEY -O- | apt-key add - &>> $LOG
 echo -e "Repositório do Baculum adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
