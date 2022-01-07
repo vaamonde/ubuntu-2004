@@ -1,6 +1,4 @@
-# REPOSITÓRIO EM DESENVOLVIMENTO - SCRIPT's "FORKADO" DO REPOSITÓRIO DA VERSÃO 18.04.x LTS, TODOS OS SCRIPTS SERÃO ADAPTADOS PARA A VERSÃO DO UBUNTU SERVER 20.04.x LTS, SERÁ REGRAVADO OS NOVOS VÍDEOS EM 2022.
-
-# Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps
+# Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
 
 ## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos e materiais gratuitos para o Canal do YouTUBE
 ## 💰 Chave PIX do projeto: robsonvaamonde@gmail.com
@@ -26,13 +24,13 @@ Linkedin Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<
 <a href="https://github.com/vaamonde/ubuntu-2004/blob/master/LICENSE"><img src="https://img.shields.io/github/license/vaamonde/ubuntu-2004?color=2b9348" alt="License Badge"/></a>
 </div>
 
-Esse curso tem como objetivo demonstrar a instalação e configuração da nova versão de Servidor da Canonical o GNU/Linux Ubuntu Server 20.04.x, essa versão foi projetada para uma fácil implementação, administração e configuração dos principais serviços de rede utilizados no nosso dia a dia.
+Esse curso tem como objetivo demonstrar a instalação e configuração da nova versão de Servidor da Canonical o GNU/Linux Ubuntu Server 20.04.x LTS, essa versão foi projetada para uma fácil implementação, administração e configuração dos principais serviços de rede utilizados no nosso dia a dia.
 
-Projetado para suportar implementações On-Premise (Servidores Locais) ou Cloud (Nuvens), essa versão possui várias ferramentas integradas e soluções desenvolvidas pela Canonical que facilita a implementação em larga escala com suporte a Hosts Virtual e Cloud melhorados.
+Projetado para suportar implementações On-Premise (Servidores Locais) ou Cloud (Nuvens), essa versão possui várias ferramentas integradas e soluções desenvolvidas pela Canonical que facilita a implementação em larga escala com suporte a Host Virtual e Cloud melhorados.
 
-Para esse curso as metodologias de DevOps, utilizando Shell Script, Git e Github serão empregadas de forma dinâmica, desenvolvendo scripts e automatizando todos os processos de instalação e configuração.
+Para esse curso as metodologias de DevOps, utilizando Shell Script, Git e Github serão empregadas de forma dinâmica, desenvolvendo scripts e automatizando todo o processo de instalação e configuração dos serviços de rede.
 
-Ideal para Estudantes e Profissionais de Redes que desejam se aprofundar nos pré-requisitos técnicos e práticos para Implementar Servidores GNU/Linux Ubuntu Server em cenários On-Premise ou Cloud.
+Ideal para Estudantes e Profissionais de Redes que desejam se aprofundar nos pré-requisitos técnicos e práticos para Implementar e Administrar Servidores GNU/Linux Ubuntu Server em cenários On-Premise ou Cloud.
 
 ## **Links Oficiais do Ubuntu, Mint, pfSense, Microsoft e VirtualBOX:**
 Canonical: https://canonical.com/<br>

@@ -1,0 +1,15 @@
+Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script.
+
+#01_ Apresentação do Curso de Ubuntu Server 20.04.x LTS DevOps
+#02_ Conhecendo o Cenário e Topologia do Curso de Ubuntu Server 20.04.x LTS
+#03_ Básico de Git, Github, Vim, VSCode, Bash e Shell Script
+#04_ Conhecendo a Estrutura do Repositório Ubuntu-2004 no Github
+#05_ Conhecendo o arquivo HELP do Curso de Ubuntu Server 20.04.x LTS
+#06_ Conhecendo o arquivo BUGS do Curso de Ubuntu Server 20.04.x LTS
+#07_ Conhecendo o arquivo CHANGELOG do Curso de Ubuntu Server 20.04.x LTS
+#08_ Conhecendo o arquivo RELEASE do Curso de Ubuntu Server 20.04.x LTS
+#09_ Conhecendo o diretório SCRIPTS do Curso de Ubuntu Server 20.04.x LTS
+#10_ Como customizar os Script para o seu Cenário antes de executar
+#11_ 00-parametros.sh principal script desse Curso
+#12_ 01-openssh.sh Instalação e Configuração do OpenSSH Server
+#13_
