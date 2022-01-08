@@ -1279,6 +1279,7 @@ ELASTICSEARCHPORT="9200"
 # Arquivos de monitoramento (log) do Serviço do PostgreSQL Server utilizados nesse script
 # 01. /var/log/postgresql/postgresql-14-main.log = arquivo de Log do Servidor PostgreSQL
 # 02. tail -f /var/log/syslog | grep -i postgresql = filtrando as mensagens do serviço do PostgreSQL
+# 03. /var/log/pgadmin/pgadmin4.log = arquivo de Log do Serviço via Web PgAdmin4
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Database PostgreSQL Server
 #

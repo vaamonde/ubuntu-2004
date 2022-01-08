@@ -246,6 +246,7 @@ echo -e "Atualizando os arquivo de configuração do PostgreSQL, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.old &>> $LOG
 	mv -v /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.old &>> $LOG
 	cp -v conf/postgresql/{pg_hba.conf,postgresql.conf} /etc/postgresql/14/main/ &>> $LOG
