@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 06/01/2022
-# Versão: 0.31
+# Data de atualização: 08/01/2022
+# Versão: 0.32
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1063,8 +1063,8 @@ PORTOPENFIRE="9090"
 # 02. /etc/apache2/sites-available/owncloud.conf = arquivo de configuração do Virtual Host do ownCloud
 #
 # Arquivos de monitoramento (log) do Serviço do ownCloud utilizados nesse script
-# 01. tail -f /var/log/apache2/access-owncloud.log = log de acesso ao ownCloud
-# 02. tail -f /var/log/apache2/error-owncloud.log = log de erro de acesso ao ownCloud
+# 01. /var/log/apache2/access-owncloud.log = arquivo de Log de acesso ao ownCloud
+# 02. /var/log/apache2/error-owncloud.log = arquivo de Log de erro de acesso ao ownCloud
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud ownCloud
 #
@@ -1186,7 +1186,9 @@ OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 # 02. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço de rede 
 #
 # Arquivos de monitoramento (log) do Serviço do Bacula Server e Baculum utilizados nesse script
-# 01. 
+# 01. /var/log/bacula/* = arquivos de Log do serviço do Bacula
+# 02. tail -f /var/log/syslog | grep -i bacula = filtrando as mensagens do serviço do Bacula
+# 03. /var/log/apache2/baculum*.log = vários arquivos de Log do serviço do Baculum-Web
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de backup Bacula e Baculum
 #
@@ -1218,7 +1220,7 @@ BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-tr
 # 03. /etc/graylog/server/server.conf = arquivo de configuração do Graylog Server
 #
 # Arquivos de monitoramento (log) do Serviço do Graylog Server utilizados nesse script
-# 01. 
+# 01. /var/log/graylog-server/server.log = arquivo de Log do serviço de rede Graylog Server
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Log Graylog Server 
 #
@@ -1270,8 +1272,13 @@ ELASTICSEARCHPORT="9200"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 29-postgresl.sh                      #
 #=============================================================================================
 #
+# Arquivos de configuração (conf) do Serviço do PostgreSQL Server utilizados nesse script
+# 01. /etc/postgresql/14/main/postgresql.conf = arquivo de configuração do Servidor PostgreSQL
+# 02. /etc/postgresql/14/main/pg_hba.conf = arquivo de liberação de rede do Servidor PostgreSQL
+#
 # Arquivos de monitoramento (log) do Serviço do PostgreSQL Server utilizados nesse script
-# 01. 
+# 01. /var/log/postgresql/postgresql-14-main.log = arquivo de Log do Servidor PostgreSQL
+# 02. tail -f /var/log/syslog | grep -i postgresql = filtrando as mensagens do serviço do PostgreSQL
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Database PostgreSQL Server
 #
@@ -1308,3 +1315,4 @@ PGADMININSTALL="pgadmin4 pgadmin4-web"
 #
 # Variável da porta padrão do PostgreSQL Server
 POSTGRESQLPORT="5432"
+#

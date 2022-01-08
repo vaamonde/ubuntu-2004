@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 23/12/2021
-# Data de atualização: 23/12/2021
-# Versão: 0.01
+# Data de atualização: 08/01/2022
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do PostgreSQL v14.x
 # Testado e homologado para a versão do PgAdmin v6.x
@@ -241,8 +241,31 @@ echo -e "Dúvidas veja a documentação na linha: 29 do script: $0"
     /usr/pgadmin4/bin/./setup-web.sh
 echo -e "Configuração do PgAdmin4 Web feita com sucesso!!!, continuando com o script...\n"
 sleep 5
-#			 
+#
+echo -e "Atualizando os arquivo de configuração do PostgreSQL, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mv: -v (verbose)
+	# opção do comando cp: -v (verbose)
+	mv -v /etc/postgresql/14/main/pg_hba.conf /etc/postgresql/14/main/pg_hba.conf.old &>> $LOG
+	mv -v /etc/postgresql/14/main/postgresql.conf /etc/postgresql/14/main/postgresql.conf.old &>> $LOG
+	cp -v conf/postgresql/{pg_hba.conf,postgresql.conf} /etc/postgresql/14/main/ &>> $LOG
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração postgresql.conf, pressione <Enter> para continuar"
+	read
+	vim /etc/postgresql/14/main/postgresql.conf 
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração pg_hba.conf, pressione <Enter> para continuar"
+	read
+	vim /etc/postgresql/14/main/pg_hba.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Reinicializando os serviços do Apache2 e do PostgreSQL, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart apache2 &>> $LOG
 	systemctl restart postgresql &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
