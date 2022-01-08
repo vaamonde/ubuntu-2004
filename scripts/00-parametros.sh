@@ -1317,3 +1317,22 @@ PGADMININSTALL="pgadmin4 pgadmin4-web"
 # Variável da porta padrão do PostgreSQL Server
 POSTGRESQLPORT="5432"
 #
+#=============================================================================================
+#                          VARIÁVEIS UTILIZADAS NO SCRIPT: 30-nfs.sh                         #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Serviço de Rede NFS Server utilizados nesse script
+# 01. /etc/idmap.conf = arquivo de configuração da indentificação do mapeamento do NFS Server
+# 02. /etc/exports = arquivo de configuração da exportação dos compartilhamentos do NFS Server
+#
+# Arquivos de monitoramento (log) do Serviço de Rede NFS Server utilizados nesse script
+# 01. systemctl status nfs-kernel-server = status do serviço do NFS Server
+# 02. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
+#
+# Variável de instalação dos softwares extras do NFS Server
+NFSINSTALL="nfs-common nfs-kernel-server nfstrace nfswatch"
+#
+# Variáveis das portas de conexão padrão do NFS Server
+PORTNFSRPC="2049"
+PORTNFSPORTMAPPER="111"
+#

@@ -6,41 +6,25 @@
 # YouTube: youtube.com/BoraParaPratica
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
-# Data de criação: 10/10/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.10
+# Data de criação: 08/01/2022
+# Data de atualização: 08/01/2022
+# Versão: 0.1
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do ISC DHCP Server v4.4.x
+# Testado e homologado para a versão do NFS Server v4.x
 #
-# O ISC DHCP Server dhcpd (uma abreviação de "daemon DHCP") é um programa de servidor 
-# DHCP que opera como um daemon em um servidor para fornecer serviço de protocolo de 
-# configuração dinâmica de hosts (DHCP) a uma rede. Essa implementação, também conhecida 
-# como ISC DHCP, é uma das primeiras e mais conhecidas, mas agora existem várias outras 
-# implementações de software de servidor DHCP disponíveis.
+# NFS (acrônimo para Network File System) é um sistema de arquivos distribuídos desenvolvido 
+# inicialmente pela Sun Microsystems, Inc., a fim de compartilhar arquivos e diretórios entre 
+# computadores conectados em rede, formando assim um diretório virtual. O protocolo Network 
+# File System é especificado nas seguintes RFCs: RFC 1094, RFC 1813 e RFC 7931 (que atualiza 
+# a RFC 7530, que tornou obsoleta a RFC 3530). 
 #
-# Site Oficial do Projeto ICS DHCP: https://www.isc.org/dhcp/
+# Site Oficial do Projeto NFS: http://nfs.sourceforge.net/
 #
-# Configuração do DHCP Client no GNU/Linux ou Microsoft Windows
-# Linux Mint Gráfico: NetworkManager - Ícone da Placa de Rede
+# Configuração do NFS Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	sudo NetworkManager --print-config
-# 	sudo nmcli device status
-# 	sudo nmcli device show enp0s3 
-# 	sudo networkctl status enp0s3 
-# 	sudo ifconfig enp0s3
-# 	sudo ip address show enp0s3
-# 	sudo route -n
-# 	sudo systemd-resolve --status
-# 	sudo dhclient -r enp0s3
-# 	sudo dhclient enp0s3
-# 	sudo cat /var/lib/dhcp/dhclient.leases
-# Windows Powershell: 
-#	ipconfig /all
-#	ipconfig /release
-#	ipconfig /renew
-#	netsh interface show interface
-#	netsh interface ip show interface
-#	netsh interface ip show config
+# 	sudo apt update && sudo apt install nfs-common
+#	sudo mkdir -v /mnt/nfs
+#	sudo sudo mount nfs.pti.intra:/mnt/nfs /mnt/nfs
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -79,18 +63,28 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		exit 1
 fi
 #
-# Verificando se a porta 67 está sendo utilizada no servidor Ubuntu Server
+# Verificando se as portas 111 e 2049 estão sendo utilizada no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
-if [ "$(nc -vz 127.0.0.1 $PORTDHCP &> /dev/null ; echo $?)" == "0" ]
+if [ "$(nc -vz 127.0.0.1 $PORTNFSRPC &> /dev/null ; echo $?)" == "0" ]
 	then
-		echo -e "A porta: $PORTDHCP já está sendo utilizada nesse servidor."
+		echo -e "A porta: $PORTNFSRPC já está sendo utilizada nesse servidor."
 		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
 		sleep 5
 		exit 1
 	else
-		echo -e "A porta: $PORTDHCP está disponível, continuando com o script..."
+		echo -e "A porta: $PORTNFSRPC está disponível, continuando com o script..."
+		sleep 5
+fi
+if [ "$(nc -vz 127.0.0.1 $PORTNFSPORTMAPPER &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTNFSPORTMAPPER já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTNFSPORTMAPPER está disponível, continuando com o script..."
 		sleep 5
 fi
 #
@@ -109,15 +103,15 @@ if [ -f $LOG ]
 		sleep 5
 fi
 #
-# Script de instalação do ICS DHCP Server no GNU/Linux Ubuntu Server 20.04.x
+# Script de instalação do NFS Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação do ISC DHCP Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo ISC DHCP Server.: UDP 67\n"
+echo -e "Instalação do NFS Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo NFS Server.: TCP/UDP 111 e TCP/UDP 2049\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -156,66 +150,88 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configuração do ISC DHCP Server, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do NFS Server e Client, aguarde...\n"
 sleep 5
 #
-echo -e "Instalando o ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+echo -e "Instalando o NFS Server e Client, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install $DHCPINSTALL &>> $LOG
-echo -e "ISC DHCP Server instalado com sucesso!!!, continuando com o script...\n"
+	apt -y install $NFSINSTALL &>> $LOG
+echo -e "NFS Server e Client instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo $NETPLAN, pressione <Enter> para continuar.\n"
-echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode mudar"
-echo -e "dependendo da versão do Ubuntu Server, verifique o conteúdo do diretório:"
-echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e altere"
-echo -e "o valor da variável NETPLAN no arquivo de configuração: 00-parametros.sh"
-	read
-	vim $NETPLAN
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Atualizando o arquivo de configuração do ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+echo -e "Atualizando os arquivos de configuração do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.old &>> $LOG
-	cp -v conf/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf &>> $LOG
-echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
+	mv -v /etc/idmap.conf /etc/idmap.conf.old &>> $LOG
+	mv -v /etc/exports /etc/exports.old &>> $LOG
+	cp -v conf/nfs/{idmap.conf,exports} /etc/ &>> $LOG
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando dhcpd: -t (test the configuration file)
+echo -e "Editando o arquivo de configuração idmap.conf, pressione <Enter> para continuar."
 	read
-	vim /etc/dhcp/dhcpd.conf
-	dhcpd -t &>> $LOG
+	vim /etc/idmap.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando os serviços do Netplan e do ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	netplan --debug apply &>> $LOG
-	systemctl start isc-dhcp-server &>> $LOG
-echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
+echo -e "Editando o arquivo de configuração exports, pressione <Enter> para continuar."
+	read
+	vim /etc/exports
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o serviço do ISC DHCP Server, aguarde..."
-	systemctl status isc-dhcp-server | grep Active
+echo -e "Criando o diretório de Exportação do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mkdir: -v (verbose)
+	# opção do comando chown: -R (recursive), -v (verbose)
+	# opção do comando chmod: -R (recursive), -v (verbose), 777 (User=RWX,Group=RWX,Other=RWX)
+	mkdir -v /mnt/nfs/ &>> $LOG
+	chown -Rv nobody:nogroup /mnt/nfs/ &>> $LOG
+	chmod -Rv 777 /mnt/nfs/ &>> $LOG
+echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Exportando os Compartilhamentos do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando exportfs: -a (Export all directories), -r (Reexport  all  directories), -v (verbose)
+	exportfs -arv &>> $LOG
+echo -e "Compartilhamentos exportados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando os Compartilhamentos do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando exportfs: -s (Display the current export list), -v (verbose)
+	exportfs -sv &>> $LOG
+echo -e "Compartilhamentos verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Reinicializando o Serviço do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl restart nfs-kernel-server &>> $LOG
+echo -e "Serviços reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do NFS Server, aguarde..."
+	systemctl status nfs-kernel-server | grep Active
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do ISC DHCP Server, aguarde..."
+echo -e "Verificando a porta de conexão do NFS Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iUDP:67
-echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+	lsof -nP -iTCP:'111' -sTCP:LISTEN
+	echo ============================================
+	rpcinfo -p | grep nfs
+	rpcinfo -p | grep portmapper
+echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
-#	
-echo -e "Instalação do ICS DHCP Server feita com Sucesso!!!."
+#
+echo -e "Instalação do NFS Server e Client feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
