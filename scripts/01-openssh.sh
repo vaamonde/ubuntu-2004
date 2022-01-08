@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.15
+# Data de atualização: 07/01/2022
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -43,6 +43,14 @@
 #	ss | grep ssh (another utility to investigate sockets)
 #	netstat | grep 'ESTABLISHED.*sshd' (show networking connection)
 #	ps -axfj | grep sshd (report a snapshot of the current processes)
+#
+# Gerando os par de chaves Pública/Privadas utilizando o GNU/Linux
+# Linux Mint Terminal: Ctrl+Alt+T
+#	ssh-keygen
+#		Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde <Enter>
+#		Enter passphrase (empty for no passphrase): <Enter>
+#		Enter same passphrase again: <Enter>
+#	ssh-copy-id vaamonde@ssh.pti.intra
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

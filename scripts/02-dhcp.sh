@@ -116,7 +116,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação do ICS DHCP Server no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Instalação do ISC DHCP Server no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo ISC DHCP Server.: UDP 67\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
