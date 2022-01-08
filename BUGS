@@ -6,12 +6,18 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 09/12/2021
-Versão: 0.08
+Data de atualização: 08/01/2022
+Versão: 0.09
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
-0008 - Falha de atualização do serviço ZoneMinder, executar os comandos:  zmupdate.pl -f depois: apt -f install
+0009 - Falha de resolução do DNS para endereços Externos executando o comando: ping google.com recebendo a mensagem no 
+terminal: Temporary failure in name resolution ou utilizando o comando: nslookup google.com recendo a mensagem no terminal:
+server can't find google.com: SERVFAIL, falha relacionada a Data e Hora do sistema, muitas vezes devido a restauração de
+um Snapshot ou alteração da data/hora errada no sistema que não sincronizou com o NTP Server, utilizar o comando: data para
+resolver esse problema.
+
+0008 - Falha de atualização do serviço ZoneMinder, executar os comandos: zmupdate.pl -f depois: apt -f install
 
 0007 - Falha na inicialização do serviço do Netdata referente ao erro do SystemD quado utilizado o comando: systemctl status
 netdata - erro: PROCFILE: Cannot open file '/etc/netdata/apps_groups.conf' e PROCFILE: Cannot open file '/proc/54579/status,
