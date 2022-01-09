@@ -6,24 +6,28 @@
 # YouTube: youtube.com/BoraParaPratica
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
-# Data de criação: 08/01/2022
+# Data de criação: 09/01/2022
 # Data de atualização: 09/01/2022
-# Versão: 0.2
-# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do Apache2 v2.4.x
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do Nextcloud v23.x
 #
-# WebDAV é um acrônimo de Web-based Distributed Authoring and Versioning, ou Criação 
-# e Distribuição de Conteúdo pela Web. É uma extensão do protocolo HTTP para transferência 
-# de arquivos; suporta bloqueio de recursos. Quando uma pessoa está editando um arquivo, 
-# ele fica bloqueado, impedindo que outras pessoas façam alterações ao mesmo tempo.
-# Esse recurso esta presente no Microsoft SharePoint, Notability, Pages, Keynote, Number, 
-# entre vários outros apps e serviços. 
+# Nextcloud é uma plataforma de colaboração em nuvem de código aberto que possibilita a 
+# criação de servidores de hospedagem de arquivos privados ou empresariais. Seu 
+# desenvolvimento começou em julho de 2016, por Frank Karlitschek e outros ex-funcionários 
+# da OwnCloud Inc., quando foi iniciado como uma bifurcação, ou fork do OwnCloud.
 #
-# Site Oficial do Projeto Webdav: http://www.webdav.org/
+# Informações que serão solicitadas na configuração via Web do Nextcloud
+# 		Nome do usuário: admin
+# 		Senha: pti@2018
+# 		Pasta de dados: /var/www/html/nextcloud
+# 		Usuário do banco de dados: nextcloud
+# 		Senha do banco de dados: nextcloud
+# 		Nome do banco de dados: nextcloud
+# 		Host do banco de dados: localhost: 
+#	Concluir Configuração
 #
-# Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
-# Linux Mint Nemo:
-#	Nemo, Ctrl+L: davs://vaamonde@webdav.pti.intra/ 
+# Site Oficial do Nextcloud: https://nextcloud.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -62,13 +66,13 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		exit 1
 fi
 #
-# Verificando se as dependências do Webdav estão instaladas
+# Verificando se as dependências do Nextcloud estão instaladas
 # opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Webdav, aguarde... "
-	for name in $WEBDAVDEP
+echo -n "Verificando as dependências do Nextcloud, aguarde... "
+	for name in $NEXTCLOUDDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -77,6 +81,7 @@ echo -n "Verificando as dependências do Webdav, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
+            echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
             exit 1; 
             }
@@ -97,16 +102,16 @@ if [ -f $LOG ]
 		sleep 5
 fi
 #
-# Script de configuração do Webdav no GNU/Linux Ubuntu Server 20.04.x
+# Script de instalação do Nextcloud no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
+# opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
-echo
 #
-echo -e "Configuração do Webdav no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do Webdav acessar a URL: https://webdav.$(hostname -d | cut -d' ' -f1)/\n"
+echo -e "Instalação do Nextcloud no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Após a instalação do Nextcloud acessar a URL: http://next.$(hostname -d | cut -d ' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -145,69 +150,95 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Configuração do Webdav no Apache2, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Nextcloud, aguarde...\n"
 sleep 5
 #
-echo -e "Habilitando os módulos do Webdav no Apache2, aguarde..."
+echo -e "Habilitando os módulos do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	a2enmod dav &>> $LOG
-	a2enmod dav_fs &>> $LOG
-	a2enmod auth_digest &>> $LOG
+	# opção do comando echo |: faz a função de Enter
+	# opção do comando a2dismod: desabilitar módulos do Apache2
+	# opção do comando a2enmod: habilitar módulos do Apache2
+	echo | a2dismod autoindex &>> $LOG
+	a2enmod rewrite &>> $LOG
+	a2enmod headers &>> $LOG
+	a2enmod env &>> $LOG
+	a2enmod dir &>> $LOG
+	a2enmod mime &>> $LOG
+	a2enmod setenvif &>> $LOG
 echo -e "Módulos habilitados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o diretório do Webdav no Apache2, aguarde..."
+echo -e "Instalando as dependências do Nextcloud, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	mkdir -v /var/www/webdav/ &>> $LOG
-	chown -v www-data:www-data /var/www/webdav/ &>> $LOG
-echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
+	# opção do comando apt: -y (yes)
+	apt -y install $NEXTCLOUDINSTALLDEP &>> $LOG
+echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o diretório do Banco de Dados Webdav no Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	mkdir -v /var/run/apache2/webdav/ &>> $LOG
-	chown -v www-data:www-data /var/run/apache2/webdav/ &>> $LOG
-echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
+echo -e "Fazendo o download do Nextcloud do site Oficial, aguarde..."
+	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando rm: -v (verbose)
+	# opção do comando wget: -O (output document file)
+	rm -v owncloud.tar.bz2 &>> $LOG
+	wget $NEXTCLOUDINSTALL -O nextcloud.tar.bz2 &>> $LOG
+echo -e "Download feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o arquivo de Banco de Dados de usuários do Webdav, aguarde..."
+echo -e "Descompactando o arquivo do Nextcloud, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	touch /var/run/apache2/webdav/users.password &>> $LOG
-	chown -v www-data:www-data /var/run/apache2/webdav/users.password &>> $LOG
-echo -e "Arquivo criado com sucesso!!!, continuando com o script...\n"
+	# opção do comando tar: -j (bzip2), -x (extract), -v (verbose), -f (file)
+	tar -jxvf nextcloud.tar.bz2 &>> $LOG
+echo -e "Arquivo descompactado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Copiando o arquivo de Virtual Host do Webdav no Apache2, aguarde..."
+echo -e "Movendo o diretório do Nextcloud para o Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mv: -v (verbose)
+	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
+	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)
+	mv -v nextcloud/ /var/www/html/next/ &>> $LOG
+	chown -Rv www-data:www-data /var/www/html/next/ &>> $LOG
+	chmod -Rv 755 /var/www/html/next/ &>> $LOG
+echo -e "Diretório movido com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando o Banco de Dados do Nextcloud, aguarde..."
+	# opção do comando: &>> (redirecionar de saída padrão)
+	# opção do comando mysql: -u (user), -p (password), -e (execute)
+	# opção do comando: &>> (redirecionar de saída padrão)
+	# opção do comando: | piper (conecta a saída padrão com a entrada padrão de outro comando)
+	# opção do comando mysql: -u (user), -p (password), -e (execute)
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_NEXTCLOUD" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_NEXTCLOUD" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_NEXTCLOUD" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_NEXTCLOUD" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_NEXTCLOUD" mysql &>> $LOG
+echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando os arquivos de configuração do Nextcloud, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/webdav/webdav.conf /etc/apache2/sites-available/ &>> $LOG
-echo -e "Arquivo copiando com sucesso!!!, continuando com o script...\n"
+	cp -v conf/nextcloud/nextcloud.conf /etc/apache2/sites-available/ &>> $LOG
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração webdav.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração do nextcloud.conf, pressione <Enter> para continuar"
 	read
-	vim /etc/apache2/sites-available/webdav.conf
+	vim /etc/apache2/sites-available/nextcloud.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando o Virtual Host do Webdav no Apache2, aguarde..."
-	a2ensite webdav &>> $LOG
+echo -e "Habilitando o Virtual Host do Nextcloud no Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
+	a2ensite nextcloud &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Criando o usuário de acesso ao Webdav, aguarde..."
-	htdigest /var/run/apache2/webdav/users.password $REALWEBDAV $USERWEBDAV
-echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	systemctl reload apache2 &>> $LOG
+	systemctl restart apache2 &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -221,17 +252,17 @@ echo -e "Verificando a porta de conexão do Apache2, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:443 -sTCP:LISTEN
+	lsof -nP -iTCP:80 -sTCP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o Virtual Host do Webdav no Apache2, aguarde..."
+echo -e "Verificando o Virtual Host do Nextcloud no Apache2, aguarde..."
 	# opção do comando apachectl: -s (a synonym)
-	apache2ctl -S | grep webdav.$DOMINIOSERVER
+	apache2ctl -S | grep next.$DOMINIOSERVER
 echo -e "Virtual Host verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Configuração do Webdav no Apache2 feita com Sucesso!!!."
+echo -e "Instalação do Nextcloud feita com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
@@ -247,3 +278,4 @@ echo -e "Pressione <Enter> para concluir o processo."
 echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
 exit 1
+

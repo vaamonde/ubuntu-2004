@@ -17,7 +17,7 @@ sudo cat /etc/default/locale
 sudo ls /usr/share/X11/locale
 	LANG=en_US.UTF-8 (Padrão Inglês Americano com acentuação)
 	LANG=pt_BR.UTF-8 (Padrão Português Brasileiro com acentuação)
-sudo localectl set-locale LANG=en_US.UTF-8
+sudo localectl set-locale LANG=pt_BR.UTF-8
 
 #Configuração do Timezone (Fuso Horário) do Sistema
 sudo timedatectl

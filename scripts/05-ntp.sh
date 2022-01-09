@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.10
+# Data de atualização: 09/01/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -233,6 +233,7 @@ echo -e "Atualizando a Data e Hora do NTP Server, aguarde..."
 	systemctl stop ntp &>> $LOG
 	ntpdate -dquv $NTPSERVER &>> $LOG
 	timedatectl set-timezone "$TIMEZONE" &>> $LOG
+	localectl set-locale LANG=$LOCALE &>> $LOG
 	systemctl start ntp &>> $LOG
 echo -e "Data e Hora do NTP Server atualizada com sucesso!!!, continuando com o script...\n"
 sleep 5

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 08/01/2022
-# Versão: 0.32
+# Data de atualização: 09/01/2022
+# Versão: 0.33
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -216,6 +216,9 @@ NTPSERVER="a.st1.ntp.br"
 #
 # Variável do Zona de Horário do NTP Server
 TIMEZONE="America/Sao_Paulo"
+#
+# Variável de Configuração do Locale do Server
+LOCALE="pt_BR.UTF-8"
 #
 # Variável das dependências do laço de loop do NTP Server
 NTPDEP="isc-dhcp-server"
@@ -1174,7 +1177,7 @@ GRANT_DATABASE_OCSINVENTORY="GRANT USAGE ON *.* TO 'ocsweb';"
 GRANT_ALL_DATABASE_OCSINVENTORY="GRANT ALL PRIVILEGES ON ocsweb.* TO 'ocsweb' WITH GRANT OPTION;"
 FLUSH_OCSINVENTORY="FLUSH PRIVILEGES;"
 #
-# Variável das dependências do laço de loop do ownCloud
+# Variável das dependências do laço de loop do OCS Inventory Server
 OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 #=============================================================================================
@@ -1207,7 +1210,7 @@ BACULUMWEBINSTALL="baculum-web baculum-web-apache2"
 # Variável de instalação do Baculum API
 BACULUMAPIINSTALL="baculum-common baculum-api-apache2"
 #
-# Variável das dependências do laço de loop do ownCloud
+# Variável das dependências do laço de loop do Bacula Server
 BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-transport-https"
 #
 #=============================================================================================
@@ -1360,3 +1363,42 @@ USERWEBDAV=$USUARIODEFAULT
 # Variável da criação da senha do usuário de acesso ao Webdav
 PASSWORDWEBDAV=$SENHADEFAULT
 #
+#=============================================================================================
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 32-nextcloud.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Nextcloud utilizados nesse script
+# 01. /etc/apache2/sites-available/nextcloud.conf = arquivo de configuração do Virtual Host do Nextcloud
+#
+# Arquivos de monitoramento (log) do Serviço do Nextcloud utilizados nesse script
+# 01. /var/log/apache2/access-nextcloud.log = arquivo de Log de acesso ao Nextcloud
+# 02. /var/log/apache2/error-nextcloud.log = arquivo de Log de erro de acesso ao Nextcloud
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
+#
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 09/01/2022).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-23.0.0.tar.bz2"
+#
+# Variável da instalação das dependências do Nextcloud
+NEXTCLOUDINSTALLDEP="software-properties-common php-cli php-common php-xmlrpc libapache2-mod-php \
+php-gd php-mysql php-curl php-mbstring php-intl php-gmp php-bcmath php-imagick php-xml php-zip"
+#
+# Declarando as variáveis para criação da Base de Dados do Nextcloud
+# opção do comando create: create (criação), database (base de dados), base (banco de dados), 
+# character set (conjunto de caracteres), collate (comparar)
+# opção do comando create: create (criação), user (usuário), identified by (identificado por - 
+# senha do usuário), password (senha)
+# opção do comando grant: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/tabelas),
+# to (para), user (usuário), identified by (identificado por - senha do usuário), password (senha)
+# opões do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), 
+# *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), identified by (identificado 
+# por - senha do usuário), password (senha)
+# opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
+CREATE_DATABASE_NEXTCLOUD="CREATE DATABASE nextcloud;"
+CREATE_USER_DATABASE_NEXTCLOUD="CREATE USER 'nextcloud' IDENTIFIED BY 'nextcloud';"
+GRANT_DATABASE_NEXTCLOUD="GRANT USAGE ON *.* TO 'nextcloud';"
+GRANT_ALL_DATABASE_NEXTCLOUD="GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud' WITH GRANT OPTION;"
+FLUSH_NEXTCLOUD="FLUSH PRIVILEGES;"
+#
+# Variável das dependências do laço de loop do Nextcloud
+NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"

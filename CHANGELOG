@@ -6,11 +6,16 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 08/01/2022
-Versão: 0.25
+Data de atualização: 09/01/2022
+Versão: 0.26
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+09/01/2022 - Robson Vaamonde - Acréscimo da linha de configuração do Locale no script: 05-ntp.sh e criação da variável
+locale no script: 00-paramentros.sh, criação do script 32-nextcloud.sh e testes de configuração do servidor e correções
+de Bugs nos scripts, alterado da localização dos arquivos do WEbdav para: /var/www/webdav (aumentar a segurança),
+criação do CNAME: next no arquivo do Bind DNS pti.intra.hosts, 
+
 08/01/2022 - Robson Vaamonde - Criação dos arquivos de configuração do PostgreSQL: pg_hba.conf e postgresql.conf,
 alteração do script: 29-postgresql.sh com o acréscimo das linhas de atualização dos arquivos conf, criação do script
 30-nfs.sh e 31-webdav.sh, atualização do arquivo de configuração: pti.intra.hosts com os CNAME: nfs e webdav.
