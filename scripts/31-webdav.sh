@@ -22,7 +22,8 @@
 # Site Oficial do Projeto Webdav: http://www.webdav.org/
 #
 # Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
-# Linux Mint Terminal: 
+# Linux Mint Nemo:
+#	Nemo, Ctrl+L: davs://vaamonde@webdav.pti.intra/ 
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
