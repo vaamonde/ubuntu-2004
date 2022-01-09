@@ -1336,3 +1336,27 @@ NFSINSTALL="nfs-common nfs-kernel-server nfstrace nfswatch"
 PORTNFSRPC="2049"
 PORTNFSPORTMAPPER="111"
 #
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 31-webdav.sh                        #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Serviço de Webdav utilizados nesse script
+# 01. /var/run/apache2/webdav/users.password = banco de dados de usuários e senhas do Webdav
+# 02. /etc/apache2/sites-available/webdav.conf = arquivo do virtual host do Webdav no Apache2
+#
+# Arquivos de monitoramento (log) do Site do Webdav utilizado nesse script
+# 01. tail -f /var/log/apache2/access-webdav.log = log de acesso ao Webdav
+# 02. tail -f /var/log/apache2/error-webdav.log = log de erro de acesso ao Webdav
+#
+# Variável das dependências do laço de loop do Webdav
+WEBDAVDEP="apache2 apache2-utils openssl"
+#
+# Variável do Nome REAL do Grupo de acesso ao Webdav
+REALWEBDAV="webdav"
+#
+# Variável da criação do usuário de acesso ao Webdav
+USERWEBDAV=$USUARIODEFAULT
+#
+# Variável da criação da senha do usuário de acesso ao Webdav
+PASSWORDWEBDAV=$SENHADEFAULT
+#

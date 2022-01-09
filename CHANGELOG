@@ -13,7 +13,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 08/01/2022 - Robson Vaamonde - Criação dos arquivos de configuração do PostgreSQL: pg_hba.conf e postgresql.conf,
 alteração do script: 29-postgresql.sh com o acréscimo das linhas de atualização dos arquivos conf, criação do script
-30-nfs.sh e 31-webdav.sh, 
+30-nfs.sh e 31-webdav.sh, atualização do arquivo de configuração: pti.intra.hosts com os CNAME: nfs e webdav.
 
 23/12/2021 - Robson Vaamonde - Correções de vários scripts em relação ao PT-BR e melhorias na estrutura e documentação
 finalizado a homologação dos scripts até 29-postgresql.sh. Preparação para a gravação das aulas em Janeiro de 2022,
