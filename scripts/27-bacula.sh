@@ -186,8 +186,8 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
-#
 echo
+#
 echo -e "Instalação do Bacula Server e do Baculum WEB/API GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Portas padrão utilizadas pelo Bacula Server.: TCP 9101, 9102 e 9103"
 echo -e "Portas padrão utilizadas pelo Baculum WEB/API.: TCP 9095 e 9096\n"
@@ -309,13 +309,15 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração baculum.api, pressione: <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/sudoers.d/baculum-api
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.allow, pressione: <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

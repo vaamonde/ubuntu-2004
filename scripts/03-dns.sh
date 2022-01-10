@@ -155,26 +155,29 @@ echo -e "Iniciando a Instalação e Configuração do Bind9 DNS Server, aguarde.
 sleep 5
 #
 echo -e "Instalando o Bind9 DNS Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y install $DNSINSTALL &>> $LOG
 echo -e "Bind9 DNS Server instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hostname
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hosts
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/nsswitch.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -184,13 +187,14 @@ echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode m
 echo -e "dependendo da versão do Ubuntu Server, verifique o conteúdo do diretório:"
 echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e altere"
 echo -e "o valor da variável NETPLAN no arquivo de configuração: 00-parametros.sh"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
@@ -214,42 +218,48 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração named.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/bind/named.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração named.conf.local, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/bind/named.conf.local
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração named.conf.options, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	read
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/bind/named.conf.options
 	named-checkconf &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração rndc.key, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/bind/rndc.key
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração pti.intra.hosts, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	read
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /var/lib/bind/pti.intra.hosts
 	named-checkzone $DOMAIN /var/lib/bind/pti.intra.hosts &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração 172.16.1.rev, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
-	read
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /var/lib/bind/172.16.1.rev
 	named-checkzone $DOMAINREV /var/lib/bind/172.16.1.rev &>> $LOG
 	named-checkzone $NETWORK /var/lib/bind/172.16.1.rev &>> $LOG
@@ -257,34 +267,38 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração named, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/default/named
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração dnsupdate-cron, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/cron.d/dnsupdate-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração rndcupdate-cron, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/cron.d/rndcupdate-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração bind-rndc.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando logrotate: -d (debug)
-	read
+	read -s
 	vim /etc/logrotate.d/rndcstats
 	logrotate /etc/logrotate.d/rndcstats -d &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Inicializando os serviços do Netplan e do Bind DNS Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	netplan --debug apply &>> $LOG
 	systemctl restart bind9 &>> $LOG
 	systemctl reload bind9 &>> $LOG

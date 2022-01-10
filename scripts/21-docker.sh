@@ -127,8 +127,8 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
-#
 echo
+#
 echo -e "Instalação do Docker Community e do Portainer.io no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Portainer.io.: TCP 9000\n"
 echo -e "Após a instalação do Portainer.io acessar a URL: http://$(hostname -d | cut -d ' ' -f1):9000/\n"

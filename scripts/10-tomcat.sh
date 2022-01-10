@@ -200,12 +200,14 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração tomcat-users.xml, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/tomcat9/tomcat-users.xml
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/tomcat9/server.xml
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"

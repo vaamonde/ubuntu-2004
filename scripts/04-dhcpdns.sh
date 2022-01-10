@@ -186,7 +186,7 @@ echo -e "Iniciando a Configuração da Integração do ICS DHCP Server com Bind 
 sleep 5
 #
 echo -e "Gerando a Chave de atualização do Bind DNS Server utilizada no ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando dnssec-keygen: Nas versões anteriores do BIND <9.13, os algoritmos HMAC podiam 
 	# ser gerados para uso como chaves TSIG, esse recurso foi removido a partir do BIND > 9.13, nesse 
 	# cenário é recomendado utilizar o comando: tsig-keygen para gerar chaves TSIG. 
@@ -199,7 +199,7 @@ echo -e "Geração da chave feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do Bind DNS Server e do ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando sed: s (replacement)
 	# opção do comando cp: -v (verbose)
 	sed "s@secret $SECRETUPDATE;@secret $KEYGEN;@" /etc/dhcp/dhcpd.conf > /tmp/dhcpd.conf.old
@@ -212,23 +212,26 @@ echo -e "Atualização dos arquivos feita com sucesso!!!, continuando com o scri
 sleep 5
 #
 echo -e "Editando o arquivo de configuração named.conf.local, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/bind/named.conf.local
 	named-checkconf /etc/bind/named.conf.local &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração rndc.key, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/bind/rndc.key
 	named-checkconf /etc/bind/rndc.key &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando dhcpd: -t (test the configuration file)
-	read
+	read -s
 	vim /etc/dhcp/dhcpd.conf
 	dhcpd -t &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"

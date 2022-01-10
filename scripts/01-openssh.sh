@@ -213,52 +213,60 @@ echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode m
 echo -e "dependendo da versão do Ubuntu Server, verifique o conteúdo do diretório:"
 echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e altere"
 echo -e "o valor da variável NETPLAN no arquivo de configuração: 00-parametros.sh"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hostname, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hostname
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hosts
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração nsswitch.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/nsswitch.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração sshd_config, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando sshd: -t (text mode check configuration)
-	read
+	read -s
 	vim /etc/ssh/sshd_config
 	sshd -t &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.deny, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hosts.deny
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração issue.net, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/issue.net
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

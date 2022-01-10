@@ -205,33 +205,38 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de monitoramento apache.conf, pressione <Enter> para editar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /usr/lib/netdata/conf.d/python.d/apache.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de monitoramento mysql.conf, pressione <Enter> para editar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /usr/lib/netdata/conf.d/python.d/mysql.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de monitoramento isc_dhcpd.conf, pressione <Enter> para editar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de monitoramento tomcat.conf, pressione <Enter> para editar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /usr/lib/netdata/conf.d/python.d/tomcat.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de estatísticas bind_rndc.conf, pressione <Enter> para editar"
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando chown: -v (verbose), :netdata (group netdata)
-	read
+	read -s
 	vim /usr/lib/netdata/conf.d/python.d/bind_rndc.conf
 	chown -v :netdata /etc/bind/rndc.key &>> $LOG
 	rndc stats &>> $LOG

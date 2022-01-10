@@ -111,6 +111,7 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
 echo -e "Instalação do ownCloud no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Após a instalação do ownCloud acessar a URL: http://own.$(hostname -d | cut -d ' ' -f1)/\n"
@@ -206,9 +207,6 @@ sleep 5
 echo -e "Criando o Banco de Dados do ownCloud, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute)
-	# opção do comando: &>> (redirecionar de saída padrão)
-	# opção do comando: | piper (conecta a saída padrão com a entrada padrão de outro comando)
-	# opção do comando mysql: -u (user), -p (password), -e (execute)
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_OWNCLOUD" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_OWNCLOUD" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_OWNCLOUD" mysql &>> $LOG
@@ -220,22 +218,19 @@ sleep 5
 echo -e "Atualizando os arquivos de configuração do ownCloud, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/owncloud/owncloud.conf /etc/apache2/sites-available/owncloud.conf &>> $LOG
+	cp -v conf/owncloud/owncloud.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do owncloud.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/sites-available/owncloud.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Habilitando o Virtual Host do ownCloud no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando phpenmod: (habilitar módulos do PHP)
-	# opção do comando a2enconf: (habilitar arquivo de configuração de site do Apache2)
-	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
-	# opção do comando systemctl: restart (reinicializar o serviço)
 	a2ensite owncloud &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5

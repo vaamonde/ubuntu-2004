@@ -156,6 +156,7 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
 echo -e "Instalação do OpenFire no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo OpenFire.: TCP 9090\n"

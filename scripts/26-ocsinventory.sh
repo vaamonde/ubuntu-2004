@@ -168,6 +168,7 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
 echo -e "Instalação do OCS Inventory no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Após a instalação do OCS Inventory acesse a URL: http://$(hostname -d | cut -d' ' -f1)/ocsreports\n"
@@ -364,8 +365,9 @@ sleep 5
 echo -e "Instalando o OCS Inventory Server e Reports, pressione <Enter> para continuar.\n"
 echo -e "CUIDADO!!! com as opções que serão solicitadas no decorrer da instalação do OCS Inventory Server."
 echo -e "Veja a documentação das opções de instalação a partir da linha: 22 do script $0"
+	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando cd: .. (retorne to root folder)
-	read
+	read -s
 	cd OCSNG_UNIX_SERVER-*
 		./setup.sh
 	cd ..
@@ -425,33 +427,38 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração z-ocsinventory-server.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/conf-available/z-ocsinventory-server.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração zz-ocsinventory-restapi.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/conf-available/zz-ocsinventory-restapi.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração ocsinventory-reports.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/conf-available/ocsinventory-reports.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração dbconfig.inc.php, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração ocsinventory-server, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a sada padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando logrotate: -d (debug)
-	read
+	read -s
 	vim /etc/logrotate.d/ocsinventory-server
 	logrotate /etc/logrotate.d/ocsinventory-server -d &>> $LOG
 	systemctl restart apache2 &>> $LOG
@@ -494,19 +501,22 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração ocsinventory-agent.cfg, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/ocsinventory-agent/ocsinventory-agent.cfg
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração modules.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/ocsinventory-agent/modules.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração ocsinventory-agent, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/cron.d/ocsinventory-agent
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

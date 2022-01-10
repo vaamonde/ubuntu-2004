@@ -297,7 +297,8 @@ echo -e "Arquivo de Chave Raiz da CA verificado com sucesso!!!, continuando com 
 sleep 5
 #
 echo -e "Editando o arquivo de configuração da CA pti-ca.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/ssl/pti-ca.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -430,7 +431,8 @@ echo -e "Arquivo de Chave Privada do Apache2 verificado com sucesso!!!, continua
 sleep 5
 #
 echo -e "Editando o arquivo configuração do Certificado do Apache2 pti-ssl.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/ssl/pti-ssl.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -534,7 +536,8 @@ echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração default-ssl.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/sites-available/default-ssl.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -593,7 +596,7 @@ echo -e "Testando o Certificado TLS/SSL do Apache2, aguarde..."
 	# -servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello message)
 	# -showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
 	#
-	echo | openssl s_client -connect localhost:443 -servername www.pti.intra -showcerts &>> $LOG
+	echo | openssl s_client -connect localhost:443 -servername www.$DOMINIOSERVER -showcerts &>> $LOG
 echo -e "Certificado do Apache2 testado sucesso!!!, continuando com o script...\n"
 sleep 5
 #

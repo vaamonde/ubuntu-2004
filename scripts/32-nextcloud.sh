@@ -109,6 +109,7 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
 echo -e "Instalação do Nextcloud no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Após a instalação do Nextcloud acessar a URL: http://next.$(hostname -d | cut -d ' ' -f1)/\n"
@@ -176,10 +177,10 @@ echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Fazendo o download do Nextcloud do site Oficial, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
-	rm -v owncloud.tar.bz2 &>> $LOG
+	rm -v nextcloud.tar.bz2 &>> $LOG
 	wget $NEXTCLOUDINSTALL -O nextcloud.tar.bz2 &>> $LOG
 echo -e "Download feito com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -205,9 +206,6 @@ sleep 5
 echo -e "Criando o Banco de Dados do Nextcloud, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute)
-	# opção do comando: &>> (redirecionar de saída padrão)
-	# opção do comando: | piper (conecta a saída padrão com a entrada padrão de outro comando)
-	# opção do comando mysql: -u (user), -p (password), -e (execute)
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_NEXTCLOUD" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_NEXTCLOUD" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_NEXTCLOUD" mysql &>> $LOG
@@ -224,7 +222,8 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do nextcloud.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/sites-available/nextcloud.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

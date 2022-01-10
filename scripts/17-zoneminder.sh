@@ -110,6 +110,7 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
 echo -e "Instalação do ZoneMinder no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Após a instalação do ZoneMinder acessar a URL: http://$(hostname -d | cut -d ' ' -f1)/zm\n"
@@ -170,7 +171,8 @@ sleep 5
 #
 echo -e "Editando as configurações MySQL mysqld.cnf, pressione <Enter> para continuar"
 	# opção do comando: &>> (redirecionar a saída padrão)
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/mysql/mysql.conf.d/mysqld.cnf 
 	systemctl restart mysql &>> $LOG
 echo -e "Arquivo do MySQL editado com sucesso!!!, continuando com o script...\n"
@@ -178,7 +180,8 @@ sleep 5
 #
 echo -e "Editando as configurações do PHP php.ini, pressione <Enter> para continuar"
 	# opção do comando: &>> (redirecionar a saída padrão)
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/php/7.4/apache2/php.ini
 	systemctl restart apache2 &>> $LOG
 echo -e "Arquivo do PHP editado com sucesso!!!, continuando com o script...\n"

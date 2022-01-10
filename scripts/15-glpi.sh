@@ -190,7 +190,7 @@ echo -e "Download do GLPI feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
 	# opção do comando mv: -v (verbose)
 	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
@@ -204,9 +204,8 @@ echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando a Base de Dados do GLPI, aguarde..."
-	# criando a base de dados do GLPI
-	# opção do comando: &>> (redirecionar a saida padrão)
-	# opção do comando mysql: -u (user), -p (password), -e (execute)
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_GLPI" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_GLPI" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_GLPI" mysql &>> $LOG
@@ -225,19 +224,22 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do glpi.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/conf-available/glpi.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de Virtual Host glpi.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/sites-available/glpi.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de agendamento glpi-cron, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/cron.d/glpi-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

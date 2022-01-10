@@ -252,24 +252,27 @@ echo -e "Atualizando os arquivos de configuração do Apache Guacamole Client, a
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/default/tomcat9 /etc/default/tomcat9.old &>> $LOG
 	cp -v conf/guacamole/{guacamole.properties,user-mapping.xml} /etc/guacamole/ &>> $LOG
-	cp -v conf/guacamole/tomcat9 /etc/default/tomcat9 &>> $LOG
+	cp -v conf/guacamole/tomcat9 /etc/default/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração guacamole.properties, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/guacamole/guacamole.properties
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração user-mapping.xml, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/guacamole/user-mapping.xml
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração tomcat9, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/default/tomcat9
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

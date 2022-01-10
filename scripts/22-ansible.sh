@@ -250,12 +250,13 @@ echo -e "Atualizando o arquivo de configuração do Rundeck, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/rundeck/rundeck-config.properties /etc/rundeck/rundeck-config.properties.old &>> $LOG
-	cp -v conf/ansible/rundeck-config.properties /etc/rundeck/rundeck-config.properties &>> $LOG
+	cp -v conf/ansible/rundeck-config.properties /etc/rundeck/ &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração rundeck-config.properties, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/rundeck/rundeck-config.properties
 echo -e "Rundeck instalado com sucesso!!!, continuando com o script...\n"
 sleep 5

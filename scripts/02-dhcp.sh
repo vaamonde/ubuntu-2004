@@ -160,7 +160,7 @@ echo -e "Iniciando a Instalação e Configuração do ISC DHCP Server, aguarde..
 sleep 5
 #
 echo -e "Instalando o ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y install $DHCPINSTALL &>> $LOG
 echo -e "ISC DHCP Server instalado com sucesso!!!, continuando com o script...\n"
@@ -171,31 +171,33 @@ echo -e "CUIDADO!!!: o nome do arquivo de configuração da placa de rede pode m
 echo -e "dependendo da versão do Ubuntu Server, verifique o conteúdo do diretório:"
 echo -e "/etc/netplan para saber o nome do arquivo de configuração do Netplan e altere"
 echo -e "o valor da variável NETPLAN no arquivo de configuração: 00-parametros.sh"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim $NETPLAN
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando o arquivo de configuração do ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.old &>> $LOG
-	cp -v conf/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf &>> $LOG
+	cp -v conf/dhcp/dhcpd.conf /etc/dhcp/ &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando dhcpd: -t (test the configuration file)
-	read
+	read -s
 	vim /etc/dhcp/dhcpd.conf
 	dhcpd -t &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Iniciando os serviços do Netplan e do ISC DHCP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	netplan --debug apply &>> $LOG
 	systemctl start isc-dhcp-server &>> $LOG
 echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"

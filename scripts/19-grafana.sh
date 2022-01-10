@@ -120,8 +120,8 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
-#
 echo
+#
 echo -e "Instalação do Grafana Server no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Grafana Server.: TCP 3000\n"
 echo -e "Após a instalação do Grafana Server acessar a URL: http://$(hostname -d | cut -d' ' -f1):3000\n"
@@ -192,12 +192,13 @@ echo -e "Atualizando o arquivo de configuração Grafana Server, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/default/grafana-server /etc/default/grafana-server.old &>> $LOG
-	cp -v conf/grafana/grafana-server /etc/default/grafana-server &>> $LOG
+	cp -v conf/grafana/grafana-server /etc/default/ &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração grafana-server, pressione <Enter> para continuar..."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/default/grafana-server
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

@@ -184,26 +184,29 @@ echo -e "Atualizando o arquivo de configuração do Tftpd-Hpa Server, aguarde...
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -v (verbose), tftp (user), tftp (group)
 	mv -v /etc/default/tftpd-hpa /etc/default/tftpd-hpa.old &>> $LOG
-	cp -v conf/tftp/tftpd-hpa /etc/default/tftpd-hpa &>> $LOG
+	cp -v conf/tftp/tftpd-hpa /etc/default/ &>> $LOG
 	mkdir -v $PATHTFTP &>> $LOG
 	chown -v tftp.tftp $PATHTFTP &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração tftpd-hpa, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/default/tftpd-hpa
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/dhcp/dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

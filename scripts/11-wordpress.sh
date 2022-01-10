@@ -218,30 +218,35 @@ echo -e "Usuário de FTP do Wordpress criado com sucesso!!!, continuando com o s
 sleep 5
 #
 echo -e "Editando o arquivo de configuração wp-config.php, Pressione <Enter> continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /var/www/html/wp/wp-config.php
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do .htaccess, Pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /var/www/html/wp/.htaccess
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de liberação vsftpd.allowed_users, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/vsftpd.allowed_users
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de Virtual Host wordpress.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/apache2/sites-available/wordpress.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Habilitando o Virtual Host do Wordpress no Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	a2ensite wordpress &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5

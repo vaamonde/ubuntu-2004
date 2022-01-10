@@ -197,45 +197,51 @@ echo -e "Atualizando o arquivo de configuração do Vsftpd Server, aguarde..."
 	# opção do comando chmod: a (all user), + (bits to be added), x (execute/search only)
 	mv -v /etc/vsftpd.conf /etc/vsftpd.conf.old &>> $LOG
 	cp -v conf/ftp/{vsftpd.conf,vsftpd.allowed_users,shells} /etc/ &>> $LOG
-	cp -v conf/ftp/vsftpd-ssl.conf /etc/ssl/vsftpd-ssl.conf &>> $LOG
-	cp -v conf/ftp/ftponly /bin/ftponly &>> $LOG
+	cp -v conf/ftp/vsftpd-ssl.conf /etc/ssl/ &>> $LOG
+	cp -v conf/ftp/ftponly /bin/ &>> $LOG
 	touch /var/log/vsftpd.log &>> $LOG
 	chmod -v a+x /bin/ftponly &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração vsftpd.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/vsftpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de liberação vsftpd.allowed_users, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/vsftpd.allowed_users
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de TLS/SSL vsftpd-ssl.conf, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/ssl/vsftpd-ssl.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de segurança de acesso ftponly, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /bin/ftponly
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de shell válidos shells, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/shells
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

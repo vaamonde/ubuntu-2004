@@ -132,6 +132,7 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
 echo -e "Instalação do PostgreSQL e do PgAdmin4 no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo PostgreSQL Server.: TCP 5432"
@@ -235,8 +236,6 @@ sleep 5
 echo -e "Configurando o PgAdmin4 Web, pressione <Enter> para continuar\n"
 echo -e "CUIDADO!!! com as mensagens que serão solicitadas: email: $EMAILPGADMIN - senha: $EMAILPASSPGADMIN"
 echo -e "Dúvidas veja a documentação na linha: 29 do script: $0"
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando apt: -y (yes)
 	read
     /usr/pgadmin4/bin/./setup-web.sh
 echo -e "Configuração do PgAdmin4 Web feita com sucesso!!!, continuando com o script...\n"
@@ -254,13 +253,15 @@ echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração postgresql.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/postgresql/14/main/postgresql.conf 
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração pg_hba.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/postgresql/14/main/pg_hba.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5

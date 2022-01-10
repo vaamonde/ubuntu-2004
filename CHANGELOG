@@ -12,7 +12,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 10/01/2022 - Robson Vaamonde - Criação do arquivo de configuração envvars do Apache2 para corrigir a falha de PT-BR
-do Nextcloud, acréscimo da linha de edição do arquivo no script: 07-lamp.sh, 
+do Nextcloud, acréscimo da linha de edição do arquivo no script: 07-lamp.sh, melhoria em todos os scripts com a opção
+do comando: read -s para remover a quebra de linha após editar os arquivos,
 
 09/01/2022 - Robson Vaamonde - Acréscimo da linha de configuração do Locale no script: 05-ntp.sh e criação da variável
 locale no script: 00-paramentros.sh, criação do script 32-nextcloud.sh e testes de configuração do servidor e correções

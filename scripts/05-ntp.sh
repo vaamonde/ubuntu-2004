@@ -137,8 +137,8 @@ fi
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
-#
 echo
+#
 echo -e "Instalação do NTP Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo NTP Server.: UDP 123\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
@@ -183,7 +183,7 @@ echo -e "Iniciando a Instalação e Configuração o NTP Server e Client, aguard
 sleep 5
 #
 echo -e "Instalando o NTP Server e Client, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y install $NTPINSTALL &>> $LOG
 echo -e "NTP Server e Client instalado com sucesso!!!, continuando com o script...\n"
@@ -195,40 +195,44 @@ echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
 	# opção do comando cp: -v (verbose)
 	# opção do comando chown: -v (verbose), ntp (user), ntp (group)
 	mv -v /etc/ntp.conf /etc/ntp.conf.old &>> $LOG
-	cp -v conf/ntp/ntp.conf /etc/ntp.conf &>> $LOG
-	cp -v conf/ntp/ntp.drift /var/lib/ntp/ntp.drift &>> $LOG
-	cp -v conf/ntp/ntp /etc/default/ntp &>> $LOG
-	cp -v conf/ntp/timesyncd.conf /etc/systemd/timesyncd.conf &>> $LOG
+	cp -v conf/ntp/ntp.conf /etc/ &>> $LOG
+	cp -v conf/ntp/ntp.drift /var/lib/ntp/ &>> $LOG
+	cp -v conf/ntp/ntp /etc/default/ &>> $LOG
+	cp -v conf/ntp/timesyncd.conf /etc/systemd/ &>> $LOG
 	chown -v ntp.ntp /var/lib/ntp/ntp.drift &>> $LOG
 echo -e "Arquivos do NTP Server atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração ntp.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/ntp.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração ntp, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/default/ntp
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração timesyncd.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/systemd/timesyncd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar"
-	read
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
 	vim /etc/dhcp/dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando a Data e Hora do NTP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando ntpdate: d (debug), q (query), u (unprivileged), v (verbose)
 	systemctl stop ntp &>> $LOG
 	ntpdate -dquv $NTPSERVER &>> $LOG
