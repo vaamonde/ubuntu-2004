@@ -174,7 +174,7 @@ sleep 5
 #
 echo -e "Clonando o projeto do Netdata do Github, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	git clone $NETDATA &>> $LOG
+	git clone --recurse-submodules $NETDATA &>> $LOG
 echo -e "Clonagem do Netdata feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

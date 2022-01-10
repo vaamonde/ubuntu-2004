@@ -568,10 +568,10 @@ PORTUSERMIN="20000"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
-# Variável de download do Netdata (Link atualizado no dia 18/10/2021)
+# Variável de download do Netdata (Link atualizado no dia 10/09/2022)
 # opção do comando git clone --depth=1: Cria um clone superficial com um histórico truncado 
 # para o número especificado de confirmações (somente o último commit geral do repositório)
-NETDATA="https://github.com/firehol/netdata.git --depth=1"
+NETDATA="https://github.com/netdata/netdata --depth=100"
 #
 # Variável das dependências do laço de loop do Netdata
 NETDATADEP="mysql-server mysql-common apache2 php vsftpd bind9 isc-dhcp-server"

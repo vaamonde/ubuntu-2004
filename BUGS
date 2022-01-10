@@ -11,6 +11,10 @@ Versão: 0.10
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0011 - Falha no compilação do Netdata erro: fatal error: mqtt_wss_client.h: No such file or directory (Makefile:3471 all)
+Error 2 - FAILED, correção do erro no arquivo: 00-parametros.sh mudança da URL: https://github.com/netdata/netdata aplicado
+Path de correção no script: git clone --recurse-submodules https://github.com/netdata/netdata --depth=100
+
 0010 - Falha de analise de Porta UDP utilizando o comando nc, acréscimo da opção u (UDP) nos scripts que utilizam o UDP
 
 0009 - Falha de resolução do DNS para endereços Externos executando o comando: ping google.com recebendo a mensagem no 
