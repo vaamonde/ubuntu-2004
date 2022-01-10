@@ -85,8 +85,8 @@ fi
 # Verificando se a porta 123 está sendo utilizada no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
-# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
-if [ "$(nc -vz 127.0.0.1 $PORTNTP &> /dev/null ; echo $?)" == "0" ]
+# opção do comando nc: -v (verbose), -z (DCCP mode), u (UDP), &> redirecionador de saída de erro
+if [ "$(nc -vzu 127.0.0.1 $PORTNTP &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "A porta: $PORTNTP já está sendo utilizada nesse servidor."
 		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"

@@ -6,17 +6,17 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 13/10/2021
-Data de atualização: 23/12/2021
-Versão: 0.05
+Data de atualização: 10/01/2022
+Versão: 0.06
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh      -v0.27		- Customizado até o script: 29-postgresql.sh no dia 23/12/2021
-01-openssh.sh         -v0.15		- Testado e homologado no dia 18/12/2021
+00-parametros.sh      -v0.33		- Customizado até o script: 32-nextcloud no dia 09/01/2022
+01-openssh.sh         -v0.16		- Testado e homologado no dia 07/01/2022
 02-dhcp.sh            -v0.10		- Testado e homologado no dia 18/12/2021
 03-dns.sh             -v0.12		- Testado e homologado no dia 18/12/2021
 04-dhcpdns.sh         -v0.12		- Testado e homologado no dia 18/12/2021
-05-ntp.sh             -v0.10		- Testado e homologado no dia 18/12/2021
+05-ntp.sh             -v0.11		- Testado e homologado no dia 09/01/2022
 06-tftphpa.sh         -v0.08		- Testado e homologado no dia 18/12/2021
 07-lamp.sh            -v0.11		- Testado e homologado no dia 18/12/2021
 08-openssl.sh         -v0.09		- Testado e homologado no dia 18/12/2021
@@ -38,9 +38,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 24-openfire.sh        -v0.01		- Testado e homologado no dia 18/12/2021
 25-owncloud.sh        -v0.01		- Testado e homologado no dia 18/12/2021
 26-ocsinventory.sh    -v0.01		- Testado e homologado no dia 18/12/2021
-27-bacula.sh          -v0.01		- Testado e homologado no dia 21/12/2021
+27-bacula.sh          -v0.02		- Testado e homologado no dia 06/01/2022
 28-graylog.sh         -v0.02		- Testado e homologado no dia 22/12/2021
-29-postgresql.sh      -v0.01		- Testado e homologado no dia 23/12/2021
-30-postgresql.sh      -v0.01		- Testado e homologado no dia 23/12/2021
-31-nfs.sh             -v0.01		- Testado e homologado no dia 23/12/2021
-32-nextcloud.sh       -v0.01		- Testado e homologado no dia 23/12/2021
+29-postgresql.sh      -v0.02		- Testado e homologado no dia 08/01/2022
+30-nfs.sh             -v0.01		- Testado e homologado no dia 08/01/2022
+31-webdav.sh          -v0.02		- Testado e homologado no dia 09/01/2022
+32-nextcloud.sh       -v0.01		- Testado e homologado no dia 09/01/2022

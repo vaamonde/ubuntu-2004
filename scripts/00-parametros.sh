@@ -1402,3 +1402,4 @@ FLUSH_NEXTCLOUD="FLUSH PRIVILEGES;"
 #
 # Variável das dependências do laço de loop do Nextcloud
 NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
+#
