@@ -190,7 +190,7 @@ echo -e "Confirmar o acesso com o Endereço IPv4 na URL: https://$(hostname -I |
 echo -e "Confirmar o acesso com o Nome CNAME na URL: https://www.$(hostname -d | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome Domínio na URL: https://$(hostname -d | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome FQDN na URL: https://$(hostname -A | cut -d' ' -f1)/\n"
-echo -e "Aguarde, esse processo demora um pouco e é o mais complexo dos scripts desse curso..."
+echo -e "Aguarde, esse processo demora um pouco e é o mais complexo dos scripts desse curso...\n"
 sleep 5
 #
 echo -e "Adicionando o Repositório Universal do Apt, aguarde..."
@@ -594,7 +594,7 @@ echo -e "Testando o Certificado TLS/SSL do Apache2, aguarde..."
 	# -showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
 	#
 	echo | openssl s_client -connect localhost:443 -servername www.pti.intra -showcerts &>> $LOG
-echo -e "Certificado do Apache2 testando sucesso!!!, continuando com o script...\n"
+echo -e "Certificado do Apache2 testado sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configuração do OpenSSL e TLS/SSL do Apache2 feita com Sucesso!!!."
