@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 13/12/2021
-# Versão: 0.11
+# Data de atualização: 10/01/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -290,10 +290,11 @@ echo -e "Atualizando os arquivos de configuração do Apache2 e do PHP, aguarde.
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/apache2/apache2.conf /etc/apache2/apache2.conf.old &>> $LOG
 	mv -v /etc/apache2/ports.conf /etc/apache2/ports.conf.old &>> $LOG
+	mv -v /etc/apache2/envvars /etc/apache2/envvars.old &>> $LOG
 	mv -v /etc/php/7.4/apache2/php.ini /etc/php/7.4/apache2/php.ini.old &>> $LOG
-	cp -v conf/lamp/{apache2.conf,ports.conf} /etc/apache2/ &>> $LOG
-	cp -v conf/lamp/000-default.conf /etc/apache2/sites-available/000-default.conf &>> $LOG
-	cp -v conf/lamp/php.ini /etc/php/7.4/apache2/php.ini &>> $LOG
+	cp -v conf/lamp/{apache2.conf,ports.conf,envvars} /etc/apache2/ &>> $LOG
+	cp -v conf/lamp/000-default.conf /etc/apache2/sites-available/ &>> $LOG
+	cp -v conf/lamp/php.ini /etc/php/7.4/apache2/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -306,6 +307,12 @@ sleep 5
 echo -e "Editando o arquivo de configuração ports.conf, pressione <Enter> para continuar."
 	read
 	vim /etc/apache2/ports.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração envvars, pressione <Enter> para continuar."
+	read
+	vim /etc/apache2/envvars
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
