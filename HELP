@@ -27,7 +27,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #01_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
 	_ Todos os procedimentos de instalação e configuração básica do Ubuntu Server 20.04.x LTS
-	_ se encontra no diretório: ubuntu-2004/scripts/settings
+	_ se encontra no diretório: ubuntu-2004/scripts/settings/
 	_ Os principais arquivos de configuração são:
 	_ 	01-AtualizacaoDoSistema.sh
 	_ 	02-ConfiguracaoDoHostnameHosts.sh
@@ -39,9 +39,11 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #02_ Diretório dos scripts utilizados no Ubuntu Server 20.04.x LTS x64
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server 20.04.x
-	_ LTS se encontra no diretório: ubuntu-2004/scripts.
+	_ LTS se encontra no diretório: ubuntu-2004/scripts/.
 	_ Todos os arquivos de configuração dos serviços de rede no Ubuntu Server 20.04.x LTS se
 	_ encontra no diretório: /ubuntu-2004/scripts/conf/.
+	_ Cada serviço de rede se encontra no seu subdiretório com o nome do serviço, exemplo: zabbix/,
+	_ zimbra/, samba/, etc...
 	_ Caso você queira adaptar os scripts ou arquivos de configuração para o seu cenário/servidor, 
 	_ primeira etapa é editar o script correspondente, verificar as principais variáveis e arquivos 
 	_ de configuração, alterar seus valores primeiro antes de executar os script.

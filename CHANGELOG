@@ -13,14 +13,14 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 09/01/2022 - Robson Vaamonde - Acréscimo da linha de configuração do Locale no script: 05-ntp.sh e criação da variável
 locale no script: 00-paramentros.sh, criação do script 32-nextcloud.sh e testes de configuração do servidor e correções
-de Bugs nos scripts, alterado da localização dos arquivos do WEbdav para: /var/www/webdav (aumentar a segurança),
-criação do CNAME: next no arquivo do Bind DNS pti.intra.hosts, 
+de Bugs nos scripts, alterado da localização dos arquivos do Webdav para: /var/www/webdav (devido a segurança de acesso),
+criação do CNAME: next no arquivo do Bind DNS pti.intra.hosts.
 
 08/01/2022 - Robson Vaamonde - Criação dos arquivos de configuração do PostgreSQL: pg_hba.conf e postgresql.conf,
 alteração do script: 29-postgresql.sh com o acréscimo das linhas de atualização dos arquivos conf, criação do script
 30-nfs.sh e 31-webdav.sh, atualização do arquivo de configuração: pti.intra.hosts com os CNAME: nfs e webdav.
 
-23/12/2021 - Robson Vaamonde - Correções de vários scripts em relação ao PT-BR e melhorias na estrutura e documentação
+23/12/2021 - Robson Vaamonde - Correções de vários scripts em relação ao PT-BR e melhorias na estrutura e documentação,
 finalizado a homologação dos scripts até 29-postgresql.sh. Preparação para a gravação das aulas em Janeiro de 2022,
 criação do roteiro e linha de base para a gravação dos vídeos, criação da estrutura de diretórios, scripts que ainda 
 não foram migrados estão no diretório referente ao seu serviço, somente após a migração será acréscentado o seu número

@@ -19,7 +19,7 @@ resolver esse problema.
 
 0008 - Falha de atualização do serviço ZoneMinder, executar os comandos: zmupdate.pl -f depois: apt -f install
 
-0007 - Falha na inicialização do serviço do Netdata referente ao erro do SystemD quado utilizado o comando: systemctl status
+0007 - Falha na inicialização do serviço do Netdata referente ao erro do SystemD quando utilizado o comando: systemctl status
 netdata - erro: PROCFILE: Cannot open file '/etc/netdata/apps_groups.conf' e PROCFILE: Cannot open file '/proc/54579/status,
 essa falha está associada ao plugin do eBPF Plugin (Netdata's extended Berkeley Packet Filter) conforme documentação do 
 Netdata: https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin, essa mensagem de erro não causa problemas na execução
@@ -31,7 +31,7 @@ procedimento de aplicar as permissões GRANT no Banco de Dados MySQL mudou, send
 aplicar as permissões de privilégios, correção feita no arquivo 00-parametros.sh.
 
 0005 - Instalação do Ubuntu Server 20.04.x LTS no VirtualBOX, após vários testes na versão 20.04.3 LTS do Ubuntu Server x64
-a falha de lentidão no processo de atualização do sistema utilizando os comandos apt ou apt-get está associada ao Sources 
+a falha de lentidão no processo de atualização do sistema utilizando os comandos apt ou apt-get está associada ao Source 
 List do BR (Brasil), após a alteração de todas as URL no arquivo: /etc/apt/sources.list de: https://br. para https://us. 
 o processo de instalação/atualização ficou muito mais rápido, testes feito na hora da instalação do servidor também resolveu
 o problema de lentidão no processo de instalação do Kernel e aplicação do Patch de Segurança.
@@ -50,5 +50,5 @@ connection refused, referente as permissões de acesso ao arquivo /etc/bind/rndc
 root:bind.
 
 0001 - 04-dhcpdns.sh - Linha 122 (comando dnssec-keygen) conforme RFC 2136 o comando dnssec-keygen na versão do BIND 9.13
-foi descontinuado, sendo substituido pelo comando tsig-keygen, adaptando as configurações do Bind e do DHCP server para o
+foi descontinuado, sendo substituído pelo comando tsig-keygen, adaptando as configurações do Bind e do DHCP server para o
 novo comando de geração de chaves e configuração da atualização dinâmica entre os serviços.

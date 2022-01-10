@@ -41,3 +41,6 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 27-bacula.sh          -v0.01		- Testado e homologado no dia 21/12/2021
 28-graylog.sh         -v0.02		- Testado e homologado no dia 22/12/2021
 29-postgresql.sh      -v0.01		- Testado e homologado no dia 23/12/2021
+30-postgresql.sh      -v0.01		- Testado e homologado no dia 23/12/2021
+31-nfs.sh             -v0.01		- Testado e homologado no dia 23/12/2021
+32-nextcloud.sh       -v0.01		- Testado e homologado no dia 23/12/2021
