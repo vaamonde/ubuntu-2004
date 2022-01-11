@@ -260,7 +260,7 @@ echo -e "Editando o arquivo de configuração zabbix_server.conf, pressione <Ent
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do PHP apache.conf, pressione <Enter> para continuar..."
+echo -e "Editando o arquivo de configuração apache.conf, pressione <Enter> para continuar..."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/zabbix/apache.conf
