@@ -137,6 +137,7 @@ fi
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
 echo -e "Instalação do Apache Guacamole Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Apache Tomcat9...: TCP 8080"
