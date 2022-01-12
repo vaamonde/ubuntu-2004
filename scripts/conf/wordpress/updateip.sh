@@ -27,7 +27,7 @@ echo -e "Alterando o Endereço IPv4 do Banco de Dados do Wordpress\n"
 sleep 5
 #
 echo -e "Listando o Endereço IPv4 atual do computador, aguarde..."
-	hostname -I
+	echo -e "Endereço IPv4: $(hostname -I)"
 echo -e "Endereço IPv4 listado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -47,7 +47,11 @@ echo -e "Visualizando o Endereço IPv4 configurado no Banco de Dados do Wordpres
 echo -e "Endereço visualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Reinicializando o serviço do Apache2, aguarde..."
+	systemctl restart apache2 &>> salt.log
+echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
 #
-echo -e "Acesse a URL: http://$(hostname -I | cut -d' ' -f1)/wp para finalizar e testar o"
-echo -e " acesso da nova configuração do Sistema de Site Dinânicos CMS Wordpress\n"
+echo -e "Acesse a URL: http://$IPV4ADDRESS/wp para finalizar e testar o acesso"
+echo -e "da nova configuração do Sistema de Site Dinânicos CMS Wordpress\n"
 sleep 5

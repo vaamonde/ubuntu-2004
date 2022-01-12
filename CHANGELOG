@@ -12,7 +12,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 11/01/2022 - Robson Vaamonde - Correção dos Bugs referente ao uso do Wordpress que foram reportados pelo Prof. José
-de Assis, correções dos arquivos: 00-parametros.sh, 00-default.conf, htaccess, wordpress.conf e wp-config.php
+de Assis, correções dos arquivos: 00-parametros.sh, 00-default.conf, htaccess, wordpress.conf e wp-config.php, 
+criação dos scripts: salt.sh e updateip.sh como ferramenta de suporte ao Wordpress.
 
 10/01/2022 - Robson Vaamonde - Criação do arquivo de configuração envvars do Apache2 para corrigir a falha de PT-BR
 do Nextcloud, acréscimo da linha de edição do arquivo no script: 07-lamp.sh, melhoria em todos os scripts com a opção
