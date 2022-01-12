@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 18/12/2021
-# Versão: 0.08
+# Data de atualização: 11/01/2022
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -165,8 +165,9 @@ echo -e "Fazendo o download do Wordpress do site oficial PT-BR, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output-document)
-	rm -v latest.zip &>> $LOG
+	rm -v latest.zip salt.key &>> $LOG
 	wget -O latest.zip $WORDPRESS &>> $LOG
+	wget -O salt.key $WORDPRESSSALT &>> $LOG
 echo -e "Download do Wordpress feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -191,6 +192,8 @@ echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguar
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -R (recursive), -f (silent), -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
 	# opção do comando chown: -R (recursive), -f (silent), -v (verbose), www-data (user), www-data (group)
+	#find . -type d -exec chmod 755 {} \;
+	#find . -type f -exec chmod 644 {} \;
 	chmod -Rfv 775 $PATHWORDPRESS &>> $LOG
 	chown -Rfv www-data.www-data $PATHWORDPRESS &>> $LOG
 echo -e "Permissões alteradas com sucesso!!!, continuando com o script...\n"
@@ -247,13 +250,14 @@ sleep 5
 #
 echo -e "Habilitando o Virtual Host do Wordpress no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	a2enmod rewrite &>> $LOG
 	a2ensite wordpress &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	systemctl reload apache2 &>> $LOG
+	systemctl restart apache2 &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 09/01/2022
-# Versão: 0.33
+# Data de atualização: 11/01/2022
+# Versão: 0.34
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -490,8 +490,11 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # Variável de localização da instalação do diretório do Wordpress
 PATHWORDPRESS="/var/www/html/wp"
 #
-# Variável do download do Wordpress (Link atualizado em: 18/10/2021)
+# Variável do download do Wordpress (Link atualizado em: 11/01/2022)
 WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"
+#
+# Variável do download do Wordpress Salt (Link atualizado em: 11/01/2022)
+WORDPRESSSALT="https://api.wordpress.org/secret-key/1.1/salt/"
 #
 # Declarando as variáveis para criação da Base de Dados do Wordpress
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
@@ -519,7 +522,8 @@ USERFTPWORDPRESS="wordpress"
 PASSWORDFTPWORDPRESS="wordpress"
 #
 # Variável da instalação das dependências do Wordpress
-WORDPRESSDEPINSTALL="unzip"
+WORDPRESSDEPINSTALL="unzip ghostscript libapache2-mod-php php-bcmath php-curl php-imagick \
+php-intl php-json php-mbstring php-mysql php-xml php-zip"
 #
 # Variável das dependências do laço de loop do Wordpress
 WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"

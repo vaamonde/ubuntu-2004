@@ -8,8 +8,8 @@
 	* Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 	* Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 	* Data de criação: 18/10/2021
-	* Data de atualização: 23/11/2021
-	* Versão: 0.02
+	* Data de atualização: 11/01/2022
+	* Versão: 0.03
 	* Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 	* Testado e homologado para a versão do Apache2 v2.4.x
 	* Testado e homologado para a versão do Wordpress v5.8.x
@@ -35,6 +35,9 @@ define('DB_CHARSET', 'utf8');
 /** Configuração do Collate da Base de Dados do Wordpress, deixar o padrão.*/
 define('DB_COLLATE', '');
 
+/** Configuração de segurança para força o método do sistema de arquivos.*/
+define('FS_METHOD', 'direct');
+
 /** Prefixo padrão das tabelas da Base de Dados do Wordpress.*/
 $table_prefix  = 'wp_';
 
@@ -55,7 +58,8 @@ define('WP_DEBUG', false);
 
 /** Bloco de configuração Global do Wordpress, deixar o padrão*/
 
-/** Chaves únicas de autenticação e salts.*/
+/** Chaves únicas de autenticação e salts, geração das chaves feitas utilizando*/
+/** o comando: curl -L https://api.wordpress.org/secret-key/1.1/salt/*/
 define( 'AUTH_KEY',         'coloque a sua frase única aqui' );
 define( 'SECURE_AUTH_KEY',  'coloque a sua frase única aqui' );
 define( 'LOGGED_IN_KEY',    'coloque a sua frase única aqui' );
