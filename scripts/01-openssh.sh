@@ -275,7 +275,7 @@ echo -e "Reinicializando os serviços do Netplan e do OpenSSH Server, aguarde...
 	# opção do comando: &>> (redirecionar a saída padrão)
 	netplan --debug apply &>> $LOG
 	systemctl restart sshd &>> $LOG
-echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do OpenSSH Server, aguarde..."
