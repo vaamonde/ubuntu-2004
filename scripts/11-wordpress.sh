@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 11/01/2022
-# Versão: 0.09
+# Data de atualização: 12/01/2022
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -187,7 +187,14 @@ echo -e "Copiando os arquivos do Wordpress para site padrão do Apache2, aguarde
 	cp -v conf/wordpress/wordpress.conf /etc/apache2/sites-available/ &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
-#				 
+#
+echo -e "Aplicando as informações do Salt no arquivo wp-config.php, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	sed '62r salt.key' wp-config.php > /tmp/wp.config.php &>> $LOG
+	cp -v /tmp/wp.config.php $PATHWORDPRESS &>> $LOG
+echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -R (recursive), -f (silent), -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)

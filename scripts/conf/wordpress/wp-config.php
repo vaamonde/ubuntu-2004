@@ -8,8 +8,8 @@
 	* Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 	* Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 	* Data de criação: 18/10/2021
-	* Data de atualização: 11/01/2022
-	* Versão: 0.03
+	* Data de atualização: 12/01/2022
+	* Versão: 0.04
 	* Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 	* Testado e homologado para a versão do Apache2 v2.4.x
 	* Testado e homologado para a versão do Wordpress v5.8.x
@@ -60,14 +60,6 @@ define('WP_DEBUG', false);
 
 /** Chaves únicas de autenticação e salts, geração das chaves feitas utilizando*/
 /** o comando: curl -L https://api.wordpress.org/secret-key/1.1/salt/*/
-define( 'AUTH_KEY',         'coloque a sua frase única aqui' );
-define( 'SECURE_AUTH_KEY',  'coloque a sua frase única aqui' );
-define( 'LOGGED_IN_KEY',    'coloque a sua frase única aqui' );
-define( 'NONCE_KEY',        'coloque a sua frase única aqui' );
-define( 'AUTH_SALT',        'coloque a sua frase única aqui' );
-define( 'SECURE_AUTH_SALT', 'coloque a sua frase única aqui' );
-define( 'LOGGED_IN_SALT',   'coloque a sua frase única aqui' );
-define( 'NONCE_SALT',       'coloque a sua frase única aqui' );
 
 /** Caminho absoluto para o diretório WordPress. */
 if ( ! defined( 'ABSPATH' ) ) {
