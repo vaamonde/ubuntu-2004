@@ -21,6 +21,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ NEW: arquivo de novidades dos scripts, arquivos de configuração, serviço de rede, etc...
 	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise de Log.
 	_ ROADMAP: arquivo com a sequência da gravação das vídeos desse curso.
+	_ PORTS: arquivo de portas e protocolos TCP ou UDP utilizados pelos serviços de rede desse curso.
 	_ scripts/: diretório dos scripts desse curso, numerados por sequência de uso e prioridade.
 	_ scripts/conf/: diretório dos arquivos de configuração (conf) dos serviços de rede desse curso.
 	_ scripts/install: diretório dos arquivos de instalação e configuração do Ubuntu Server.
