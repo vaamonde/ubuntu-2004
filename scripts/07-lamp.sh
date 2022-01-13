@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 10/01/2022
-# Versão: 0.12
+# Data de atualização: 12/01/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -197,14 +197,23 @@ echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Intern
 sleep 5
 #
 echo -e "Adicionando o Repositório Universal do Apt, aguarde..."
+	# Universe - Software de código aberto mantido pela comunidade:
 	# opção do comando: &>> (redirecionar a saída padrão)
 	add-apt-repository universe &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Adicionando o Repositório Multiversão do Apt, aguarde..."
+	# Multiverse – Software não suportado, de código fechado e com patente: 
 	# opção do comando: &>> (redirecionar a saída padrão)
 	add-apt-repository multiverse &>> $LOG
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Adicionando o Repositório Restrito do Apt, aguarde..."
+	# Restricted - Software de código fechado oficialmente suportado:
+	# opção do comando: &>> (redirecionar a saída padrão)
+	add-apt-repository restricted &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

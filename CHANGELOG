@@ -6,11 +6,13 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 11/01/2022
-Versão: 0.27
+Data de atualização: 12/01/2022
+Versão: 0.28
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+12/01/2022 - Robson Vaamonde - Acréscimo da linha: add-apt-repository restricted em todos os scripts do curso.
+
 11/01/2022 - Robson Vaamonde - Correção dos Bugs referente ao uso do Wordpress que foram reportados pelo Prof. José
 de Assis, correções dos arquivos: 00-parametros.sh, 00-default.conf, htaccess, wordpress.conf e wp-config.php, 
 criação dos scripts: salt.sh e updateip.sh como ferramenta de suporte ao Wordpress.
