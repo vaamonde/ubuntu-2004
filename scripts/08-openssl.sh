@@ -562,7 +562,7 @@ echo -e "Criando o diretório de Download para baixar a Unidade Certificadora CA
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 2
 #
-echo -e "Verificando o diretório de download: http://.$(hostname -d | cut -d' ' -f1)/download/, aguarde..."
+echo -e "Verificando o diretório de download: http://$(hostname -d | cut -d' ' -f1)/download/, aguarde..."
 	tree $DOWNLOADCERT
 echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
