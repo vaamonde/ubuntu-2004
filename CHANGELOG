@@ -11,7 +11,8 @@ Versão: 0.28
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-12/01/2022 - Robson Vaamonde - Acréscimo da linha: add-apt-repository restricted em todos os scripts do curso.
+12/01/2022 - Robson Vaamonde - Acréscimo da linha: add-apt-repository restricted em todos os scripts do curso, 
+acréscimo das opções do serviço do NFS no arquivo: hosts.allow.
 
 11/01/2022 - Robson Vaamonde - Correção dos Bugs referente ao uso do Wordpress que foram reportados pelo Prof. José
 de Assis, correções dos arquivos: 00-parametros.sh, 00-default.conf, htaccess, wordpress.conf e wp-config.php, 
