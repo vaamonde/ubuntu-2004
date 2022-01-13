@@ -13,31 +13,40 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
 
 #00_ Arquivos e diretórios principais do curso do Ubuntu Server 20.04.x LTS x64
-	_ README: arquivo de documentação principal do curso, contendo os links para os vídeos e links extras
-	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts, arquivos de configuração ou na Guia Issue
-	_ CHANGELOG: arquivo de criação, mudanças ou melhorias nos scripts ou arquivos configuração
-	_ HELP: arquivo de ajuda desse curso, com procedimentos e documentação de utilização dos scripts
-	_ LICENSE: arquivo de licença de uso dos scripts: MIT License
+	_ README: arquivo de documentação principal do curso, contendo os links para os vídeos e documentação.
+	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts, arquivos de configuração ou na Guia Issue.
+	_ CHANGELOG: arquivo de criação, mudanças ou melhorias nos scripts ou arquivos configuração.
+	_ HELP: arquivo de ajuda desse curso, com procedimentos e documentação de utilização dos scripts.
+	_ LICENSE: arquivo de licença de uso dos scripts: MIT License.
 	_ NEW: arquivo de novidades dos scripts, arquivos de configuração, serviço de rede, etc...
-	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise de Log
-	_ ??-InstalacaoDoUbuntuServer-?? - arquivos de procedimentos de instalação e configuração do Ubuntu Server
-	_ scripts/: diretório dos scripts desse curso, numerados por sequência de uso e prioridade
-	_ scripts/conf/: diretório dos arquivos de configuração (conf) dos serviços de rede desse curso
-	_ scripts/settings/: diretório dos arquivos de configuração principal do servidor desse curso
+	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise de Log.
+	_ ROADMAP: arquivo com a sequência da gravação das vídeos desse curso.
+	_ scripts/: diretório dos scripts desse curso, numerados por sequência de uso e prioridade.
+	_ scripts/conf/: diretório dos arquivos de configuração (conf) dos serviços de rede desse curso.
+	_ scripts/install: diretório dos arquivos de instalação e configuração do Ubuntu Server.
+	_ scripts/settings/: diretório dos arquivos de configuração principal do Ubuntu Server.
 
-#01_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
-	_ Todos os procedimentos de instalação e configuração básica do Ubuntu Server 20.04.x LTS
-	_ se encontra no diretório: ubuntu-2004/scripts/settings/
+#01_ Instalação do Ubuntu Server 20.04.x LTS x64
+	_ Todos os procedimentos de instalação do Ubuntu Server 20.04.x LTS se encontra no diretório:
+	_ ubuntu-2004/scripts/install.
+	_ Os principais arquivos de instalação são:
+	_ 	01-InstalacaoDoUbuntuServer-20.04.3-LTS.md;
+	_ 	02-InstalacaoDoUbuntuServer-20.04-RPI.md;
+	_ 	03-InstalacaoDoUbuntuCore-20-RPI.md.
+
+#02_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
+	_ Todos os procedimentos de configuração básica do Ubuntu Server 20.04.x LTS se encontra no 
+	_ diretório: ubuntu-2004/scripts/settings/.
 	_ Os principais arquivos de configuração são:
-	_ 	01-AtualizacaoDoSistema.sh
-	_ 	02-ConfiguracaoDoHostnameHosts.sh
-	_ 	03-ConfiguracaoDoLocaleTimezoneKeyboard.sh
-	_ 	04-ConfiguracaoDoNetplan.sh
-	_ 	05-DesligarReiniciar.sh
+	_ 	01-AtualizacaoDoSistema.sh;
+	_ 	02-ConfiguracaoDoHostnameHosts.sh;
+	_ 	03-ConfiguracaoDoLocaleTimezoneKeyboard.sh;
+	_ 	04-ConfiguracaoDoNetplan.sh;
+	_ 	05-DesligarReiniciar.sh.
 	_ OBSERVAÇÃO IMPORTANTE: É recomendado fazer a configuração básica do Ubuntu Server antes de 
 	_ executar os scripts desse curso.
 
-#02_ Diretório dos scripts utilizados no Ubuntu Server 20.04.x LTS x64
+#03_ Diretório dos scripts utilizados no Ubuntu Server 20.04.x LTS x64
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server 20.04.x
 	_ LTS se encontra no diretório: ubuntu-2004/scripts/.
 	_ Todos os arquivos de configuração dos serviços de rede no Ubuntu Server 20.04.x LTS se
@@ -48,47 +57,47 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ primeira etapa é editar o script correspondente, verificar as principais variáveis e arquivos 
 	_ de configuração, alterar seus valores primeiro antes de executar os script.
 
-#03_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts
+#04_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts
 	_ Arquivo de parâmetros (Variáveis) localizado em: /ubuntu-2004/scripts/00-parametros.sh
 	_ Esse arquivo é constituido de VARIÁVEL="VALOR", cada script tem um Bloco de Configuração
 	_ de Variáveis, algumas variáveis são reutilizadas em vários scripts ou adicionada na variável
 	_ do bloco de configuração do serviço: VARIÁVEL=$VARIÁVEL.
 	_ Antes de iniciar as configurações dos serviços de rede no Ubuntu Server, é recomendado 
 	_ customizar o arquivo de parâmetros: 00-parametros.sh e os arquivos de configurações (conf) 
-	_ no diretório /ubuntu-2004/scripts/conf/ de cada serviço de rede corresponde a seu scripts.
+	_ no diretório: /ubuntu-2004/scripts/conf/ de cada serviço de rede corresponde a seu scripts.
 
-#04_ Scripts de instalação e configuração dos serviços de rede
+#05_ Scripts de instalação e configuração dos serviços de rede
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server segue o
 	_ mesmo padrão, todos os scripts estão interligados no arquivo: 00-parametros.sh na linha de
 	_ configuração: source, todos os scripts geram arquivos de Log no diretório: /var/log/ com o
 	_ nome do arquivo do script configurado na linha: LOG, todos os script tem um Bloco de Teste
 	_ Lógico (If) básico que verifica se o usuário é Root e se a Distribuição é 20.04, alguns 
-	_ scripts tem o Bloco de Loop para verificar se as dependências estão instaladas, todos os 
-	_ scripts foram desenvolvidos para serem executados apenas 1 (uma) vez.
+	_ scripts tem o Bloco de Laço de Loop para verificar se as principais dependências estão 
+	_ instaladas, todos os scripts foram desenvolvidos para serem executados apenas 1 (uma) vez.
 
-#05_ Clonando o projeto de Github e executando os scripts
-	_ Para utilizar os scripts desse curso, é recomendado você se logar com o usuário Root do Ubuntu
+#06_ Clonando o projeto de Github e executando os scripts
+	_ Para utilizar os scripts desse curso, é recomendado você se logar com o usuário Root do Ubuntu.
 	_ Primeiro: se logar com o seu usuário que tem direitos administrativos no terminal do Ubuntu;
 	_ Segundo: se logar como Root utilizando o comando: sudo -i <Enter> digitar a sua senha;
-	_ Terceiro: clocar o projeto: git clone https://github.com/vaamonde/ubuntu-2004 --depth=1 <Enter>
-	_ OBS1: a opção do comando git: --depth=1 Cria um clone superficial com um histórico truncado para 
+	_ Terceiro: clocar o projeto: git clone https://github.com/vaamonde/ubuntu-2004 --depth=1 <Enter>;
+	_ OBS1: a opção do comando git: --depth=1 cria um clone superficial com um histórico truncado para 
 	_ o número especificado de confirmações (somente o último commit geral do repositório).
-	_ Quarto: acessar o diretório clonado do Github: cd ubuntu-2004/ <Enter>
-	_ Quinto: acessar o diretório dos scripts: cd scripts/ <Enter>
-	_ Sexto: rodar um script de serviço: bash 00-nome_do_script.sh <Enter>
+	_ Quarto: acessar o diretório clonado do Github: cd ubuntu-2004/ <Enter>;
+	_ Quinto: acessar o diretório dos scripts: cd scripts/ <Enter>;
+	_ Sexto: rodar um script de serviço: bash 00-nome_do_script.sh <Enter>.
 
-#06_ Monitorando o Log em tempo real dos script
+#07_ Monitorando o Log em tempo real dos script
 	_ Todos os scripts redirecionada a saída padrão dos comandos utilizados para a variável: LOG que 
 	_ gera um arquivo no diretório: /var/log/ com o nome do script que está sendo executando, exemplo:
 	_ bash 01-openssh.sh - arquivo de Log: /var/log/01-openssh.sh.
 	_ Para visualizar em tempo real o Log da instalação e configuração do serviço de rede você vai se
 	_ logar em outro Terminal (Alt+F2), se logar com seu usuário que tem direitos administrativos e
 	_ executar o comando: sudo tail -f /var/log/01-openssh.sh, para sair do monitoramento do Log e
-	_ só pressionar: Ctrl+C
+	_ só pressionar: Ctrl+C.
 	_ Para analisar o Log após a instalação utilize o comando: less /var/log/01-openssh.sh, para sair
-	_ o arquivo de Log e sõ pressionar: q (quit).
+	_ o arquivo de Log e só pressionar: q (quit).
 
-#06_ Atualizando os scripts para o seu cenário
+#08_ Atualizando os scripts para o seu cenário
 	_ É recomendado você fazer um Fork do projeto para manter o seu repositório atualizado com as suas
 	_ modificações, sempre verificar as mudanças no repositório principal em relação a BUGS ou melhorias
 	_ nos script e arquivos de configuração analisando sempre a versão do arquivo nas linhas: Data de 
@@ -102,9 +111,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ tudo funcionando corretamente, caso encontre alguma falha nos scripts ou arquivos de configuração
 	_ enviar as correções na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
 	_ OBS2: antes de enviar o BUG veja o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS
-	_ se essa falha já consta lá e se já foi resolvida
+	_ se essa falha já consta lá, e se essa falha já foi resolvida.
 	_ OBS3: veja sempre o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/CHANGELOG sobre as
-	_ correções dos scripts e arquivos de configuração. 
+	_ correções e melhorias dos scripts e arquivos de configuração. 
 
 #01_ Ajudando na "MELHORIA" dos scripts
 	_ Para ajudar na MELHORIA dos scripts é recomendado você criar um novo cenário, adaptar os scripts
@@ -128,3 +137,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ novo cenário e testar as opções de "Tuning" Otimização/Performace principalmente dos serviços de 
 	_ rede como o MySQL, MariaDB, Apache2, Nginx, etc..., documentar as melhorias ou correções e enviar 
 	_ na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
+
+#05_ Enviando suas melhorias ou correções via "PULL REQUESTS"
+	_ Por padrão as melhorias ou correções envidas via PULL REQUESTS do Github não serão submetidas nos
+	_ scripts ou arquivos de configuração, pois o projeto não foi criado para trabalhar com colaboração
+	_ no Github, por esse motivo os Pull Requests serão respondidos mais aplicado somente as melhorias
+	_ ou correções somente na Guia Issue.

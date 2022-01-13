@@ -1,4 +1,16 @@
-Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script.
+Autor: Robson Vaamonde
+Site: www.procedimentosemti.com.br
+Facebook: facebook.com/ProcedimentosEmTI
+Facebook: facebook.com/BoraParaPratica
+YouTube: youtube.com/BoraParaPratica
+Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+Data de criação: 13/01/2022
+Data de atualização: 13/01/2022
+Versão: 0.01
+Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+
+#= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
 
 #01_ Apresentação do Curso de Ubuntu Server 20.04.x LTS DevOps
 #02_ Conhecendo o Cenário e Topologia do Curso de Ubuntu Server 20.04.x LTS
@@ -7,9 +19,24 @@ Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell 
 #05_ Conhecendo o arquivo HELP do Curso de Ubuntu Server 20.04.x LTS
 #06_ Conhecendo o arquivo BUGS do Curso de Ubuntu Server 20.04.x LTS
 #07_ Conhecendo o arquivo CHANGELOG do Curso de Ubuntu Server 20.04.x LTS
-#08_ Conhecendo o arquivo RELEASE do Curso de Ubuntu Server 20.04.x LTS
-#09_ Conhecendo o diretório SCRIPTS do Curso de Ubuntu Server 20.04.x LTS
-#10_ Como customizar os Script para o seu Cenário antes de executar
-#11_ 00-parametros.sh principal script desse Curso
-#12_ 01-openssh.sh Instalação e Configuração do OpenSSH Server
-#13_
+#08_ Conhecendo o arquivo LICENSE do Curso de Ubuntu Server 20.04.x LTS
+#09_ Conhecendo o arquivo NEW do Curso de Ubuntu Server 20.04.x LTS
+#10_ Conhecendo o arquivo RELEASE do Curso de Ubuntu Server 20.04.x LTS
+#11_ Conhecendo o arquivo PORTS do Curso de Ubuntu Server 20.04.x LTS
+#12_ Conhecendo o diretório SCRIPTS do Curso de Ubuntu Server 20.04.x LTS
+#13_ Como customizar os Script e Conf para o seu Cenário antes de executar
+#14_ Instalação do Ubuntu Server 20.04.x LTS
+#15_ Configurações Básicas do Ubuntu Server 20.04.x LTS
+#16_ 00-parametros.sh principal script de parâmetros desse Curso
+#17_ 01-openssh.sh Instalação e Configuração do OpenSSH Server
+#18_ 02-dhcp.sh Instalação e Configuração do ISC DHCP Server
+#19_ 03-dns.sh Instalação e Configuração do Bind9 DNS Server
+#20_ 04-dhcpdns.sh Integração do ICS DHCP Server e Bind9 DNS Server
+#21_ 05-ntp.sh Instalação e Configuração do NTP Server
+#22_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server
+#23_ 07-lamp.sh Instalação e Configuração do LAMP Server
+#24_ 08-openssl.sh Configuração do OpenSSL para criação da CA e Certificados
+#25_ 09-vsftpd.sh Instalação e Configuração do VSFTPd Server
+#26_ 10-tomcat.sh Instalação e Configuração do Apache Tomcat Server
+#27_ 11-wordpress.sh Instalação e Configuração do CMS Wordpress
+#28_ 12-webmain.sh Instalação e Configuração do Webmin e Usermin
