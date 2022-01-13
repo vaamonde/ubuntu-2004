@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 13/12/2021
-Versão: 0.06
+Data de atualização: 13/01/2022
+Versão: 0.07
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
@@ -122,3 +122,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ Para ajudar na SEGURANÇA dos scripts e arquivos de configuração é recomendado criar o mesmo cenário
 	_ ou um novo cenário e testar as falhas de segurança principalmente dos serviços de rede, documentar
 	_ as melhorias ou correções e enviar na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
+
+#04_ Ajudando no "DESEMPENHO" dos arquivos de configuração
+	_ Para ajudar no DESEMEPNHO dos arquivos de configuração é recomendado criar o mesmo cenário ou um 
+	_ novo cenário e testar as opções de "Tuning" Otimização/Performace principalmente dos serviços de 
+	_ rede como o MySQL, MariaDB, Apache2, Nginx, etc..., documentar as melhorias ou correções e enviar 
+	_ na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
