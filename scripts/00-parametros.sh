@@ -523,7 +523,7 @@ PASSWORDFTPWORDPRESS="wordpress"
 #
 # Variável da instalação das dependências do Wordpress
 WORDPRESSDEPINSTALL="unzip ghostscript libapache2-mod-php php-bcmath php-curl php-imagick \
-php-intl php-json php-mbstring php-mysql php-xml php-zip"
+php-intl php-json php-mbstring php-mysql php-xml php-zip php-soap"
 #
 # Variável das dependências do laço de loop do Wordpress
 WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
