@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 14/01/2022
 # Data de atualização: 14/01/2022
-# Versão: 0.01
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Asterisk v19.1.x
 #
@@ -101,8 +101,8 @@ fi
 # Verificando se a porta 5060 está sendo utilizada no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
-# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
-if [ "$(nc -vz 127.0.0.1 $PORTSIP &> /dev/null ; echo $?)" == "0" ]
+# opção do comando nc: -v (verbose), -z (DCCP mode), -u (UDP), &> redirecionador de saída de erro
+if [ "$(nc -vzu 127.0.0.1 $PORTSIP &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "A porta: $PORTSIP já está sendo utilizada nesse servidor."
 		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
@@ -135,8 +135,8 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação do Asterisk no GNU/Linux Ubuntu Server 20.04.x"
-echo -e "Porta padrão utilizada pelo SIP.: TCP 5060\n"
+echo -e "Instalação do Asterisk no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo SIP.: UDP 5060"
 echo -e "Após a instalação, acessar o CLI do Asterisk digitando o comando: asterisk -rvvvv\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -197,17 +197,13 @@ sleep 5
 #
 echo -e "Fazendo o download e instalando do DAHDI do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando rm: -v (verbose)
-	# opção do comando wget: -O (file)
-	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
+	# opção do comando rm: -R (recursive), -v (verbose)
+	# opção do comando git: -b ()
 	# opção do comando cd: .. (dois pontos sequenciais - Subir uma pasta)
-	rm -v dahdi-linux.tar.gz &>> $LOG
-	wget -O dahdi-linux.tar.gz $DAHDIINSTALL &>> $LOG
-	tar -zxvf dahdi-linux.tar.gz &>> $LOG
-	cd dahdi-linux*/ &>> $LOG
-		./configure &>> $LOG
-		make clean &>> $LOG
-		make all &>> $LOG
+	rm -Rv dahdi-linux/ &>> $LOG
+	git clone -b next $DAHDIINSTALL dahdi-linux &>> $LOG
+	cd dahdi-linux/ &>> $LOG
+		make &>> $LOG
 		make install &>> $LOG
 	cd ..
 echo -e "Download e instalação do DAHDI feita com sucesso!!!, continuando com o script...\n"
@@ -215,37 +211,30 @@ sleep 5
 #
 echo -e "Fazendo o download e instalando do DAHDI Tools do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando rm: -v (verbose)
-	# opção do comando wget: -O (file)
-	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
+	# opção do comando rm: -R (recursive), -v (verbose)
 	# opção do comando cd: .. (dois pontos sequenciais - Subir uma pasta)
-	rm -v dahdi-tools.tar.gz &>> $LOG
-	wget -O dahdi-tools.tar.gz $DAHDITOOLSINSTALL &>> $LOG
-	tar -zxvf dahdi-tools.tar.gz &>> $LOG
-	cd dahdi-tools*/ &>> $LOG
+	rm -Rv dahdi-tools/ &>> $LOG
+	git clone -b next $DAHDITOOLSINSTALL dahdi-tools &>> $LOG
+	cd dahdi-tools/ &>> $LOG
 		autoreconf -i &>> $LOG
 		./configure &>> $LOG
-		make clean &>> $LOG
-		make all &>> $LOG
 		make install &>> $LOG
+		make install-config &>> $LOG
+		dahdi_genconf modules &>> $LOG
 	cd ..
 echo -e "Download e instalação do DAHDI Tools feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Fazendo o download e instalando do LIBPRI do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando rm: -v (verbose)
-	# opção do comando wget: -O (file)
-	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
+	# opção do comando rm: -R (recursive), -v (verbose)
 	# opção do comando cd: .. (dois pontos sequenciais - Subir uma pasta)
-	rm -v libpri.tar.gz &>> $LOG
-	wget -O libpri.tar.gz $LIBPRIINSTALL &>> $LOG
-	tar -zxvf libpri.tar.gz &>> $LOG
-	cd libpri*/ &>> $LOG
-		./configure &>> $LOG
-		make clean &>> $LOG
-		make all &>> $LOG
+	rm -Rv libpri/ &>> $LOG
+	git clone -b next $LIBPRIINSTALL libpri &>> $LOG
+	cd libpri/ &>> $LOG
+		make &>> $LOG
 		make install &>> $LOG
+		ldconfig &>> $LOG
 	cd ..
 echo -e "Download e instalação do LIBPRI feita com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -327,7 +316,9 @@ echo -e "Atualizando os arquivos dos Ramais SIP, Plano de Discagem e Módulos do
 	mv -v /etc/asterisk/sip.conf /etc/asterisk/sip.conf.old &>> $LOG
 	mv -v /etc/asterisk/extensions.conf /etc/asterisk/extensions.conf.old &>> $LOG
 	mv -v /etc/asterisk/modules.conf /etc/asterisk/modules.conf.old &>> $LOG
-	cp -v conf/asterisk/{sip.conf,extensions.conf,modules.conf} /etc/asterisk/ &>> $LOG
+	mv -v /etc/asterisk/asterisk.conf /etc/asterisk/asterisk.conf.old &>> $LOG
+	cp -v conf/asterisk/{sip.conf,extensions.conf,modules.conf,asterisk.conf} /etc/asterisk/ &>> $LOG
+	cp -v conf/asterisk/asterisk /etc/default/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -349,14 +340,23 @@ echo -e "Configuração da segurança do Asterisk feita com sucesso!!!, continua
 sleep 5
 #
 echo -e "Editando o arquivo de configuração asterisk, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/default/asterisk
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração asterisk.conf, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/asterisk/asterisk.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração modules.conf, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/asterisk/modules.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -377,7 +377,7 @@ echo -e "Verificando a porta de conexão do SIP do Asterisk, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:5060 -sTCP:LISTEN
+	lsof -nP -iUDP:5060
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
