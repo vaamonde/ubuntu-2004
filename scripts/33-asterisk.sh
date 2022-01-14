@@ -37,27 +37,28 @@
 # de comunicação de áudio e vídeo numa rede de computadores. O H.323 é um protocolo relativamente 
 # antigo que está atualmente sendo substituído pelo SIP.
 #
-# Informações que serão solicitadas na configuração dos Módulos do Asterisk:
+# Informações que serão solicitadas na configuração dos Módulos do Asterisk: (Utilizar TAB e ENTER)
 # Add-ons (See README-addons.txt): --- Extended ---
 #	* chan_ooh323
 #	* format_mp3
 # Applications: --- Core ---
 #	* app_skel
 #	* app_ivrdemo
-#	* app_meetme
-#	* app_saycounted
+#	* app_saycounted	
 #	* app_statsd
+#	* app_meetme
 # Resource Modules: --- Core ---
 #	* res_wmi_external
 #	* res_wmi_external_ami
 #	* res_chan_stats
 #	* res_corosynsc
 # 	* res_endpoint_stats
-#	* res_pktccops
 #	* res_remb_modifier
+#	* res_pktccops
 # Utilities: --- Extended ---
 #	* check_expr
 #	* check_expr2
+# <Save and Exit>
 #
 # Site Oficial do Asterisk: https://www.asterisk.org/
 #
@@ -195,7 +196,7 @@ echo -e "Instalando as dependências do Asterisk, aguarde..."
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download e instalando do DAHDI do site Oficial, aguarde..."
+echo -e "Fazendo o download e instalando do DAHDI Linux do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -R (recursive), -v (verbose)
 	# opção do comando git: -b ()
