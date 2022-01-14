@@ -4,33 +4,38 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 06/01/2019
-# Data de atualização: 15/05/2021
-# Versão: 0.13
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do Asterisk 16.1.x, Asterisk 18.x.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 14/01/2022
+# Data de atualização: 14/01/2022
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do Asterisk v19.1.x
 #
-# O Asterisk é um software livre, de código aberto, que implementa em software os recursos encontrados em um PABX 
-# convencional, utilizando tecnologia de VoIP. Ele foi criado pelo Mark Spencer em 1999.
-# Inicialmente desenvolvido pela empresa Digium, hoje recebe contribuições de programadores ao redor de todo o mundo. 
-# Seu desenvolvimento é ativo e sua área de aplicação muito promissora.
+# O Asterisk é um software livre, de código aberto, que implementa em software os recursos 
+# encontrados em um PABX convencional, utilizando tecnologia de VoIP. Ele foi criado pelo 
+# Mark Spencer em 1999. Inicialmente desenvolvido pela empresa Digium, hoje recebe contribuições 
+# de programadores ao redor de todo o mundo. Seu desenvolvimento é ativo e sua área de aplicação 
+# muito promissora.
 #
-# DAHDI = DAHDI (Digium\Asterisk Hardware Device Interface) é uma coleção de drivers de código aberto, para o Linux, 
-# que são usados para fazer interface com uma variedade de hardware relacionado à telefonia.
+# DAHDI = DAHDI (Digium\Asterisk Hardware Device Interface) é uma coleção de drivers de código 
+# aberto, para o Linux, que são usados para fazer interface com uma variedade de hardware 
+# relacionado à telefonia.
 #
-# DAHDI Tools = contém uma variedade de utilitários de comandos do usuário que são usados para configurar e testar os 
-# drivers de hardware desenvolvidos pela Digium e Zapatel.
+# DAHDI Tools = contém uma variedade de utilitários de comandos do usuário que são usados para 
+# configurar e testar os drivers de hardware desenvolvidos pela Digium e Zapatel.
 #
-# LIBPRI = A biblioteca libpri permite que o Asterisk se comunique com conexões ISDN. Você só precisará disso se for 
-# usar o DAHDI com hardware de interface ISDN (como placas T1 / E1 / J1 / BRI).
+# LIBPRI = A biblioteca libpri permite que o Asterisk se comunique com conexões ISDN. Você só 
+# precisará disso se for usar o DAHDI com hardware de interface ISDN (como placas T1/E1/J1/BRI).
 #
-# iLBC = O iLBC (internet Low Bitrate Codec) é um codec de voz GRATUITO adequado para comunicação de voz robusta sobre IP. 
-# O codec é projetado para fala de banda estreita e resulta em uma taxa de bits de carga útil de 13,33 kbit / s com um 
-# comprimento de quadro de codificação de 30 ms e 15,20 kbps com um comprimento de codificação de 20 ms.
+# iLBC = O iLBC (internet Low Bitrate Codec) é um codec de voz GRATUITO adequado para comunicação 
+# de voz robusta sobre IP. O codec é projetado para fala de banda estreita e resulta em uma taxa 
+# de bits de carga útil de 13,33 kbit / s com um comprimento de quadro de codificação de 30 ms e 
+# 15,20 kbps com um comprimento de codificação de 20 ms.
 #
-# H.323 =  é um conjunto de padrões da ITU-T que define um conjunto de protocolos para o fornecimento de comunicação de áudio 
-# e vídeo numa rede de computadores. O H.323 é um protocolo relativamente antigo que está atualmente sendo substituído pelo SIP.
+# H.323 =  é um conjunto de padrões da ITU-T que define um conjunto de protocolos para o fornecimento 
+# de comunicação de áudio e vídeo numa rede de computadores. O H.323 é um protocolo relativamente 
+# antigo que está atualmente sendo substituído pelo SIP.
 #
 # Informações que serão solicitadas na configuração dos Módulos do Asterisk:
 # Add-ons (See README-addons.txt): --- Extended ---
@@ -56,129 +61,148 @@
 #
 # Site Oficial do Asterisk: https://www.asterisk.org/
 #
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de configuração do OpenSSH no GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=ecuol8Uf1EE&t
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
 #
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
 #
-# Variáveis para validar o ambiente, verificando se o usuário é "root", versão do ubuntu e kernel
-# opções do comando id: -u (user)
-# opções do comando: lsb_release: -r (release), -s (short), 
-# opões do comando uname: -r (kernel release)
-# opções do comando cut: -d (delimiter), -f (fields)
-# opção do shell script: piper | = Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# opções do comando cut: -d (delimiter), -f (fields)
-# $0 (variável de ambiente do nome do comando)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
-#
-# Declarando as variáveis de Download do Asterisk (Link atualizado no dia 15/05/2021)
-# em projeto: http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-18-current.tar.gz
-# em projeto: https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-core-pt-BR-3.8.3.zip
-# em projeto: https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-extra-pt-BR-1.11.10.zip
-DAHDI="http://downloads.asterisk.org/pub/telephony/dahdi-linux/dahdi-linux-current.tar.gz"
-DAHDITOOLS="http://downloads.asterisk.org/pub/telephony/dahdi-tools/dahdi-tools-current.tar.gz"
-LIBPRI="http://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz"
-ASTERISK="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz"
-PTBRCORE="https://www.asterisksounds.org/pt-br/download/asterisk-sounds-core-pt-BR-sln16.zip"
-PTBREXTRA="https://www.asterisksounds.org/pt-br/download/asterisk-sounds-extra-pt-BR-sln16.zip"
-SOUNDS="/var/lib/asterisk/sounds/pt_BR"
-COUNTRYCODE="55"
-#
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
 clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
 	then
 		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
 		sleep 5
 	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
 		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
 		echo -e "Execute novamente o script para verificar o ambiente."
 		exit 1
 fi
-#		
-# Script de instalação do Asterisk no GNU/Linux Ubuntu Server 18.04.x
-# opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -I (all IP address)
-# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
-clear
 #
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
+# Verificando se a porta 5060 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $PORTSIP &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTSIP já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTSIP está disponível, continuando com o script..."
+		sleep 5
+fi
+#
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
+# Script de instalação do Asterisk no GNU/Linux Ubuntu Server 20.04.x
+# opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
+# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
+clear
 echo
-echo -e "Instalação do Asterisk no GNU/Linux Ubuntu Server 18.04.x"
-echo -e "Após a instalação, para acessar o CLI do Asterisk, digite o comando: asterisk -rvvvv\n"
+#
+echo -e "Instalação do Asterisk no GNU/Linux Ubuntu Server 20.04.x"
+echo -e "Porta padrão utilizada pelo SIP.: TCP 5060\n"
+echo -e "Após a instalação, acessar o CLI do Asterisk digitando o comando: asterisk -rvvvv\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
 echo -e "Adicionando o Repositório Universal do Apt, aguarde..."
+	# Universe - Software de código aberto mantido pela comunidade:
 	# opção do comando: &>> (redirecionar a saída padrão)
 	add-apt-repository universe &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Adicionando o Repositório Multiversão do Apt, aguarde..."
+	# Multiverse – Software não suportado, de código fechado e com patente: 
 	# opção do comando: &>> (redirecionar a saída padrão)
 	add-apt-repository multiverse &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando as listas do Apt, aguarde..."
+echo -e "Adicionando o Repositório Restrito do Apt, aguarde..."
+	# Restricted - Software de código fechado oficialmente suportado:
 	# opção do comando: &>> (redirecionar a saída padrão)
+	add-apt-repository restricted &>> $LOG
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando as listas do Apt, aguarde..."
+	#opção do comando: &>> (redirecionar a saída padrão)
 	apt update &>> $LOG
 echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o sistema, aguarde..."
+echo -e "Atualizando todo o sistema operacional, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
 echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Removendo software desnecessários, aguarde..."
+echo -e "Removendo todos os software desnecessários, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalando o Asterisk, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Asterisk, aguarde...\n"
+sleep 5
 #
 echo -e "Instalando as dependências do Asterisk, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	# opção da variáel $(uname -r): kernel-release
-	# opção da \ (bar left): quebra de linha na opção do apt
-	apt install -y build-essential libssl-dev libelf-dev libncurses5-dev libnewt-dev libxml2-dev linux-headers-$(uname -r) \
-	libsqlite3-dev uuid-dev subversion libjansson-dev sqlite3 autoconf automake libtool libedit-dev flex bison libtool \
-	libtool-bin unzip sox openssl zlib1g-dev unixodbc unixodbc-dev &>> $LOG
+	apt install -y $ASTERISKINSTALLDEP &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download e instalação do DAHDI do site Oficial, aguarde..."
+echo -e "Fazendo o download e instalando do DAHDI do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (file)
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
 	# opção do comando cd: .. (dois pontos sequenciais - Subir uma pasta)
 	rm -v dahdi-linux.tar.gz &>> $LOG
-	wget -O dahdi-linux.tar.gz $DAHDI &>> $LOG
+	wget -O dahdi-linux.tar.gz $DAHDIINSTALL &>> $LOG
 	tar -zxvf dahdi-linux.tar.gz &>> $LOG
 	cd dahdi-linux*/ &>> $LOG
 		./configure &>> $LOG
@@ -189,14 +213,14 @@ echo -e "Fazendo o download e instalação do DAHDI do site Oficial, aguarde..."
 echo -e "Download e instalação do DAHDI feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download e instalação do DAHDI Tools do site Oficial, aguarde..."
+echo -e "Fazendo o download e instalando do DAHDI Tools do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (file)
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
 	# opção do comando cd: .. (dois pontos sequenciais - Subir uma pasta)
 	rm -v dahdi-tools.tar.gz &>> $LOG
-	wget -O dahdi-tools.tar.gz $DAHDITOOLS &>> $LOG
+	wget -O dahdi-tools.tar.gz $DAHDITOOLSINSTALL &>> $LOG
 	tar -zxvf dahdi-tools.tar.gz &>> $LOG
 	cd dahdi-tools*/ &>> $LOG
 		autoreconf -i &>> $LOG
@@ -208,14 +232,14 @@ echo -e "Fazendo o download e instalação do DAHDI Tools do site Oficial, aguar
 echo -e "Download e instalação do DAHDI Tools feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download e instalação do LIBPRI do site Oficial, aguarde..."
+echo -e "Fazendo o download e instalando do LIBPRI do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (file)
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
 	# opção do comando cd: .. (dois pontos sequenciais - Subir uma pasta)
 	rm -v libpri.tar.gz &>> $LOG
-	wget -O libpri.tar.gz $LIBPRI &>> $LOG
+	wget -O libpri.tar.gz $LIBPRIINSTALL &>> $LOG
 	tar -zxvf libpri.tar.gz &>> $LOG
 	cd libpri*/ &>> $LOG
 		./configure &>> $LOG
@@ -235,7 +259,7 @@ echo -e "Fazendo o download e configurando o Asterisk do site Oficial, aguarde..
 	# opção do comando yes: yes é um comando utilizado normalmente em conjunto com outro programa, para responder sempre 
 	# positivamente (ou negativamente) às perguntas do segundo programa
 	rm -v asterisk.tar.gz &>> $LOG
-	wget -O asterisk.tar.gz $ASTERISK &>> $LOG
+	wget -O asterisk.tar.gz $ASTERISKINSTALL &>> $LOG
 	tar -zxvf asterisk.tar.gz &>> $LOG
 	cd asterisk*/ &>> $LOG
 		# resolvendo as dependências do suporte a Música e Sons em MP3
@@ -276,35 +300,34 @@ echo -e "Compilando e instalando o Asterisk, esse processo demora um pouco, agua
 echo -e "Compilação e instalação do Asterisk feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download da configuração do Sons em Português/Brasil do Asterisk, aguarde..."
+echo -e "Fazendo o download dos arquivos de Sons em Português/Brasil do Asterisk, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do comando wget: -O (file)
 	# opção do comando unzip: -o (overwrite)
 	# opção do comando cd: - (traço, rollback voltar para a pasta anterior)
-	mkdir -v $SOUNDS &>> $LOG
-	cp -v conf/convert.sh $SOUNDS &>> $LOG
-	cd $SOUNDS &>> $LOG
-		wget -O core.zip $PTBRCORE &>> $LOG
-		wget -O extra.zip $PTBREXTRA &>> $LOG
+	mkdir -v $SOUNDSPATH &>> $LOG
+	cp -v conf/asterisk/convert.sh $SOUNDSPATH &>> $LOG
+	cd $SOUNDSPATH &>> $LOG
+		wget -O core.zip $SOUNDPTBRCORE &>> $LOG
+		wget -O extra.zip $SOUNDPTBREXTRA &>> $LOG
 		unzip -o core.zip &>> $LOG
 		unzip -o extra.zip &>> $LOG
 		bash convert.sh &>> $LOG
 	cd - &>> $LOG
-echo -e "Download da configuração do Sons em Português/Brasil feito com sucesso!!!!, continuado com o script...\n"
+echo -e "Download dos arquivos de Sons em Português/Brasil feito com sucesso!!!!, continuado com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos dos Ramais SIP, Plano de Discagem e Módulos do Asterisk, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	mv -v /etc/asterisk/sip.conf /etc/asterisk/sip.conf.bkp &>> $LOG
-	mv -v /etc/asterisk/extensions.conf /etc/asterisk/extensions.conf.bkp &>> $LOG
-	mv -v /etc/asterisk/modules.conf /etc/asterisk/modules.conf.bkp &>> $LOG
-	cp -v conf/sip.conf /etc/asterisk/sip.conf &>> $LOG
-	cp -v conf/extensions.conf /etc/asterisk/extensions.conf &>> $LOG
-	cp -v conf/modules.conf /etc/asterisk/modules.conf &>> $LOG
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
+	mv -v /etc/asterisk/sip.conf /etc/asterisk/sip.conf.old &>> $LOG
+	mv -v /etc/asterisk/extensions.conf /etc/asterisk/extensions.conf.old &>> $LOG
+	mv -v /etc/asterisk/modules.conf /etc/asterisk/modules.conf.old &>> $LOG
+	cp -v conf/asterisk/{sip.conf,extensions.conf,modules.conf} /etc/asterisk/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -314,6 +337,7 @@ echo -e "Configurando a Segurança do Asterisk, aguarde..."
 	# opções do comando usermod: -a (append), -G (groups), asterisk (user)
 	# opções do comando chown: -R (recursive), -v (verbose), Asterisk.Asterisk (Usuário.Grupo)
 	# opção do comando chmod: -R (recursive), -v (verbose), 775 (Dono=RWX,Grupo=RWX=Outros=R-X)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	groupadd asterisk &>> $LOG
 	useradd -r -d /var/lib/asterisk -g asterisk asterisk &>> $LOG
 	usermod -aG audio,dialout asterisk &>> $LOG
@@ -324,14 +348,14 @@ echo -e "Configurando a Segurança do Asterisk, aguarde..."
 echo -e "Configuração da segurança do Asterisk feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração padrão do Asterisk, pressione <Enter> para editar"
-	read
+echo -e "Editando o arquivo de configuração asterisk, pressione <Enter> para continuar"
+	read -s
 	vim /etc/default/asterisk
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo e inicialização do Asterisk, pressione <Enter> para editar"
-	read
+echo -e "Editando o arquivo de configuração asterisk.conf, pressione <Enter> para continuar"
+	read -s
 	vim /etc/asterisk/asterisk.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -343,25 +367,33 @@ echo -e "Reinicializando o Serviço do Asterisk, aguarde..."
 echo -e "Serviço habilitado e iniciado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de Conexão do Protocolo SIP do Asterisk, aguarde..."
-	# opção do comando netstat: -a (all), -n (numeric)
-	netstat -an | grep 5060
+echo -e "Verificando o serviço do Asterisk, aguarde..."
+	systemctl status asterisk | grep Active
+echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a porta de conexão do SIP do Asterisk, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:5060 -sTCP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do Asterisk feita com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
-	HORAFINAL=`date +%T`
+	HORAFINAL=$(date +%T)
 	# opção do comando date: -u (utc), -d (date), +%s (second since 1970)
 	HORAINICIAL01=$(date -u -d "$HORAINICIAL" +"%s")
 	HORAFINAL01=$(date -u -d "$HORAFINAL" +"%s")
 	# opção do comando date: -u (utc), -d (date), 0 (string command), sec (force second), +%H (hour), %M (minute), %S (second), 
-	TEMPO=`date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S"`
+	TEMPO=$(date -u -d "0 $HORAFINAL01 sec - $HORAINICIAL01 sec" +"%H:%M:%S")
 	# $0 (variável de ambiente do nome do comando)
 	echo -e "Tempo gasto para execução do script $0: $TEMPO"
 echo -e "Pressione <Enter> para concluir o processo."
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-echo -e "Fim do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Fim do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 read
 exit 1

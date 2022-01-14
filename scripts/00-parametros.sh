@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 13/01/2022
-# Versão: 0.35
+# Data de atualização: 14/01/2022
+# Versão: 0.36
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1406,4 +1406,39 @@ FLUSH_NEXTCLOUD="FLUSH PRIVILEGES;"
 #
 # Variável das dependências do laço de loop do Nextcloud
 NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 33-asterisk.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema de VoIP Asterisk utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço de VoIP Asterisk utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de VoIP Asterisk
+#
+# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 14/01/2022)
+DAHDIINSTALL="http://downloads.asterisk.org/pub/telephony/dahdi-linux/dahdi-linux-current.tar.gz"
+DAHDITOOLSINSTALL="http://downloads.asterisk.org/pub/telephony/dahdi-tools/dahdi-tools-current.tar.gz"
+LIBPRIINSTALL="http://downloads.asterisk.org/pub/telephony/libpri/libpri-current.tar.gz"
+ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19.1.0.tar.gz"
+SOUNDPTBRCORE="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-core-pt-BR-3.8.3.zip"
+SOUNDPTBREXTRA="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-extra-pt-BR-1.11.10.zip"
+#
+# Variável da instalação das dependências do Asterisk (opção da variável $(uname -r): kernel-release)
+ASTERISKINSTALLDEP="build-essential libssl-dev libelf-dev libncurses5-dev libnewt-dev libxml2-dev \
+linux-headers-$(uname -r) libsqlite3-dev uuid-dev subversion libjansson-dev sqlite3 autoconf \
+automake libtool libedit-dev flex bison libtool libtool-bin unzip sox openssl zlib1g-dev unixodbc \
+unixodbc-dev"
+#
+# Variável da criação do diretório de Sons Português/Brasil do Asterisk
+SOUNDSPATH="/var/lib/asterisk/sounds/pt_BR"
+#
+# Variável da instalação das dependências do ILBC utilizando o debconf-set-selections
+COUNTRYCODE="55"
+#
+# Variável da porta de conexão do Protocolo SIP (Session Initiation Protocol)
+PORTSIP="5060"
 #
