@@ -6,41 +6,41 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 13/10/2021
-Data de atualização: 10/01/2022
-Versão: 0.06
+Data de atualização: 14/01/2022
+Versão: 0.07
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh      -v0.33		- Customizado até o script: 32-nextcloud no dia 09/01/2022
-01-openssh.sh         -v0.16		- Testado e homologado no dia 07/01/2022
-02-dhcp.sh            -v0.10		- Testado e homologado no dia 18/12/2021
-03-dns.sh             -v0.12		- Testado e homologado no dia 18/12/2021
-04-dhcpdns.sh         -v0.12		- Testado e homologado no dia 18/12/2021
-05-ntp.sh             -v0.11		- Testado e homologado no dia 09/01/2022
-06-tftphpa.sh         -v0.08		- Testado e homologado no dia 18/12/2021
-07-lamp.sh            -v0.11		- Testado e homologado no dia 18/12/2021
-08-openssl.sh         -v0.09		- Testado e homologado no dia 18/12/2021
-09-vsftpd.sh          -v0.05		- Testado e homologado no dia 18/12/2021
-10-tomcat.sh          -v0.08		- Testado e homologado no dia 18/12/2021
-11-wordpress.sh       -v0.08		- Testado e homologado no dia 18/12/2021
-12-webmin.sh          -v0.05		- Testado e homologado no dia 18/12/2021
-13-netdata.sh         -v0.09		- Testado e homologado no dia 18/12/2021
-14-loganalyzer.sh     -v0.09		- Testado e homologado no dia 18/12/2021
-15-glpi.sh            -v0.10		- Testado e homologado no dia 18/12/2021
-16-fusioninventory.sh -v0.08		- Testado e homologado no dia 18/12/2021
-17-zoneminder.sh      -v0.08		- Testado e homologado no dia 18/12/2021
-18-guacamole.sh       -v0.05		- Testado e homologado no dia 18/12/2021
-19-grafana.sh         -v0.03		- Testado e homologado no dia 18/12/2021
-20-zabbix.sh          -v0.03		- Testado e homologado no dia 18/12/2021
-21-docker.sh          -v0.02		- Testado e homologado no dia 18/12/2021
-22-ansible.sh         -v0.01		- Testado e homologado no dia 18/12/2021
-23-ntopng.sh          -v0.01		- Testado e homologado no dia 18/12/2021
-24-openfire.sh        -v0.01		- Testado e homologado no dia 18/12/2021
-25-owncloud.sh        -v0.01		- Testado e homologado no dia 18/12/2021
-26-ocsinventory.sh    -v0.01		- Testado e homologado no dia 18/12/2021
-27-bacula.sh          -v0.02		- Testado e homologado no dia 06/01/2022
-28-graylog.sh         -v0.02		- Testado e homologado no dia 22/12/2021
-29-postgresql.sh      -v0.02		- Testado e homologado no dia 08/01/2022
-30-nfs.sh             -v0.01		- Testado e homologado no dia 08/01/2022
-31-webdav.sh          -v0.02		- Testado e homologado no dia 09/01/2022
-32-nextcloud.sh       -v0.01		- Testado e homologado no dia 09/01/2022
+00-parametros.sh      -v0.35		- Customizado até o script: 32-nextcloud no dia 13/01/2022
+01-openssh.sh         -v0.17		- Testado e homologado no dia 12/01/2022
+02-dhcp.sh            -v0.11		- Testado e homologado no dia 12/01/2022
+03-dns.sh             -v0.13		- Testado e homologado no dia 12/01/2022
+04-dhcpdns.sh         -v0.13		- Testado e homologado no dia 12/01/2022
+05-ntp.sh             -v0.12		- Testado e homologado no dia 12/01/2022
+06-tftphpa.sh         -v0.09		- Testado e homologado no dia 12/01/2022
+07-lamp.sh            -v0.13		- Testado e homologado no dia 12/01/2022
+08-openssl.sh         -v0.10		- Testado e homologado no dia 12/01/2022
+09-vsftpd.sh          -v0.06		- Testado e homologado no dia 12/01/2022
+10-tomcat.sh          -v0.09		- Testado e homologado no dia 12/01/2022
+11-wordpress.sh       -v0.13		- Testado e homologado no dia 13/01/2022
+12-webmin.sh          -v0.06		- Testado e homologado no dia 12/01/2022
+13-netdata.sh         -v0.10		- Testado e homologado no dia 12/01/2022
+14-loganalyzer.sh     -v0.13		- Testado e homologado no dia 13/01/2022
+15-glpi.sh            -v0.11		- Testado e homologado no dia 12/01/2022
+16-fusioninventory.sh -v0.09		- Testado e homologado no dia 12/01/2022
+17-zoneminder.sh      -v0.09		- Testado e homologado no dia 12/01/2022
+18-guacamole.sh       -v0.06		- Testado e homologado no dia 12/01/2022
+19-grafana.sh         -v0.04		- Testado e homologado no dia 12/01/2022
+20-zabbix.sh          -v0.04		- Testado e homologado no dia 12/01/2022
+21-docker.sh          -v0.03		- Testado e homologado no dia 12/01/2022
+22-ansible.sh         -v0.02		- Testado e homologado no dia 12/01/2022
+23-ntopng.sh          -v0.03		- Testado e homologado no dia 14/01/2022
+24-openfire.sh        -v0.02		- Testado e homologado no dia 12/01/2022
+25-owncloud.sh        -v0.03		- Testado e homologado no dia 13/01/2022
+26-ocsinventory.sh    -v0.02		- Testado e homologado no dia 12/01/2022
+27-bacula.sh          -v0.03		- Testado e homologado no dia 12/01/2022
+28-graylog.sh         -v0.03		- Testado e homologado no dia 12/01/2022
+29-postgresql.sh      -v0.03		- Testado e homologado no dia 12/01/2022
+30-nfs.sh             -v0.02		- Testado e homologado no dia 12/01/2022
+31-webdav.sh          -v0.03		- Testado e homologado no dia 12/01/2022
+32-nextcloud.sh       -v0.02		- Testado e homologado no dia 12/01/2022

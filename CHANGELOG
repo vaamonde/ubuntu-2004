@@ -16,7 +16,7 @@ utilizados pelos Scripts, atualização do versão do OpenFire para: 4.67, alter
 latest.tar.bz2, atualização do arquivo: 11-wordpress.sh alteração do nome do arquivo de download para: wordpress.zip
 correção da localização do arquivo: wp-config.php na hora de aplicar o Salt, acréscimo da listagem TCP da porta 514
 no script: 14-loganalyzer.sh, acréscimo da edição do arquivo PHP no script: 25-owncloud.sh, atualização da versão do 
-Perl: 5.30.0 no arquivo: zz-ocsinventory-restapi.conf.
+Perl: 5.30.0 no arquivo: zz-ocsinventory-restapi.conf, acréscimo da porta 6379 do Redis Server no script: 23-ntopng.sh
 
 12/01/2022 - Robson Vaamonde - Acréscimo da linha: add-apt-repository restricted em todos os scripts do curso, 
 acréscimo das opções do serviço do NFS no arquivo: hosts.allow.

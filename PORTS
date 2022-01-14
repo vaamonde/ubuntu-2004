@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 13/01/2022
-Data de atualização: 13/01/2022
-Versão: 0.01
+Data de atualização: 14/01/2022
+Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
@@ -33,8 +33,13 @@ SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 20-zabbix.sh ---------------> TCP 80 (apache2 HTTP), TCP 3306 (mysqld), TCP 10050 (zabbix_ag) e 10051 (zabbix_se)
 21-docker.sh ---------------> TCP 9000 (docker-pr HTTP)
 22-ansible.sh --------------> TCP 4440 (java HTTP)
-23-ntopng.sh ---------------> TCP 3001 (ntopng HTTP)
+23-ntopng.sh ---------------> TCP 3001 (ntopng HTTP) e TCP 6379 (redis-ser)
 24-openfire.sh -------------> TCP 9090 (java HTTP)
 25-owncloud.sh -------------> TCP 80 (apache2 HTTP) e TCP 3306 (mysqld)
 26-ocsinventory.sh ---------> TCP 80 (apache2 HTTP) e TCP 3306 (mysqld) 
-27-bacula.sh --------------->
+27-bacula.sh ---------------> TCP 9101 (bacula-di), TCP 9102 (bacula-fd), TCP 9103 (bacula-sd), TCP 9095 (baculum HTTP) e TCP 9096 (baculum HTTP)
+28-graylog.sh --------------> TCP 9200 (java ElasticSearch), TCP 19000 (java HTTP) e TCP 27017 (mongod)
+29-postgresql.sh -----------> TCP 5432 (postgres) e TCP 80 (apache2 HTTP)
+30-nfs.sh ------------------> TCP 111 (portmapper) e TCP 2049 (nfs)
+31-webdav.sh ---------------> TCP 80 (apache2 HTTP)
+32-nextcloud.sh ------------> TCP 80 (apache2 HTTP) e TCP 3306 (mysqld)

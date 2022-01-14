@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 16/12/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.02
+# Data de atualização: 14/01/2022
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do NTop-NG v5.0.x
 #
@@ -253,12 +253,12 @@ echo -e "Verificando o serviço do NTop-NG, aguarde..."
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do NTop-NG, aguarde..."
+echo -e "Verificando a porta de conexão do NTop-NG e Redis-Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:3001 -sTCP:LISTEN
+	lsof -nP -iTCP:'3001,6379' -sTCP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
