@@ -231,7 +231,7 @@ echo -e "Fazendo o download e instalando do LIBPRI do site Oficial, aguarde..."
 	# opção do comando rm: -R (recursive), -v (verbose)
 	# opção do comando cd: .. (dois pontos sequenciais - Subir uma pasta)
 	rm -Rv libpri/ &>> $LOG
-	git clone -b next $LIBPRIINSTALL libpri &>> $LOG
+	git clone $LIBPRIINSTALL libpri &>> $LOG
 	cd libpri/ &>> $LOG
 		make &>> $LOG
 		make install &>> $LOG
