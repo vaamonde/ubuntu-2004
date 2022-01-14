@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 11/01/2022
-# Versão: 0.34
+# Data de atualização: 13/01/2022
+# Versão: 0.35
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1030,8 +1030,8 @@ PORTNTOPNG="3001"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de mensageria OpenFire
 #
-# Variável de download do instalador do OpenFire (Link atualizado no dia 18/12/2021).
-OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.6.6_all.deb"
+# Variável de download do instalador do OpenFire (Link atualizado no dia 13/01/2022).
+OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.6.7_all.deb"
 #
 # Variável da instalação das dependências do OpenFire
 OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-headless"
@@ -1075,8 +1075,8 @@ PORTOPENFIRE="9090"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud ownCloud
 #
-# Variável de download do instalador do ownCloud (Link atualizado no dia 19/12/2021).
-OWNCLOUDINSTALL="https://download.owncloud.org/community/owncloud-complete-20210721.tar.bz2"
+# Variável de download do instalador do ownCloud (Link atualizado no dia 13/01/2022).
+OWNCLOUDINSTALL="https://download.owncloud.org/community/owncloud-latest.tar.bz2"
 #
 # Variável da instalação das dependências do ownCloud
 OWNCLOUDINSTALLDEP="software-properties-common php-cli php-common php-mbstring php-gd php-intl \

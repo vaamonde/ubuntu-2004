@@ -497,7 +497,7 @@ echo -e "Veja a documentação das opções de instalação a partir da linha: 6
 echo -e "Instalação do OCS Inventory Agent feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando os arquivos de configuração do OCS Inventory Agent, aguarde...\n"
+echo -e "Atualizando os arquivos de configuração do OCS Inventory Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)

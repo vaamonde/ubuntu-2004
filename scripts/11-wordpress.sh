@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.11
+# Data de atualização: 13/01/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -174,15 +174,15 @@ echo -e "Fazendo o download do Wordpress do site oficial PT-BR, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output-document)
-	rm -v latest.zip salt.key &>> $LOG
-	wget -O latest.zip $WORDPRESS &>> $LOG
+	rm -v wordpress.zip salt.key &>> $LOG
+	wget -O wordpress.zip $WORDPRESS &>> $LOG
 	wget -O salt.key $WORDPRESSSALT &>> $LOG
 echo -e "Download do Wordpress feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Descompactando o Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	unzip latest.zip &>> $LOG
+	unzip wordpress.zip &>> $LOG
 echo -e "Descompactação feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -199,19 +199,24 @@ sleep 5
 #
 echo -e "Aplicando as informações do Salt no arquivo wp-config.php, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	sed '62r salt.key' wp-config.php > /tmp/wp.config.php &>> $LOG
+	# opção do comando sed: 62 (line), r (filename)
+	# opção do comando cp: -v (verbose)
+	sed '62r salt.key' $PATHWORDPRESS/wp-config.php > /tmp/wp.config.php
+	cp -v $PATHWORDPRESS/wp-config.php $PATHWORDPRESS/wp-config-semsalt.php &>> $LOG
 	cp -v /tmp/wp.config.php $PATHWORDPRESS &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando chmod: -R (recursive), -f (silent), -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
 	# opção do comando chown: -R (recursive), -f (silent), -v (verbose), www-data (user), www-data (group)
-	#find . -type d -exec chmod 755 {} \;
-	#find . -type f -exec chmod 644 {} \;
-	chmod -Rfv 775 $PATHWORDPRESS &>> $LOG
+	# opção do comando find: . (path), -type d (directory), , type f (file), -exec (execute command)
+	# opção do comando chmod: -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
+	# opção do comando chmod: -v (verbose), 644 (Dono=RW-,Grupo=R--,Outros=R--)
+	# opção do comando {} \;: executa comandos em lote e aplicar as permissões para cada arquivo/diretório em loop
 	chown -Rfv www-data.www-data $PATHWORDPRESS &>> $LOG
+	find $PATHWORDPRESS/. -type d -exec chmod -v 755 {} \; &>> $LOG
+	find $PATHWORDPRESS/. -type f -exec chmod -v 644 {} \; &>> $LOG
 echo -e "Permissões alteradas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -229,7 +234,7 @@ sleep 5
 echo -e "Criando o Usuário de FTP do Wordpress, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando useradd: -d (home-dir), -s (shell), -G (Groups)
-	# opção do comando echo: -e (enable escapes), \n (new line), 
+	# opção do comando echo: -e (enable escapes), \n (new line)
 	# opção do redirecionar | "piper": (Conecta a saída padrão com a entrada padrão de outro comando)
 	useradd -d $PATHWORDPRESS -s /bin/ftponly -G www-data,$GROUPFTP $USERFTPWORDPRESS &>> $LOG
 	echo -e "$PASSWORDFTPWORDPRESS\n$PASSWORDFTPWORDPRESS" | passwd $USERFTPWORDPRESS &>> $LOG

@@ -7,7 +7,7 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 02/11/2021
-# Data de atualização: 12/01/2022
+# Data de atualização: 13/01/2022
 # Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
@@ -333,13 +333,15 @@ echo -e "Verificando os serviços do Syslog e do Rsyslog, aguarde..."
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do Syslog/Rsyslog, aguarde..."
+echo -e "Verificando as portas de conexões do Syslog/Rsyslog, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iUDP:"514"
-echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+	echo -e "============================================================="
+	lsof -nP -iTCP:"514" -sTCP:LISTEN
+echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o Virtual Host do LogAnalyzer no Apache2, aguarde..."
