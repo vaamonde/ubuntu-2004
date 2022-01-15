@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 14/01/2022
-Versão: 0.08
+Data de atualização: 15/01/2022
+Versão: 0.09
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
@@ -16,6 +16,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ README: arquivo de documentação principal do curso, contendo os links para os vídeos e documentação.
 	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts, arquivos de configuração ou na Guia Issue.
 	_ CHANGELOG: arquivo de criação, mudanças ou melhorias nos scripts ou arquivos configuração.
+	_ FAQ: arquivo de perguntas frequentes do curso, scripts, arquivos de configuração e serviços de rede.
 	_ HELP: arquivo de ajuda desse curso, com procedimentos e documentação de utilização dos scripts.
 	_ LICENSE: arquivo de licença de uso dos scripts: MIT License.
 	_ NEW: arquivo de novidades dos scripts, arquivos de configuração, serviço de rede, etc...
