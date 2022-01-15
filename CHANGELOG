@@ -13,7 +13,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 14/01/2022 - Robson Vaamonde - Criação dos script: 33-asterisk.sh, customização dos seus arquivos de configuração e
 atualização para a nova versão: 19.1.x., acréscimo da dependência: php-soap no arquivo: 00-paramentros.sh referente
-a Loja Virtual do Wordpress repotado pelo Prof. José de Assis.
+a Loja Virtual do Wordpress reportado pelo Prof. José de Assis.
 
 13/01/2022 - Robson Vaamonde - Criação do arquivo PORTS com especificações das Portas TCP e UDP dos Serviços de Rede
 utilizados pelos Scripts, atualização do versão do OpenFire para: 4.67, alteração da versão do ownCloud para o arquivo
@@ -48,7 +48,7 @@ criação do roteiro e linha de base para a gravação dos vídeos, criação da
 não foram migrados estão no diretório referente ao seu serviço, somente após a migração será acréscentado o seu número
 de sequência e se esse script pode ser instalado junto com os demais.
 
-19/12/2021 - Robson Vaamonde - Correções de vários scripts e homologação dos scripts até 27-bacula.
+19/12/2021 - Robson Vaamonde - Correções de vários scripts e homologação dos scripts até 27-bacula.sh.
 
 15/12/2021 - Robson Vaamonde - Várias melhorias nos scripts em geral para facilitar os procedimentos de gravação dos
 vídeos em 2022, correções dos Bugs do Netdata, GLPI, Tomcat na Base de Dados da Agenda, e melhorias na documentação e 
