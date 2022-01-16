@@ -6,9 +6,55 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 15/01/2022
-Data de atualização: 15/01/2022
-Versão: 0.01
+Data de atualização: 16/01/2022
+Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== FAQ (Perguntas Frequentes) DO CURSO DE UBUNTU SERVER =====================
 
+Pergunta 001: Os sript funciona nas versões anteriores do Ubuntu Server?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Versão anterior somente os script do Ubuntu Server 18.04.x 
+disponível no Github (que foi congelado em Novembro/2021 e não receberá mais atualização em 2022).
+
+Pergunta 002: Os scripts funciona nas versões 21.04 (Hirsute Hippo) ou 21.10 (Impish Indri)?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Para esse cenário você precisa adaptar os scripts para a sua 
+necessidade, lembrando que é indicado somente utilizar versões LTS do Ubuntu Server, a próxima versão 
+do Ubuntu Server será á 22.04 (Jammy Jellyfish) prevista para ser lançada em Abril de 2022.
+
+Pergunta 003: Os scripts funciona na distribuição Debian (qualquer versão)?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Para esse cenário você precisa adaptar os scripts para a sua 
+necessidade. Mesmo o Ubuntu Server sendo baseado em pacotes .deb existem muitas diferenças nos
+arquivos de configuração e versões ou dependências de pacotes.
+
+Pergunta 004: Os scripts funciona na distribuição CentOS (qualquer versão)?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Para esse cenário você precisa adaptar os scripts para a sua 
+necessidade.
+
+Pergunta 005: Os scripts funciona na distribuição Rocky Linux (qualquer versão)?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Para esse cenário você precisa adaptar os scripts para a sua 
+necessidade.
+
+Pergunta 006: Os scripts funciona na distribuição Red Hat Enterprise RHEL (qualquer versão)?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Para esse cenário você precisa adaptar os scripts para a sua 
+necessidade.
+
+Pergunta 007: Os scripts funciona na distribuição Suse Linux Enterprise SLES (qualquer versão)?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Para esse cenário você precisa adaptar os scripts para a sua 
+necessidade.
+
+Pergunta 008: Os scripts funciona na distribuição Arch Linux (qualquer versão)?
+Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
+(Long-term support) do Ubuntu Server. Para esse cenário você precisa adaptar os scripts para a sua 
+necessidade.
+
+Pergunta 009: Posso usar os scripts em servidores On-Premises (local) ou em Cloud (nuvem)?
+Resposta: Sim, os scripts funciona perfeitamente em servidores instalados On-Premises (local) tanto
+instalação física ou virtual (VM - Virtual Machine) ou em Cloud (nuvem) utilizando VPS (Virtual 
+Private Server) ou Servidor Dedicado (dedicated server).
