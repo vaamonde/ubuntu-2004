@@ -11,46 +11,20 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Asterisk v19.1.x
 
-# Uncomment the following and set them to the user/groups that you
-# want to run Asterisk as. NOTE: this requires substantial work to
-# be sure that Asterisk's environment has permission to write the
-# files required  for  its  operation, including logs, its comm
-# socket, the asterisk database, etc.
+# Usuário e Grupo do serviço do Asterisk
 AST_USER="asterisk"
 AST_GROUP="asterisk"
 
-# If you DON'T want Asterisk to start up with terminal colors, comment
-# this out.
+# Habilitando o recurso de cores no terminal do Asterisk
 COLOR=yes
 
-# If you want Asterisk to run with a non-default configuration file,
-# uncomment the following option, and set the value appropriately.
+# Localizaçãodo arquivo de configuração padrão do Asterisk
 ALTCONF=/etc/asterisk/asterisk.conf
 
-# In the case of a crash, Asterisk may create a core file.  Uncomment
-# if you want this behavior.
+# Configurações padrão do Asterisk, só descomentar se for necessário
 #COREDUMP=yes
-
-# Asterisk may establish a maximum load average for the system.  This
-# may be useful to prevent a flood of calls from taking down the system.
 #MAXLOAD=4
-
-# Or, if you'd prefer, you can limit the maximum number of calls.
 #MAXCALLS=1000
-
-# Default console verbosity.  This may be raised or lowered on the console.
-# Note this is analogous to the -v command line switch, which by default
-# will cause Asterisk to start in console mode and run in the foreground,
-# unless the always fork (-F) option is also provided.
 #VERBOSITY=3
-
-# Enable internal timing if the DAHDI timer is available.  The default
-# behaviour is that outbound packets are phase locked to inbound packets.
-# Enabling this option causes them to be locked to the internal DAHDI
-# timer instead.
 #INTERNALTIMING=yes
-
-# Start all recordings into a temporary directory, before moving them to
-# their final location.
 #TEMPRECORDINGLOCATION=yes
-
