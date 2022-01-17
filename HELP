@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 15/01/2022
-Versão: 0.09
+Data de atualização: 17/01/2022
+Versão: 0.10
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
@@ -77,7 +77,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ scripts tem o Bloco de Laço de Loop para verificar se as principais dependências estão 
 	_ instaladas, todos os scripts foram desenvolvidos para serem executados apenas 1 (uma) vez.
 
-#06_ Clonando o projeto de Github e executando os scripts
+#06_ Clonando o projeto do Github e executando os scripts
 	_ Para utilizar os scripts desse curso, é recomendado você se logar com o usuário Root do Ubuntu.
 	_ Primeiro: se logar com o seu usuário que tem direitos administrativos no terminal do Ubuntu;
 	_ Segundo: se logar como Root utilizando o comando: sudo -i <Enter> digitar a sua senha;
@@ -89,9 +89,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ Sexto: rodar um script de serviço: bash 00-nome_do_script.sh <Enter>.
 
 #07_ Monitorando o Log em tempo real dos script
-	_ Todos os scripts redirecionada a saída padrão dos comandos utilizados para a variável: LOG que 
-	_ gera um arquivo no diretório: /var/log/ com o nome do script que está sendo executando, exemplo:
-	_ bash 01-openssh.sh - arquivo de Log: /var/log/01-openssh.sh.
+	_ Todos os scripts redireciona a saída padrão dos comandos utilizados para a variável: LOG que gera 
+	_ um arquivo no diretório: /var/log/ com o nome do script que está sendo executando, exemplo: bash 
+	_ 01-openssh.sh - arquivo de Log: /var/log/01-openssh.sh.
 	_ Para visualizar em tempo real o Log da instalação e configuração do serviço de rede você vai se
 	_ logar em outro Terminal (Alt+F2), se logar com seu usuário que tem direitos administrativos e
 	_ executar o comando: sudo tail -f /var/log/01-openssh.sh, para sair do monitoramento do Log e
@@ -115,12 +115,14 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ OBS2: antes de enviar o BUG veja o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS
 	_ se essa falha já consta lá, e se essa falha já foi resolvida.
 	_ OBS3: veja sempre o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/CHANGELOG sobre as
-	_ correções e melhorias dos scripts e arquivos de configuração. 
+	_ correções e melhorias dos scripts e arquivos de configuração.
+	_ Veja também os COMMITS feito nos scripts ou arquivos de configuração diretamento no Github na Link
+	_ https://github.com/vaamonde/ubuntu-2004/commits/main 
 
 #01_ Ajudando na "MELHORIA" dos scripts
 	_ Para ajudar na MELHORIA dos scripts é recomendado você criar um novo cenário, adaptar os scripts
-	_ para esse cenário e testar se tudo vai funcionar perfeitamente, depois acrescentar suas melhorias
-	_ e mandar as sugestões na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ para esse cenário e testar se tudo vai funcionar perfeitamente, depois documentar suas melhorias
+	_ e mandar as suas sugestões na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
 
 #02_ Ajudando na "MELHORIA" dos arquivos de configuração
 	_ Para ajudar na MELHORIA dos arquivos de configuração, esse procedimento é o mais importante, pois
@@ -131,8 +133,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #03_ Ajudando na "SEGURANÇA" dos scripts ou arquivos de configuração
 	_ Para ajudar na SEGURANÇA dos scripts e arquivos de configuração é recomendado criar o mesmo cenário
-	_ ou um novo cenário e testar as falhas de segurança principalmente dos serviços de rede, documentar
-	_ as melhorias ou correções e enviar na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ ou um novo cenário e testar as falhas de segurança, principalmente dos serviços de rede, documentar
+	_ as falhas de segurança, sua correção e os procedimentos que precisa ser feito para resolver a falha
+	_ na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
 
 #04_ Ajudando no "DESEMPENHO" dos arquivos de configuração
 	_ Para ajudar no DESEMEPNHO dos arquivos de configuração é recomendado criar o mesmo cenário ou um 
@@ -144,4 +147,4 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ Por padrão as melhorias ou correções enviadas via PULL REQUESTS do Github não serão submetidas nos
 	_ scripts ou arquivos de configuração, pois o projeto não foi criado para trabalhar com colaboração
 	_ no Github, por esse motivo os Pull Requests serão respondidos mais aplicado somente as melhorias
-	_ ou correções documentadas na na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ ou correções documentadas na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.

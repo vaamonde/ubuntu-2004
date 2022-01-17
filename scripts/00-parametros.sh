@@ -143,21 +143,22 @@ PORTDHCP="67"
 # 07. /etc/bind/named.conf.options = arquivo de configuração do Serviço do Bind9
 # 08. /etc/bind/rndc.key = arquivo de configuração das Chaves RNDC de integração Bind9 e DHCP
 # 09. /var/lib/bind/pti.intra.hosts = arquivo de configuração da Zona de Pesquisa Direta
-# 10. /var/lib/bind/172.16.1.rev = arquivo de configuração da Zona de Pesquisa Inversa
+# 10. /var/lib/bind/172.16.1.rev = arquivo de configuração da Zona de Pesquisa Reversas
 # 11. /etc/cron.d/dnsupdate-cron = arquivo de configuração das atualizações de Ponteiros
 # 12. /etc/default/named = arquivo de configuração do Daemon do Serviço do Bind9
 #
 # Arquivos de monitoramento (log) do Serviço de Rede Bind DNS Server utilizados nesse script
 # 01. systemctl status bind9 = status do serviço do Bind DNS
 # 02. journalctl -t named = todas as mensagens referente ao serviço do Bind DNS
-# 03. tail -f /var/log/named/* = vários arquivos de Log's dos serviços do Bind DNS
+# 03. tail -f /var/log/syslog | grep named = filtrando as mensagens do serviço do Bind DNS
+# 04. tail -f /var/log/named/* = vários arquivos de Log's dos serviços do Bind DNS
 #
-# Declarando as variáveis de Pesquisa Direta do Domínio, Inversa e Subrede do Bind DNS Server
+# Declarando as variáveis de Pesquisa Direta do Domínio, Reversas e Subrede do Bind DNS Server
 #
 # Variável do nome do Domínio do Servidor DNS (veja a linha: 64 desse arquivo)
 DOMAIN=$DOMINIOSERVER
 #
-# Variável do nome da Pesquisa Inversa do Servidor de DNS
+# Variável do nome da Pesquisa Reversas do Servidor de DNS
 DOMAINREV="1.16.172.in-addr.arpa"
 #
 # Variável do endereço IPv4 da Subrede do Servidor de DNS
@@ -183,7 +184,7 @@ PORTDNS="53"
 # integrado no ISC DHCP Server
 # 
 # Variável da senha em modo texto que está configurada nos arquivos: dhcpd.conf, named.conf.local
-# e rndc.key que será substituida para nova chave criptografada da variável USERUPDATE
+# e rndc.key que será substituída para nova chave criptografada da variável USERUPDATE
 SECRETUPDATE="vaamonde"
 #
 # Variável da senha utilizada na criação da chave de atualização dos ponteiros do DNS e DHCP
@@ -214,10 +215,10 @@ DHCPDNSDEP="isc-dhcp-server bind9"
 # Variável de sincronização do NTP Server com o Site ntp.br
 NTPSERVER="a.st1.ntp.br"
 #
-# Variável do Zona de Horário do NTP Server
+# Variável do Zona de Horário do Ubuntu Server
 TIMEZONE="America/Sao_Paulo"
 #
-# Variável de Configuração do Locale do Server
+# Variável de Configuração do Locale do Ubuntu Server
 LOCALE="pt_BR.UTF-8"
 #
 # Variável das dependências do laço de loop do NTP Server

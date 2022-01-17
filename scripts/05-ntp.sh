@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.12
+# Data de atualização: 17/01/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -240,13 +240,18 @@ echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Atualizando o Timezone e Locale do Servidor, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	timedatectl set-timezone "$TIMEZONE" &>> $LOG
+	localectl set-locale LANG=$LOCALE &>> $LOG
+echo -e "Timezone e Locale atualizado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Atualizando a Data e Hora do NTP Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando ntpdate: d (debug), q (query), u (unprivileged), v (verbose)
 	systemctl stop ntp &>> $LOG
 	ntpdate -dquv $NTPSERVER &>> $LOG
-	timedatectl set-timezone "$TIMEZONE" &>> $LOG
-	localectl set-locale LANG=$LOCALE &>> $LOG
 	systemctl start ntp &>> $LOG
 echo -e "Data e Hora do NTP Server atualizada com sucesso!!!, continuando com o script...\n"
 sleep 5

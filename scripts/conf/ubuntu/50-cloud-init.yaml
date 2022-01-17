@@ -6,10 +6,11 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/10/2021
-# Versão: 0.03
+# Data de atualização: 10/01/2022
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Mais informações veja o arquivo: scripts/settings/04-ConfiguracaoDoNetplan.sh
+# Após as configuração do endereço IPv4 digitar o comando: netplan --debug apply
 #
 # Configuração do Endereço IPv4 do Ubuntu Server
 network:

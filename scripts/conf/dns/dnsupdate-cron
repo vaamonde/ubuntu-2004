@@ -13,6 +13,7 @@
 #
 # Agendamento das atualizações dos Registros do Bind9 DNS Server a cada 1 minuto, todos os dias
 # Obs: esse agendamento resolve o problema dos arquivo *.jnl de atualização dinâmica do Bind9
+# [minutos] [horas] [dias do mês] [mês] [dias da semana] [usuário] [comando]
 */1 * * * * root /usr/sbin/rndc sync -clean &> /dev/null
 
 #Fim do agendamento, obrigatório ter uma linha em branco no final do arquivo para a execução correta.
