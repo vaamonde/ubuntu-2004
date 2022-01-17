@@ -6,12 +6,16 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 14/01/2022
-Versão: 0.30
+Data de atualização: 17/01/2022
+Versão: 0.31
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-17/01/2022 - Robson Vaamonde - Atualização dos arquivos: issue.net, 04-ConfiguracaoDoNeplan.sh, 05-ntp.sh, 
+17/01/2022 - Robson Vaamonde - Atualização dos arquivos: issue.net, 04-ConfiguracaoDoNeplan.sh, correção do Locale no
+arquivo: 05-ntp.sh, acréscimo das linhas: locale-gen pt_BR.UTF-8, localectl set-locale LANG=pt_BR.UTF-8 e correção do
+comando: update-locale LANG=pt_BR.UTF-8 LC_ALL=pt_BR.UTF-8 LANGUAGE="pt_BR:pt:en", será mostrado em vídeo o acréscimo
+da informação no arquivo: /etc/default/keyboard da variável: XKBVARIANT="intl" quando se utiliza teclado en_US-UTF-8,
+acréscimo do programa Neofetch no script do OpenSSH personalizando o arquivo: /etc/motd com o logo do Ubuntu Server.
 
 14/01/2022 - Robson Vaamonde - Criação dos script: 33-asterisk.sh, customização dos seus arquivos de configuração e
 atualização para a nova versão: 19.1.x., acréscimo da dependência: php-soap no arquivo: 00-paramentros.sh referente

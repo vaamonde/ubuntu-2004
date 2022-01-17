@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 14/01/2022
-# Versão: 0.36
+# Data de atualização: 17/01/2022
+# Versão: 0.37
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -102,7 +102,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 SSHDEP="openssh-server openssh-client"
 #
 # Variável de instalação dos softwares extras do OpenSSH Server
-SSHINSTALL="net-tools ipcalc nmap tree pwgen"
+SSHINSTALL="net-tools ipcalc nmap tree pwgen neofetch"
 #
 # Variável da porta de conexão padrão do OpenSSH Server
 PORTSSH="22"

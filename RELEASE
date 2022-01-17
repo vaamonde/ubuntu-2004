@@ -14,7 +14,7 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
 00-parametros.sh      -v0.36		- Customizado até o script: 33-asterisk.sh no dia 14/01/2022
-01-openssh.sh         -v0.17		- Testado e homologado no dia 12/01/2022
+01-openssh.sh         -v0.18		- Testado e homologado no dia 17/01/2022
 02-dhcp.sh            -v0.11		- Testado e homologado no dia 12/01/2022
 03-dns.sh             -v0.13		- Testado e homologado no dia 12/01/2022
 04-dhcpdns.sh         -v0.13		- Testado e homologado no dia 12/01/2022

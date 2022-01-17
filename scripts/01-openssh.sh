@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.17
+# Data de atualização: 17/01/2022
+# Versão: 0.18
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -281,6 +281,14 @@ echo -e "Editando o arquivo de configuração issue.net, pressione <Enter> para 
 	read -s
 	vim /etc/issue.net
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando o arquivo personalizado /etc/motd, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando chmod: -v (verbose), -x (remove executable)
+	neofetch > /etc/motd
+	chmod -v -x /etc/update-motd.d/* &>> $LOG
+echo -e "Arquivo criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando os serviços do Netplan e do OpenSSH Server, aguarde..."
