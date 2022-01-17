@@ -11,6 +11,8 @@ Versão: 0.30
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+17/01/2022 - Robson Vaamonde - Atualização do arquivo: issue.net, 04-ConfiguracaoDoNeplan.sh, 
+
 14/01/2022 - Robson Vaamonde - Criação dos script: 33-asterisk.sh, customização dos seus arquivos de configuração e
 atualização para a nova versão: 19.1.x., acréscimo da dependência: php-soap no arquivo: 00-paramentros.sh referente
 a Loja Virtual do Wordpress reportado pelo Prof. José de Assis.

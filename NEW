@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 15/01/2022
-Versão: 0.07
+Data de atualização: 17/01/2022
+Versão: 0.08
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
@@ -24,7 +24,8 @@ arquivos de configuração:
 	_ 00-motioneye.sh (dev): software de CFTV de software livre desenvolvido para Linux;
 	_ 00-shinobi.sh (dev): software de CCTV de código aberto escrito em Node.JS;
 	_ 00-netdisco.sh (dev): ferramenta de gerenciamento de rede adequada para redes pequenas a muito grandes;
-	_ 00-thinstation.sh (dev): implementação Linux gratuita e de código aberto de um sistema operacional thin client. 
+	_ 00-thinstation.sh (dev): implementação Linux gratuita e de código aberto de um sistema operacional thin client;
+	_ 00-bastillion.sh (dev): console SSH baseado na web que gerencia o acesso administrativo aos sistemas.
 
 26/11/2021 - Robson Vaamonde - Criação dos novos scripts de configuração: 00-webdav.sh, 00-nfs.sh, 00-nextcloud.sh,
 00-samba4.sh, 00-postfix.sh, 00-netbox.sh, 00-gitlab.sh, 00-redmine.sh, 00-shinobi.sh, 00-netdisco.sh, 00-thinstation.sh

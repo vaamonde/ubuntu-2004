@@ -30,9 +30,12 @@
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	ssh vaamonde@172.16.1.10
 #	ssh vaamonde@ssh.pti.intra
-# Windows Powershell.: 
+# Windows Powershell: Menu, Powershell 
 #	ssh vaamonde@172.16.1.10
 #	ssh vaamonde@ssh.pti.intra
+# Linux Mint ou Windows:
+#	apt install putty putty-tools
+#	windows: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 #
 # Verificando os usuários logados na sessão do OpenSSH Server
 # Terminal:
