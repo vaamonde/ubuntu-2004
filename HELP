@@ -6,11 +6,18 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 17/01/2022
-Versão: 0.10
+Data de atualização: 18/01/2022
+Versão: 0.11
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
-#===================== COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =====================
+#======================= COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =======================
+
+Para você se manter atualizado de todas as novidades do repositório do Ubuntu Server 20.04.x do Github
+recomendo os dois procedimentos abaixo:
+
+Primeiro: Ajudar o projetado clicando no Ícone "STAR" (Estrela) do repositório ubuntu-2004/
+Segundo.: Para receber as notificações clique no Ícone "WATCH" (Observar) do repositório ubuntu-2004/
+Terceiro: Caso você entenda os procedimentos de "FORK" (Garfar) faça um fork do repositório ubuntu-2004/
 
 #00_ Arquivos e diretórios principais do curso do Ubuntu Server 20.04.x LTS x64
 	_ README: arquivo de documentação principal do curso, contendo os links para os vídeos e documentação.
@@ -105,7 +112,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ nos scripts e arquivos de configuração analisando sempre a versão do arquivo nas linhas: Data de 
 	_ atualização e Versão juntamente com os arquivos CHANGELOG, BUGS e RELEASE.
 
-#======================== HABILITANDO OU DESABILITANDO RECURSOS NOS SCRIPTS =======================
+#========================= HABILITANDO OU DESABILITANDO RECURSOS NOS SCRIPTS ==========================
 
 #01_ Desabilitando a checagem das dependências dos scripts no arquivo 00-parametros.sh
 	_ Para desabilitar a checagem das dependências dos scripts no arquivo 00-parametros.sh você pode
@@ -128,7 +135,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ OBSERVAÇÃO: alguns arquivos de configuração utiliza o ; (ponto e vírgula) como caractere de 
 	_ comentário como por exemplo nos arquivos de configuração do Bind DNS Server, PHP, etc.
 
-#========================= COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS =======================
+#========================== COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS ==========================
 
 #00_ Ajudando no "DEBUG" dos scripts
 	_ Para ajudar no DEBUG dos scripts é recomendado você criar o mesmo cenário das vídeo aulas e das
