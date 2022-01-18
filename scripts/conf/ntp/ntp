@@ -10,7 +10,7 @@
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
-
+#
 # Opções de inicialização do serviço do NTP Server
 # opções do options: -g (panicgate), -4 (ipv4)
 NTPD_OPTS="-g -4"

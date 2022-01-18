@@ -1,18 +1,36 @@
-# Defaults for isc-dhcp-server (sourced by /etc/init.d/isc-dhcp-server)
-
-# Path to dhcpd's config file (default: /etc/dhcp/dhcpd.conf).
-#DHCPDv4_CONF=/etc/dhcp/dhcpd.conf
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 10/10/2021
+# Data de atualização: 18/01/2022
+# Versão: 0.07
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do ISC DHCP Server v4.4.x
+#
+# Configuração padrão do ISC DHCP Server Daemon (código em /etc/init.d/isc-dhcp-server)
+#
+# Configuração da Interface de Rede que o ISC DHCP Server irá escutar as solicitações
+# de endereçamento IPv4
+# OBSERVAÇÃO: o suporte ao IPv6 foi desativado e não será utilizado nesse curso
+INTERFACESv4="enp0s3"
+#INTERFACESv6=""
+#
+# Localização do caminho padrão do arquivo de configuração do ISC DHCP Server
+# OBSERVAÇÃO: o suporte ao IPv6 foi desativado e não será utilizado nesse curso
+DHCPDv4_CONF=/etc/dhcp/dhcpd.conf
 #DHCPDv6_CONF=/etc/dhcp/dhcpd6.conf
-
-# Path to dhcpd's PID file (default: /var/run/dhcpd.pid).
-#DHCPDv4_PID=/var/run/dhcpd.pid
+#
+# Localização do caminho padrão do PID do processo do ISC DHCP Server
+# OBSERVAÇÃO: o suporte ao IPv6 foi desativado e não será utilizado nesse curso
+DHCPDv4_PID=/var/run/dhcpd.pid
 #DHCPDv6_PID=/var/run/dhcpd6.pid
-
-# Additional options to start dhcpd with.
-#	Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead
+#
+# Opções adicionais do serviço do ISC DHCP Sever
+# Não use as opções -cf ou -pf aqui; use DHCPD_CONF/ DHCPD_PID em vez disso
 #OPTIONS=""
 
-# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
-#	Separate multiple interfaces with spaces, e.g. "eth0 eth1".
-INTERFACESv4=""
-INTERFACESv6=""
+

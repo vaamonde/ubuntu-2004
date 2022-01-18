@@ -142,7 +142,7 @@ echo
 #
 echo -e "Integração do ICS DHCP Server com Bind DNS Server no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Bind9 DNS Server.: UDP 53 e TCP 53"
-echo -e "Porta padrão utilizada pelo RNDC.: TCP 953\n"
+echo -e "Porta padrão utilizada pelo RNDC.: TCP 953"
 echo -e "Porta padrão utilizada pelo ISC DHCP Server.: UDP 67\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5

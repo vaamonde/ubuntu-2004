@@ -10,17 +10,17 @@
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
-
+#
 # Configuração do usuário de serviço do Servidor TFTP-HPA
 TFTP_USERNAME="tftp"
-
+#
 # Localização do diretório dos arquivos do Servidor TFTP-HPA
 TFTP_DIRECTORY="/var/lib/tftpboot"
-
+#
 # Configuração da porta padrão do serviço do Servidor TFTP-HPA
 #TFTP_ADDRESS="172.16.1.20:69"
 TFTP_ADDRESS=":69"
-
+#
 # Configuração das opções de segurança do Servidor TFTP-HPA
 # opções: -4 (ipv4 only), -l (listen), -c (create), -s (secure), -v (verbose)
 #TFTP_OPTIONS="-4 -l -c -s -v"

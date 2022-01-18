@@ -6,14 +6,14 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 13/01/2022
-Data de atualização: 17/01/2022
-Versão: 0.04
+Data de atualização: 18/01/2022
+Versão: 0.05
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 01-openssh.sh --------------> TCP 22 (sshd) e TCP 4200 (shellinab HTTPS)
 02-dhcp.sh -----------------> UDP 67 (dhcpd)
-03-dns.sh ------------------> TCP 53 (named), TCP 53 (systemd-r), TCP 953 (named) e UDP 53 (named)
+03-dns.sh ------------------> TCP 53 (named), TCP 53 (systemd-r), TCP 953 (named), UDP 53 (systemd-r) e UDP 53 (named)
 04-dhcpdns.sh --------------> UDP 67 (dhcpd), TCP 53 (named), TCP 53 (systemd-r), TCP 953 (named) e UDP 53 (named)
 05-ntp.sh ------------------> UDP 123 (ntpd)
 06-tftphpa.sh --------------> UDP 69 (in.tftpd) e UDP 67 (dhcpd)
