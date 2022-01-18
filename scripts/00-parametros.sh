@@ -843,9 +843,10 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
-# Variável de download do Apache Guacamole (Links atualizados no dia 09/12/2021)
-GUACAMOLESERVER="https://dlcdn.apache.org/guacamole/1.3.0/source/guacamole-server-1.3.0.tar.gz"
-GUACAMOLECLIENT="https://dlcdn.apache.org/guacamole/1.3.0/binary/guacamole-1.3.0.war"
+# Variável de download do Apache Guacamole (Links atualizados no dia 18/01/2022)
+GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.4.0/source/guacamole-server-1.4.0.tar.gz"
+GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-1.4.0.war"
+GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-auth-jdbc-1.4.0.tar.gz"
 #
 # Variável das dependências do laço de loop do Guacamole Server e Client
 GUACAMOLERDEP="tomcat9 tomcat9-admin tomcat9-user bind9"

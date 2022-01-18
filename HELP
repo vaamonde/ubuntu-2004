@@ -105,7 +105,30 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ nos scripts e arquivos de configuração analisando sempre a versão do arquivo nas linhas: Data de 
 	_ atualização e Versão juntamente com os arquivos CHANGELOG, BUGS e RELEASE.
 
-#======================== COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS =======================
+#======================== HABILITANDO OU DESABILITANDO RECURSOS NOS SCRIPTS =======================
+
+#01_ Desabilitando a checagem das dependências dos scripts no arquivo 00-parametros.sh
+	_ Para desabilitar a checagem das dependências dos scripts no arquivo 00-parametros.sh você pode
+	_ fazer de duas maneiras:
+	_ 	Primeira: removendo o nome do aplicativo da variável de laço de loop APLICATIVODEP=""
+	_ 	Segunda.: comentando a variável de laço de loop APLICATIVODEP=""
+	_ Para adicionar nos aplicativos para serem chacados no laço de loop e só adicionar o nome do 
+	_ aplicativo na variável APLICATIVODEP="" separado por espaço.
+
+#02_ Adicionando novas dependências na instalação dos scripts no arquivo 00-parametros.sh
+	_ Para adicionar novas dependências na instalação do serviço de rede é só adicionar o nome do
+	_ aplicativo/dependências na variável APLICATIVOINSTALL="" ou na variável APLICATIVODEPINSTALL=""
+	_ separado por espaço.
+	_ Para remover uma dependências é só retirar das variáveis APLICATIVOINSTALL="" ou da variável 
+	_ APLICATIVODEPINSTALL=""
+
+#03_ Desabilitando recursos nos scripts, paramentros ou arquivos de configuração
+	_ Para desabilitar os recursos nos scripts é recomendado comentar as linhas utilizando o # no
+	_ inicio da linha que queira desabilitar ou função no scripts ou arquivo de configuração.
+	_ OBSERVAÇÃO: alguns arquivos de configuração utiliza o ; como caracter de comentário como por
+	_ exemplo nos arquivos de configuração do Bind DNS Server, PHP, etc.
+
+#========================= COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS =======================
 
 #00_ Ajudando no "DEBUG" dos scripts
 	_ Para ajudar no DEBUG dos scripts é recomendado você criar o mesmo cenário das vídeo aulas e das

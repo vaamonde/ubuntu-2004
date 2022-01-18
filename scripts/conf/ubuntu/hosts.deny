@@ -19,7 +19,7 @@
 # de Log em: /var/log/tcpwrappers-deny-.log
 #
 # Negando todas as Redes de acessar remotamente os serviços no Servidor Ubuntu
-#DAEMON   CLIENT     OPTION
+# DAEMON   CLIENT     OPTION
 ALL: ALL: spawn /bin/echo "$(date) Conexão Recusada - IP %a" >> /var/log/tcpwrappers-deny.log
 #
 # Exemplos de configuração do TCPWrappers do arquivo hosts.deny:

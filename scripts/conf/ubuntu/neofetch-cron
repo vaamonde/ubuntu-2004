@@ -1,0 +1,17 @@
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 18/01/2022
+# Data de atualização: 18/01/2022
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do Neofetch v7.0.x
+#
+# Agendamento da atualização do Banner MOTD a cada 10 minutos, todos os dias
+*/10 * * * * root /usr/bin/neofetch --config /etc/neofetch/config.conf > /etc/motd
+
+#Fim do agendamento, obrigatório ter uma linha em branco no final do arquivo para a execução correta.

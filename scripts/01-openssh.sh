@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/01/2022
-# Versão: 0.18
+# Data de atualização: 18/01/2022
+# Versão: 0.19
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -230,10 +230,14 @@ sleep 5
 echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
+	# opção do comando mkdir: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ssh/sshd_config /etc/ssh/sshd_config.old &>> $LOG
 	mv -v /etc/default/shellinabox /etc/default/shellinabox.old &>> $LOG
+	mkdir -v /etc/neofetch/ &>> $LOG
+	cp -v conf/ubuntu/config.conf /etc/neofetch/ &>> $LOG
+	cp -v conf/ubuntu/neofetch-cron /etc/cron.d/ &>> $LOG
 	cp -v conf/ssh/sshd_config /etc/ssh/ &>> $LOG
 	cp -v conf/ssh/shellinabox /etc/default/ &>> $LOG
 	cp -v conf/ubuntu/{hostname,hosts,hosts.allow,hosts.deny,issue.net,nsswitch.conf} /etc/ &>> $LOG
@@ -312,10 +316,24 @@ echo -e "Editando o arquivo de configuração shellinabox, pressione <Enter> par
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Editando o arquivo de configuração config.conf, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/neofetch/config.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração neofetch-cron, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/cron.d/neofetch-cron
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Criando o arquivo personalizado /etc/motd, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -v (verbose), -x (remove executable)
-	neofetch > /etc/motd
+	neofetch --config /etc/neofetch/config.conf > /etc/motd
 	chmod -v -x /etc/update-motd.d/* &>> $LOG
 echo -e "Arquivo criado com sucesso!!!, continuando com o script...\n"
 sleep 5
