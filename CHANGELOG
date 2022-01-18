@@ -17,7 +17,8 @@ comando: update-locale LANG=pt_BR.UTF-8 LC_ALL=pt_BR.UTF-8 LANGUAGE="pt_BR:pt:en
 da informação no arquivo: /etc/default/keyboard da variável: XKBVARIANT="intl" quando se utiliza teclado en_US-UTF-8,
 acréscimo do programa Neofetch no script do OpenSSH personalizando o arquivo: /etc/motd com o logo do Ubuntu Server,
 acréscimo do aplicativo Shell-In-a-Box no script: 01-openssh.sh e atualização do arquivo: 00-paramentros.sh com as
-opções de portas e dependências.
+opções de portas e dependências, customização do arquivo: config.conf do Neofetch e criação do arquivo de cron para
+atualizar as informações do arquivo motd.
 
 14/01/2022 - Robson Vaamonde - Criação dos script: 33-asterisk.sh, customização dos seus arquivos de configuração e
 atualização para a nova versão: 19.1.x., acréscimo da dependência: php-soap no arquivo: 00-paramentros.sh referente
