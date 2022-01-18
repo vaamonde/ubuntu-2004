@@ -11,7 +11,8 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Neofetch v7.0.x
 #
-# Agendamento da atualização do Banner MOTD a cada 10 minutos, todos os dias
+# Agendamento da atualização do Banner MOTD a cada 10 minutos, todos os dias\
+# [minutos] [horas] [dias do mês] [mês] [dias da semana] [usuário] [comando]
 */10 * * * * root /usr/bin/neofetch --config /etc/neofetch/config.conf > /etc/motd
 
 #Fim do agendamento, obrigatório ter uma linha em branco no final do arquivo para a execução correta.

@@ -351,19 +351,19 @@ echo -e "Reinicializando os serviços do OpenSSH Server e do Shell-In-a-Box, agu
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o serviço do OpenSSH Server, aguarde..."
+echo -e "Verificando os serviços do OpenSSH Server e do Shell-In-a-Box, aguarde..."
 	echo -e "OpenSSH....: $(systemctl status sshd | grep Active)"
 	echo -e "Shellinabox: $(systemctl status shellinabox | grep Active)"
-echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do OpenSSH Server, aguarde..."
+echo -e "Verificando as portas de conexões do OpenSSH Server e do Shell-In-a-Box, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iTCP:'22,4200' -sTCP:LISTEN
-echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configuração do OpenSSH Server feita com Sucesso!!!."
