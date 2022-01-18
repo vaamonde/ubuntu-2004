@@ -11,7 +11,7 @@
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
-
+#
 # Script de atualização da alteração do Endereço IPv4 do Banco de Dados do Wordpress
 #
 # Variável para a geração do arquivo de Salt padrão do site Oficial do Wordpress

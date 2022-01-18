@@ -11,7 +11,7 @@
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
-
+#
 # Script de automação da criação das chaves de Salt do arquivo wp-config.php
 #
 # Variável para a geração do arquivo de Salt padrão do site Oficial do Wordpress

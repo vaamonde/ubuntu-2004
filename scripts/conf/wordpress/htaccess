@@ -12,11 +12,11 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x
 # Testado e homologado para a versão do Wordpress v5.8.x
-
+#
 # O htaccess é um arquivo de configuração do Servidor Web Apache. É utilizado para o controle 
 # de diversos parâmetros, entre eles restringir acessos, redirecionamentos, páginas de erro e 
 # URLs amigáveis. Também é muito utilizado para a proteção de arquivos e diretórios.
-
+#
 # Configurações Básicas do .htaccess do Wordpress retirado do site Oficial
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

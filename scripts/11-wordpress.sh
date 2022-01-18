@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 18/10/2021
-# Data de atualização: 13/01/2022
-# Versão: 0.12
+# Data de atualização: 18/01/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -201,9 +201,9 @@ echo -e "Aplicando as informações do Salt no arquivo wp-config.php, aguarde...
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando sed: 62 (line), r (filename)
 	# opção do comando cp: -v (verbose)
-	sed '62r salt.key' $PATHWORDPRESS/wp-config.php > /tmp/wp.config.php
+	sed '62r salt.key' $PATHWORDPRESS/wp-config.php > /tmp/wp-config.php
 	cp -v $PATHWORDPRESS/wp-config.php $PATHWORDPRESS/wp-config-semsalt.php &>> $LOG
-	cp -v /tmp/wp.config.php $PATHWORDPRESS &>> $LOG
+	cp -v /tmp/wp-config.php $PATHWORDPRESS &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
