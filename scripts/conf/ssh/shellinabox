@@ -1,18 +1,33 @@
-# Should shellinaboxd start automatically
-SHELLINABOX_DAEMON_START=1
-
-# TCP port that shellinboxd's webserver listens on
-SHELLINABOX_PORT=4200
-
-# Parameters that are managed by the system and usually should not need
-# changing:
-# SHELLINABOX_DATADIR=/var/lib/shellinabox
-# SHELLINABOX_USER=shellinabox
-# SHELLINABOX_GROUP=shellinabox
-
-# Any optional arguments (e.g. extra service definitions).  Make sure
-# that that argument is quoted.
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 10/10/2021
+# Data de atualização: 17/01/2022
+# Versão: 0.18
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+# Testado e homologado para a versão do OpenSSH Server v8.2.x
+# Testado e homologado para a versão do Shell-In-a-Box v2.x
 #
-#   Beeps are disabled because of reports of the VLC plugin crashing
-#   Firefox on Linux/x86_64.
-SHELLINABOX_ARGS="--no-beep"
+# Configuração do inicialização automática do Shell-In-a-Box como serviço
+SHELLINABOX_DAEMON_START=1
+#
+# Porta padrão utilizada pelo Webservice do Shell-In-a-Box
+SHELLINABOX_PORT=4200
+#
+# Configuração do Usuário e Grupo padrão do serviço do Shell-In-a-Box
+SHELLINABOX_USER=shellinabox
+SHELLINABOX_GROUP=shellinabox
+#
+# Localização padrão do diretório de informações de acesso do Shell-In-a-Box
+SHELLINABOX_DATADIR=/var/lib/shellinabox
+#
+# Configurações dos argumentos utilizados pelo Shell-In-a-Box
+# --no-beep: bipes são desativados devido a relatos de falha do plug-in VLC no Firefox
+# --service=/:SSH: configuração do endereço IPv4 do servidor de OpenSSH Server
+# Mais opções de argumentos veja a documentação oficial do Shell-In-a-Box no Link:
+# https://manpages.debian.org/unstable/shellinabox/shellinaboxd.1.en.html
+SHELLINABOX_ARGS="--no-beep --service=/:SSH:172.16.1.20"

@@ -25,6 +25,7 @@
 #
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
+# Site Oficial do Projeto Shell-In-a-Box: https://code.google.com/archive/p/shellinabox/
 #
 # Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
@@ -98,13 +99,28 @@ fi
 # opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
 if [ "$(nc -vz 127.0.0.1 $PORTSSH &> /dev/null ; echo $?)" == "0" ]
 	then
-		echo -e "A porta: $PORTSSH já está sendo utilizada nesse servidor, continuando com o script..."
+		echo -e "A porta: $PORTSSH está sendo utilizada pelo serviço do OpenSSH Server, continuando com o script..."
 		sleep 5
 	else
 		echo -e "A porta: $PORTSSH não está sendo utilizada nesse servidor."
 		echo -e "Verifique as dependências desse serviço e execute novamente esse script.\n"
 		sleep 5
 		exit 1
+fi
+#
+# Verificando se a porta 4200 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), u (UDP), &> redirecionador de saída de erro
+if [ "$(nc -vzu 127.0.0.1 $PORTSHELLINABOX &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTSHELLINABOX já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTSHELLINABOX está disponível, continuando com o script..."
+		sleep 5
 fi
 #
 # Verificando todas as dependências do OpenSSH Server
@@ -144,12 +160,16 @@ fi
 # Script de configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x LTS
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
+# opção do comando hostname: -d (domain)
+# opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
 echo -e "Configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo OpenSSH Server.: TCP 22\n"
+echo -e "Porta padrão utilizada pelo OpenSSH Server.: TCP 22"
+echo -e "Porta padrão utilizada pelo Shell-In-a-Box.: TCP 4200"
+echo -e "Após a instalação do Shell-In-a-Box acessar a URL: http://$(hostname -d | cut -d' ' -f1):4200/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -213,7 +233,9 @@ echo -e "Atualizando os arquivos de configuração do OpenSSH Server, aguarde...
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ssh/sshd_config /etc/ssh/sshd_config.old &>> $LOG
-	cp -v conf/ssh/sshd_config /etc/ssh/sshd_config &>> $LOG
+	mv -v /etc/default/shellinabox /etc/default/shellinabox.old &>> $LOG
+	cp -v conf/ssh/sshd_config /etc/ssh/ &>> $LOG
+	cp -v conf/ssh/shellinabox /etc/default/ &>> $LOG
 	cp -v conf/ubuntu/{hostname,hosts,hosts.allow,hosts.deny,issue.net,nsswitch.conf} /etc/ &>> $LOG
 	cp -v $NETPLAN $NETPLAN.old &>> $LOG
 	cp -v conf/ubuntu/00-installer-config.yaml $NETPLAN &>> $LOG
@@ -283,6 +305,13 @@ echo -e "Editando o arquivo de configuração issue.net, pressione <Enter> para 
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Editando o arquivo de configuração shellinabox, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/default/shellinabox
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Criando o arquivo personalizado /etc/motd, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chmod: -v (verbose), -x (remove executable)
@@ -291,15 +320,22 @@ echo -e "Criando o arquivo personalizado /etc/motd, aguarde..."
 echo -e "Arquivo criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Reinicializando os serviços do Netplan e do OpenSSH Server, aguarde..."
+echo -e "Aplicando as mudanças da Placa de Rede do Netplan, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	netplan --debug apply &>> $LOG
+echo -e "Mudanças aplicadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Reinicializando os serviços do OpenSSH Server e do Shell-In-a-Box, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart sshd &>> $LOG
+	systemctl restart shellinabox &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do OpenSSH Server, aguarde..."
-	systemctl status sshd | grep Active
+	echo -e "OpenSSH....: $(systemctl status sshd | grep Active)"
+	echo -e "Shellinabox: $(systemctl status shellinabox | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -308,7 +344,7 @@ echo -e "Verificando a porta de conexão do OpenSSH Server, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:22 -sTCP:LISTEN
+	lsof -nP -iTCP:'22,4200' -sTCP:LISTEN
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

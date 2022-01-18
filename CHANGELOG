@@ -15,7 +15,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 arquivo: 05-ntp.sh, acréscimo das linhas: locale-gen pt_BR.UTF-8, localectl set-locale LANG=pt_BR.UTF-8 e correção do
 comando: update-locale LANG=pt_BR.UTF-8 LC_ALL=pt_BR.UTF-8 LANGUAGE="pt_BR:pt:en", será mostrado em vídeo o acréscimo
 da informação no arquivo: /etc/default/keyboard da variável: XKBVARIANT="intl" quando se utiliza teclado en_US-UTF-8,
-acréscimo do programa Neofetch no script do OpenSSH personalizando o arquivo: /etc/motd com o logo do Ubuntu Server.
+acréscimo do programa Neofetch no script do OpenSSH personalizando o arquivo: /etc/motd com o logo do Ubuntu Server,
+acréscimo do aplicativo Shell-In-a-Box no script: 01-openssh.sh e atualização do arquivo: 00-paramentros.sh com as
+opções de portas e dependências.
 
 14/01/2022 - Robson Vaamonde - Criação dos script: 33-asterisk.sh, customização dos seus arquivos de configuração e
 atualização para a nova versão: 19.1.x., acréscimo da dependência: php-soap no arquivo: 00-paramentros.sh referente

@@ -102,10 +102,13 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 SSHDEP="openssh-server openssh-client"
 #
 # Variável de instalação dos softwares extras do OpenSSH Server
-SSHINSTALL="net-tools ipcalc nmap tree pwgen neofetch"
+SSHINSTALL="net-tools ipcalc nmap tree pwgen neofetch shellinabox"
 #
 # Variável da porta de conexão padrão do OpenSSH Server
 PORTSSH="22"
+#
+# Variável da porta de conexão padrão do Shell-In-a-Box
+PORTSHELLINABOX="4200"
 #
 #=============================================================================================
 #                          VARIÁVEIS UTILIZADAS NO SCRIPT: 02-dhcp.sh                        #
