@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 13/10/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.13
+# Data de atualização: 18/01/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -193,6 +193,7 @@ echo -e "PERL - Linguagem de programação multi-plataforma\n"
 echo -e "PYTHON - Linguagem de programação de alto nível\n"
 echo -e "PhpMyAdmin - Aplicativo desenvolvido em PHP para administração do MySQL"
 echo -e "Após a instalação do PhpMyAdmin acessar a URL: http://www.$(hostname -d | cut -d' ' -f1)/phpmyadmin\n"
+echo -e "Após a instalação do AWStats acessar a URL: http://$(hostname -d | cut -d' ' -f1)/cgi-bin/awstats.pl\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -304,6 +305,8 @@ echo -e "Atualizando os arquivos de configuração do Apache2 e do PHP, aguarde.
 	cp -v conf/lamp/{apache2.conf,ports.conf,envvars} /etc/apache2/ &>> $LOG
 	cp -v conf/lamp/000-default.conf /etc/apache2/sites-available/ &>> $LOG
 	cp -v conf/lamp/php.ini /etc/php/7.4/apache2/ &>> $LOG
+	cp -v conf/lamp/awstats.pti.intra.conf /etc/awstats/ &>> $LOG
+	cp -v conf/lamp/{awstats,awstatsupdate-cron} /etc/cron.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -340,6 +343,23 @@ echo -e "Editando o arquivo de configuração php.ini, pressione <Enter> para co
 	read -s
 	vim /etc/php/7.4/apache2/php.ini
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Habilitando os principais módulos utilizados pelo Apache2, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	a2enmod cgi &>> $LOG
+	a2enmod alias &>> $LOG
+	a2enmod authz_host &>> $LOG
+	a2enmod deflate &>> $LOG
+	a2enmod dir &>> $LOG
+	a2enmod expires &>> $LOG
+	a2enmod headers &>> $LOG
+	a2enmod mime &>> $LOG
+	a2enmod rewrite &>> $LOG
+	a2enmod autoindex &>> $LOG
+	a2enmod negotiation &>> $LOG
+	a2enmod setenvif &>> $LOG
+echo -e "Módulos habilitados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
@@ -407,6 +427,20 @@ echo -e "Editando o arquivo de teste teste.html, pressione <Enter> para continua
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /var/www/html/teste.html
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração awstats.pti.intra.conf , pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/awstats/awstats.pti.intra.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração awstatsupdate-cron, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/cron.d/awstatsupdate-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

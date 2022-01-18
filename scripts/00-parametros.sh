@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/01/2022
-# Versão: 0.37
+# Data de atualização: 18/01/2022
+# Versão: 0.38
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -322,7 +322,8 @@ WEBSERVER="apache2"
 LAMPDEP="bind9 bind9utils"
 #
 # Variável de instalação do serviço de rede LAMP Server (^ (circunflexo): expressão regular)
-LAMPINSTALL="lamp-server^ perl python apt-transport-https"
+LAMPINSTALL="lamp-server^ perl python apt-transport-https awstats libgeo-ip-perl libgeo-ipfree-perl \
+libnet-ip-perl libgeoip1"
 #
 # Variável de instalação do serviço de rede PhpMyAdmin
 PHPMYADMININSTALL="phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json libmcrypt-dev pwgen"

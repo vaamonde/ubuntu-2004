@@ -1,0 +1,23 @@
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Data de criação: 18/01/2022
+# Data de atualização: 18/01/2022
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do AWStats v7.x
+#
+# Desativando os envios de email do AWStats para o usuário root (padrão)
+MAILTO=""
+
+# Agendamento das atualização AWStats - estatísticas do Apache2, a cada 5 minutos, todos os dias
+# do domínio: pti.intra, para adicionar novos domínio só acrescentar mais agendamentos nas linhas
+# abaixo alterando somente a opção: -config
+# [minutos] [horas] [dias do mês] [mês] [dias da semana] [usuário] [comando]
+*/5 * * * * root root /usr/lib/cgi-bin/awstats.pl -config=pti.intra -update > /dev/null 2>&1 || true
+
+#Fim do agendamento, obrigatório ter uma linha no final para a execução correta.
