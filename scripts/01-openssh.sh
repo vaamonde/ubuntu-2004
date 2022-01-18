@@ -111,8 +111,8 @@ fi
 # Verificando se a porta 4200 está sendo utilizada no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
-# opção do comando nc: -v (verbose), -z (DCCP mode), u (UDP), &> redirecionador de saída de erro
-if [ "$(nc -vzu 127.0.0.1 $PORTSHELLINABOX &> /dev/null ; echo $?)" == "0" ]
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $PORTSHELLINABOX &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "A porta: $PORTSHELLINABOX já está sendo utilizada nesse servidor."
 		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
@@ -160,7 +160,7 @@ fi
 # Script de configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x LTS
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-# opção do comando hostname: -d (domain)
+# opção do comando hostname: -I (domain)
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
@@ -169,7 +169,7 @@ echo
 echo -e "Configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo OpenSSH Server.: TCP 22"
 echo -e "Porta padrão utilizada pelo Shell-In-a-Box.: TCP 4200"
-echo -e "Após a instalação do Shell-In-a-Box acessar a URL: http://$(hostname -d | cut -d' ' -f1):4200/\n"
+echo -e "Após a instalação do Shell-In-a-Box acessar a URL: http://$(hostname -I | cut -d' ' -f1):4200/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

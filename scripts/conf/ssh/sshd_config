@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
-# Data de atualização: 10/12/2021
-# Versão: 0.03
+# Data de atualização: 17/01/2022
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 
@@ -30,7 +30,11 @@ ListenAddress 172.16.1.20
 # Por padrão o Servidor de OpenSSH não trabalhar com Chaves Pública para autenticação, 
 # utilizando o arquivo /etc/passwd para se autenticar no servidor, por motivos de segurança, 
 # é recomendado utilizar chaves públicas e senhas para se autenticar no servidor
-# Descomentar essa opção depois de configurar e publicar a chave pública no servidor
+# Descomentar essa opção depois de configurar a chave pública no client e no servidor
+# OBSERVAÇÃO: O Shell-In-a-Box não tem suporte a autenticação via Chave Pública somente 
+# autenticação padrão, para esse cenário é recomendado utilizar a solução Bastillion 
+# (https://www.bastillion.io/)
+#AuthenticationMethods password
 #AuthenticationMethods publickey,password
 
 # Autenticação utilizando chaves públicas geradas no cliente com o comando: ssh-keygen 
