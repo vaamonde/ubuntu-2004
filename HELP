@@ -122,11 +122,11 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 	_ Para remover uma dependências é só retirar das variáveis APLICATIVOINSTALL="" ou da variável 
 	_ APLICATIVODEPINSTALL=""
 
-#03_ Desabilitando recursos nos scripts, paramentros ou arquivos de configuração
+#03_ Desabilitando recursos nos scripts, parâmetros ou arquivos de configuração
 	_ Para desabilitar os recursos nos scripts é recomendado comentar as linhas utilizando o # no
 	_ inicio da linha que queira desabilitar ou função no scripts ou arquivo de configuração.
-	_ OBSERVAÇÃO: alguns arquivos de configuração utiliza o ; como caracter de comentário como por
-	_ exemplo nos arquivos de configuração do Bind DNS Server, PHP, etc.
+	_ OBSERVAÇÃO: alguns arquivos de configuração utiliza o ; (ponto e vírgula) como caractere de 
+	_ comentário como por exemplo nos arquivos de configuração do Bind DNS Server, PHP, etc.
 
 #========================= COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS =======================
 

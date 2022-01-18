@@ -17,7 +17,6 @@ do Neofetch, criação do arquivo de CRON: neofetch-cron para atualizar o arquiv
 arquivo: 01-openssh.sh, atualização do arquivo de configuração: dhcpd.conf com novas opções: get-lease-hostnames on;
 e ping-check on;, customização do arquivo: isc-dhcp-server habilitando somente o IPv4 e Interface de Rede enp0s3,
 
-
 17/01/2022 - Robson Vaamonde - Atualização dos arquivos: issue.net, 04-ConfiguracaoDoNeplan.sh, correção do Locale no
 arquivo: 05-ntp.sh, acréscimo das linhas: locale-gen pt_BR.UTF-8, localectl set-locale LANG=pt_BR.UTF-8 e correção do
 comando: update-locale LANG=pt_BR.UTF-8 LC_ALL=pt_BR.UTF-8 LANGUAGE="pt_BR:pt:en", será mostrado em vídeo o acréscimo

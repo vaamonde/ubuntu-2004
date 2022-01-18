@@ -10,17 +10,17 @@
 # Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x
-
+#
 # Configuração do Unset do Home do Apache2
 unset HOME
-
+#
 # Configurações para suportar várias instâncias do Apache2
 if [ "${APACHE_CONFDIR##/etc/apache2-}" != "${APACHE_CONFDIR}" ] ; then
 	SUFFIX="-${APACHE_CONFDIR##/etc/apache2-}"
 else
 	SUFFIX=
 fi
-
+#
 # Configurações das variáveis de ambiente utilizadas pelo Apache2
 export APACHE_RUN_USER=www-data
 export APACHE_RUN_GROUP=www-data
@@ -28,13 +28,13 @@ export APACHE_PID_FILE=/var/run/apache2$SUFFIX/apache2.pid
 export APACHE_RUN_DIR=/var/run/apache2$SUFFIX
 export APACHE_LOCK_DIR=/var/lock/apache2$SUFFIX
 export APACHE_LOG_DIR=/var/log/apache2$SUFFIX
-
+#
 # Configuração da localidade usada por alguns módulos como mod_dav
 # OBSERVAÇÃO: configurações utilizadas pelo Nextcloud de Locale
 export LANG=C
 . /etc/default/locale
 export LANG
-
+#
 # Configurações padrão do Apache2 Envvars, recomendado não alterar os valores
 #export APACHE_LYNX='www-browser -dump'
 #APACHE_ULIMIT_MAX_FILES='ulimit -n 65536'
