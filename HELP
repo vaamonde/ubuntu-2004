@@ -6,36 +6,37 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 19/10/2021
-Data de atualização: 18/01/2022
-Versão: 0.11
+Data de atualização: 19/01/2022
+Versão: 0.12
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #======================= COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =======================
 
 Para você se manter atualizado de todas as novidades do repositório do Ubuntu Server 20.04.x no Github,
-recomendo os três procedimentos abaixo:
+recomendo os 4 (quatro) procedimentos abaixo:
 
 Primeiro: Ajudar o projetado clicando no Ícone "STAR" (Estrela) do repositório ubuntu-2004/
 Segundo.: Para receber as notificações clique no Ícone "WATCH" (Observar) do repositório ubuntu-2004/
-Terceiro: Caso você entenda os procedimentos de "FORK" (Garfar) faça um fork do repositório ubuntu-2004/
+Terceiro: Caso você conheça os conceitos de "FORK" (Garfar) faça um fork do repositório ubuntu-2004/
+Quarto..: Dúvidas, criticas ou sugestões mande na Guia "ISSUES" (Questões) do repositório ubuntu-2004/
 
-#00_ Arquivos e diretórios principais do curso do Ubuntu Server 20.04.x LTS x64
+#00_ Arquivos e diretórios principais do curso do Ubuntu Server 20.04.x LTS x64.
 	_ README: arquivo de documentação principal do curso, contendo os links para os vídeos e documentação.
-	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts, arquivos de configuração ou na Guia Issue.
+	_ BUGS: arquivo dos Bugs (erros) encontrados nos scripts, arquivos de configuração ou na Guia Issues.
 	_ CHANGELOG: arquivo de criação, mudanças ou melhorias nos scripts ou arquivos configuração.
 	_ FAQ: arquivo de perguntas frequentes do curso, scripts, arquivos de configuração e serviços de rede.
 	_ HELP: arquivo de ajuda desse curso, com procedimentos e documentação de utilização dos scripts.
 	_ LICENSE: arquivo de licença de uso dos scripts: MIT License.
 	_ NEW: arquivo de novidades dos scripts, arquivos de configuração, serviço de rede, etc...
 	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise de Log.
-	_ ROADMAP: arquivo com a sequência da gravação das vídeo aulas desse curso.
+	_ ROADMAP: arquivo com a sequência da gravação das vídeo aulas desse curso (Guia Projects).
 	_ PORTS: arquivo de portas e protocolos TCP ou UDP utilizados pelos serviços de rede desse curso.
 	_ scripts/: diretório dos scripts desse curso, numerados por sequência de uso e prioridade.
 	_ scripts/conf/: diretório dos arquivos de configuração (conf) dos serviços de rede desse curso.
 	_ scripts/install: diretório dos arquivos de instalação e configuração do Ubuntu Server.
 	_ scripts/settings/: diretório dos arquivos de configuração principal do Ubuntu Server.
 
-#01_ Instalação do Ubuntu Server 20.04.x LTS x64
+#01_ Instalação do Ubuntu Server 20.04.x LTS x64.
 	_ Todos os procedimentos de instalação do Ubuntu Server 20.04.x LTS se encontra no diretório:
 	_ ubuntu-2004/scripts/install.
 	_ Os principais arquivos de instalação são:
@@ -43,7 +44,7 @@ Terceiro: Caso você entenda os procedimentos de "FORK" (Garfar) faça um fork d
 	_ 	02-InstalacaoDoUbuntuServer-20.04-RPI.md;
 	_ 	03-InstalacaoDoUbuntuCore-20-RPI.md.
 
-#02_ Configurações básicas do Ubuntu Server 20.04.x LTS x64
+#02_ Configurações básicas do Ubuntu Server 20.04.x LTS x64.
 	_ Todos os procedimentos de configuração básica do Ubuntu Server 20.04.x LTS se encontra no 
 	_ diretório: ubuntu-2004/scripts/settings/.
 	_ Os principais arquivos de configuração são:
@@ -55,7 +56,7 @@ Terceiro: Caso você entenda os procedimentos de "FORK" (Garfar) faça um fork d
 	_ OBSERVAÇÃO IMPORTANTE: É recomendado fazer a configuração básica do Ubuntu Server antes de 
 	_ executar os scripts desse curso.
 
-#03_ Diretório dos scripts utilizados no Ubuntu Server 20.04.x LTS x64
+#03_ Diretório dos scripts utilizados no Ubuntu Server 20.04.x LTS x64.
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server 20.04.x
 	_ LTS se encontra no diretório: ubuntu-2004/scripts/.
 	_ Todos os arquivos de configuração dos serviços de rede no Ubuntu Server 20.04.x LTS se
@@ -66,25 +67,26 @@ Terceiro: Caso você entenda os procedimentos de "FORK" (Garfar) faça um fork d
 	_ primeira etapa é editar o script correspondente, verificar as principais variáveis e arquivos 
 	_ de configuração, alterar seus valores primeiro antes de executar os script.
 
-#04_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts
+#04_ Arquivo de configuração dos parâmetros (Variáveis) dos scripts.
 	_ Arquivo de parâmetros (Variáveis) localizado em: /ubuntu-2004/scripts/00-parametros.sh
 	_ Esse arquivo é constituido de VARIÁVEL="VALOR", cada script tem um Bloco de Configuração
 	_ de Variáveis, algumas variáveis são reutilizadas em vários scripts ou adicionada na variável
 	_ do bloco de configuração do serviço: VARIÁVEL=$VARIÁVEL.
 	_ Antes de iniciar as configurações dos serviços de rede no Ubuntu Server, é recomendado 
 	_ customizar o arquivo de parâmetros: 00-parametros.sh e os arquivos de configurações (conf) 
-	_ no diretório: /ubuntu-2004/scripts/conf/ de cada serviço de rede corresponde a seu scripts.
+	_ no diretório: /ubuntu-2004/scripts/conf/ de cada serviço de rede corresponde a seu script e
+	_ na sequência customizar o script correspondente ao serviço de rede que está sendo implementado.
 
-#05_ Scripts de instalação e configuração dos serviços de rede
+#05_ Scripts de instalação e configuração dos serviços de rede.
 	_ Todos os script de instalação e configuração dos serviços de rede no Ubuntu Server segue o
 	_ mesmo padrão, todos os scripts estão interligados no arquivo: 00-parametros.sh na linha de
-	_ configuração: source, todos os scripts geram arquivos de Log no diretório: /var/log/ com o
-	_ nome do arquivo do script configurado na linha: LOG, todos os script tem um Bloco de Teste
-	_ Lógico (If) básico que verifica se o usuário é Root e se a Distribuição é 20.04, alguns 
+	_ configuração: "SOURCE", todos os scripts geram arquivos de "LOG" no diretório: /var/log/ com o
+	_ nome do arquivo do script configurado na linha: "LOG", todos os script tem um Bloco de Teste
+	_ Lógico "(If)" básico que verifica se o usuário é "Root" e se a Distribuição é "20.04", alguns 
 	_ scripts tem o Bloco de Laço de Loop para verificar se as principais dependências estão 
-	_ instaladas, todos os scripts foram desenvolvidos para serem executados apenas 1 (uma) vez.
+	_ instaladas, todos os scripts foram desenvolvidos para serem executados apenas "1 (uma)" vez.
 
-#06_ Clonando o projeto do Github e executando os scripts
+#06_ Clonando o projeto do Github e executando os scripts.
 	_ Para utilizar os scripts desse curso, é recomendado você se logar com o usuário Root do Ubuntu.
 	_ Primeiro: se logar com o seu usuário que tem direitos administrativos no terminal do Ubuntu;
 	_ Segundo: se logar como Root utilizando o comando: sudo -i <Enter> digitar a sua senha;
@@ -95,86 +97,88 @@ Terceiro: Caso você entenda os procedimentos de "FORK" (Garfar) faça um fork d
 	_ Quinto: acessar o diretório dos scripts: cd scripts/ <Enter>;
 	_ Sexto: rodar um script de serviço: bash 00-nome_do_script.sh <Enter>.
 
-#07_ Monitorando o Log em tempo real dos script
+#07_ Monitorando o Log em tempo real dos script.
 	_ Todos os scripts redireciona a saída padrão dos comandos utilizados para a variável: LOG que gera 
 	_ um arquivo no diretório: /var/log/ com o nome do script que está sendo executando, exemplo: bash 
 	_ 01-openssh.sh - arquivo de Log: /var/log/01-openssh.sh.
-	_ Para visualizar em tempo real o Log da instalação e configuração do serviço de rede você vai se
-	_ logar em outro Terminal (Alt+F2), se logar com seu usuário que tem direitos administrativos e
-	_ executar o comando: sudo tail -f /var/log/01-openssh.sh, para sair do monitoramento do Log e
-	_ só pressionar: Ctrl+C.
+	_ Para visualizar em tempo real o Log da instalação e configuração do serviço de rede, você vai abrir
+	_ um novo Terminal (Alt+F2), se logar com seu usuário que tem direitos administrativos e executar o 
+	_ comando: sudo tail -f /var/log/01-openssh.sh, para sair do monitoramento do Log e só pressionar: 
+	_ Ctrl+C.
 	_ Para analisar o Log após a instalação utilize o comando: less /var/log/01-openssh.sh, para sair
 	_ do arquivo de Log e só pressionar: q (quit).
 
-#08_ Atualizando os scripts para o seu cenário
-	_ É recomendado você fazer um Fork do projeto para manter o seu repositório atualizado com as suas
-	_ modificações, sempre verificar as mudanças no repositório principal em relação a BUGS ou melhorias
-	_ nos scripts e arquivos de configuração analisando sempre a versão do arquivo nas linhas: Data de 
-	_ atualização e Versão juntamente com os arquivos CHANGELOG, BUGS e RELEASE.
+#08_ Atualizando os scripts para o seu cenário.
+	_ É recomendado você fazer um "FORK" do projeto para manter o seu repositório atualizado com as suas
+	_ modificações, sempre verifique as mudanças no repositório principal em relação a "BUGS" ou melhorias
+	_ nos scripts e arquivos de configuração analisando sempre a Versão do arquivo nas linhas: Data de 
+	_ atualização e Versão juntamente com os arquivos "CHANGELOG", "BUGS" e "RELEASE".
 
 #========================= HABILITANDO OU DESABILITANDO RECURSOS NOS SCRIPTS ==========================
 
-#01_ Desabilitando a checagem das dependências dos scripts no arquivo 00-parametros.sh
-	_ Para desabilitar a checagem das dependências dos scripts no arquivo 00-parametros.sh você pode
-	_ fazer de duas maneiras:
-	_ 	Primeira: removendo o nome do aplicativo da variável de laço de loop APLICATIVODEP=""
-	_ 	Segunda.: comentando a variável de laço de loop APLICATIVODEP=""
-	_ Para adicionar nos aplicativos para serem chacados no laço de loop e só adicionar o nome do 
+#01_ Desabilitando a checagem das dependências dos scripts no arquivo 00-parametros.sh.
+	_ Para desabilitar a checagem das dependências dos scripts no arquivo: 00-parametros.sh você pode
+	_ fazer isso de duas formas:
+	_ 	Primeiro: removendo o nome do aplicativo da variável de laço de loop APLICATIVODEP=""
+	_ 	Segundo.: comentando a variável de laço de loop APLICATIVODEP=""
+	_ Para adicionar nos aplicativos para serem verificados no laço de loop é só adicionar o nome do 
 	_ aplicativo na variável APLICATIVODEP="" separado por espaço.
 
-#02_ Adicionando novas dependências na instalação dos scripts no arquivo 00-parametros.sh
+#02_ Adicionando novas dependências na instalação dos scripts no arquivo 00-parametros.sh.
 	_ Para adicionar novas dependências na instalação do serviço de rede é só adicionar o nome do
-	_ aplicativo/dependências na variável APLICATIVOINSTALL="" ou na variável APLICATIVODEPINSTALL=""
+	_ aplicativo/dependência na variável APLICATIVOINSTALL="" ou na variável APLICATIVODEPINSTALL=""
 	_ separado por espaço.
 	_ Para remover uma dependências é só retirar das variáveis APLICATIVOINSTALL="" ou da variável 
 	_ APLICATIVODEPINSTALL=""
 
-#03_ Desabilitando recursos nos scripts, parâmetros ou arquivos de configuração
+#03_ Desabilitando recursos nos scripts, parâmetros ou arquivos de configuração.
 	_ Para desabilitar os recursos nos scripts é recomendado comentar as linhas utilizando o # no
-	_ inicio da linha que queira desabilitar ou função no scripts ou arquivo de configuração.
+	_ inicio da linha que queira desabilitar a função nos scripts ou arquivos de configuração.
 	_ OBSERVAÇÃO: alguns arquivos de configuração utiliza o ; (ponto e vírgula) como caractere de 
 	_ comentário como por exemplo nos arquivos de configuração do Bind DNS Server, PHP, etc.
 
 #========================== COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS ==========================
 
-#00_ Ajudando no "DEBUG" dos scripts
+#00_ Ajudando no "DEBUG" dos scripts.
 	_ Para ajudar no DEBUG dos scripts é recomendado você criar o mesmo cenário das vídeo aulas e das
 	_ configurações dos scripts e arquivos de configuração, mantendo o mesmo padrão e testando se está
 	_ tudo funcionando corretamente, caso encontre alguma falha nos scripts ou arquivos de configuração
-	_ enviar as correções na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues
+	_ enviar as correções na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues
 	_ OBS2: antes de enviar o BUG veja o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS
 	_ se essa falha já consta lá, e se essa falha já foi resolvida.
 	_ OBS3: veja sempre o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/CHANGELOG sobre as
 	_ correções e melhorias dos scripts e arquivos de configuração.
-	_ Veja também os COMMITS feito nos scripts ou arquivos de configuração diretamento no Github na Link
+	_ Veja também os COMMITS feito nos scripts ou arquivos de configuração diretamento no Github no Link
 	_ https://github.com/vaamonde/ubuntu-2004/commits/main 
 
-#01_ Ajudando na "MELHORIA" dos scripts
+#01_ Ajudando na "MELHORIA" dos scripts.
 	_ Para ajudar na MELHORIA dos scripts é recomendado você criar um novo cenário, adaptar os scripts
 	_ para esse cenário e testar se tudo vai funcionar perfeitamente, depois documentar suas melhorias
-	_ e mandar as suas sugestões na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ e mandar as suas sugestões na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
 
-#02_ Ajudando na "MELHORIA" dos arquivos de configuração
+#02_ Ajudando na "MELHORIA" dos arquivos de configuração.
 	_ Para ajudar na MELHORIA dos arquivos de configuração, esse procedimento é o mais importante, pois
 	_ afeta vários serviços de rede, as melhorias muitas vezes ajuda no cenário ou prejudica dependendo
 	_ da integração ou da finalidade do serviço que está sendo implementado, para isso é recomendado
 	_ criar um novo cenário, testar as melhorias nos arquivos de configuração e mandar as sugestões na
-	_ Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
 
 #03_ Ajudando na "SEGURANÇA" dos scripts ou arquivos de configuração
 	_ Para ajudar na SEGURANÇA dos scripts e arquivos de configuração é recomendado criar o mesmo cenário
 	_ ou um novo cenário e testar as falhas de segurança, principalmente dos serviços de rede, documentar
 	_ as falhas de segurança, sua correção e os procedimentos que precisa ser feito para resolver a falha
-	_ na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
 
 #04_ Ajudando no "DESEMPENHO" dos arquivos de configuração
 	_ Para ajudar no DESEMEPNHO dos arquivos de configuração é recomendado criar o mesmo cenário ou um 
 	_ novo cenário e testar as opções de "Tuning" Otimização/Performace principalmente dos serviços de 
 	_ rede como o MySQL, MariaDB, Apache2, Nginx, etc..., documentar as melhorias ou correções e enviar 
-	_ na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ OBSERVAÇÃO IMPORTANTE: nesse cenário existe difrenças de desempenho em relação ao tipo de servidor
+	_ utilizado nos Testes de Desempenho (On-Premises, Virtual Machine, Cloud, Containner, etc...).
 
 #05_ Enviando suas melhorias ou correções via "PULL REQUESTS"
 	_ Por padrão as melhorias ou correções enviadas via PULL REQUESTS do Github não serão submetidas nos
 	_ scripts ou arquivos de configuração, pois o projeto não foi criado para trabalhar com colaboração
-	_ no Github, por esse motivo os Pull Requests serão respondidos mais aplicado somente as melhorias
-	_ ou correções documentadas na Guia ISSUE: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ no Github, por esse motivo os Pull Requests serão respondidos mais aplicado suas melhorias ou 
+	_ correções que estão documentadas na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.

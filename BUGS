@@ -13,6 +13,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
 0012 - Falha na compilação do Perl no script do OCS Inventory: perl: warning: Falling back to the standard locale ("C")
 correção do Locale para pt_BR.UTF-8 nas variáveis: LANGUAGE = "pt_BR.UTF-8", LC_ALL = "pt_BR.UTF-8" e LANG = "pt_BR.UTF-8"
+aplicada no script: 05-ntp.sh
 
 0011 - Falha no compilação do Netdata erro: fatal error: mqtt_wss_client.h: No such file or directory (Makefile:3471 all)
 Error 2 - FAILED, correção do erro no arquivo: 00-parametros.sh mudança da URL: https://github.com/netdata/netdata aplicado
