@@ -15,7 +15,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 melhorias na documentação dos arquivos de Zona de Pesquisa Direta e Reversa do Bind9 DNS Server, customização do
 arquivo: 50-default.conf do Rsyslog, habilitadndo recursos de Log do Cron, User, etc, arquivo adicionado no script
 do OpenSSH Server: 01-openssh.sh, correção do arquivo: awstatsupdate-cron em relação a falha de atualização das
-informações de estatísticas de acesso ao domínio pti.intra.
+informações de estatísticas de acesso ao domínio pti.intra, criação dos arquivo: ntpdate e atualização do script: 
+05-ntp.sh.
 
 18/01/2022 - Robson Vaamonde - Novas opções de configuração do OpenSSH Server no arquivo: sshd_config ainda em fase 
 de testes e homologação (acréscentado no final do arquivo, opções comentadas), customização do arquivo: config.conf

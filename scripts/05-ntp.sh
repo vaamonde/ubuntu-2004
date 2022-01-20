@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 17/01/2022
-# Versão: 0.13
+# Data de atualização: 20/01/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -203,10 +203,13 @@ echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do comando chown: -v (verbose), ntp (user), ntp (group)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/ntp.conf /etc/ntp.conf.old &>> $LOG
+	mv -v /etc/default/ntpdate /etc/default/ntpdate.old &>> $LOG
+	mv -v /etc/default/ntp /etc/default/ntp.old &>> $LOG
 	cp -v conf/ntp/ntp.conf /etc/ &>> $LOG
 	cp -v conf/ntp/ntp.drift /var/lib/ntp/ &>> $LOG
-	cp -v conf/ntp/ntp /etc/default/ &>> $LOG
+	cp -v conf/ntp/{ntp,ntpdate} /etc/default/ &>> $LOG
 	cp -v conf/ntp/timesyncd.conf /etc/systemd/ &>> $LOG
 	chown -v ntp.ntp /var/lib/ntp/ntp.drift &>> $LOG
 echo -e "Arquivos do NTP Server atualizados com sucesso!!!, continuando com o script...\n"
@@ -223,6 +226,13 @@ echo -e "Editando o arquivo de configuração ntp, pressione <Enter> para contin
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/default/ntp
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração ntpdate, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/default/ntpdate
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
