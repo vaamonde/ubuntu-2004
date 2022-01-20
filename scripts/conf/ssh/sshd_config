@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
-# Data de atualização: 18/01/2022
-# Versão: 0.05
+# Data de atualização: 20/01/2022
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -60,6 +60,9 @@ HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
+#
+# Limite as cifras àquelas aprovadas pelo FIPS e use somente cifras no modo contador (CTR).
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr
 #
 # Configuração dos Log's do Servidor de OpenSSH, recomendado utilizar junto com os 
 # arquivos de configuração: hosts.allow e hosts.deny para geração de log´s detalhados 
@@ -130,6 +133,9 @@ HostbasedAuthentication no
 # Não permitir que usuários sem senhas se autentique remotamente no Servidor de OpenSSH
 PermitEmptyPasswords no
 #
+# Não permitir que os usuários definam opções de ambiente, utilizar os pré-definidos
+PermitUserEnvironment no
+#
 # Especifica se o encaminhamento de TCP é permitido. O padrão é yes. Se você utiliza o 
 # recurso do Visual Studio Code VSCode com Remote SSH, recomendo deixar yes
 AllowTcpForwarding no
@@ -170,34 +176,12 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # de uma das máquinas.
 TCPKeepAlive yes
 #
-#=================== CONFIGURAÇÕES EM ESTUDO E TESTES =====================
-# Novas opções do sshd_config
+# Desativar os mecanismos de autenticação desnecessários para fins de segurança
+KerberosAuthentication no
+GSSAPIAuthentication no
 #
-# Limite as cifras àquelas aprovadas pelo FIPS e use somente cifras 
-# no modo contador (CTR).
-#Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+# Ativar a compactação após autenticação bem-sucedida (aumentar a segurança e desempenho)
+Compression delayed
 #
-# Criar processos filho sem privilégios (privilégio do usuário autenticado)
-#UsePrivilegeSeparation yes
-#
-# Definir parâmetros de chave do servidor
-#KeyRegenerationInterval 3600
-#ServerKeyBits 2048
-#
-# Não procure o nome do host remoto
-#UseDNS no
-#
-# Desativar mecanismos de autenticação desnecessários para fins de segurança
-#RSAAuthentication no
-#RhostRSAAuthentication no
-#KerberosAuthentication no
-#GSSAPIAuthentication no
-#
-# Não permitir que os usuários definam opções de ambiente
-#PermitUserEnvironment no
-#
-#Ativar compactação após autenticação bem-sucedida
-#Compression delayed
-#
-#Sem login para sessões de login interativas
-#UseLogin no
+# Não procure o nome do host remoto utilizando o serviço do DNS
+UseDNS no
