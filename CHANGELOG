@@ -12,7 +12,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 20/01/2022 - Robson Vaamonde - Finalizado os testes das novas opções do OpenSSH Server no arquivo: sshd_config,
-melhorias na documentação dos arquivos de Zona de Pesquisa Direta e Reversa do Bind9 DNS Server, 
+melhorias na documentação dos arquivos de Zona de Pesquisa Direta e Reversa do Bind9 DNS Server, customização do
+arquivo: 50-default.conf do Rsyslog, habilitadndo recursos de Log do Cron, User, etc, arquivo adicionado no script
+do OpenSSH Server: 01-openssh.sh
 
 18/01/2022 - Robson Vaamonde - Novas opções de configuração do OpenSSH Server no arquivo: sshd_config ainda em fase 
 de testes e homologação (acréscentado no final do arquivo, opções comentadas), customização do arquivo: config.conf

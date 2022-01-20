@@ -406,7 +406,7 @@ echo -e "Reinicializando o serviço do MySQL, aguarde..."
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Copiando os arquivos teste.html e phpinfo.php para o diretório raiz, aguarde..."
+echo -e "Copiando os arquivos teste do HTML e PHP para o diretório raiz do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
@@ -430,7 +430,7 @@ echo -e "Editando o arquivo de teste teste.html, pressione <Enter> para continua
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração awstats.pti.intra.conf , pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração awstats.pti.intra.conf, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/awstats/awstats.pti.intra.conf
