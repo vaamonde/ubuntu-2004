@@ -6,19 +6,33 @@
 ; Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 ; Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 ; Data de criação: 10/10/2021
-; Data de atualização: 09/01/2022
-; Versão: 0.12
+; Data de atualização: 20/01/2022
+; Versão: 0.13
 ; Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ; Testado e homologado para a versão do Bind9 DNS Server v9.16.x
+;
+; Anatomia do arquivo de configuração de Zona de Pesquisa Direta do Bind9 DNS Server.
+; $ORIGIN = atalho de referência do nome de domínio e que termina o seu conteúdo na próxima linha.
+; $TTL 3600 = 1 (uma) semana de TTL (Time to Live) tempo de vida das respostas fornecidas pelo DNS.
+; @ = label especial que indica que $ORIGIN deve substituir o símbolo “@”.
+; @	IN SOA = registro SOA (Start Of Authority) responsável em informar o início da autoridade para o domínio. 
+; 	1 = serial para controle de atualizações entre master e slave
+; 	604800 = tempo de atualizações entre master e slave (refresh) atualização 1 (uma) semana
+; 	86400 = tempo de atualizações caso o refresh falhe retenção 1 (um) dia
+; 	2419200 = tempo de expiração do slave caso não se contate com o master expiração 4 (quatro) semanas
+; 	604800 = tempo de vida das repostas negativas do servidor mínimo retenção de 1 (uma) semana
+; @ IN 	NS	ptispo01ws01.pti.intra. = configuração do Name Server (Nome do Servidor) do domínio.
+; @ IN 	MX	10 mail = configuração do Mail Exchanger (registros de troca de e-mail) do domínio
+; @ IN	TXT	"v=spf1 a mx -all" = registro de Texto com informações do SPF (Sender Policy Framework)
 
 $ORIGIN pti.intra.
-$TTL 3600 ; 1 (uma) semana de TTL (Time to Live) tempo de vida das respostas fornecidas pelo DNS
+$TTL 3600 ; 1 hour
 @		IN		SOA		ptispo01ws01.pti.intra. vaamonde.pti.intra. (
-				1 ; serial para controle de atualizações entre master e slave
-				604800 ; tempo de atualizações entre master e slave (refresh) atualização 1 (uma) semana
-				86400 ; tempo de atualizações caso o refresh falhe retenção 1 (um) dia
-				2419200 ; tempo de expiração do slave caso não se contate com o master expiração 4 (quatro) semanas
-				604800 ; tempo de vida das repostas negativas do servidor mínimo retenção de 1 (uma) semana
+				1 ; serial
+				604800 ; refresh (1 week)
+				86400 ; retry (1 day)
+				2419200 ; expire (4 weeks)
+				604800 ; minimum (1 week)
 				)
 ;
 @               IN 		NS		ptispo01ws01.pti.intra.

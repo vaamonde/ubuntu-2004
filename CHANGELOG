@@ -6,11 +6,14 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 18/01/2022
-Versão: 0.32
+Data de atualização: 20/01/2022
+Versão: 0.33
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+20/01/2022 - Robson Vaamonde - Finalizado os testes das novas opções do OpenSSH Server no arquivo: sshd_config,
+melhorias na documentação dos arquivos de Zona de Pesquisa Direta e Reversa do Bind9 DNS Server, 
+
 18/01/2022 - Robson Vaamonde - Novas opções de configuração do OpenSSH Server no arquivo: sshd_config ainda em fase 
 de testes e homologação (acréscentado no final do arquivo, opções comentadas), customização do arquivo: config.conf
 do Neofetch, criação do arquivo de CRON: neofetch-cron para atualizar o arquivo motd, atualização das opções no 
