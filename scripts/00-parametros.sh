@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 18/01/2022
-# Versão: 0.38
+# Data de atualização: 20/01/2022
+# Versão: 0.39
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -81,14 +81,18 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço de Rede OpenSSH utilizados nesse script
-# 01. /etc/ssh/sshd_config = arquivo de configuração do Servidor OpenSSH
+# 01. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
 # 02. /etc/hostname = arquivo de configuração do Nome FQDN do Servidor
 # 03. /etc/hosts = arquivo de configuração da pesquisa estática para nomes de host local
-# 04. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço de rede
-# 05. /etc/hosts.deny = arquivo de configuração de negação de hosts por serviço de rede
-# 06. /etc/issue.net = arquivo de configuração do Banner utilizado pelo OpenSSH no login
-# 07. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes de serviço
-# 08. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
+# 04. /etc/nsswitch.conf = arquivo de configuração do switch de serviço de nomes de serviço
+# 05. /etc/ssh/sshd_config = arquivo de configuração do Servidor OpenSSH
+# 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço de rede
+# 07. /etc/hosts.deny = arquivo de configuração de negação de hosts por serviço de rede
+# 08. /etc/issue.net = arquivo de configuração do Banner utilizado pelo OpenSSH no login
+# 09. /etc/default/shellinabox = arquivo de configuração da aplicação Shell-In-a-Box
+# 10. /etc/neofetch/config.conf = arquivo de configuração da aplicação Neofetch
+# 11. /etc/cron.d/neofetch-cron = arquivo de atualização do Banner Motd o Neofetch
+# 12. /etc/rsyslog.d/50-default.conf = arquivo de configuração do Syslog/Rsyslog
 #
 # Arquivos de monitoramento (log) do Serviço de Rede OpenSSH Server utilizados nesse script
 # 01. systemctl status ssh = status do serviço do OpenSSH
@@ -97,6 +101,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 04. tail -f /var/log/auth.log | grep ssh = filtrando as mensagens de autenticação do OpenSSH
 # 05. tail -f /var/log/tcpwrappers-allow-ssh.log = filtrando as conexões permitidas do OpenSSH
 # 06. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do OpenSSH
+# 07. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
 # Variável das dependências do laço de loop do OpenSSH Server
 SSHDEP="openssh-server openssh-client"
@@ -156,6 +161,7 @@ PORTDHCP="67"
 # 02. journalctl -t named = todas as mensagens referente ao serviço do Bind DNS
 # 03. tail -f /var/log/syslog | grep named = filtrando as mensagens do serviço do Bind DNS
 # 04. tail -f /var/log/named/* = vários arquivos de Log's dos serviços do Bind DNS
+# 05. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
 # Declarando as variáveis de Pesquisa Direta do Domínio, Reversas e Subrede do Bind DNS Server
 #
@@ -247,8 +253,8 @@ PORTNTP="123"
 # 01. systemctl status tftpd-hpa = status do serviço do TFTP-HPA
 # 02. journalctl -t tftpd-hpa = todas as mensagens referente ao serviço do TFTP-HPA
 # 03. tail -f /var/log/syslog | grep tftp = filtrando as mensagens do serviço do TFTP-HPA
-# 05. tail -f /var/log/tcpwrappers-allow-tftp.log = filtrando as conexões permitidas do TFTP-HPA
-# 06. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do TFTP-HPA
+# 04. tail -f /var/log/tcpwrappers-allow-tftp.log = filtrando as conexões permitidas do TFTP-HPA
+# 05. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do TFTP-HPA
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do TFTP-HPA Server
 #
@@ -271,12 +277,15 @@ PORTTFTP="69"
 # Arquivos de configuração (conf) do Serviço de Rede LAMP Server utilizados nesse script
 # 01. /etc/apache2/apache2.conf = arquivo de configuração do Servidor Apache2
 # 02. /etc/apache2/ports.conf = arquivo de configuração das portas do Servidor Apache2
-# 03. /etc/apache2/sites-available/000-default.conf = arquivo de configuração do site padrão HTTP
-# 04. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
-# 05. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do Servidor MySQL
-# 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
-# 07. /var/www/html/phpinfo.php = arquivo de geração da documentação do PHP
-# 08. /var/www/html/teste.html = arquivo de teste de páginas HTML
+# 03. /etc/apache2/envvars = arquivo de configuração das variáveis do Servidor Apache2
+# 04. /etc/apache2/sites-available/000-default.conf = arquivo de configuração do site padrão HTTP
+# 05. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
+# 06. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do Servidor MySQL
+# 07. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 08. /var/www/html/phpinfo.php = arquivo de geração da documentação do PHP
+# 09. /var/www/html/teste.html = arquivo de teste de páginas HTML
+# 10. /etc/awstats/awstats.pti.intra.conf = arquivo de configuração do serviço AWStats
+# 11. /etc/cron.d/awstatsupdate-cron = arquivo de atualização das estatísticas do AWStats
 #
 # Arquivos de monitoramento (log) do Serviço de Rede LAMP Server utilizados nesse script
 # 01. systemctl status apache2 = status do serviço do Apache2
@@ -287,6 +296,7 @@ PORTTFTP="69"
 # 06. tail -f /var/log/tcpwrappers-allow-mysql.log = filtrando as conexões permitidas do MySQL
 # 07. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do MySQL
 # 08. journalctl -t phpmyadmin = todas as mensagens referente ao serviço do PhpMyAdmin
+# 09. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
 # Declarando as variáveis utilizadas nas configurações dos Serviços do LAMP-Server
 #
@@ -567,9 +577,11 @@ PORTUSERMIN="20000"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Netdata utilizados nesse script
-# 01. /usr/lib/netdata/conf.d/python.d/mysql.conf = arquivo de monitoramento do MySQL
-# 02. /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf = arquivo de monitoramento do ISC DHCP
-# 03. /usr/lib/netdata/conf.d/python.d/bind_rndc.conf = arquivo de monitoramento do Bind DNS
+# 01. /usr/lib/netdata/conf.d/python.d/apache.conf = arquivo de monitoramento do Apache2
+# 02. /usr/lib/netdata/conf.d/python.d/mysql.conf = arquivo de monitoramento do MySQL
+# 03. /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf = arquivo de monitoramento do ISC DHCP
+# 04. /usr/lib/netdata/conf.d/python.d/tomcat.conf = arquivo de monitoramento do Tomcat
+# 05. /usr/lib/netdata/conf.d/python.d/bind_rndc.conf = arquivo de monitoramento do Bind DNS
 #
 # Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
 # 01. journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
@@ -698,6 +710,7 @@ LOGINSTALL="rsyslog-mysql"
 # 01. tail -f /var/log/apache2/access-glpi.log = log de acesso ao GLPI Help Desk
 # 02. tail -f /var/log/apache2/error-glpi.log = log de erro de acesso ao GLPI Help Desk
 # 03. tail -f /var/log/syslog | grep -i glpi = filtrando as mensagens do serviço do GLPI Help Desk
+# 04. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Help Desk GLPI
 #
@@ -1124,8 +1137,9 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Arquivos de monitoramento (log) do Serviço do OCS Inventory utilizados nesse script
 # 01. /var/log/ocs_server_setup.log = arquivo de log da instalação do OCS Inventory
-# 01. /var/log/ocsinventory-server/activity.log = arquivo de log do Servidor OCS Inventory
-# 02. /var/log/ocsinventory-agent/ocsagent.log = arquivo de log do Agent OCS Inventory
+# 02. /var/log/ocsinventory-server/activity.log = arquivo de log do Servidor OCS Inventory
+# 03. /var/log/ocsinventory-agent/ocsagent.log = arquivo de log do Agent OCS Inventory
+# 04. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário OCS Inventory
 #

@@ -296,7 +296,7 @@ echo -e "Editando o arquivo de configuração rndcupdate-cron, pressione <Enter>
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração bind-rndc.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração rndcstats, pressione <Enter> para continuar."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando logrotate: -d (debug)
