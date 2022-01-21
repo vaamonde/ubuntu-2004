@@ -135,7 +135,7 @@ clear
 echo
 #
 echo -e "Instalação do NTop-NG no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo NTop-NG.: TCP 3001\n"
+echo -e "Porta padrão utilizada pelo NTop-NG.: TCP 3001"
 echo -e "Após a instalação do NTop-NG acesse a URL: http://$(hostname -d | cut -d' ' -f1):3001\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -250,7 +250,7 @@ sleep 5
 #
 echo -e "Verificando o serviço do NTop-NG, aguarde..."
 	echo -e "NTop-NG: $(systemctl status ntopng | grep Active)"
-	echo -e "Redis..: $(systemctl status ntopng | grep Active)"
+	echo -e "Redis..: $(systemctl status redis-server | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

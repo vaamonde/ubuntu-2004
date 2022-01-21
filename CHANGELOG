@@ -13,7 +13,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 21/01/2022 - Robson Vaamonde - Acréscimo da opção do Docker Compose no script: 21-docker.sh, adicionado as dependências
 no arquivo: 00-parametros.sh, melhoria em vários scripts em relação ao Status dos Serviços utilizando o comando:
-systemctl status, 
+systemctl status, várias correções de Pt-BR nos scripts.
 
 20/01/2022 - Robson Vaamonde - Finalizado os testes das novas opções do OpenSSH Server no arquivo: sshd_config,
 melhorias na documentação dos arquivos de Zona de Pesquisa Direta e Reversa do Bind9 DNS Server, customização do
