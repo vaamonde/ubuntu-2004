@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 13/01/2022
-Data de atualização: 13/01/2022
-Versão: 0.01
+Data de atualização: 21/01/2022
+Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -24,19 +24,70 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #10_ Conhecendo o arquivo RELEASE do Curso de Ubuntu Server 20.04.x LTS
 #11_ Conhecendo o arquivo PORTS do Curso de Ubuntu Server 20.04.x LTS
 #12_ Conhecendo o diretório SCRIPTS do Curso de Ubuntu Server 20.04.x LTS
+_
 #13_ Como customizar os Script e Conf para o seu Cenário antes de executar
-#14_ Instalação do Ubuntu Server 20.04.x LTS
-#15_ Configurações Básicas do Ubuntu Server 20.04.x LTS
-#16_ 00-parametros.sh principal script de parâmetros desse Curso
-#17_ 01-openssh.sh Instalação e Configuração do OpenSSH Server
-#18_ 02-dhcp.sh Instalação e Configuração do ISC DHCP Server
-#19_ 03-dns.sh Instalação e Configuração do Bind9 DNS Server
-#20_ 04-dhcpdns.sh Integração do ICS DHCP Server e Bind9 DNS Server
-#21_ 05-ntp.sh Instalação e Configuração do NTP Server
-#22_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server
-#23_ 07-lamp.sh Instalação e Configuração do LAMP Server
-#24_ 08-openssl.sh Configuração do OpenSSL para criação da CA e Certificados
-#25_ 09-vsftpd.sh Instalação e Configuração do VSFTPd Server
-#26_ 10-tomcat.sh Instalação e Configuração do Apache Tomcat Server
-#27_ 11-wordpress.sh Instalação e Configuração do CMS Wordpress
-#28_ 12-webmain.sh Instalação e Configuração do Webmin e Usermin
+_
+#14_ Instalação do Ubuntu Server 20.04.x LTS Focal Fossa
+#15_ Configurações Básicas do Ubuntu Server 20.04.x LTS Focal Fossa
+_
+#16_ 00-parametros.sh Script principal de todos os parâmetros desse Curso
+_ 
+#17A_ 01-openssh.sh Script e arquivos de Configuração do OpenSSH Server - PARTE-01
+#17B_ 01-openssh.sh Instalação e Configuração do OpenSSH Server - PARTE-02
+_
+#18A_ 02-dhcp.sh Script e arquivos de Configuração do ISC DHCP Server - PARTE-01
+#18B_ 02-dhcp.sh Instalação e Configuração do ISC DHCP Server - PARTE-02
+_ 
+#19A_ 03-dns.sh Script e arquivos de Configuração do Bind9 DNS Server - PARTE-01
+#19B_ 03-dns.sh Instalação e Configuração do Bind9 DNS Server - PARTE-02
+_
+#20A_ 04-dhcpdns.sh Script e arquivos de Integração do DHCP e DNS Server - PARTE-01
+#20B_ 04-dhcpdns.sh Integração e Configuração do DHCP e DNS Server - PARTE-02
+_
+#21A_ 05-ntp.sh Script e arquivos de Configuração do NTP Server - PARTE-01
+#21B_ 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02
+_
+#22A_ 06-tftphpa.sh Script e arquivos de Configuração do TFTP-HPA Server - PARTE-01
+#22A_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02
+_
+#23A_ 07-lamp.sh Script e arquivos de Configuração do LAMP Server - PARTE-01
+#23B_ 07-lamp.sh Instalação e Configuração do LAMP Server - PARTE-02
+_
+#24A_ 08-openssl.sh Script e arquivos de Configuração do OpenSSL - PARTE-01
+#24B_ 08-openssl.sh Configuração da CA e dos Certificados do Apache2 - PARTE-02
+_
+#25A_ 09-vsftpd.sh Script e arquivos de Configuração do VSFTPd Server - PARTE-01
+#25B_ 09-vsftpd.sh Instalação e Configuração do VSFTPd Server - PARTE-02
+_
+#26A_ 10-tomcat.sh Script e arquivos de Configuração do Apache Tomcat Server - PARTE-01
+#26B_ 10-tomcat.sh Instalação e Configuração do Apache Tomcat Server - PARTE-02
+_
+#27A_ 11-wordpress.sh Script e arquivos de Configuração do CMS Wordpress - PARTE-01
+#27B_ 11-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02
+_
+#28A_ 12-webmin.sh Script e arquivos de Configuração do Webmin e Usermin - PARTE-01
+#28B_ 12-webmin.sh Instalação e Configuração do Webmin e Usermin - PARTE-02
+_
+#29A_ 13-netdata.sh Script e arquivos de Configuração do Netdata - PARTE-01
+#29B_ 13-netdata.sh Instalação e Configuração do Netdata - PARTE-02
+_
+#30A_ 14-loganalyzer.sh Script e arquivos de Configuração do LogAnalyzer - PARTE-01
+#30B_ 14-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02
+_
+#31A_ 15-glpi.sh Script e arquivos de Configuração do GLPI Help Desk - PARTE-01
+#31B_ 15-glpi.sh Instalação e Configuração do GLPI Help Desk - PARTE-02
+_
+#32A_ 16-fusioninventory.sh Script e arquivos de Configuração do FusionInventory - PARTE-01
+#32B_ 16-fusioninventory.sh Instalação e Configuração do FusionInventory - PARTE-02
+_
+#33A_ 17-zoneminder.sh Script e arquivos de Configuração do ZoneMinder - PARTE-01
+#33B_ 17-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
+_
+#34A_ 18-guacamole.sh Script e arquivos de Configuração do Apache Guacamole - PARTE-01
+#34B_ 18-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02
+_
+#35A_ 19-grafana.sh Script e arquivos de Configuração do Grafana - PARTE-01
+#35B_ 19-grafana.sh Instalação e Configuração do Grafana - PARTE-02
+_
+#36A_ 20-zabbix.sh Script e arquivos de Configuração do Zabbix - PARTE-01
+#36B_ 20-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
