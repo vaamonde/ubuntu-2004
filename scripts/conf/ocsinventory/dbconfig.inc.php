@@ -13,7 +13,7 @@
 // Testado e homologado para a versão do Apache2 v2.4.x 
 // Testado e homologado para a versão do MySQL v8.0.x 
 // Testado e homologado para a versão do OCS Inventory Server v2.9.x
-
+//
 // Nome da Base de Dados do OCS Inventory Server
 define("DB_NAME", "ocsweb");
 //

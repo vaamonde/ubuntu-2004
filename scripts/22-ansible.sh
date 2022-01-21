@@ -136,7 +136,7 @@ clear
 echo
 #
 echo -e "Instalação do Ansible e do Rundeck no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Rundeck.: TCP 4440\n"
+echo -e "Porta padrão utilizada pelo Rundeck.: TCP 4440"
 echo -e "Após a instalação do Rundeck acessar a URL: http://$(hostname -d | cut -d' ' -f1):4440/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -185,7 +185,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação do Ansible e do Rundeck, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Ansible e do Rundeck, aguarde...\n"
 sleep 5
 #
 echo -e "Adicionando o repositório PPA do Ansible, aguarde..."

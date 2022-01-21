@@ -190,7 +190,7 @@ echo
 #
 echo -e "Instalação do Bacula Server e do Baculum WEB/API GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Portas padrão utilizadas pelo Bacula Server.: TCP 9101, 9102 e 9103"
-echo -e "Portas padrão utilizadas pelo Baculum WEB/API.: TCP 9095 e 9096\n"
+echo -e "Portas padrão utilizadas pelo Baculum WEB/API.: TCP 9095 e 9096"
 echo -e "Após a instalação do Baculum WEB acessar a URL: http://$(hostname -d | cut -d' ' -f1):9095"
 echo -e "Após a instalação do Baculum API acessar a URL: http://$(hostname -d | cut -d' ' -f1):9096\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"

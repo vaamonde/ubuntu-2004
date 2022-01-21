@@ -159,7 +159,7 @@ clear
 echo
 #
 echo -e "Instalação do OpenFire no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo OpenFire.: TCP 9090\n"
+echo -e "Porta padrão utilizada pelo OpenFire.: TCP 9090"
 echo -e "Após a instalação do OpenFire acessar a URL: http://$(hostname -d | cut -d' ' -f1):9090/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5

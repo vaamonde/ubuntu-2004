@@ -10,7 +10,7 @@
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OCS Inventory Server v2.9.x e Agent v2.9.x
-
+#
 # Configuração do Rotacionamento dos Logs do OCS Inventory Server, padrão manter 7 dias compactados
 /var/log/ocsinventory-server/*.log {
 	daily
