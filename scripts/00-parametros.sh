@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 10/10/2021
-# Data de atualização: 20/01/2022
-# Versão: 0.39
+# Data de atualização: 21/01/2022
+# Versão: 0.40
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -966,12 +966,16 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
+# Variável de download do Docker Compose (Link atualizado no dia 21/01/2022)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64"
+#
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
 #
-# Variável de instalação das Dependências do Docker Community e do Portainer.
+# Variável de instalação das Dependências do Docker Community, Docker Compose e Portainer.io
 DOCKERINSTALLDEP="apt-transport-https ca-certificates curl software-properties-common \
-linux-image-generic linux-image-extra-virtual"
+linux-image-generic linux-image-extra-virtual python3-dev python3-pip libffi-dev gcc \
+libc-dev cargo make"
 #
 # Variável de instalação do Docker Community CE.
 DOCKERINSTALL="docker-ce cgroup-lite"

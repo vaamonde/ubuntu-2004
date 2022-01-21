@@ -248,7 +248,7 @@ echo -e "Serviço habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do ZoneMinder, aguarde..."
-	systemctl status zoneminder | grep Active
+	echo -e "Zoneminder: $(systemctl status zoneminder | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

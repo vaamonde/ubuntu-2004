@@ -278,7 +278,7 @@ echo -e "Serviço iniciado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do Rundeck, aguarde..."
-	systemctl status rundeckd | grep Active
+	echo -e "Rundeck: $(systemctl status rundeckd | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

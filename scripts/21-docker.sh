@@ -7,8 +7,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 15/12/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.03
+# Data de atualização: 21/01/2022
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Docker v20.10.x e Portainer v2.9.x
 #
@@ -20,18 +20,24 @@
 # outros para permitir "contêineres" independentes para executar dentro de uma única 
 # instância Linux, evitando a sobrecarga de iniciar e manter máquinas virtuais (VMs).
 #
+# O Docker O Compose é uma ferramenta para definir e executar aplicativos Docker de vários 
+# contêineres. Com o Compose, você usa um arquivo YAML para configurar os serviços do seu 
+# aplicativo. Então, com um único comando, você cria e inicia todos os serviços da sua 
+# configuração. Para saber mais sobre todos os recursos do Compose.
+#
 # O Portainer.io uma solução de gerenciamento para o Docker, com ele é possível gerenciar 
 # facilmente os seus hosts Docker e clusters com Docker Swarm através de uma interface web 
 # limpa, simples e intuitiva.
 #
-# Informações que serão solicitadas na configuração via Web do Portainer
+# Informações que serão solicitadas na configuração via Web do Portainer.io
 # Username: admin;
 # Password: pti@2018;
 # Confirm password: pti@2018: Create User;
 # Connect Portainer to the Docker environment you want to manage: Local: Connect
 #
-# Site oficial Docker Community: https://www.docker.com/docker-community
-# Site oficial Portainer: https://portainer.io/
+# Site oficial do Docker Community: https://www.docker.com/docker-community
+# Site oficial do Docker Compose: https://docs.docker.com/compose/
+# Site oficial doPortainer: https://portainer.io/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -221,7 +227,21 @@ echo -e "Instalando o Docker Community CE, aguarde..."
 echo -e "Docker instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Adicionando o usuário Root do Grupo do Docker, aguarde..."
+echo -e "Instalando o Docker Compose do Github, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando wget: -O (Output File)
+	# opção do comando cp: -v (verbose)
+	# opção do comando chmod: -v (verbose), +x (add executable for all)
+	# opção do comando ln: -v (verbose), -s (link symbolic)
+	wget -O docker-compose $DOCKERCOMPOSE &>> $LOG
+	cp -v docker-compose /usr/local/bin/ &>> $LOG
+	chmod -v +x /usr/local/bin/docker-compose &>> $LOG
+	ln -vs /usr/local/bin/docker-compose /usr/bin/docker-compose &>> $LOG
+	docker-compose --version &>> $LOG
+echo -e "Docker Compose instalado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Adicionando o usuário Root no Grupo do Docker, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando usermod: -a (append), -G (groups), docker (grupo) docker (usuário)
 	usermod -a -G docker $USER &>> $LOG
@@ -275,9 +295,10 @@ echo -e "Criando o Serviço de Inicialização Automática do Portainer.io, agua
 echo -e "Serviço criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o serviço do Portainer.io, aguarde..."
-	systemctl status portainer | grep Active
-echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+echo -e "Verificando os serviços do Docker e Portainer.io, aguarde..."
+	echo -e "Docker...: $(systemctl status docker | grep Active)"
+	echo -e "Portainer: $(systemctl status portainer | grep Active)"
+echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Portainer.io, aguarde..."

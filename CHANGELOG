@@ -6,11 +6,15 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 10/10/2021
-Data de atualização: 20/01/2022
-Versão: 0.33
+Data de atualização: 21/01/2022
+Versão: 0.34
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+21/01/2022 - Robson Vaamonde - Acréscimo da opção do Docker Compose no script: 21-docker.sh, adicionado as dependências
+no arquivo: 00-parametros.sh, melhoria em vários scripts em relação ao Status dos Serviços utilizando o comando:
+systemctl status, 
+
 20/01/2022 - Robson Vaamonde - Finalizado os testes das novas opções do OpenSSH Server no arquivo: sshd_config,
 melhorias na documentação dos arquivos de Zona de Pesquisa Direta e Reversa do Bind9 DNS Server, customização do
 arquivo: 50-default.conf do Rsyslog, habilitadndo recursos de Log do Cron, User, etc, arquivo adicionado no script
@@ -32,12 +36,12 @@ arquivo: 05-ntp.sh, acréscimo das linhas: locale-gen pt_BR.UTF-8, localectl set
 comando: update-locale LANG=pt_BR.UTF-8 LC_ALL=pt_BR.UTF-8 LANGUAGE="pt_BR:pt:en", será mostrado em vídeo o acréscimo
 da informação no arquivo: /etc/default/keyboard da variável: XKBVARIANT="intl" quando se utiliza teclado en_US-UTF-8,
 acréscimo do programa Neofetch no script do OpenSSH personalizando o arquivo: /etc/motd com o logo do Ubuntu Server,
-acréscimo do aplicativo Shell-In-a-Box no script: 01-openssh.sh e atualização do arquivo: 00-paramentros.sh com as
+acréscimo do aplicativo Shell-In-a-Box no script: 01-openssh.sh e atualização do arquivo: 00-parametros.sh com as
 opções de portas e dependências, customização do arquivo: config.conf do Neofetch e criação do arquivo de cron para
 atualizar as informações do arquivo motd.
 
 14/01/2022 - Robson Vaamonde - Criação dos script: 33-asterisk.sh, customização dos seus arquivos de configuração e
-atualização para a nova versão: 19.1.x., acréscimo da dependência: php-soap no arquivo: 00-paramentros.sh referente
+atualização para a nova versão: 19.1.x., acréscimo da dependência: php-soap no arquivo: 00-parametros.sh referente
 a Loja Virtual do Wordpress reportado pelo Prof. José de Assis.
 
 13/01/2022 - Robson Vaamonde - Criação do arquivo PORTS com especificações das Portas TCP e UDP dos Serviços de Rede
@@ -59,7 +63,7 @@ do Nextcloud, acréscimo da linha de edição do arquivo no script: 07-lamp.sh, 
 do comando: read -s para remover a quebra de linha após editar os arquivos,
 
 09/01/2022 - Robson Vaamonde - Acréscimo da linha de configuração do Locale no script: 05-ntp.sh e criação da variável
-locale no script: 00-paramentros.sh, criação do script 32-nextcloud.sh e testes de configuração do servidor e correções
+locale no script: 00-parametros.sh, criação do script 32-nextcloud.sh e testes de configuração do servidor e correções
 de Bugs nos scripts, alterado da localização dos arquivos do Webdav para: /var/www/webdav (devido a segurança de acesso),
 criação do CNAME: next no arquivo do Bind DNS pti.intra.hosts.
 
@@ -89,14 +93,14 @@ configuração dos serviços de rede monitorados pelo Netdata.
 
 09/12/2021 - Robson Vaamonde - Melhorias gerais no PT-BR em vários arquivos Conf e Script, acréscimo da linha de 
 verificação da consultado do domínio: dig no script: 03-dns.sh, criação da variável: SECRETUPDATE no arquivos de: 
-00-paramentros.sh para facilitar a atualização das chaves de integração do Bind DNS e do ISC DHCP Server, acréscimo
+00-parametros.sh para facilitar a atualização das chaves de integração do Bind DNS e do ISC DHCP Server, acréscimo
 da linha de verificar do Status dos serviços em todos os scripts, criação do Virtual Host do LogAnalyzer, customização
 do script: 18-guacamole.sh com suas variáveis no arquivo: 00-parametros.sh, acrescimo da linha: zone-statistics yes; 
 no arquivo: named.conf.options, criação do usuário do Netdata no Banco de Dados do MySQL no script: 13-netdata.sh e
 no bloco de configuração do arquivo: 00-parametros.sh.
 
 06/12/2021 - Robson Vaamonde - Melhoria na documentação do monitoramento de Logs dos serviços de rede utilizando o
-script: 00-paramentros.sh, correção do Bug do Log do VSFTPd criando o arquivo no script: 09-vsftp.sh, 
+script: 00-parametros.sh, correção do Bug do Log do VSFTPd criando o arquivo no script: 09-vsftp.sh, 
 
 02/12/2021 - Robson Vaamonde - Criação das variáveis do teste do laço de loop das dependências dos script e dos pacotes
 de instalação das dependências de cada script no arquivo: 00-parametros.sh, ficando mais simples adicionar novas
@@ -141,7 +145,7 @@ correção do script 07-lamp.sh na linha 231 (erro do nome do arquivo 000-defaul
 
 02/11/2021 - Robson Vaamonde - Atualização do script: 11-wordpress.sh, customomização do script: 12-webmin.sh, 
 acréscimo das configurações de download do Webmin, Usermin e Virtualmin no script: 00-parametros.sh, melhoria do 
-script 13-netdata.sh, customização do script: 14-loganalyzer.sh e variáveis no arquivo 00-paramentros.sh, mudança das
+script 13-netdata.sh, customização do script: 14-loganalyzer.sh e variáveis no arquivo 00-parametros.sh, mudança das
 opções de criação de banco de dados do Rsyslog e do LogAnalyzer no MySQL.
 
 20/10/2021 - Robson Vaamonde - Acréscimo da configuração do arquivo de configuração da Placa de Rede do Netplan no
@@ -183,7 +187,7 @@ liberação de acesso remoto ao usuário root no mysql, criação da variável: 
 no arquivo de parâmetros: 00-parametros.sh
 
 14/10/2021 - Robson Vaamonde - Adicionado o comando: timedatectl set-timezone no script: 05-ntp.sh e criado a variável
-TIMEZONE="America/Sao_Paulo" no arquivo de parâmetros: 00-paramentros.sh. Melhoria na documentação da geração da chave
+TIMEZONE="America/Sao_Paulo" no arquivo de parâmetros: 00-parametros.sh. Melhoria na documentação da geração da chave
 TSIG no arquivo conf: named.conf.local, desabilitado o recurso do IPv6 no arquivo conf: named.conf.options, criação do
 arquivo named referente ao serviço do Bind9 DNS Server, adicionado a opção -4 para suportar somente IPv4, acrescentado
 o arquivo named no script: 03-dns.sh, aplicado o Path de Correção da falha: rndc: connect failed: 127.0.0.1#953: 
@@ -208,7 +212,7 @@ named.conf.local, named.conf.options, pti.intra.hosts, 172.16.1.rev e dnsupdate-
 11/10/2021 - Robson Vaamonde - Customização do script: 01-openssh.sh e dos arquivos de configuração dos serviços de: 
 issue.net, hosts, hosts.allow, hosts.deny e sshd_config, todos customizados para a versão 20.04.x do Ubuntu Server.
 
-10/10/2021 - Robson Vaamonde - Criação do arquivo 00-paramentros.sh para facilitar as configurações dos scripts, copia
+10/10/2021 - Robson Vaamonde - Criação do arquivo 00-parametros.sh para facilitar as configurações dos scripts, copia
 dos scripts da versão 18.04.x e organização dos novos diretórios e arquivos de configuração.
 
 06/10/2021 - Robson Vaamonde - Criação do repositório e configuração dos script para a nova versão do Ubuntu 20.04.x.
