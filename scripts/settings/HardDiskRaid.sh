@@ -4,11 +4,13 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 14/04/2021
-# Data de atualização: 14/05/2021
-# Versão: 0.04
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
+# Data de criação: 10/10/2021
+# Data de atualização: 20/01/2022
+# Versão: 0.20
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # RAID foi originalmente denominado de "Redundant Array of Inexpensive Drives" (Conjunto Redundante 
 # de Discos Baratos). Com o tempo, numa tentativa de dissociar o conceito de "discos baratos", a 

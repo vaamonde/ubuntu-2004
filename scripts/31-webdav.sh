@@ -6,6 +6,7 @@
 # YouTube: youtube.com/BoraParaPratica
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
 # Data de atualização: 21/01/2022
 # Versão: 0.04

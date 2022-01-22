@@ -1,14 +1,18 @@
 #!/bin/bash
-#Autor: Robson Vaamonde
-#Site: www.procedimentosemti.com.br
-#Facebook: facebook.com/ProcedimentosEmTI
-#Facebook: facebook.com/BoraParaPratica
-#YouTube: youtube.com/BoraParaPratica
-#Data de criação: 01/07/2019
-#Data de atualização: 22/07/2020
-#Versão: 0.02
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
+# Data de criação: 10/10/2021
+# Data de atualização: 20/01/2022
+# Versão: 0.20
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
-#Comandos básicos de Bash/Shell
+# Comandos básicos de Bash/Shell
 
 _00.    bash    (Ctrl+Alt+T ou Ctrl+Alt+F? ou Alt+F? - F7 terminal gráfico)
 _01.    ls      (List information about file(s) and directory)

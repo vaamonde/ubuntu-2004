@@ -7,6 +7,7 @@ Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica<br>
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
+Github Procedimentos em TI: https://github.com/vaamonde<br>
 Data de criação: 10/10/2021<br>
 Data de atualização: 14/10/2021<br>
 Versão: 0.03<br>

@@ -4,11 +4,13 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 04/11/2018
-# Data de atualização: 22/07/2020
-# Versão: 0.07
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
+# Data de criação: 10/10/2021
+# Data de atualização: 20/01/2022
+# Versão: 0.20
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #Atualização das Listas do Apt-Get - Apt
 sudo apt update

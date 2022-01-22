@@ -4,29 +4,31 @@
 # Facebook: facebook.com/ProcedimentosEmTI
 # Facebook: facebook.com/BoraParaPratica
 # YouTube: youtube.com/BoraParaPratica
-# Data de criação: 04/11/2018
-# Data de atualização: 22/07/2020
-# Versão: 0.07
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-
-#Desligando e reinicializando o servidor com halt
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
+# Data de criação: 10/10/2021
+# Data de atualização: 20/01/2022
+# Versão: 0.20
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+#
+# Desligando e reinicializando o servidor com halt
 sudo hatl -p (Poweroff)
 sudo halt --reboot
-
-#Desligando e reinicializando o servidor com poweroff
+#
+# Desligando e reinicializando o servidor com poweroff
 sudo poweroff
 sudo poweroff --reboot
-
-#Desligando e reinicializando o servidor com init
+#
+# Desligando e reinicializando o servidor com init
 sudo init 0
 sudo init 6
-
-#Desligando e reinicializando o servidor com reboot
+#
+# Desligando e reinicializando o servidor com reboot
 sudo reboot --halt (Poweroff)
 sudo reboot
-
-#Desligando e reinicializando o servidor com shutdown
+#
+# Desligando e reinicializando o servidor com shutdown
 sudo shutdown -P (Poweroff)
 sudo shutdown -h (Halt padrão de desligamento em 60 segundos)
 sudo shutdown -h now
