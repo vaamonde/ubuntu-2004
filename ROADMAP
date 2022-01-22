@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Data de criação: 13/01/2022
-Data de atualização: 21/01/2022
-Versão: 0.02
+Data de atualização: 22/01/2022
+Versão: 0.03
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -91,3 +91,42 @@ _
 _
 #36A_ 20-zabbix.sh Script e arquivos de Configuração do Zabbix - PARTE-01
 #36B_ 20-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
+_
+#37A_ 21-docker.sh Script e arquivos de Configuração do Docker - PARTE-01
+#37B_ 21-docker.sh Instalação e Configuração do Docker - PARTE-02
+_
+#38A_ 22-ansible.sh Script e arquivos de Configuração do Ansible - PARTE-01
+#38B_ 22-ansible.sh Instalação e Configuração do Ansible - PARTE-02
+_
+#39A_ 23-ntopng.sh Script e arquivos de Configuração do NTop-NG - PARTE-01
+#39B_ 23-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
+_
+#40A_ 24-openfire.sh Script e arquivos de Configuração do OpenFire - PARTE-01
+#40B_ 24-openfire.sh Instalação e Configuração do OpenFire - PARTE-02
+_
+#41A_ 25-owncloud.sh Script e arquivos de Configuração do ownCloud - PARTE-01
+#41B_ 25-owncloud.sh Instalação e Configuração do ownCloud - PARTE-02
+_
+#42A_ 26-ocsinventory.sh Script e arquivos de Configuração do OCS Inventory - PARTE-01
+#42B_ 26-ocsinventory.sh Instalação e Configuração do OCS Inventory - PARTE-02
+_
+#43A_ 27-bacula.sh Script e arquivos de Configuração do Bacula - PARTE-01
+#43B_ 27-bacula.sh Instalação e Configuração do Bacula - PARTE-02
+_
+#44A_ 28-graylog.sh Script e arquivos de Configuração do Graylog - PARTE-01
+#44B_ 28-graylog.sh Instalação e Configuração do Graylog - PARTE-02
+_
+#45A_ 29-postgresql.sh Script e arquivos de Configuração do PostgreSQL - PARTE-01
+#45B_ 29-postgresql.sh Instalação e Configuração do PostgreSQL - PARTE-02
+_
+#46A_ 30-nfs.sh Script e arquivos de Configuração do NFS - PARTE-01
+#46B_ 30-nfs.sh Instalação e Configuração do NFS - PARTE-02
+_
+#47A_ 31-webdav.sh Script e arquivos de Configuração do WebDav - PARTE-01
+#47B_ 31-webdav Instalação e Configuração do WebDav - PARTE-02
+_
+#48A_ 32-nextcloud.sh Script e arquivos de Configuração do NextCloud - PARTE-01
+#48B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
+_
+#49A_ 33-asterisk.sh Script e arquivos de Configuração do Asterisk - PARTE-01
+#49B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
