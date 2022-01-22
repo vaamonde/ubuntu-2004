@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 17/01/2022
-Versão: 0.08
+Data de atualização: 22/01/2022
+Versão: 0.09
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
@@ -29,7 +29,9 @@ arquivos de configuração:
 	_ 00-bastillion.sh (dev): console SSH baseado na web que gerencia o acesso administrativo aos sistemas;
 	_ 00-jenkins.sh (dev): servidor de automação de código aberto;
 	_ 00-awx.sh (dev): oferece software para gerenciar projetos Ansible;
-	_ 00-owa.sh (dev): software para rastrear e analisar o acesso a websites.
+	_ 00-owa.sh (dev): software para rastrear e analisar o acesso a websites;
+	_ 00-glpi10.sh (dev): software de Help Desk Open Source (nova versão 10);
+	_ 00-zabbix6.sh (dev): software de monitoramento e gerenciamento de (nova versão 6.0). 
 
 26/11/2021 - Robson Vaamonde - Criação dos novos scripts de configuração: 00-webdav.sh, 00-nfs.sh, 00-nextcloud.sh,
 00-samba4.sh, 00-postfix.sh, 00-netbox.sh, 00-gitlab.sh, 00-redmine.sh, 00-shinobi.sh, 00-netdisco.sh, 00-thinstation.sh

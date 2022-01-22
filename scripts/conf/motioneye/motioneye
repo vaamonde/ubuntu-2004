@@ -12,14 +12,14 @@ libjpeg-dev python-pil curl motion ffmpeg v4l-utils python2
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 python2 get-pip.py
 
+pip2 install motioneye
+
 mkdir -p /etc/motioneye
 mkdir -p /var/lib/motioneye
-
-pip2 install motioneye
 
 cp /usr/local/share/motioneye/extra/motioneye.conf.sample /etc/motioneye/motioneye.conf
 cp /usr/local/share/motioneye/extra/motioneye.systemd-unit-local /etc/systemd/system/motioneye.service
 
 systemctl daemon-reload
 systemctl enable motioneye
- systemctl start motioneye
+systemctl start motioneye
