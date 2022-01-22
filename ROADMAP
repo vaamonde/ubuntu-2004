@@ -35,84 +35,110 @@ _
 _ 
 #17A_ 01-openssh.sh Script e arquivos de Configuração do OpenSSH Server - PARTE-01
 #17B_ 01-openssh.sh Instalação e Configuração do OpenSSH Server - PARTE-02
+#17C_ 01-openssh.sh Configuração do OpenSSH Client no Windows e Linux - PARTE-03
 _
 #18A_ 02-dhcp.sh Script e arquivos de Configuração do ISC DHCP Server - PARTE-01
 #18B_ 02-dhcp.sh Instalação e Configuração do ISC DHCP Server - PARTE-02
+#18C_ 02-dhcp.sh Configuração do DHCP Client no Windows e Linux - PARTE-03
 _ 
 #19A_ 03-dns.sh Script e arquivos de Configuração do Bind9 DNS Server - PARTE-01
 #19B_ 03-dns.sh Instalação e Configuração do Bind9 DNS Server - PARTE-02
+#19C_ 03-dns.sh Testes de Resoluções de Nomes DNS no Windows e Linux - PARTE-03
 _
 #20A_ 04-dhcpdns.sh Script e arquivos de Integração do DHCP e DNS Server - PARTE-01
 #20B_ 04-dhcpdns.sh Integração e Configuração do DHCP e DNS Server - PARTE-02
+#20C_ 04-dhcpdns.sh Testes de Integração do DHCP e DNS no Windows e Linux - PARTE-03
 _
 #21A_ 05-ntp.sh Script e arquivos de Configuração do NTP Server - PARTE-01
 #21B_ 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02
+#21C_ 05-ntp.sh Configuração do NTP Client no Windows e Linux - PARTE-03
 _
 #22A_ 06-tftphpa.sh Script e arquivos de Configuração do TFTP-HPA Server - PARTE-01
-#22A_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02
+#22B_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02
+#22C_ 06-tftphpa.sh Configuração do TFTP Client no Windows e Linux - PARTE-03
 _
 #23A_ 07-lamp.sh Script e arquivos de Configuração do LAMP Server - PARTE-01
 #23B_ 07-lamp.sh Instalação e Configuração do LAMP Server - PARTE-02
+#23C_ 07-lamp.sh Testes de acesso ao LAMP Server no Windows e Linux - PARTE-03
 _
 #24A_ 08-openssl.sh Script e arquivos de Configuração do OpenSSL - PARTE-01
 #24B_ 08-openssl.sh Configuração da CA e dos Certificados do Apache2 - PARTE-02
+#24C_ 08-openssl.sh Configuração da CA no Windows e Linux - PARTE-03
 _
 #25A_ 09-vsftpd.sh Script e arquivos de Configuração do VSFTPd Server - PARTE-01
 #25B_ 09-vsftpd.sh Instalação e Configuração do VSFTPd Server - PARTE-02
+#25C_ 09-vsftpd.sh Configuração do FTP Client no Windows e Linux - PARTE-03
 _
 #26A_ 10-tomcat.sh Script e arquivos de Configuração do Apache Tomcat Server - PARTE-01
 #26B_ 10-tomcat.sh Instalação e Configuração do Apache Tomcat Server - PARTE-02
+#26C_ 07-tomcat.sh Testes de acesso ao Apache Tomcat no Windows e Linux - PARTE-03
 _
 #27A_ 11-wordpress.sh Script e arquivos de Configuração do CMS Wordpress - PARTE-01
 #27B_ 11-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02
+#27C_ 11-wordpress.sh Instalação e Configuração do Plugins do Wordpress - PARTE-03
 _
 #28A_ 12-webmin.sh Script e arquivos de Configuração do Webmin e Usermin - PARTE-01
 #28B_ 12-webmin.sh Instalação e Configuração do Webmin e Usermin - PARTE-02
+#28C_ 12-webmin.sh Utilização Básica do Webmin e Usermin - PARTE-03
 _
 #29A_ 13-netdata.sh Script e arquivos de Configuração do Netdata - PARTE-01
 #29B_ 13-netdata.sh Instalação e Configuração do Netdata - PARTE-02
+#29C_ 13-netdata.sh Monitoramento dos Recursos do Netdata - PARTE-03
 _
 #30A_ 14-loganalyzer.sh Script e arquivos de Configuração do LogAnalyzer - PARTE-01
 #30B_ 14-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02
+#30C_ 14-loganalyzer.sh Monitoramento dos Logs no LogAnalyzer - PARTE-03
 _
 #31A_ 15-glpi.sh Script e arquivos de Configuração do GLPI Help Desk - PARTE-01
 #31B_ 15-glpi.sh Instalação e Configuração do GLPI Help Desk - PARTE-02
+#31C_ 15-glpi.sh Utilização e Criação de Chamados no GLPI Help Desk - PARTE-03
 _
 #32A_ 16-fusioninventory.sh Script e arquivos de Configuração do FusionInventory - PARTE-01
 #32B_ 16-fusioninventory.sh Instalação e Configuração do FusionInventory - PARTE-02
+#32C_ 16-fusioninventory.sh Inventário no Windows e Linux do FusionInventory - PARTE-03
 _
 #33A_ 17-zoneminder.sh Script e arquivos de Configuração do ZoneMinder - PARTE-01
 #33B_ 17-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
+#33C_ 17-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03
 _
 #34A_ 18-guacamole.sh Script e arquivos de Configuração do Apache Guacamole - PARTE-01
 #34B_ 18-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02
+#34C_ 18-guacamole.sh Acesso ao Remoto ao Servidor e Clientes no Guacamole - PARTE-03
 _
 #35A_ 19-grafana.sh Script e arquivos de Configuração do Grafana - PARTE-01
 #35B_ 19-grafana.sh Instalação e Configuração do Grafana - PARTE-02
+#35C_ 19-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03
 _
 #36A_ 20-zabbix.sh Script e arquivos de Configuração do Zabbix - PARTE-01
 #36B_ 20-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
+#36C_ 20-zabbix.sh Configurando o Monitoramento do Zabbix Agent - PARTE-03
 _
 #37A_ 21-docker.sh Script e arquivos de Configuração do Docker - PARTE-01
 #37B_ 21-docker.sh Instalação e Configuração do Docker - PARTE-02
+#37C_ 21-docker.sh Criando Container no Docker e Portainer - PARTE-03
 _
 #38A_ 22-ansible.sh Script e arquivos de Configuração do Ansible - PARTE-01
 #38B_ 22-ansible.sh Instalação e Configuração do Ansible - PARTE-02
+#38C_ 22-ansible.sh Criando um Playbook simples com o Ansible - PARTE-03
 _
 #39A_ 23-ntopng.sh Script e arquivos de Configuração do NTop-NG - PARTE-01
 #39B_ 23-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
 _
 #40A_ 24-openfire.sh Script e arquivos de Configuração do OpenFire - PARTE-01
 #40B_ 24-openfire.sh Instalação e Configuração do OpenFire - PARTE-02
+#40C_ 24-openfire.sh Instalação do OpenFire Client no Windows e Linux - PARTE-03
 _
 #41A_ 25-owncloud.sh Script e arquivos de Configuração do ownCloud - PARTE-01
 #41B_ 25-owncloud.sh Instalação e Configuração do ownCloud - PARTE-02
+#41C_ 25-owncloud.sh Instalação do ownCloud Client no Windows e Linux - PARTE-03
 _
 #42A_ 26-ocsinventory.sh Script e arquivos de Configuração do OCS Inventory - PARTE-01
 #42B_ 26-ocsinventory.sh Instalação e Configuração do OCS Inventory - PARTE-02
+#42C_ 26-ocsinventory.shInventário no Windows e Linux do OCS Inventory - PARTE-03
 _
 #43A_ 27-bacula.sh Script e arquivos de Configuração do Bacula - PARTE-01
 #43B_ 27-bacula.sh Instalação e Configuração do Bacula - PARTE-02
+#43C_ 27-bacula.sh Configurando um Job de Backup no Bacula - PARTE-03
 _
 #44A_ 28-graylog.sh Script e arquivos de Configuração do Graylog - PARTE-01
 #44B_ 28-graylog.sh Instalação e Configuração do Graylog - PARTE-02
@@ -122,12 +148,16 @@ _
 _
 #46A_ 30-nfs.sh Script e arquivos de Configuração do NFS - PARTE-01
 #46B_ 30-nfs.sh Instalação e Configuração do NFS - PARTE-02
+#46C_ 30-nfs.sh Configuração do NFS Client no Windows e Linux - PARTE-03
 _
 #47A_ 31-webdav.sh Script e arquivos de Configuração do WebDav - PARTE-01
 #47B_ 31-webdav Instalação e Configuração do WebDav - PARTE-02
+#47C_ 31-webdav Configuração do WebDav Client no Windows e Linux - PARTE-03
 _
 #48A_ 32-nextcloud.sh Script e arquivos de Configuração do NextCloud - PARTE-01
 #48B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
+#48C_ 25-nextcloud.sh Instalação do NextCloud Client no Windows e Linux - PARTE-03
 _
 #49A_ 33-asterisk.sh Script e arquivos de Configuração do Asterisk - PARTE-01
 #49B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
+#49C_ 33-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
