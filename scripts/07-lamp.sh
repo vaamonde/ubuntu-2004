@@ -40,7 +40,6 @@
 #
 # Debconf - Sistema de configuração de pacotes Debian
 # Site: http://manpages.ubuntu.com/manpages/bionic/man7/debconf.7.html
-# Debconf-Set-Selections - insere novos valores no banco de dados debconf
 # Site: http://manpages.ubuntu.com/manpages/bionic/man1/debconf-set-selections.1.html
 #
 # Opção: lamp-server^ Recurso existente no GNU/Ubuntu Server para facilitar a instalação 
@@ -65,6 +64,7 @@
 # Site Oficial do Projeto Perl: https://www.perl.org/
 # Site Oficial do Projeto Python: https://www.python.org/
 # Site Oficial do Projeto PhpMyAdmin: https://www.phpmyadmin.net/
+# Site Oficial do Projeto MySQL Workbench: https://www.mysql.com/products/workbench/
 #
 # Utilização do MySQL Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
