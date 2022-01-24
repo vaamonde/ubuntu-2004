@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 15/01/2022
-Data de atualização: 19/01/2022
-Versão: 0.03
+Data de atualização: 24/01/2022
+Versão: 0.04
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== FAQ (Perguntas Frequentes) DO CURSO DE UBUNTU SERVER =====================
@@ -66,3 +66,13 @@ Pergunta 010: Posso usar os scripts em servidores On-Premises (local) ou em Clou
 Resposta: Sim, os scripts funciona perfeitamente em servidores instalados On-Premises (local) tanto
 instalação Física ou Virtual (VM - Virtual Machine) ou em Cloud (nuvem) utilizando VPS (Virtual 
 Private Server) ou Servidor Dedicado (dedicated server).
+
+Pergunta 011: Esse curso fornece Certificado de Conclusão?
+Respota: Não, todo o material está no Github: https://github.com/vaamonde/ubuntu-2004 e no Canal do
+YouTube do Bora para Prática: https://www.youtube.com/boraparapratica de forma "GRATUITA", sendo 
+apenas um curso de conceitos básicos até avançado na utilização do Ubuntu Server mais que segue um
+padrão apenas de documentação, não sendo um curso montado nos padrões acadêmicos.
+
+Pergunta 012: Esse curso vai está disponível em Plataformas EAD (Udemy, Hotmart, etc...)?
+Resposta: Não, o material desse curso está disponível somente no Github e no Canal do YouTube do 
+projeto Bora para Prática.
