@@ -64,19 +64,48 @@ Link da vídeo aula: https://www.youtube.com/watch?v=k_r-0rjkGH4
 
 Segundo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou apresentar o Cenário e Topologia das Máquinas Virtuais utilizadas para instalar e configurar o Ubuntu Server 20.04.x LTS, Linux Mint, pfsense e Windows 10. Vou indicar soluções de Virtualização Bare Metal e Cloud.
 
-Software de Virtualização:<br>
-VirtualBOX: https://www.virtualbox.org/<br>
-Proxmox-VE: https://www.proxmox.com/en/proxmox-ve<br>
-XCP-NG: https://xcp-ng.org/<br>
-VMware Workstation: https://www.vmware.com/br/products/workstation-pro.html<br>
-VMware ESXi: https://www.vmware.com/br/products/esxi-and-esx.html<br>
-Microsoft Hyper-V: https://docs.microsoft.com/pt-br/virtualization/hyper-v-on-windows/about/<br>
-AWS Cloud: https://aws.amazon.com/pt/free/<br>
-Google Cloud: https://cloud.google.com/<br>
-Microsoft Azure: https://azure.microsoft.com/pt-br/free/
+🔴 Software de Virtualização:<br>
+🔴 VirtualBOX: https://www.virtualbox.org/<br>
+🔴 Proxmox-VE: https://www.proxmox.com/en/proxmox-ve<br>
+🔴 XCP-NG: https://xcp-ng.org/<br>
+🔴 VMware Workstation: https://www.vmware.com/br/products/workstation-pro.html<br>
+🔴 VMware ESXi: https://www.vmware.com/br/products/esxi-and-esx.html<br>
+🔴 Microsoft Hyper-V: https://docs.microsoft.com/pt-br/virtualization/hyper-v-on-windows/about/<br>
+🔴 AWS Cloud: https://aws.amazon.com/pt/free/<br>
+🔴 Google Cloud: https://cloud.google.com/<br>
+🔴 Microsoft Azure: https://azure.microsoft.com/pt-br/free/
 
 [![Cenário e Topologia](http://img.youtube.com/vi/pwGUAGTPOq0/0.jpg)](https://www.youtube.com/watch?v=pwGUAGTPOq0 "Cenário e Topologia")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=pwGUAGTPOq0
+
+![Cenário e Topologia](https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/img/00-topologia.png)
+
+## **🔴 #03_ Básico de Git, Github, Vim, VSCode, Bash e Shell Script 🐧**
+
+Terceiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar sobre os conceitos "Básico do Básico" do comando Git, no site do Github, do aplicativo VIM, utilização do Visual Studio Code VSCode, Bash e Shell e Shell Script, fazendo a indicação de livros e vídeos do Canal do YouTUBE do Bora para Prática!!! para facilitar o entendimento dos scripts desse curso.
+
+Vídeo aulas de Bash, Shell, Vim, Git, Github, VSCode e Shell Script Básico:<br>
+🔴 BASH SHELL Básico com o Linux Mint 19.1 Tessa: https://www.youtube.com/watch?v=xs1zGEBf-wc&t<br>
+🔴 VIM Básico com Linux Mint 19.2 Tina x64: https://www.youtube.com/watch?v=u6Or0rFgltY&t<br>
+🔴 GIT e GITHUB Básico com o Linux Mint 19.1 Tessa: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
+🔴 Visual Studio Code no Linux Mint 20.2 Uma: https://www.youtube.com/watch?v=faS3gZgKE-A&t<br>
+🔴 SHELL SCRIPT Básico com o Linux Mint 19.1 Tessa: https://www.youtube.com/watch?v=MkKkZA8wxHU&t
+
+Documentação das aulas:<br>
+🔴 BASH SHELL Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Bash.sh<br>
+🔴 VIM Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Vim.sh<br>
+🔴 GIT e GITHUB Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Git-Github.sh<br>
+🔴 Visual Studio Code Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/VSCode.sh<br>
+🔴 SHELL SCRIPT Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Shell.sh
+
+Canal do Prof. José de Assis:<br>
+🔴 Canal do Prof. José de Assis: https://www.youtube.com/c/RoboticapraticaBr<br>
+🔴 Playlist do Curso de Git e Github: https://www.youtube.com/playlist?list=PLbEOwbQR9lqzK14I7OOeREEIE4k6rjgIj<br>
+🔴 Github do Prof. José de Assis: https://github.com/professorjosedeassis
+
+[![Básico do Básico](http://img.youtube.com/vi/Ts8CAuPpmVM/0.jpg)](https://www.youtube.com/watch?v=Ts8CAuPpmVM "Básico do Básico")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Ts8CAuPpmVM
 
 ![Cenário e Topologia](https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/img/00-topologia.png)
