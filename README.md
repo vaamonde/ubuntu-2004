@@ -101,11 +101,14 @@ Documentação das aulas:<br>
 
 Canal do Prof. José de Assis:<br>
 🔴 Canal do Prof. José de Assis: https://www.youtube.com/c/RoboticapraticaBr<br>
-🔴 Playlist do Curso de Git e Github: https://www.youtube.com/playlist?list=PLbEOwbQR9lqzK14I7OOeREEIE4k6rjgIj<br>
 🔴 Github do Prof. José de Assis: https://github.com/professorjosedeassis
+🔴 Playlist Git e Github: https://www.youtube.com/playlist?list=PLbEOwbQR9lqzK14I7OOeREEIE4k6rjgIj<br>
+
+Indicação de Livros de Shell Script:<br>
+🔴 Shell Script Profissional (Novatec - Aurelio Marinho Jargas): https://novatec.com.br/livros/shellscript/<br>
+🔴 EXpressões Regulares (Novatec - Aurelio Marinho Jargas): https://novatec.com.br/livros/expressoes-regulares-5ed/<br>
+🔴 Programação Shell Linux (Novatec - Julio Cezar Neves): https://novatec.com.br/livros/programacao-shell-linux-12ed/
 
 [![Básico do Básico](http://img.youtube.com/vi/Ts8CAuPpmVM/0.jpg)](https://www.youtube.com/watch?v=Ts8CAuPpmVM "Básico do Básico")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Ts8CAuPpmVM
-
-![Cenário e Topologia](https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/img/00-topologia.png)
