@@ -93,7 +93,8 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 09. /etc/default/shellinabox = arquivo de configuração da aplicação Shell-In-a-Box
 # 10. /etc/neofetch/config.conf = arquivo de configuração da aplicação Neofetch
 # 11. /etc/cron.d/neofetch-cron = arquivo de atualização do Banner Motd o Neofetch
-# 12. /etc/rsyslog.d/50-default.conf = arquivo de configuração do Syslog/Rsyslog
+# 12. /etc/motd = arquivo de mensagem do dia gerado pelo Neofetch utilizando o CRON
+# 13. /etc/rsyslog.d/50-default.conf = arquivo de configuração do Syslog/Rsyslog
 #
 # Arquivos de monitoramento (log) do Serviço de Rede OpenSSH Server utilizados nesse script
 # 01. systemctl status ssh = status do serviço do OpenSSH

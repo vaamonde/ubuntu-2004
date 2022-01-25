@@ -27,6 +27,7 @@
 # Site Oficial do Projeto OpenSSH: https://www.openssh.com/
 # Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 # Site Oficial do Projeto Shell-In-a-Box: https://code.google.com/archive/p/shellinabox/
+# Site Oficial do Projeto Neofetch: https://github.com/dylanaraps/neofetch
 #
 # Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
