@@ -112,3 +112,11 @@ Indicação de Livros de Shell Script:<br>
 [![Básico do Básico](http://img.youtube.com/vi/Ts8CAuPpmVM/0.jpg)](https://www.youtube.com/watch?v=Ts8CAuPpmVM "Básico do Básico")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Ts8CAuPpmVM
+
+## **🔴 #04_ Conhecendo a Estrutura do Repositório Ubuntu-2004 no Github 🐧**
+
+Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre a estrutura do Repositório no Github do Curso, falar sobre os arquivos BUGS, CHANGELOG, FAQ, HELP, LICENSE, NEW, PORTS, README, RELEASE e mostrar o arquivo ROADMAP, conhecer os diretórios SCRIPTS, CONF, IMG, INSTALL e SETTINGS, apresentar o arquivo 00-parametros.sh e a estrutura básico dos scripts, apresentar as Guias ISSUES, PULL REQUEST, PROJECT e WIKI. 
+
+[![Repositório](http://img.youtube.com/vi/Ln28Y9H2bco/0.jpg)](https://www.youtube.com/watch?v=Ln28Y9H2bco "Repositório")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Ln28Y9H2bco
