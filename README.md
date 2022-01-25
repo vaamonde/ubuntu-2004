@@ -79,4 +79,4 @@ Microsoft Azure: https://azure.microsoft.com/pt-br/free/
 
 Link da vídeo aula: https://www.youtube.com/watch?v=pwGUAGTPOq0
 
-[Cenário e Topologia](https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/img/00-topologia.png)
+![Cenário e Topologia](https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/img/00-topologia.png)
