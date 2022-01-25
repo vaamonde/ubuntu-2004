@@ -59,3 +59,24 @@ Primeiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Sc
 [![Apresentação do Curso](http://img.youtube.com/vi/k_r-0rjkGH4/0.jpg)](https://www.youtube.com/watch?v=k_r-0rjkGH4 "Apresentação do Curso")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=k_r-0rjkGH4
+
+## **🔴 #02_ Conhecendo o Cenário e Topologia do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Segundo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou apresentar o Cenário e Topologia das Máquinas Virtuais utilizadas para instalar e configurar o Ubuntu Server 20.04.x LTS, Linux Mint, pfsense e Windows 10. Vou indicar soluções de Virtualização Bare Metal e Cloud.
+
+Software de Virtualização:<br>
+VirtualBOX: https://www.virtualbox.org/<br>
+Proxmox-VE: https://www.proxmox.com/en/proxmox-ve<br>
+XCP-NG: https://xcp-ng.org/<br>
+VMware Workstation: https://www.vmware.com/br/products/workstation-pro.html<br>
+VMware ESXi: https://www.vmware.com/br/products/esxi-and-esx.html<br>
+Microsoft Hyper-V: https://docs.microsoft.com/pt-br/virtualization/hyper-v-on-windows/about/<br>
+AWS Cloud: https://aws.amazon.com/pt/free/<br>
+Google Cloud: https://cloud.google.com/<br>
+Microsoft Azure: https://azure.microsoft.com/pt-br/free/
+
+[![Cenário e Topologia](http://img.youtube.com/vi/pwGUAGTPOq0/0.jpg)](https://www.youtube.com/watch?v=pwGUAGTPOq0 "Cenário e Topologia")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=pwGUAGTPOq0
+
+[![Cenário e Topologia](https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/img/00-topologia.png)]
