@@ -41,7 +41,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_ 02. Nome e Sistema Operacional:
 	_		Nome: UbuntuServer-2004
 	_		Pasta da Máquina: (deixar o padrão do sistema)
-	_		Tipo: Linux<br>
+	_		Tipo: Linux
 	_		Versão: Ubuntu (64-bit)
 	_	<Próximo>
 	_ 03. Tamanho da memória:

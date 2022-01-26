@@ -7,13 +7,13 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 22/01/2022
-Versão: 0.09
+Data de atualização: 25/01/2022
+Versão: 0.10
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
 15/01/2022 - Robson Vaamonde - Novas soluções de TI para o Curso de Ubuntu Server 20.04.x LTS, criação dos scripts e
-arquivos de configuração:
+arquivos de configuração (criado: feito e publicado | dev: em desenvolvimento):
 	_ 00-webdav.sh (criado): extensão do protocolo HTTP para transferência de arquivos;
 	_ 00-nfs.sh (criado): protocolo de compartilhamento de arquivos em rede linux;
 	_ 00-nextcloud.sh (criado): plataforma de colaboração em nuvem de código aberto;
@@ -33,10 +33,29 @@ arquivos de configuração:
 	_ 00-glpi10.sh (dev): software de Help Desk Open Source (nova versão 10);
 	_ 00-zabbix6.sh (dev): software de monitoramento e gerenciamento de (nova versão 6.0). 
 
-26/11/2021 - Robson Vaamonde - Criação dos novos scripts de configuração: 00-webdav.sh, 00-nfs.sh, 00-nextcloud.sh,
-00-samba4.sh, 00-postfix.sh, 00-netbox.sh, 00-gitlab.sh, 00-redmine.sh, 00-shinobi.sh, 00-netdisco.sh, 00-thinstation.sh
-00-iscsi.sh,  00-dnsslave.sh, 00-onlyoffice.sh, 00-wpad.sh, 00-freeradius.sh,  00-facilemanager.sh, 00-dhcpglass.sh, 
-00-openvpn.sh,  00-pam.sh, 00-ldap.sh, 00-mrtg.sh.
+26/11/2021 - Robson Vaamonde - Ideias para a criação dos novos scripts de configuração: 
+	00-webdav.sh, 
+	00-nfs.sh, 
+	00-nextcloud.sh,
+	00-samba4.sh, 
+	00-postfix.sh, 
+	00-netbox.sh, 
+	00-gitlab.sh, 
+	00-redmine.sh, 
+	00-shinobi.sh, 
+	00-netdisco.sh, 
+	00-thinstation.sh
+	00-iscsi.sh,
+	00-dnsslave.sh,
+	00-onlyoffice.sh, 
+	00-wpad.sh, 
+	00-freeradius.sh, 
+	00-facilemanager.sh, 
+	00-dhcpglass.sh, 
+	00-openvpn.sh,  
+	00-pam.sh, 
+	00-ldap.sh, 
+	00-mrtg.sh.
 
 13/10/2021 - Robson Vaamonde - Remoção dos recursos de: Syslinux, Syslinux Utils, Syslinux EFI, PXE Linux e do Puppy
 Linux do script: 06-tfthpa.sh deixando mais simples, a implementação do PXE Linux será feita utilizando o ThinStation.

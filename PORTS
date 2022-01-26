@@ -16,6 +16,8 @@ CIDR: 24 (255.255.255.0)
 IP Address Server: 172.16.1.20
 IP Address Gateway: 172.16.1.254
 IP Address DNS: 8.8.8.8, 8.8.4.4, 172.16.1.254, 172.16.1.20
+Hostname: ptispo01ws01
+Domain: pti.intra
 
 SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 01-openssh.sh --------------> TCP 22 (sshd) e TCP 4200 (shellinab HTTPS)
