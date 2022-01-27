@@ -90,23 +90,23 @@ Link da vídeo aula: https://www.youtube.com/watch?v=pwGUAGTPOq0
 Terceiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar sobre os conceitos "Básico do Básico" do comando Git, no site do Github, do aplicativo VIM, utilização do Visual Studio Code VSCode, Bash e Shell e Shell Script, fazendo a indicação de livros e vídeos do Canal do YouTUBE do Bora para Prática!!! para facilitar o entendimento dos scripts desse curso.
 
 Vídeo aulas de Bash, Shell, Vim, Git, Github, VSCode e Shell Script Básico:<br>
-🔴 BASH SHELL Básico com o Linux Mint 19.1 Tessa: https://www.youtube.com/watch?v=xs1zGEBf-wc&t<br>
-🔴 VIM Básico com Linux Mint 19.2 Tina x64: https://www.youtube.com/watch?v=u6Or0rFgltY&t<br>
-🔴 GIT e GITHUB Básico com o Linux Mint 19.1 Tessa: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
-🔴 Visual Studio Code no Linux Mint 20.2 Uma: https://www.youtube.com/watch?v=faS3gZgKE-A&t<br>
-🔴 SHELL SCRIPT Básico com o Linux Mint 19.1 Tessa: https://www.youtube.com/watch?v=MkKkZA8wxHU&t
+🔴 BASH SHELL Básico: https://www.youtube.com/watch?v=xs1zGEBf-wc&t<br>
+🔴 VIM Básico: https://www.youtube.com/watch?v=u6Or0rFgltY&t<br>
+🔴 GIT e GITHUB Básico: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
+🔴 VSCode Básico:: https://www.youtube.com/watch?v=faS3gZgKE-A&t<br>
+🔴 SHELL SCRIPT Básico: https://www.youtube.com/watch?v=MkKkZA8wxHU&t
 
 Documentação das aulas:<br>
 🔴 BASH SHELL Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Bash.sh<br>
 🔴 VIM Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Vim.sh<br>
 🔴 GIT e GITHUB Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Git-Github.sh<br>
-🔴 Visual Studio Code Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/VSCode.sh<br>
+🔴 VSCode Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/VSCode.sh<br>
 🔴 SHELL SCRIPT Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Shell.sh
 
 Canal do Prof. José de Assis:<br>
-🔴 Canal do Prof. José de Assis: https://www.youtube.com/c/RoboticapraticaBr<br>
-🔴 Github do Prof. José de Assis: https://github.com/professorjosedeassis
-🔴 Playlist Git e Github: https://www.youtube.com/playlist?list=PLbEOwbQR9lqzK14I7OOeREEIE4k6rjgIj<br>
+🔴 YouTUBE: https://www.youtube.com/c/RoboticapraticaBr<br>
+🔴 Github: https://github.com/professorjosedeassis<br>
+🔴 Playlist Git e Github: https://www.youtube.com/playlist?list=PLbEOwbQR9lqzK14I7OOeREEIE4k6rjgIj
 
 Indicação de Livros de Shell Script:<br>
 🔴 Shell Script Profissional (Novatec - Aurelio Marinho Jargas): https://novatec.com.br/livros/shellscript/<br>
@@ -124,3 +124,11 @@ Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Scri
 [![Repositório](http://img.youtube.com/vi/Ln28Y9H2bco/0.jpg)](https://www.youtube.com/watch?v=Ln28Y9H2bco "Repositório")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Ln28Y9H2bco
+
+## **🔴 #05_ Conhecendo o arquivo HELP do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "HELP", um dos arquivos mais importante desse curso, tudo que você precisa saber está nesse arquivo, detalhes de como utilizar os scripts, como customizar os scripts, como é a estrutura de diretórios e arquivos e como ajudar o projeto mandando correções de "BUGS", melhorias e sugestões.
+
+[![Repositório](http://img.youtube.com/vi//0.jpg)]( "Repositório")
+
+Link da vídeo aula: 
