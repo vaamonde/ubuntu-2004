@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 25/01/2022
-Versão: 0.10
+Data de atualização: 26/01/2022
+Versão: 0.11
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
@@ -31,7 +31,12 @@ arquivos de configuração (criado: feito e publicado | dev: em desenvolvimento)
 	_ 00-awx.sh (dev): oferece software para gerenciar projetos Ansible;
 	_ 00-owa.sh (dev): software para rastrear e analisar o acesso a websites;
 	_ 00-glpi10.sh (dev): software de Help Desk Open Source (nova versão 10);
-	_ 00-zabbix6.sh (dev): software de monitoramento e gerenciamento de (nova versão 6.0). 
+	_ 00-zabbix6.sh (dev): software de monitoramento e gerenciamento de (nova versão 6.0);
+	_ 00-hestia.sh (dev): sistemas de gerenciamento de servidores Web;
+	_ 00-aapanel.sh (dev): sistemas de gerenciamento de servidores Web;
+	_ 00-tinycp.sh (dev): sistemas de gerenciamento de servidores Web;
+	_ 00-moodle.sh (dev): um software livre, de apoio à aprendizagem, executado num ambiente virtual;
+	_ 00-mkdocs.sh (dev): é um gerador de site estático rápido voltado para a construção de documentação.
 
 26/11/2021 - Robson Vaamonde - Ideias para a criação dos novos scripts de configuração: 
 	00-webdav.sh, 

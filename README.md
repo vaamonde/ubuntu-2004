@@ -41,6 +41,10 @@ pfSense: https://www.pfsense.org/<br>
 Microsoft Windows:  https://www.microsoft.com/pt-br/windows<br>
 Oracle VirtualBOX: https://www.virtualbox.org/
 
+## **Documentação Oficial do Ubuntu Server 20.04.x LTS:**
+Ubuntu Server Guide: https://ubuntu.com/server/docs<br>
+Ubuntu Server Guide FULL-PDF: https://assets.ubuntu.com/v1/f954307f-ubuntu-server-guide.pdf
+
 ## **Playlist do YouTUBE com todos os Vídeos do GNU/Linux Ubuntu Server 20.04.x LTS DevOps:**
 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMRxzwCbAzmhjNnkwr11p7I
 
