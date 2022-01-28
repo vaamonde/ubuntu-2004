@@ -52,7 +52,7 @@ Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUMRxzwCbAzmhj
 01. Se logar com seu usuário no Ubuntu Server;
 02. Após logado, alterar para Root com o comando: sudo -i <Enter>;
 03. Clocar o projeto do Github com o comando: git clone https://github.com/vaamonde/ubuntu-2004 <Enter>;
-04. Acessar o diretório dos scripts co o comando: cd ubuntu-2004/scripts/ <Enter>;
+04. Acessar o diretório dos scripts com o comando: cd ubuntu-2004/scripts/ <Enter>;
 05. Para executar os scripts digite o comando: bash 00-nome_do_script.sh <Enter>;
 06. Dúvidas veja o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/HELP.
 
@@ -127,8 +127,32 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Ln28Y9H2bco
 
 ## **🔴 #05_ Conhecendo o arquivo HELP do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
-Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "HELP", um dos arquivos mais importante desse curso, tudo que você precisa saber está nesse arquivo, detalhes de como utilizar os scripts, como customizar os scripts, como é a estrutura de diretórios e arquivos e como ajudar o projeto mandando correções de "BUGS", melhorias e sugestões.
+Quinto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "HELP", um dos arquivos mais importantes desse curso, tudo que você precisa saber está nesse arquivo, detalhes de como utilizar os scripts, como customizar os scripts, como é a estrutura de diretórios e arquivos e como ajudar o projeto mandando correções de "BUGS", melhorias e sugestões.
 
-[![Repositório](http://img.youtube.com/vi//0.jpg)]( "Repositório")
+[![Arquivo Help](http://img.youtube.com/vi/m5B-DDo_9_4/0.jpg)](https://www.youtube.com/watch?v=m5B-DDo_9_4 "Arquivo Help")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=m5B-DDo_9_4
+
+## **🔴 #06_ Conhecendo o arquivo BUGS do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Sexto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "BUGS" (Erros), arquivo que fica registrado todos erros encontrados nos scripts, arquivos de configuração, serviços de rede ou Log's do sistema (Syslog por exemplo), nesse arquivo fica registrado os BUGS enviados na Guia ISSUES (Questões/Problemas) do Github.
+
+[![Arquivo Bugs](http://img.youtube.com/vi//0.jpg)]( "Arquivo Bugs")
+
+Link da vídeo aula: 
+
+## **🔴 #07_ Conhecendo o arquivo CHANGELOG do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Sétimo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "CHANGELOG" (Registro de Alterações), arquivo que fica registrado todas as mudanças ou melhorias nos scripts, arquivos de configuração, serviços de rede, nesse arquivo fica registro as ocorrências de erros (Bugs), melhorias, correções, sugestões, etc... envidas na Guia ISSUES (Questões/Problemas) do Github ou após a analise dos Log's (Syslog por exemplo) são aplicadas as correções, nele também fica a atualização de versões dos serviços de rede, etc...
+
+[![Arquivo Changelog](http://img.youtube.com/vi//0.jpg)]( "Arquivo Changelog")
+
+Link da vídeo aula: 
+
+## **🔴 #08_ Conhecendo o arquivo LICENSE do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Oitavo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "LICENSE" (Licenciamento), A licença MIT é permissiva e considerada equivalente a BSD Simplificada sem a cláusula de endosso. Porém, seu texto é bem mais explícito ao tratar dos direitos que estão sendo transferidos, afirmando que qualquer pessoa que obtém uma copia do software e seus arquivos de documentação associados pode lidar com eles sem restrição, incluindo sem limitação os direitos a usar, copiar, modificar, mesclar, publicar, distribuir, vender cópias do software. As condições impostas para tanto são apenas manter o aviso de copyright e uma cópia da licença em todas as cópias do software. 
+
+[![Arquivo License](http://img.youtube.com/vi//0.jpg)]( "Arquivo License")
 
 Link da vídeo aula: 
