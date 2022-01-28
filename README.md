@@ -137,17 +137,17 @@ Link da vídeo aula: https://www.youtube.com/watch?v=m5B-DDo_9_4
 
 Sexto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "BUGS" (Erros), arquivo que fica registrado todos erros encontrados nos scripts, arquivos de configuração, serviços de rede ou Log's do sistema (Syslog por exemplo), nesse arquivo fica registrado os BUGS enviados na Guia ISSUES (Questões/Problemas) do Github.
 
-[![Arquivo Bugs](http://img.youtube.com/vi//0.jpg)]( "Arquivo Bugs")
+[![Arquivo Bugs](http://img.youtube.com/vi/27UvFlmRDEY/0.jpg)](https://www.youtube.com/watch?v=27UvFlmRDEY "Arquivo Bugs")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=27UvFlmRDEY
 
 ## **🔴 #07_ Conhecendo o arquivo CHANGELOG do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
 Sétimo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "CHANGELOG" (Registro de Alterações), arquivo que fica registrado todas as mudanças ou melhorias nos scripts, arquivos de configuração, serviços de rede, nesse arquivo fica registro as ocorrências de erros (Bugs), melhorias, correções, sugestões, etc... envidas na Guia ISSUES (Questões/Problemas) do Github ou após a analise dos Log's (Syslog por exemplo) são aplicadas as correções, nele também fica a atualização de versões dos serviços de rede, etc...
 
-[![Arquivo Changelog](http://img.youtube.com/vi//0.jpg)]( "Arquivo Changelog")
+[![Arquivo Changelog](http://img.youtube.com/vi/V5QnnzGro_8/0.jpg)](https://www.youtube.com/watch?v=V5QnnzGro_8 "Arquivo Changelog")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=V5QnnzGro_8
 
 ## **🔴 #08_ Conhecendo o arquivo LICENSE do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
