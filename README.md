@@ -113,6 +113,11 @@ Indicação de Livros de Shell Script:<br>
 🔴 EXpressões Regulares (Novatec - Aurelio Marinho Jargas): https://novatec.com.br/livros/expressoes-regulares-5ed/<br>
 🔴 Programação Shell Linux (Novatec - Julio Cezar Neves): https://novatec.com.br/livros/programacao-shell-linux-12ed/
 
+Indicação de Sites e Material On-Line:<br>
+🔴 Aurelio Jargas: https://aurelio.net/<br>
+🔴 Guia Foca On-Line: https://guiafoca.org/<br>
+🔴 SS64 Command Line Reference: https://ss64.com/
+
 [![Básico do Básico](http://img.youtube.com/vi/Ts8CAuPpmVM/0.jpg)](https://www.youtube.com/watch?v=Ts8CAuPpmVM "Básico do Básico")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Ts8CAuPpmVM
@@ -151,8 +156,43 @@ Link da vídeo aula: https://www.youtube.com/watch?v=V5QnnzGro_8
 
 ## **🔴 #08_ Conhecendo o arquivo LICENSE do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
-Oitavo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "LICENSE" (Licenciamento), A licença MIT é permissiva e considerada equivalente a BSD Simplificada sem a cláusula de endosso. Porém, seu texto é bem mais explícito ao tratar dos direitos que estão sendo transferidos, afirmando que qualquer pessoa que obtém uma copia do software e seus arquivos de documentação associados pode lidar com eles sem restrição, incluindo sem limitação os direitos a usar, copiar, modificar, mesclar, publicar, distribuir, vender cópias do software. As condições impostas para tanto são apenas manter o aviso de copyright e uma cópia da licença em todas as cópias do software. 
+Oitavo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "LICENSE" (Licenciamento), A licença MIT é permissiva e considerada equivalente a BSD Simplificada sem a cláusula de endosso. Porém, seu texto é bem mais explícito ao tratar dos direitos que estão sendo transferidos, afirmando que qualquer pessoa que obtém uma copia do software e seus arquivos de documentação associados pode lidar com eles sem restrição, incluindo sem limitação os direitos a usar, copiar, modificar, mesclar, publicar, distribuir, vender cópias do software. As condições impostas para tanto são apenas manter o aviso de copyright e uma cópia da licença em todas as cópias do software.
+
+Esses scripts e arquivos de configuração dá o direito de:<br>
+🔴 01_ Usar todo o material de curso;<br>
+🔴 02_ Copiar todo o material de curso;<br>
+🔴 03_ Modificar todo o material de curso;<br>
+🔴 04_ Mesclar todo o material de curso;<br>
+🔴 05_ Publicar todo o material de curso;<br>
+🔴 06_ Distribuir todo o material de curso;<br>
+🔴 07_ Sublicenciar todo o material de curso;<br>
+🔴 08_ Vender todo o material de curso;<br>
+🔴 09_ Mais lembrando sempre de mencionar a fonte e o criador original.
 
 [![Arquivo License](http://img.youtube.com/vi//0.jpg)]( "Arquivo License")
+
+Link da vídeo aula: 
+
+## **🔴 #09_ Conhecendo o arquivo NEW do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Nono vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "NEW" (Novo/Novidades), arquivo que fica registrado todas as novidades desse curso, com novos scripts, novos projetos, indicações de instalação e configuração de serviços de rede enviadas na Guia (Questões/Problemas) do Github ou novas integrações que serão feitas nos scripts ou arquivos originais.
+
+[![Arquivo New](http://img.youtube.com/vi//0.jpg)]( "Arquivo New")
+
+Link da vídeo aula: 
+
+## **🔴 #10_ Conhecendo o arquivo RELEASE do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Décimo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "RELEASE" (Lançamento), arquivo que fica registrado todas as versões e datas de homologação do scripts após os testes e análise dos arquivos de Log da instalação e dos serviços de rede, geralmente esse arquivo sofre alteração conforme é alterado o script principal e testado no ambiente.
+
+[![Arquivo Release](http://img.youtube.com/vi//0.jpg)]( "Arquivo Release")
+
+Link da vídeo aula: 
+
+## **🔴 #11_ Conhecendo o arquivo PORTS do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Décimo Primeiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "PORTS" (Portas), arquivo que fica registrado todas as Portas, Protocolos e nome dos Daemon (Processo) dos serviços de rede instalado e configurado no Ubuntu Server, nesse arquivo fica registrado as informações básicas de rede como Endereço IPv4, Máscara de Rede, Gateway Padrão, Servidores DNS, Pesquisa de Domínio, etc...
+
+[![Arquivo Ports](http://img.youtube.com/vi//0.jpg)]( "Arquivo Ports")
 
 Link da vídeo aula: 
