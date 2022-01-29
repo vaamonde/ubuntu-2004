@@ -124,7 +124,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Ts8CAuPpmVM
 
 ## **🔴 #04_ Conhecendo a Estrutura do Repositório Ubuntu-2004 no Github 🐧**
 
-Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre a estrutura do Repositório no Github do Curso, falar sobre os arquivos BUGS, CHANGELOG, FAQ, HELP, LICENSE, NEW, PORTS, README, RELEASE e mostrar o arquivo ROADMAP, conhecer os diretórios SCRIPTS, CONF, IMG, INSTALL e SETTINGS, apresentar o arquivo 00-parametros.sh e a estrutura básico dos scripts, apresentar as Guias ISSUES, PULL REQUEST, PROJECT e WIKI. 
+Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre a estrutura do Repositório no Github do Curso, falar sobre os arquivos BUGS, CHANGELOG, FAQ, HELP, LICENSE, NEWS, PORTS, README, RELEASE e mostrar o arquivo ROADMAP, conhecer os diretórios SCRIPTS, CONF, IMG, INSTALL e SETTINGS, apresentar o arquivo 00-parametros.sh e a estrutura básico dos scripts, apresentar as Guias ISSUES, PULL REQUEST, PROJECT e WIKI. 
 
 [![Repositório](http://img.youtube.com/vi/Ln28Y9H2bco/0.jpg)](https://www.youtube.com/watch?v=Ln28Y9H2bco "Repositório")
 
@@ -173,11 +173,11 @@ Esses scripts e arquivos de configuração dá o direito de:<br>
 
 Link da vídeo aula: 
 
-## **🔴 #09_ Conhecendo o arquivo NEW do Curso de Ubuntu Server 20.04.x LTS 🐧**
+## **🔴 #09_ Conhecendo o arquivo NEWS do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
-Nono vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "NEW" (Novo/Novidades), arquivo que fica registrado todas as novidades desse curso, com novos scripts, novos projetos, indicações de instalação e configuração de serviços de rede enviadas na Guia (Questões/Problemas) do Github ou novas integrações que serão feitas nos scripts ou arquivos originais.
+Nono vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "NEWS" (Novo/Novidades), arquivo que fica registrado todas as novidades desse curso, com novos scripts, novos projetos, indicações de instalação e configuração de serviços de rede enviadas na Guia (Questões/Problemas) do Github ou novas integrações que serão feitas nos scripts ou arquivos originais.
 
-[![Arquivo New](http://img.youtube.com/vi//0.jpg)]( "Arquivo New")
+[![Arquivo News](http://img.youtube.com/vi//0.jpg)]( "Arquivo News")
 
 Link da vídeo aula: 
 

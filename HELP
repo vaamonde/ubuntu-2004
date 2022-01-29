@@ -29,7 +29,7 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ FAQ: arquivo de perguntas frequentes do curso, scripts, arquivos de configuração e serviços de rede.
 	_ HELP: arquivo de ajuda desse curso, com procedimentos e documentação de utilização dos scripts.
 	_ LICENSE: arquivo de licença de uso dos scripts: MIT License.
-	_ NEW: arquivo de novidades dos scripts, arquivos de configuração, serviços de rede, etc...
+	_ NEWS: arquivo de novidades dos scripts, arquivos de configuração, serviços de rede, etc...
 	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise dos Logs.
 	_ ROADMAP: arquivo com a sequência das gravações das vídeo aulas desse curso (Guia Projects).
 	_ PORTS: arquivo de portas e protocolos TCP ou UDP utilizados pelos serviços de rede desse curso.
