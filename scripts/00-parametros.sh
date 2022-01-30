@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.40
+# Data de atualização: 30/01/2022
+# Versão: 0.41
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -314,7 +314,7 @@ AGAIN=$SENHAMYSQL
 # identified by (identificado por - senha do usuário)
 # opções do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
 # tabela), *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), 
-# opção do comando FLUSH: privileges (recarregar as permissões de privilegios)
+# opção do comando FLUSH: privileges (recarregar as permissões de privilégios)
 CREATEUSER="CREATE USER '$USERMYSQL'@'%' IDENTIFIED BY '$SENHAMYSQL';"
 GRANTALL="GRANT ALL ON *.* TO '$USERMYSQL'@'%';"
 FLUSH="FLUSH PRIVILEGES;"
@@ -333,7 +333,10 @@ WEBSERVER="apache2"
 # Variável das dependências do laço de loop do LAMP Server
 LAMPDEP="bind9 bind9utils"
 #
-# Variável de instalação do serviço de rede LAMP Server (^ (circunflexo): expressão regular)
+# Variável de instalação do serviço de rede LAMP Server 
+# opção do caractere: ^ (circunflexo): expressão regular referente ao Tasksel, o uso do caractere ^ 
+# significa que o que precede é um Metapacote. Ao instalar meta pacotes, vários outros pacotes também 
+# serão instalados.
 LAMPINSTALL="lamp-server^ perl python apt-transport-https awstats libgeo-ip-perl libgeo-ipfree-perl \
 libnet-ip-perl libgeoip1"
 #
@@ -1170,6 +1173,7 @@ OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/
 # Variável de verificação do Chip Gráfico da NVIDIA
 # opção do comando lshw: -class display (lista as informações da placa de vídeo)
 # opção do comando cut: -d':' (delimitador) -f2 (mostrar segunda coluna)
+# opção do redirecionador | piper: Conecta a saída padrão com a entrada padrão de outro comando
 OCSINVENTORYAGENTNVIDIA=$(lshw -class display | grep NVIDIA | cut -d':' -f2 | cut -d' ' -f2)
 #
 # Variável da instalação das dependências do OCS Inventory Server
@@ -1299,6 +1303,7 @@ SECRETGRAYLOG=$(pwgen -N 1 -s 96)
 # Variável do HASH da senha do usuário de serviço do Graylog Server
 # opção do comando tr: -d (delete)
 # opção do comando cut: -d (delimiter), -f (fields)
+# opção do redirecionador | piper: Conecta a saída padrão com a entrada padrão de outro comando
 SHA2GRAYLOG=$(echo $USERGRAYLOG | tr -d '\n' | sha256sum | cut -d" " -f1)
 #
 # Variável da instalação das dependências do Graylog Server
