@@ -93,7 +93,7 @@ Vídeo aulas de Bash, Shell, Vim, Git, Github, VSCode e Shell Script Básico:<br
 🔴 BASH SHELL Básico: https://www.youtube.com/watch?v=xs1zGEBf-wc&t<br>
 🔴 VIM Básico: https://www.youtube.com/watch?v=u6Or0rFgltY&t<br>
 🔴 GIT e GITHUB Básico: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
-🔴 VSCode Básico:: https://www.youtube.com/watch?v=faS3gZgKE-A&t<br>
+🔴 VSCode Básico: https://www.youtube.com/watch?v=faS3gZgKE-A&t<br>
 🔴 SHELL SCRIPT Básico: https://www.youtube.com/watch?v=MkKkZA8wxHU&t
 
 Documentação das aulas:<br>
@@ -169,30 +169,38 @@ Esses scripts e arquivos de configuração dá o direito de:<br>
 🔴 08_ Vender todo o material de curso;<br>
 🔴 09_ Mais lembrando sempre de mencionar a fonte e o criador original.
 
-[![Arquivo License](http://img.youtube.com/vi//0.jpg)]( "Arquivo License")
+[![Arquivo License](http://img.youtube.com/vi/g8J9kg14Ww4/0.jpg)](https://www.youtube.com/watch?v=g8J9kg14Ww4 "Arquivo License")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=g8J9kg14Ww4
 
 ## **🔴 #09_ Conhecendo o arquivo NEWS do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
 Nono vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "NEWS" (Novo/Novidades), arquivo que fica registrado todas as novidades desse curso, com novos scripts, novos projetos, indicações de instalação e configuração de serviços de rede enviadas na Guia (Questões/Problemas) do Github ou novas integrações que serão feitas nos scripts ou arquivos originais.
 
-[![Arquivo News](http://img.youtube.com/vi//0.jpg)]( "Arquivo News")
+[![Arquivo News](http://img.youtube.com/vi/SJtJMpmnVVU/0.jpg)](https://www.youtube.com/watch?v=SJtJMpmnVVU "Arquivo News")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=SJtJMpmnVVU
 
 ## **🔴 #10_ Conhecendo o arquivo RELEASE do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
 Décimo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "RELEASE" (Lançamento), arquivo que fica registrado todas as versões e datas de homologação do scripts após os testes e análise dos arquivos de Log da instalação e dos serviços de rede, geralmente esse arquivo sofre alteração conforme é alterado o script principal e testado no ambiente.
 
-[![Arquivo Release](http://img.youtube.com/vi//0.jpg)]( "Arquivo Release")
+[![Arquivo Release](http://img.youtube.com/vi/BlmAo7kPlLM/0.jpg)](https://www.youtube.com/watch?v=BlmAo7kPlLM "Arquivo Release")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=BlmAo7kPlLM
 
 ## **🔴 #11_ Conhecendo o arquivo PORTS do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
 Décimo Primeiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "PORTS" (Portas), arquivo que fica registrado todas as Portas, Protocolos e nome dos Daemon (Processo) dos serviços de rede instalado e configurado no Ubuntu Server, nesse arquivo fica registrado as informações básicas de rede como Endereço IPv4, Máscara de Rede, Gateway Padrão, Servidores DNS, Pesquisa de Domínio, etc...
 
-[![Arquivo Ports](http://img.youtube.com/vi//0.jpg)]( "Arquivo Ports")
+[![Arquivo Ports](http://img.youtube.com/vi/bvo5dIzcs1E/0.jpg)](https://www.youtube.com/watch?v=bvo5dIzcs1E "Arquivo Ports")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=bvo5dIzcs1E
+
+## **🔴 #12_ Conhecendo o arquivo FAQ do Curso de Ubuntu Server 20.04.x LTS 🐧**
+
+Décimo Segundo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "FAQ" (Frequently Asked Questions - Perguntas Frequentes), arquivo que fica registrado todas as perguntas frequentes desse curso, explicando principalmente que esse Curso do Ubuntu Server 20.04.x LTS todos os scripts são projetados e homologados para essa versão, não funcionando em outras distribuições, versões anteriores ou atual do Ubuntu Server.
+
+[![Arquivo FAQ](http://img.youtube.com/vi/mGAlRLrrDLM/0.jpg)](https://www.youtube.com/watch?v=mGAlRLrrDLM "Arquivo FAQ")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=mGAlRLrrDLM
