@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 30/01/2022
-# Versão: 0.41
+# Data de atualização: 02/02/2022
+# Versão: 0.42
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -58,12 +58,12 @@ SENHADEFAULT="pti@2018"
 # Variável do Nome (Hostname) do Servidor Ubuntu desse curso
 NOMESERVER="ptispo01ws01"
 #
-# Variável do Nome (Hostname) FQDN (Fully Qualified Domain Name) do Servidor Ubuntu desse curso
-FQDNSERVER="ptispo01ws01.pti.intra"
-#
 # Variável do Nome de Domínio do Servidor Ubuntu desse curso
-# OBSERVAÇÃO IMPORTANTE: esse variável será utilizada em outros variáveis desse curso
+# OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
 DOMINIOSERVER="pti.intra"
+#
+# Variável do Nome (Hostname) FQDN (Fully Qualified Domain Name) do Servidor Ubuntu desse curso
+FQDNSERVER="$NOMESERVER.$DOMINIOSERVER"
 #
 # Variável do Endereço IPv4 principal (padrão) do Servidor Ubuntu desse curso
 IPV4SERVER="172.16.1.20"

@@ -7,11 +7,14 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 21/01/2022
-Versão: 0.34
+Data de atualização: 02/02/2022
+Versão: 0.35
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+02/02/2022 - Robson Vaamonde - Correção da falha de edição do arquivo: 50-default.conf no script: 01-openssh.sh devido
+a falta da / "barra" na linha de copia do arquivo, alteração da variável: FQDNSERVER no arquivo: 00-parametros.sh,
+
 21/01/2022 - Robson Vaamonde - Acréscimo da opção do Docker Compose no script: 21-docker.sh, adicionado as dependências
 no arquivo: 00-parametros.sh, melhoria em vários scripts em relação ao Status dos Serviços utilizando o comando:
 systemctl status, várias correções de Pt-BR nos scripts.
