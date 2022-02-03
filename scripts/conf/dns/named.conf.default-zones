@@ -1,17 +1,33 @@
-// prime the server with knowledge of the root servers
+// Autor: Robson Vaamonde
+// Site: www.procedimentosemti.com.br
+// Facebook: facebook.com/ProcedimentosEmTI
+// Facebook: facebook.com/BoraParaPratica
+// YouTube: youtube.com/BoraParaPratica
+// Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+// Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+// Data de criação: 03/02/2022
+// Data de atualização: 03/02/2022
+// Versão: 0.01
+// Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+// Testado e homologado para a versão do Bind9 DNS Server v9.16.x
+
+// Configuração das Zonas Raiz de Servidores de DNS da Internet (Root Hints)
 zone "." {
 	type hint;
 	file "/usr/share/dns/root.hints";
 };
 
-// be authoritative for the localhost forward and reverse zones, and for
-// broadcast zones as per RFC 1912
+// Configuração das Zonas de Pesquisas Direta e Reversa do Servidor Ubuntu,
+// essas configurações habilita o recurso de ser autoritário dessa Zonas
+// conforme RFC 1912
 
+// Zona de Pesquisa Direta de Localhost
 zone "localhost" {
 	type master;
 	file "/etc/bind/db.local";
 };
 
+// Zona de Pesquisa Reversa de Localhost e Loopback (configuração padrão)
 zone "127.in-addr.arpa" {
 	type master;
 	file "/etc/bind/db.127";
@@ -26,5 +42,4 @@ zone "255.in-addr.arpa" {
 	type master;
 	file "/etc/bind/db.255";
 };
-
 

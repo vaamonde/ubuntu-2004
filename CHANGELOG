@@ -7,13 +7,22 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 02/02/2022
-Versão: 0.35
+Data de atualização: 03/02/2022
+Versão: 0.36
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+03/02/2022 - Robson Vaamonde - Correção do HTTPS no script: 01-openssh.sh do acesso ao Shell-In-a-Box, melhoria no
+arquivo de Banner: issue.net adicionado a Lei LGPD (Lei Geral de Proteção de Dados), melhorias nos arquivos da placa
+de rede Netplan: 50-cloud-init.yaml e 00-installer-config.yaml com separação/comentário nas linhas para facilitar a
+leitura das configurações, criado o arquivo: named.conf.default-zones do Bind9 DNS Server, adicionado as linhas para 
+copiar o arquivo para o diretório: /etc/bind e editar o mesmo no script: 03-dns.sh, melhoria na documentação de acesso
+ao SSH Server no GNU/Linux e no Windows, melhoria no script: 08-openssl.sh, correção da linha de status de serviço do
+Apache2 e melhoria no nome de domínio do link de download do certificado do CA, atualização da versão do GLPI v9.5.7
+no arquivo: 00-parametros.sh, 
+
 02/02/2022 - Robson Vaamonde - Correção da falha de edição do arquivo: 50-default.conf no script: 01-openssh.sh devido
-a falta da / "barra" na linha de copia do arquivo, alteração da variável: FQDNSERVER no arquivo: 00-parametros.sh,
+a falta da / "barra" na linha de cópia do arquivo, alteração da variável: FQDNSERVER no arquivo: 00-parametros.sh,
 
 21/01/2022 - Robson Vaamonde - Acréscimo da opção do Docker Compose no script: 21-docker.sh, adicionado as dependências
 no arquivo: 00-parametros.sh, melhoria em vários scripts em relação ao Status dos Serviços utilizando o comando:

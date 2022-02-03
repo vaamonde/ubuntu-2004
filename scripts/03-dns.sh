@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.14
+# Data de atualização: 03/02/2022
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
@@ -215,9 +215,10 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	mv -v /etc/bind/named.conf /etc/bind/named.conf.old &>> $LOG
 	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.old &>> $LOG
 	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG
+	mv -v /etc/default/named.conf.default-zones /etc/default/named.conf.default-zones.old &>> $LOG
 	mv -v /etc/bind/rndc.key /etc/bind/rndc.key.old &>> $LOG
 	mv -v /etc/default/named /etc/default/named.old &>> $LOG
-	cp -v conf/dns/{named.conf,named.conf.local,named.conf.options,rndc.key} /etc/bind/ &>> $LOG
+	cp -v conf/dns/{named.conf,named.conf.local,named.conf.options,named.conf.default-zones,rndc.key} /etc/bind/ &>> $LOG
 	cp -v conf/dns/{pti.intra.hosts,172.16.1.rev} /var/lib/bind/ &>> $LOG
 	cp -v conf/dns/{dnsupdate-cron,rndcupdate-cron} /etc/cron.d/ &>> $LOG
 	cp -v conf/dns/named /etc/default/ &>> $LOG
@@ -247,6 +248,14 @@ echo -e "Editando o arquivo de configuração named.conf.options, pressione <Ent
 	read -s
 	vim /etc/bind/named.conf.options
 	named-checkconf &>> $LOG
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração named.conf.default-zones, pressione <Enter> para continuar."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/bind/named.conf.default-zones
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -185,8 +185,8 @@ clear
 echo
 #
 echo -e "Configuração do OpenSSL no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Download da Autoridade Certificadora CA na URL: http://$(hostname -I | cut -d' ' -f1)/download\n"
-echo -e "Depois de executar a instalação da CA GNU/Linux e no Windows, testar o acesso seguro abaixo.\n"
+echo -e "Download da Autoridade Certificadora CA na URL: http://www.$(hostname -d | cut -d' ' -f1)/download\n"
+echo -e "Depois de executar a instalação da CA no GNU/Linux e no Windows, testar o acesso seguro abaixo.\n"
 echo -e "Confirmar o acesso com o Endereço IPv4 na URL: https://$(hostname -I | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome CNAME na URL: https://www.$(hostname -d | cut -d' ' -f1)/"
 echo -e "Confirmar o acesso com o Nome Domínio na URL: https://$(hostname -d | cut -d' ' -f1)/"
@@ -584,7 +584,7 @@ echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do Apache2, aguarde..."
-	systemctl status apache2 | grep Active
+	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 02/02/2022
-# Versão: 0.42
+# Data de atualização: 03/02/2022
+# Versão: 0.43
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -722,8 +722,8 @@ LOGINSTALL="rsyslog-mysql"
 # Variável de localização da instalação do diretório do GLPI Help Desk
 PATHGLPI="/var/www/html/glpi"
 #
-# Variável de download do GLPI (atualizada no dia: 25/11/2021)
-GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.6/glpi-9.5.6.tgz"
+# Variável de download do GLPI (atualizada no dia: 03/02/2022)
+GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tgz"
 #
 # Declarando as variáveis para criação da Base de Dados do GLPI
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)

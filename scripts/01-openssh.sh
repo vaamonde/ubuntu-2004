@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 20/01/2022
-# Versão: 0.20
+# Data de atualização: 03/02/2022
+# Versão: 0.21
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -40,15 +40,15 @@
 #	apt install putty putty-tools
 #	windows: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 #
-# Verificando os usuários logados na sessão do OpenSSH Server
+# Verificando os usuários logados na sessão do OpenSSH Server no Ubuntu Server
 # Terminal:
-#	who -a (show who is logged on)
-#	w (Show who is logged on and what they are doing)
-#	users (print the user names of users currently logged in to the current host)
-#	last | grep 'still logged in' (show a listing of last logged in users)
-#	ss | grep ssh (another utility to investigate sockets)
-#	netstat | grep 'ESTABLISHED.*sshd' (show networking connection)
-#	ps -axfj | grep sshd (report a snapshot of the current processes)
+#	sudo who -a (show who is logged on)
+#	sudo w (Show who is logged on and what they are doing)
+#	sudo users (print the user names of users currently logged in to the current host)
+#	sudo last -a | grep 'still logged in' (show a listing of last logged in users)
+#	sudo ss | grep -i ssh (another utility to investigate sockets)
+#	sudo netstat -tnpa | grep 'ESTABLISHED.*sshd' (show networking connection)
+#	sudo ps -axfj | grep sshd (report a snapshot of the current processes)
 #
 # Gerando os par de chaves Pública/Privadas utilizando o GNU/Linux
 # Linux Mint Terminal: Ctrl+Alt+T
@@ -162,7 +162,7 @@ fi
 # Script de configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x LTS
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-# opção do comando hostname: -I (domain)
+# opção do comando hostname: -I (all-ip-addresses)
 # opção do comando cut: -d (delimiter), -f (fields)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
@@ -171,7 +171,7 @@ echo
 echo -e "Configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo OpenSSH Server.: TCP 22"
 echo -e "Porta padrão utilizada pelo Shell-In-a-Box.: TCP 4200"
-echo -e "Após a instalação do Shell-In-a-Box acessar a URL: http://$(hostname -I | cut -d' ' -f1):4200/\n"
+echo -e "Após a instalação do Shell-In-a-Box acessar a URL: https://$(hostname -I | cut -d' ' -f1):4200/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
