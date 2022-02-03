@@ -19,7 +19,7 @@ leitura das configurações, criado o arquivo: named.conf.default-zones do Bind9
 copiar o arquivo para o diretório: /etc/bind e editar o mesmo no script: 03-dns.sh, melhoria na documentação de acesso
 ao SSH Server no GNU/Linux e no Windows, melhoria no script: 08-openssl.sh, correção da linha de status de serviço do
 Apache2 e melhoria no nome de domínio do link de download do certificado do CA, atualização da versão do GLPI v9.5.7
-no arquivo: 00-parametros.sh, 
+no arquivo: 00-parametros.sh.
 
 02/02/2022 - Robson Vaamonde - Correção da falha de edição do arquivo: 50-default.conf no script: 01-openssh.sh devido
 a falta da / "barra" na linha de cópia do arquivo, alteração da variável: FQDNSERVER no arquivo: 00-parametros.sh,

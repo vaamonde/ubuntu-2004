@@ -98,8 +98,8 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ Quarto: acessar o diretório clonado do Github: cd ubuntu-2004/ <Enter>;
 	_ Quinto: acessar o diretório dos scripts: cd scripts/ <Enter>;
 	_ Sexto: rodar um script de serviço: bash 00-nome_do_script.sh <Enter>.
-	_ OBSERVAÇÃO IMPORTANTE: não é ncessário transformar os scripts em executáveis utiliando o comando:
-	_ chmod +x *.sh, pois o comando Bash já executado os scripts por causa da primeira linha configurada
+	_ OBSERVAÇÃO IMPORTANTE: não é ncessário transformar os scripts em executáveis utilizando o comando:
+	_ chmod +x *.sh, pois o comando Bash já executa os scripts por causa da primeira linha configurada
 	_ em todos os scripts: #!/bin/bash
 
 #07_ Monitorando o Log em tempo real dos script.
@@ -141,8 +141,8 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ (Hashtag/Sustenido) no início da linha que você quer desabilitar a função no script ou 
 	_ arquivo de configuração.
 	_ OBSERVAÇÃO IMPORTANTE: alguns arquivos de configuração utiliza o ; (ponto e vírgula) como 
-	_ caractere de comentário, como por exemplo nos arquivos de configuração do Bind DNS Server, 
-	_ PHP, Java, etc.
+	_ caractere de comentário ou / (barra invertida), como por exemplo nos arquivos de configuração 
+	_ do Bind DNS Server, PHP, Java, etc.
 
 #========================== COMO AJUDAR NA MELHORIA OU CORREÇÕES DO SCRIPTS ==========================
 
@@ -182,7 +182,7 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ rede como o MySQL, MariaDB, Apache2, Nginx, etc..., documentar as melhorias ou correções e enviar 
 	_ na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
 	_ OBSERVAÇÃO IMPORTANTE: nesse cenário existe diferenças de desempenho em relação ao tipo de servidor
-	_ utilizado nos Testes de Desempenho (On-Premises, Virtual Machine, Cloud, Containner, etc...).
+	_ utilizado nos Testes de Desempenho (On-Premises, Virtual Machine, VPS, Cloud, Containner, etc...).
 
 #05_ Enviando suas melhorias ou correções via "PULL REQUESTS"
 	_ Por padrão as melhorias ou correções enviadas via PULL REQUESTS do Github não serão submetidas nos
