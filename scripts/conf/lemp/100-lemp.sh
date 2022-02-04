@@ -1,67 +1,46 @@
 #!/bin/bash
-# Autor: Robson Vaamonde
-# Site: www.procedimentosemti.com.br
-# Facebook: facebook.com/ProcedimentosEmTI
-# Facebook: facebook.com/BoraParaPratica
-# YouTube: youtube.com/BoraParaPratica
-# Data de criação: 18/04/2021
-# Data de atualização: 30/04/2021
-# Versão: 0.6
-# Testado e homologado para a versão do Ubuntu Server 18.04.x LTS x64
-# Kernel >= 4.15.x
-# Testado e homologado para a versão do Nginx 1.14, MariaDB 10.1, PHP 7.2.x, Perl 5.26.x, Python 2.x/3.x, PhpMyAdmin 4.6.x
+
 #
-# LEMP é um grupo de softwares que são usados para exibir páginas ou aplicativos Web dinâmicos escritos em 
-# PHP/PERL/PYTHON. Este é um acrônimo de sistema operacional Linux, servidor Web Nginx (se pronuncia “Engine-X)
-# Os dados do backend são armazenados no banco de dados MySQL ou MariaDB e o processamento dinâmico é 
-# tratado pela linguagem de programação dinâmica PHP.
+# LEMP é um grupo de softwares que são usados para exibir páginas ou aplicativos Web 
+# dinâmicos escritos em PHP/PERL/PYTHON. Este é um acrônimo de sistema operacional Linux, 
+# servidor Web Nginx (se pronuncia “Engine-X) Os dados do backend são armazenados no 
+# banco de dados MySQL ou MariaDB e o processamento dinâmico é tratado pela linguagem de 
+# programação dinâmica PHP.
 #
-# O Servidor NGINX (lê-se "engine x") é um servidor leve de HTTP, Proxy Reverso e Proxy de E-mail IMAP/POP3. 
-# O Nginx consome menos memória que o Apache, pois lida com requisições Web do tipo “event-based web server”; 
-# e o Apache é baseado no “process-based server”, podendo trabalhar juntos. É possível diminuir o consumo 
-# de memória do Apache, passando as requisições Web primeiro no Nginx, assim, o Apache não precisa servir 
-# arquivos estáticos, e pode depender do bom controle de cache feito pelo Nginx.
+# O Servidor NGINX (lê-se "engine x") é um servidor leve de HTTP, Proxy Reverso e Proxy de 
+# E-mail IMAP/POP3. O Nginx consome menos memória que o Apache, pois lida com requisições 
+# Web do tipo “event-based web server”; e o Apache é baseado no “process-based server”, 
+# podendo trabalhar juntos. É possível diminuir o consumo de memória do Apache, passando as 
+# requisições Web primeiro no Nginx, assim, o Apache não precisa servir arquivos estáticos, 
+# e pode depender do bom controle de cache feito pelo Nginx.
 #
-# O MariaDB é um sistema de gerenciamento de banco de dados (SGBD) que surgiu como fork do MySQL, criado 
-# pelo próprio fundador do projeto após sua aquisição pela Oracle. A intenção principal do projeto é manter 
-# uma alta fidelidade com o MySQL. MariaDB é um avançado substituto para o MySQL e está disponível sob os 
-# termos da licença GPL v2. 
+# O MariaDB é um sistema de gerenciamento de banco de dados (SGBD) que surgiu como fork do 
+# MySQL, criado pelo próprio fundador do projeto após sua aquisição pela Oracle. A intenção 
+# principal do projeto é manter uma alta fidelidade com o MySQL. MariaDB é um avançado 
+# substituto para o MySQL e está disponível sob os termos da licença GPL v2. 
 #
-# PHP (um acrônimo recursivo para "PHP: Hypertext Preprocessor", originalmente Personal Home Page) é uma 
-# linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes 
-# e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico na World Wide Web.
+# PHP (um acrônimo recursivo para "PHP: Hypertext Preprocessor", originalmente Personal Home 
+# Page) é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento 
+# de aplicações presentes e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico 
+# na World Wide Web.
 #
-# FPM (FastCGI Process Manager) é um gerenciador de processos para gerenciar o FastCGI SAPI (Server API) 
-# em PHP. O PHP-FPM é um serviço e não um módulo. Este serviço é executado completamente independente do 
-# servidor web em um processo à parte e é suportado por qualquer servidor web compatível com FastCGI 
-# (Fast Common Gateway Interface).
+# FPM (FastCGI Process Manager) é um gerenciador de processos para gerenciar o FastCGI SAPI 
+# (Server API) em PHP. O PHP-FPM é um serviço e não um módulo. Este serviço é executado 
+# completamente independente do servidor web em um processo à parte e é suportado por qualquer 
+# servidor web compatível com FastCGI (Fast Common Gateway Interface).
 #
-# Perl é usada em aplicações de CGI para a web, para administração de sistemas linux e por várias 
-# aplicações que necessitam de facilidade de manipulação de strings.
+# Perl é usada em aplicações de CGI para a web, para administração de sistemas linux e por 
+# várias aplicações que necessitam de facilidade de manipulação de strings.
 #
-# Python é uma linguagem de programação de alto nível,[5] interpretada de script, imperativa, orientada a 
-# objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991. Atualmente,
-# possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização sem fins lucrativos 
-# Python Software Foundation.
+# Python é uma linguagem de programação de alto nível,[5] interpretada de script, imperativa, 
+# orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum 
+# em 1991. Atualmente, possui um modelo de desenvolvimento comunitário, aberto e gerenciado 
+# pela organização sem fins lucrativos Python Software Foundation.
 #
-# PhpMyAdmin é um aplicativo web livre e de código aberto desenvolvido em PHP para administração do MySQL 
-# ou MariaDB pela Internet. A partir deste sistema é possível criar e remover bases de dados, criar, remover
-# e alterar tabelas, inserir, remover e editar campos, executar códigos SQL e manipular campos chaves.
-#
-# NGINX-1.14 (HTTP Server) -Servidor de Hospedagem de Páginas Web: https://www.nginx.com/
-# MARIADB-10.1.x (SGBD) - Sistemas de Gerenciamento de Banco de Dados: https://mariadb.org/
-# PHP-7.2 (Personal Home Page - PHP: Hypertext Preprocessor) - Linguagem de Programação Dinâmica para Web: http://www.php.net/
-# PERL-5.26 - Linguagem de programação multiplataforma: https://www.perl.org/
-# PYTHON-2.7 - Linguagem de programação de alto nível: https://www.python.org/
-# PHPMYADMIN-4.6 - Aplicativo desenvolvido em PHP para administração do MariaDB pela Internet: https://www.phpmyadmin.net/
-#
-# Debconf - Sistema de configuração de pacotes Debian
-# Site: http://manpages.ubuntu.com/manpages/bionic/man7/debconf.7.html
-# Debconf-Set-Selections - insere novos valores no banco de dados debconf
-# Site: http://manpages.ubuntu.com/manpages/bionic/man1/debconf-set-selections.1.html
-#
-# O módulo do PHP Mcrypt na versão 7.2 está descontinuado, para fazer sua instalação é recomendado utilizar
-# o comando o Pecl e adicionar o repositório pecl.php.net, a instalação é baseada em compilação do módulo.
+# PhpMyAdmin é um aplicativo web livre e de código aberto desenvolvido em PHP para administração 
+# do MySQL ou MariaDB pela Internet. A partir deste sistema é possível criar e remover bases de 
+# dados, criar, remover e alterar tabelas, inserir, remover e editar campos, executar códigos 
+# SQL e manipular campos chaves.
 #
 # Site oficial: https://www.nginx.com/
 # Site oficial: https://mariadb.org/
@@ -71,30 +50,8 @@
 # Site oficial: https://www.perl.org/
 # Site oficial: https://www.python.org/
 # Site oficial: https://www.phpmyadmin.net/
-#
-# Vídeo de instalação do GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=zDdCrqNhIXI
-# Vídeo de configuração do OpenSSH Server no GNU/Linux Ubuntu Server 18.04.x LTS: https://www.youtube.com/watch?v=ecuol8Uf1EE
-#
-# Variável da Data Inicial para calcular o tempo de execução do script (VARIÁVEL MELHORADA)
-# opção do comando date: +%T (Time)
-HORAINICIAL=$(date +%T)
-#
-# Variáveis para validar o ambiente, verificando se o usuário e "root", versão do ubuntu e kernel
-# opções do comando id: -u (user), opções do comando: lsb_release: -r (release), -s (short), 
-# opções do comando uname: -r (kernel release), opções do comando cut: -d (delimiter), -f (fields)
-# opção do carácter: | (piper) Conecta a saída padrão com a entrada padrão de outro comando
-# opção do shell script: acento crase ` ` = Executa comandos numa subshell, retornando o resultado
-# opção do shell script: aspas simples ' ' = Protege uma string completamente (nenhum caractere é especial)
-# opção do shell script: aspas duplas " " = Protege uma string, mas reconhece $, \ e ` como especiais
-USUARIO=$(id -u)
-UBUNTU=$(lsb_release -rs)
-KERNEL=$(uname -r | cut -d'.' -f1,2)
-#
-# Variável do caminho do Log dos Script utilizado nesse curso (VARIÁVEL MELHORADA)
-# $0 (variável de ambiente do nome do comando)
-# opção do comando | (piper): (Conecta a saída padrão com a entrada padrão de outro comando)
-# opções do comando cut: -d (delimiter), -f (fields)
-LOG="/var/log/$(echo $0 | cut -d'/' -f2)"
+
+
 #
 # Variáveis de configuração do usuário root e senha do MariaDB para acesso via console e do PhpMyAdmin
 USER="root"
@@ -120,24 +77,7 @@ APP_PASSWORD=$PASSWORD
 APP_PASS=$PASSWORD
 WEBSERVER="localhost"
 #
-# Exportando o recurso de Noninteractive do Debconf para não solicitar telas de configuração
-export DEBIAN_FRONTEND="noninteractive"
-#
-# Verificando se o usuário é Root, Distribuição é >=18.04 e o Kernel é >=4.15 <IF MELHORADO)
-# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria dos erros comuns na execução
-clear
-if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "18.04" ] && [ "$KERNEL" == "4.15" ]
-	then
-		echo -e "O usuário é Root, continuando com o script..."
-		echo -e "Distribuição é >= 18.04.x, continuando com o script..."
-		echo -e "Kernel é >= 4.15, continuando com o script..."
-		sleep 5
-	else
-		echo -e "Usuário não é Root ($USUARIO) ou Distribuição não é >=18.04.x ($UBUNTU) ou Kernel não é >=4.15 ($KERNEL)"
-		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
-		echo -e "Execute novamente o script para verificar o ambiente."
-		exit 1
-fi
+
 #
 # Script de instalação do LEMP-Server no GNU/Linux Ubuntu Server 18.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
@@ -163,38 +103,8 @@ echo -e "Após a instalação do PhpMyAdmin acessar a URL: http://`hostname -I |
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
-echo -e "Adicionando o Repositório Universal do Apt, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	add-apt-repository universe &>> $LOG
-echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Adicionando o Repositório Multiversão do Apt, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	add-apt-repository multiverse &>> $LOG
-echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Atualizando as listas do Apt, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	apt update &>> $LOG
-echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Atualizando o sistema, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando apt: -y (yes)
-	apt -y upgrade &>> $LOG
-echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Removendo software desnecessários, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando apt: -y (yes)
-	apt -y autoremove &>> $LOG
-echo -e "Software removidos com Sucesso!!!, continuando com o script...\n"
-sleep 5
-#
+
+
 echo -e "Configurando as variáveis do Debconf do MariaDB para o Apt, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando | (piper): (Conecta a saída padrão com a entrada padrão de outro comando)
