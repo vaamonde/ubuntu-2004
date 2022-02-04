@@ -14,7 +14,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 04/02/2022 - Robson Vaamonde - Correção da falha do DAV Off no Virtualhost do Nextcloud do script: 32-nextcloud.sh,
 correção feita no arquivo de configuração: nextcloud.conf do Virtualhost do Apache2, criação dos scripts para a 
-isntalação e configuração do Prometheus e do InfluxDB.
+instalação e configuração do Prometheus e do InfluxDB integrados no script: 19-grafana.sh, novos arquivos do Netdata
+para o monitoramento do ElasticSearch, MongoDB, Redis e do Docker acréscentado no script: 13-netdata.sh
 
 03/02/2022 - Robson Vaamonde - Correção do HTTPS no script: 01-openssh.sh do acesso ao Shell-In-a-Box, melhoria no
 arquivo de Banner: issue.net adicionado a Lei LGPD (Lei Geral de Proteção de Dados), melhorias nos arquivos da placa
