@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 21/01/2022
-# Versão: 0.03
+# Data de atualização: 03/02/2022
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NFS Server v4.x
 #
@@ -175,16 +175,16 @@ echo -e "Atualizando os arquivos de configuração do NFS Server, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
-	mv -v /etc/idmap.conf /etc/idmap.conf.old &>> $LOG
+	mv -v /etc/idmapd.conf /etc/idmapd.conf.old &>> $LOG
 	mv -v /etc/exports /etc/exports.old &>> $LOG
-	cp -v conf/nfs/{idmap.conf,exports} /etc/ &>> $LOG
+	cp -v conf/nfs/{idmapd.conf,exports} /etc/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração idmap.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração idmapd.conf, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /etc/idmap.conf
+	vim /etc/idmapd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

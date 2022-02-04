@@ -44,7 +44,7 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
 27-bacula.sh          -v0.03		- Testado e homologado no dia 12/01/2022
 28-graylog.sh         -v0.03		- Testado e homologado no dia 12/01/2022
 29-postgresql.sh      -v0.03		- Testado e homologado no dia 12/01/2022
-30-nfs.sh             -v0.03		- Testado e homologado no dia 21/01/2022
+30-nfs.sh             -v0.04		- Testado e homologado no dia 03/02/2022
 31-webdav.sh          -v0.04		- Testado e homologado no dia 21/01/2022
 32-nextcloud.sh       -v0.03		- Testado e homologado no dia 21/01/2022
 33-asterisk.sh        -v0.03		- Testado e homologado no dia 21/01/2022

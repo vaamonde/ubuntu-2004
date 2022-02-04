@@ -1,0 +1,19 @@
+#Install Prometheus Ubuntu Server 20.04.3 LTS
+#Link: https://www.vultr.com/docs/install-prometheus-server-on-ubuntu-20-04/
+
+mkdir -pv /etc/prometheus
+mkdir -pv /var/lib/prometheus
+wget -O prometheus.tar.gz https://github.com/prometheus/prometheus/releases/download/v2.33.1/prometheus-2.33.1.linux-amd64.tar.gz
+tar -zxvf prometheus.tar.gz
+cp -Rv prometheus*/{prometheus,promtool} /usr/local/bin/
+cp -Rv prometheus*/{consoles/,console_libraries/,prometheus.yml} /etc/prometheus/
+prometheus --version
+promtool --version
+groupadd --system prometheus
+useradd -s /sbin/nologin --system -g prometheus prometheus
+chown -Rv prometheus:prometheus /etc/prometheus/ /var/lib/prometheus/
+chmod -Rv 775 /etc/prometheus/ /var/lib/prometheus/
+cp -v conf/prometheus/prometheus.service /etc/systemd/system/prometheus.service
+systemctl enable prometheus
+systemctl start prometheus
+systemctl status prometheus

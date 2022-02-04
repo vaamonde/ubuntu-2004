@@ -115,6 +115,7 @@ clear
 echo
 #
 echo -e "Instalação do ownCloud no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo ownCloud.: TCP 80 ou 443"
 echo -e "Após a instalação do ownCloud acessar a URL: http://own.$(hostname -d | cut -d ' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5

@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 13/01/2022
-Versão: 0.11
+Data de atualização: 04/02/2022
+Versão: 0.13
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0013 - Falha do Virtual Host do Nextcloud referente ao arquivo: nextcloud.conf do Apache2, erro: AH0056: Syntax error on
+line 42, DAV not allowed in <VirtualHost> context, retirado as linhas do DAV Off do IfModule mod_dav.c e colocado a opção
+do DAV Off no bloco Directory /var/www/html/own. 
+
 0012 - Falha na compilação do Perl no script do OCS Inventory: perl: warning: Falling back to the standard locale ("C")
 correção do Locale para pt_BR.UTF-8 nas variáveis: LANGUAGE = "pt_BR.UTF-8", LC_ALL = "pt_BR.UTF-8" e LANG = "pt_BR.UTF-8"
 aplicada no script: 05-ntp.sh

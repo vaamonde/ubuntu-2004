@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 21/01/2022
-# Versão: 0.04
+# Data de atualização: 04/02/2022
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
@@ -107,6 +107,7 @@ clear
 echo
 #
 echo -e "Configuração do Webdav no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo Webdav.: TCP 443"
 echo -e "Após a instalação do Webdav acessar a URL: https://webdav.$(hostname -d | cut -d' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -211,7 +212,7 @@ echo -e "Habilitando o Virtual Host do Webdav no Apache2, aguarde..."
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o usuário de acesso ao Webdav, aguarde..."
+echo -e "Criando o usuário: $USERWEBDAV do Webdav, senha padrão: $PASSWORDWEBDAV, aguarde..."
 	htdigest /var/run/apache2/webdav/users.password $REALWEBDAV $USERWEBDAV
 echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5

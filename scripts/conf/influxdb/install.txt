@@ -1,0 +1,12 @@
+#Install InfluxDB Ubuntu Server 20.04.3 LTS
+#Link: https://www.vultr.com/docs/how-to-install-influxdb-on-ubuntu-20-04
+
+curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+cp -v conf/influxdb/influxdb.list /etc/apt/sources.list.d/influxdb.list
+apt update
+install influxdb
+systemctl start influxdb
+systemctl status influxdb
+influx
+	CREATE USER admin WITH PASSWORD 'EXAMPLE_PASSWORD' WITH ALL PRIVILEGES
+	quit

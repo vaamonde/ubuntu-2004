@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 03/02/2022
-Versão: 0.36
+Data de atualização: 04/02/2022
+Versão: 0.37
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+04/02/2022 - Robson Vaamonde - Correção da falha do DAV Off no Virtualhost do Nextcloud do script: 32-nextcloud.sh,
+correção feita no arquivo de configuração: nextcloud.conf do Virtualhost do Apache2, criação dos scripts para a 
+isntalação e configuração do Prometheus e do InfluxDB.
+
 03/02/2022 - Robson Vaamonde - Correção do HTTPS no script: 01-openssh.sh do acesso ao Shell-In-a-Box, melhoria no
 arquivo de Banner: issue.net adicionado a Lei LGPD (Lei Geral de Proteção de Dados), melhorias nos arquivos da placa
 de rede Netplan: 50-cloud-init.yaml e 00-installer-config.yaml com separação/comentário nas linhas para facilitar a
@@ -19,7 +23,8 @@ leitura das configurações, criado o arquivo: named.conf.default-zones do Bind9
 copiar o arquivo para o diretório: /etc/bind e editar o mesmo no script: 03-dns.sh, melhoria na documentação de acesso
 ao SSH Server no GNU/Linux e no Windows, melhoria no script: 08-openssl.sh, correção da linha de status de serviço do
 Apache2 e melhoria no nome de domínio do link de download do certificado do CA, atualização da versão do GLPI v9.5.7
-no arquivo: 00-parametros.sh.
+no arquivo: 00-parametros.sh, correção da falha de atualização e edição do arquivo: idmapd.conf no script: 30-nfs.sh,
+melhoria no script: 31-webdav.sh na criação do usuário.
 
 02/02/2022 - Robson Vaamonde - Correção da falha de edição do arquivo: 50-default.conf no script: 01-openssh.sh devido
 a falta da / "barra" na linha de cópia do arquivo, alteração da variável: FQDNSERVER no arquivo: 00-parametros.sh,
