@@ -1,0 +1,16 @@
+[Unit]
+Description=Netdisco Daemon Service
+AssertFileIsExecutable=/home/netdisco/bin/netdisco-daemon
+After=syslog.target network-online.target
+ 
+[Service]
+Type=forking
+User=netdisco
+Group=netdisco
+ExecStart=/home/netdisco/bin/netdisco-daemon start
+ExecStop=/home/netdisco/bin/netdisco-daemon stop
+Restart=on-failure
+RestartSec=60
+ 
+[Install]
+WantedBy=multi-user.target

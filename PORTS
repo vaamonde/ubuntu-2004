@@ -20,7 +20,7 @@ Hostname: ptispo01ws01
 Domain: pti.intra
 
 SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
-01-openssh.sh --------------> TCP 22 (sshd) e TCP 4200 (shellinab HTTPS)
+01-openssh.sh --------------> TCP 22 (sshd) e TCP 4200 (shellinaboxd HTTPS)
 02-dhcp.sh -----------------> UDP 67 (dhcpd)
 03-dns.sh ------------------> TCP 53 (named), TCP 53 (systemd-r), TCP 953 (named), UDP 53 (systemd-r) e UDP 53 (named)
 04-dhcpdns.sh --------------> UDP 67 (dhcpd), TCP 53 (named), TCP 53 (systemd-r), TCP 953 (named) e UDP 53 (named)
