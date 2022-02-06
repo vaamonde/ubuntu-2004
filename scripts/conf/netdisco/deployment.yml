@@ -1,0 +1,99 @@
+#
+# NETDISCO 2 CONFIGURATION FILE
+#
+# Settings in this file override share/config.yml
+#
+# https://github.com/netdisco/netdisco/wiki/Configuration has
+# in depth explanations about each setting.
+
+# ------------------
+# ESSENTIAL SETTINGS
+# ------------------
+
+database:
+  name: 'netdisco'
+  user: 'netdisco'
+  pass: 'netdisco'
+  #host: 'localhost'
+
+# --------------------
+# RECOMMENDED SETTINGS
+# --------------------
+
+# Device authentication settings
+# define snmp communities and ssh credentials here
+# ````````````````````````````````````````````````
+device_auth:
+  - tag: 'default_v2_readonly'
+    community: 'public'
+    read: true
+    write: false
+#  - tag: 'default_v2_for_write'
+#    community: 'private'
+#    read: false
+#    write: true
+
+# will be stripped from fqdn when displayed in the web UI
+# also, do not forget the leading dot.
+# ```````````````````````````````````````````````````````
+domain_suffix: ['.pri.intra']
+
+# when serving over HTTPS this should be uncommented (enabled)
+# ````````````````````````````````````````````````````````````
+#session_secure: true
+
+# ¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸
+#
+# SOME MORE INTERESTING SETTINGS WHERE THE DEFAULTS ARE PROBABLY OKAY
+#
+# ¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸
+
+
+# discover Wireless Access Points, but not IP Phones
+# usually these are visible as device neighbors but don't support
+# SNMP, which just clogs up the job queue.
+# ```````````````````````````````````````````````````````````````
+#discover_waps: true
+#discover_phones: false
+
+# this is the schedule for automatically keeping netdisco up-to-date;
+# these are good defaults, so only uncomment if needing to change.
+# (or set "schedule: null" if you wish to disable the scheduler)
+# ````````````````````````````````````````````````````````````````````
+#schedule:
+#  discoverall:
+#    when: '5 7 * * *'
+#  macwalk:
+#    when:
+#      min: 20
+#  arpwalk:
+#    when:
+#      min: 50
+#  nbtwalk:
+#    when: '0 8,13,21 * * *'
+#  expire:
+#    when: '30 23 * * *'
+#  makerancidconf: null
+
+# number of SNMP workers to run in parallel (in netdisco-backend).
+# the default is twice the number of CPU cores. increase this if
+# your system has few cores and the schedule is taking too long.
+# ```````````````````````````````````````````````````````````````
+#workers:
+#  tasks: 'AUTO * 2'
+
+# number of parallel DNS queries for node names
+# `````````````````````````````````````````````
+#dns:
+#  max_outstanding: 50
+
+# set to true to globally disable authentication/login.
+# create a user called "guest" if you want to assign port/admin rights.
+# `````````````````````````````````````````````````````````````````````
+#no_auth: false
+
+# set to false if you MUST maintain backwards compatibility
+# with Netdisco 1.x web frontend.
+# `````````````````````````````````````````````````````````
+#safe_password_store: true
+
