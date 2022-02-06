@@ -187,6 +187,7 @@ sleep 5
 #
 echo -e "Criando os diretórios Base do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando su: - (login), -c (command)
 	# opção do comando mkdir: -v (verbose)
 	su - $NETDISCOUSER -c "mkdir -v /home/netdisco/{bin,environments}" &>> $LOG
 echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
@@ -204,29 +205,26 @@ sleep 5
 #
 echo -e "Instalando o Netdisco, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando su: - (login), -c (command)
 	su - $NETDISCOUSER -c "curl -L $NETDISCOINSTALL" &>> $LOG
 echo -e "Netdisco instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando os Links Simbólicos do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando su: - (login), -c (command)
 	# opção do comando ln: -s (symbolic), -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	su - $NETDISCOUSER -c "ln -sv /home/netdisco/perl5/bin/{localenv,netdisco-*} /home/netdisco/bin/" &>> $LOG
 echo -e "Links Simbólicos criados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o arquivo de configuração do Netdisco, aguarde..."
+echo -e "Atualizando os arquivos de configuração do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	cp -v conf/netdisco/deployment.yml /home/netdisco/environments &>> $LOG
+	# opção do comando cp: -v (verbose)
+	cp -v conf/netdisco/deployment.yml /home/netdisco/environments/ &>> $LOG
+	cp -v conf/netdisco/netdisco-* /etc/systemd/system/ &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Editando o arquivo de configuração deployment.yml, aguarde..."
-	# opção do comando read: -s (Do not echo keystrokes)
-	read -s
-	vim /home/netdisco/environments/deployment.yml
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Alterando as permissões dos Diretórios e Arquivos do Netdisco, aguarde..."
@@ -238,39 +236,49 @@ echo -e "Alterando as permissões dos Diretórios e Arquivos do Netdisco, aguard
 echo -e "Alteração feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Editando o arquivo de configuração deployment.yml, aguarde..."
+	# opção do comando read: -s (Do not echo keystrokes)
+	# opção do comando su: - (login), -c (command)
+	read -s
+	su - $NETDISCOUSER -c "vim /home/netdisco/environments/deployment.yml"
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Fazendo o Deployment do Netdisco, pressione <Enter> para continuar.\n"
 echo -e "CUIDADO!!! com as opções que serão solicitadas no decorrer da instalação do Netdisco."
 echo -e "Veja a documentação das opções de instalação a partir da linha: 20 do script $0"
 	# opção do comando read: -s (Do not echo keystrokes)
+	# opção do comando su: - (login), -c (command)
 	read -s
-
-echo -e "Reinicializando o serviço do Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	systemctl restart apache2 &>> $LOG
-echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+		su - $NETDISCOUSER
+echo -e "Deployment feito sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o serviço do Apache2, aguarde..."
-	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
+echo -e "Iniciando os Serviços do Netdisco, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl enable netdisco-daemon &>> $LOG
+	systemctl enable netdisco-web &>> $LOG
+	systemctl start netdisco-daemon &>> $LOG
+	systemctl start netdisco-web &>> $LOG
+echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do Netdisco, aguarde..."
+	echo -e "Netdisco....: $(systemctl status netdisco-daemon | grep Active)"
+	echo -e "Netdisco-Web: $(systemctl status apacnetdisco-webhe2 | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do Apache2, aguarde..."
+echo -e "Verificando a porta de conexão do Netdisco, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:80 -sTCP:LISTEN
+	lsof -nP -iTCP:5000 -sTCP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o Virtual Host do Nextcloud no Apache2, aguarde..."
-	# opção do comando apachectl: -s (a synonym)
-	apache2ctl -S | grep next.$DOMINIOSERVER
-echo -e "Virtual Host verificado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Instalação do Nextcloud feita com Sucesso!!!"
+echo -e "Instalação do Netdisco feita com Sucesso!!!"
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
