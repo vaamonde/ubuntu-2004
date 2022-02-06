@@ -18,7 +18,12 @@
 # de dados PostgreSQL usando SNMP, CLI ou APIs de dispositivo.
 #
 # MENSAGENS QUE SERÃO SOLICITADAS NA INSTALAÇÃO DO NETDISCO:
-# 01.
+# 01. So, is all of the above in place? [y/N]:  y <Enter>
+# 02. Would you like to deploy the database schema? [y/N]: y <Enter>
+# 03. Username: netdisco <Enter>
+# 04. Password: netdisco <Enter>
+# 05. Download and update vendor MAC prefixes (OUI data)? [y/N]: y <Enter>
+# 06. Download and update MIB files? [y/N]: y <Enter>
 #
 # Site Oficial do Netdisco: http://netdisco.org/
 #
