@@ -7,28 +7,20 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
-# Data de criação: 09/01/2022
-# Data de atualização: 21/01/2022
-# Versão: 0.03
+# Data de criação: 06/02/2022
+# Data de atualização: 06/02/2022
+# Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Nextcloud v23.x
+# Testado e homologado para a versão do Netdisco v2.x
 #
-# Nextcloud é uma plataforma de colaboração em nuvem de código aberto que possibilita a 
-# criação de servidores de hospedagem de arquivos privados ou empresariais. Seu 
-# desenvolvimento começou em julho de 2016, por Frank Karlitschek e outros ex-funcionários 
-# da OwnCloud Inc., quando foi iniciado como uma bifurcação, ou fork do OwnCloud.
+# O Netdisco é uma ferramenta de gerenciamento de rede adequada para redes pequenas 
+# a muito grandes. Os dados de endereço IP e endereço MAC são coletados em um banco 
+# de dados PostgreSQL usando SNMP, CLI ou APIs de dispositivo.
 #
-# Informações que serão solicitadas na configuração via Web do Nextcloud
-# 		Nome do usuário: admin
-# 		Senha: pti@2018
-# 		Pasta de dados: /var/www/html/nextcloud
-# 		Usuário do banco de dados: nextcloud
-# 		Senha do banco de dados: nextcloud
-# 		Nome do banco de dados: nextcloud
-# 		Host do banco de dados: localhost: 
-#	Concluir Configuração
+# MENSAGENS QUE SERÃO SOLICITADAS NA INSTALAÇÃO DO NETDISCO:
+# 01.
 #
-# Site Oficial do Nextcloud: https://nextcloud.com/
+# Site Oficial do Netdisco: http://netdisco.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -67,13 +59,28 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		exit 1
 fi
 #
-# Verificando se as dependências do Nextcloud estão instaladas
+# Verificando se a porta 5000 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), -u (UDP), &> redirecionador de saída de erro
+if [ "$(nc -vzu 127.0.0.1 $PORTNETDISCO &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTNETDISCO já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTNETDISCO está disponível, continuando com o script..."
+		sleep 5
+fi
+#
+# Verificando se as dependências do Netdisco estão instaladas
 # opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Nextcloud, aguarde... "
-	for name in $NEXTCLOUDDEP
+echo -n "Verificando as dependências do Netdisco, aguarde... "
+	for name in $NETDISCODEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -82,8 +89,7 @@ echo -n "Verificando as dependências do Nextcloud, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+            echo -en "Recomendo utilizar o script: 29-postgresql.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -103,7 +109,7 @@ if [ -f $LOG ]
 		sleep 5
 fi
 #
-# Script de instalação do Nextcloud no GNU/Linux Ubuntu Server 20.04.x
+# Script de instalação do Netdisco no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
 # opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
@@ -112,9 +118,9 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação do Nextcloud no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Netcloud.: TCP 80 ou 443"
-echo -e "Após a instalação do Nextcloud acessar a URL: http://next.$(hostname -d | cut -d ' ' -f1)/\n"
+echo -e "Instalação do Netdisco no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo Netdisco.: TCP 5000"
+echo -e "Após a instalação do Netdisco acessar a URL: http://$(hostname -d | cut -d ' ' -f1):5000/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -162,90 +168,82 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configuração do Nextcloud, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do Netdisco, aguarde...\n"
 sleep 5
 #
-echo -e "Habilitando os módulos do Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando echo |: faz a função de Enter
-	# opção do comando a2dismod: desabilitar módulos do Apache2
-	# opção do comando a2enmod: habilitar módulos do Apache2
-	echo | a2dismod autoindex &>> $LOG
-	a2enmod rewrite &>> $LOG
-	a2enmod headers &>> $LOG
-	a2enmod env &>> $LOG
-	a2enmod dir &>> $LOG
-	a2enmod mime &>> $LOG
-	a2enmod setenvif &>> $LOG
-echo -e "Módulos habilitados com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Instalando as dependências do Nextcloud, aguarde..."
+echo -e "Instalando as dependências do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install $NEXTCLOUDINSTALLDEP &>> $LOG
+	apt -y $NETDISCOINSTALLDEP &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download do Nextcloud do site Oficial, aguarde..."
+echo -e "Criando o usuário do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando rm: -v (verbose)
-	# opção do comando wget: -O (output document file)
-	rm -v nextcloud.tar.bz2 &>> $LOG
-	wget $NEXTCLOUDINSTALL -O nextcloud.tar.bz2 &>> $LOG
-echo -e "Download feito com sucesso!!!, continuando com o script...\n"
+	# opção do comando useradd: -m (create-home) -p (password), -s (bash)
+	useradd -m -p x -s /bin/bash $NETDISCOUSER &>> $LOG
+echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Descompactando o arquivo do Nextcloud, aguarde..."
+echo -e "Criando os diretórios Base do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando tar: -j (bzip2), -x (extract), -v (verbose), -f (file)
-	tar -jxvf nextcloud.tar.bz2 &>> $LOG
-echo -e "Arquivo descompactado com sucesso!!!, continuando com o script...\n"
+	# opção do comando mkdir: -v (verbose)
+	su - $NETDISCOUSER -c "mkdir -v /home/netdisco/{bin,environments}" &>> $LOG
+echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Movendo o diretório do Nextcloud para o Apache2, aguarde..."
+echo -e "Criando o Usuário e o Banco de Dados do Netdisco, Senha padrão: $NETDISCOPASSWORD, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mv: -v (verbose)
-	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
-	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)
-	mv -v nextcloud/ /var/www/html/next/ &>> $LOG
-	chown -Rv www-data:www-data /var/www/html/next/ &>> $LOG
-	chmod -Rv 755 /var/www/html/next/ &>> $LOG
-echo -e "Diretório movido com sucesso!!!, continuando com o script...\n"
+	# opção do comando su: - (login), -c (command)
+	# opção do comando createuser: -D (no-createdb), -R (no-createrole), -S (no-superuser), -P (pwprompt)
+	# opção do comando createdb: -O (owner)
+	su - postgres -c "createuser -DRSP $NETDISCOUSER"
+	su - postgres -c "createdb -O $NETDISCOUSER $DATABASE_NETDISCO"
+echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o Banco de Dados do Nextcloud, aguarde..."
-	# opção do comando: &>> (redirecionar de saída padrão)
-	# opção do comando mysql: -u (user), -p (password), -e (execute)
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_NEXTCLOUD" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_NEXTCLOUD" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_NEXTCLOUD" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_NEXTCLOUD" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_NEXTCLOUD" mysql &>> $LOG
-echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Atualizando os arquivos de configuração do Nextcloud, aguarde..."
+echo -e "Instalando o Netdisco, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando cp: -v (verbose)
-	cp -v conf/nextcloud/nextcloud.conf /etc/apache2/sites-available/ &>> $LOG
-echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
+	su - $NETDISCOUSER -c "curl -L $NETDISCOINSTALL" &>> $LOG
+echo -e "Netdisco instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do nextcloud.conf, pressione <Enter> para continuar"
+echo -e "Criando os Links Simbólicos do Netdisco, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando ln: -s (symbolic), -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
+	su - $NETDISCOUSER -c "ln -sv /home/netdisco/perl5/bin/{localenv,netdisco-*} /home/netdisco/bin/" &>> $LOG
+echo -e "Links Simbólicos criados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando o arquivo de configuração do Netdisco, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	cp -v conf/netdisco/deployment.yml /home/netdisco/environments &>> $LOG
+echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração deployment.yml, aguarde..."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /etc/apache2/sites-available/nextcloud.conf
+	vim /home/netdisco/environments/deployment.yml
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando o Virtual Host do Nextcloud no Apache2, aguarde..."
+echo -e "Alterando as permissões dos Diretórios e Arquivos do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
-	a2ensite nextcloud &>> $LOG
-echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+	# opção do comando chmod: 600 (User=RW-, Group=---, Other=---)
+	# opção do comando chown: - R (recursive), -v (verbose), netdisco (user), netdisco (group)
+	chmod 600 /home/netdisco/environments/deployment.yml &>> $LOG
+	chown -Rv netdisco.netdisco /home/netdisco/environments/deployment.yml &>> $LOG
+echo -e "Alteração feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Fazendo o Deployment do Netdisco, pressione <Enter> para continuar.\n"
+echo -e "CUIDADO!!! com as opções que serão solicitadas no decorrer da instalação do Netdisco."
+echo -e "Veja a documentação das opções de instalação a partir da linha: 20 do script $0"
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart apache2 &>> $LOG

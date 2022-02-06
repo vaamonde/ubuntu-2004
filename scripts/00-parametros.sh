@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 03/02/2022
-# Versão: 0.43
+# Data de atualização: 06/02/2022
+# Versão: 0.44
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1493,4 +1493,36 @@ COUNTRYCODE="55"
 #
 # Variável da porta de conexão do Protocolo SIP (Session Initiation Protocol)
 PORTSIP="5060"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 34-netdisco.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema de Rede Netdisco utilizados nesse script
+# 01. 
+#
+# Arquivos de monitoramento (log) do Serviço de Rede Netdisco utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de Rede Netdisco
+#
+# Variáveis de Download do Netdisco (Link atualizado no dia 06/02/2022)
+NETDISCOINSTALL="https://cpanmin.us/ | perl - --notest --local-lib ~/perl5 App::Netdisco"
+#
+# Variável da instalação das dependências do Netdisco
+NETDISCOINSTALLDEP="libdbd-pg-perl libsnmp-perl libssl-dev libio-socket-ssl-perl curl \
+build-essential"
+#
+# Variável das dependências do laço de loop do Netdisco
+NETDISCODEP="postgresql postgresql-contrib postgresql-client"
+#
+# Variáveis do Usuários e Senha padrão do Netdisco
+NETDISCOUSER="netdisco"
+NETDISCOPASSWORD="netdisco"
+#
+# Variáveis da criação do Banco de Dados no PostgreSQL do Netdisco
+DATABASE_NETDISCO="netdisco"
+#
+# Variável da porta de conexão do Netdisco
+PORTNETDISCO="5000"
 #
