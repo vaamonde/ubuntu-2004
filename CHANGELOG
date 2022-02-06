@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 04/02/2022
-Versão: 0.37
+Data de atualização: 06/02/2022
+Versão: 0.38
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+06/02/2022 - Robson Vaamonde - Criação do script: 34-netdisco.sh, acréscimo das opções de configuração do Netdisco no 
+arquivo: 00-parametros.sh, customização do arquivo de Deployment: deployment.yml do Netdisco, criação dos arquivos do
+SystemD para a inicialização automática do Netdisco.
+
 04/02/2022 - Robson Vaamonde - Correção da falha do DAV Off no Virtualhost do Nextcloud do script: 32-nextcloud.sh,
 correção feita no arquivo de configuração: nextcloud.conf do Virtualhost do Apache2, criação dos scripts para a 
 instalação e configuração do Prometheus e do InfluxDB integrados no script: 19-grafana.sh, novos arquivos do Netdata

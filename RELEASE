@@ -7,14 +7,14 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/10/2021
-Data de atualização: 03/02/2022
-Versão: 0.13
+Data de atualização: 06/02/2022
+Versão: 0.14
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 Comando para verificar todas as versões dos scripts: grep 'Versão:' *.sh
 Comando para verificar todas as datas de atualização dos scripts: grep 'Data de atualização:' *.sh
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh      -v0.43		- Customizado até o script: 33-asterisk.sh no dia 03/02/2022
+00-parametros.sh      -v0.44		- Customizado até o script: 34-netdisco.sh no dia 06/02/2022
 01-openssh.sh         -v0.21		- Testado e homologado no dia 03/02/2022
 02-dhcp.sh            -v0.13		- Testado e homologado no dia 21/01/2022
 03-dns.sh             -v0.15		- Testado e homologado no dia 03/02/2022
@@ -48,3 +48,4 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
 31-webdav.sh          -v0.04		- Testado e homologado no dia 21/01/2022
 32-nextcloud.sh       -v0.03		- Testado e homologado no dia 21/01/2022
 33-asterisk.sh        -v0.03		- Testado e homologado no dia 21/01/2022
+34-netdisco.sh        -v0.01		- Testado e homologado no dia 06/02/2022

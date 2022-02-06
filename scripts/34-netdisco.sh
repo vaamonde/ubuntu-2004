@@ -17,13 +17,15 @@
 # a muito grandes. Os dados de endereço IP e endereço MAC são coletados em um banco 
 # de dados PostgreSQL usando SNMP, CLI ou APIs de dispositivo.
 #
-# MENSAGENS QUE SERÃO SOLICITADAS NA INSTALAÇÃO DO NETDISCO:
-# 01. So, is all of the above in place? [y/N]:  y <Enter>
-# 02. Would you like to deploy the database schema? [y/N]: y <Enter>
-# 03. Username: netdisco <Enter>
-# 04. Password: netdisco <Enter>
-# 05. Download and update vendor MAC prefixes (OUI data)? [y/N]: y <Enter>
-# 06. Download and update MIB files? [y/N]: y <Enter>
+# MENSAGENS QUE SERÃO SOLICITADAS NA INSTALAÇÃO (DEPLOYMENT) DO NETDISCO:
+# 01. digitar o comando: netdisco-deploy <Enter>
+# 02. So, is all of the above in place? [y/N]:  y <Enter>
+# 03. Would you like to deploy the database schema? [y/N]: y <Enter>
+# 04. Username: netdisco <Enter>
+# 05. Password: netdisco <Enter>
+# 06. Download and update vendor MAC prefixes (OUI data)? [y/N]: y <Enter>
+# 07. Download and update MIB files? [y/N]: y <Enter>
+# 08. digitar o comando para sair: exit <Enter>
 #
 # Site Oficial do Netdisco: http://netdisco.org/
 #
@@ -179,7 +181,7 @@ sleep 5
 echo -e "Instalando as dependências do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y $NETDISCOINSTALLDEP &>> $LOG
+	apt -y install $NETDISCOINSTALLDEP &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -187,13 +189,14 @@ echo -e "Criando o usuário do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando useradd: -m (create-home) -p (password), -s (bash)
 	useradd -m -p x -s /bin/bash $NETDISCOUSER &>> $LOG
-echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
+echo -e "Usuário e Banco de Dados criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando os diretórios Base do Netdisco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando su: - (login), -c (command)
 	# opção do comando mkdir: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	su - $NETDISCOUSER -c "mkdir -v /home/netdisco/{bin,environments}" &>> $LOG
 echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -211,6 +214,7 @@ sleep 5
 echo -e "Instalando o Netdisco, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando su: - (login), -c (command)
+	# opção do comando curl: -L (location)
 	su - $NETDISCOUSER -c "curl -L $NETDISCOINSTALL" &>> $LOG
 echo -e "Netdisco instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -229,7 +233,7 @@ echo -e "Atualizando os arquivos de configuração do Netdisco, aguarde..."
 	# opção do comando cp: -v (verbose)
 	cp -v conf/netdisco/deployment.yml /home/netdisco/environments/ &>> $LOG
 	cp -v conf/netdisco/netdisco-* /etc/systemd/system/ &>> $LOG
-echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Alterando as permissões dos Diretórios e Arquivos do Netdisco, aguarde..."
@@ -251,12 +255,13 @@ sleep 5
 #
 echo -e "Fazendo o Deployment do Netdisco, pressione <Enter> para continuar.\n"
 echo -e "CUIDADO!!! com as opções que serão solicitadas no decorrer da instalação do Netdisco."
+echo -e "Digite o comando: netdisco-deploy <Enter> para a instalação e: exit <Enter> para sair."
 echo -e "Veja a documentação das opções de instalação a partir da linha: 20 do script $0"
 	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando su: - (login), -c (command)
 	read -s
 		su - $NETDISCOUSER
-echo -e "Deployment feito sucesso!!!, continuando com o script...\n"
+echo -e "Deployment do Netdisco feito sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Iniciando os Serviços do Netdisco, aguarde..."
@@ -270,7 +275,7 @@ sleep 5
 #
 echo -e "Verificando o serviço do Netdisco, aguarde..."
 	echo -e "Netdisco....: $(systemctl status netdisco-daemon | grep Active)"
-	echo -e "Netdisco-Web: $(systemctl status apacnetdisco-webhe2 | grep Active)"
+	echo -e "Netdisco-Web: $(systemctl status netdisco-web | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
