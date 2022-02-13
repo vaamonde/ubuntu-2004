@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 13/10/2021
-# Data de atualização: 18/01/2022
-# Versão: 0.14
+# Data de atualização: 13/02/2022
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -117,14 +117,14 @@ fi
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
 # opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
-if [ "$(nc -vz 127.0.0.1 $PORTPAPACHE &> /dev/null ; echo $?)" == "0" ]
+if [ "$(nc -vz 127.0.0.1 $PORTAPACHE &> /dev/null ; echo $?)" == "0" ]
 	then
-		echo -e "A porta: $PORTPAPACHE já está sendo utilizada nesse servidor."
+		echo -e "A porta: $PORTAPACHE já está sendo utilizada nesse servidor."
 		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
 		sleep 5
 		exit 1
 	else
-		echo -e "A porta: $PORTPAPACHE está disponível, continuando com o script..."
+		echo -e "A porta: $PORTAPACHE está disponível, continuando com o script..."
 		sleep 5
 fi
 if [ "$(nc -vz 127.0.0.1 $PORTMYSQL &> /dev/null ; echo $?)" == "0" ]
@@ -249,7 +249,7 @@ echo -e "Configurando as variáveis do Debconf do MySQL para o Apt, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando | (piper): (Conecta a saída padrão com a entrada padrão de outro comando)
 	echo "mysql-server-8.0 mysql-server/root_password password $SENHAMYSQL" | debconf-set-selections
-	echo "mysql-server-8.0 mysql-server/root_password_again password $AGAIN" | debconf-set-selections
+	echo "mysql-server-8.0 mysql-server/root_password_again password $AGAINMYSQL" | debconf-set-selections
 	debconf-show mysql-server-8.0 &>> $LOG
 echo -e "Variáveis configuradas com sucesso!!!, continuando com o script...\n"
 sleep 5

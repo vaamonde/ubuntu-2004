@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 06/02/2022
-# Versão: 0.44
+# Data de atualização: 13/02/2022
+# Versão: 0.45
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -307,7 +307,7 @@ USERMYSQL="root"
 #
 # Variáveis da senha e confirmação da senha do usuário Root do Mysql 
 SENHAMYSQL="pti@2018"
-AGAIN=$SENHAMYSQL
+AGAINMYSQL=$SENHAMYSQL
 #
 # Variáveis de configuração e liberação da conexão remota para o usuário Root do MySQL
 # opções do comando CREATE: create (criar), user (criação de usuário), user@'%' (usuário @ localhost), 
@@ -344,7 +344,7 @@ libnet-ip-perl libgeoip1"
 PHPMYADMININSTALL="phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json libmcrypt-dev pwgen"
 #
 # Variável da porta de conexão padrão do Apache2 Server
-PORTPAPACHE="80"
+PORTAPACHE="80"
 #
 # Variável da porta de conexão padrão do MySQL Server
 PORTMYSQL="3306"

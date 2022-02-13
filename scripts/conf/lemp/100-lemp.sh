@@ -1,5 +1,18 @@
 #!/bin/bash
-
+# Autor: Robson Vaamonde
+# Site: www.procedimentosemti.com.br
+# Facebook: facebook.com/ProcedimentosEmTI
+# Facebook: facebook.com/BoraParaPratica
+# YouTube: youtube.com/BoraParaPratica
+# Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+# Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+# Github: https://github.com/vaamonde
+# Data de criação: 13/02/2022
+# Data de atualização: 13/02/2022
+# Versão: 0.01
+# Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
+# Testado e homologado para a versão do NGINX v, MariaDB v, PHP v7.4.x, 
+# Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
 #
 # LEMP é um grupo de softwares que são usados para exibir páginas ou aplicativos Web 
 # dinâmicos escritos em PHP/PERL/PYTHON. Este é um acrônimo de sistema operacional Linux, 
@@ -37,10 +50,18 @@
 # em 1991. Atualmente, possui um modelo de desenvolvimento comunitário, aberto e gerenciado 
 # pela organização sem fins lucrativos Python Software Foundation.
 #
+# Debconf - Sistema de configuração de pacotes Debian
+# Site: http://manpages.ubuntu.com/manpages/bionic/man7/debconf.7.html
+# Site: http://manpages.ubuntu.com/manpages/bionic/man1/debconf-set-selections.1.html
+#
 # PhpMyAdmin é um aplicativo web livre e de código aberto desenvolvido em PHP para administração 
 # do MySQL ou MariaDB pela Internet. A partir deste sistema é possível criar e remover bases de 
 # dados, criar, remover e alterar tabelas, inserir, remover e editar campos, executar códigos 
 # SQL e manipular campos chaves.
+#
+# O módulo do PHP Mcrypt na versão 7.2 está descontinuado, para fazer sua instalação é 
+# recomendado utilizar o comando o Pecl e adicionar o repositório pecl.php.net, a 
+# instalação e baseada em compilação do módulo.
 #
 # Site oficial: https://www.nginx.com/
 # Site oficial: https://mariadb.org/
@@ -78,29 +99,184 @@ APP_PASS=$PASSWORD
 WEBSERVER="localhost"
 #
 
+
 #
-# Script de instalação do LEMP-Server no GNU/Linux Ubuntu Server 18.04.x
+# Utilização do MySQL Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	sudo apt update && sudo apt install mysql-client
+#	mysql -u root -p -h pti.intra
+#
+# Utilização do Links2 Client no GNU/Linux
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	sudo apt update && sudo apt install links2
+#	links2 http://pti.intra
+#
+# Arquivo de configuração dos parâmetros utilizados nesse script
+source 00-parametros.sh
+#
+# Configuração da variável de Log utilizado nesse script
+LOG=$LOGSCRIPT
+#
+# Verificando se o usuário é Root e se a Distribuição é >= 20.04.x 
+# [ ] = teste de expressão, && = operador lógico AND, == comparação de string, exit 1 = A maioria 
+# dos erros comuns na execução
+clear
+if [ "$USUARIO" == "0" ] && [ "$UBUNTU" == "20.04" ]
+	then
+		echo -e "O usuário é Root, continuando com o script..."
+		echo -e "Distribuição é >= 20.04.x, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Usuário não é Root ($USUARIO) ou a Distribuição não é >= 20.04.x ($UBUNTU)"
+		echo -e "Caso você não tenha executado o script com o comando: sudo -i"
+		echo -e "Execute novamente o script para verificar o ambiente."
+		exit 1
+fi
+#
+# Verificando o acesso a Internet do servidor Ubuntu Server
+# [ ] = teste de expressão, exit 1 = A maioria dos erros comuns na execução
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -z (scan for listening daemons), -w (timeouts), 1 (one timeout), 443 (port)
+if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "Você tem acesso a Internet, continuando com o script..."
+		sleep 5
+	else
+		echo -e "Você NÃO tem acesso a Internet, verifique suas configurações de rede IPV4"
+		echo -e "e execute novamente este script."
+		sleep 5
+		exit 1
+fi
+#
+# Verificando se as portas 80 e 3306 está sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $PORTNGINX &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTNGINX já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTNGINX está disponível, continuando com o script..."
+		sleep 5
+fi
+if [ "$(nc -vz 127.0.0.1 $PORTMARIADB &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTMARIADB já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTMARIADB está disponível, continuando com o script..."
+		sleep 5
+fi
+#
+# Verificando todas as dependências do LEMP-Server estão instaladas
+# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
+# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
+# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
+# 0 ou 1, -ne = é diferente (NotEqual)
+echo -n "Verificando as dependências do LAMP-Server, aguarde... "
+	for name in $LEMPDEP
+	do
+	[[ $(dpkg -s $name 2> /dev/null) ]] || { 
+			echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
+			deps=1; 
+			}
+done
+	[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
+		echo -en "\nInstale as dependências acima e execute novamente este script\n";
+		echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+		exit 1; 
+		}
+	sleep 5
+#
+# Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
+# OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
+if [ -f $LOG ]
+	then
+		echo -e "Script $0 já foi executado 1 (uma) vez nesse servidor..."
+		echo -e "É recomendado analisar o arquivo de $LOG para informações de falhas ou erros"
+		echo -e "na instalação e configuração do serviço de rede utilizando esse script..."
+		echo -e "Todos os scripts foram projetados para serem executados apenas 1 (uma) vez."
+		sleep 5
+		exit 1
+	else
+		echo -e "Primeira vez que você está executando esse script, tudo OK, agora só aguardar..."
+		sleep 5
+fi
+#
+# Script de instalação e configuração do LAMP-Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
-# opção do comando hostname: -I (all IP address)
-# opção do comando sleep: 5 (seconds)
+# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 # opção do comando cut: -d (delimiter), -f (fields)
-echo -e "Início do script $0 em: `date +%d/%m/%Y-"("%H:%M")"`\n" &>> $LOG
+echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
+echo
 #
-echo -e "Instalação do LEMP-SERVER no GNU/Linux Ubuntu Server 18.04.x\n"
-echo -e "NGINX (HTTP Server) - Servidor de Hospedagem de Páginas Web - Porta 80/443"
-echo -e "Após a instalação do Nginx acessar a URL: http://`hostname -I | cut -d ' ' -f1`/"
-echo -e "Testar a linguagem HTML acessando a URL: http://`hostname -I | cut -d ' ' -f1`/teste.html\n"
-echo -e "MariaDB (SGBD) - Sistemas de Gerenciamento de Banco de Dados - Porta 3306"
-echo -e "Após a instalação do MariaDB acessar o console: mariadb -u root -p\n"
-echo -e "PHP (Personal Home Page - PHP: Hypertext Preprocessor) - Linguagem de Programação Dinâmica para Web"
-echo -e "Após a instalação do PHP acessar a URL: http://`hostname -I | cut -d ' ' -f1`/phpinfo.php\n"
+echo -e "Instalação e configuração do LEMP-SERVER no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo NGINX (NGINX HTTP Server): TCP 80"
+echo -e "Após a instalação do NGINX acessar a URL: http://www.$(hostname -d | cut -d' ' -f1)/"
+echo -e "Testar a linguagem HTML acessando a URL: http://www.$(hostname -d | cut -d' ' -f1)/teste.html\n"
+echo -e "Porta padrão utilizada pelo MariaDB (SGBD): TCP 3306"
+echo -e "Após a instalação do MySQL acessar o console: mariadb -u root -p (senha: $SENHAMYSQL)\n"
+echo -e "PHP (Personal Home Page - PHP: Hypertext Preprocessor)"
+echo -e "Após a instalação do PHP acessar a URL: http://www.$(hostname -d | cut -d' ' -f1)/phpinfo.php\n"
 echo -e "PERL - Linguagem de programação multi-plataforma\n"
 echo -e "PYTHON - Linguagem de programação de alto nível\n"
-echo -e "PhpMyAdmin - Aplicativo desenvolvido em PHP para administração do MariaDB pela Internet"
-echo -e "Após a instalação do PhpMyAdmin acessar a URL: http://`hostname -I | cut -d ' ' -f1`/phpmyadmin\n"
+echo -e "PhpMyAdmin - Aplicativo desenvolvido em PHP para administração do MySQL ou MariaDB"
+echo -e "Após a instalação do PhpMyAdmin acessar a URL: http://www.$(hostname -d | cut -d' ' -f1)/phpmyadmin\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
+sleep 5
+#
+echo -e "Adicionando o Repositório Universal do Apt, aguarde..."
+	# Universe - Software de código aberto mantido pela comunidade:
+	# opção do comando: &>> (redirecionar a saída padrão)
+	add-apt-repository universe &>> $LOG
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Adicionando o Repositório Multiversão do Apt, aguarde..."
+	# Multiverse – Software não suportado, de código fechado e com patente: 
+	# opção do comando: &>> (redirecionar a saída padrão)
+	add-apt-repository multiverse &>> $LOG
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Adicionando o Repositório Restrito do Apt, aguarde..."
+	# Restricted - Software de código fechado oficialmente suportado:
+	# opção do comando: &>> (redirecionar a saída padrão)
+	add-apt-repository restricted &>> $LOG
+echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando as listas do Apt, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	apt update &>> $LOG
+echo -e "Listas atualizadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Atualizando todo o sistema operacional, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando apt: -y (yes)
+	apt -y upgrade &>> $LOG
+	apt -y dist-upgrade &>> $LOG
+	apt -y full-upgrade &>> $LOG
+echo -e "Sistema atualizado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Removendo todos os software desnecessários, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando apt: -y (yes)
+	apt -y autoremove &>> $LOG
+	apt -y autoclean &>> $LOG
+echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Iniciando a Instalação e Configuração do LEMP-Server, aguarde...\n"
 sleep 5
 #
 
@@ -108,8 +284,8 @@ sleep 5
 echo -e "Configurando as variáveis do Debconf do MariaDB para o Apt, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando | (piper): (Conecta a saída padrão com a entrada padrão de outro comando)
-	echo "mariadb-server-10.1 mysql-server/root_password password $PASSWORD" | debconf-set-selections
-	echo "mariadb-server-10.1 mysql-server/root_password_again password $AGAIN" | debconf-set-selections
+	echo "mariadb-server-10.1 mysql-server/root_password password $SENHAMARIADB" | debconf-set-selections
+	echo "mariadb-server-10.1 mysql-server/root_password_again password $AGAINMARIADB" | debconf-set-selections
 	debconf-show mariadb-server-10.1 &>> $LOG
 echo -e "Variáveis configuradas com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -117,16 +293,16 @@ sleep 5
 echo -e "Instalando o LEMP-SERVER, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (bar left) quebra de linha na opção do apt
-	apt -y install nginx mariadb-server mariadb-client mariadb-common php-fpm php-mysql \
-	perl python mcrypt apt-transport-https &>> $LOG
+	apt -y install $LEMPINSTALL
+	#nginx mariadb-server mariadb-client mariadb-common php-fpm php-mysql perl python mcrypt apt-transport-https &>> $LOG
 echo -e "Instalação do LEMP-SERVER feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do PHP do LEMP-SERVER, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (bar left) quebra de linha na opção do apt
-	apt -y install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc \
-	php-zip php-cli php-json php-readline php-imagick php-bcmath php-apcu &>> $LOG
+	apt -y install $LEMPINSTALLDEP
+	#php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip php-cli php-json php-readline php-imagick php-bcmath php-apcu &>> $LOG
 echo -e "Dependências do PHP do LEMP-SERVER feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -163,14 +339,7 @@ echo -e "Atualizando as dependências do PHP para o PhpMyAdmin, aguarde..."
 echo -e "Atualização das dependências feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Aplicando os Patch de Correção do PhpMyAdmin, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando cp: -v (verbose)
-	cp -v conf/sql.lib.php /usr/share/phpmyadmin/libraries/ &>> $LOG
-	cp -v conf/plugin_interface.lib.php /usr/share/phpmyadmin/libraries/ &>> $LOG
-echo -e "Patch de correção aplicados com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
+
 echo -e "Criando o Link Simbólico do PhpMyAdmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando ln: -v (verbose), -s (symbolic)
@@ -178,6 +347,7 @@ echo -e "Criando o Link Simbólico do PhpMyAdmin, aguarde..."
 echo -e "Link simbólico criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+
 echo -e "Copiando os arquivos de teste do PHP phpinfo.php e do HTML teste.html, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
@@ -187,10 +357,7 @@ echo -e "Copiando os arquivos de teste do PHP phpinfo.php e do HTML teste.html, 
 	chown -v www-data.www-data /var/www/html/* &>> $LOG
 echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
 sleep 5
-#
-echo -e "Instalação do LEMP-Server e PhpMyAdmin feito com sucesso!!! Pressione <Enter> para continuar."
-read
-sleep 5
+
 #
 echo -e "Atualizando os arquivos de configuração do Nginx, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
