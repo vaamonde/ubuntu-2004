@@ -7,11 +7,13 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 12/02/2022
-Versão: 0.39
+Data de atualização: 13/02/2022
+Versão: 0.40
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+13/02/2022 - Robson Vaamonde - Correção de PT-BR e nas opções de: ECHO no script: 34-netdisco.sh
+
 12/02/2022 - Robson Vaamonde - Criação e customização do arquivo: vimrc adicionado a opção de número de linhas nas
 configurações do editor de texto VIM, adicionado a cópia do arquivo no script: 01-openssh.sh, sem necessidade de
 edição do arquivo pois é simples sua configuração.

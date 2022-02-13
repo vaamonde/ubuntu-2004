@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 06/02/2022
-# Data de atualização: 06/02/2022
-# Versão: 0.01
+# Data de atualização: 13/02/2022
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdisco v2.x
 #
@@ -69,8 +69,8 @@ fi
 # Verificando se a porta 5000 está sendo utilizada no servidor Ubuntu Server
 # [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
 # $? código de retorno do último comando executado, ; execução de comando, 
-# opção do comando nc: -v (verbose), -z (DCCP mode), -u (UDP), &> redirecionador de saída de erro
-if [ "$(nc -vzu 127.0.0.1 $PORTNETDISCO &> /dev/null ; echo $?)" == "0" ]
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $PORTNETDISCO &> /dev/null ; echo $?)" == "0" ]
 	then
 		echo -e "A porta: $PORTNETDISCO já está sendo utilizada nesse servidor."
 		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
@@ -198,7 +198,7 @@ echo -e "Criando os diretórios Base do Netdisco, aguarde..."
 	# opção do comando mkdir: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	su - $NETDISCOUSER -c "mkdir -v /home/netdisco/{bin,environments}" &>> $LOG
-echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
+echo -e "Diretórios Base criados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o Usuário e o Banco de Dados do Netdisco, Senha padrão: $NETDISCOPASSWORD, aguarde..."
@@ -208,7 +208,7 @@ echo -e "Criando o Usuário e o Banco de Dados do Netdisco, Senha padrão: $NETD
 	# opção do comando createdb: -O (owner)
 	su - postgres -c "createuser -DRSP $NETDISCOUSER"
 	su - postgres -c "createdb -O $NETDISCOUSER $DATABASE_NETDISCO"
-echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
+echo -e "Usuário e Banco de Dados criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o Netdisco, esse processo demora um pouco, aguarde..."
@@ -260,7 +260,7 @@ echo -e "Veja a documentação das opções de instalação a partir da linha: 2
 	# opção do comando read: -s (Do not echo keystrokes)
 	# opção do comando su: - (login), -c (command)
 	read -s
-		su - $NETDISCOUSER
+	su - $NETDISCOUSER
 echo -e "Deployment do Netdisco feito sucesso!!!, continuando com o script...\n"
 sleep 5
 #
