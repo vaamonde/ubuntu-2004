@@ -7,13 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 03/02/2022
-Versão: 0.12
+Data de atualização: 14/02/2022
+Versão: 0.14
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+14/02/2022 - Robson Vaamonde - Estudos e criação do script: 00-metabase.sh. Metabase é uma ferramenta de business 
+intelligence gratuita e de código aberto que pode ser usada para pesquisar conjuntos de dados e exibir informações.
+
 03/02/2022 - Robson Vaamonde - Estudos para colocar os recursos do Prometheus e do InfluxDB no script do Grafana, 
-verificando a possibilidade de migrar o Guacamole Server para utilizar o Banco de Dados do MySQL, 
+verificando a possibilidade de integrar o Guacamole Server para utilizar o Banco de Dados do MySQL.
 
 15/01/2022 - Robson Vaamonde - Novas soluções de TI para o Curso de Ubuntu Server 20.04.x LTS, criação dos scripts e
 arquivos de configuração (criado: feito e publicado | dev: em desenvolvimento):

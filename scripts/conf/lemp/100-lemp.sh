@@ -75,9 +75,9 @@
 
 #
 # Variáveis de configuração do usuário root e senha do MariaDB para acesso via console e do PhpMyAdmin
-USER="root"
-PASSWORD="pti@2018"
-AGAIN=$PASSWORD
+USERMARIADB="root"
+PASSWORDMARIADB="pti@2018"
+AGAINMARIADB=$PASSWORD
 #
 # Variáveis de configuração e liberação da conexão remota para o usuário Root do MariaDB
 # opções do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou tabela), 
@@ -86,25 +86,25 @@ AGAIN=$PASSWORD
 # opções do comando UPDATE: user (table mysql), SET Password=PASSWORD (columns), WHERE (condition), User (value)
 # opções do comando UPDATE: user (table mysql), SET plugin (columns), WHERE (condition), User (value)
 # opção do comando FLUSH: privileges (recarregar as permissões)
-GRANTALL="GRANT ALL ON *.* TO $USER@'%' IDENTIFIED BY '$PASSWORD';"
-UPDATE1045="UPDATE user SET Password=PASSWORD('$PASSWORD') WHERE User='$USER';"
-UPDATE1698="UPDATE user SET plugin='' WHERE User='$USER';"
-FLUSH="FLUSH PRIVILEGES;"
+GRANTALL_MARIADB="GRANT ALL ON *.* TO $USER@'%' IDENTIFIED BY '$PASSWORD';"
+UPDATE1045_MARIADB="UPDATE user SET Password=PASSWORD('$PASSWORD') WHERE User='$USER';"
+UPDATE1698_MARIADB="UPDATE user SET plugin='' WHERE User='$USER';"
+FLUSH_MARIADB="FLUSH PRIVILEGES;"
 #
 # Variáveis de configuração do PhpMyAdmin
-ADMINUSER=$USER
-ADMIN_PASS=$PASSWORD
-APP_PASSWORD=$PASSWORD
-APP_PASS=$PASSWORD
-WEBSERVER="localhost"
+ADMINUSER_MARIADB=$USER
+ADMIN_PASS_MARIADB=$PASSWORD
+APP_PASSWORD_MARIADB=$PASSWORD
+APP_PASS_MARIADB=$PASSWORD
+WEBSERVER_LEMP="localhost"
 #
 
 
 #
 # Utilização do MySQL Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	sudo apt update && sudo apt install mysql-client
-#	mysql -u root -p -h pti.intra
+# 	sudo apt update && sudo apt install mariadb-client
+#	mariadb -u root -p -h pti.intra
 #
 # Utilização do Links2 Client no GNU/Linux
 # Linux Mint Terminal: Ctrl+Alt+T
@@ -208,7 +208,7 @@ if [ -f $LOG ]
 		sleep 5
 fi
 #
-# Script de instalação e configuração do LAMP-Server no GNU/Linux Ubuntu Server 20.04.x
+# Script de instalação e configuração do LEMP-Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable) habilita interpretador, \n = (new line)
 # opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
