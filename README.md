@@ -204,3 +204,31 @@ Décimo Segundo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps S
 [![Arquivo FAQ](http://img.youtube.com/vi/mGAlRLrrDLM/0.jpg)](https://www.youtube.com/watch?v=mGAlRLrrDLM "Arquivo FAQ")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=mGAlRLrrDLM
+
+## **🔴 #13_ Como utilizar o VSCODE para Customizar os Scripts antes de executar no seu Servidor Ubuntu Server 20.04.x LTS 🐧**
+
+Décimo Terceiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes de como customizar os arquivos de script e logo em seguida os arquivos de configuração utilizando o Visual Studio Code VSCODE junto com o comando Git e integrado com o Github antes de executar os scripts no nosso servidor.
+
+[![Arquivo Parâmetros](http://img.youtube.com/vi/aUcrnHF0g4I/0.jpg)](https://www.youtube.com/watch?v=aUcrnHF0g4I "Arquivo Parâmetros")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=aUcrnHF0g4I
+
+## **🔴 #14_ Instalação e Configuração do Ubuntu Server 20.04.x LTS Focal Fossa 🐧**
+
+Décimo Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar a instalação e configuração do Ubuntu Server 20.04.3 LTS x64 Bits Focal Fossa, vamos fazer o download da ISO, criar a máquina virtual, instalar o Ubuntu Server, fazer sua configuração do cenário e já deixar o sistema todo atualizado para as próximas etapas.
+
+[![Instalação Ubuntu](http://img.youtube.com/vi/EAB1PQBxb00/0.jpg)](https://www.youtube.com/watch?v=EAB1PQBxb00 "Instalação Ubuntu")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=EAB1PQBxb00
+
+Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/01-InstalacaoDoUbuntuServer-20.04.3-LTS.md
+
+## **🔴 #15_ Configurações Básicas do Ubuntu Server 20.04.x LTS Focal Fossa 🐧**
+
+Décimo Quinto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas pós instalação do Ubuntu Server, configurações de Locale, Timezone, localização do arquivo de configuração da Placa de Rede utilizando o Netplan, comandos: sudo, history, etc... acessando remotamente o servidor utilizando o Protocolo SSH e reinicializando o sistema para testar as mudanças.
+
+[![Configuração Ubuntu](http://img.youtube.com/vi/VHHWBcnb-8A/0.jpg)](https://www.youtube.com/watch?v=VHHWBcnb-8A "Configuração Ubuntu")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=VHHWBcnb-8A
+
+Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/

@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 01/02/2022
-Versão: 0.05
+Data de atualização: 18/02/2022
+Versão: 0.06
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -26,28 +26,26 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #11_ Conhecendo o arquivo PORTS do Curso de Ubuntu Server 20.04.x LTS (16/02/2022)
 #12_ Conhecendo o arquivo FAQ do Curso de Ubuntu Server 20.04.x LTS (18/02/2022)
 _
-#13_ Como customizar os Scripts e Confs para o seu Cenário antes de executar (21/02/2022)
+#13_ Como utilizar o VSCODE para Customizar os Scripts antes de executar no seu Servidor Ubuntu (21/02/2022)
 _
-#14_ Instalação do Ubuntu Server 20.04.x LTS Focal Fossa (23/02/2022)
+#14_ Instalação e Configuração do Ubuntu Server 20.04.x LTS Focal Fossa (23/02/2022)
 #15_ Configurações Básicas do Ubuntu Server 20.04.x LTS Focal Fossa (25/02/2022)
-_
-#16_ 00-parametros.sh Script principal de todos os parâmetros desse Curso (28/02/2022)
 _ 
-#17A_ 01-openssh.sh Script e arquivos de Configuração do OpenSSH Server - PARTE-01
-#17B_ 01-openssh.sh Instalação e Configuração do OpenSSH Server - PARTE-02
-#17C_ 01-openssh.sh Configuração do OpenSSH Client no Windows e Linux - PARTE-03
+#16A_ 01-openssh.sh Script e arquivos de Configuração do OpenSSH Server - PARTE-01
+#16B_ 01-openssh.sh Instalação e Configuração do OpenSSH Server - PARTE-02
+#16C_ 01-openssh.sh Configuração do OpenSSH Client no Windows e Linux - PARTE-03
 _
-#18A_ 02-dhcp.sh Script e arquivos de Configuração do ISC DHCP Server - PARTE-01
-#18B_ 02-dhcp.sh Instalação e Configuração do ISC DHCP Server - PARTE-02
-#18C_ 02-dhcp.sh Configuração do DHCP Client no Windows e Linux - PARTE-03
+#17A_ 02-dhcp.sh Script e arquivos de Configuração do ISC DHCP Server - PARTE-01
+#17B_ 02-dhcp.sh Instalação e Configuração do ISC DHCP Server - PARTE-02
+#17C_ 02-dhcp.sh Configuração do DHCP Client no Windows e Linux - PARTE-03
 _ 
-#19A_ 03-dns.sh Script e arquivos de Configuração do Bind9 DNS Server - PARTE-01
-#19B_ 03-dns.sh Instalação e Configuração do Bind9 DNS Server - PARTE-02
-#19C_ 03-dns.sh Testes de Resoluções de Nomes DNS no Windows e Linux - PARTE-03
+#18A_ 03-dns.sh Script e arquivos de Configuração do Bind9 DNS Server - PARTE-01
+#18B_ 03-dns.sh Instalação e Configuração do Bind9 DNS Server - PARTE-02
+#18C_ 03-dns.sh Testes de Resoluções de Nomes DNS no Windows e Linux - PARTE-03
 _
-#20A_ 04-dhcpdns.sh Script e arquivos de Integração do DHCP e DNS Server - PARTE-01
-#20B_ 04-dhcpdns.sh Integração e Configuração do DHCP e DNS Server - PARTE-02
-#20C_ 04-dhcpdns.sh Testes de Integração do DHCP e DNS no Windows e Linux - PARTE-03
+#19A_ 04-dhcpdns.sh Script e arquivos de Integração do DHCP e DNS Server - PARTE-01
+#19B_ 04-dhcpdns.sh Integração e Configuração do DHCP e DNS Server - PARTE-02
+#19C_ 04-dhcpdns.sh Testes de Integração do DHCP e DNS no Windows e Linux - PARTE-03
 _
 #21A_ 05-ntp.sh Script e arquivos de Configuração do NTP Server - PARTE-01
 #21B_ 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02
