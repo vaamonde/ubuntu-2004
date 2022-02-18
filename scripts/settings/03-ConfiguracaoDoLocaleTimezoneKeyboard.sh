@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 20/01/2022
-# Versão: 0.20
+# Data de atualização: 09/02/2022
+# Versão: 0.21
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Configuração do Locale (Localidade) do Sistema Operacional Ubuntu Server
@@ -28,6 +28,10 @@ sudo reboot
 sudo timedatectl
 sudo systemctl status systemd-timesyncd.service
 sudo timedatectl set-timezone "America/Sao_Paulo"
+# OBSERVAÇÃO IMPORTANTE: geralmente mudar para o Time Zone de America/Sao_Paulo a hora
+# fica errada no sistema, nesse caso podemos mudar para America/Fortaleza ou America/Bahia
+# esse error e por causa do Fuso Horário em relação ao Horário de Verão que não existe 
+# mais no Brasil
 sudo cat /etc/timezone
 sudo cat /etc/systemd/timesyncd.conf
 sudo vim /etc/systemd/timesyncd.conf

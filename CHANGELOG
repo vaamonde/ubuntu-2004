@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 13/02/2022
-Versão: 0.40
+Data de atualização: 18/02/2022
+Versão: 0.41
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+18/02/2022 - Robson Vaamonde - Acréscimo das dependências: zlibc e zlib1g-dev no arquivo: 00-parametros.sh do Wordpress 
+referente aos recursos de Plugins/Extensão utilizadas para customizar os Temples, alteração do arquivo: php.ini
+descomentado a linha: zlib.output_compression = On
+
 13/02/2022 - Robson Vaamonde - Correção de PT-BR e nas opções de: ECHO no script: 34-netdisco.sh, alteração das variáveis
 PORTAPACHE e AGAINMYSQL nos scripts: 00-parametros.sh e: 07-lamp.sh, devido a conflitos com o script: 100-lemp.sh,
 

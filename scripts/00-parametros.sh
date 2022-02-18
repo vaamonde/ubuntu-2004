@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 17/02/2022
-# Versão: 0.46
+# Data de atualização: 18/02/2022
+# Versão: 0.47
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -544,7 +544,7 @@ PASSWORDFTPWORDPRESS="wordpress"
 #
 # Variável da instalação das dependências do Wordpress
 WORDPRESSDEPINSTALL="unzip ghostscript libapache2-mod-php php-bcmath php-curl php-imagick \
-php-intl php-json php-mbstring php-mysql php-xml php-zip php-soap"
+php-intl php-json php-mbstring php-mysql php-xml php-zip php-soap zlibc zlib1g-dev"
 #
 # Variável das dependências do laço de loop do Wordpress
 WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
