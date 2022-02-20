@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 18/02/2022
-# Versão: 0.47
+# Data de atualização: 20/02/2022
+# Versão: 0.49
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -33,8 +33,8 @@ USUARIO=$(id -u)
 UBUNTU=$(lsb_release -rs)
 #
 # Variável do Caminho e Nome do arquivo de Log utilizado em todos os script
-# $0 (variável de ambiente do nome do comando/script executado)
-# opção do redirecionador | piper: Conecta a saída padrão com a entrada padrão de outro comando
+# opção da variável de ambiente $0: Nome do comando/script executado
+# opção do redirecionador | (piper): Conecta a saída padrão com a entrada padrão de outro comando
 # opções do comando cut: -d (delimiter), -f (fields)
 LOGSCRIPT="/var/log/$(echo $0 | cut -d'/' -f2)"
 #
@@ -306,7 +306,7 @@ PORTTFTP="69"
 USERMYSQL="root"
 #
 # Variáveis da senha e confirmação da senha do usuário Root do Mysql 
-SENHAMYSQL="pti@2018"
+SENHAMYSQL=$SENHADEFAULT
 AGAINMYSQL=$SENHAMYSQL
 #
 # Variáveis de configuração e liberação da conexão remota para o usuário Root do MySQL
@@ -337,6 +337,7 @@ LAMPDEP="bind9 bind9utils"
 # opção do caractere: ^ (circunflexo): expressão regular referente ao Tasksel, o uso do caractere ^ 
 # significa que o que precede é um Metapacote. Ao instalar meta pacotes, vários outros pacotes também 
 # serão instalados.
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 LAMPINSTALL="lamp-server^ perl python apt-transport-https awstats libgeo-ip-perl libgeo-ipfree-perl \
 libnet-ip-perl libgeoip1"
 #
@@ -409,7 +410,7 @@ GROUPFTP="ftpusers"
 USERFTP="ftpuser"
 #
 # Variável da senha do Usuário de VSFTPd Server
-PASSWORDFTP="ftpuser"
+PASSWORDFTP=$SENHADEFAULT
 #
 # Variável da senha utilizada na geração das chaves privadas/públicas de criptografia do OpenSSL 
 PWDSSLFTP="vaamonde"
@@ -456,7 +457,7 @@ PATHWEBAPPS="/var/lib/tomcat9/webapps"
 PORTTOMCAT="8080"
 #
 # Variável de download da aplicação Agenda de Contatos em Java feita pelo Prof. José de Assis
-# Link do Github do projeto: https://github.com/professorjosedeassis/javaEE
+# Github do projeto: https://github.com/professorjosedeassis/javaEE (Link atualizado em: 11/01/2022)
 AGENDAJAVAEE="https://github.com/professorjosedeassis/javaEE/raw/main/agendaVaamonde.war"
 #
 # Variáveis de criação da Base de Dados da Agenda de Contatos no MySQL
@@ -474,7 +475,7 @@ AGENDAJAVAEE="https://github.com/professorjosedeassis/javaEE/raw/main/agendaVaam
 # (coluna da chave primária)
 #
 # OBSERVAÇÃO: NO SCRIPT: 10-TOMCAT.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 NAME_DATABASE_JAVAEE="dbagenda"
 USERNAME_JAVAEE=$NAME_DATABASE_JAVAEE
@@ -530,7 +531,7 @@ WORDPRESSSALT="https://api.wordpress.org/secret-key/1.1/salt/"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 11-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_DATABASE_WORDPRESS="CREATE DATABASE wordpress;"
 CREATE_USER_DATABASE_WORDPRESS="CREATE USER 'wordpress' IDENTIFIED BY 'wordpress';"
@@ -540,9 +541,10 @@ FLUSH_WORDPRESS="FLUSH PRIVILEGES;"
 #
 # Variáveis de usuário e senha do FTP para acessar o diretório raiz da instalação do Wordpress
 USERFTPWORDPRESS="wordpress"
-PASSWORDFTPWORDPRESS="wordpress"
+PASSWORDFTPWORDPRESS=$SENHADEFAULT
 #
 # Variável da instalação das dependências do Wordpress
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 WORDPRESSDEPINSTALL="unzip ghostscript libapache2-mod-php php-bcmath php-curl php-imagick \
 php-intl php-json php-mbstring php-mysql php-xml php-zip php-soap zlibc zlib1g-dev"
 #
@@ -566,7 +568,8 @@ WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
 # Variável de download da Chave PGP do Webmin (Link atualizado no dia 30/11/2021)
 WEBMINPGP="http://www.webmin.com/jcameron-key.asc"
 #
-# Variável da instalação das dependências do Webmin e do Usermin (\ quebra de linha no apt)
+# Variável da instalação das dependências do Webmin e do Usermin
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 WEBMINDEP="perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl \
 apt-show-versions python unzip apt-transport-https software-properties-common"
 #
@@ -596,14 +599,15 @@ PORTUSERMIN="20000"
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
 # Variável de download do Netdata (Link atualizado no dia 10/09/2022)
-# opção do comando git clone --depth=1: Cria um clone superficial com um histórico truncado 
-# para o número especificado de confirmações (somente o último commit geral do repositório)
+# opção do comando git clone --depth=100: Cria um clone superficial com um histórico truncado 
+# para o número especificado de confirmações (somente os últimos commit geral do repositório)
 NETDATA="https://github.com/netdata/netdata --depth=100"
 #
 # Variável das dependências do laço de loop do Netdata
 NETDATADEP="mysql-server mysql-common apache2 php vsftpd bind9 isc-dhcp-server"
 #
-# Variável de instalação das dependências do Netdata (\ quebra de linha no apt)
+# Variável de instalação das dependências do Netdata
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 NETDATAINSTALL="zlib1g-dev gcc make git autoconf autogen automake pkg-config uuid-dev python3 \
 python3-mysqldb python3-pip python3-dev libmysqlclient-dev python-ipaddress libuv1-dev netcat \
 libwebsockets15 libwebsockets-dev libjson-c-dev libbpfcc-dev liblz4-dev libjudy-dev libelf-dev \
@@ -620,7 +624,7 @@ PORTNETDATA="19999"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 13-NETDATA.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_USER_NETDATA="CREATE USER 'netdata'@'localhost';"
 GRANT_USAGE_NETDATA="GRANT USAGE, REPLICATION CLIENT ON *.* TO 'netdata'@'localhost';"
@@ -665,7 +669,7 @@ LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_DATABASE_SYSLOG="CREATE DATABASE syslog;"
 CREATE_USER_DATABASE_SYSLOG="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
@@ -688,7 +692,7 @@ INSTALL_DATABASE_SYSLOG="/usr/share/dbconfig-common/data/rsyslog-mysql/install/m
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_DATABASE_LOGANALYZER="CREATE DATABASE loganalyzer;"
 CREATE_USER_DATABASE_LOGANALYZER="CREATE USER 'loganalyzer' IDENTIFIED BY 'loganalyzer';"
@@ -738,7 +742,7 @@ GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tg
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_DATABASE_GLPI="CREATE DATABASE glpi;"
 CREATE_USER_DATABASE_GLPI="CREATE USER 'glpi' IDENTIFIED BY 'glpi';"
@@ -749,7 +753,8 @@ FLUSH_GLPI="FLUSH PRIVILEGES;"
 # Variável das dependências do laço de loop do GLPI Help Desk
 GLPIDEP="mysql-server mysql-common apache2 php bind9"
 #
-# Variável de instalação das dependências do GLPI Help Desk (\ quebra de linha no apt)
+# Variável de instalação das dependências do GLPI Help Desk
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 GLPIINSTALL="php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
 php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json php-xml php-cli \
 libapache2-mod-php xmlrpc-api-utils"
@@ -783,7 +788,8 @@ AGENTMACOS="https://github.com/fusioninventory/fusioninventory-agent/releases/do
 # Variável das dependências do laço de loop do FusionInventory Server
 FUSIONDEP="mysql-server mysql-common apache2 php bind9"
 #
-# Variável de instalação das dependências do FusionInventory Agent (\ quebra de linha no apt)
+# Variável de instalação das dependências do FusionInventory Agent
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 AGENTINSTALL="dmidecode hwdata ucf hdparm perl libuniversal-require-perl libwww-perl libparse-edid-perl \
 libproc-daemon-perl libfile-which-perl libhttp-daemon-perl libxml-treepp-perl libyaml-perl libnet-cups-perl \
 libnet-ip-perl libdigest-sha-perl libsocket-getaddrinfo-perl libtext-template-perl libxml-xpath-perl \
@@ -835,7 +841,7 @@ ZONEMINDER="ppa:iconnor/zoneminder-master"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-ZONEMINDER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_TABLE_ZONEMINDER="/usr/share/zoneminder/db/zm_create.sql"
 DROP_DATABASE_ZONEMINDER="zm"
@@ -871,7 +877,8 @@ GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-
 # Variável das dependências do laço de loop do Guacamole Server e Client
 GUACAMOLERDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
 #
-# Variável de instalação das dependências do Guacamole Server (\ quebra de linha no apt)
+# Variável de instalação das dependências do Guacamole Server
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 GUACAMOLEINSTALL="libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin libossp-uuid-dev \
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
@@ -940,7 +947,7 @@ zabbix-sql-scripts traceroute nmap snmp snmpd snmp-mibs-downloader"
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 20-ZABBIX.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_DATABASE_ZABBIX="CREATE DATABASE zabbix character set utf8 collate utf8_bin;"
 CREATE_USER_DATABASE_ZABBIX="CREATE USER 'zabbix' IDENTIFIED BY 'zabbix';"
@@ -982,6 +989,7 @@ DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.2.3/docker
 DOCKERDEP="bind9"
 #
 # Variável de instalação das Dependências do Docker Community, Docker Compose e Portainer.io
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 DOCKERINSTALLDEP="apt-transport-https ca-certificates curl software-properties-common \
 linux-image-generic linux-image-extra-virtual python3-dev python3-pip libffi-dev gcc \
 libc-dev cargo make"
@@ -1082,7 +1090,7 @@ OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-hea
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 24-OPENFIRE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 DATABASE_OPENFIRE="openfire"
 CREATE_DATABASE_OPENFIRE="CREATE DATABASE openfire;"
@@ -1116,6 +1124,7 @@ PORTOPENFIRE="9090"
 OWNCLOUDINSTALL="https://download.owncloud.org/community/owncloud-latest.tar.bz2"
 #
 # Variável da instalação das dependências do ownCloud
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 OWNCLOUDINSTALLDEP="software-properties-common php-cli php-common php-mbstring php-gd php-intl \
 php-xml php-mysql php-zip php-curl php-xmlrpc"
 #
@@ -1132,7 +1141,7 @@ php-xml php-mysql php-zip php-curl php-xmlrpc"
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 25-OWNCLOUD.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_DATABASE_OWNCLOUD="CREATE DATABASE owncloud;"
 CREATE_USER_DATABASE_OWNCLOUD="CREATE USER 'owncloud' IDENTIFIED BY 'owncloud';"
@@ -1177,16 +1186,19 @@ OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/
 OCSINVENTORYAGENTNVIDIA=$(lshw -class display | grep NVIDIA | cut -d':' -f2 | cut -d' ' -f2)
 #
 # Variável da instalação das dependências do OCS Inventory Server
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 OCSINVENTORYINSTALLDEP="gcc make autoconf autogen automake pkg-config uuid-dev net-tools pciutils \
 smartmontools read-edid nmap ipmitool dmidecode samba samba-common samba-testsuite snmp \
 snmp-mibs-downloader snmpd unzip hwdata perl-modules python-dev python3-dev python3-pip \
 apache2-dev mysql-client python3-pymssql python3-mysqldb"
 #
 # Variável de instalação das dependências do PHP do OCS Inventory Server
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 OCSINVENTORYINSTALLPHP="php-snmp php-mysql php-dev php-soap php-apcu php-xmlrpc php-zip php-gd \
 php-mysql php-pclzip php-json php-mbstring php-curl php-imap php-ldap zlib1g-dev php-cas php-curl"
 #
 # Variável de instalação das dependências do Perl do OCS Inventory Server
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 OCSINVENTORYINSTALLPERL="libc6-dev libcompress-raw-zlib-perl libwww-perl libdigest-md5-file-perl \
 libnet-ssleay-perl libcrypt-ssleay-perl libnet-snmp-perl libproc-pid-file-perl libproc-daemon-perl \
 libarchive-zip-perl libnet-cups-perl libmysqlclient-dev libapache2-mod-perl2 \
@@ -1221,7 +1233,7 @@ libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libso
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 26-OCSINVENTORY.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_USER_DATABASE_OCSINVENTORY="CREATE USER 'ocsweb' IDENTIFIED BY 'ocsweb';"
 GRANT_DATABASE_OCSINVENTORY="GRANT USAGE ON *.* TO 'ocsweb';"
@@ -1278,19 +1290,19 @@ BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-tr
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Log Graylog Server 
 #
-# Variável da chave do repositório do MongoDB Server
+# Variável da chave do repositório do MongoDB Server (Link atualizado no dia 02/02/2022)
 KEYSRVMONGODB="https://www.mongodb.org/static/pgp/server-4.4.asc"
 #
 # Variável da instalação do MongoDB Server
 MONGODBINSTALL="mongodb-org"
 #
-# Variável da chave GPG do repositório do ElastickSearch
+# Variável da chave GPG do repositório do ElastickSearch (Link atualizado no dia 02/02/2022)
 GPGKEYELASTICSEARCH="https://artifacts.elastic.co/GPG-KEY-elasticsearch"
 #
 # Variável da instalação do ElasticSearch
 ELASTICSEARCHINSTALL="elasticsearch-oss"
 #
-# Variável do download do repositório do Graylog Server
+# Variável do download do repositório do Graylog Server (Link atualizado no dia 02/02/2022)
 REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-4.2-repository_latest.deb"
 #
 # Variável do usuário do serviço do Graylog Server
@@ -1307,11 +1319,13 @@ SECRETGRAYLOG=$(pwgen -N 1 -s 96)
 SHA2GRAYLOG=$(echo $USERGRAYLOG | tr -d '\n' | sha256sum | cut -d" " -f1)
 #
 # Variável da instalação das dependências do Graylog Server
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 GRAYLOGINSTALLDEP="apt-transport-https openjdk-11-jdk openjdk-11-jre openjdk-11-jre-headless \
 default-jdk default-jre ca-certificates-javaopenjdk-11-jre-headless uuid-runtime pwgen gnupg \
 curl dirmngr"
 #
 # Variável da instalação do Graylog Server
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 GRAYLOGINSTALL="graylog-server graylog-enterprise-plugins graylog-integrations-plugins \
 graylog-enterprise-integrations-plugins"
 #
@@ -1348,6 +1362,7 @@ USERPOSTGRESQL="postgres"
 PASSWORDPOSTGRESQL="postgres"
 #
 # Variável da instalação das dependências do PostgreSQL Server
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 POSTGRESQLDEPINSTALL="build-essential libssl-dev libffi-dev libgmp3-dev virtualenv python3-pip \
 libpq-dev python-dev apache2-utils libapache2-mod-wsgi libexpat1 ssl-cert"
 #
@@ -1428,10 +1443,11 @@ PASSWORDWEBDAV=$SENHADEFAULT
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 09/01/2022).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-23.0.0.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 20/02/2022).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-23.0.2.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 NEXTCLOUDINSTALLDEP="software-properties-common php-cli php-common php-xmlrpc libapache2-mod-php \
 php-gd php-mysql php-curl php-mbstring php-intl php-gmp php-bcmath php-imagick php-xml php-zip"
 #
@@ -1448,7 +1464,7 @@ php-gd php-mysql php-curl php-mbstring php-intl php-gmp php-bcmath php-imagick p
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 32-NEXTCLOUD.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 308 até 309, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 251 até 252
 CREATE_DATABASE_NEXTCLOUD="CREATE DATABASE nextcloud;"
 CREATE_USER_DATABASE_NEXTCLOUD="CREATE USER 'nextcloud' IDENTIFIED BY 'nextcloud';"
@@ -1471,15 +1487,17 @@ NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de VoIP Asterisk
 #
-# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 14/01/2022)
+# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 20/02/2022)
 DAHDIINSTALL="git://git.asterisk.org/dahdi/linux"
 DAHDITOOLSINSTALL="git://git.asterisk.org/dahdi/tools"
 LIBPRIINSTALL="https://gerrit.asterisk.org/libpri"
-ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19.1.0.tar.gz"
+ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19.2.0.tar.gz"
 SOUNDPTBRCORE="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-core-pt-BR-3.8.3.zip"
 SOUNDPTBREXTRA="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-extra-pt-BR-1.11.10.zip"
 #
-# Variável da instalação das dependências do Asterisk (opção da variável $(uname -r): kernel-release)
+# Variável da instalação das dependências do Asterisk
+# opção do comando uname: -r (kernel-release)
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 ASTERISKINSTALLDEP="build-essential libssl-dev libelf-dev libncurses5-dev libnewt-dev libxml2-dev \
 linux-headers-$(uname -r) libsqlite3-dev uuid-dev subversion libjansson-dev sqlite3 autoconf \
 automake libtool libedit-dev flex bison libtool-bin unzip sox openssl zlib1g-dev unixodbc pkg-config \
@@ -1510,6 +1528,7 @@ PORTSIP="5060"
 NETDISCOINSTALL="https://cpanmin.us/ | perl - --notest --local-lib ~/perl5 App::Netdisco"
 #
 # Variável da instalação das dependências do Netdisco
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 NETDISCOINSTALLDEP="libdbd-pg-perl libsnmp-perl libssl-dev libio-socket-ssl-perl curl \
 build-essential"
 #

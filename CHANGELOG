@@ -7,21 +7,27 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 18/02/2022
-Versão: 0.41
+Data de atualização: 20/02/2022
+Versão: 0.42
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+20/02/2022 - Robson Vaamonde - Alteração das opções do arquivo: php.ini, acréscentado os valores de referência do GLPI
+nas linhas: max_execution_time = 600, session.auto_start = Off, session.use_trans_sid = 0, adicionado as opções de 
+edição do monitoramento dos serviços: Docker, ElasticSearch, MongoDB, e do Redis Server no script: 13-netada.sh, 
+melhoria no script: 00-paramentros.sh adicionado a variável: $SENHADEFAULT em vários blocos de configuração, atualizado
+a versão do Nextcloud para: v23.0.3, atualizado a versão do Asterisk para: v19.2.0.
+
 18/02/2022 - Robson Vaamonde - Acréscimo das dependências: zlibc e zlib1g-dev no arquivo: 00-parametros.sh do Wordpress 
-referente aos recursos de Plugins/Extensão utilizadas para customizar os Temples, alteração do arquivo: php.ini
+referente aos recursos de Plugins/Extensões utilizadas para customizar os Templates, alteração do arquivo: php.ini
 descomentado a linha: zlib.output_compression = On
 
 13/02/2022 - Robson Vaamonde - Correção de PT-BR e nas opções de: ECHO no script: 34-netdisco.sh, alteração das variáveis
-PORTAPACHE e AGAINMYSQL nos scripts: 00-parametros.sh e: 07-lamp.sh, devido a conflitos com o script: 100-lemp.sh,
+PORTAPACHE e AGAINMYSQL nos scripts: 00-parametros.sh e: 07-lamp.sh, devido a conflitos com o script: 100-lemp.sh.
 
 12/02/2022 - Robson Vaamonde - Criação e customização do arquivo: vimrc adicionado a opção de número de linhas nas
 configurações do editor de texto VIM, adicionado a cópia do arquivo no script: 01-openssh.sh, sem necessidade de
-edição do arquivo pois é simples sua configuração.
+edição do arquivo pois é simples a sua configuração.
 
 06/02/2022 - Robson Vaamonde - Criação do script: 34-netdisco.sh, acréscimo das opções de configuração do Netdisco no 
 arquivo: 00-parametros.sh, customização do arquivo de Deployment: deployment.yml do Netdisco, criação dos arquivos do
@@ -30,7 +36,7 @@ SystemD para a inicialização automática do Netdisco.
 04/02/2022 - Robson Vaamonde - Correção da falha do DAV Off no Virtualhost do Nextcloud do script: 32-nextcloud.sh,
 correção feita no arquivo de configuração: nextcloud.conf do Virtualhost do Apache2, criação dos scripts para a 
 instalação e configuração do Prometheus e do InfluxDB integrados no script: 19-grafana.sh, novos arquivos do Netdata
-para o monitoramento do ElasticSearch, MongoDB, Redis e do Docker acréscentado no script: 13-netdata.sh
+para o monitoramento do ElasticSearch, MongoDB, Redis Server e do Docker acréscentado no script: 13-netdata.sh
 
 03/02/2022 - Robson Vaamonde - Correção do HTTPS no script: 01-openssh.sh do acesso ao Shell-In-a-Box, melhoria no
 arquivo de Banner: issue.net adicionado a Lei LGPD (Lei Geral de Proteção de Dados), melhorias nos arquivos da placa
