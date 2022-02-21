@@ -62,7 +62,9 @@ Link do .NET SDK e Runtime: https://docs.microsoft.com/pt-br/dotnet/core/install
 #
 # 08_ Utilizando o PowerShell no Linux Mint
 	Get-Host		- informações detalhadas do PowerShell
-	Get-History		- imprimir todo o histórico de comandos do PowerShell
 	Get-Process		- informações de processos
 	Get-Command		- lista todos os comandos que estão disponíveis
 	Get-Module		- lista todos os módulos que estão disponíveis
+	Get-History		- imprimir todo o histórico de comandos do PowerShell
+	dir ou ls 		- lista o conteúdo do diretório
+	exit			- sair do PowerShell
