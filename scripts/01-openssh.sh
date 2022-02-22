@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 12/02/2022
-# Versão: 0.22
+# Data de atualização: 22/02/2022
+# Versão: 0.23
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -30,12 +30,15 @@
 # Site Oficial do Projeto Neofetch: https://github.com/dylanaraps/neofetch
 #
 # Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
+#
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	ssh vaamonde@172.16.1.10
 #	ssh vaamonde@ssh.pti.intra
+#
 # Windows Powershell: Menu, Powershell 
 #	ssh vaamonde@172.16.1.10
 #	ssh vaamonde@ssh.pti.intra
+#
 # Linux Mint ou Windows:
 #	apt install putty putty-tools
 #	windows: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
@@ -169,9 +172,9 @@ clear
 echo
 #
 echo -e "Configuração do OpenSSH Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo OpenSSH Server.: TCP 22"
-echo -e "Porta padrão utilizada pelo Shell-In-a-Box.: TCP 4200"
-echo -e "Após a instalação do Shell-In-a-Box acessar a URL: https://$(hostname -I | cut -d' ' -f1):4200/\n"
+echo -e "Porta padrão utilizada pelo OpenSSH Server.: TCP $PORTSSH"
+echo -e "Porta padrão utilizada pelo Shell-In-a-Box.: TCP $PORTSHELLINABOX"
+echo -e "Após a instalação do Shell-In-a-Box acessar a URL: https://$(hostname -I | cut -d' ' -f1):$PORTSHELLINABOX/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
