@@ -94,14 +94,16 @@ Vídeo aulas de Bash, Shell, Vim, Git, Github, VSCode e Shell Script Básico:<br
 🔴 VIM Básico: https://www.youtube.com/watch?v=u6Or0rFgltY&t<br>
 🔴 GIT e GITHUB Básico: https://www.youtube.com/watch?v=hrmqRD2k5P0&t<br>
 🔴 VSCode Básico: https://www.youtube.com/watch?v=faS3gZgKE-A&t<br>
-🔴 SHELL SCRIPT Básico: https://www.youtube.com/watch?v=MkKkZA8wxHU&t
+🔴 SHELL SCRIPT Básico: https://www.youtube.com/watch?v=MkKkZA8wxHU&t<br>
+🔴 POWERSHELL Básico: https://www.youtube.com/watch?v=1yUXXUtvl0o
 
 Documentação das aulas:<br>
 🔴 BASH SHELL Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Bash.sh<br>
 🔴 VIM Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Vim.sh<br>
 🔴 GIT e GITHUB Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Git-Github.sh<br>
 🔴 VSCode Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/VSCode.sh<br>
-🔴 SHELL SCRIPT Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Shell.sh
+🔴 SHELL SCRIPT Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Shell.sh<br>
+🔴 POWERSHELL Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/PowerShell.sh
 
 Canal do Prof. José de Assis:<br>
 🔴 YouTUBE: https://www.youtube.com/c/RoboticapraticaBr<br>
