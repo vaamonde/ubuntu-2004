@@ -232,3 +232,27 @@ Décimo Quinto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Sh
 Link da vídeo aula: https://www.youtube.com/watch?v=VHHWBcnb-8A
 
 Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/
+
+## **🔴 01-openssh.sh Customizando o Script e Arquivos de Configuração do OpenSSH Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do OpenSSH Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 01-openssh.sh antes de executar no nosso servidor.
+
+[![Config OpenSSH Server](http://img.youtube.com/vi//0.jpg)]( "Config OpenSSH Server")
+
+Link da vídeo aula: 
+
+## **🔴 01-openssh.sh Instalação e Configuração do OpenSSH Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do OpenSSH Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como clonar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do OpenSSH Server.
+
+[![Install OpenSSH Server](http://img.youtube.com/vi//0.jpg)]( "Install OpenSSH Server")
+
+Link da vídeo aula: 
+
+## **🔴 01-openssh.sh Configuração e Monitoramento do OpenSSH Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do OpenSSH Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como accessar remotamente o servidor Ubuntu utilizando o SSH Client e Shell-In-a-Box, analisar os arquivos de Log para monitorar o acesso remoto e fazer a geração da chave pública/privada para aumentar a segurança do SSH.
+
+[![Access OpenSSH Server](http://img.youtube.com/vi//0.jpg)]( "Access OpenSSH Server")
+
+Link da vídeo aula: 
