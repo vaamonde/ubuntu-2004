@@ -39,7 +39,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_ 01. Ferramentas;
 	_		Novo
 	_ 02. Nome e Sistema Operacional:
-	_		Nome: UbuntuServer-2004
+	_		Nome: Webserver-UbuntuServer-2004
 	_		Pasta da Máquina: (deixar o padrão do sistema)
 	_		Tipo: Linux
 	_		Versão: Ubuntu (64-bit)
@@ -60,7 +60,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_		Localização: (deixar o padrão do sistema)
 	_		Tamanho do disco: 50GB
 	_	<Criar>
-	_ 08. Configurações da Máquina Virtual UbuntuServer-2004 (Propriedades/Configurações)
+	_ 08. Configurações da Máquina Virtual  Webserver-UbuntuServer-2004 (Propriedades/Configurações)
 	_	Sistema
 	_		Placa Mãe
 	_			Recurso Estendidos
@@ -68,6 +68,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_		Processador
 	_			Processadores: 02 CPUs
 	_			Recursos Estendidos: Habilitar PAE/NX
+	_								 Habilitar VT-x/AMD-v Aninhado 
 	_	Monitor
 	_		Tela
 	_			Memória de Vídeo: 128MB
@@ -83,7 +84,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 
 Terceira etapa: Iniciando a Instalação do Ubuntu Server 20.04.4 LTS (localizar a ISO)
 
-	_ 01. VM UbuntuServer-2004: Iniciar
+	_ 01. VM  Webserver-UbuntuServer-2004: Iniciar
 	_ 02. Selecione o disco rígido de boot
 	_ 		Selecionar um arquivo de disco óptico virtual
 	_ 03. Seletor de Discos Ópticos
@@ -129,10 +130,12 @@ Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 	_ 		Choose a passwords: pti@2018 <Tab>
 	_ 		Confirm your passwords: pti@2018
 	_ 	<Done>
-	_ 09. SSH Setup
+	_ 09. Enable Ubuntu Token
+	_	<Done>
+	_ 10. SSH Setup
 	_ 		Install OpenSSH server: ON <Space>
 	_ 		Import SSH identity: No <Tab>
 	_ 	<Done>
-	_ 10. Featured Server Snaps - <Done>
-	_ 11. Reboot Now - <Enter>
-	_ 12. Please remove the installation medium, then press ENTER - <Enter>
+	_ 11. Featured Server Snaps - <Done>
+	_ 12. Reboot Now - <Enter>
+	_ 13. Please remove the installation medium, then press ENTER - <Enter>
