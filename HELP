@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 19/10/2021
-Data de atualização: 27/01/2022
-Versão: 0.13
+Data de atualização: 02/03/2022
+Versão: 0.14
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #======================= COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =======================
@@ -118,6 +118,13 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ modificações, sempre verifique as mudanças no repositório principal em relação a "BUGS" ou melhorias
 	_ nos scripts e arquivos de configuração analisando sempre a Versão do arquivo nas linhas: Data de 
 	_ atualização e Versão juntamente com os arquivos "CHANGELOG", "BUGS" e "RELEASE".
+
+#09_ Executando os scripts mais de uma vez no mesmo cenário.
+	_ Os scripts foram projetados para serem executados apenas uma vez no cenário que está sendo aplicado,
+	_ antes de executar os scripts e recomendado fazer um "Snapshot" do servidor e depois rodar o script
+	_ do serviço corresponde, caso queira executar novamente o script será necessário remover ou renomear
+	_ o arquivo de LOG em: /var/log do script corresponde, por exeplo, arquivo de log: /var/log/01-openssh.sh
+	_ renomear para: sudo vm -v /var/log/01-openssh.sh /var/log/01-openssh.sh.old
 
 #========================= HABILITANDO OU DESABILITANDO RECURSOS NOS SCRIPTS ==========================
 

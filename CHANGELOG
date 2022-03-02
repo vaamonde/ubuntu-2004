@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 20/02/2022
-Versão: 0.42
+Data de atualização: 02/03/2022
+Versão: 0.43
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+02/03/2022 - Robson Vaamonde - Atualização dos arquivos de instalação: 01-InstalacaoDoUbuntuServer-20.04.3-LTS e 
+01-InstalacaoDoUbuntuServer-20.04.4-LTS, acréscimo das explicações para executar mais de uma vez o script no mesmo
+servidor no arquivo: HELP.
+
 20/02/2022 - Robson Vaamonde - Alteração das opções do arquivo: php.ini, acréscentado os valores de referência do GLPI
 nas linhas: max_execution_time = 600, session.auto_start = Off, session.use_trans_sid = 0, adicionado as opções de 
 edição do monitoramento dos serviços: Docker, ElasticSearch, MongoDB, e do Redis Server no script: 13-netada.sh, 

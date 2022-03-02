@@ -9,8 +9,8 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
 Github Procedimentos em TI: https://github.com/vaamonde<br>
 Data de criação: 10/10/2021<br>
-Data de atualização: 14/10/2021<br>
-Versão: 0.03<br>
+Data de atualização: 02/03/2022<br>
+Versão: 0.04<br>
 Testado e homologado no GNU/Linux Ubuntu Server 20.04.3 LTS
 
 Atualização da versão do Ubuntu Server 20.04.3: https://wiki.ubuntu.com/FocalFossa/ReleaseNotes<br>
@@ -39,13 +39,13 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_ 01. Ferramentas;
 	_		Novo
 	_ 02. Nome e Sistema Operacional:
-	_		Nome: UbuntuServer-2004
+	_		Nome: Webserver-Ubuntu-20.04
 	_		Pasta da Máquina: (deixar o padrão do sistema)
 	_		Tipo: Linux
 	_		Versão: Ubuntu (64-bit)
 	_	<Próximo>
 	_ 03. Tamanho da memória:
-	_		Tamanho: 2048MB
+	_		Tamanho: 4096MB
 	_	<Próximo>
 	_ 04. Disco Rígido:
 	_		Criar um novo disco rígido virtual agora
@@ -60,7 +60,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_		Localização: (deixar o padrão do sistema)
 	_		Tamanho do disco: 50GB
 	_	<Criar>
-	_ 08. Configurações da Máquina Virtual UbuntuServer-2004 (Propriedades/Configurações)
+	_ 08. Configurações da Máquina Virtual Webserver-Ubuntu-20.04 (Propriedades/Configurações)
 	_	Sistema
 	_		Placa Mãe
 	_			Recurso Estendidos
@@ -68,6 +68,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_		Processador
 	_			Processadores: 02 CPUs
 	_			Recursos Estendidos: Habilitar PAE/NX
+	_ 			Recursos Estendidos: Habilitar VT-x/AMD-v Aninhado
 	_	Monitor
 	_		Tela
 	_			Memória de Vídeo: 128MB
@@ -83,7 +84,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 
 Terceira etapa: Iniciando a Instalação do Ubuntu Server 20.04.3 LTS (localizar a ISO)
 
-	_ 01. VM UbuntuServer-2004: Iniciar
+	_ 01. VM Webserver-Ubuntu-20.04: Iniciar
 	_ 02. Selecione o disco rígido de boot
 	_ 		Selecionar um arquivo de disco óptico virtual
 	_ 03. Seletor de Discos Ópticos
@@ -98,13 +99,15 @@ Terceira etapa: Iniciando a Instalação do Ubuntu Server 20.04.3 LTS (localizar
 Quarta etapa: Instalação e Configuração do Ubuntu Server 20.04.3 LTS<br>
 Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 
-	_ 01. Use UP, DOWN and ENTER keys to select your language 
+	_ 01. Use UP, DOWN and ENTER keys to select your language
 	_ 		English - <Enter>
-	_ 02. Keyboard configuration
-	_ 		Layout: [English (US)]
-	_ 		Variant: [English (US)]
+	_ 02. Installer update available
+	_	<Continue without updating>
+	_ 03. Keyboard configuration
+	_ 		Layout: [English (US)] ou [Portuguese (Brazil)]
+	_ 		Variant: [English (US)] ou [Portuguese (Brazil)]
 	_ 	<Done>
-	_ 03. Network connections
+	_ 04. Network connections
 	_ 		enp0s3 eth <Enter>
 	_ 			Edit IPv4 <Enter>
 	_ 				IPv4 Method: Manual <Enter>
@@ -115,24 +118,41 @@ Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 	_ 					Search domains: pti.intra
 	_ 				<Save>
 	_ 	<Done>
-	_ 04. Configure proxy - <Done>
-	_ 05. Configure Ubuntu archive mirror
+	_ 05. Configure proxy
+	_	<Done>
+	_ 06. Configure Ubuntu archive mirror
 			Mirror: http://us.archive.ubuntu.com/ubuntu <-- resolve o problema de lentidão -->
 		<Done>
-	_ 06. Guided storage configuration - <Done>
-	_ 07. Storage configuration - <Done>
-	_ 		Confirm destructive action - <Continue>
-	_ 08. Profile setup
+	_ 07. Guided storage configuration
+	_	(X) Use an entire disk
+	_		[VBOX_HARDISK local disk 50.000G]
+	_		(X) Set up this disk as an LVM group
+	_	<Done>
+	_ 08. Storage configuration
+	_	USED DEVICES
+	_		ubuntu-lv	new, to be formatted as ext4, mounted at /	24.498G 
+	_			Edit
+	_				Name: ubuntu-lv
+	_				Size: 48.996G
+	_				Format: ext4
+	_				Mount: /
+	_			<Save>
+	_	<Done>
+	_	Confirm destructive action
+	_		<Continue>
+	_ 09. Profile setup
 	_ 		Your name: Robson Vaamonde <Tab>
 	_ 		Your server's name: ptispo01ws01 <Tab>
 	_ 		Pick a username: vaamonde <Tab>
 	_ 		Choose a passwords: pti@2018 <Tab>
 	_ 		Confirm your passwords: pti@2018
 	_ 	<Done>
-	_ 09. SSH Setup
+	_ 10. SSH Setup
 	_ 		Install OpenSSH server: ON <Space>
 	_ 		Import SSH identity: No <Tab>
 	_ 	<Done>
-	_ 10. Featured Server Snaps - <Done>
-	_ 11. Reboot Now - <Enter>
-	_ 12. Please remove the installation medium, then press ENTER - <Enter>
+	_ 11. Featured Server Snaps
+	_	<Done>
+	_ 12. Install complete!
+	_	<Reboot Now>
+	_ 13. Please remove the installation medium, then press ENTER - <Enter>
