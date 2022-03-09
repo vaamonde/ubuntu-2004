@@ -7,11 +7,14 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 02/03/2022
-Versão: 0.43
+Data de atualização: 08/03/2022
+Versão: 0.44
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+08/03/2022 - Robson Vaamonde - Acréscimo no arquivo: 00-parametros.sh na opção do OpenSSH Server a instalação do
+pacote extra: traceroute.
+
 02/03/2022 - Robson Vaamonde - Atualização dos arquivos de instalação: 01-InstalacaoDoUbuntuServer-20.04.3-LTS e 
 01-InstalacaoDoUbuntuServer-20.04.4-LTS, acréscimo das explicações para executar mais de uma vez o script no mesmo
 servidor no arquivo: HELP.
@@ -19,7 +22,7 @@ servidor no arquivo: HELP.
 20/02/2022 - Robson Vaamonde - Alteração das opções do arquivo: php.ini, acréscentado os valores de referência do GLPI
 nas linhas: max_execution_time = 600, session.auto_start = Off, session.use_trans_sid = 0, adicionado as opções de 
 edição do monitoramento dos serviços: Docker, ElasticSearch, MongoDB, e do Redis Server no script: 13-netada.sh, 
-melhoria no script: 00-paramentros.sh adicionado a variável: $SENHADEFAULT em vários blocos de configuração, atualizado
+melhoria no script: 00-parametros.sh adicionado a variável: $SENHADEFAULT em vários blocos de configuração, atualizado
 a versão do Nextcloud para: v23.0.3, atualizado a versão do Asterisk para: v19.2.0.
 
 18/02/2022 - Robson Vaamonde - Acréscimo das dependências: zlibc e zlib1g-dev no arquivo: 00-parametros.sh do Wordpress 

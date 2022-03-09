@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 20/02/2022
-# Versão: 0.49
+# Data de atualização: 08/03/2022
+# Versão: 0.50
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -109,7 +109,7 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 SSHDEP="openssh-server openssh-client"
 #
 # Variável de instalação dos softwares extras do OpenSSH Server
-SSHINSTALL="net-tools ipcalc nmap tree pwgen neofetch shellinabox"
+SSHINSTALL="net-tools traceroute ipcalc nmap tree pwgen neofetch shellinabox"
 #
 # Variável da porta de conexão padrão do OpenSSH Server
 PORTSSH="22"
