@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 19/02/2022
-Versão: 0.07
+Data de atualização: 09/03/2022
+Versão: 0.08
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -47,9 +47,9 @@ _
 #19B_ 04-dhcpdns.sh Integração e Configuração do DHCP e DNS Server - PARTE-02 (30/03/2022)
 #19C_ 04-dhcpdns.sh Testes de Integração do DHCP e DNS Client no Windows e Linux - PARTE-03 (01/04/2022)
 _
-#20A_ 05-ntp.sh Customizando o Script e Arquivos de Configuração do NTP Server - PARTE-01
-#20B_ 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02
-#20C_ 05-ntp.sh Configuração do NTP Client no Windows e Linux - PARTE-03
+#20A_ 05-ntp.sh Customizando o Script e Arquivos de Configuração do NTP Server - PARTE-01 (04/04/2022)
+#20B_ 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02 (06/04/2022)
+#20C_ 05-ntp.sh Configuração do NTP Client no Windows e Linux - PARTE-03 (08/04/2022)
 _
 #21A_ 06-tftphpa.sh Customizando o Script e Arquivos de Configuração do TFTP-HPA Server - PARTE-01
 #21B_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02
