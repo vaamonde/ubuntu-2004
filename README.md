@@ -253,8 +253,8 @@ Link da vídeo aula: https://www.youtube.com/watch?v=HBRfp1MUkcM
 
 ## **🔴 01-openssh.sh Configuração e Monitoramento do OpenSSH Client no Windows e Linux - PARTE-03 🐧**
 
-Terceiro Vídeo de Configuração do OpenSSH Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como accessar remotamente o servidor Ubuntu utilizando o SSH Client e Shell-In-a-Box, analisar os arquivos de Log para monitorar o acesso remoto e fazer a geração da chave pública/privada para aumentar a segurança do SSH.
+Terceiro Vídeo de Configuração do OpenSSH Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como acessar remotamente o servidor Ubuntu utilizando o SSH Client e Shell-In-a-Box, analisar os arquivos de Log para monitorar o acesso remoto e fazer a geração da chave pública/privada para aumentar a segurança do SSH.
 
-[![Access OpenSSH Server](http://img.youtube.com/vi//0.jpg)]( "Access OpenSSH Server")
+[![Access OpenSSH Server](http://img.youtube.com/vi/yESGEqv-t3Q/0.jpg)](https://www.youtube.com/watch?v=yESGEqv-t3Q "Access OpenSSH Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=yESGEqv-t3Q
