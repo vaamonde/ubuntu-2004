@@ -124,6 +124,7 @@ PORTSHELLINABOX="4200"
 # Arquivos de configuração (conf) do Serviço de Rede ISC DHCP Sever utilizados nesse script
 # 01. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
 # 02. /etc/netplan/00-installer-config.yaml = arquivo de configuração da placa de rede
+# 03. /etc/default/isc-dhcp-server = arquivo de configuração do serviço do ISC DHCP Server
 #
 # Arquivos de monitoramento (log) do Serviço de Rede ISC DHCP Server utilizados nesse script
 # 01. systemctl status isc-dhcp-server = status do serviço do ISC DHCP
