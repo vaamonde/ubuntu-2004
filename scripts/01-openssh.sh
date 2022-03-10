@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 24/02/2022
-# Versão: 0.24
+# Data de atualização: 10/03/2022
+# Versão: 0.25
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -32,11 +32,11 @@
 # Acesso remoto utilizando o GNU/Linux ou Microsoft Windows
 #
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	ssh vaamonde@172.16.1.10
+# 	ssh vaamonde@172.16.1.20
 #	ssh vaamonde@ssh.pti.intra
 #
 # Windows Powershell: Menu, Powershell 
-#	ssh vaamonde@172.16.1.10
+#	ssh vaamonde@172.16.1.20
 #	ssh vaamonde@ssh.pti.intra
 #
 # Linux Mint ou Windows:
@@ -53,13 +53,23 @@
 #	sudo netstat -tnpa | grep 'ESTABLISHED.*sshd' (show networking connection)
 #	sudo ps -axfj | grep sshd (report a snapshot of the current processes)
 #
-# Gerando os par de chaves Pública/Privadas utilizando o GNU/Linux
+# Gerando os pares de chaves Pública/Privadas utilizando o GNU/Linux
 # Linux Mint Terminal: Ctrl+Alt+T
 #	ssh-keygen
 #		Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde <Enter>
 #		Enter passphrase (empty for no passphrase): <Enter>
 #		Enter same passphrase again: <Enter>
-#	ssh-copy-id vaamonde@ssh.pti.intra
+#	ssh-copy-id vaamonde@172.16.1.20
+#
+# Importando os pares de chaves Públicas/Privadas utilizando o Powershell
+# Windows Powershell: Menu, Powershell 
+#	Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
+#		Get-Service ssh-agent <Enter>
+#		Set-Service ssh-agent -StartupType Manual <Enter> (Ou mudar para: Automatic)
+#		Start-Service ssh-agent <Enter>
+#
+#	Segunda etapa: Powershell do perfil do usuário sem ser como administrador
+#		ssh-add .\vaamonde <Enter>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
