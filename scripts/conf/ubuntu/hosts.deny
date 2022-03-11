@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
-# Data de atualização: 08/12/2021
-# Versão: 0.02
+# Data de atualização: 11/03/2022
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Comando utilizado para verificar se o serviço (daemon) de rede tem suporte 
@@ -20,7 +20,7 @@
 #
 # Negando todas as Redes de acessar remotamente os serviços no Servidor Ubuntu
 # DAEMON   CLIENT     OPTION
-ALL: ALL: spawn /bin/echo "$(date) Conexão Recusada - IP %a" >> /var/log/tcpwrappers-deny.log
+ALL: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-deny.log
 #
 # Exemplos de configuração do TCPWrappers do arquivo hosts.deny:
 # Negando uma subrede ou nome de domínio FQDN para um serviço

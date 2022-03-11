@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 08/03/2022
+Data de atualização: 11/03/2022
 Versão: 0.44
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+11/03/2022 - Robson Vaamonde - Melhorias nos arquivos de configuração: hosts.allow e hosts.deny, acréscentado mais
+informações detalhadas nos Logs: $(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p,
+melhoria no arquivo de configuração: dhcpd.conf, acréscentado as opções de mais servidores DNS e alterado o DNS padrão
+para o do Firewall pfSense e adicionado os DNS do Google (8.8.8.8 e 8.8.4.4). 
+
 08/03/2022 - Robson Vaamonde - Acréscimo no arquivo: 00-parametros.sh na opção do OpenSSH Server a instalação do
 pacote extra: traceroute.
 

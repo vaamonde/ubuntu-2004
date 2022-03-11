@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.03
+# Data de atualização: 11/03/2022
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Comando utilizado para verificar se o serviço (daemon) de rede tem suporte ao 
@@ -17,40 +17,40 @@
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de OpenSSH
 # DAEMON   CLIENT     OPTION
-sshd: 172.16.1.0/24: spawn /bin/echo "$(date) - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
+sshd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-ssh.log
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de MySQL
 # DAEMON   CLIENT     OPTION
-mysqld: 172.16.1.0/24: spawn /bin/echo "$(date) - MySQL - IP %a" >> /var/log/tcpwrappers-allow-mysql.log
+mysqld: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-mysql.log
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de Telnet
 # DAEMON   CLIENT     OPTION
-in.telnetd: 172.16.1.0/24: spawn /bin/echo "$(date) - Telnet - IP %a" >> /var/log/tcpwrappers-allow-telnet.log
+in.telnetd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-telnet.log
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de FTP
 # DAEMON   CLIENT     OPTION
-vsftpd: 172.16.1.0/24: spawn /bin/echo "$(date) - Vsftpd - IP %a" >> /var/log/tcpwrappers-allow-vsftpd.log
+vsftpd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-vsftpd.log
 #
 # Permitindo a Rede 172.16.1.0/24 se conectar remotamente no Servidor de TFTP
 # DAEMON   CLIENT     OPTION
-in.tftpd: 172.16.1.0/24: spawn /bin/echo "$(date) - Tftpd - IP %a" >> /var/log/tcpwrappers-allow-tftpd.log
+in.tftpd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-tftpd.log
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de NFS
 # DAEMON   CLIENT     OPTION
-portmap: 172.16.1.0/24: spawn /bin/echo "$(date) - Portmap - IP %a" >> /var/log/tcpwrappers-allow-nfs.log
-lockd: 172.16.1.0/24: spawn /bin/echo "$(date) - Lockd - IP %a" >> /var/log/tcpwrappers-allow-nfs.log
-rquotad: 172.16.1.0/24: spawn /bin/echo "$(date) - Rquotad - IP %a" >> /var/log/tcpwrappers-allow-nfs.log
-mountd: 172.16.1.0/24: spawn /bin/echo "$(date) - Mountd - IP %a" >> /var/log/tcpwrappers-allow-nfs.log
-statd: 172.16.1.0/24: spawn /bin/echo "$(date) - Statd - IP %a" >> /var/log/tcpwrappers-allow-nfs.log
+portmap: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
+lockd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
+rquotad: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
+mountd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
+statd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
 #
 # Permitindo que todas as redes acesse os serviços remotos do Servidor Bacula
 # DAEMON   CLIENT     OPTION
-bacula-fd: ALL: spawn /bin/echo "$(date) - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-bacula-sd: ALL: spawn /bin/echo "$(date) - Bacula-SD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-bacula-dir: ALL: spawn /bin/echo "$(date) - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-ptispo01ws01.pti.intra-fd: ALL: spawn /bin/echo "$(date) - Bacula-FD - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-ptispo01ws01.pti.intra-mon: ALL: spawn /bin/echo "$(date) - Bacula-MON - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
-ptispo01ws01.pti.intra-dir: ALL: spawn /bin/echo "$(date) - Bacula-DIR - IP %a" >> /var/log/tcpwrappers-allow-bacula.log
+bacula-fd: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
+bacula-sd: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
+bacula-dir: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-fd: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-mon: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
+ptispo01ws01.pti.intra-dir: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
 #
 # Exemplos de configuração do TCPWrappers do arquivo hosts.allow:
 # Permitindo uma Subrede ou nome de domínio FQDN
