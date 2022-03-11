@@ -258,3 +258,27 @@ Terceiro Vídeo de Configuração do OpenSSH Server do Curso "GRATUITO" de Ubunt
 [![Access OpenSSH Server](http://img.youtube.com/vi/yESGEqv-t3Q/0.jpg)](https://www.youtube.com/watch?v=yESGEqv-t3Q "Access OpenSSH Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=yESGEqv-t3Q
+
+## **🔴 02-dhcp.sh Customizando o Script e Arquivos de Configuração do DHCP Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do DHCP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 02-dhcp.sh antes de executar no nosso servidor.
+
+[![Config DHCP Server](http://img.youtube.com/vi//0.jpg)]( "Config DHCP Server")
+
+Link da vídeo aula: 
+
+## **🔴 02-dhcp.sh Instalação e Configuração do DHCP Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do DHCP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do DHCP Server.
+
+[![Install DHCP Server](http://img.youtube.com/vi//0.jpg)]( "Install DHCP Server")
+
+Link da vídeo aula: 
+
+## **🔴 02-dhcp.sh Configuração e Monitoramento do DHCP Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do DHCP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar os endereços IPv4 nos Clientes Linux e Windows utilizando o DHCP Client, analisar os arquivos de Log para monitorar o aluguel dos endereços ofertados na rede.
+
+[![Access DHCP Server](http://img.youtube.com/vi//0.jpg)]( "Access DHCP Server")
+
+Link da vídeo aula: 
