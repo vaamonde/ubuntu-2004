@@ -263,17 +263,17 @@ Link da vídeo aula: https://www.youtube.com/watch?v=yESGEqv-t3Q
 
 Primeiro Vídeo de Configuração do DHCP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 02-dhcp.sh antes de executar no nosso servidor.
 
-[![Config DHCP Server](http://img.youtube.com/vi//0.jpg)]( "Config DHCP Server")
+[![Config DHCP Server](http://img.youtube.com/vi/sU4jrLLyrHI/0.jpg)](https://www.youtube.com/watch?v=sU4jrLLyrHI "Config DHCP Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=sU4jrLLyrHI
 
 ## **🔴 02-dhcp.sh Instalação e Configuração do DHCP Server - PARTE-02 🐧**
 
 Segundo Vídeo de Configuração do DHCP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do DHCP Server.
 
-[![Install DHCP Server](http://img.youtube.com/vi//0.jpg)]( "Install DHCP Server")
+[![Install DHCP Server](http://img.youtube.com/vi/_CDFbne0DJo/0.jpg)](https://www.youtube.com/watch?v=_CDFbne0DJo "Install DHCP Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=_CDFbne0DJo
 
 ## **🔴 02-dhcp.sh Configuração e Monitoramento do DHCP Client no Windows e Linux - PARTE-03 🐧**
 

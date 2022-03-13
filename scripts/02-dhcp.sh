@@ -35,6 +35,7 @@
 # 	sudo dhclient -r enp0s3
 # 	sudo dhclient enp0s3
 # 	sudo cat /var/lib/dhcp/dhclient.leases
+#
 # Windows Powershell: 
 #	ipconfig /all
 #	ipconfig /release
