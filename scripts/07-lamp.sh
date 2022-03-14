@@ -69,12 +69,12 @@
 # Utilização do MySQL Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo apt update && sudo apt install mysql-client
-#	mysql -u root -p -h pti.intra
+#	mysql -u root -p -h pti.intra (the MySQL command-line tool)
 #
 # Utilização do Links2 Client no GNU/Linux
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo apt update && sudo apt install links2
-#	links2 http://pti.intra
+#	links2 http://pti.intra (lynx-like alternative character mode WWW browser)
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

@@ -22,11 +22,13 @@
 #
 # Utilização do TFTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	tftp tftp.pti.intra
+#	sudo apt install tftp ou sudo apt install tftp-hpa
+# 	tftp tftp.pti.intra (IPv4 Trivial File Transfer Protocol client)
 #		verbose
 #		status
 #		get robson.txt
 #		put vaamonde.txt
+#
 # Windows Powershell:
 # 	tftp tftp.pti.intra
 #		verbose

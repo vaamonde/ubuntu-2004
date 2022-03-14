@@ -26,10 +26,11 @@
 #
 # Testando o DNS no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T 
-#	nslookup pti.intra
-#	dig pti.intra
-#	host pti.intra
-#	ping pti.intra
+#	nslookup pti.intra (query Internet name servers interactively)
+#	dig pti.intra (DNS lookup utility)
+#	host pti.intra (DNS lookup utility)
+#	ping pti.intra (send ICMP ECHO_REQUEST to network hosts)
+#
 # Windows Powershell.: 
 #	nslookup pti.intra
 #	ipconfig /displaydns

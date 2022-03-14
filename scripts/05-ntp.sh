@@ -33,13 +33,14 @@
 #
 # Configuração do NTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	sudo ntpdate -s 172.16.1.20
-#	sudo ntpq -pn
-#	sudo ntpq -c sysinfo
-#	sudo timedatectl
-#	sudo timedatectl show
-#	sudo date
-#	sudo hwclock
+# 	sudo ntpdate -s 172.16.1.20 (set the date and time via NTP )
+#	sudo ntpq -pn (standard NTP query program)
+#	sudo ntpq -c sysinfo (standard NTP query program)
+#	sudo timedatectl (Control the system time and date)
+#	sudo timedatectl show (Control the system time and date)
+#	sudo date (print or set the system date and time)
+#	sudo hwclock (time clocks utility)
+#
 # Windows Powershell: 
 #	net time \\172.16.1.20 /set /yes
 #	w32tm /query /status

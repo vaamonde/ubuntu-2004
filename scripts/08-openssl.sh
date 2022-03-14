@@ -30,6 +30,9 @@
 # Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e 
 # navegadores web.
 #
+# Site Oficial do Projeto: https://www.openssl.org/
+# Manual do OpenSSL: https://man.openbsd.org/openssl.1
+#
 # Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)
 # Abrir menu de Aplicativo
 #	Preferências ou Opções ou Configurações
@@ -98,9 +101,6 @@
 #			Certificados
 #				Emitido para:
 #					ptispo01ws01.pti.intra
-#
-# Site Oficial do Projeto: https://www.openssl.org/
-# Manual do OpenSSL: https://man.openbsd.org/openssl.1
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

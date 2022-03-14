@@ -33,21 +33,22 @@
 # Configuração do DHCP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Gráfico: NetworkManager - Icone da Placa de Rede
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	sudo NetworkManager --print-config
-# 	sudo nmcli device status
-# 	sudo nmcli device show enp0s3 
-# 	sudo networkctl status enp0s3 
-# 	sudo ifconfig enp0s3
-# 	sudo ip address show enp0s3
-# 	sudo route -n
-# 	sudo systemd-resolve --status
-# 	sudo dhclient -r enp0s3
-# 	sudo dhclient enp0s3
-# 	sudo cat /var/lib/dhcp/dhclient.leases
-#	nslookup pti.intra
-#	dig pti.intra
-#	host pti.intra
-#	ping pti.intra
+# 	sudo NetworkManager --print-config (network management daemon)
+# 	sudo nmcli device status (command-line tool for controlling NetworkManager)
+# 	sudo nmcli device show enp0s3 (command-line tool for controlling NetworkManager)
+# 	sudo networkctl status enp0s3 Query the status of network links)
+# 	sudo ifconfig enp0s3 (configure a network interface)
+# 	sudo ip address show enp0s3 (show / manipulate routing, network devices, interfaces and tunnels)
+# 	sudo route -n (show/manipulate IP routing table)
+# 	sudo systemd-resolve --status (Resolve domain names, IPV4 and IPv6 addresses, DNS resource records, and services)
+# 	sudo dhclient -r enp0s3 (Dynamic Host Configuration Protocol Client)
+# 	sudo dhclient enp0s3 (Dynamic Host Configuration Protocol Client)
+# 	sudo cat /var/lib/dhcp/dhclient.leases (DHCP client lease database)
+#	nslookup pti.intra (query Internet name servers interactively)
+#	dig pti.intra (DNS lookup utility)
+#	host pti.intra (DNS lookup utility)
+#	ping pti.intra (send ICMP ECHO_REQUEST to network hosts)
+#
 # Windows Powershell: 
 #	ipconfig /all
 #	ipconfig /release
