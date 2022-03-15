@@ -21,6 +21,21 @@
 # Site Oficial do Projeto Vsftpd: https://security.appspot.com/vsftpd.html
 # Site Oficial do Projeto FileZilla: https://filezilla-project.org/
 #
+# Utilização do FTP Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	ftp ftp.pti.intra (Internet file transfer program)
+#		verbose
+#		status
+#		get robson.txt
+#		put vaamonde.txt
+#
+# Windows Powershell:
+# 	ftp ftp.pti.intra
+#		verbose
+#		status
+#		get robson.txt
+#		put vaamonde.txt
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
