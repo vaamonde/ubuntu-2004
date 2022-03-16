@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 25/01/2022
-Versão: 0.05
+Data de atualização: 16/03/2022
+Versão: 0.06
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 Network: 172.16.1.0/24
@@ -53,3 +53,4 @@ SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 31-webdav.sh ---------------> TCP 80 (apache2 HTTP)
 32-nextcloud.sh ------------> TCP 80 (apache2 HTTP) e TCP 3306 (mysqld)
 33-asterisk.sh -------------> UDP 5060 (SIP)
+34-netdisco.sh -------------> TCP 5000 (HTTP) e TCP 5432 (postgres)

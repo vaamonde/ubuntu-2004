@@ -15,9 +15,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 14/03/2022 - Robson Vaamonde - Várias melhoria nas documentações dos scripts em relação aos comandos utilizados nos
 clientes e vários serviços implementados, descrição básica do MAN (manuais) dos comandos.
 
-11/03/2022 - Robson Vaamonde - Melhorias nos arquivos de configuração: hosts.allow e hosts.deny, acréscentado mais
+11/03/2022 - Robson Vaamonde - Melhorias nos arquivos de configuração: hosts.allow e hosts.deny, acrescentado mais
 informações detalhadas nos Logs: $(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p,
-melhoria no arquivo de configuração: dhcpd.conf, acréscentado as opções de mais servidores DNS e alterado o DNS padrão
+melhoria no arquivo de configuração: dhcpd.conf, acrescentado as opções de mais servidores DNS e alterado o DNS padrão
 para o do Firewall pfSense e adicionado os DNS do Google (8.8.8.8 e 8.8.4.4). 
 
 08/03/2022 - Robson Vaamonde - Acréscimo no arquivo: 00-parametros.sh na opção do OpenSSH Server a instalação do
@@ -27,7 +27,7 @@ pacote extra: traceroute.
 01-InstalacaoDoUbuntuServer-20.04.4-LTS, acréscimo das explicações para executar mais de uma vez o script no mesmo
 servidor no arquivo: HELP.
 
-20/02/2022 - Robson Vaamonde - Alteração das opções do arquivo: php.ini, acréscentado os valores de referência do GLPI
+20/02/2022 - Robson Vaamonde - Alteração das opções do arquivo: php.ini, acrescentado os valores de referência do GLPI
 nas linhas: max_execution_time = 600, session.auto_start = Off, session.use_trans_sid = 0, adicionado as opções de 
 edição do monitoramento dos serviços: Docker, ElasticSearch, MongoDB, e do Redis Server no script: 13-netada.sh, 
 melhoria no script: 00-parametros.sh adicionado a variável: $SENHADEFAULT em vários blocos de configuração, atualizado
@@ -51,7 +51,7 @@ SystemD para a inicialização automática do Netdisco.
 04/02/2022 - Robson Vaamonde - Correção da falha do DAV Off no Virtualhost do Nextcloud do script: 32-nextcloud.sh,
 correção feita no arquivo de configuração: nextcloud.conf do Virtualhost do Apache2, criação dos scripts para a 
 instalação e configuração do Prometheus e do InfluxDB integrados no script: 19-grafana.sh, novos arquivos do Netdata
-para o monitoramento do ElasticSearch, MongoDB, Redis Server e do Docker acréscentado no script: 13-netdata.sh
+para o monitoramento do ElasticSearch, MongoDB, Redis Server e do Docker acrescentado no script: 13-netdata.sh
 
 03/02/2022 - Robson Vaamonde - Correção do HTTPS no script: 01-openssh.sh do acesso ao Shell-In-a-Box, melhoria no
 arquivo de Banner: issue.net adicionado a Lei LGPD (Lei Geral de Proteção de Dados), melhorias nos arquivos da placa
@@ -72,13 +72,13 @@ systemctl status, várias correções de Pt-BR nos scripts.
 
 20/01/2022 - Robson Vaamonde - Finalizado os testes das novas opções do OpenSSH Server no arquivo: sshd_config,
 melhorias na documentação dos arquivos de Zona de Pesquisa Direta e Reversa do Bind9 DNS Server, customização do
-arquivo: 50-default.conf do Rsyslog, habilitadndo recursos de Log do Cron, User, etc, arquivo adicionado no script
+arquivo: 50-default.conf do Rsyslog, habilitando recursos de Log do Cron, User, etc, arquivo adicionado no script
 do OpenSSH Server: 01-openssh.sh, correção do arquivo: awstatsupdate-cron em relação a falha de atualização das
 informações de estatísticas de acesso ao domínio pti.intra, criação dos arquivo: ntpdate e atualização do script: 
 05-ntp.sh, correção do arquivo: wp-config.php referente a falha do tipo de arquivo CRLF convertido para LF.
 
 18/01/2022 - Robson Vaamonde - Novas opções de configuração do OpenSSH Server no arquivo: sshd_config ainda em fase 
-de testes e homologação (acréscentado no final do arquivo, opções comentadas), customização do arquivo: config.conf
+de testes e homologação (acrescentado no final do arquivo, opções comentadas), customização do arquivo: config.conf
 do Neofetch, criação do arquivo de CRON: neofetch-cron para atualizar o arquivo motd, atualização das opções no 
 arquivo: 01-openssh.sh, atualização do arquivo de configuração: dhcpd.conf com novas opções: get-lease-hostnames on;
 e ping-check on;, customização do arquivo: isc-dhcp-server habilitando somente o IPv4 e Interface de Rede enp0s3,
@@ -129,7 +129,7 @@ alteração do script: 29-postgresql.sh com o acréscimo das linhas de atualiza�
 23/12/2021 - Robson Vaamonde - Correções de vários scripts em relação ao PT-BR e melhorias na estrutura e documentação,
 finalizado a homologação dos scripts até 29-postgresql.sh. Preparação para a gravação das aulas em Janeiro de 2022,
 criação do roteiro e linha de base para a gravação dos vídeos, criação da estrutura de diretórios, scripts que ainda 
-não foram migrados estão no diretório referente ao seu serviço, somente após a migração será acréscentado o seu número
+não foram migrados estão no diretório referente ao seu serviço, somente após a migração será acrescentado o seu número
 de sequência e se esse script pode ser instalado junto com os demais.
 
 19/12/2021 - Robson Vaamonde - Correções de vários scripts e homologação dos scripts até 27-bacula.sh.
@@ -139,8 +139,8 @@ vídeos em 2022, correções dos Bugs do Netdata, GLPI, Tomcat na Base de Dados 
 tradução dos scripts.
 
 13/12/2021 - Robson Vaamonde - Mudança na estrutura de diretório dos arquivos de configuração dos serviços de rede,
-criação dos sub-diretórios de cada serviço para facilitar a administração e customomização para cenários diferentes.
-Váras melhorias nos scripts e arquivos de configuração nos dias 10 até 12/12/2021 com foco mais em documentação e 
+criação dos sub-diretórios de cada serviço para facilitar a administração e customização para cenários diferentes.
+Várias melhorias nos scripts e arquivos de configuração nos dias 10 até 12/12/2021 com foco mais em documentação e 
 tradução, criação da validação de uso de porta nos scripts para facilitar o diagnóstico de uso de porta de serviço,
 criação da validação de uso da Internet nos scripts para facilitar o diagnóstico de falha de instalação dos serviços,
 criação do arquivo: bind-rndc do Bind9 referente ao Logrotate utilizado pelo Netdata, criação dos arquivos de
