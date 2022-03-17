@@ -33,6 +33,9 @@
 #
 # Windows Powershell.: 
 #	nslookup pti.intra
+#	nslookup 172.16.1.20
+#	nslookup ptispo01ws01
+#	nslookup ptispo01ws01.pti.intra
 #	ipconfig /displaydns
 #	ping pti.intra
 #	Resolve-DnsName pti.intra
