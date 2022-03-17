@@ -133,7 +133,7 @@ PORTSHELLINABOX="4200"
 # 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
 # 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
 # 06. dhcp-lease-list = comando utilizado para mostrar os leases dos endereços IPv4 do ISC DHCP
-# 07. tcpdump -n -i enp0s3 port bootps or port bootpc = dump dos pacotes do ISC DHCP
+# 07. tcpdump -vv -n -i enp0s3 port bootps or port bootpc = dump dos pacotes do ISC DHCP
 #
 # Variável de instalação do serviço de rede ISC DHCP Server
 DHCPINSTALL="isc-dhcp-server net-tools"

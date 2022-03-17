@@ -32,14 +32,16 @@
 # 	sudo ip address show enp0s3 (show / manipulate routing, network devices, interfaces and tunnels)
 # 	sudo route -n (show/manipulate IP routing table)
 # 	sudo systemd-resolve --status (Resolve domain names, IPV4 and IPv6 addresses, DNS resource records, and services)
-# 	sudo dhclient -r enp0s3 (Dynamic Host Configuration Protocol Client)
-# 	sudo dhclient enp0s3 (Dynamic Host Configuration Protocol Client)
+# 	sudo dhclient -v -r enp0s3 (Dynamic Host Configuration Protocol Client)
+# 	sudo dhclient -v enp0s3 (Dynamic Host Configuration Protocol Client)
 # 	sudo cat /var/lib/dhcp/dhclient.leases (DHCP client lease database)
 #
 # Windows Powershell: 
+#	getmac
 #	ipconfig /all
 #	ipconfig /release
 #	ipconfig /renew
+#	route print
 #	netsh interface show interface
 #	netsh interface ip show interface
 #	netsh interface ip show config
