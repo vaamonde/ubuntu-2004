@@ -287,22 +287,22 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Z0pi8RIgyuk
 
 Primeiro Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 02-dns.sh antes de executar no nosso servidor.
 
-[![Config DNS Server](http://img.youtube.com/vi//0.jpg)]( "Config DNS Server")
+[![Config DNS Server](http://img.youtube.com/vi/JvfHTdmXS3Y/0.jpg)](https://www.youtube.com/watch?v=JvfHTdmXS3Y "Config DNS Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=JvfHTdmXS3Y
 
 ## **🔴 03-dns.sh Instalação e Configuração do DNS Server - PARTE-02 🐧**
 
 Segundo Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do DNS Server.
 
-[![Install DHCP Server](http://img.youtube.com/vi//0.jpg)]( "Install DHCP Server")
+[![Install DHCP Server](http://img.youtube.com/vi/5jxBp8AvRl8/0.jpg)](https://www.youtube.com/watch?v=5jxBp8AvRl8 "Install DHCP Server")
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=5jxBp8AvRl8
 
 ## **🔴 03-dns.sh Configuração e Monitoramento do DNS Client no Windows e Linux - PARTE-03 🐧**
 
 Terceiro Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como consultar as resoluções de nomes utilizando o DHCP Client nos Clientes Linux e Windows, analisar os arquivos de Log para monitorar as resoluções de nomes no servidor e clientes.
 
-[![Access DHCP Server](http://img.youtube.com/vi//0.jpg)]( "Access DNS Server")
+[![Access DHCP Server](http://img.youtube.com/vi/Mb0xX6XTOEc/0.jpg)](https://www.youtube.com/watch?v=Mb0xX6XTOEc "Access DNS Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=Mb0xX6XTOEc
