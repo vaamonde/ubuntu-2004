@@ -71,6 +71,10 @@
 # 	sudo apt update && sudo apt install mysql-client
 #	mysql -u root -p -h pti.intra (the MySQL command-line tool)
 #
+# Microsoft Windows
+#	Download: https://dev.mysql.com/downloads/shell/
+#	mysql -u root -p -h pti.intra (the MySQL command-line tool)
+#
 # Utilização do Links2 Client no GNU/Linux
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo apt update && sudo apt install links2
