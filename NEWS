@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 23/02/2022
-Versão: 0.15
+Data de atualização: 18/03/2022
+Versão: 0.16
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+18/03/2022 - Robson Vaamonde - Indicação do inscrito no Canal do YouTUBE: Patrick Scalco: - Estudos e criação do
+script: 00-bigbluebutton.sh. BigBlueButton é um sistema de webconferência de código aberto projetado para aprendizado 
+online. BigBlueButton é uma ferramenta usada por instrutores, que os ajuda a acessar os Sistemas de Gerenciamento de 
+Aprendizagem, ferramentas de engajamento e análises.
+
 23/02/2022 - Robson Vaamonde - Estudos e criação do script: 00-passbolt.sh. Passbolt é um gerenciador de senhas de 
 código aberto projetado para colaboração em equipe. Projeto conhecido no LinkedIn no perfil do: Wendel Guaralde
 Mais informações: https://help.passbolt.com/hosting/install/ce/ubuntu/ubuntu
