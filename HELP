@@ -184,7 +184,7 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
 
 #04_ Ajudando no "DESEMPENHO" dos arquivos de configuração
-	_ Para ajudar no DESEMEPNHO dos arquivos de configuração é recomendado criar o mesmo cenário ou um 
+	_ Para ajudar no DESEMPENHO dos arquivos de configuração é recomendado criar o mesmo cenário ou um 
 	_ novo cenário e testar as opções de "Tuning" Otimização/Performace principalmente dos serviços de 
 	_ rede como o MySQL, MariaDB, Apache2, Nginx, etc..., documentar as melhorias ou correções e enviar 
 	_ na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.

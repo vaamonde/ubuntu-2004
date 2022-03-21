@@ -31,7 +31,7 @@
 # Site Oficial do Projeto ICS DHCP: https://www.isc.org/dhcp/
 #
 # Configuração do DHCP Client no GNU/Linux ou Microsoft Windows
-# Linux Mint Gráfico: NetworkManager - Icone da Placa de Rede
+# Linux Mint Gráfico: NetworkManager - Ícone da Placa de Rede
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo NetworkManager --print-config (network management daemon)
 # 	sudo nmcli device status (command-line tool for controlling NetworkManager)
