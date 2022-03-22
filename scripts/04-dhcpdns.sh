@@ -251,7 +251,7 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando os serviços do ISC DHCP Server e do Bind DNS Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart isc-dhcp-server &>> $LOG
 	systemctl restart bind9 &>> $LOG
 	systemctl reload bind9 &>> $LOG
