@@ -205,7 +205,7 @@ PORTDNS="53"
 # integrado no ISC DHCP Server
 # 
 # Variável da senha em modo texto que está configurada nos arquivos: dhcpd.conf, named.conf.local
-# e rndc.key que será substituída para nova chave criptografada da variável USERUPDATE
+# e rndc.key que será substituída pela nova chave criptografada da variável: USERUPDATE
 SECRETUPDATE="vaamonde"
 #
 # Variável da senha utilizada na criação da chave de atualização dos ponteiros do DNS e DHCP

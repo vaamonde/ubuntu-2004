@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.13
+# Data de atualização: 22/03/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -27,7 +27,9 @@
 # como ISC DHCP, é uma das primeiras e mais conhecidas, mas agora existem várias outras 
 # implementações de software de servidor DHCP disponíveis.
 #
-# Site Oficial do Projeto Bind9: https://www.isc.org/bind/
+# Site Oficial do Projeto Bind: https://www.isc.org/bind/
+# Site Oficial do Projeto Dnsmasq: https://thekelleys.org.uk/dnsmasq/doc.html
+# Site Oficial do Projeto Powerdns: https://www.powerdns.com/
 # Site Oficial do Projeto ICS DHCP: https://www.isc.org/dhcp/
 #
 # Configuração do DHCP Client no GNU/Linux ou Microsoft Windows

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 03/02/2022
-# Versão: 0.15
+# Data de atualização: 22/03/2022
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
@@ -23,6 +23,8 @@
 # mantido pelo Internet Systems Consortium.
 #
 # Site Oficial do Projeto Bind: https://www.isc.org/bind/
+# Site Oficial do Projeto Dnsmasq: https://thekelleys.org.uk/dnsmasq/doc.html
+# Site Oficial do Projeto Powerdns: https://www.powerdns.com/
 #
 # Testando o DNS no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T 

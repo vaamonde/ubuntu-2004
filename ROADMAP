@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 09/03/2022
-Versão: 0.08
+Data de atualização: 22/03/2022
+Versão: 0.09
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -51,9 +51,9 @@ _
 #20B_ 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02 (06/04/2022)
 #20C_ 05-ntp.sh Configuração do NTP Client no Windows e Linux - PARTE-03 (08/04/2022)
 _
-#21A_ 06-tftphpa.sh Customizando o Script e Arquivos de Configuração do TFTP-HPA Server - PARTE-01
-#21B_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02
-#21C_ 06-tftphpa.sh Configuração e Monitoramento do TFTP Client no Windows e Linux - PARTE-03
+#21A_ 06-tftphpa.sh Customizando o Script e Arquivos de Configuração do TFTP-HPA Server - PARTE-01 (11/04/2022)
+#21B_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02 (13/04/2022)
+#21C_ 06-tftphpa.sh Configuração e Monitoramento do TFTP Client no Windows e Linux - PARTE-03 (15/04/2022)
 _
 #22A_ 07-lamp.sh Customizando o Script e Arquivos de Configuração do LAMP Server - PARTE-01
 #22B_ 07-lamp.sh Instalação e Configuração do LAMP Server - PARTE-02

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.15
+# Data de atualização: 22/03/2022
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -42,6 +42,8 @@
 #	sudo hwclock (time clocks utility)
 #
 # Windows Powershell: 
+#	date
+#	time
 #	net time \\172.16.1.20 /set /yes
 #	w32tm /query /status
 #	w32tm /query /configuration
