@@ -286,7 +286,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=Z0pi8RIgyuk
 
 ## **🔴 03-dns.sh Customizando o Script e Arquivos de Configuração do DNS Server - PARTE-01 🐧**
 
-Primeiro Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 02-dns.sh antes de executar no nosso servidor.
+Primeiro Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 03-dns.sh antes de executar no nosso servidor.
 
 [![Config DNS Server](http://img.youtube.com/vi/JvfHTdmXS3Y/0.jpg)](https://www.youtube.com/watch?v=JvfHTdmXS3Y "Config DNS Server")
 
@@ -296,14 +296,38 @@ Link da vídeo aula: https://www.youtube.com/watch?v=JvfHTdmXS3Y
 
 Segundo Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do DNS Server.
 
-[![Install DHCP Server](http://img.youtube.com/vi/5jxBp8AvRl8/0.jpg)](https://www.youtube.com/watch?v=5jxBp8AvRl8 "Install DHCP Server")
+[![Install DNS Server](http://img.youtube.com/vi/5jxBp8AvRl8/0.jpg)](https://www.youtube.com/watch?v=5jxBp8AvRl8 "Install DNS Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=5jxBp8AvRl8
 
 ## **🔴 03-dns.sh Configuração e Monitoramento do DNS Client no Windows e Linux - PARTE-03 🐧**
 
-Terceiro Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como consultar as resoluções de nomes utilizando o DHCP Client nos Clientes Linux e Windows, analisar os arquivos de Log para monitorar as resoluções de nomes no servidor e clientes.
+Terceiro Vídeo de Configuração do DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como consultar as resoluções de nomes utilizando o DNS Client nos Clientes Linux e Windows, analisar os arquivos de Log para monitorar as resoluções de nomes no servidor e clientes.
 
-[![Access DHCP Server](http://img.youtube.com/vi/Mb0xX6XTOEc/0.jpg)](https://www.youtube.com/watch?v=Mb0xX6XTOEc "Access DNS Server")
+[![Access DNS Server](http://img.youtube.com/vi/Mb0xX6XTOEc/0.jpg)](https://www.youtube.com/watch?v=Mb0xX6XTOEc "Access DNS Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=Mb0xX6XTOEc
+
+## **🔴 04-dhcpdns.sh Customizando o Script e Arquivos de Configuração do DHCP e DNS Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração da Integração do ISC DHCP Server com o Bind9 DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 04-dhcpdns.sh antes de executar no nosso servidor.
+
+[![Config DHCP DNS Server](http://img.youtube.com/vi/hKu8t4AJNVE/0.jpg)](https://www.youtube.com/watch?v=hKu8t4AJNVE "Config DHCP DNS Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=hKu8t4AJNVE
+
+## **🔴 04-dhcpdns.sh Integração e Configuração do DHCP e DNS Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração da Integração do ISC DHCP Server com o Bind9 DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de integração e configuração do ISC DHCP Server e do Bind9 DNS Server.
+
+[![Integration DHCP DNS Server](http://img.youtube.com/vi/yqz3EIkL5B4/0.jpg)](https://www.youtube.com/watch?v=yqz3EIkL5B4 "Integration DHCP DNS Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=yqz3EIkL5B4
+
+## **🔴 04-dhcpdns.sh Testes de Integração do DHCP e DNS Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo deConfiguração da Integração do ISC DHCP Server com o Bind9 DNS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como consultar as resoluções de nomes utilizando o DHCP Client nos Clientes Linux e Windows, analisar os arquivos de Log para monitorar as resoluções de nomes no servidor Bind9 DNS Server e verificar se os clientes estão atualizando os ponteiros no DNS Server.
+
+[![Access DHCP DNS Server](http://img.youtube.com/vi/WVAF7PpywLM/0.jpg)](https://www.youtube.com/watch?v=WVAF7PpywLM "Access DHCP DNS Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=WVAF7PpywLM

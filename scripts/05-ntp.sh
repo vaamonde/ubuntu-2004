@@ -203,7 +203,7 @@ echo -e "NTP Server e Client instalado com sucesso!!!, continuando com o script.
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do comando chown: -v (verbose), ntp (user), ntp (group)
