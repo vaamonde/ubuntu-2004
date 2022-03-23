@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.13
+# Data de atualização: 23/03/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -194,10 +194,12 @@ echo -e "Atualizando os arquivos de configuração do ISC DHCP Server, aguarde..
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do comando wget: -P (directory-prefix)
 	mv -v /etc/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf.old &>> $LOG
 	mv -v /etc/default/isc-dhcp-server /etc/default/isc-dhcp-server.old &>> $LOG
 	cp -v conf/dhcp/dhcpd.conf /etc/dhcp/ &>> $LOG
 	cp -v conf/dhcp/isc-dhcp-server /etc/default/ &>> $LOG
+	wget $OUI -P /usr/local/etc/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

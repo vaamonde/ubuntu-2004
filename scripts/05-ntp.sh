@@ -33,6 +33,7 @@
 #
 # Configuração do NTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
+#	sudo apt install ntpdate
 # 	sudo ntpdate -s 172.16.1.20 (set the date and time via NTP )
 #	sudo ntpq -pn (standard NTP query program)
 #	sudo ntpq -c sysinfo (standard NTP query program)

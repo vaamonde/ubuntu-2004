@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 14/03/2022
-Versão: 0.45
+Data de atualização: 23/03/2022
+Versão: 0.46
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+23/03/2022 - Robson Vaamonde - Acréscimo do recurso do OUI (organizationally unique identifier) nas configurações do
+DHCP Server para suportar a resolução e pesquisa de Lease do comando: dhcp-lease-list, adicionando as opções para o
+download do arquivo TXT nos scripts: 00-parametros.sh e 02-dhcp.sh.
+
 14/03/2022 - Robson Vaamonde - Várias melhoria nas documentações dos scripts em relação aos comandos utilizados nos
 clientes e vários serviços implementados, descrição básica do MAN (manuais) dos comandos.
 

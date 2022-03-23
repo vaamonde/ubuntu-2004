@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 08/03/2022
-# Versão: 0.50
+# Data de atualização: 23/03/2022
+# Versão: 0.51
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -137,6 +137,9 @@ PORTSHELLINABOX="4200"
 #
 # Variável de instalação do serviço de rede ISC DHCP Server
 DHCPINSTALL="isc-dhcp-server net-tools"
+#
+# Variável de download do arquivo do IEEE OUI (Organizationally Unique Identifier)
+OUI="https://standards-oui.ieee.org/oui/oui.txt"
 #
 # Variável da porta de conexão padrão do ISC DHCP Server
 PORTDHCP="67"
