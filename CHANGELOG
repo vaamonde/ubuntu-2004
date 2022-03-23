@@ -14,10 +14,12 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 23/03/2022 - Robson Vaamonde - Acréscimo do recurso do OUI (organizationally unique identifier) nas configurações do
 DHCP Server para suportar a resolução e pesquisa de Lease do comando: dhcp-lease-list, adicionando as opções para o
-download do arquivo TXT nos scripts: 00-parametros.sh e 02-dhcp.sh.
+download do arquivo TXT nos scripts: 00-parametros.sh e 02-dhcp.sh. Após análise do BUG: 0014 (Falha de Permissão
+Negada) do arquivo: cron.log, aplicação do Path de Correção no script: 01-openssh.log referente ao usuário e grupo
+do arquivo que está configurado como: root.root, o correto é: syslog.root.
 
 14/03/2022 - Robson Vaamonde - Várias melhoria nas documentações dos scripts em relação aos comandos utilizados nos
-clientes e vários serviços implementados, descrição básica do MAN (manuais) dos comandos.
+clientes de vários serviços implementados, utilizado a descrição básica do MAN (manuais) dos comandos.
 
 11/03/2022 - Robson Vaamonde - Melhorias nos arquivos de configuração: hosts.allow e hosts.deny, acrescentado mais
 informações detalhadas nos Logs: $(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p,

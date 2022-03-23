@@ -13,10 +13,10 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
 0014 - Falha de Permissão Negada (Permission denied) no arquivo: /var/log/cron.log, após executar a verificação de erros
-no arquivo do Syslog com o comando: sudo grep error /var/log/syslog, recebendo a mensagem: Mar 23 09:58:25 ptispo01ws01 
+no arquivo do Syslog com o comando: sudo grep -i error /var/log/syslog, recebendo a mensagem: Mar 23 09:58:25 ptispo01ws01 
 rsyslogd: file '/var/log/cron.log': open error: Permission denied [v8.2001.0 try https://www.rsyslog.com/e/2433 ], falha
 relacionada a permissão do arquivo, permissão padrão: -rw-r--r-- 1 root root 0 fev 24 15:32 /var/log/cron.log, alterado
-o dono do arquivo para: chown -v syslog.root /var/log/cron.log, path de correção aplicado no script: 01-openssh.sh
+o dono do arquivo para: chown -v syslog.root /var/log/cron.log, aplicado Path de correção script: 01-openssh.sh
 
 0013 - Falha do Virtual Host do Nextcloud referente ao arquivo: nextcloud.conf do Apache2, erro: AH0056: Syntax error on
 line 42, DAV not allowed in <VirtualHost> context, retirado as linhas do DAV Off do IfModule mod_dav.c e colocado a opção
@@ -24,7 +24,7 @@ do DAV Off no bloco Directory /var/www/html/own.
 
 0012 - Falha na compilação do Perl no script do OCS Inventory: perl: warning: Falling back to the standard locale ("C")
 correção do Locale para pt_BR.UTF-8 nas variáveis: LANGUAGE = "pt_BR.UTF-8", LC_ALL = "pt_BR.UTF-8" e LANG = "pt_BR.UTF-8"
-aplicada no script: 05-ntp.sh
+aplicada Path de correção no script: 05-ntp.sh
 
 0011 - Falha no compilação do Netdata erro: fatal error: mqtt_wss_client.h: No such file or directory (Makefile:3471 all)
 Error 2 - FAILED, correção do erro no arquivo: 00-parametros.sh mudança da URL: https://github.com/netdata/netdata aplicado
