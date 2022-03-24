@@ -218,7 +218,6 @@ echo -e "Atualizando os arquivos de configuração do NTP Server, aguarde..."
 	cp -v conf/ntp/ntp.conf /etc/ &>> $LOG
 	cp -v conf/ntp/ntp.drift /var/lib/ntp/ &>> $LOG
 	cp -v conf/ntp/{ntp,ntpdate} /etc/default/ &>> $LOG
-	cp -v conf/ntp/timesyncd.conf /etc/systemd/ &>> $LOG
 	chown -v ntp.ntp /var/lib/ntp/ntp.drift &>> $LOG
 echo -e "Arquivos do NTP Server atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -273,7 +272,6 @@ echo -e "Atualizando a Data e Hora do NTP Server, aguarde..."
 	systemctl stop ntp &>> $LOG
 	ntpdate -dquv $NTPSERVER &>> $LOG
 	systemctl start ntp &>> $LOG
-	systemctl restart systemd-timesyncd &>> $LOG
 echo -e "Data e Hora do NTP Server atualizada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -286,27 +284,32 @@ echo -e "Consultando os servidores NTP Server configurados, aguarde...\n"
 echo -e "Consulta realizada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Consultando o sincronismo dos servidores NTP Server configurados, aguarde...\n"
+	# opção do comando ntpq: -c (command) rl (display all system or peer variables)
+	ntpq -c rl
+echo -e "Consulta realizada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configurações do NTP Server, aguarde...\n"
+	# opção do comando ntpq: -c (command) sysinfo (display system operational summary)
+	ntpq -c sysinfo
+echo -e "Configurações verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando a Data e Hora do Sistema Operacional Ubuntu Server, aguarde...\n"
 	timedatectl status
 echo -e "Data e Hora verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a Data e Hora de Software e Hardware do Ubuntu Server, aguarde..."
-	# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
-	echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M")")\n"
+	# opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60), %S (second 60)
+	echo -e "Data/hora do OS: $(date +%d/%m/%Y-"("%H:%M:%S")")\n"
 	echo -e "Data/hora do Hardware: $(hwclock)\n"
 echo -e "Data e Hora verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando as configuração do NTP Server, aguarde...\n"
-	# opção do comando ntpq: -c (command) sysinfo (display system operational summary)
-	ntpq -c sysinfo
-echo -e "Configurações verificada com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
 echo -e "Verificando o serviço do NTP Server, aguarde..."
 	echo -e "NTP Server: $(systemctl status ntp | grep Active)"
-	echo -e "Timesyncd.: $(systemctl status systemd-timesyncd | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
