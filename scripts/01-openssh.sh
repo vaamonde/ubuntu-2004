@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 23/03/2022
-# Versão: 0.26
+# Data de atualização: 24/03/2022
+# Versão: 0.27
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -354,7 +354,6 @@ echo -e "Editando o arquivo de configuração 50-default.conf, pressione <Enter>
 	# opção do comando chown: -v (verbose), syslog (user), root (group)
 	read -s
 	vim /etc/rsyslog.d/50-default.conf
-	chown -v syslog.root /var/log/cron.log &>> $LOG
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -376,6 +375,9 @@ echo -e "Reinicializando os serviços do OpenSSH Server e do Shell-In-a-Box, agu
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl restart sshd &>> $LOG
 	systemctl restart shellinabox &>> $LOG
+	systemctl restart syslog &>> $LOG
+	systemctl restart cron &>> $LOG
+	systemctl restart logrotate &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

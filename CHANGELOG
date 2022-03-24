@@ -21,7 +21,8 @@ Timesyncd e Status do Daemon.
 DHCP Server para suportar a resolução e pesquisa de Lease do comando: dhcp-lease-list, adicionando as opções para o
 download do arquivo TXT nos scripts: 00-parametros.sh e 02-dhcp.sh. Após análise do BUG: 0014 (Falha de Permissão
 Negada) do arquivo: cron.log, aplicação do Path de Correção no script: 01-openssh.log referente ao usuário e grupo
-do arquivo que está configurado como: root.root, o correto é: syslog.root.
+do arquivo que está configurado como: root.root, o correto é: syslog.root, adicionado as opções de reinicialização 
+dos serviços dos: Syslog, Cron e Logrotate para a criação correta do arquivo: cron.log.
 
 14/03/2022 - Robson Vaamonde - Várias melhoria nas documentações dos scripts em relação aos comandos utilizados nos
 clientes de vários serviços implementados, utilizado a descrição básica do MAN (manuais) dos comandos.
