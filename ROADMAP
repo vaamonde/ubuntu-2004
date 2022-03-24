@@ -49,7 +49,7 @@ _
 _
 #20A_ 05-ntp.sh Customizando o Script e Arquivos de Configuração do NTP Server - PARTE-01 (04/04/2022)
 #20B_ 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02 (06/04/2022)
-#20C_ 05-ntp.sh Configuração do NTP Client no Windows e Linux - PARTE-03 (08/04/2022)
+#20C_ 05-ntp.sh Configuração e Monitoramento do NTP Client no Windows e Linux - PARTE-03 (08/04/2022)
 _
 #21A_ 06-tftphpa.sh Customizando o Script e Arquivos de Configuração do TFTP-HPA Server - PARTE-01 (11/04/2022)
 #21B_ 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02 (13/04/2022)
@@ -93,7 +93,7 @@ _
 _
 #31A_ 16-fusioninventory.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01
 #31B_ 16-fusioninventory.sh Instalação e Configuração do FusionInventory - PARTE-02
-#31C_ 16-fusioninventory.sh Inventário no Windows e Linux do FusionInventory - PARTE-03
+#31C_ 16-fusioninventory.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03
 _
 #32A_ 17-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
 #32B_ 17-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02

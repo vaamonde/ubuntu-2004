@@ -30,7 +30,7 @@
 #		put vaamonde.txt
 #
 # Windows Powershell:
-#	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Cliente FTP
+#	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Cliente TFTP
 # 	tftp tftp.pti.intra
 #		verbose
 #		status

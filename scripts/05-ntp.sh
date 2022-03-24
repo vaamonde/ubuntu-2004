@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 22/03/2022
-# Versão: 0.16
+# Data de atualização: 24/03/2022
+# Versão: 0.17
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -31,9 +31,12 @@
 # Site Oficial do Projeto NTP: http://www.ntp.org/
 # Site Oficial do Projeto NTP.br: https://ntp.br/
 #
+# Sincronização de data e hora Windows NTP.br: https://ntp.br/guia/windows/
+# Sincronização de data e hora GNU/Linux NTP.br: https://ntp.br/guia/linux/
+
 # Configuração do NTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-#	sudo apt install ntpdate
+#	sudo apt install ntpdate ntpstat
 # 	sudo ntpdate -s 172.16.1.20 (set the date and time via NTP )
 #	sudo ntpq -pn (standard NTP query program)
 #	sudo ntpq -c sysinfo (standard NTP query program)
@@ -270,6 +273,7 @@ echo -e "Atualizando a Data e Hora do NTP Server, aguarde..."
 	systemctl stop ntp &>> $LOG
 	ntpdate -dquv $NTPSERVER &>> $LOG
 	systemctl start ntp &>> $LOG
+	systemctl restart systemd-timesyncd &>> $LOG
 echo -e "Data e Hora do NTP Server atualizada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -283,7 +287,7 @@ echo -e "Consulta realizada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a Data e Hora do Sistema Operacional Ubuntu Server, aguarde...\n"
-	timedatectl
+	timedatectl status
 echo -e "Data e Hora verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -301,7 +305,8 @@ echo -e "Configurações verificada com sucesso!!!, continuando com o script...\
 sleep 5
 #
 echo -e "Verificando o serviço do NTP Server, aguarde..."
-	echo -e "NTP: $(systemctl status ntp | grep Active)"
+	echo -e "NTP Server: $(systemctl status ntp | grep Active)"
+	echo -e "Timesyncd.: $(systemctl status systemd-timesyncd | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

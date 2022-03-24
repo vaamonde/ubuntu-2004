@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 23/03/2022
-Versão: 0.46
+Data de atualização: 24/03/2022
+Versão: 0.47
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+24/03/2022 - Robson Vaamonde - Atualização do arquivo de configuração: timesyncd.conf com mais servidores do projeto
+NTP.br nas linhas: NTP e FallbackNTP, alteração do script: 05-ntp.sh adicionando as opções de reinicializar o serviço
+do Timesyncd, adicionado a opção: status no comando timedatectl,  adicionado a opção de reinicializar o serviço do
+Timesyncd e Status do Daemon.   
+
 23/03/2022 - Robson Vaamonde - Acréscimo do recurso do OUI (organizationally unique identifier) nas configurações do
 DHCP Server para suportar a resolução e pesquisa de Lease do comando: dhcp-lease-list, adicionando as opções para o
 download do arquivo TXT nos scripts: 00-parametros.sh e 02-dhcp.sh. Após análise do BUG: 0014 (Falha de Permissão
