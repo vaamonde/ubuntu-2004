@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 24/03/2022
-# Versão: 0.17
+# Data de atualização: 26/03/2022
+# Versão: 0.18
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -240,13 +240,6 @@ echo -e "Editando o arquivo de configuração ntpdate, pressione <Enter> para co
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/default/ntpdate
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Editando o arquivo de configuração timesyncd.conf, pressione <Enter> para continuar"
-	# opção do comando read: -s (Do not echo keystrokes)
-	read -s
-	vim /etc/systemd/timesyncd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
