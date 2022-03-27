@@ -15,8 +15,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 0014 - Falha de Permissão Negada (Permission denied) no arquivo: /var/log/cron.log, após executar a verificação de erros
 no arquivo do Syslog com o comando: sudo grep -i error /var/log/syslog, recebendo a mensagem: Mar 23 09:58:25 ptispo01ws01 
 rsyslogd: file '/var/log/cron.log': open error: Permission denied [v8.2001.0 try https://www.rsyslog.com/e/2433 ], falha
-relacionada a permissão do arquivo, permissão padrão: -rw-r--r-- 1 root root 0 fev 24 15:32 /var/log/cron.log, alterado
-o dono do arquivo para: chown -v syslog.root /var/log/cron.log, aplicado Path de correção script: 01-openssh.sh
+relacionada a permissão do arquivo, permissão padrão: -rw-r--r-- 1 root root 0 fev 23 09:57 /var/log/cron.log, alterado
+o dono do arquivo para: sudo chown -v syslog.root /var/log/cron.log, aplicado Path de correção script: 01-openssh.sh
 
 0013 - Falha do Virtual Host do Nextcloud referente ao arquivo: nextcloud.conf do Apache2, erro: AH0056: Syntax error on
 line 42, DAV not allowed in <VirtualHost> context, retirado as linhas do DAV Off do IfModule mod_dav.c e colocado a opção

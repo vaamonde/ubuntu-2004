@@ -33,7 +33,7 @@ https://code.visualstudio.com/download
 # 02_ Instalando o Vim, Git e o Python no Linux Mint 20.x
 Terminal (Ctrl+Alt+T)
 	sudo apt update 
-	sudo apt install vim git python 
+	sudo apt install vim git python cloc
 	exit
 #
 # 03_ Instalando o VSCode utilizando o Gdebi-Gtk do Linux Mint 20.x
