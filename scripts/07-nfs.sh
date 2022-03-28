@@ -200,9 +200,9 @@ echo -e "Criando o diretório de Exportação do NFS Server, aguarde..."
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -R (recursive), -v (verbose)
 	# opção do comando chmod: -R (recursive), -v (verbose), 777 (User=RWX,Group=RWX,Other=RWX)
-	mkdir -v $PATHTNFS &>> $LOG
-	chown -Rv nobody:nogroup $PATHTNFS &>> $LOG
-	chmod -Rv 777 $PATHTNFS &>> $LOG
+	mkdir -v $PATHNFS &>> $LOG
+	chown -Rv nobody:nogroup $PATHNFS &>> $LOG
+	chmod -Rv 777 $PATHNFS &>> $LOG
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

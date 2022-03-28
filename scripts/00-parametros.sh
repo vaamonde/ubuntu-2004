@@ -304,7 +304,7 @@ PORTTFTP="69"
 # 02. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do NFS Server
-PATHTNFS="/mnt/nfs/"
+PATHNFS="/mnt/nfs/"
 #
 # Variável de instalação dos softwares extras do NFS Server
 NFSINSTALL="nfs-common nfs-kernel-server nfstrace nfswatch"
