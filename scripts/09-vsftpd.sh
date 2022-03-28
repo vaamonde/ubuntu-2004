@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 17/10/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.07
+# Data de atualização: 28/03/2022
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do VSFTPD v3.0.x
 #
@@ -222,7 +222,6 @@ echo -e "Atualizando o arquivo de configuração do Vsftpd Server, aguarde..."
 	# opção do comando chmod: a (all user), + (bits to be added), x (execute/search only)
 	mv -v /etc/vsftpd.conf /etc/vsftpd.conf.old &>> $LOG
 	cp -v conf/ftp/{vsftpd.conf,vsftpd.allowed_users,shells} /etc/ &>> $LOG
-	cp -v conf/ftp/vsftpd-ssl.conf /etc/ssl/ &>> $LOG
 	cp -v conf/ftp/ftponly /bin/ &>> $LOG
 	touch /var/log/vsftpd.log &>> $LOG
 	chmod -v a+x /bin/ftponly &>> $LOG
@@ -240,13 +239,6 @@ echo -e "Editando o arquivo de liberação vsftpd.allowed_users, pressione <Ente
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/vsftpd.allowed_users
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Editando o arquivo de TLS/SSL vsftpd-ssl.conf, pressione <Enter> para continuar."
-	# opção do comando read: -s (Do not echo keystrokes)
-	read -s
-	vim /etc/ssl/vsftpd-ssl.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -269,82 +261,6 @@ echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> par
 	read -s
 	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Criando a Chave Privada/Pública e o Certificado Assinado do Vsftpd Server, aguarde..." 
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando rm: -v (verbose)
-	# opções do comando openssl: 
-	# genrsa (command generates an RSA private key),
-	# -aes256 (Encrypt the private key with the AES)
-	# -out (The output file to write to, or standard output if not specified), 
-	# -passout (The output file password source), 
-	# pass: (The actual password is password), 
-	# 2048 (The size of the private key to generate in bits)
-	#
-	# opções do comando openssl: 
-	# rsa (command processes RSA keys),
-	# -in (The input file to read from, or standard input if not specified),
-	# -out (The output file to write to, or standard output if not specified),
-	# -passin (The key password source),
-	# pass: (The actual password is password)
-	#
-	# opções do comando openssl: 
-	# req (command primarily creates and processes certificate requests in PKCS#10 format), 
-	# -new (Generate a new certificate request),
-	# -sha256 (The message digest to sign the request with sha256)
-	# -nodes (Do not encrypt the private key),
-	# -key (The file to read the private key from), 
-	# -out (The output file to write to, or standard output if not specified),
-	# -extensions (Specify alternative sections to include certificate extensions), 
-	# -config (Specify an alternative configuration file)
-	#
-	# Criando o arquivo CSR, mensagens que serão solicitadas na criação do CSR
-	# 	Country Name (2 letter code): BR <-- pressione <Enter>
-	# 	State or Province Name (full name): Brasil <-- pressione <Enter>
-	# 	Locality Name (eg, city): Sao Paulo <-- pressione <Enter>
-	# 	Organization Name (eg, company): Bora para Pratica <-- pressione <Enter>
-	# 	Organization Unit Name (eg, section): Procedimentos em TI <-- pressione <Enter>
-	# 	Common Name (eg, server FQDN or YOUR name): pti.intra <-- pressione <Enter>
-	# 	Email Address: pti@pti.intra <-- pressione <Enter>
-	#
-	# opções do comando openssl: 
-	# x509 (command is a multi-purpose certificate utility),
-	# ca (command is a minimal certificate authority (CA) application)							
-	# -in (The input file to read from, or standard input if not specified),
-	# -out (The output file to write to, or standard output if none is specified)
-	# -config (Specify an alternative configuration file)
-	# -extensions (The section to add certificate extensions from),
-	# -extfile (File containing certificate extensions to use).
-	#
-	# Sign the certificate? [y/n]: y <Enter>
-	# 1 out of 1 certificate request certified, commit? [y/n]: y <Enter>
-	#
-	openssl genrsa -aes256 -out /etc/ssl/private/vsftpd-ptikey.key.old \
-	-passout pass:$PWDSSLFTP 2048 &>> $LOG
-	echo -e "Chave Privada/Pública criada com sucesso!!!, continuando com o script..."
-	sleep 5
-	#
-	openssl rsa -in /etc/ssl/private/vsftpd-ptikey.key.old -out /etc/ssl/private/vsftpd-ptikey.key \
-	-passin pass:$PWDSSLFTP &>> $LOG
-	rm -v /etc/ssl/private/vsftpd-ptikey.key.old &>> $LOG
-	echo -e "Senha da Chave Privada/Pública removida com sucesso!!!, continuando com o script...\n"
-	sleep 5
-	#
-	echo -e "Gerando o Certificado CSR do Vsftpd Server, pressione <Enter> para continuar."
-	read
-	openssl req -new -sha256 -nodes -key /etc/ssl/private/vsftpd-ptikey.key -out /etc/ssl/requests/vsftpd-pticsr.csr \
-	-extensions v3_req -config /etc/ssl/vsftpd-ssl.conf
-	echo -e "Geração do Certificado CSR feito com sucesso!!!, continuando com o script...\n"
-	sleep 5
-	#
-	echo -e "Gerando o Certificado CRT do Vsftpd Server, pressione <Enter> para continuar."
-	read
-	openssl ca -in /etc/ssl/requests/vsftpd-pticsr.csr -out /etc/ssl/newcerts/vsftpd-pticrt.crt \
-	-config /etc/ssl/pti-ca.conf -extensions v3_req -extfile /etc/ssl/vsftpd-ssl.conf
-	echo -e "Geração do Certificado CRT feito com sucesso!!!, continuando com o script...\n"
-	#
-echo -e "Chave Privada/Pública e Certificado Assinado do Vsftpd Server configurado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Vsftpd Server, aguarde..."

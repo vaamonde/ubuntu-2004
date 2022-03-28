@@ -9,7 +9,7 @@
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
 # Data de atualização: 28/03/2022
-# Versão: 0.52
+# Versão: 0.53
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -385,44 +385,15 @@ libnet-ip-perl libgeoip1"
 # Variável de instalação do serviço de rede PhpMyAdmin
 PHPMYADMININSTALL="phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json libmcrypt-dev pwgen"
 #
-# Variável da porta de conexão padrão do Apache2 Server
+# Variáveis das portas de conexão padrão do Apache2 Server
 PORTAPACHE="80"
+PORTAPACHESSL="443"
 #
 # Variável da porta de conexão padrão do MySQL Server
 PORTMYSQL="3306"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 09-webdav.sh                        #
-#=============================================================================================
-#
-# Arquivos de configuração (conf) do Serviço de Webdav utilizados nesse script
-# 01. /var/run/apache2/webdav/users.password = banco de dados de usuários e senhas do Webdav
-# 02. /etc/apache2/sites-available/webdav.conf = arquivo do virtual host do Webdav no Apache2
-#
-# Arquivos de monitoramento (log) do Site do Webdav utilizado nesse script
-# 01. tail -f /var/log/apache2/access-webdav.log = log de acesso ao Webdav
-# 02. tail -f /var/log/apache2/error-webdav.log = log de erro de acesso ao Webdav
-#
-# Variável de criação do diretório padrão utilizado pelo serviço do Webdav
-PATHTWEBDAV="/var/www/webdav/"
-#
-# Variável de criação do diretório padrão do banco de dados do Webdav
-PATHTWEBDAVDB="/var/run/apache2/webdav"
-#
-# Variável das dependências do laço de loop do Webdav
-WEBDAVDEP="apache2 apache2-utils openssl"
-#
-# Variável do Nome REAL do Grupo de acesso ao Webdav
-REALWEBDAV="webdav"
-#
-# Variável da criação do usuário de acesso ao Webdav
-USERWEBDAV=$USUARIODEFAULT
-#
-# Variável da criação da senha do usuário de acesso ao Webdav
-PASSWORDWEBDAV=$SENHADEFAULT
-#
-#=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 10-vsftpd.sh                         #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 09-vsftpd.sh                         #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço de Rede VSFTPd utilizados nesse script
@@ -448,20 +419,18 @@ USERFTP="ftpuser"
 # Variável da senha do Usuário de VSFTPd Server
 PASSWORDFTP=$SENHADEFAULT
 #
-# Variável da senha utilizada na geração das chaves privadas/públicas de criptografia do OpenSSL 
-PWDSSLFTP="vaamonde"
-#
 # Variável das dependências do laço de loop do VSFTPd Server
 FTPDEP="bind9 bind9utils apache2 openssl"
 #
 # Variável de instalação do serviço de rede VSFTPd Server
 FTPINSTALL="vsftpd"
 #
-# Variável da porta de conexão padrão do VSFTPd Server
+# Variáveis das portas de conexão padrão do VSFTPd Server
 PORTFTP="21"
+PORTFTPSSL="990"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 11-tomcat.sh                        #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 10-tomcat.sh                        #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Servidor Apache Tomcat utilizados nesse script
@@ -489,8 +458,9 @@ TOMCATINSTALL="tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-example
 PATHTOMCAT9="/usr/share/tomcat9/"
 PATHWEBAPPS="/var/lib/tomcat9/webapps"
 #
-# Variável da porta de conexão padrão do Apache Tomcat Server
+# Variáveis das portas de conexão padrão do Apache Tomcat Server
 PORTTOMCAT="8080"
+PORTTOMCATSSL="8443"
 #
 # Variável de download da aplicação Agenda de Contatos em Java feita pelo Prof. José de Assis
 # Github do projeto: https://github.com/professorjosedeassis/javaEE (Link atualizado em: 11/01/2022)
@@ -530,11 +500,11 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 );"
 #
 #=============================================================================================
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-A-openssl-ca.sh                     #
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-B-openssl-apache.sh                 #
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-C-openssl-vsftpd.sh                 #
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-D-openssl-mysql.sh                  #
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-E-openssl-tomcat.sh                 #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-A-openssl-ca.sh                     #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-B-openssl-apache.sh                 #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-C-openssl-vsftpd.sh                 #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-D-openssl-mysql.sh                  #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-E-openssl-tomcat.sh                 #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço de Certificados OpenSSL utilizados nesse script
@@ -566,7 +536,37 @@ CRIPTOCERT="sha256"
 DOWNLOADCERT="/var/www/html/download/"
 #
 # Variável das dependências do laço de loop do OpenSSL
-SSLDEP="openssl apache2"
+SSLDEP="openssl mysql-server mysql-common apache2 php vsftpd bind9 tomcat9"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webdav.sh                        #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Serviço de Webdav utilizados nesse script
+# 01. /var/run/apache2/webdav/users.password = banco de dados de usuários e senhas do Webdav
+# 02. /etc/apache2/sites-available/webdav.conf = arquivo do virtual host do Webdav no Apache2
+#
+# Arquivos de monitoramento (log) do Site do Webdav utilizado nesse script
+# 01. tail -f /var/log/apache2/access-webdav.log = log de acesso ao Webdav
+# 02. tail -f /var/log/apache2/error-webdav.log = log de erro de acesso ao Webdav
+#
+# Variável de criação do diretório padrão utilizado pelo serviço do Webdav
+PATHTWEBDAV="/var/www/webdav/"
+#
+# Variável de criação do diretório padrão do banco de dados do Webdav
+PATHTWEBDAVDB="/var/run/apache2/webdav"
+#
+# Variável das dependências do laço de loop do Webdav
+WEBDAVDEP="apache2 apache2-utils openssl"
+#
+# Variável do Nome REAL do Grupo de acesso ao Webdav
+REALWEBDAV="webdav"
+#
+# Variável da criação do usuário de acesso ao Webdav
+USERWEBDAV=$USUARIODEFAULT
+#
+# Variável da criação da senha do usuário de acesso ao Webdav
+PASSWORDWEBDAV=$SENHADEFAULT
 #
 #=============================================================================================
 #                      VARIÁVEIS UTILIZADAS NO SCRIPT: 13-wordpress.sh                       #
