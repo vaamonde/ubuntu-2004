@@ -7,11 +7,18 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 24/03/2022
-Versão: 0.47
+Data de atualização: 28/03/2022
+Versão: 0.48
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+28/03/2022 - Robson Vaamonde - Grande atualização da organização do scripts do Curso do Ubuntu Server, alteração da
+numeração dos scripts para facilitar a instalação e configuração dos serviços de rede, script do NFS Sever e Webdav
+foram trazidos para o início do curso facilitando o acesso dos arquivos remotos no servidor, foi desmembrado o script
+do OpenSSL separando a criação da CA (Certificate Authority) dos Certificados Assinados CRT (Certificate Request Trust) 
+de cada serviço de rede, atualização do script: 00-parametros.sh reorganizando as variáveis da numeração dos novos
+scripts, atualização dos nomes do arquivos de configuração da CA para facilitar a configuração.
+
 24/03/2022 - Robson Vaamonde - Atualização do arquivo de configuração: timesyncd.conf com mais servidores do projeto
 NTP.br nas linhas: NTP e FallbackNTP, alteração do script: 05-ntp.sh removendo a edição do arquivo: timesyncd.conf.
 

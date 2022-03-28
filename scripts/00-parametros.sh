@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 23/03/2022
-# Versão: 0.51
+# Data de atualização: 28/03/2022
+# Versão: 0.52
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -62,7 +62,14 @@ NOMESERVER="ptispo01ws01"
 # OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
 DOMINIOSERVER="pti.intra"
 #
+# Variável do Nome de Domínio NetBIOS do Servidor Ubuntu desse curso
+# OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
+# opção do redirecionador | (piper): Conecta a saída padrão com a entrada padrão de outro comando
+# opções do comando cut: -d (delimiter), -f (fields)
+DOMINIONETBIOS="$(echo $DOMINIOSERVER | cut -d'.' -f1)"
+#
 # Variável do Nome (Hostname) FQDN (Fully Qualified Domain Name) do Servidor Ubuntu desse curso
+# OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
 FQDNSERVER="$NOMESERVER.$DOMINIOSERVER"
 #
 # Variável do Endereço IPv4 principal (padrão) do Servidor Ubuntu desse curso
@@ -285,7 +292,29 @@ TFTPINSTALL="tftpd-hpa tftp-hpa"
 PORTTFTP="69"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 07-lamp.sh                          #
+#                          VARIÁVEIS UTILIZADAS NO SCRIPT: 07-nfs.sh                         #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Serviço de Rede NFS Server utilizados nesse script
+# 01. /etc/idmap.conf = arquivo de configuração da identificação do mapeamento do NFS Server
+# 02. /etc/exports = arquivo de configuração da exportação dos compartilhamentos do NFS Server
+#
+# Arquivos de monitoramento (log) do Serviço de Rede NFS Server utilizados nesse script
+# 01. systemctl status nfs-kernel-server = status do serviço do NFS Server
+# 02. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
+#
+# Variável de criação do diretório padrão utilizado pelo serviço do NFS Server
+PATHTNFS="/mnt/nfs/"
+#
+# Variável de instalação dos softwares extras do NFS Server
+NFSINSTALL="nfs-common nfs-kernel-server nfstrace nfswatch"
+#
+# Variáveis das portas de conexão padrão do NFS Server
+PORTNFSRPC="2049"
+PORTNFSPORTMAPPER="111"
+#
+#=============================================================================================
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 08-lamp.sh                          #
 #=============================================================================================
 # 
 # Arquivos de configuração (conf) do Serviço de Rede LAMP Server utilizados nesse script
@@ -363,42 +392,37 @@ PORTAPACHE="80"
 PORTMYSQL="3306"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 08-openssl.sh                        #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 09-webdav.sh                        #
 #=============================================================================================
 #
-# Arquivos de configuração (conf) do Serviço de Certificados OpenSSL utilizados nesse script
-# 01. /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
-# 02. /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
-# 03. /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
-# 04. /etc/ssl/pti-ca.conf = arquivo de configuração de Unidade Certificadora CA
-# 05. /etc/ssl/pti-ssl.conf = arquivo de configuração do certificado do Apache2
-# 06. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do site HTTPS do Apache2
+# Arquivos de configuração (conf) do Serviço de Webdav utilizados nesse script
+# 01. /var/run/apache2/webdav/users.password = banco de dados de usuários e senhas do Webdav
+# 02. /etc/apache2/sites-available/webdav.conf = arquivo do virtual host do Webdav no Apache2
 #
-# Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
+# Arquivos de monitoramento (log) do Site do Webdav utilizado nesse script
+# 01. tail -f /var/log/apache2/access-webdav.log = log de acesso ao Webdav
+# 02. tail -f /var/log/apache2/error-webdav.log = log de erro de acesso ao Webdav
 #
-# Variável da senha utilizada na geração das chaves privadas/públicas da CA e dos certificados
-PASSPHRASE="vaamonde"
+# Variável de criação do diretório padrão utilizado pelo serviço do Webdav
+PATHTWEBDAV="/var/www/webdav/"
 #
-# Variável do tipo de criptografia da chave privada com as opções de: -aes128, -aes192, -aes256, 
-# -camellia128, -camellia192, -camellia256, -des, -des3 ou -idea, padrão utilizado: -aes256
-CRIPTOKEY="aes256" 
+# Variável de criação do diretório padrão do banco de dados do Webdav
+PATHTWEBDAVDB="/var/run/apache2/webdav"
 #
-# Variável do tamanho da chave privada utilizada em todas as configurações dos certificados,
-# opções de: 1024, 2048, 3072 ou 4096, padrão utilizado: 2048
-BITS="2048" 
+# Variável das dependências do laço de loop do Webdav
+WEBDAVDEP="apache2 apache2-utils openssl"
 #
-# Variável da assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, 
-# sha256, sha384 ou sha512, padrão utilizado: sha256
-CRIPTOCERT="sha256" 
+# Variável do Nome REAL do Grupo de acesso ao Webdav
+REALWEBDAV="webdav"
 #
-# Variável do diretório de download da CA para instalação nos Desktops Windows e GNU/Linux
-DOWNLOADCERT="/var/www/html/download/"
+# Variável da criação do usuário de acesso ao Webdav
+USERWEBDAV=$USUARIODEFAULT
 #
-# Variável das dependências do laço de loop do OpenSSL
-SSLDEP="openssl apache2 bind9"
+# Variável da criação da senha do usuário de acesso ao Webdav
+PASSWORDWEBDAV=$SENHADEFAULT
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 09-vsftpd.sh                         #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 10-vsftpd.sh                         #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço de Rede VSFTPd utilizados nesse script
@@ -437,7 +461,7 @@ FTPINSTALL="vsftpd"
 PORTFTP="21"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 10-tomcat.sh                        #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 11-tomcat.sh                        #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Servidor Apache Tomcat utilizados nesse script
@@ -506,7 +530,46 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 );"
 #
 #=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 11-wordpress.sh                       #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-A-openssl-ca.sh                     #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-B-openssl-apache.sh                 #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-C-openssl-vsftpd.sh                 #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-D-openssl-mysql.sh                  #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 12-E-openssl-tomcat.sh                 #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do Serviço de Certificados OpenSSL utilizados nesse script
+# 01. /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
+# 02. /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
+# 03. /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
+# 04. /etc/ssl/pti-ca.conf = arquivo de configuração de Unidade Certificadora CA
+# 05. /etc/ssl/pti-ssl.conf = arquivo de configuração do certificado do Apache2
+# 06. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do site HTTPS do Apache2
+#
+# Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
+#
+# Variável da senha utilizada na geração das chaves privadas/públicas da CA e dos certificados
+PASSPHRASE="vaamonde"
+#
+# Variável do tipo de criptografia da chave privada com as opções de: -aes128, -aes192, -aes256, 
+# -camellia128, -camellia192, -camellia256, -des, -des3 ou -idea, padrão utilizado: -aes256
+CRIPTOKEY="aes256" 
+#
+# Variável do tamanho da chave privada utilizada em todas as configurações dos certificados,
+# opções de: 1024, 2048, 3072 ou 4096, padrão utilizado: 2048
+BITS="2048" 
+#
+# Variável da assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, 
+# sha256, sha384 ou sha512, padrão utilizado: sha256
+CRIPTOCERT="sha256" 
+#
+# Variável do diretório de download da CA para instalação nos Desktops Windows e GNU/Linux
+DOWNLOADCERT="/var/www/html/download/"
+#
+# Variável das dependências do laço de loop do OpenSSL
+SSLDEP="openssl apache2"
+#
+#=============================================================================================
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 13-wordpress.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Site CMS Wordpress utilizados nesse script
@@ -564,7 +627,7 @@ php-intl php-json php-mbstring php-mysql php-xml php-zip php-soap zlibc zlib1g-d
 WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webmin.sh                         #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 14-webmin.sh                         #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Webmin e Usermin utilizados nesse script
@@ -593,7 +656,7 @@ PORTWEBMIN="10000"
 PORTUSERMIN="20000"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 13-netdata.sh                        #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 15-netdata.sh                        #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Netdata utilizados nesse script
@@ -643,7 +706,7 @@ GRANT_USAGE_NETDATA="GRANT USAGE, REPLICATION CLIENT ON *.* TO 'netdata'@'localh
 FLUSH_NETDATA="FLUSH PRIVILEGES;"
 #
 #=============================================================================================
-#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 14-loganalyzer.sh                      #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 16-loganalyzer.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema LogAnalyzer utilizados nesse script
@@ -719,7 +782,7 @@ LOGDEP="mysql-server mysql-common apache2 php bind9"
 LOGINSTALL="rsyslog-mysql"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 15-glpi.sh                         #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 17-glpi.sh                         #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema GLPI Help Desk utilizados nesse script
@@ -772,7 +835,7 @@ php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json ph
 libapache2-mod-php xmlrpc-api-utils"
 #
 #=============================================================================================
-#                    VARIÁVEIS UTILIZADAS NO SCRIPT: 16-fusioninventory.sh                   #
+#                    VARIÁVEIS UTILIZADAS NO SCRIPT: 18-fusioninventory.sh                   #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema FusionInventory utilizados nesse script
@@ -826,7 +889,7 @@ DOWNLOADAGENT="/var/www/html/agentes"
 PORTFUSION="62354"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 17-zoneminder.sh                     #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 19-zoneminder.sh                     #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema ZoneMinder utilizados nesse script
@@ -866,7 +929,7 @@ FLUSH_ZONEMINDER="FLUSH PRIVILEGES;"
 ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php bind9"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 18-guacamole.sh                      #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 20-guacamole.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Guacamole utilizados nesse script
@@ -900,7 +963,7 @@ libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-dev freerdp2
 PORTGUACAMOLE="4822"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 19-grafana.sh                       #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 21-grafana.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Grafana Server utilizados nesse script
@@ -924,7 +987,7 @@ GRAFANADEP="mysql-server mysql-common bind9 apt-transport-https software-propert
 PORTGRAFANA="3000"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 20-zabbix.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 22-zabbix.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Zabbix Server utilizados nesse script
@@ -976,7 +1039,7 @@ PORTZABBIX1="10050"
 PORTZABBIX2="10051"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 21-docker.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 23-docker.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Docker e do Portainer utilizados nesse script
@@ -1013,7 +1076,7 @@ DOCKERINSTALL="docker-ce cgroup-lite"
 PORTPORTAINER="9000"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 22-ansible.sh                       #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 24-ansible.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Ansible e Rundeck utilizados nesse script
@@ -1044,7 +1107,7 @@ RUNDECKDEPINSTALL="python openjdk-11-jdk-headless"
 PORTRUNDECK="4440"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 23-ntopng.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 25-ntopng.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema NTop-NG utilizados nesse script
@@ -1070,7 +1133,7 @@ NTOPNGINSTALL="ntopng ntopng-data"
 PORTNTOPNG="3001"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 24-openfire.sh                      #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 26-openfire.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema OpenFire utilizados nesse script
@@ -1119,7 +1182,7 @@ OPENFIREDEP="bind9 mysql-server mysql-common"
 PORTOPENFIRE="9090"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 25-owncloud.sh                      #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 27-owncloud.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema ownCloud utilizados nesse script
@@ -1165,7 +1228,7 @@ FLUSH_OWNCLOUD="FLUSH PRIVILEGES;"
 OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 #=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 26-ocsinventory.sh                    #
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 28-ocsinventory.sh                    #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema OCS Inventory utilizados nesse script
@@ -1256,7 +1319,7 @@ FLUSH_OCSINVENTORY="FLUSH PRIVILEGES;"
 OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 27-bacula.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 29-bacula.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Bacula Server e Baculum utilizados nesse script
@@ -1289,7 +1352,7 @@ BACULUMAPIINSTALL="baculum-common baculum-api-apache2"
 BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-transport-https"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 28-graylog.sh                      #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 30-graylog.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Graylog Server utilizados nesse script
@@ -1350,7 +1413,7 @@ MONGODBPORT="27017"
 ELASTICSEARCHPORT="9200"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 29-postgresl.sh                      #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 31-postgresl.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço do PostgreSQL Server utilizados nesse script
@@ -1398,49 +1461,6 @@ PGADMININSTALL="pgadmin4 pgadmin4-web"
 #
 # Variável da porta padrão do PostgreSQL Server
 POSTGRESQLPORT="5432"
-#
-#=============================================================================================
-#                          VARIÁVEIS UTILIZADAS NO SCRIPT: 30-nfs.sh                         #
-#=============================================================================================
-#
-# Arquivos de configuração (conf) do Serviço de Rede NFS Server utilizados nesse script
-# 01. /etc/idmap.conf = arquivo de configuração da indentificação do mapeamento do NFS Server
-# 02. /etc/exports = arquivo de configuração da exportação dos compartilhamentos do NFS Server
-#
-# Arquivos de monitoramento (log) do Serviço de Rede NFS Server utilizados nesse script
-# 01. systemctl status nfs-kernel-server = status do serviço do NFS Server
-# 02. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
-#
-# Variável de instalação dos softwares extras do NFS Server
-NFSINSTALL="nfs-common nfs-kernel-server nfstrace nfswatch"
-#
-# Variáveis das portas de conexão padrão do NFS Server
-PORTNFSRPC="2049"
-PORTNFSPORTMAPPER="111"
-#
-#=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 31-webdav.sh                        #
-#=============================================================================================
-#
-# Arquivos de configuração (conf) do Serviço de Webdav utilizados nesse script
-# 01. /var/run/apache2/webdav/users.password = banco de dados de usuários e senhas do Webdav
-# 02. /etc/apache2/sites-available/webdav.conf = arquivo do virtual host do Webdav no Apache2
-#
-# Arquivos de monitoramento (log) do Site do Webdav utilizado nesse script
-# 01. tail -f /var/log/apache2/access-webdav.log = log de acesso ao Webdav
-# 02. tail -f /var/log/apache2/error-webdav.log = log de erro de acesso ao Webdav
-#
-# Variável das dependências do laço de loop do Webdav
-WEBDAVDEP="apache2 apache2-utils openssl"
-#
-# Variável do Nome REAL do Grupo de acesso ao Webdav
-REALWEBDAV="webdav"
-#
-# Variável da criação do usuário de acesso ao Webdav
-USERWEBDAV=$USUARIODEFAULT
-#
-# Variável da criação da senha do usuário de acesso ao Webdav
-PASSWORDWEBDAV=$SENHADEFAULT
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 32-nextcloud.sh                      #

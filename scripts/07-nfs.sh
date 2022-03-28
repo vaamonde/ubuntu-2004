@@ -8,23 +8,24 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 04/02/2022
+# Data de atualização: 28/03/2022
 # Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do Apache2 v2.4.x
+# Testado e homologado para a versão do NFS Server v4.x
 #
-# WebDAV é um acrônimo de Web-based Distributed Authoring and Versioning, ou Criação 
-# e Distribuição de Conteúdo pela Web. É uma extensão do protocolo HTTP para transferência 
-# de arquivos; suporta bloqueio de recursos. Quando uma pessoa está editando um arquivo, 
-# ele fica bloqueado, impedindo que outras pessoas façam alterações ao mesmo tempo.
-# Esse recurso esta presente no Microsoft SharePoint, Notability, Pages, Keynote, Number, 
-# entre vários outros apps e serviços. 
+# NFS (acrônimo para Network File System) é um sistema de arquivos distribuídos desenvolvido 
+# inicialmente pela Sun Microsystems, Inc., a fim de compartilhar arquivos e diretórios entre 
+# computadores conectados em rede, formando assim um diretório virtual. O protocolo Network 
+# File System é especificado nas seguintes RFCs: RFC 1094, RFC 1813 e RFC 7931 (que atualiza 
+# a RFC 7530, que tornou obsoleta a RFC 3530). 
 #
-# Site Oficial do Projeto Webdav: http://www.webdav.org/
+# Site Oficial do Projeto NFS: http://nfs.sourceforge.net/
 #
-# Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
-# Linux Mint Nemo:
-#	Nemo, Ctrl+L: davs://vaamonde@webdav.pti.intra/ 
+# Configuração do NFS Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: Ctrl+Alt+T
+# 	sudo apt update && sudo apt install nfs-common
+#	sudo mkdir -v /mnt/nfs
+#	sudo sudo mount nfs.pti.intra:/mnt/nfs /mnt/nfs
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -63,25 +64,30 @@ if [ "$(nc -zw1 google.com 443 &> /dev/null ; echo $?)" == "0" ]
 		exit 1
 fi
 #
-# Verificando se as dependências do Webdav estão instaladas
-# opção do dpkg: -s (status), opção do echo: -e (interpretador de escapes de barra invertida), 
-# -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
-# && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
-# 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do Webdav, aguarde... "
-	for name in $WEBDAVDEP
-	do
-  		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
-              echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
-              deps=1; 
-              }
-	done
-		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
-            echo -en "\nInstale as dependências acima e execute novamente este script\n";
-			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
-            exit 1; 
-            }
+# Verificando se as portas 111 e 2049 estão sendo utilizada no servidor Ubuntu Server
+# [ ] = teste de expressão, == comparação de string, exit 1 = A maioria dos erros comuns na execução,
+# $? código de retorno do último comando executado, ; execução de comando, 
+# opção do comando nc: -v (verbose), -z (DCCP mode), &> redirecionador de saída de erro
+if [ "$(nc -vz 127.0.0.1 $PORTNFSRPC &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTNFSRPC já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
 		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTNFSRPC está disponível, continuando com o script..."
+		sleep 5
+fi
+if [ "$(nc -vz 127.0.0.1 $PORTNFSPORTMAPPER &> /dev/null ; echo $?)" == "0" ]
+	then
+		echo -e "A porta: $PORTNFSPORTMAPPER já está sendo utilizada nesse servidor."
+		echo -e "Verifique o serviço associado a essa porta e execute novamente esse script.\n"
+		sleep 5
+		exit 1
+	else
+		echo -e "A porta: $PORTNFSPORTMAPPER está disponível, continuando com o script..."
+		sleep 5
+fi
 #
 # Verificando se o script já foi executado mais de 1 (uma) vez nesse servidor
 # OBSERVAÇÃO IMPORTANTE: OS SCRIPTS FORAM PROJETADOS PARA SEREM EXECUTADOS APENAS 1 (UMA) VEZ
@@ -98,17 +104,15 @@ if [ -f $LOG ]
 		sleep 5
 fi
 #
-# Script de configuração do Webdav no GNU/Linux Ubuntu Server 20.04.x
+# Script de instalação do NFS Server no GNU/Linux Ubuntu Server 20.04.x
 # opção do comando echo: -e (enable interpretation of backslash escapes), \n (new line)
-# opção do comando hostname: -d (domain)
 # opção do comando date: + (format), %d (day), %m (month), %Y (year 1970), %H (hour 24), %M (minute 60)
 echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Configuração do Webdav no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Webdav.: TCP 443"
-echo -e "Após a instalação do Webdav acessar a URL: https://webdav.$(hostname -d | cut -d' ' -f1)/\n"
+echo -e "Instalação do NFS Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Porta padrão utilizada pelo NFS Server.: TCP/UDP 111 e TCP/UDP 2049\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -156,94 +160,90 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Configuração do Webdav no Apache2, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do NFS Server e Client, aguarde...\n"
 sleep 5
 #
-echo -e "Habilitando os módulos do Webdav no Apache2, aguarde..."
+echo -e "Instalando o NFS Server e Client, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	a2enmod dav &>> $LOG
-	a2enmod dav_fs &>> $LOG
-	a2enmod auth_digest &>> $LOG
-echo -e "Módulos habilitados com sucesso!!!, continuando com o script...\n"
+	# opção do comando apt: -y (yes)
+	apt -y install $NFSINSTALL &>> $LOG
+echo -e "NFS Server e Client instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o diretório do Webdav no Apache2, aguarde..."
+echo -e "Atualizando os arquivos de configuração do NFS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	mkdir -v /var/www/webdav/ &>> $LOG
-	chown -v www-data:www-data /var/www/webdav/ &>> $LOG
-echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Criando o diretório do Banco de Dados Webdav no Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	mkdir -v /var/run/apache2/webdav/ &>> $LOG
-	chown -v www-data:www-data /var/run/apache2/webdav/ &>> $LOG
-echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Criando o arquivo de Banco de Dados de usuários do Webdav, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	touch /var/run/apache2/webdav/users.password &>> $LOG
-	chown -v www-data:www-data /var/run/apache2/webdav/users.password &>> $LOG
-echo -e "Arquivo criado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Copiando o arquivo de Virtual Host do Webdav no Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/webdav/webdav.conf /etc/apache2/sites-available/ &>> $LOG
-echo -e "Arquivo copiando com sucesso!!!, continuando com o script...\n"
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
+	mv -v /etc/idmapd.conf /etc/idmapd.conf.old &>> $LOG
+	mv -v /etc/exports /etc/exports.old &>> $LOG
+	cp -v conf/nfs/{idmapd.conf,exports} /etc/ &>> $LOG
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração webdav.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração idmapd.conf, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /etc/apache2/sites-available/webdav.conf
+	vim /etc/idmapd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando o Virtual Host do Webdav no Apache2, aguarde..."
-	a2ensite webdav &>> $LOG
-echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+echo -e "Editando o arquivo de configuração exports, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/exports
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o usuário: $USERWEBDAV do Webdav, senha padrão: $PASSWORDWEBDAV, aguarde..."
-	htdigest /var/run/apache2/webdav/users.password $REALWEBDAV $USERWEBDAV
-echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Reinicializando o serviço do Apache2, aguarde..."
+echo -e "Criando o diretório de Exportação do NFS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	systemctl reload apache2 &>> $LOG
-echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+	# opção do comando mkdir: -v (verbose)
+	# opção do comando chown: -R (recursive), -v (verbose)
+	# opção do comando chmod: -R (recursive), -v (verbose), 777 (User=RWX,Group=RWX,Other=RWX)
+	mkdir -v $PATHTNFS &>> $LOG
+	chown -Rv nobody:nogroup $PATHTNFS &>> $LOG
+	chmod -Rv 777 $PATHTNFS &>> $LOG
+echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o serviço do Apache2, aguarde..."
-	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
+echo -e "Exportando os Compartilhamentos do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando exportfs: -a (Export all directories), -r (Reexport  all  directories), -v (verbose)
+	exportfs -arv &>> $LOG
+echo -e "Compartilhamentos exportados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando os Compartilhamentos do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando exportfs: -s (Display the current export list), -v (verbose)
+	exportfs -sv &>> $LOG
+echo -e "Compartilhamentos verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Reinicializando o Serviço do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl restart nfs-kernel-server &>> $LOG
+echo -e "Serviços reinicializado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o serviço do NFS Server, aguarde..."
+	echo -e "NFS: $(systemctl status nfs-kernel-server | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando a porta de conexão do Apache2, aguarde..."
+echo -e "Verificando a porta de conexão do NFS Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:443 -sTCP:LISTEN
-echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
+	lsof -nP -iTCP:'111' -sTCP:LISTEN
+	echo ============================================
+	rpcinfo -p | grep nfs
+	rpcinfo -p | grep portmapper
+echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o Virtual Host do Webdav no Apache2, aguarde..."
-	# opção do comando apachectl: -s (a synonym)
-	apache2ctl -S | grep webdav.$DOMINIOSERVER
-echo -e "Virtual Host verificado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Configuração do Webdav no Apache2 feita com Sucesso!!!."
+echo -e "Instalação do NFS Server e Client feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
