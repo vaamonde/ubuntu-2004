@@ -58,12 +58,15 @@
 #	sudo hwclock (time clocks utility)
 #
 # Windows Powershell: 
+#	Painel de Controle, Relógio e Região, Data e Hora, Horário de Internet
+#		Alterar Configurações
+#			Servidor: ntp.pti.intra <Atualizar Agora>
 #	date
-#	time
-#	net time \\172.16.1.20 /set /yes
+#	time (somente no CMD - PowerShell não funciona)
+#	net time \\172.16.1.20 /set /yes (Somente após instalar o SAMBA-4, WINS e NetBIOS)
 #	w32tm /query /status
 #	w32tm /query /configuration
-#	w32tm /config /syncfromflags:manual /manualpeerlist:”172.16.1.20” /reliable:yes /update
+#	w32tm /config /syncfromflags:manual /manualpeerlist:”ntp.pti.intra” /reliable:yes /update
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
