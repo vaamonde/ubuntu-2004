@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 26/03/2022
-# Versão: 0.18
+# Data de atualização: 29/03/2022
+# Versão: 0.19
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -46,8 +46,14 @@
 # 	sudo ntpdate -s 172.16.1.20 (set the date and time via NTP )
 #	sudo ntpq -pn (standard NTP query program)
 #	sudo ntpq -c sysinfo (standard NTP query program)
+#	sudo vim /etc/systemd/timesyncd.conf (Network Time Synchronization configuration files)
+#	sudo systemctl restart systemd-timesyncd (Daemon for synchronizing the system clock across the network)
 #	sudo timedatectl (Control the system time and date)
 #	sudo timedatectl show (Control the system time and date)
+#	sudo timedatectl set-ntp true (Controls whether network time synchronization is active and enabled)
+#	sudo timedatectl status (Show current settings of the system clock and RTC)
+#	sudo timedatectl timesync-status (Show current status)
+#	sudo timedatectl show-timesync (Show the same information as timesync-status)
 #	sudo date (print or set the system date and time)
 #	sudo hwclock (time clocks utility)
 #
