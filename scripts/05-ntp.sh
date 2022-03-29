@@ -39,7 +39,7 @@
 #
 # Sincronização de data e hora Windows NTP.br: https://ntp.br/guia/windows/
 # Sincronização de data e hora GNU/Linux NTP.br: https://ntp.br/guia/linux/
-
+#
 # Configuração do NTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 #	sudo apt install ntpdate ntpstat
