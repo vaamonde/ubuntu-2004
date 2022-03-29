@@ -28,8 +28,14 @@
 # e assim por diante, de forma que os clientes NTP e os servidores com um número 
 # relativamente pequeno de clientes não sincronizem com os servidores primários públicos.
 #
+# O NTS é um mecanismo para usar TLS para prover segurança criptográfica para o NTP no modo 
+# cliente/servidor. TLS é o mesmo mecanismo de segurança, baseado em chaves públicas, amplamente
+# utilizado na web, para garantir a autenticidade dos sites usando o protocolo https. Confiável 
+# e amplamente conhecido e utilizado pela comunidade técnica.
+#
 # Site Oficial do Projeto NTP: http://www.ntp.org/
 # Site Oficial do Projeto NTP.br: https://ntp.br/
+# Site Oficial do Projeto NTPSec: https://www.ntpsec.org/
 #
 # Sincronização de data e hora Windows NTP.br: https://ntp.br/guia/windows/
 # Sincronização de data e hora GNU/Linux NTP.br: https://ntp.br/guia/linux/
