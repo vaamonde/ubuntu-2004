@@ -7,11 +7,18 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 23/03/2022
-Versão: 0.14
+Data de atualização: 30/03/2022
+Versão: 0.15
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0015 - Falha de Relógio do Kernel não Sincronizado (clock-unsynchronized) mensagem e mostrada nos arquivos de Log do NTP 
+Server utilizando o comando: journalctl -t ntpd ou comando: less -f /var/log/syslog | grep ntpd, mensagem recebida de: kernel 
+reports TIME_ERROR: 0x2041: Clock Unsynchronized, analisando a falha, conforme vários artigos e comentários nos fóruns de
+GNU/Linux essa mensagem e normal, não sendo uma falha do NTP Server, está associada inicialmente devido ao sincronismo da
+data hora com o servidores remotos não ser feita de forma rápida, depois de alguns minutos/horas o sincronismo e feito e 
+a mensagem não aparece mais.
+
 0014 - Falha de Permissão Negada (Permission denied) no arquivo: /var/log/cron.log, após executar a verificação de erros
 no arquivo do Syslog com o comando: sudo grep -i error /var/log/syslog, recebendo a mensagem: Mar 23 09:58:25 ptispo01ws01 
 rsyslogd: file '/var/log/cron.log': open error: Permission denied [v8.2001.0 try https://www.rsyslog.com/e/2433 ], falha

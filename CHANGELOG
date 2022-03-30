@@ -7,11 +7,19 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 28/03/2022
-Versão: 0.48
+Data de atualização: 30/03/2022
+Versão: 0.49
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+30/03/2022 - Robson Vaamonde - Analisando o BUG: 0015 (Falha de Relógio do Kernel não Sincronizado NTP Server), foi
+adicionado no arquivo de configuração: ntp.conf a opção: +sysall na linha de Log no NTP Server para facilitar o Debug
+da falha, foi adicionado o comando: ntptime no script: 05-ntp.sh para facilitar as informações e sincronismo da data 
+e hora do Kernel, ainda analisando o BUG, conforme vários artigos e comentários nos fóruns de GNU/Linux essa mensagem 
+e normal, não sendo uma falha do NTP Server, está associada inicialmente devido ao sincronismo da data hora com os 
+servidores remotos não ser feita de forma rápida, depois de alguns minutos/horas o sincronismo e feito e a mensagem 
+não aparece mais, analisando mais opções de configuração do arquivo ntp.conf.
+
 28/03/2022 - Robson Vaamonde - Grande atualização da organização do scripts do Curso do Ubuntu Server, alteração da
 numeração dos scripts para facilitar a instalação e configuração dos serviços de rede, script do NFS Sever e Webdav
 foram trazidos para o início do curso facilitando o acesso dos arquivos remotos no servidor, foi desmembrado o script
