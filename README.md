@@ -331,3 +331,27 @@ Terceiro Vídeo deConfiguração da Integração do ISC DHCP Server com o Bind9 
 [![Access DHCP DNS Server](http://img.youtube.com/vi/WVAF7PpywLM/0.jpg)](https://www.youtube.com/watch?v=WVAF7PpywLM "Access DHCP DNS Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=WVAF7PpywLM
+
+## **🔴 05-ntp.sh Customizando o Script e Arquivos de Configuração do NTP Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do NTP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 05-ntp.sh antes de executar no nosso servidor.
+
+[![Config NTP Server](http://img.youtube.com/vi/NQyP5o_DU84/0.jpg)](https://www.youtube.com/watch?v=NQyP5o_DU84 "Config NTP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=NQyP5o_DU84
+
+## **🔴 05-ntp.sh Instalação e Configuração do NTP Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do NTP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do NTP Server.
+
+[![Install NTP Server](http://img.youtube.com/vi/DXZhtUzinq0/0.jpg)](https://www.youtube.com/watch?v=DXZhtUzinq0 "Install NTP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=DXZhtUzinq0
+
+## **🔴 05-ntp.sh Configuração e Monitoramento do NTP Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do NTP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como sincronizar a data e hora utilizando o NTP Client nos Clientes Linux e Windows, analisar os arquivos de Log para monitorar o sincronismo da data e hora no servidor.
+
+[![Access NTP Server](http://img.youtube.com/vi/L-F5emFrWM0/0.jpg)](https://www.youtube.com/watch?v=L-F5emFrWM0 "Access NTP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=L-F5emFrWM0
