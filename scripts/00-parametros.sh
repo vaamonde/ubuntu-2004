@@ -269,6 +269,7 @@ PORTNTP="123"
 # 01. /etc/default/tftpd-hpa = arquivo de configuração do Servidor TFTP-HPA
 # 02. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
 # 03. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 04. /var/lib/tftpboot/pxelinux.cfg/default = arquivo de configuração do Boot GRUB do PXE
 #
 # Arquivos de monitoramento (log) do Serviço de Rede TFTP-HPA Server utilizados nesse script
 # 01. systemctl status tftpd-hpa = status do serviço do TFTP-HPA
