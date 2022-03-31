@@ -12,7 +12,7 @@ Versão: 0.50
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-31/03/2022 - Robson Vaamonde - Adicionando as softwares: syslinux syslinux-utils syslinux-efi pxelinux no arquivo:
+31/03/2022 - Robson Vaamonde - Adicionando os softwares: syslinux syslinux-utils syslinux-efi pxelinux no arquivo:
 00-parametros.sh nas configurações do TFTP-HPA, acrescentado os caminhos do PXELinux e do Syslinux para a copia dos
 arquivos de inicialização do Boot PXE do TFTP-HPA, criado o arquivo: default com as informações do PXE Grub Menu,
 alterado o script: 06-tftphpa.sh adicionado as opções de copiar dos arquivos do PXELinux e Syslinux para o diretório
@@ -33,7 +33,7 @@ numeração dos scripts para facilitar a instalação e configuração dos servi
 foram trazidos para o início do curso facilitando o acesso dos arquivos remotos no servidor, foi desmembrado o script
 do OpenSSL separando a criação da CA (Certificate Authority) dos Certificados Assinados CRT (Certificate Request Trust) 
 de cada serviço de rede, atualização do script: 00-parametros.sh reorganizando as variáveis da numeração dos novos
-scripts, atualização dos nomes do arquivos de configuração da CA para facilitar a configuração.
+scripts, atualização dos nomes dos arquivos de configuração da CA para facilitar a configuração.
 
 24/03/2022 - Robson Vaamonde - Atualização do arquivo de configuração: timesyncd.conf com mais servidores do projeto
 NTP.br nas linhas: NTP e FallbackNTP, alteração do script: 05-ntp.sh removendo a edição do arquivo: timesyncd.conf.

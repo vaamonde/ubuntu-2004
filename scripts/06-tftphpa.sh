@@ -32,19 +32,21 @@
 # Utilização do TFTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 #	sudo apt install tftp ou sudo apt install tftp-hpa
+#	touch linux.txt (change file timestamps)
 # 	tftp tftp.pti.intra (IPv4 Trivial File Transfer Protocol client)
 #		verbose
 #		status
 #		get robson.txt
-#		put vaamonde.txt
+#		put linux.txt
 #
 # Windows Powershell:
 #	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Cliente TFTP
+#	New-Item -Path 'windows.txt' - ItemType File
 # 	tftp tftp.pti.intra
 #		verbose
 #		status
 #		get robson.txt
-#		put vaamonde.txt
+#		put windows.txt
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
