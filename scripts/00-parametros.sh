@@ -275,7 +275,7 @@ PORTNTP="123"
 # 01. systemctl status tftpd-hpa = status do serviço do TFTP-HPA
 # 02. journalctl -t tftpd-hpa = todas as mensagens referente ao serviço do TFTP-HPA
 # 03. tail -f /var/log/syslog | grep tftp = filtrando as mensagens do serviço do TFTP-HPA
-# 04. tail -f /var/log/tcpwrappers-allow-tftp.log = filtrando as conexões permitidas do TFTP-HPA
+# 04. tail -f /var/log/tcpwrappers-allow-tftpd.log = filtrando as conexões permitidas do TFTP-HPA
 # 05. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do TFTP-HPA
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do TFTP-HPA Server

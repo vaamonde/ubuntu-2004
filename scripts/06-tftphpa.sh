@@ -38,15 +38,22 @@
 #		status
 #		get robson.txt
 #		put linux.txt
+#		quit
 #
 # Windows Powershell:
 #	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Cliente TFTP
-#	New-Item -Path 'windows.txt' - ItemType File
-# 	tftp tftp.pti.intra
-#		verbose
-#		status
-#		get robson.txt
-#		put windows.txt
+#	OBSERVAÇÃO IMPORTANTE: para o cliente de TFTP Funcionar corretamente no Windows você
+#	precisar desativar ou o Firewall ou Criar Regras de Permissão de Envio e Recebimento
+#	do Protocolo UDP da porta 69 do TFTP Client no Windows.
+#		New-Item -Path '.\windows.txt' -ItemType File
+# 		tftp -i tftp.pti.intra get robson.txt
+# 		tftp -i tftp.pti.intra put windows.txt
+#
+# VirtualBOX Procolo PXE:
+#	Primeira etapa: Na inicialização da máquina virtual, clicar com o mouse no Logo do
+#	VirtualBOX (tela de início/start) da máquina virtual;
+#	Segunda etapa.: Pressionar a tecla F12 (Select Boot Menu/Seleção do Menu de Boot)
+#	Terceira etapa: Pressionar a letra: l (Boot for LAN/PXE - Iniciar pela Placa de Rede)
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
