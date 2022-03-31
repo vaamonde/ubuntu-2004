@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 29/03/2022
-# Versão: 0.19
+# Data de atualização: 31/03/2022
+# Versão: 0.20
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NTP Server v4.2.
 #
@@ -301,7 +301,13 @@ sleep 5
 echo -e "Verificando as configurações do NTP Server, aguarde...\n"
 	# opção do comando ntpq: -c (command) sysinfo (display system operational summary)
 	ntpq -c sysinfo
-echo -e "Configurações verificada com sucesso!!!, continuando com o script...\n"
+echo -e "Configurações verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configurações das variáveis de tempo do Kernel, aguarde...\n"
+	# opção do comando ntptime: -r (Display Unix and NTP times in raw format)
+	ntptime -r
+echo -e "Configurações verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a Data e Hora do Sistema Operacional Ubuntu Server, aguarde...\n"

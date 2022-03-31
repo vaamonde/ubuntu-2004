@@ -190,7 +190,7 @@ echo -e "Instalando o Serviço do Tftpd-Hpa Server e Client, aguarde..."
 echo -e "Tftpd-Hpa Server e Client instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o arquivo de configuração do Tftpd-Hpa Server, aguarde..."
+echo -e "Atualizando os arquivos de configuração do Tftpd-Hpa Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
@@ -199,8 +199,13 @@ echo -e "Atualizando o arquivo de configuração do Tftpd-Hpa Server, aguarde...
 	mv -v /etc/default/tftpd-hpa /etc/default/tftpd-hpa.old &>> $LOG
 	cp -v conf/tftp/tftpd-hpa /etc/default/ &>> $LOG
 	mkdir -v $PATHTFTP &>> $LOG
+	mkdir -v $PATHTFTP/pxelinux.cfg &>> $LOG
+	cp -v $PATHPXE/pxelinux.0 $PATHTFTP &>> $LOG
+	cp -v $PATHSYSLINUX/memdisk $PATHTFTP &>> $LOG
+	cp -v $PATHSYSLINUX/modules/bios/{ldlinux.c32,libcom32.c32,libutil.c32,vesamenu.c32} $PATHTFTP &>> $LOG
+	cp -v conf/tftp/default $TFTP/pxelinux.cfg/ &>> $LOG
 	chown -v tftp.tftp $PATHTFTP &>> $LOG
-echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração tftpd-hpa, pressione <Enter> para continuar."
@@ -210,17 +215,24 @@ echo -e "Editando o arquivo de configuração tftpd-hpa, pressione <Enter> para 
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
-	# opção do comando read: -s (Do not echo keystrokes)
-	read -s
-	vim /etc/dhcp/dhcpd.conf
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
 echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/hosts.allow
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração default, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /var/lib/tftpboot/pxelinux.cfg/default
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração dhcpd.conf, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/dhcp/dhcpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

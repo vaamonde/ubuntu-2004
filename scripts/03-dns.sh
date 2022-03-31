@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 22/03/2022
-# Versão: 0.16
+# Data de atualização: 31/03/2022
+# Versão: 0.17
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
@@ -221,7 +221,7 @@ echo -e "Atualizando os arquivos de configuração do Bind DNS Server, aguarde..
 	mv -v /etc/bind/named.conf /etc/bind/named.conf.old &>> $LOG
 	mv -v /etc/bind/named.conf.local /etc/bind/named.conf.local.old &>> $LOG
 	mv -v /etc/bind/named.conf.options /etc/bind/named.conf.options.old &>> $LOG
-	mv -v /etc/default/named.conf.default-zones /etc/default/named.conf.default-zones.old &>> $LOG
+	mv -v /etc/bind/named.conf.default-zones /etc/bind/named.conf.default-zones.old &>> $LOG
 	mv -v /etc/bind/rndc.key /etc/bind/rndc.key.old &>> $LOG
 	mv -v /etc/default/named /etc/default/named.old &>> $LOG
 	cp -v conf/dns/{named.conf,named.conf.local,named.conf.options,named.conf.default-zones,rndc.key} /etc/bind/ &>> $LOG

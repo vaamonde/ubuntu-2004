@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 28/03/2022
-# Versão: 0.53
+# Data de atualização: 31/03/2022
+# Versão: 0.54
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -281,12 +281,14 @@ PORTNTP="123"
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do TFTP-HPA
 PATHTFTP="/var/lib/tftpboot"
+PATHPXE="/usr/lib/PXELINUX"
+PATHSYSLINUX="/usr/lib/syslinux"
 #
 # Variável das dependências do laço de loop do TFTP-HPA Server
 TFTPDEP="bind9 bind9utils isc-dhcp-server"
 #
-# Variável de instalação do serviço de rede TFTP-HPA Server
-TFTPINSTALL="tftpd-hpa tftp-hpa"
+# Variável de instalação do serviço de rede TFTP-HPA Server, Syslinux e PXELinux
+TFTPINSTALL="tftpd-hpa tftp-hpa syslinux syslinux-utils syslinux-efi pxelinux"
 #
 # Variável da porta de conexão padrão do TFTP-HPA Server
 PORTTFTP="69"
