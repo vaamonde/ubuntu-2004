@@ -18,7 +18,9 @@ arquivos de inicialização do Boot PXE do TFTP-HPA, criado o arquivo: default c
 alterado o script: 06-tftphpa.sh adicionado as opções de copiar dos arquivos do PXELinux e Syslinux para o diretório
 do TFTP, adicionado o download do Memtest86 nos arquivos: 00-parametros.sh e 06-tftphpa.sh para testar o protocolo
 PXE no Boot Remoto, correção do caminho do backup do arquivo de Zonas Padrão do Bind9: named.conf.default-zones no 
-script: 03-dns.sh, caminho estava configurado como: /etc/default/ correto é: /etc/bind/.
+script: 03-dns.sh, caminho estava configurado como: /etc/default/ correto é: /etc/bind/, melhoria no arquivo de
+configuração do: dhcpd.conf referente as variáveis: default-lease-time, max-lease-time e adicionado min-lease-time
+no bloco de configuração global do escopo.
 
 30/03/2022 - Robson Vaamonde - Analisando o BUG: 0015 (Falha de Relógio do Kernel não Sincronizado NTP Server), foi
 adicionado no arquivo de configuração: ntp.conf a opção: +sysall na linha de Log no NTP Server para facilitar o Debug
