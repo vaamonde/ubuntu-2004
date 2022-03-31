@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.09
+# Data de atualização: 31/03/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
@@ -18,7 +18,16 @@
 # pequenos arquivos entre hosts numa rede, tal como quando um terminal remoto ou um 
 # cliente inicia o seu funcionamento, a partir do servidor.
 #
+# Preboot Execution Environment (ou apenas PXE) é um ambiente para inicializar computadores 
+# usando a Interface da Placa de Rede sem a dependência da disponibilidade de dispositivos 
+# de armazenamento ou algum Sistema Operacional instalado.
+#
+# O Projeto Syslinux é um conjunto de cinco carregadores de boot diferentes para inicializar 
+# distribuições GNU/Linux em computadores locais ou remotos.
+#
 # Site Oficial do Projeto Tftpd-Hpa: https://git.kernel.org/pub/scm/network/tftp/tftp-hpa.git/about/
+# Site Oficial do Projeto PXE: https://en.wikipedia.org/wiki/Preboot_Execution_Environment
+# Site Oficial do Projeto Syslinux: https://wiki.syslinux.org/wiki/index.php?title=The_Syslinux_Project
 #
 # Utilização do TFTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
@@ -203,9 +212,20 @@ echo -e "Atualizando os arquivos de configuração do Tftpd-Hpa Server, aguarde.
 	cp -v $PATHPXE/pxelinux.0 $PATHTFTP &>> $LOG
 	cp -v $PATHSYSLINUX/memdisk $PATHTFTP &>> $LOG
 	cp -v $PATHSYSLINUX/modules/bios/{ldlinux.c32,libcom32.c32,libutil.c32,vesamenu.c32} $PATHTFTP &>> $LOG
-	cp -v conf/tftp/default $TFTP/pxelinux.cfg/ &>> $LOG
+	cp -v conf/tftp/default $PATHTFTP/pxelinux.cfg/ &>> $LOG
 	chown -v tftp.tftp $PATHTFTP &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Download o software de Teste de Memória Memtest86, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando wget: -O (output-document)
+	# opção do comando gunzip: -v (verbose)
+	# opção do comando mv: -v (verbose)
+	wget -O memtest86.bin.gz $MEMTEST86 &>> $LOG
+	gunzip -v memtest86.bin.gz &>> $LOG
+	mv -v memtest86*.bin $PATHTFTP/memtest &>> $LOG
+echo -e "Download do software feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração tftpd-hpa, pressione <Enter> para continuar."
