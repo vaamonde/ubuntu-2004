@@ -13,26 +13,26 @@
 #
 # Configuração da exportação do compartilhamento do Serviço de Rede NFS Server
 # Opções básicas de exportação dos compartilhamento do NFS Server v4.x
-# rw				Permitir solicitações de leitura e gravação em um volume NFS.
-# sync				Responda às solicitações somente depois que as alterações forem confirmadas para 
-#					o armazenamento estável.
-# no_subtree_check	Esta opção desativa a verificação de subárvore, o que tem implicações de segurança 
-#					moderadas, mas pode melhorar a confiabilidade em algumas circunstâncias.
+# rw                Permitir solicitações de leitura e gravação em um volume NFS.
+# sync              Responda às solicitações somente depois que as alterações forem confirmadas para 
+#                   o armazenamento estável.
+# no_subtree_check  Esta opção desativa a verificação de subárvore, o que tem implicações de segurança 
+#                   moderadas, mas pode melhorar a confiabilidade em algumas circunstâncias.
 #
 # Opções padrão de exportação dos compartilhamento do NFS Server v4.x (setadas automaticamente)
-# wdelay			Atrase um pouco a confirmação de uma solicitação de gravação no disco se suspeitar que 
-#					outra solicitação de gravação relacionada pode estar em andamento ou pode chegar em breve.
-# root_squash		Mapeie solicitações de UID/GID 0 para o UID/GID Anônimo (nobody). Observe que isso não se 
-#					aplica a quaisquer outros uids ou gids que possam ser igualmente sensíveis, como compartimento 
-#					de usuário ou equipe de grupo.
-# no_root_squash	A conta root na máquina cliente terá o mesmo nível de privilégio que a conta root na máquina 
-#					servidor. Essa opção tem implicações de segurança; não use a menos que tenha certeza de que 
-#					precisa. Por outro lado, root_squash faz com que o root no cliente tenha o mesmo tipo de acesso 
-#					que ninguém no servidor - evitando assim que o root no (s) cliente (s) espalhe arquivos 
-#					indesejados para os outros. 
-# secure			Esta opção requer que as solicitações sejam originadas em uma porta da Internet menor que 
-#					IPPORT_RESERVED (1024).
-# no_all_squash		Desligue todo esmagamento
+# wdelay            Atrase um pouco a confirmação de uma solicitação de gravação no disco se suspeitar que 
+#                   outra solicitação de gravação relacionada pode estar em andamento ou pode chegar em breve.
+# root_squash       Mapeie solicitações de UID/GID 0 para o UID/GID Anônimo (nobody). Observe que isso não se 
+#                   aplica a quaisquer outros uids ou gids que possam ser igualmente sensíveis, como compartimento 
+#                   de usuário ou equipe de grupo.
+# no_root_squash    A conta root na máquina cliente terá o mesmo nível de privilégio que a conta root na máquina 
+#                   servidor. Essa opção tem implicações de segurança; não use a menos que tenha certeza de que 
+#                   precisa. Por outro lado, root_squash faz com que o root no cliente tenha o mesmo tipo de acesso 
+#                   que ninguém no servidor - evitando assim que o root no (s) cliente (s) espalhe arquivos 
+#                   indesejados para os outros. 
+# secure            Esta opção requer que as solicitações sejam originadas em uma porta da Internet menor que 
+#                   IPPORT_RESERVED (1024).
+# no_all_squash     Desligue todo esmagamento
 #
 # SHARE            NETWORKING    OPTIONS
 /mnt/nfs           172.16.1.0/24(rw,sync,no_subtree_check)

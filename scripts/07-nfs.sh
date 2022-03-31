@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 28/03/2022
-# Versão: 0.05
+# Data de atualização: 31/03/2022
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NFS Server v4.x
 #
@@ -21,11 +21,17 @@
 #
 # Site Oficial do Projeto NFS: http://nfs.sourceforge.net/
 #
-# Configuração do NFS Client no GNU/Linux ou Microsoft Windows
+# Utilização do NFS Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo apt update && sudo apt install nfs-common
-#	sudo mkdir -v /mnt/nfs
-#	sudo sudo mount nfs.pti.intra:/mnt/nfs /mnt/nfs
+#	sudo mkdir -v /mnt/nfs (make directories)
+#	sudo mount -v nfs.pti.intra:/mnt/nfs /mnt/nfs (mount a filesystem)
+#	sudo mount
+#
+# Windows Powershell:
+#	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Serviço de NFS, Cliente NFS
+#	mount -o anon \\nfs.pti.intra\mnt\nfs z:
+#	mount
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -216,7 +222,7 @@ sleep 5
 echo -e "Verificando os Compartilhamentos do NFS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando exportfs: -s (Display the current export list), -v (verbose)
-	exportfs -sv &>> $LOG
+	exportfs -sv
 echo -e "Compartilhamentos verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
