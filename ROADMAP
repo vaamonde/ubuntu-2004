@@ -82,7 +82,6 @@ _
 #27B_ 12-webdav Configuração do WebDav no Apache2 Server - PARTE-02
 #27C_ 12-webdav Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03
 _
-
 #26A_ 11-wordpress.sh Customizando o Script e Arquivos de Configuração do CMS Wordpress - PARTE-01
 #26B_ 11-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02
 #26C_ 11-wordpress.sh Instalação e Configuração do Plugins do Wordpress - PARTE-03
@@ -156,9 +155,6 @@ _
 #44A_ 29-postgresql.sh Customizando o Script e Arquivos de Configuração do PostgreSQL - PARTE-01
 #44B_ 29-postgresql.sh Instalação e Configuração do PostgreSQL - PARTE-02
 _
-
-_
-
 #47A_ 32-nextcloud.sh Customizando o Script e Arquivos de Configuração do NextCloud - PARTE-01
 #47B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
 #47C_ 25-nextcloud.sh Configuração e Monitoramento do NextCloud Client no Windows e Linux - PARTE-03

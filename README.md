@@ -355,3 +355,27 @@ Terceiro Vídeo de Configuração do NTP Server do Curso "GRATUITO" de Ubuntu Se
 [![Access NTP Server](http://img.youtube.com/vi/L-F5emFrWM0/0.jpg)](https://www.youtube.com/watch?v=L-F5emFrWM0 "Access NTP Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=L-F5emFrWM0
+
+## **🔴 06-tftphpa.sh Customizando o Script e Arquivos de Configuração do TFTP-HPA Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do TFTP-HPA Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 06-tftphpa.sh antes de executar no nosso servidor.
+
+[![Config TFTP Server](http://img.youtube.com/vi/gZ2OVOFeTNc/0.jpg)](https://www.youtube.com/watch?v=gZ2OVOFeTNc "Config TFTP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=gZ2OVOFeTNc
+
+## **🔴 06-tftphpa.sh Instalação e Configuração do TFTP-HPA Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do TFTP-HPA Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do TFTP-HPA Server.
+
+[![Install TFTP Server](http://img.youtube.com/vi/uh9snaMCyx0/0.jpg)](https://www.youtube.com/watch?v=uh9snaMCyx0 "Install TFTP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=uh9snaMCyx0
+
+## **🔴 06-tftphpa.sh Configuração e Monitoramento do TFTP Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do TFTP-HPA Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como instalar o TFTP Client nos Clientes Linux e Windows, fazer o envio e recebimento de arquivos utilizando o TFTP Server também fazer o Boot PXE no VirtualBOX para inicializar o sistema Memtest86 via rede. 
+
+[![Access TFTP Server](http://img.youtube.com/vi/dGBOfzBMakE/0.jpg)](https://www.youtube.com/watch?v=dGBOfzBMakE "Access TFTP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=dGBOfzBMakE
