@@ -23,8 +23,8 @@ label puppy
   #kernel puppy/vmlinuz
   #append initrd=puppy/initrd.gz
 #
-# Configuração da inicialização o Mentest
+# Configuração da inicialização o Mentest86
 label memtest86
-  menu label ^Teste de Memória RAM
+  menu label ^Teste de Memoria RAM
   kernel memtest
   append -
