@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 31/03/2022
-# Versão: 0.54
+# Data de atualização: 03/04/2022
+# Versão: 0.55
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -179,12 +179,12 @@ PORTDHCP="67"
 # 04. tail -f /var/log/named/* = vários arquivos de Log's dos serviços do Bind DNS
 # 05. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
-# Declarando as variáveis de Pesquisa Direta do Domínio, Reversas e Subrede do Bind DNS Server
+# Declarando as variáveis de Pesquisa Direta do Domínio, Reversa e Subrede do Bind DNS Server
 #
 # Variável do nome do Domínio do Servidor DNS (veja a linha: 64 desse arquivo)
 DOMAIN=$DOMINIOSERVER
 #
-# Variável do nome da Pesquisa Reversas do Servidor de DNS
+# Variável do nome da Pesquisa Reversa do Servidor de DNS
 DOMAINREV="1.16.172.in-addr.arpa"
 #
 # Variável do endereço IPv4 da Subrede do Servidor de DNS
@@ -193,8 +193,9 @@ NETWORK="172.16.1."
 # Variável de instalação do serviço de rede Bind DNS Server
 DNSINSTALL="bind9 bind9utils bind9-doc dnsutils net-tools"
 #
-# Variável da porta de conexão padrão do Bind DNS Server
+# Variáveis das portas de conexão padrão do Bind DNS Server
 PORTDNS="53"
+PORTRNDC="953"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 04-dhcpdns.sh                        #
@@ -292,7 +293,7 @@ MEMTEST86="http://www.memtest.org/download/5.31b/memtest86+-5.31b.bin.gz"
 TFTPDEP="bind9 bind9utils isc-dhcp-server"
 #
 # Variável de instalação do serviço de rede TFTP-HPA Server, Syslinux e PXELinux
-TFTPINSTALL="tftpd-hpa tftp-hpa syslinux syslinux-utils syslinux-efi pxelinux"
+TFTPINSTALL="tftpd-hpa tftp-hpa syslinux syslinux-utils syslinux-efi pxelinux initramfs-tools"
 #
 # Variável da porta de conexão padrão do TFTP-HPA Server
 PORTTFTP="69"
@@ -369,7 +370,7 @@ FLUSH="FLUSH PRIVILEGES;"
 # Variável de configuração do usuário padrão de administração do PhpMyAdmin (Root do MySQL)
 ADMINUSER=$USERMYSQL
 #
-# Variáveis da senha do usuário Root do Mysql e senha de administração o PhpMyAdmin
+# Variáveis da senha do usuário Root do MySQL e senha de administração o PhpMyAdmin
 ADMIN_PASS=$SENHAMYSQL
 APP_PASSWORD=$SENHAMYSQL
 APP_PASS=$SENHAMYSQL
@@ -383,7 +384,7 @@ LAMPDEP="bind9 bind9utils"
 # Variável de instalação do serviço de rede LAMP Server 
 # opção do caractere: ^ (circunflexo): expressão regular referente ao Tasksel, o uso do caractere ^ 
 # significa que o que precede é um Metapacote. Ao instalar meta pacotes, vários outros pacotes também 
-# serão instalados.
+# serão instalados automaticamente.
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 LAMPINSTALL="lamp-server^ perl python apt-transport-https awstats libgeo-ip-perl libgeo-ipfree-perl \
 libnet-ip-perl libgeoip1"
@@ -557,10 +558,10 @@ SSLDEP="openssl mysql-server mysql-common apache2 php vsftpd bind9 tomcat9"
 # 02. tail -f /var/log/apache2/error-webdav.log = log de erro de acesso ao Webdav
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do Webdav
-PATHTWEBDAV="/var/www/webdav/"
+PATHWEBDAV="/var/www/webdav/"
 #
 # Variável de criação do diretório padrão do banco de dados do Webdav
-PATHTWEBDAVDB="/var/run/apache2/webdav"
+PATHWEBDAVDB="/var/run/apache2/webdav"
 #
 # Variável das dependências do laço de loop do Webdav
 WEBDAVDEP="apache2 apache2-utils openssl"

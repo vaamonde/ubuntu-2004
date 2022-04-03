@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 28/03/2022
-# Versão: 0.06
+# Data de atualização: 03/04/2022
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
@@ -24,7 +24,9 @@
 #
 # Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Nemo:
-#	Nemo, Ctrl+L: davs://vaamonde@webdav.pti.intra/ 
+#	Nemo, Ctrl+L: davs://vaamonde@webdav.pti.intra/
+#
+# Windows Powershell:
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -171,8 +173,8 @@ echo -e "Criando o diretório do Webdav no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	mkdir -v $PATHTWEBDAV &>> $LOG
-	chown -v www-data:www-data $PATHTWEBDAV &>> $LOG
+	mkdir -v $PATHWEBDAV &>> $LOG
+	chown -v www-data:www-data $PATHWEBDAV &>> $LOG
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -180,16 +182,16 @@ echo -e "Criando o diretório do Banco de Dados Webdav no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	mkdir -v $PATHTWEBDAVDB &>> $LOG
-	chown -v www-data:www-data $PATHTWEBDAVDB &>> $LOG
+	mkdir -v $PATHWEBDAVDB &>> $LOG
+	chown -v www-data:www-data $PATHWEBDAVDB &>> $LOG
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o arquivo de Banco de Dados de usuários do Webdav, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	touch $PATHTWEBDAVDB/users.password &>> $LOG
-	chown -v www-data:www-data $PATHTWEBDAVDB/users.password &>> $LOG
+	touch $PATHWEBDAVDB/users.password &>> $LOG
+	chown -v www-data:www-data $PATHWEBDAVDB/users.password &>> $LOG
 echo -e "Arquivo criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -213,7 +215,7 @@ echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o usuário: $USERWEBDAV do Webdav, senha padrão: $PASSWORDWEBDAV, aguarde..."
-	htdigest $PATHTWEBDAVDB/users.password $REALWEBDAV $USERWEBDAV
+	htdigest $PATHWEBDAVDB/users.password $REALWEBDAV $USERWEBDAV
 echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

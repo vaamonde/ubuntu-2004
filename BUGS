@@ -7,11 +7,17 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 30/03/2022
-Versão: 0.15
+Data de atualização: 02/04/2022
+Versão: 0.16
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0016 - Falha de: tftp client does not accept options mensagem e mostrada nos arquivos de Log do TFTP-HPA Server utilizando
+o comando: less -f /var/log/syslog | grep ntpd, analisando a falha, conforme vários artigos e comentários em fóruns de 
+GNU/Linux essa mensagem e normal, não sendo uma falha do TFTP-HPA Server, está associado ao suporte da BIOS UEFI que está 
+habilitado o recurso do Secure Boot, recomendo deixar a BIOS UEFI em Legacy ou alterar o arquivo, verificando o recurso de
+configuração do arquivo tftp-hpa: -r blksize na linha TFTP_OPTIONS="".
+
 0015 - Falha de Relógio do Kernel não Sincronizado (clock-unsynchronized) mensagem e mostrada nos arquivos de Log do NTP 
 Server utilizando o comando: journalctl -t ntpd ou comando: less -f /var/log/syslog | grep ntpd, você recebe a mensagem de: 
 kernel reports TIME_ERROR: 0x2041: Clock Unsynchronized ou kernel reports TIME_ERROR: 0x41: Clock Unsynchronized, analisando 

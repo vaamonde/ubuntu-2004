@@ -25,6 +25,6 @@ label puppy
 #
 # Configuração da inicialização o Mentest86
 label memtest86
-  menu label ^Teste de Memoria RAM
+  menu label ^Teste de Memoria RAM via PXE
   kernel memtest
   append -
