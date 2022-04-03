@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 31/03/2022
-# Versão: 0.06
+# Data de atualização: 03/04/2022
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NFS Server v4.x
 #
@@ -183,7 +183,9 @@ echo -e "Atualizando os arquivos de configuração do NFS Server, aguarde..."
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/idmapd.conf /etc/idmapd.conf.old &>> $LOG
 	mv -v /etc/exports /etc/exports.old &>> $LOG
+	mv -v /etc/default/nfs-kernel-server /etc/default/nfs-kernel-server.old &>> $LOG
 	cp -v conf/nfs/{idmapd.conf,exports} /etc/ &>> $LOG
+	cp -v conf/nfs/nfs-kernel-server /etc/default/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -198,6 +200,13 @@ echo -e "Editando o arquivo de configuração exports, pressione <Enter> para co
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/exports
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração nfs-kernel-server, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/default/nfs-kernel-server
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -224,6 +233,13 @@ echo -e "Verificando os Compartilhamentos do NFS Server, aguarde..."
 	# opção do comando exportfs: -s (Display the current export list), -v (verbose)
 	exportfs -sv
 echo -e "Compartilhamentos verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as Estatísticas do NFS Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando nfsstat: -v (verbose)
+	nfsstat -v
+echo -e "Estatísticas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o Serviço do NFS Server, aguarde..."

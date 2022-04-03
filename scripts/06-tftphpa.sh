@@ -31,7 +31,7 @@
 #
 # Utilização do TFTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-#	sudo apt install tftp ou sudo apt install tftp-hpa
+#	sudo apt update && sudo apt install tftp ou sudo apt install tftp-hpa
 #	touch linux.txt (change file timestamps)
 # 	tftp tftp.pti.intra (IPv4 Trivial File Transfer Protocol client)
 #		verbose
