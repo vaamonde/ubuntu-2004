@@ -409,7 +409,6 @@ PORTMYSQL="3306"
 # 01. /etc/vsftpd.conf = arquivo de configuração do servidor VSFTPd
 # 02. /etc/vsftpd.allowed_users = arquivo de configuração da base de dados de usuários do VSFTPd
 # 03. /etc/shells = arquivo de configuração do shells válidos
-# 04. /etc/ssl/vsftpd-ssl.conf = arquivo de configuração da geração do certificado TLS/SSL
 # 05. /bin/ftponly = arquivo de configuração da mensagem (banner) do VSFTPd
 # 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 #
@@ -520,9 +519,10 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # 01. /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
 # 02. /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
 # 03. /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
-# 04. /etc/ssl/pti-ca.conf = arquivo de configuração de Unidade Certificadora CA
-# 05. /etc/ssl/pti-ssl.conf = arquivo de configuração do certificado do Apache2
-# 06. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do site HTTPS do Apache2
+# 04. /etc/ssl/ca.conf = arquivo de configuração de Unidade Certificadora CA
+# 05. /etc/ssl/apache2.conf = arquivo de configuração do certificado do Apache2
+# 06. /etc/ssl/vsftpd.conf = arquivo de configuração do certificado do VSFTPd
+# 07. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do site HTTPS do Apache2
 #
 # Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
 #
