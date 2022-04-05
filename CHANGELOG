@@ -18,7 +18,7 @@ ou falha de configuração, testando as opções no arquivo de configuração tf
 do arquivo de instalação do Serviço phpIPAM (*IP Address management*), alterado o arquivo: 00-parametros.sh com as 
 opções do TFTP: initramfs-tools, e mudança das variáveis do Webdav que está com o "T" a mais, alteração do script
 12-webdav.sh referente aos PATH errado, criação do arquivo: nfs-kernel-server, alteração do script: 07-nfs.sh
-adicionado o backup, atualização e edição do arquivo: nfs-kernel-server e das opções estatísticas do NFS Server. 
+adicionado o backup, atualização e edição do arquivo: nfs-kernel-server e das opções de estatísticas do NFS Server. 
 
 31/03/2022 - Robson Vaamonde - Adicionando os softwares: syslinux syslinux-utils syslinux-efi pxelinux no arquivo:
 00-parametros.sh nas configurações do TFTP-HPA, acrescentado os caminhos do PXELinux e do Syslinux para a copia dos

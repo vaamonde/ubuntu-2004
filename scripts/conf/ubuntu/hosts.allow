@@ -6,14 +6,23 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
-# Data de atualização: 11/03/2022
-# Versão: 0.05
+# Data de atualização: 05/04/2022
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Comando utilizado para verificar se o serviço (daemon) de rede tem suporte ao 
 # TCPWrappers: ldd /usr/sbin/sshd | grep libwrap (Biblioteca LibWrap)
+#
 # Logando todas as informações de acesso nos arquivos de Log's de cada serviço
 # em: /var/log/tcpwrappers-allow-*.log (* nome do serviço)
+#
+# Verificando as conexões dos serviços de rede com base no número da porta remota:
+# netstat -an | grep PORTA_REMOTA
+#
+# Verificando o número do processo local das conexões dos serviços de rede:
+# ps -aux | grep PROCESSO_LOCAL
+#
+#=================== CONFIGURAÇÃO DA LIBERAÇÃO DOS DAEMON ===================
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de OpenSSH
 # DAEMON   CLIENT     OPTION
@@ -52,7 +61,8 @@ ptispo01ws01.pti.intra-fd: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d
 ptispo01ws01.pti.intra-mon: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
 ptispo01ws01.pti.intra-dir: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-bacula.log
 #
-# Exemplos de configuração do TCPWrappers do arquivo hosts.allow:
+# =================== Exemplos de configuração do TCPWrappers do arquivo hosts.allow: ===================
+#
 # Permitindo uma Subrede ou nome de domínio FQDN
 # DAEMON   CLIENT     OPTION
 #sshd: 192.168.1. : spawn /bin/echo "$(date) Conexão Liberada - SSH - IP %a" >> /var/log/tcpwrappers-allow-ssh.log
