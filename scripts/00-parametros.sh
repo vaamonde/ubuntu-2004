@@ -310,7 +310,9 @@ PORTTFTP="69"
 #
 # Arquivos de monitoramento (log) do Serviço de Rede NFS Server utilizados nesse script
 # 01. systemctl status nfs-kernel-server = status do serviço do NFS Server
-# 02. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
+# 02. journalctl -t nfs-server-generator = todas as mensagens referente ao serviço do NFS Server
+# 03. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
+# 04. tail -f /var/log/tcpwrappers-allow-nfs.log = filtrando as conexões permitidas do NFS Server
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do NFS Server
 PATHNFS="/mnt/nfs/"
