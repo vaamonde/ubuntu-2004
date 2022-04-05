@@ -7,11 +7,18 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 03/04/2022
-Versão: 0.51
+Data de atualização: 05/04/2022
+Versão: 0.52
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+05/04/2022 - Robson Vaamonde - Atualização do script: 07-nfs.sh, acréscimo das linhas de alteração do arquivo de
+hosts.allow, melhoria na linha de exibição dos compartilhamentos do NFS Server, adicionado a opção: insecure no
+arquivo: exports para resolver a falha de montagem do volume NFS no sistema operacional Windows: Erro de Rede - 53
+e 87, adicionado a opção: -V 2 no arquivo: nfs-kernel-server para suportar a versão 2 do NFS Server, corrigido a
+falha de mapeamento do NFS Client no Windows e Linux no arquivo: hosts.allow, adicionado as opções: rpc.idmapd:, 
+rpc.mountd: e rpcbind:.
+
 03/04/2022 - Robson Vaamonde - Analisando o BUG: 0016 (tftp client does not accept options) referente as opções de
 Boot do DHCP Server do Protocolo PXE, falha está associada no tipo de Bios UEFI do Desktop remoto, não sendo um erro
 ou falha de configuração, testando as opções no arquivo de configuração tftp-hpa: -r blksize, estudo para a criação

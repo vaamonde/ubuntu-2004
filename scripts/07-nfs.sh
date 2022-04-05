@@ -24,18 +24,23 @@
 # Utilização do NFS Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo apt update && sudo apt install nfs-common
+#	sudo rpcinfo -p nfs.pti.intra (report RPC information)
+#	sudo showmount -e nfs.pti.intra (show mount information for an NFS server)
 #	sudo mkdir -v /mnt/nfs (make directories)
 #	sudo mount -v nfs.pti.intra:/mnt/nfs /mnt/nfs (mount a filesystem)
-#	sudo mount
-#	sudo umount /mnt/nfs
+#	sudo mount grep nfs (mount a filesystem)
+#	sudo umount /mnt/nfs (umount a filesystem)
 #
-# Windows Powershell:
-#	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Serviço de NFS, Cliente NFS
-#	Install-WindowsFeature NFS-Client	
-#	mount -o anon \\nfs.pti.intra\mnt\nfs z:
+# Windows CMD (Command Prompt):
+#	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Serviço de NFS, Cliente NFS	
+#	rpcinfo -p nfs.pti.intra
+#	showmount -e nfs.pti.intra
+#	mount -o anon nfs.pti.intra:/mnt/nfs z:
 #	mount
 #	umount z:
-#	New-PSDrive -Name W -PSProvider FileSystem -Root "\\\nfs.pti.intra\mnt\nfs"
+#
+# Windows Powershell: (Infelizmente não funcionando corretamente, buscando solução)
+#	New-PSDrive -Name W -PSProvider FileSystem -Root "\\nfs.pti.intra:\mnt\nfs"
 #	Get-PSDrive W
 #	Remove-PSDrive W
 #

@@ -7,7 +7,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
 # Data de atualização: 05/04/2022
-# Versão: 0.06
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Comando utilizado para verificar se o serviço (daemon) de rede tem suporte ao 
@@ -46,6 +46,9 @@ in.tftpd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host
 #
 # Permitindo a Rede 172.16.1.0/24 se autenticar remotamente no Servidor de NFS
 # DAEMON   CLIENT     OPTION
+rpc.idmapd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
+rpc.mountd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
+rpcbind: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
 portmap: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
 lockd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log
 rquotad: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-nfs.log

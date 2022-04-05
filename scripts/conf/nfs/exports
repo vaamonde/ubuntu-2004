@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 08/01/2022
-# Data de atualização: 08/01/2022
-# Versão: 0.01
+# Data de atualização: 05/04/2022
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NFS Server v4.x
 #
@@ -32,7 +32,9 @@
 #                   indesejados para os outros. 
 # secure            Esta opção requer que as solicitações sejam originadas em uma porta da Internet menor que 
 #                   IPPORT_RESERVED (1024).
+# insecure          A opção insegura nesta entrada também permite clientes com implementações de NFS que não usam 
+#                   uma porta reservada para NFS.
 # no_all_squash     Desligue todo esmagamento
 #
 # SHARE            NETWORKING    OPTIONS
-/mnt/nfs           172.16.1.0/24(rw,sync,no_subtree_check)
+/mnt/nfs           172.16.1.0/24(rw,insecure,sync,no_subtree_check)
