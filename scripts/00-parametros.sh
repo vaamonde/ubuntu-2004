@@ -303,7 +303,7 @@ PORTTFTP="69"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço de Rede NFS Server utilizados nesse script
-# 01. /etc/idmap.conf = arquivo de configuração da identificação do mapeamento do NFS Server
+# 01. /etc/idmapd.conf = arquivo de configuração da identificação do mapeamento do NFS Server
 # 02. /etc/exports = arquivo de configuração da exportação dos compartilhamentos do NFS Server
 # 03. /etc/default/nfs-kernel-server = arquivo de configuração do serviço do NFS Server
 # 04. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço

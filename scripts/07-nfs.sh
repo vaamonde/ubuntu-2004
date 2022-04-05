@@ -27,11 +27,17 @@
 #	sudo mkdir -v /mnt/nfs (make directories)
 #	sudo mount -v nfs.pti.intra:/mnt/nfs /mnt/nfs (mount a filesystem)
 #	sudo mount
+#	sudo umount /mnt/nfs
 #
 # Windows Powershell:
 #	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Serviço de NFS, Cliente NFS
+#	Install-WindowsFeature NFS-Client	
 #	mount -o anon \\nfs.pti.intra\mnt\nfs z:
 #	mount
+#	umount z:
+#	New-PSDrive -Name W -PSProvider FileSystem -Root "\\\nfs.pti.intra\mnt\nfs"
+#	Get-PSDrive W
+#	Remove-PSDrive W
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
