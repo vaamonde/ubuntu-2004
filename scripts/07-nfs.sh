@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 03/04/2022
-# Versão: 0.07
+# Data de atualização: 05/04/2022
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NFS Server v4.x
 #
@@ -210,9 +210,16 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração nfs-kernel-server, pressione <Enter> para continuar."
-	# opção do comando read: -s (Do not echo keystrokes)
+	# opção do comando read: -s (Do not echo keystrokes)echo -e "NFS: 
 	read -s
 	vim /etc/default/nfs-kernel-server
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/hosts.allow
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -237,7 +244,7 @@ sleep 5
 echo -e "Verificando os Compartilhamentos do NFS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando exportfs: -s (Display the current export list), -v (verbose)
-	exportfs -sv
+	echo -e "NFS: $(exportfs -sv)"
 echo -e "Compartilhamentos verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
