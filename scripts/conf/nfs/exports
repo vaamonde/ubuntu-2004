@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 08/01/2022
-# Data de atualização: 05/04/2022
-# Versão: 0.02
+# Data de atualização: 06/04/2022
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NFS Server v4.x
 #
@@ -35,6 +35,11 @@
 # insecure          A opção insegura nesta entrada também permite clientes com implementações de NFS que não usam 
 #                   uma porta reservada para NFS.
 # no_all_squash     Desligue todo esmagamento
+# all_squash        Força todos os usuários conectados à conta e permissões de "nobody"
+# anonuid           Força todas as conexões anônimas ao UID (identificação usuário) predefinido no servidor
+#                   UID nobody: anonuid=65534
+# anongid           Força todas as conexões anônimas ao GID (identificação grupo) predefinido no servidor
+#                   GUI nogroup: anongid=65534
 #
 # SHARE            NETWORKING    OPTIONS
-/mnt/nfs           172.16.1.0/24(rw,insecure,sync,no_subtree_check)
+/mnt/nfs           172.16.1.0/24(rw,insecure,sync,no_subtree_check,all_squash)
