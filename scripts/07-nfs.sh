@@ -39,7 +39,7 @@
 #	mount
 #	umount z:
 #
-# Windows Powershell: (Infelizmente não funcionando corretamente, buscando solução)
+# Windows Powershell: (Infelizmente não está funcionando corretamente, buscando solução)
 #	New-PSDrive -Name W -PSProvider FileSystem -Root "\\nfs.pti.intra:\mnt\nfs"
 #	Get-PSDrive W
 #	Remove-PSDrive W

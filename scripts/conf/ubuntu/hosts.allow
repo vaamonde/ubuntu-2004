@@ -17,9 +17,11 @@
 # em: /var/log/tcpwrappers-allow-*.log (* nome do serviço)
 #
 # Verificando as conexões dos serviços de rede com base no número da porta remota:
+# opções do comando netstat: -a (all), -n (numeric)
 # netstat -an | grep PORTA_REMOTA
 #
 # Verificando o número do processo local das conexões dos serviços de rede:
+# opções do comando ps: (all process), -u (show username and start time), -x (show daemon process)
 # ps -aux | grep PROCESSO_LOCAL
 #
 #=================== CONFIGURAÇÃO DA LIBERAÇÃO DOS DAEMON ===================
