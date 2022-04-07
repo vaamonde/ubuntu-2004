@@ -28,8 +28,9 @@
 #	sudo showmount -e nfs.pti.intra (show mount information for an NFS server)
 #	sudo mkdir -v /mnt/nfs (make directories)
 #	sudo mount -v nfs.pti.intra:/mnt/nfs /mnt/nfs (mount a filesystem)
-#	sudo mount grep nfs (mount a filesystem)
+#	sudo mount | grep nfs (mount a filesystem)
 #	sudo umount /mnt/nfs (umount a filesystem)
+#	sudo nfsiostat -p (emulate iostat for NFS mount points using)
 #
 # Windows CMD (Command Prompt):
 #	Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Serviço de NFS, Cliente NFS	

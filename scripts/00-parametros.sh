@@ -313,6 +313,9 @@ PORTTFTP="69"
 # 02. journalctl -t nfs-server-generator = todas as mensagens referente ao serviço do NFS Server
 # 03. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
 # 04. tail -f /var/log/tcpwrappers-allow-nfs.log = filtrando as conexões permitidas do NFS Server
+# 05. nfsstat -sv = exibe estatísticas mantidas sobre a atividade do cliente e do NFS Server
+# 06. nfswatch = monitora todo o tráfego de rede de entrada para um servidor de arquivos NFS Server
+# 07. nfstrace = ferramenta de rastreamento/monitoramento/captura/análise de NFS Server e CIFS/SMB
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do NFS Server
 PATHNFS="/mnt/nfs/"
