@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 22/03/2022
-Versão: 0.09
+Data de atualização: 08/04/2022
+Versão: 0.10
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -63,13 +63,13 @@ _
 #23B_ 08-lamp.sh Instalação e Configuração do LAMP Server - PARTE-02 (27/04/2022)
 #23C_ 08-lamp.sh Testes de Acesso e Monitoramento do LAMP Server no Windows e Linux - PARTE-03 (29/04/2022)
 _
-#24A_ 09-vsftpd.sh Customizando o Script e Arquivos de Configuração do VSFTPd Server - PARTE-01
-#24B_ 09-vsftpd.sh Instalação e Configuração do VSFTPd Server - PARTE-02
-#24C_ 09-vsftpd.sh Configuração e Monitoramento do FTP Client no Windows e Linux - PARTE-03
+#24A_ 09-vsftpd.sh Customizando o Script e Arquivos de Configuração do VSFTPd Server - PARTE-01 (02/05/2022)
+#24B_ 09-vsftpd.sh Instalação e Configuração do VSFTPd Server - PARTE-02 (04/05/2022)
+#24C_ 09-vsftpd.sh Configuração e Monitoramento do FTP Client no Windows e Linux - PARTE-03 (06/05/2022)
 _
-#25A_ 10-tomcat.sh Customizando o Script e Arquivos de Configuração do Apache Tomcat Server - PARTE-01
-#25B_ 10-tomcat.sh Instalação e Configuração do Apache Tomcat Server - PARTE-02
-#25C_ 10-tomcat.sh Testes de acesso ao Apache Tomcat no Windows e Linux - PARTE-03
+#25A_ 10-tomcat.sh Customizando o Script e Arquivos de Configuração do Apache Tomcat Server - PARTE-01 (09/05/2022)
+#25B_ 10-tomcat.sh Instalação e Configuração do Apache Tomcat Server - PARTE-02 (11/05/2022)
+#25C_ 10-tomcat.sh Testes de acesso ao Apache Tomcat no Windows e Linux - PARTE-03 (13/05/2022)
 _
 #26A1_ 11-openssl.sh Customizando o Script e Arquivos de Configuração do OpenSSL - PARTE-01
 #26B1_ 11-openssl.sh Instalação e Configuração da CA e Certificado no Windows e Linux - PARTE-02
@@ -79,8 +79,8 @@ _
 #26e_ 11-openssl.sh Geração do Certificado Assinado TLS/SSL do Tomcat Server - PARTE-03
 _
 #27A_ 12-webdav.sh Customizando o Script e Arquivos de Configuração do WebDav - PARTE-01
-#27B_ 12-webdav Configuração do WebDav no Apache2 Server - PARTE-02
-#27C_ 12-webdav Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03
+#27B_ 12-webdav.sh Configuração do WebDav no Apache2 Server - PARTE-02
+#27C_ 12-webdav.sh Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03
 _
 #26A_ 11-wordpress.sh Customizando o Script e Arquivos de Configuração do CMS Wordpress - PARTE-01
 #26B_ 11-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02
