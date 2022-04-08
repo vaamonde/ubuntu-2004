@@ -19,7 +19,7 @@ RPCNFSDCOUNT="8 -V 2"
 #
 # Defina como um valor numérico específico para iniciar o daemon NFS em uma prioridade 
 # específica. Os valores numéricos para os quais você pode definir esta opção são os 
-# mesmos usados ​​pelo comando nice . O valor padrão, 0, geralmente é suficiente, embora 
+# mesmos usados pelo comando nice . O valor padrão, 0, geralmente é suficiente, embora 
 # você possa querer aumentar esse valor se seu servidor NFS estiver servindo arquivos 
 # para um grande número de clientes e você quiser garantir que ele seja executado em uma 
 # prioridade mais alta do que outros processos no servidor.

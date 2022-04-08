@@ -379,3 +379,28 @@ Terceiro Vídeo de Configuração do TFTP-HPA Server do Curso "GRATUITO" de Ubun
 [![Access TFTP Server](http://img.youtube.com/vi/dGBOfzBMakE/0.jpg)](https://www.youtube.com/watch?v=dGBOfzBMakE "Access TFTP Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=dGBOfzBMakE
+
+## **🔴 07-nfs.sh Customizando o Script e Arquivos de Configuração do NFS Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do NFS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script07-nfs.sh antes de executar no nosso servidor.
+
+[![Config NFS Server](http://img.youtube.com/vi/pgHYuCCthzQ/0.jpg)](https://www.youtube.com/watch?v=pgHYuCCthzQ "Config NFS Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=pgHYuCCthzQ
+
+## **🔴 07-nfs.sh Instalação e Configuração do NFS Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do NFS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do NFS Server.
+
+[![Install NFS Server](http://img.youtube.com/vi/Bvjp-DWnlko/0.jpg)](https://www.youtube.com/watch?v=Bvjp-DWnlko "Install NFS Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Bvjp-DWnlko
+
+## **🔴 07-nfs.sh Configuração e Monitoramento do NFS Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do NFS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como instalar o NFS Client nos Clientes Linux e Windows, fazer o mapeamento dos volumes exportados do NFS Server e montar nos clientes Windows e Linux, criar e editar arquivos e diretórios nos compartilhamentos do NFS Server. 
+
+[![Access NFS Server](http://img.youtube.com/vi/EleIQyrTtzg/0.jpg)](https://www.youtube.com/watch?v=EleIQyrTtzg "Access NFS Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=EleIQyrTtzg
+
