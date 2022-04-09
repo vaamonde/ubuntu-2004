@@ -8,8 +8,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 24/10/2021
-# Data de atualização: 28/03/2022
-# Versão: 0.02
+# Data de atualização: 09/04/2022
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 -->
@@ -38,17 +38,14 @@
                redirectPort="8443" />
     <!--
     # Configuração do suporte ao TLS/SSL do Tomcat utilizar HTTPS
-    <Connector
-           protocol="org.apache.coyote.http11.Http11NioProtocol"
-           port="8443" 
-	         maxThreads="200"
-           scheme="https" 
-	         secure="true" 
-           SSLEnabled="true"
-           keystoreFile="${user.home}/.keystore" 
-	         keystorePass="pti@2018"
-           clientAuth="false" 
-	         sslProtocol="TLS" />
+	# Comando para a geração do certificado do Tomcat TLS/SSL
+	# keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+           maxThreads="150" scheme="https" secure="true"
+           clientAuth="false" sslProtocol="TLS"
+           keystoreFile="/etc/tomcat9/cert.jks"
+           sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
+           keystorePass="pti@2018" />
     -->
     <Engine name="Catalina" defaultHost="localhost">
       <Realm className="org.apache.catalina.realm.LockOutRealm">

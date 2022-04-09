@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 05/04/2022
-# Versão: 0.08
+# Data de atualização: 09/04/2022
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do NFS Server v4.x
 #
@@ -192,12 +192,16 @@ echo -e "Atualizando os arquivos de configuração do NFS Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do comando mkdir: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/idmapd.conf /etc/idmapd.conf.old &>> $LOG
 	mv -v /etc/exports /etc/exports.old &>> $LOG
 	mv -v /etc/default/nfs-kernel-server /etc/default/nfs-kernel-server.old &>> $LOG
 	cp -v conf/nfs/{idmapd.conf,exports} /etc/ &>> $LOG
 	cp -v conf/nfs/nfs-kernel-server /etc/default/ &>> $LOG
+	mkdir -v /etc/systemd/system/nfs-blkmap.service.d/ &>> $LOG
+	cp -v conf/nfs/override.conf /etc/systemd/system/nfs-blkmap.service.d/ &>> $LOG
+	touch /run/rpc_pipefs/nfs/blocklayout &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

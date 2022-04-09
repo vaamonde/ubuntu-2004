@@ -12,6 +12,11 @@ Versão: 0.53
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+09/04/2022 - Robson Vaamonde - Analisando o BUG: 0017 (open pipe file /run/rpc_pipefs/nfs/blocklayout failed: No such 
+file or directory) referente ao servidor NFS Server, criação do arquivo: override.conf com as opções de inicialização
+do módulo do Kernel blocklayoutdriver, criação do arquivo: blocklayout de referência do PIPE do processo do NFS Server
+no script: 07-nfs.sh.
+
 08/04/2022 - Robson Vaamonde - Criação do arquivo de configuração: charset.conf do Apache2 para suportar o UTF-8 nas
 páginas em HTML caso você esqueça de colocar a TAG: <meta charset="utf-8"> nos arquivos HTML, alteração do script:
 08-lamp.sh, adicionado a opção de copiar e editar o arquivo: charset.conf.

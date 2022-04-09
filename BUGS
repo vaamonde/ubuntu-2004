@@ -7,11 +7,17 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 02/04/2022
-Versão: 0.16
+Data de atualização: 09/04/2022
+Versão: 0.17
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0017 - Falha de: open pipe file /run/rpc_pipefs/nfs/blocklayout failed: No such file or directory essa mensagem é mostrada 
+no arquivo de Log do NFS Server utilizando o comando: less -f /var/log/syslog | grep nfs, analisando a falha, conforme 
+vários artigos e comentários em fóruns de GNU/Linux essa mensagem está relacionada ao módulo do Kernel que não é habilitado 
+por padrão no Ubuntu Server, executando o comando: modprobe blocklayoutdriver a falha é resolvida, criado o arquivo de 
+configuração: override.conf e adicionado a opção de inicialização do módulo no start inicial do Ubuntu Server.
+
 0016 - Falha de: tftp client does not accept options mensagem e mostrada nos arquivos de Log do TFTP-HPA Server utilizando
 o comando: less -f /var/log/syslog | grep ntpd, analisando a falha, conforme vários artigos e comentários em fóruns de 
 GNU/Linux essa mensagem e normal, não sendo uma falha do TFTP-HPA Server, está associado ao suporte da BIOS UEFI que está 
