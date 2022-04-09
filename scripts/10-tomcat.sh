@@ -94,7 +94,7 @@ echo -n "Verificando as dependências do Apache Tomcat9 Server, aguarde... "
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
 			echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
 			exit 1; 
 			}
 		sleep 5

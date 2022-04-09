@@ -155,7 +155,6 @@ echo -n "Verificando as dependências do OpenSSL, aguarde... "
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -186,8 +185,6 @@ echo
 #
 echo -e "Configuração do OpenSSL no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "URL de Download da Autoridade Certificadora CA: http://$(hostname -d | cut -d' ' -f1)/download\n"
-echo -e "Webdav do arquivo da Autoridade Certificadora CA: \n"
-echo -e "NFS do arquivo da Autoridade Certificadora CA: \n"
 echo -e "Aguarde, esse processo demora um pouco, esse é o script mais complexo desse curso...\n"
 sleep 5
 #
