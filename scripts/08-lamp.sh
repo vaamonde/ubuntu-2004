@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 13/10/2021
-# Data de atualização: 13/02/2022
-# Versão: 0.15
+# Data de atualização: 08/04/2022
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -307,8 +307,10 @@ echo -e "Atualizando os arquivos de configuração do Apache2 e do PHP, aguarde.
 	mv -v /etc/apache2/ports.conf /etc/apache2/ports.conf.old &>> $LOG
 	mv -v /etc/apache2/envvars /etc/apache2/envvars.old &>> $LOG
 	mv -v /etc/php/7.4/apache2/php.ini /etc/php/7.4/apache2/php.ini.old &>> $LOG
+	mv -v /etc/apache2/conf-available/charset.conf /etc/apache2/conf-available/charset.conf.old &>> $LOG
 	cp -v conf/lamp/{apache2.conf,ports.conf,envvars} /etc/apache2/ &>> $LOG
 	cp -v conf/lamp/000-default.conf /etc/apache2/sites-available/ &>> $LOG
+	cp -v conf/charset.conf /etc/apache2/conf-available/ &>> $LOG
 	cp -v conf/lamp/php.ini /etc/php/7.4/apache2/ &>> $LOG
 	cp -v conf/lamp/awstats.pti.intra.conf /etc/awstats/ &>> $LOG
 	cp -v conf/lamp/{awstats,awstatsupdate-cron} /etc/cron.d/ &>> $LOG
@@ -340,6 +342,13 @@ echo -e "Editando o arquivo de configuração 000-default.conf, pressione <Enter
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/apache2/sites-available/000-default.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração charset.conf, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/apache2/conf-available/charset.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

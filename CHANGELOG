@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 05/04/2022
-Versão: 0.52
+Data de atualização: 08/04/2022
+Versão: 0.53
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+08/04/2022 - Robson Vaamonde - Criação do arquivo de configuração: charset.conf do Apache2 para suportar o UTF-8 nas
+páginas em HTML caso você esqueça de colocar a TAG: <meta charset="utf-8"> nos arquivos HTML, alteração do script:
+08-lamp.sh, adicionado a opção de copiar e editar o arquivo: charset.conf.
+
 05/04/2022 - Robson Vaamonde - Atualização do script: 07-nfs.sh, acréscimo das linhas de alteração do arquivo de
 hosts.allow, melhoria na linha de exibição dos compartilhamentos do NFS Server, adicionado a opção: insecure no
 arquivo: exports para resolver a falha de montagem do volume NFS no sistema operacional Windows: Erro de Rede - 53
