@@ -69,13 +69,17 @@
 # Utilização do MySQL Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 # 	sudo apt update && sudo apt install mysql-client
-#	mysql -u root -p -h pti.intra (the MySQL command-line tool)
+#	mysql -u root -p -h mysql.pti.intra (the MySQL command-line tool)
 #
 # Microsoft Windows
 #	Download: https://dev.mysql.com/downloads/shell/
 #	Download: https://www.mysql.com/products/workbench/
+#	Download: https://www.heidisql.com/
 #	Dependências do MySQL Workbench e Shell: https://docs.microsoft.com/pt-br/cpp/windows/latest-supported-vc-redist?view=msvc-170
-#	mysql -u root -p -h pti.intra (the MySQL command-line tool)
+#	mysqlsh
+#		\connect --mysql root@mysql.pti.intra
+#		\status
+#		\quit
 #
 # Utilização do Links2 Client no GNU/Linux
 # Linux Mint Terminal: Ctrl+Alt+T
