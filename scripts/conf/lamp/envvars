@@ -21,9 +21,11 @@ else
 	SUFFIX=
 fi
 #
-# Configurações das variáveis de ambiente utilizadas pelo Apache2
+# Configurações das variáveis de usuário e grupo padrão do Apache2
 export APACHE_RUN_USER=www-data
 export APACHE_RUN_GROUP=www-data
+#
+# Configurações das variáveis de processos utilizadas pelo Apache2
 export APACHE_PID_FILE=/var/run/apache2$SUFFIX/apache2.pid
 export APACHE_RUN_DIR=/var/run/apache2$SUFFIX
 export APACHE_LOCK_DIR=/var/lock/apache2$SUFFIX

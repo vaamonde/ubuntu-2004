@@ -73,6 +73,7 @@
 #
 # Microsoft Windows
 #	Download: https://dev.mysql.com/downloads/shell/
+#	Download: https://www.mysql.com/products/workbench/
 #	mysql -u root -p -h pti.intra (the MySQL command-line tool)
 #
 # Utilização do Links2 Client no GNU/Linux
