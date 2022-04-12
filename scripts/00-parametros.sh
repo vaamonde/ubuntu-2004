@@ -336,13 +336,14 @@ PORTNFSPORTMAPPER="111"
 # 02. /etc/apache2/ports.conf = arquivo de configuração das portas do Servidor Apache2
 # 03. /etc/apache2/envvars = arquivo de configuração das variáveis do Servidor Apache2
 # 04. /etc/apache2/sites-available/000-default.conf = arquivo de configuração do site padrão HTTP
-# 05. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
-# 06. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do Servidor MySQL
-# 07. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
-# 08. /var/www/html/phpinfo.php = arquivo de geração da documentação do PHP
-# 09. /var/www/html/teste.html = arquivo de teste de páginas HTML
-# 10. /etc/awstats/awstats.pti.intra.conf = arquivo de configuração do serviço AWStats
-# 11. /etc/cron.d/awstatsupdate-cron = arquivo de atualização das estatísticas do AWStats
+# 05. /etc/apache2/conf-available/charset.conf = arquivo de configuração do UTF-8 do Apache2
+# 06. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
+# 07. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do Servidor MySQL
+# 08. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 09. /var/www/html/phpinfo.php = arquivo de geração da documentação do PHP
+# 10. /var/www/html/teste.html = arquivo de teste de páginas HTML
+# 11. /etc/awstats/awstats.pti.intra.conf = arquivo de configuração do serviço AWStats
+# 12. /etc/cron.d/awstatsupdate-cron = arquivo de atualização das estatísticas do AWStats
 #
 # Arquivos de monitoramento (log) do Serviço de Rede LAMP Server utilizados nesse script
 # 01. systemctl status apache2 = status do serviço do Apache2

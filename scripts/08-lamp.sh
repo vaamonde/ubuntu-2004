@@ -74,6 +74,7 @@
 # Microsoft Windows
 #	Download: https://dev.mysql.com/downloads/shell/
 #	Download: https://www.mysql.com/products/workbench/
+#	Dependências do MySQL Workbench e Shell: https://docs.microsoft.com/pt-br/cpp/windows/latest-supported-vc-redist?view=msvc-170
 #	mysql -u root -p -h pti.intra (the MySQL command-line tool)
 #
 # Utilização do Links2 Client no GNU/Linux
