@@ -13,7 +13,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #===================== FAQ (Perguntas Frequentes) DO CURSO DE UBUNTU SERVER =====================
 
-Pergunta 001: Os sripts funciona nas versões anteriores do Ubuntu Server?
+Pergunta 001: Os scripts funciona nas versões anteriores do Ubuntu Server?
 Resposta: Não, os scripts foram projetados para rodar na versão 20.04.x (releases 1, 2 e 3 ) e LTS 
 (Long-Term Support) do Ubuntu Server. Versão anterior somente os script do Ubuntu Server 18.04.x 
 disponível no Github (que foi congelado o seu repositório em Novembro/2021 e não receberá mais 
