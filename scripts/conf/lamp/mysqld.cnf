@@ -38,7 +38,8 @@ myisam-recover-options = BACKUP
 # table_open_cache     = 4000
 #
 # Configuração do Arquivo de Log Geral do MySQL Server
-general_log_file    = /var/log/mysql/mysql-general.log
+general-log          = 1
+general_log_file     = /var/log/mysql/mysql-general.log
 #
 # Configuração do Arquivo de Log de Erros do MySQL Server
 log_error            = /var/log/mysql/mysql-error.log
