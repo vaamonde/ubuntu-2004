@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 17/10/2021
-# Data de atualização: 28/03/2022
-# Versão: 0.08
+# Data de atualização: 14/04/2022
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do VSFTPD v3.0.x
 #
@@ -18,23 +18,34 @@
 # Slackware e RHEL Linux. Está licenciado pela GNU General Public License. 
 # Suporta IPv4, IPv6, TLS e FTPS.
 #
-# Site Oficial do Projeto Vsftpd: https://security.appspot.com/vsftpd.html
+# Site Oficial do Projeto VSFTPd: https://security.appspot.com/vsftpd.html
+# Site Oficial do Projeto ProFTPD: http://www.proftpd.org/
 # Site Oficial do Projeto FileZilla: https://filezilla-project.org/
 #
 # Utilização do FTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-# 	ftp ftp.pti.intra (Internet file transfer program)
+# 	touch linux.txt (change file timestamps)
+#	ftp ftp.pti.intra (Internet file transfer program)
 #		verbose
 #		status
 #		get robson.txt
-#		put vaamonde.txt
+#		put linux.txt
+#	Gerenciador de Arquivos Neno
+#		Ctrl+L
+#			ftp ftp.pti.intra
+#				Usuário Registrado
+#					Usuário: ftpuser
+#					Senha..: pti@2018
 #
 # Windows Powershell:
-# 	ftp ftp.pti.intra
+# 	New-Item -Path '.\windows.txt' -ItemType File
+#	ftp ftp.pti.intra
 #		verbose
 #		status
 #		get robson.txt
-#		put vaamonde.txt
+#		put windows.txt
+#	Gerenciador de Arquivos Windows Explorer
+#		
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -133,7 +144,7 @@ clear
 echo
 #
 echo -e "Instalação do Vsftpd Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Vsftpd Server.: TCP 21"
+echo -e "Porta padrão utilizada pelo Vsftpd Server.: TCP 20 e 21 e TCP 990"
 echo -e "Após a instalação do Vsftpd acessar o FTP: ftp://ftp.$(hostname -d | cut -d' ' -f1)\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -213,7 +224,7 @@ echo -e "Criando o Usuário padrão de acesso ao Vsftpd, aguarde..."
 echo -e "Usuário padrão do Vsftpd criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando o arquivo de configuração do Vsftpd Server, aguarde..."
+echo -e "Atualizando os arquivos de configurações do Vsftpd Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
@@ -224,7 +235,7 @@ echo -e "Atualizando o arquivo de configuração do Vsftpd Server, aguarde..."
 	cp -v conf/ftp/ftponly /bin/ &>> $LOG
 	touch /var/log/vsftpd.log &>> $LOG
 	chmod -v a+x /bin/ftponly &>> $LOG
-echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração vsftpd.conf, pressione <Enter> para continuar."
@@ -278,7 +289,7 @@ echo -e "Verificando a porta de conexão do Vsftpd Server, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:21 -sTCP:LISTEN
+	lsof -nP -iTCP:'20,21' -sTCP:LISTEN
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

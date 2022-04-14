@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 03/04/2022
-# Versão: 0.55
+# Data de atualização: 14/04/2022
+# Versão: 0.56
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -415,12 +415,13 @@ PORTMYSQL="3306"
 # 01. /etc/vsftpd.conf = arquivo de configuração do servidor VSFTPd
 # 02. /etc/vsftpd.allowed_users = arquivo de configuração da base de dados de usuários do VSFTPd
 # 03. /etc/shells = arquivo de configuração do shells válidos
-# 05. /bin/ftponly = arquivo de configuração da mensagem (banner) do VSFTPd
-# 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 04. /bin/ftponly = arquivo de configuração da mensagem (banner) do VSFTPd
+# 05. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 #
 # Arquivos de monitoramento (log) do Serviço de Rede VSFTPd Server utilizados nesse script
 # 01. systemctl status vsftpd = status do serviço do VSFTPd Server
 # 02. tail -f /var/log/vsftpd.log = arquivo de Log's principal do serviço do VSFTPd Server
+# 03. tail -f /var/log/tcpwrappers-allow-vsftpd.log = filtrando as conexões permitidas do VSFTPd
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do VSFTPd Server
 #
@@ -440,6 +441,7 @@ FTPDEP="bind9 bind9utils apache2 openssl"
 FTPINSTALL="vsftpd"
 #
 # Variáveis das portas de conexão padrão do VSFTPd Server
+PORTFTPDATA="20"
 PORTFTP="21"
 PORTFTPSSL="990"
 #

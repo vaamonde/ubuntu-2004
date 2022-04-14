@@ -382,7 +382,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=dGBOfzBMakE
 
 ## **🔴 07-nfs.sh Customizando o Script e Arquivos de Configuração do NFS Server - PARTE-01 🐧**
 
-Primeiro Vídeo de Configuração do NFS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script07-nfs.sh antes de executar no nosso servidor.
+Primeiro Vídeo de Configuração do NFS Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 07-nfs.sh antes de executar no nosso servidor.
 
 [![Config NFS Server](http://img.youtube.com/vi/pgHYuCCthzQ/0.jpg)](https://www.youtube.com/watch?v=pgHYuCCthzQ "Config NFS Server")
 
@@ -404,3 +404,26 @@ Terceiro Vídeo de Configuração do NFS Server do Curso "GRATUITO" de Ubuntu Se
 
 Link da vídeo aula: https://www.youtube.com/watch?v=EleIQyrTtzg
 
+## **🔴 08-lamp.sh Customizando o Script e Arquivos de Configuração do LAMP Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do LAMP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 08-LAMP.sh antes de executar no nosso servidor.
+
+[![Config LAMP Server](http://img.youtube.com/vi/9NE_rGy4oyQ/0.jpg)](https://www.youtube.com/watch?v=9NE_rGy4oyQ "Config LAMP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=9NE_rGy4oyQ
+
+## **🔴 08-lamp.sh Instalação e Configuração do LAMP Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do LAMP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do LAMP Server.
+
+[![Install LAMP Server](http://img.youtube.com/vi/KkVjtA1sUtg/0.jpg)](https://www.youtube.com/watch?v=KkVjtA1sUtg "Install LAMP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=KkVjtA1sUtg
+
+## **🔴 08-lamp.sh Testes de Acesso e Monitoramento do LAMP Server no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do LAMP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como acessar as páginas do Servidor Web Apache2 via Navegador, verificar o suporte ao PHP e HTML, acessar remotamente o Banco de Dados MySQL utilizando o PhpMyAdmin, Mysql-Client, MySQL Workbench e HeidiSQL.
+
+[![Access LAMP Server](http://img.youtube.com/vi/AYd399KE9PM/0.jpg)](https://www.youtube.com/watch?v=AYd399KE9PM "Access LAMP Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=AYd399KE9PM
