@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 08/04/2022
-Versão: 0.53
+Data de atualização: 14/04/2022
+Versão: 0.54
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+14/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: mysqld.cnf, habilitando os recursos de Log de:
+general_log_file, log_error, slow_query_log_file e log_bin, reorganização de alguns configurações para facilitar a
+documentação do Daemon do MySQL Server, alteração do script: 00-paramentros.sh adicionado a porta: 20 do VSFTPd,
+melhoria na documentação do script: 09-vsftpd.sh.
+
 09/04/2022 - Robson Vaamonde - Analisando o BUG: 0017 (open pipe file /run/rpc_pipefs/nfs/blocklayout failed: No such 
 file or directory) referente ao servidor NFS Server, criação do arquivo: override.conf com as opções de inicialização
 do módulo do Kernel blocklayoutdriver, criação do arquivo: blocklayout de referência do PIPE do processo do NFS Server

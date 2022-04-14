@@ -46,11 +46,11 @@ do DAV Off no bloco Directory /var/www/html/own.
 correção do Locale para pt_BR.UTF-8 nas variáveis: LANGUAGE = "pt_BR.UTF-8", LC_ALL = "pt_BR.UTF-8" e LANG = "pt_BR.UTF-8"
 aplicada Path de correção no script: 05-ntp.sh
 
-0011 - Falha no compilação do Netdata erro: fatal error: mqtt_wss_client.h: No such file or directory (Makefile:3471 all)
+0011 - Falha na compilação do Netdata erro: fatal error: mqtt_wss_client.h: No such file or directory (Makefile:3471 all)
 Error 2 - FAILED, correção do erro no arquivo: 00-parametros.sh mudança da URL: https://github.com/netdata/netdata aplicado
 Path de correção no script: git clone --recurse-submodules https://github.com/netdata/netdata --depth=100
 
-0010 - Falha de analise de Porta UDP utilizando o comando nc, acréscimo da opção u (UDP) nos scripts que utilizam o UDP
+0010 - Falha de analise da Porta UDP utilizando o comando nc, acréscimo da opção u (UDP) nos scripts que utilizam o UDP
 
 0009 - Falha de resolução do DNS para endereços Externos executando o comando: ping google.com recebendo a mensagem no 
 terminal: Temporary failure in name resolution ou utilizando o comando: nslookup google.com recendo a mensagem no terminal:
