@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 14/04/2022
-# Versão: 0.56
+# Data de atualização: 15/04/2022
+# Versão: 0.57
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -553,7 +553,7 @@ CRIPTOCERT="sha256"
 DOWNLOADCERT="/var/www/html/download/"
 #
 # Variável das dependências do laço de loop do OpenSSL
-SSLDEP="openssl mysql-server mysql-common apache2 php vsftpd bind9 tomcat9"
+SSLDEPCA="openssl apache2"
 #
 #=============================================================================================
 #                        VARIÁVEIS UTILIZADAS NO SCRIPT: 12-webdav.sh                        #

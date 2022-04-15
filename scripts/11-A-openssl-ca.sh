@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 28/03/2022
-# Versão: 0.11
+# Data de atualização: 15/04/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -70,14 +70,14 @@
 #				Manage Certificates
 #					Authorities
 #						Imports
-
+#
 # Instalação da Autoridade Certificadora CA no GNU/Linux
 # Pasta: Download
 #		Abrir como Root (Botão direito do Mouse: Abrir como root)
 #			Copiar: pti-ca.crt
 #			Para: /usr/local/share/ca-certificates/
-#		Terminal
-#			sudo update-ca-certificates
+#		Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
+#			update-ca-certificates
 #
 # Instalação da Autoridade Certificadora CA no Microsoft Windows
 # Pasta: Download
@@ -145,7 +145,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do OpenSSL, aguarde... "
-	for name in $SSLDEP
+	for name in $SSLDEPCA
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -155,6 +155,7 @@ echo -n "Verificando as dependências do OpenSSL, aguarde... "
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 08-lmap.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -375,14 +376,15 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) da CA, aguarde...
 echo -e "Arquivo CRT da CA verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando o arquivo CRT (Certificate Request Trust) da CA, aguarde..."
+echo -e "Instalando o certificado CRT (Certificate Request Trust) da CA no Ubuntu, aguarde..."
+echo -e "OBSERVAÇÃO: será criado o arquivo PEM (Privacy Enhanced Mail) no diretório de certificados de Ubuntu"
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
 	# opção do comando ls: -l (list), -h (human-readable), -a (all)
 	cp -v /etc/ssl/newcerts/$DOMINIONETBIOS-ca.crt /usr/local/share/ca-certificates/ &>> $LOG
 	update-ca-certificates &>> $LOG
 	ls -lha /etc/ssl/certs/$DOMINIONETBIOS* &>> $LOG
-echo -e "Arquivo CRT da CA habilitado com sucesso!!!, continuando com o script...\n"
+echo -e "Certificado CRT da CA instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o diretório de Download para baixar a Unidade Certificadora CA, aguarde..."
