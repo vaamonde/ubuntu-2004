@@ -32,7 +32,7 @@
 #		put linux.txt
 #	Gerenciador de Arquivos Neno
 #		Ctrl+L
-#			ftp ftp.pti.intra
+#			ftp://ftp.pti.intra
 #				Usuário Registrado
 #					Usuário: ftpuser
 #					Senha..: pti@2018
@@ -45,7 +45,10 @@
 #		get robson.txt
 #		put windows.txt
 #	Gerenciador de Arquivos Windows Explorer
-#		
+#		Ctrl+L
+#			ftp://ftp.pti.intra
+#				Usuário: ftpuser
+#				Senha..: pti@2018
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
