@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 15/04/2022
+# Data de atualização: 17/04/2022
 # Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
@@ -184,7 +184,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Configuração do OpenSSL no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Configuração do OpenSSL CA no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "URL de Download da Autoridade Certificadora CA: http://$(hostname -d | cut -d' ' -f1)/download\n"
 echo -e "Aguarde, esse processo demora um pouco, esse é o script mais complexo desse curso...\n"
 sleep 5
@@ -236,7 +236,7 @@ sleep 5
 echo -e "Iniciando a Configuração da Autoridade Certificadora CA, aguarde...\n"
 sleep 5
 #
-echo -e "Criando a estrutura de diretórios do CA e dos Certificados, aguarde..."
+echo -e "Criando a estrutura de diretórios da CA e dos Certificados, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
@@ -294,7 +294,7 @@ echo -e "Verificando o arquivo de Chave Raiz da CA, aguarde..."
 	# -in (The input file to read from, or standard input if not specified), 
 	# md5 (The message digest to use MD5 checksums)
 	#
-	openssl rsa -noout -modulus -in /etc/ssl/private/$DOMINIONETBIOS-ca.key| openssl md5 &>> $LOG
+	openssl rsa -noout -modulus -in /etc/ssl/private/$DOMINIONETBIOS-ca.key | openssl md5 &>> $LOG
 echo -e "Arquivo de Chave Raiz da CA verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -387,7 +387,7 @@ echo -e "OBSERVAÇÃO: será criado o arquivo PEM (Privacy Enhanced Mail) no dir
 echo -e "Certificado CRT da CA instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o diretório de Download para baixar a Unidade Certificadora CA, aguarde..."
+echo -e "Criando o diretório de Download para baixar a Autoridade Certificadora CA, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
@@ -403,7 +403,7 @@ echo -e "Verificando o diretório de download: http://$(hostname -d | cut -d' ' 
 echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Configuração do OpenSSL e TLS/SSL do Apache2 feita com Sucesso!!!."
+echo -e "Configuração da Autoridade Certificadora CA feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)

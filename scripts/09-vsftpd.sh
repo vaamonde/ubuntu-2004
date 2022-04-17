@@ -20,6 +20,7 @@
 #
 # Site Oficial do Projeto VSFTPd: https://security.appspot.com/vsftpd.html
 # Site Oficial do Projeto ProFTPD: http://www.proftpd.org/
+# Site Oficial do Projeto Pure-FTPD: https://www.pureftpd.org/project/pure-ftpd/
 # Site Oficial do Projeto FileZilla: https://filezilla-project.org/
 #
 # Utilização do FTP Client no GNU/Linux ou Microsoft Windows

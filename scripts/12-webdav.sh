@@ -23,8 +23,10 @@
 # Site Oficial do Projeto Webdav: http://www.webdav.org/
 #
 # Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
-# Linux Mint Nemo:
-#	Nemo, Ctrl+L: davs://vaamonde@webdav.pti.intra/
+# Linux Mint Terminal: Ctrl+Alt+T
+#	Gerenciador de Arquivos Neno
+#		Ctrl+L
+#			davs://vaamonde@webdav.pti.intra/
 #
 # Windows Powershell:
 #

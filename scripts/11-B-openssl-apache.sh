@@ -116,7 +116,7 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Configuração do TLS/SSL no Apache2 no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Configuração do TLS/SSL do Apache2 no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Apache2 Server TLS/SSL.: TCP 443"
 echo -e "Depois de executar a instalação da CA no GNU/Linux e no Windows, testar o acesso seguro abaixo.\n"
 echo -e "Confirmar o acesso com o Endereço IPv4 na URL: https://$(hostname -I | cut -d' ' -f1)/"
@@ -269,7 +269,7 @@ echo -e "Verificando o arquivo CSR (Certificate Signing Request) do Apache2, agu
 echo -e "Arquivo CSR verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o certificado assinado CRT (Certificate Request Trust), do Apache2, aguarde...\n"
+echo -e "Criando o certificado assinado CRT (Certificate Request Trust) do Apache2, aguarde...\n"
 	# opção do comando: &>> (redirecionar a saída padrão
 	# opções do comando openssl: 
 	# x509 (command is a multi-purpose certificate utility),

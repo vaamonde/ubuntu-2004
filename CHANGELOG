@@ -7,14 +7,17 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 14/04/2022
-Versão: 0.54
+Data de atualização: 17/04/2022
+Versão: 0.55
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+17/04/2022 - Robson Vaamonde - Melhoria nos arquivos de configuração e scripts do OpenSSL: 11-A-openssl-ca.sh, ca.conf,
+apache2.conf e vsftpd.conf, melhorias na documentação do acesso ao FTP no script: 09-vsftpd.sh.
+
 14/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: mysqld.cnf, habilitando os recursos de Log de:
-general_log_file, log_error, slow_query_log_file e log_bin, reorganização de alguns configurações para facilitar a
-documentação do Daemon do MySQL Server, alteração do script: 00-paramentros.sh adicionado a porta: 20 do VSFTPd,
+general_log_file, log_error, slow_query_log_file e log_bin, reorganização de algumas configurações para facilitar a
+documentação do Daemon do MySQL Server, alteração do script: 00-parametros.sh adicionado a porta: 20 do VSFTPd,
 melhoria na documentação do script: 09-vsftpd.sh.
 
 09/04/2022 - Robson Vaamonde - Analisando o BUG: 0017 (open pipe file /run/rpc_pipefs/nfs/blocklayout failed: No such 
@@ -38,13 +41,13 @@ Boot do DHCP Server do Protocolo PXE, falha está associada no tipo de Bios UEFI
 ou falha de configuração, testando as opções no arquivo de configuração tftp-hpa: -r blksize, estudo para a criação
 do arquivo de instalação do Serviço phpIPAM (*IP Address management*), alterado o arquivo: 00-parametros.sh com as 
 opções do TFTP: initramfs-tools, e mudança das variáveis do Webdav que está com o "T" a mais, alteração do script
-12-webdav.sh referente aos PATH errado, criação do arquivo: nfs-kernel-server, alteração do script: 07-nfs.sh
+12-webdav.sh referente ao PATH errado, criação do arquivo: nfs-kernel-server, alteração do script: 07-nfs.sh
 adicionado o backup, atualização e edição do arquivo: nfs-kernel-server e das opções de estatísticas do NFS Server. 
 
 31/03/2022 - Robson Vaamonde - Adicionando os softwares: syslinux syslinux-utils syslinux-efi pxelinux no arquivo:
 00-parametros.sh nas configurações do TFTP-HPA, acrescentado os caminhos do PXELinux e do Syslinux para a copia dos
 arquivos de inicialização do Boot PXE do TFTP-HPA, criado o arquivo: default com as informações do PXE Grub Menu,
-alterado o script: 06-tftphpa.sh adicionado as opções de copiar dos arquivos do PXELinux e Syslinux para o diretório
+alterado o script: 06-tftphpa.sh adicionado as opções de copiar os arquivos do PXELinux e Syslinux para o diretório
 do TFTP, adicionado o download do Memtest86 nos arquivos: 00-parametros.sh e 06-tftphpa.sh para testar o protocolo
 PXE no Boot Remoto, correção do caminho do backup do arquivo de Zonas Padrão do Bind9: named.conf.default-zones no 
 script: 03-dns.sh, caminho estava configurado como: /etc/default/ correto é: /etc/bind/, melhoria no arquivo de
