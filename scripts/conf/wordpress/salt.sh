@@ -21,11 +21,13 @@ echo -e "Configuração das chaves do Salt no arquivo wp-config.php\n"
 sleep 5
 #
 echo -e "Baixando o arquivo das chaves do Salt do site do Wordpress, aguarde..."
+	# opção do comando wget: -O (output file)
 	wget -O salt.key $SALT &>> salt.log
 echo -e "Arquivo baixando com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando o arquivo wp-config.php com o Salt baixado, aguarde..."
+	# opção do comando cp: -v (verbose)
 	cp -v wp-config.php wp-config-semsalt.php.old &>> salt.log
 	sed '62r salt.key' wp-config.php > /tmp/wp-config.php
 	cp -v /tmp/wp-config.php . &>> salt.log
@@ -39,10 +41,10 @@ echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
-	systemctl restart apache2 &>> salt.log
+	systemctl restart apache2
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Acesse a URL: http://$(hostname -I | cut -d' ' -f1)/wp para finalizar a configuração"
-echo -e "do Sistema de Site Dinânicos CMS Wordpress\n"
+echo -e "do Sistema de Site Dinâmicos CMS Wordpress\n"
 sleep 5
