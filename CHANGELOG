@@ -13,7 +13,10 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 17/04/2022 - Robson Vaamonde - Melhoria nos arquivos de configuração e scripts do OpenSSL: 11-A-openssl-ca.sh, ca.conf,
-apache2.conf e vsftpd.conf, melhorias na documentação do acesso ao FTP no script: 09-vsftpd.sh.
+apache2.conf e vsftpd.conf, melhorias na documentação do acesso ao FTP no script: 09-vsftpd.sh, alteração do caminho
+do Path da Instalação e Configuração do Wordpress de: /var/www/html/wp para: /var/www/wp, com essa mudança o Wordpress
+fica mais seguro e o Virtual Host do arquivo: wordpress.conf também foi alterado para visualizar os arquivos no novo
+Path, alteração feita também no arquivo: 00-parametros.sh para a criação do diretório e configuração do usuário do FTP.
 
 14/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: mysqld.cnf, habilitando os recursos de Log de:
 general_log_file, log_error, slow_query_log_file e log_bin, reorganização de algumas configurações para facilitar a

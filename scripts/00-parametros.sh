@@ -602,7 +602,7 @@ PASSWORDWEBDAV=$SENHADEFAULT
 # Declarando as variáveis utilizadas nas configurações do Site do Wordpress
 #
 # Variável de localização da instalação do diretório do Wordpress
-PATHWORDPRESS="/var/www/html/wp"
+PATHWORDPRESS="/var/www/wp"
 #
 # Variável do download do Wordpress (Link atualizado em: 11/01/2022)
 WORDPRESS="https://br.wordpress.org/latest-pt_BR.zip"

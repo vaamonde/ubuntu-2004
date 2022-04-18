@@ -53,5 +53,5 @@ echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Acesse a URL: http://$IPV4ADDRESS/wp para finalizar e testar o acesso"
-echo -e "da nova configuração do Sistema de Site Dinânicos CMS Wordpress\n"
+echo -e "da nova configuração do Sistema de Site Dinâmicos CMS Wordpress\n"
 sleep 5
