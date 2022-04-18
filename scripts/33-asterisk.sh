@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 14/01/2022
-# Data de atualização: 21/01/2022
-# Versão: 0.03
+# Data de atualização: 18/04/2022
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Asterisk v19.1.x
 #
@@ -359,6 +359,20 @@ echo -e "Editando o arquivo de configuração modules.conf, pressione <Enter> pa
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/asterisk/modules.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração sip.conf, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/asterisk/sip.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração extensions.conf, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/asterisk/extensions.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

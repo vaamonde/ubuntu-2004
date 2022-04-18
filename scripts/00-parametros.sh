@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 15/04/2022
-# Versão: 0.57
+# Data de atualização: 18/04/2022
+# Versão: 0.58
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -53,6 +53,7 @@ export DEBIAN_FRONTEND="noninteractive"
 USUARIODEFAULT="vaamonde"
 #
 # Variável da Senha padrão utilizado no Servidor Ubuntu desse curso
+# OBSERVAÇÃO IMPORTANTE: essa variável será utilizada em outras variáveis desse curso
 SENHADEFAULT="pti@2018"
 #
 # Variável do Nome (Hostname) do Servidor Ubuntu desse curso
@@ -76,6 +77,9 @@ FQDNSERVER="$NOMESERVER.$DOMINIOSERVER"
 IPV4SERVER="172.16.1.20"
 #
 # Variável do Nome da Interface Lógica do Servidor Ubuntu Server desse curso
+# CUIDADO!!! o nome da interface de rede pode mudar dependendo da instalação do Ubuntu Server,
+# verificar o nome da interface com o comando: ip address show e mudar a variável INTERFACE com
+# o nome correspondente.
 INTERFACE="enp0s3"
 #
 # Variável do arquivo de configuração da Placa de Rede do Netplan do Servidor Ubuntu
@@ -1484,7 +1488,7 @@ POSTGRESQLPORT="5432"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Nextcloud utilizados nesse script
-# 01. /etc/apache2/sites-available/nextcloud.conf = arquivo de configuração do Virtual Host do Nextcloud
+# 01. /etc/apache2/sites-available/nextcloud.conf = arquivo de configuração do Virtual Host
 #
 # Arquivos de monitoramento (log) do Serviço do Nextcloud utilizados nesse script
 # 01. /var/log/apache2/access-nextcloud.log = arquivo de Log de acesso ao Nextcloud
@@ -1529,7 +1533,11 @@ NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema de VoIP Asterisk utilizados nesse script
-# 01. 
+# 01. /etc/default/asterisk = arquivo de configuração do Daemon do Asterisk
+# 02. /etc/asterisk/asterisk.conf = arquivo de configuração do Serviço do Asterisk
+# 03. /etc/asterisk/modules.conf = arquivo de configuração dos Módulos do Asterisk
+# 04. /etc/asterisk/extensions.conf = arquivo de configurações das extensões dos Ramais
+# 05. /etc/asterisk/sip.conf = arquivo de configuração do protocolo SIP do Asterisk
 #
 # Arquivos de monitoramento (log) do Serviço de VoIP Asterisk utilizados nesse script
 # 01. 
@@ -1566,7 +1574,7 @@ PORTSIP="5060"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema de Rede Netdisco utilizados nesse script
-# 01. 
+# 01. /home/netdisco/environments/deployment.yml = arquivo de instalação do Netdisco Server
 #
 # Arquivos de monitoramento (log) do Serviço de Rede Netdisco utilizados nesse script
 # 01. 
