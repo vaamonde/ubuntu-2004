@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 18/04/2022
-# Versão: 0.58
+# Data de atualização: 19/04/2022
+# Versão: 0.59
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -421,12 +421,14 @@ PORTMYSQL="3306"
 # 02. /etc/vsftpd.allowed_users = arquivo de configuração da base de dados de usuários do VSFTPd
 # 03. /etc/shells = arquivo de configuração do shells válidos
 # 04. /bin/ftponly = arquivo de configuração da mensagem (banner) do VSFTPd
-# 05. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 05. /etc/rsyslog.d/50-default.conf = arquivo de configuração do Syslog/Rsyslog
+# 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 #
 # Arquivos de monitoramento (log) do Serviço de Rede VSFTPd Server utilizados nesse script
 # 01. systemctl status vsftpd = status do serviço do VSFTPd Server
 # 02. tail -f /var/log/vsftpd.log = arquivo de Log's principal do serviço do VSFTPd Server
-# 03. tail -f /var/log/tcpwrappers-allow-vsftpd.log = filtrando as conexões permitidas do VSFTPd
+# 03. tail -f /var/log/syslog | grep vsftpd = filtrando as mensagens do serviço do VSFTPd Server
+# 04. tail -f /var/log/tcpwrappers-allow-vsftpd.log = filtrando as conexões permitidas do VSFTPd
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do VSFTPd Server
 #

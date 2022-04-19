@@ -13,7 +13,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 19/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: vsftpd.conf, adicionado a linha: listen_port=21
-e o bloco de configuração do modo passivo de acesso remoto via NAT do Servidor FTP (ainda em testes e análise de BUG).
+e o bloco de configuração do modo passivo de acesso remoto via NAT do Servidor FTP (ainda em testes e análise de BUG),
+alteração do arquivo de configuração: 50-default.conf para habilitar o registro dos Log's do VSFTPd no arquivo de Log
+padrão em: /var/log/vsftpd.log
 
 17/04/2022 - Robson Vaamonde - Melhoria nos arquivos de configuração e scripts do OpenSSL: 11-A-openssl-ca.sh, ca.conf,
 apache2.conf e vsftpd.conf, melhoria na documentação do acesso ao FTP no script: 09-vsftpd.sh, alteração do caminho

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 17/10/2021
-# Data de atualização: 14/04/2022
-# Versão: 0.09
+# Data de atualização: 19/04/2022
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do VSFTPD v3.0.x
 #
@@ -29,8 +29,8 @@
 #	ftp ftp.pti.intra (Internet file transfer program)
 #		verbose
 #		status
-#		get robson.txt
-#		put linux.txt
+#		get robson.txt (ou mget)
+#		put linux.txt (ou mput)
 #	Gerenciador de Arquivos Neno
 #		Ctrl+L
 #			ftp://ftp.pti.intra
@@ -148,7 +148,7 @@ clear
 echo
 #
 echo -e "Instalação do Vsftpd Server no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Vsftpd Server.: TCP 20 e 21 e TCP 990"
+echo -e "Porta padrão utilizada pelo Vsftpd Server.: TCP 21 e 990"
 echo -e "Após a instalação do Vsftpd acessar o FTP: ftp://ftp.$(hostname -d | cut -d' ' -f1)\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -249,21 +249,21 @@ echo -e "Editando o arquivo de configuração vsftpd.conf, pressione <Enter> par
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de liberação vsftpd.allowed_users, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração vsftpd.allowed_users, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/vsftpd.allowed_users
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de segurança de acesso ftponly, pressione <Enter> para continuar."
+echo -e "Editando o arquivo configuração ftponly, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /bin/ftponly
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de shell válidos shells, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração shells, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/shells
@@ -277,9 +277,19 @@ echo -e "Editando o arquivo de configuração hosts.allow, pressione <Enter> par
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Editando o arquivo de configuração 50-default.conf, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/rsyslog.d/50-default.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Reinicializando o serviço do Vsftpd Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando chown: -v (verbose), syslog (user), root (group)
 	systemctl restart vsftpd &>> $LOG
+	systemctl restart rsyslog &>> $LOG
+	chown -v syslog.root /var/log/vsftpd.log &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -293,7 +303,7 @@ echo -e "Verificando a porta de conexão do Vsftpd Server, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:'20,21' -sTCP:LISTEN
+	lsof -nP -iTCP:'21' -sTCP:LISTEN
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
