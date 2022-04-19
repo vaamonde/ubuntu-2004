@@ -311,6 +311,7 @@ PORTTFTP="69"
 # 02. /etc/exports = arquivo de configuração da exportação dos compartilhamentos do NFS Server
 # 03. /etc/default/nfs-kernel-server = arquivo de configuração do serviço do NFS Server
 # 04. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
+# 05. /etc/systemd/system/nfs-blkmap.service.d/override.conf = módulo do Kernel do NFS Server
 #
 # Arquivos de monitoramento (log) do Serviço de Rede NFS Server utilizados nesse script
 # 01. systemctl status nfs-kernel-server = status do serviço do NFS Server
@@ -534,7 +535,8 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # 04. /etc/ssl/ca.conf = arquivo de configuração de Unidade Certificadora CA
 # 05. /etc/ssl/apache2.conf = arquivo de configuração do certificado do Apache2
 # 06. /etc/ssl/vsftpd.conf = arquivo de configuração do certificado do VSFTPd
-# 07. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do site HTTPS do Apache2
+# 07. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do HTTPS do Apache2
+# 08. /etc/vsftpd.conf = arquivo de configuração do VSFTPd Server
 #
 # Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
 #

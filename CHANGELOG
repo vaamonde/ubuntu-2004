@@ -7,18 +7,21 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 17/04/2022
-Versão: 0.55
+Data de atualização: 19/04/2022
+Versão: 0.56
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+19/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: vsftpd.conf, adicionado a linha: listen_port=21
+e o bloco de configuração do modo passivo de acesso remoto via NAT do Servidor FTP (ainda em testes e análise de BUG).
+
 17/04/2022 - Robson Vaamonde - Melhoria nos arquivos de configuração e scripts do OpenSSL: 11-A-openssl-ca.sh, ca.conf,
-apache2.conf e vsftpd.conf, melhorias na documentação do acesso ao FTP no script: 09-vsftpd.sh, alteração do caminho
+apache2.conf e vsftpd.conf, melhoria na documentação do acesso ao FTP no script: 09-vsftpd.sh, alteração do caminho
 do Path da Instalação e Configuração do Wordpress de: /var/www/html/wp para: /var/www/wp, com essa mudança o Wordpress
 fica mais seguro e o Virtual Host do arquivo: wordpress.conf também foi alterado para visualizar os arquivos no novo
 Path, alteração feita também no arquivo: 00-parametros.sh para a criação do diretório e configuração do usuário do FTP.
 
-14/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: mysqld.cnf, habilitando os recursos de Log de:
+14/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: mysqld.cnf, adicionado os recursos de Log de:
 general_log_file, log_error, slow_query_log_file e log_bin, reorganização de algumas configurações para facilitar a
 documentação do Daemon do MySQL Server, alteração do script: 00-parametros.sh adicionado a porta: 20 do VSFTPd,
 melhoria na documentação do script: 09-vsftpd.sh.
