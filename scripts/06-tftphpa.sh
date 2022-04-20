@@ -43,8 +43,8 @@
 # Windows Powershell:
 #	#01_ Painel de Controle, Programas, Ativar ou Desativar Recursos do Windows, Cliente TFTP
 #		OBSERVAÇÃO IMPORTANTE: para o cliente de TFTP Funcionar corretamente no Windows você
-#		precisar desativar ou o Firewall ou Criar Regras de Permissão de Envio e Recebimento
-#		do Protocolo UDP da porta 69 do TFTP Client no Windows.
+#		precisar desativar o Firewall ou Criar Regras de Permissão de Envio e Recebimento do
+#		Protocolo UDP da porta 69 do TFTP Client no Windows.
 #	#02_ Verificar o status do firewall, Ativar ou Desativar o Windows Defender Firewall, 
 #	Desativar o Windows Defender Firewall
 #		New-Item -Path '.\windows.txt' -ItemType File

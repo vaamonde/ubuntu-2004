@@ -40,6 +40,9 @@
 #
 # Windows Powershell:
 # 	New-Item -Path '.\windows.txt' -ItemType File
+#	OBSERVAÇÃO IMPORTANTE: para o cliente de FTP Funcionar corretamente no Windows você
+#	precisar desativar o Firewall ou Criar Regras de Permissão de Envio e Recebimento do
+#	Protocolo FTP das portas 20 e 21 do FTP Client no Windows.
 #	ftp ftp.pti.intra
 #		verbose
 #		status
