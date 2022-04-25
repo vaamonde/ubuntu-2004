@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 19/10/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.10
+# Data de atualização: 25/04/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 #
@@ -125,7 +125,7 @@ echo
 #
 echo -e "Instalação e Configuração do Apache Tomcat9 no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Apache Tomcat9.: TCP 8080"
-echo -e "Após a instalação do Apache Tomcat acessar a URL: http://www.$(hostname -d | cut -d' ' -f1):8080/\n"
+echo -e "Após a instalação do Apache Tomcat acessar a URL: http://$(hostname -d | cut -d' ' -f1):8080/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
