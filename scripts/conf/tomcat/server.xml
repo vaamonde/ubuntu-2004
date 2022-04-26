@@ -8,8 +8,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 24/10/2021
-# Data de atualização: 09/04/2022
-# Versão: 0.03
+# Data de atualização: 26/04/2022
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 -->
@@ -20,6 +20,10 @@
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
 
+  <!--
+   # Configuração principal do Tomcat referente a forma de autenticação dos usuários
+   # de administração dos Containers (Aplicativos).
+  -->
   <GlobalNamingResources>
     <Resource name="UserDatabase" auth="Container"
               type="org.apache.catalina.UserDatabase"
@@ -28,10 +32,10 @@
               pathname="conf/tomcat-users.xml" />
   </GlobalNamingResources>
 
-	<!--
-	# Configuração principal do Tomcat referente a Porta padrão (8080), Timeout e
-	# Porta Segura (8443)
-	-->
+  <!--
+   # Configuração principal do Tomcat referente a Porta padrão (8080), Timeout e
+   # Porta Segura (8443)
+  -->
   <Service name="Catalina">
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
@@ -39,7 +43,7 @@
     <!--
     # Configuração do suporte ao TLS/SSL do Tomcat utilizar HTTPS
 	# Comando para a geração do certificado do Tomcat TLS/SSL
-	# keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
+	# 	keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
     <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
            maxThreads="150" scheme="https" secure="true"
            clientAuth="false" sslProtocol="TLS"
@@ -53,6 +57,10 @@
                resourceName="UserDatabase"/>
       </Realm>
 
+      <!--
+       # Configuração principal do Tomcat referente ao suporte do WebApps permitir
+       # fazer a descompactação e instalação dos aplicações WAR's via Gerenciador
+      -->
       <Host name="localhost"  appBase="webapps"
             unpackWARs="true" autoDeploy="true">
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
