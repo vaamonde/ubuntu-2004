@@ -7,11 +7,22 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 09/04/2022
-Versão: 0.17
+Data de atualização: 26/04/2022
+Versão: 0.18
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0019 - Falha de criação de arquivos utilizando o Windows Explorer no Windows 10 se conectando remotamente no Servidor FTP
+utilizando o VSFTPd, analisando as soluções do Serverfault: https://serverfault.com/questions/943361/why-cant-i-access-my-
+ftp-server-with-windows-explorer e Experts: https://www.experts-exchange.com/questions/21922754/VSFTPD-not-allowing-
+connections-via-Internet-Explorer.html. (Analisando as soluções para aplicar no arquivo vsftpd.conf).
+
+0018 - Falha de TCP Wrappers do MySQL Server, arquivo de Log: /var/log/tcpwrappers-allow-mysql.log não é criado com os logs
+de acesso remoto utilizando o Client do MySQL ou MySQL Workbench, analisando o site do Release do MySQL 8.0.2 (17/07/2017)
+no link: https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-2.html no item dos Bugs: 25476479 e 84708 consta a falha
+do suporte ao TCP Wrappers e a geração de vários arquivos de Log de Erros do MySQL. Recomendação para resolver do Bug 84708
+no Link: https://bugs.mysql.com/bug.php?id=84708 (Analisando as soluções para aplicar no arquivo hosts.allow e do MySQL)  
+
 0017 - Falha de: open pipe file /run/rpc_pipefs/nfs/blocklayout failed: No such file or directory, essa mensagem é mostrada 
 no arquivo de Log do NFS Server utilizando o comando: less -f /var/log/syslog | grep nfs, analisando a falha, conforme 
 vários artigos e comentários em fóruns de GNU/Linux essa mensagem está relacionada ao módulo do Kernel que não é habilitado 
