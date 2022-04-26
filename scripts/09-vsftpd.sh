@@ -38,7 +38,7 @@
 #					Usuário: ftpuser
 #					Senha..: pti@2018
 #	Cliente de FTP FileZilla
-#		sudo apt update && udo apt install filezilla
+#		sudo apt update && sudo apt install filezilla
 #			Host...: ftp.pti.intra
 #			Usuário: ftpuser
 #			Senha..: pti@2018
