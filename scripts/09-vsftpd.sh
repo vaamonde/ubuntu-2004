@@ -37,12 +37,18 @@
 #				Usuário Registrado
 #					Usuário: ftpuser
 #					Senha..: pti@2018
+#	Cliente de FTP FileZilla
+#		sudo apt update && udo apt install filezilla
+#			Host...: ftp.pti.intra
+#			Usuário: ftpuser
+#			Senha..: pti@2018
+#			Porta..: 21
 #
 # Windows Powershell:
-# 	New-Item -Path '.\windows.txt' -ItemType File
 #	OBSERVAÇÃO IMPORTANTE: para o cliente de FTP Funcionar corretamente no Windows você
 #	precisar desativar o Firewall ou Criar Regras de Permissão de Envio e Recebimento do
 #	Protocolo FTP das portas 20 e 21 do FTP Client no Windows.
+# 	New-Item -Path '.\windows.txt' -ItemType File
 #	ftp ftp.pti.intra
 #		verbose
 #		status
@@ -50,7 +56,7 @@
 #		put windows.txt
 #	Gerenciador de Arquivos Windows Explorer
 #		Ctrl+L
-#			ftp://ftp.pti.intra
+#			ftp://ftpuser@ftp.pti.intra
 #				Usuário: ftpuser
 #				Senha..: pti@2018
 #
