@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 19/10/2021
-Data de atualização: 02/03/2022
-Versão: 0.14
+Data de atualização: 28/04/2022
+Versão: 0.15
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #======================= COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =======================
@@ -98,7 +98,7 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ Quarto: acessar o diretório clonado do Github: cd ubuntu-2004/ <Enter>;
 	_ Quinto: acessar o diretório dos scripts: cd scripts/ <Enter>;
 	_ Sexto: rodar um script de serviço: bash 00-nome_do_script.sh <Enter>.
-	_ OBSERVAÇÃO IMPORTANTE: não é ncessário transformar os scripts em executáveis utilizando o comando:
+	_ OBSERVAÇÃO IMPORTANTE: não é necessário transformar os scripts em executáveis utilizando o comando:
 	_ chmod +x *.sh, pois o comando Bash já executa os scripts por causa da primeira linha configurada
 	_ em todos os scripts: #!/bin/bash
 
@@ -121,10 +121,11 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 
 #09_ Executando os scripts mais de uma vez no mesmo cenário.
 	_ Os scripts foram projetados para serem executados apenas uma vez no cenário que está sendo aplicado,
-	_ antes de executar os scripts e recomendado fazer um "Snapshot" do servidor e depois rodar o script
+	_ antes de executar os scripts é recomendado fazer um "Snapshot" do servidor e depois rodar o script
 	_ do serviço corresponde, caso queira executar novamente o script será necessário remover ou renomear
-	_ o arquivo de LOG em: /var/log do script corresponde, por exeplo, arquivo de log: /var/log/01-openssh.sh
-	_ renomear para: sudo vm -v /var/log/01-openssh.sh /var/log/01-openssh.sh.old
+	_ o arquivo de LOG do script em: /var/log, por exemplo, arquivo de log do SSH: /var/log/01-openssh.sh
+	_ renomear para: sudo vm -v /var/log/01-openssh.sh /var/log/01-openssh.sh.old.
+	_ Listando todos os arquivos de Log executados no servidor: ls -lha /var/log/*.sh
 
 #========================= HABILITANDO OU DESABILITANDO RECURSOS NOS SCRIPTS ==========================
 
@@ -162,7 +163,7 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ se essa falha já consta lá, e se essa falha já foi resolvida.
 	_ OBS3: veja sempre o arquivo: https://github.com/vaamonde/ubuntu-2004/blob/main/CHANGELOG sobre as
 	_ correções e melhorias dos scripts e arquivos de configuração.
-	_ Veja também os COMMITS feito nos scripts ou arquivos de configuração diretamento no Github no Link
+	_ Veja também os COMMITS feito nos scripts ou arquivos de configuração diretamente no Github no Link
 	_ https://github.com/vaamonde/ubuntu-2004/commits/main 
 
 #01_ Ajudando na "MELHORIA" dos scripts.
@@ -185,7 +186,7 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 
 #04_ Ajudando no "DESEMPENHO" dos arquivos de configuração
 	_ Para ajudar no DESEMPENHO dos arquivos de configuração é recomendado criar o mesmo cenário ou um 
-	_ novo cenário e testar as opções de "Tuning" Otimização/Performace principalmente dos serviços de 
+	_ novo cenário e testar as opções de "Tuning" Otimização/Performance principalmente dos serviços de 
 	_ rede como o MySQL, MariaDB, Apache2, Nginx, etc..., documentar as melhorias ou correções e enviar 
 	_ na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
 	_ OBSERVAÇÃO IMPORTANTE: nesse cenário existe diferenças de desempenho em relação ao tipo de servidor

@@ -426,6 +426,7 @@ PORTMYSQL="3306"
 #
 # Arquivos de monitoramento (log) do Serviço de Rede VSFTPd Server utilizados nesse script
 # 01. systemctl status vsftpd = status do serviço do VSFTPd Server
+# 02. journalctl -t vsftpd = todas as mensagens referente ao serviço do VSFTPd Server
 # 02. tail -f /var/log/vsftpd.log = arquivo de Log's principal do serviço do VSFTPd Server
 # 03. tail -f /var/log/syslog | grep vsftpd = filtrando as mensagens do serviço do VSFTPd Server
 # 04. tail -f /var/log/tcpwrappers-allow-vsftpd.log = filtrando as conexões permitidas do VSFTPd
