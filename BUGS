@@ -14,8 +14,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
 0019 - Falha de criação de arquivos utilizando o Windows Explorer no Windows 10 se conectando remotamente no Servidor FTP
 utilizando o VSFTPd, analisando as soluções do Serverfault: https://serverfault.com/questions/943361/why-cant-i-access-my-
-ftp-server-with-windows-explorer e Experts: https://www.experts-exchange.com/questions/21922754/VSFTPD-not-allowing-
-connections-via-Internet-Explorer.html. (Analisando as soluções para aplicar no arquivo vsftpd.conf).
+ftp-server-with-windows-explorer, Experts: https://www.experts-exchange.com/questions/21922754/VSFTPD-not-allowing-
+connections-via-Internet-Explorer.html e do Egnyte: https://helpdesk.egnyte.com/hc/en-us/articles/201637914-FTP-Access-
+through-Windows-Explorer. (Analisando as soluções para aplicar no arquivo vsftpd.conf).
 
 0018 - Falha de TCP Wrappers do MySQL Server, arquivo de Log: /var/log/tcpwrappers-allow-mysql.log não é criado com os logs
 de acesso remoto utilizando o Client do MySQL ou MySQL Workbench, analisando o site do Release do MySQL 8.0.2 (17/07/2017)
