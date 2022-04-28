@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 17/10/2021
-# Data de atualização: 19/04/2022
-# Versão: 0.10
+# Data de atualização: 28/04/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do VSFTPD v3.0.x
 #
@@ -227,7 +227,7 @@ echo -e "Criando o Usuário padrão de acesso ao Vsftpd, aguarde..."
 	# opção do comando echo: -e (enable escapes), \n (new line), 
 	# opção do redirecionar | "piper": (Conecta a saída padrão com a entrada padrão de outro comando)
 	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -R (recursive), -v (verbose)
+	# opção do comando chown: -R (recursive), -v (verbose), ftpuser (user), ftpusers (group)
 	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX,Group=R-X,Other=R-X)
 	useradd -s /bin/ftponly -G $GROUPFTP $USERFTP &>> $LOG
 	echo -e "$PASSWORDFTP\n$PASSWORDFTP" | passwd $USERFTP &>> $LOG
@@ -242,12 +242,14 @@ echo -e "Atualizando os arquivos de configurações do Vsftpd Server, aguarde...
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
-	# opção do comando chmod: a (all user), + (bits to be added), x (execute/search only)
+	# opção do comando chmod: -v (verbose), a (all user), + (bits to be added), x (execute/search only)
+	# opção do comando chown: -v (verbose), syslog (user), root (group)
 	mv -v /etc/vsftpd.conf /etc/vsftpd.conf.old &>> $LOG
 	cp -v conf/ftp/{vsftpd.conf,vsftpd.allowed_users,shells} /etc/ &>> $LOG
 	cp -v conf/ftp/ftponly /bin/ &>> $LOG
-	touch /var/log/vsftpd.log &>> $LOG
 	chmod -v a+x /bin/ftponly &>> $LOG
+	touch /var/log/vsftpd.log &>> $LOG
+	chown -v syslog.root /var/log/vsftpd.log &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -293,13 +295,12 @@ echo -e "Editando o arquivo de configuração 50-default.conf, pressione <Enter>
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Reinicializando o serviço do Vsftpd Server, aguarde..."
+echo -e "Reinicializando os serviços do Vsftpd Server e do Rsyslog, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando chown: -v (verbose), syslog (user), root (group)
 	systemctl restart vsftpd &>> $LOG
 	systemctl restart rsyslog &>> $LOG
-	chown -v syslog.root /var/log/vsftpd.log &>> $LOG
-echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
+echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do Vsftpd Server, aguarde..."
