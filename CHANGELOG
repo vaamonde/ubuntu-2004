@@ -16,8 +16,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 Mint no script: 11-A-openssl-ca.sh, melhoria na documentação do script: 09-vsftpd.sh, adicionado a alteração da
 permissão do arquivo de log: vsftpd.log junto com a criação do arquivo, melhoria na documentação do arquivo de 
 configuração do Tomcat9: server.xml, acréscimo das opções de FTP Passivo e suporte ao NAT no arquivo do VSFTPd
-vsftpd.conf, analise dos BUG's: 0018 - Falha de TCP Wrappers do MySQL Server e 0019 - Falha de criação de arquivos 
-utilizando o Windows Explorer no Windows 10 se conectando remotamente no Servidor FTP utilizando o VSFTPd.
+vsftpd.conf, analise dos BUG's: 0018 - Falha de TCP Wrappers do MySQL Server e 0019 (Ainda sem solução) - Falha de 
+criação de arquivos utilizando o Windows Explorer no Windows 10 se conectando remotamente no Servidor FTP utilizando 
+o VSFTPd (aplicado Patch de correção no arquivo vsftpd.conf e no arquivo vsftpd.allowed_users).
 
 19/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: vsftpd.conf, adicionado a linha: listen_port=21
 e o bloco de configuração do modo passivo de acesso remoto via NAT do Servidor FTP (ainda em testes e análise de BUG),
