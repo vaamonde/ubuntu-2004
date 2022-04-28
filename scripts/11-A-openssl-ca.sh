@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 17/04/2022
-# Versão: 0.12
+# Data de atualização: 28/04/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -41,6 +41,10 @@
 #				Importar: pti-ca.crt
 #					Yes: Confiar nesta CA para identificar sites
 #					Yes: Confiar nesta autoridade certificadora para identificar usuários de email
+#					<Ver> Examinar certificado da CA
+#					<OK>
+#				<OK>
+#			Autoridades
 #				Bora para Pratica
 #					ptispo01ws01.pti.intra
 #
@@ -51,11 +55,19 @@
 #			Yes: Confiar neste certificado para a identificação de websites.
 #			Yes: Confiar neste certificado para identificar usuários de e-mail
 #			Yes: Confiar neste certificado para a identificação de criadores de software
+#		<OK>
 #		org-Bora para Pratica
 #			ptispo01ws01.pti.intra
 #	chrome://restart
 #
 # Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux)
+# OBSERVAÇÃO IMPORTANTE: O Microsoft Edge é um navegador baseado no Chromium e usa um 
+# armazenamento privado semelhante ao Chromium. O Edge usa um keystore em ~/.pki e você 
+# precisa do programa utilitário CertUtil para instalar certificado no Edge
+# Mais informações acesse: https://chromium.googlesource.com/chromium/src/+/master/docs/linux/cert_management.md
+# sudo apt update && sudo apt install libnss3-tools
+#	certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n BoraParaPratica -i pti-ca.crt
+#	certutil -d sql:$HOME/.pki/nssdb -L
 # Abrir menu de Aplicativo
 #	Configurações
 #		Gerenciar Certificados
@@ -63,6 +75,11 @@
 #				Importar
 #
 # Instalação da Autoridade Certificadora CA no Opera (GNU/Linux)
+# OBSERVAÇÃO IMPORTANTE: O navegador Opera utiliza o mesmo gerenciador de Certificado do 
+# Google Chrome, se você já importou o certificado no Google Chrome na hora de importar
+# o certificado no Navegador Opera a seguinte mensagem aparece para você: 
+# Certification Authority Import Error: The file contained one certificate, which was not 
+# imported: ptispo01ws01.pti.intra: Certificate already exists.
 # Abrir o Easy Setup
 #	Go to full browser settings
 #		Search settings: manage certificates
@@ -70,6 +87,12 @@
 #				Manage Certificates
 #					Authorities
 #						Imports
+#							Yes: Trust this certificate for identifying websites
+#							Yes: Trust this certificate for identifying email users
+#							Yes: Trust this certificate for identifying software makers
+#						<OK>
+#					org-Bora para Pratica
+#						ptispo01ws01.pti.intra
 #
 # Instalação da Autoridade Certificadora CA no GNU/Linux
 # Pasta: Download
@@ -78,6 +101,7 @@
 #			Para: /usr/local/share/ca-certificates/
 #		Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
 #			update-ca-certificates
+#			ls -lha /etc/ssl/certs/pti-ca.pem
 #
 # Instalação da Autoridade Certificadora CA no Microsoft Windows
 # Pasta: Download
@@ -298,7 +322,7 @@ echo -e "Verificando o arquivo de Chave Raiz da CA, aguarde..."
 echo -e "Arquivo de Chave Raiz da CA verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração da CA ca.conf, pressione <Enter> para continuar."
+echo -e "Editando o arquivo de configuração ca.conf, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/ssl/ca.conf
