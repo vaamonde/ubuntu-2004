@@ -406,7 +406,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=EleIQyrTtzg
 
 ## **🔴 08-lamp.sh Customizando o Script e Arquivos de Configuração do LAMP Server - PARTE-01 🐧**
 
-Primeiro Vídeo de Configuração do LAMP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 08-LAMP.sh antes de executar no nosso servidor.
+Primeiro Vídeo de Configuração do LAMP Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 08-lamp.sh antes de executar no nosso servidor.
 
 [![Config LAMP Server](http://img.youtube.com/vi/9NE_rGy4oyQ/0.jpg)](https://www.youtube.com/watch?v=9NE_rGy4oyQ "Config LAMP Server")
 
@@ -427,3 +427,27 @@ Terceiro Vídeo de Configuração do LAMP Server do Curso "GRATUITO" de Ubuntu S
 [![Access LAMP Server](http://img.youtube.com/vi/AYd399KE9PM/0.jpg)](https://www.youtube.com/watch?v=AYd399KE9PM "Access LAMP Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=AYd399KE9PM
+
+## **🔴 09-vsftpd.sh Customizando o Script e Arquivos de Configuração do VSFTPd Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do VSFTPd Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 09-vsftpd.sh antes de executar no nosso servidor.
+
+[![Config VSFTPd Server](http://img.youtube.com/vi/SwKYPGFSbCE/0.jpg)](https://www.youtube.com/watch?v=SwKYPGFSbCE "Config VSFTPd Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=SwKYPGFSbCE
+
+## **🔴 09-vsftpd.sh Instalação e Configuração do VSFTPd Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do VSFTPd Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do VSFTPd Server.
+
+[![Install VSFTPd Server](http://img.youtube.com/vi/uopiwOolywo/0.jpg)](https://www.youtube.com/watch?v=uopiwOolywo "Install VSFTPd Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=uopiwOolywo
+
+## **🔴 09-vsftpd.sh Configuração e Monitoramento do FTP Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do VSFTPd Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como acessar remotamente o nosso servidor de FTP utilizando o Linux Mint e o Powershell com o Cliente Padrão de FTP, enviar e receber arquivos e instalar e configurar o Cliente Gráfico de FTP FileZilla.
+
+[![Access VSFTPd Server](http://img.youtube.com/vi/pea-gtmRh34/0.jpg)](https://www.youtube.com/watch?v=pea-gtmRh34 "Access VSFTPd Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=pea-gtmRh34
