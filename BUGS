@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 26/04/2022
-Versão: 0.18
+Data de atualização: 28/04/2022
+Versão: 0.19
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
@@ -16,7 +16,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 utilizando o VSFTPd, analisando as soluções do Serverfault: https://serverfault.com/questions/943361/why-cant-i-access-my-
 ftp-server-with-windows-explorer, Experts: https://www.experts-exchange.com/questions/21922754/VSFTPD-not-allowing-
 connections-via-Internet-Explorer.html e do Egnyte: https://helpdesk.egnyte.com/hc/en-us/articles/201637914-FTP-Access-
-through-Windows-Explorer. (Analisando as soluções para aplicar no arquivo vsftpd.conf).
+through-Windows-Explorer, Archlinux: https://bbs.archlinux.org/viewtopic.php?id=158184 (Analisando as soluções para aplicar 
+no arquivo vsftpd.conf).
 
 0018 - Falha de TCP Wrappers do MySQL Server, arquivo de Log: /var/log/tcpwrappers-allow-mysql.log não é criado com os logs
 de acesso remoto utilizando o Client do MySQL ou MySQL Workbench, analisando o site do Release do MySQL 8.0.2 (17/07/2017)
