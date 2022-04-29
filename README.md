@@ -17,7 +17,7 @@ Linkedin Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<
 Github Procedimentos em TI: https://github.com/vaamonde<br>
 
 <div align="center">
-<img src="https://komarev.com/ghpvc/?username=vaamonde&label=Profile%20views&color=0e75b6&style=flat" alt="ubuntu-2004"/><img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/vaamonde/ubuntu-2004?style=plastic">
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/vaamonde/ubuntu-2004?style=plastic">
 <a href="https://github.com/vaamonde/ubuntu-2004/stargazers"><img src="https://img.shields.io/github/stars/vaamonde/ubuntu-2004" alt="Stars Badge"/></a>
 <a href="https://github.com/vaamonde/ubuntu-2004/network/members"><img src="https://img.shields.io/github/forks/vaamonde/ubuntu-2004" alt="Forks Badge"/></a>
 <a href="https://github.com/vaamonde/ubuntu-2004/pulls"><img src="https://img.shields.io/github/issues-pr/vaamonde/ubuntu-2004" alt="Pull Requests Badge"/></a>
