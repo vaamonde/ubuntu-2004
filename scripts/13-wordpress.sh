@@ -19,6 +19,10 @@
 # (sites) e blogs online. Criado a partir do extinto b2/cafelog, por Ryan Boren e Matthew 
 # Mullenweg, e distribuído gratuitamente sob a GNU General Public License.
 #
+# Site oficial do Wordpress: https://wordpress.org/
+# Site Oficial do Joomla: https://www.joomla.org/
+# Site Oficial do Drupal: https://www.drupal.org/
+#
 # Informações que serão solicitadas na configuração via Web do WordPress
 # Português do Brasil: Continuar;
 # Informação necessária
@@ -27,8 +31,6 @@
 #	Senha: pti@2018;
 #	Confirme a senha: Confirmar o uso de uma senha fraca;
 #	O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
-#
-# Site oficial do Wordpress: https://wordpress.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -293,7 +295,7 @@ echo -e "Verificando a porta de conexão do Apache2, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:80 -sTCP:LISTEN
+	lsof -nP -iTCP:443 -sTCP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

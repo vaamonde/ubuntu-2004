@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 19/04/2022
-# Versão: 0.59
+# Data de atualização: 28/04/2022
+# Versão: 0.60
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -427,9 +427,9 @@ PORTMYSQL="3306"
 # Arquivos de monitoramento (log) do Serviço de Rede VSFTPd Server utilizados nesse script
 # 01. systemctl status vsftpd = status do serviço do VSFTPd Server
 # 02. journalctl -t vsftpd = todas as mensagens referente ao serviço do VSFTPd Server
-# 02. tail -f /var/log/vsftpd.log = arquivo de Log's principal do serviço do VSFTPd Server
-# 03. tail -f /var/log/syslog | grep vsftpd = filtrando as mensagens do serviço do VSFTPd Server
-# 04. tail -f /var/log/tcpwrappers-allow-vsftpd.log = filtrando as conexões permitidas do VSFTPd
+# 03. tail -f /var/log/vsftpd.log = arquivo de Log's principal do serviço do VSFTPd Server
+# 04. tail -f /var/log/syslog | grep vsftpd = filtrando as mensagens do serviço do VSFTPd Server
+# 05. tail -f /var/log/tcpwrappers-allow-vsftpd.log = filtrando as conexões permitidas do VSFTPd
 #
 # Declarando as variáveis utilizadas nas configurações do Serviço do VSFTPd Server
 #
@@ -505,8 +505,8 @@ AGENDAJAVAEE="https://github.com/professorjosedeassis/javaEE/raw/main/agendaVaam
 # (coluna da chave primária)
 #
 # OBSERVAÇÃO: NO SCRIPT: 10-TOMCAT.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 NAME_DATABASE_JAVAEE="dbagenda"
 USERNAME_JAVAEE=$NAME_DATABASE_JAVAEE
 PASSWORD_JAVAEE=$NAME_DATABASE_JAVAEE
@@ -632,8 +632,8 @@ WORDPRESSSALT="https://api.wordpress.org/secret-key/1.1/salt/"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 11-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_WORDPRESS="CREATE DATABASE wordpress;"
 CREATE_USER_DATABASE_WORDPRESS="CREATE USER 'wordpress' IDENTIFIED BY 'wordpress';"
 GRANT_DATABASE_WORDPRESS="GRANT USAGE ON *.* TO 'wordpress';"
@@ -725,8 +725,8 @@ PORTNETDATA="19999"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 13-NETDATA.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_USER_NETDATA="CREATE USER 'netdata'@'localhost';"
 GRANT_USAGE_NETDATA="GRANT USAGE, REPLICATION CLIENT ON *.* TO 'netdata'@'localhost';"
 FLUSH_NETDATA="FLUSH PRIVILEGES;"
@@ -770,8 +770,8 @@ LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_SYSLOG="CREATE DATABASE syslog;"
 CREATE_USER_DATABASE_SYSLOG="CREATE USER 'syslog' IDENTIFIED BY 'syslog';"
 GRANT_DATABASE_SYSLOG="GRANT USAGE ON *.* TO 'syslog';"
@@ -793,8 +793,8 @@ INSTALL_DATABASE_SYSLOG="/usr/share/dbconfig-common/data/rsyslog-mysql/install/m
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_LOGANALYZER="CREATE DATABASE loganalyzer;"
 CREATE_USER_DATABASE_LOGANALYZER="CREATE USER 'loganalyzer' IDENTIFIED BY 'loganalyzer';"
 GRANT_DATABASE_LOGANALYZER="GRANT USAGE ON *.* TO 'loganalyzer';"
@@ -843,8 +843,8 @@ GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tg
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_GLPI="CREATE DATABASE glpi;"
 CREATE_USER_DATABASE_GLPI="CREATE USER 'glpi' IDENTIFIED BY 'glpi';"
 GRANT_DATABASE_GLPI="GRANT USAGE ON *.* TO 'glpi';"
@@ -942,8 +942,8 @@ ZONEMINDER="ppa:iconnor/zoneminder-master"
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-ZONEMINDER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_TABLE_ZONEMINDER="/usr/share/zoneminder/db/zm_create.sql"
 DROP_DATABASE_ZONEMINDER="zm"
 ALTER_USER_DATABASE_ZONEMINDER="ALTER USER 'zmuser'@localhost IDENTIFIED BY 'zmpass';"
@@ -1048,8 +1048,8 @@ zabbix-sql-scripts traceroute nmap snmp snmpd snmp-mibs-downloader"
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 20-ZABBIX.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_ZABBIX="CREATE DATABASE zabbix character set utf8 collate utf8_bin;"
 CREATE_USER_DATABASE_ZABBIX="CREATE USER 'zabbix' IDENTIFIED BY 'zabbix';"
 GRANT_DATABASE_ZABBIX="GRANT USAGE ON *.* TO 'zabbix';"
@@ -1191,8 +1191,8 @@ OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-hea
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 24-OPENFIRE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 DATABASE_OPENFIRE="openfire"
 CREATE_DATABASE_OPENFIRE="CREATE DATABASE openfire;"
 CREATE_USER_DATABASE_OPENFIRE="CREATE USER 'openfire' IDENTIFIED BY 'openfire';"
@@ -1242,8 +1242,8 @@ php-xml php-mysql php-zip php-curl php-xmlrpc"
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 25-OWNCLOUD.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_OWNCLOUD="CREATE DATABASE owncloud;"
 CREATE_USER_DATABASE_OWNCLOUD="CREATE USER 'owncloud' IDENTIFIED BY 'owncloud';"
 GRANT_DATABASE_OWNCLOUD="GRANT USAGE ON *.* TO 'owncloud';"
@@ -1334,8 +1334,8 @@ libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libso
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 26-OCSINVENTORY.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_USER_DATABASE_OCSINVENTORY="CREATE USER 'ocsweb' IDENTIFIED BY 'ocsweb';"
 GRANT_DATABASE_OCSINVENTORY="GRANT USAGE ON *.* TO 'ocsweb';"
 GRANT_ALL_DATABASE_OCSINVENTORY="GRANT ALL PRIVILEGES ON ocsweb.* TO 'ocsweb' WITH GRANT OPTION;"
@@ -1522,8 +1522,8 @@ php-gd php-mysql php-curl php-mbstring php-intl php-gmp php-bcmath php-imagick p
 # opção do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
 # OBSERVAÇÃO: NO SCRIPT: 32-NEXTCLOUD.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
-# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 305 até 310, VARIÁVEIS UTILIZADAS NO SCRIPT: 
-# 07-lamp.sh LINHAS: 251 até 252
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_NEXTCLOUD="CREATE DATABASE nextcloud;"
 CREATE_USER_DATABASE_NEXTCLOUD="CREATE USER 'nextcloud' IDENTIFIED BY 'nextcloud';"
 GRANT_DATABASE_NEXTCLOUD="GRANT USAGE ON *.* TO 'nextcloud';"
