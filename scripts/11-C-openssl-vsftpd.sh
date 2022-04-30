@@ -12,7 +12,7 @@
 # Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
-# Testado e homologado para a versão do VSFTPd v
+# Testado e homologado para a versão do VSFTPd v3.0.x
 #
 # OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca 
 # (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza 
@@ -33,6 +33,21 @@
 #
 # Site Oficial do Projeto: https://www.openssl.org/
 # Manual do OpenSSL: https://man.openbsd.org/openssl.1
+#
+# Utilização do FTP Client no GNU/Linux ou Microsoft Windows
+# Linux Mint Terminal: Ctrl+Alt+T
+#	sudo apt update && sudo apt install lftp
+# 	touch linux.txt (change file timestamps)
+#	lftp -u ftpuser ftps://ftp.pti.intra (Internet file transfer program security)
+#		history
+#		get robson.txt (ou mget)
+#		put linux.txt (ou mput)
+#	Cliente de FTP FileZilla
+#		sudo apt update && sudo apt install filezilla
+#			Host...: ftp.pti.intra
+#			Usuário: ftpuser
+#			Senha..: pti@2018
+#			Porta..: 990
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -119,10 +134,10 @@ echo
 echo -e "Configuração do TLS/SSL no VSFTPD no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Vsftpd Server TLS/SSL.: TCP 990"
 echo -e "Depois de executar a instalação da CA no GNU/Linux e no Windows, testar o acesso seguro abaixo.\n"
-echo -e "Confirmar o acesso com o Endereço IPv4: ftp $(hostname -I | cut -d' ' -f1)/"
-echo -e "Confirmar o acesso com o Nome CNAME: ftp ftp.$(hostname -d | cut -d' ' -f1)/"
-echo -e "Confirmar o acesso com o Nome Domínio: ftp $(hostname -d | cut -d' ' -f1)/"
-echo -e "Confirmar o acesso com o Nome FQDN: ftp $(hostname -A | cut -d' ' -f1)/\n"
+echo -e "Confirmar o acesso com o Endereço IPv4: lftp ftps://$(hostname -I | cut -d' ' -f1)/"
+echo -e "Confirmar o acesso com o Nome CNAME: lftp ftps://ftp.$(hostname -d | cut -d' ' -f1)/"
+echo -e "Confirmar o acesso com o Nome Domínio: lftp ftps://$(hostname -d | cut -d' ' -f1)/"
+echo -e "Confirmar o acesso com o Nome FQDN: lftp ftps://$(hostname -A | cut -d' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco, esse é o script mais complexo desse curso...\n"
 sleep 5
 #
