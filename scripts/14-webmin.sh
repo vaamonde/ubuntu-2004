@@ -18,7 +18,7 @@
 # centralizador de configurações do sistema, monitoração dos serviços e de servidores, 
 # fornecendo uma interface amigável, e que quando configurado com um servidor web, pode 
 # ser acessado de qualquer local, através de um navegador: 
-# Exemplo: https:\\(ip do servidor):(porta de utilização) - https:\\172.16.1.20:10000
+# Exemplo: https://(ip do servidor):(porta de utilização) - https://172.16.1.20:10000
 #
 # Usermin é uma interface baseada na web para webmail, alteração de senha, filtros de 
 # e-mail, fetchmail e muito mais. Ele é projetado para uso por usuários não-root regulares 
@@ -45,6 +45,15 @@
 # Informações que serão solicitadas na configuração via Web do Webmin e Usermin
 # Username: vaamonde
 # Password: pti@2018: Sign In
+#
+# Site dos Módulos de Terceiros do Webmin: https://www.webmin.com/cgi-bin/search_third.cgi?modules=1
+# Download Módulo VSFTPd Server: https://www.webmin.com/cgi-bin/search_third.cgi?search=vsftp
+# Webmin
+#	Webmin Configuration
+#		Webmin Modules
+#			Install From: From upload file
+#				(Selecione o arquivo do VSFTPd Server)
+#			<Install Module>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
