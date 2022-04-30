@@ -8,8 +8,8 @@
 	* Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 	* Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 	* Data de criação: 18/10/2021
-	* Data de atualização: 12/01/2022
-	* Versão: 0.04
+	* Data de atualização: 30/04/2022
+	* Versão: 0.05
 	* Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 	* Testado e homologado para a versão do Apache2 v2.4.x
 	* Testado e homologado para a versão do Wordpress v5.8.x
@@ -41,6 +41,7 @@ define('FS_METHOD', 'direct');
 /** Prefixo padrão das tabelas da Base de Dados do Wordpress.*/
 $table_prefix  = 'wp_';
 
+/** EM DESENVOLVIMENTO - AINDA NÃO ESTÁ FUNCIONANDO CORRETAMENTE - ANALISANDO OS BUGS */
 /** Configuração para usar dois domínios ou dois IP's no mesmo site do Wordpress */
 /** Utilizado principalmente quando o seu site do Wordpress está na rede local e */
 /** você faz NAT (Port Forwarding) utilizando servidores de Firewall, exemplo pfSense */
@@ -52,6 +53,7 @@ $table_prefix  = 'wp_';
 /** abaixo, reinicie o Apache2 e teste o acesso ao seu Wordpress */
 /** define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']); */
 /** define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']); */
+/** ==========================================================================================*/
 
 /** Configuração do Debug do Wordpress, deixar desativado (padrão false)*/
 define('WP_DEBUG', false);

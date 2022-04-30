@@ -25,6 +25,10 @@
 # de um gerenciamento e histórico de ações de manutenções. Os usuários podem declarar 
 # incidentes ou solicitações (com base no ativo ou não) graças ao recurso de Helpdesk.
 #
+# Site oficial GLPI: https://glpi-project.org/pt-br/
+# Site oficial do OTRS: https://otrs.com/
+# Site oficial do iTop: https://www.combodo.com/itop
+#
 # Informações que serão solicitadas na configuração via Web do GLPI
 # GLPI Setup
 # Select your language: Português do Brasil: OK;
@@ -45,8 +49,6 @@
 # Usuário/Senha: tech/tech - conta do usuário técnico
 # Usuário/Senha: normal/normal - conta do usuário normal
 # Usuário/Senha: post-only/postonly - conta do usuário postonly
-#
-# Site oficial: https://glpi-project.org/pt-br/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

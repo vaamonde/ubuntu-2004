@@ -22,6 +22,9 @@
 # em tempo real.
 #
 # Site oficial do Netdata: https://github.com/netdata/netdata
+# Site oficial do Monitorix: https://www.monitorix.org
+# Site oficial do Alerta: https://alerta.io/
+# Site oficial do MRTG: https://oss.oetiker.ch/mrtg/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

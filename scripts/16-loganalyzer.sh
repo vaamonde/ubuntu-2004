@@ -19,6 +19,8 @@
 # Ele consolida o Syslog/Rsyslog e outros dados de eventos, fornecendo uma página web 
 # de fácil leitura. Os gráficos ajudam a ver as coisas importantes de relance.
 #
+# Site oficial do LogAnalyzer: https://loganalyzer.adiscon.com/
+#
 # Informações que serão solicitadas na configuração via Web do LogAnalyzer
 # Step 0 -	Errordetails: Click "here" to Install Adiscon LogAnalyzer!
 # Step 1 -	Prerequisites
@@ -69,8 +71,6 @@
 #				Next;
 # Step 8 -	Done
 #				Finish.
-#
-# Site oficial do LogAnalyzer: https://loganalyzer.adiscon.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

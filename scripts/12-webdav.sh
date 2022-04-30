@@ -24,9 +24,14 @@
 #
 # Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
-#	Gerenciador de Arquivos Neno
-#		Ctrl+L
-#			davs://vaamonde@webdav.pti.intra/
+#	sudo apt update && sudo apt install davfs2
+#	sudo mkdir -v /mnt/davs (make directories)
+#	sudo mount -v -t davfs -o noexec https://webdav.pti.intra /mnt/dav/ (mount a filesystem)
+#	sudo mount | grep davfs (mount a filesystem)
+#	sudo umount /mnt/davs (umount a filesystem)
+# Gerenciador de Arquivos Neno
+#	Ctrl+L
+#		davs://vaamonde@webdav.pti.intra/
 #
 # Windows Powershell:
 #

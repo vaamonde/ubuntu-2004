@@ -30,8 +30,9 @@
 # Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e 
 # navegadores web.
 #
-# Site Oficial do Projeto: https://www.openssl.org/
+# Site Oficial do OpenSSL: https://www.openssl.org/
 # Manual do OpenSSL: https://man.openbsd.org/openssl.1
+# Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/
 #
 # Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)
 # Abrir menu de Aplicativo
@@ -63,7 +64,7 @@
 # Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux)
 # OBSERVAÇÃO IMPORTANTE: O Microsoft Edge é um navegador baseado no Chromium e usa um 
 # armazenamento privado semelhante ao Chromium. O Edge usa um keystore em ~/.pki e você 
-# precisa do programa utilitário CertUtil para instalar certificado no Edge
+# precisa do programa utilitário CertUtil para instalar o certificado no Edge
 # Mais informações acesse: https://chromium.googlesource.com/chromium/src/+/master/docs/linux/cert_management.md
 # sudo apt update && sudo apt install libnss3-tools
 #	certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n BoraParaPratica -i pti-ca.crt
@@ -77,7 +78,7 @@
 # Instalação da Autoridade Certificadora CA no Opera (GNU/Linux)
 # OBSERVAÇÃO IMPORTANTE: O navegador Opera utiliza o mesmo gerenciador de Certificado do 
 # Google Chrome, se você já importou o certificado no Google Chrome na hora de importar
-# o certificado no Navegador Opera a seguinte mensagem aparece para você: 
+# o certificado no Navegador Opera a seguinte mensagem de erro aparece para você: 
 # Certification Authority Import Error: The file contained one certificate, which was not 
 # imported: ptispo01ws01.pti.intra: Certificate already exists.
 # Abrir o Easy Setup
@@ -94,7 +95,7 @@
 #					org-Bora para Pratica
 #						ptispo01ws01.pti.intra
 #
-# Instalação da Autoridade Certificadora CA no GNU/Linux
+# Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)
 # Pasta: Download
 #		Abrir como Root (Botão direito do Mouse: Abrir como root)
 #			Copiar: pti-ca.crt
@@ -103,7 +104,7 @@
 #			update-ca-certificates
 #			ls -lha /etc/ssl/certs/pti-ca.pem
 #
-# Instalação da Autoridade Certificadora CA no Microsoft Windows
+# Instalação da Autoridade Certificadora CA no Microsoft Windows (10 ou 11)
 # Pasta: Download
 #		pti-ca.crt (clicar duas vezes em cima do certificado)
 #			Abrir

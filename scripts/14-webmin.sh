@@ -32,13 +32,19 @@
 # portanto, deve funcionar com qualquer configuração de sistema existente, ao invés de 
 # precisar de seu próprio servidor de e-mail, servidor web e assim por diante.
 #
-# Informações que serão solicitadas na configuração via Web do Webmin e Usermin
-# Username: vaamonde
-# Password: pti@2018: Sign In
-#
 # Site oficial do Webmin: http://www.webmin.com/
 # Site oficial do Usermin: https://www.webmin.com/usermin.html
 # Site oficial do Virtualmin: https://www.webmin.com/virtualmin.html
+# Site oficial do Cokipit: https://cockpit-project.org/
+# Site oficial do ISPConfig: https://www.ispconfig.org/
+# Site oficial do Ajenti: https://ajenti.org/core/
+# Site oficial do Hestia: https://www.hestiacp.com/
+# Site oficial do aaPanel: https://www.aapanel.com/index.html
+# Site oficial do CyberPanel: https://cyberpanel.net/
+#
+# Informações que serão solicitadas na configuração via Web do Webmin e Usermin
+# Username: vaamonde
+# Password: pti@2018: Sign In
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
