@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 28/04/2022
-# Versão: 0.60
+# Data de atualização: 30/04/2022
+# Versão: 0.61
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -405,6 +405,9 @@ libnet-ip-perl libgeoip1"
 # Variável de instalação do serviço de rede PhpMyAdmin
 PHPMYADMININSTALL="phpmyadmin php-bcmath php-mbstring php-pear php-dev php-json libmcrypt-dev pwgen"
 #
+# Variáveis de localização do diretório de Configuração e do Webapp do Tomcat9
+PATHAPACHE2="/var/www/html/"
+#
 # Variáveis das portas de conexão padrão do Apache2 Server
 PORTAPACHE="80"
 PORTAPACHESSL="443"
@@ -749,7 +752,7 @@ FLUSH_NETDATA="FLUSH PRIVILEGES;"
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento LogAnalyzer
 #
 # Variável de localização da instalação do diretório do LogAnalyzer
-PATHLOGANALYZER="/var/www/html/log"
+PATHLOGANALYZER="/var/www/log"
 #
 # Variável de download do LogAnalyzer (atualizada no dia: 02/11/2021)
 LOGANALYZER="http://download.adiscon.com/loganalyzer/loganalyzer-4.1.12.tar.gz"
@@ -825,9 +828,9 @@ LOGINSTALL="rsyslog-mysql"
 # Declarando as variáveis utilizadas nas configurações do sistema de Help Desk GLPI
 #
 # Variável de localização da instalação do diretório do GLPI Help Desk
-PATHGLPI="/var/www/html/glpi"
+PATHGLPI="/var/www/glpi"
 #
-# Variável de download do GLPI (atualizada no dia: 03/02/2022)
+# Variável de download do GLPI (atualizada no dia: 03/02/2022 - Última versão da série 9.x)
 GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tgz"
 #
 # Declarando as variáveis para criação da Base de Dados do GLPI
@@ -1083,8 +1086,8 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
-# Variável de download do Docker Compose (Link atualizado no dia 21/01/2022)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64"
+# Variável de download do Docker Compose (Link atualizado no dia 30/04/2022)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
@@ -1121,8 +1124,8 @@ ANSIBLEPPA="ppa:ansible/ansible"
 # Variável de download do Rundeck (Link atualizado no dia 16/12/2021)
 RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_3.4.8.20211214-1_all.deb/download.deb"
 #
-# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 16/12/2021)
-PLUGINANSIBLE="https://github.com/Batix/rundeck-ansible-plugin/releases/download/3.1.1/ansible-plugin-3.1.1.jar"
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 30/04/2022)
+PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.0/ansible-plugin-3.2.0.jar"
 #
 # Variável das dependências do laço de loop do Rundeck
 RUNDECKDEP="bind9 software-properties-common openjdk-11-jdk openjdk-11-jre default-jdk"
@@ -1172,8 +1175,8 @@ PORTNTOPNG="3001"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de mensageria OpenFire
 #
-# Variável de download do instalador do OpenFire (Link atualizado no dia 13/01/2022).
-OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.6.7_all.deb"
+# Variável de download do instalador do OpenFire (Link atualizado no dia 30/04/2022).
+OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.7.1_all.deb"
 #
 # Variável da instalação das dependências do OpenFire
 OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-headless"
@@ -1277,8 +1280,8 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 # Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 19/12/2021).
 OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.9.2/OCSNG_UNIX_SERVER-2.9.2.tar.gz"
 #
-# Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 19/12/2021).
-OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.9.0/Ocsinventory-Unix-Agent-2.9.0.tar.gz"
+# Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 30/04/2022).
+OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.9.1/Ocsinventory-Unix-Agent-2.9.1.tar.gz"
 #
 # Variável de verificação do Chip Gráfico da NVIDIA
 # opção do comando lshw: -class display (lista as informações da placa de vídeo)
@@ -1403,8 +1406,8 @@ GPGKEYELASTICSEARCH="https://artifacts.elastic.co/GPG-KEY-elasticsearch"
 # Variável da instalação do ElasticSearch
 ELASTICSEARCHINSTALL="elasticsearch-oss"
 #
-# Variável do download do repositório do Graylog Server (Link atualizado no dia 02/02/2022)
-REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-4.2-repository_latest.deb"
+# Variável do download do repositório do Graylog Server (Link atualizado no dia 30/04/2022)
+REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-4.3-repository_latest.deb"
 #
 # Variável do usuário do serviço do Graylog Server
 USERGRAYLOG="graylog"
@@ -1501,8 +1504,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 20/02/2022).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-23.0.2.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 30/04/2022).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-23.0.4.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
@@ -1549,11 +1552,11 @@ NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de VoIP Asterisk
 #
-# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 20/02/2022)
+# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 30/04/2022)
 DAHDIINSTALL="git://git.asterisk.org/dahdi/linux"
 DAHDITOOLSINSTALL="git://git.asterisk.org/dahdi/tools"
 LIBPRIINSTALL="https://gerrit.asterisk.org/libpri"
-ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19.2.0.tar.gz"
+ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19.3.3.tar.gz"
 SOUNDPTBRCORE="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-core-pt-BR-3.8.3.zip"
 SOUNDPTBREXTRA="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-extra-pt-BR-1.11.10.zip"
 #

@@ -7,11 +7,20 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 28/04/2022
-Versão: 0.58
+Data de atualização: 02/05/2022
+Versão: 0.59
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+02/05/2022 - Robson Vaamonde - Atualização do script: 13-wordpress.sh, alteração de linha do comando SED referente ao
+SALT do arquivo wp-config.php (alterado de 62r para 64r devido ao acréscimo de comentário no arquivo), adicionado o
+bloco de configuração do suporte ao HTTPS no Virtual Host do Wordpress arquivo: wordpress.conf, alterado a posição da
+configuração da porta do VSFTPd no arquivo: vsftpd.conf e adicionado o bloco de configuração do BUG: 0019 no final do
+arquivo, alteração do arquivo: 00-parametros.sh mudança do PATH do LogAnalyzer para: /var/www/log, mudança do PATH do
+GLPI para: /var/www/glpi, atualização das versões de software: Docker Compose, Ansible Plugin Rundeck, OpenFire, OCS
+Inventory Agent, Graylog, Nextcloud e do Asterisk, adicionado a variável: PATHAPACHE2="/var/www/html/" nas opções do
+LAMP-Server.
+
 28/04/2022 - Robson Vaamonde - Melhoria na documentação da Instalação da CA nos Navegadores utilizando o GNU/Linux 
 Mint no script: 11-A-openssl-ca.sh, melhoria na documentação do script: 09-vsftpd.sh, adicionado a alteração da
 permissão do arquivo de log: vsftpd.log junto com a criação do arquivo, melhoria na documentação do arquivo de 

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 13/01/2022
-# Versão: 0.10
+# Data de atualização: 30/04/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -124,9 +124,8 @@ echo -n "Verificando as dependências do LogAnalyzer, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -269,7 +268,7 @@ echo -e "Copiando os arquivos de configuração do LogAnalyzer para o site do Ap
 	# opção do comando chown: -R (recursive), -v (verbose), www-data (user), www-data (group)
 	LOGANALYZERDIR=$(echo loganalyzer*/)
 	SOURCE="src/*"
-	mkdir -v /var/www/html/log &>> $LOG
+	mkdir -v $PATHLOGANALYZER &>> $LOG
 	cp -Rv $LOGANALYZERDIR$SOURCE $PATHLOGANALYZER &>> $LOG
 	mv -v pt_BR/ $PATHLOGANALYZER/lang/ &>> $LOG
 	touch $PATHLOGANALYZER/config.php &>> $LOG

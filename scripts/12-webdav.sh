@@ -34,6 +34,7 @@
 #		davs://vaamonde@webdav.pti.intra/
 #
 # Windows Powershell:
+#	net use W: vaamonde@webdav.pti.intra/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
