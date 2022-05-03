@@ -653,7 +653,7 @@ WORDPRESSDEPINSTALL="unzip ghostscript libapache2-mod-php php-bcmath php-curl ph
 php-intl php-json php-mbstring php-mysql php-xml php-zip php-soap zlibc zlib1g-dev"
 #
 # Variável das dependências do laço de loop do Wordpress
-WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9"
+WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9 openssl"
 #
 #=============================================================================================
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 14-webmin.sh                         #
