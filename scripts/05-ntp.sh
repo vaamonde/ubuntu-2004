@@ -43,7 +43,8 @@
 # Configuração do NTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 #	sudo apt install ntpdate ntpstat
-# 	sudo ntpdate -s 172.16.1.20 ou ntp.pti.intra (set the date and time via NTP )
+# 	sudo ntpdate -s 172.16.1.20 ou ntp.pti.intra (set the date and time via NTP)
+#	sudo ntpdate -dquv ntp.pti.intra (update date and time via NTP)
 #	sudo ntpq -pn (standard NTP query program)
 #	sudo ntpq -c sysinfo (standard NTP query program)
 #	sudo vim /etc/systemd/timesyncd.conf (Network Time Synchronization configuration files)

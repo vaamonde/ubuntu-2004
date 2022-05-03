@@ -25,16 +25,31 @@
 # Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 #	sudo apt update && sudo apt install davfs2
+#	sudo usermod -a -G davfs2 vaamonde
 #	sudo mkdir -v /mnt/davs (make directories)
-#	sudo mount -v -t davfs -o noexec https://webdav.pti.intra /mnt/dav/ (mount a filesystem)
+#	sudo mount -v -t davfs -o noexec https://webdav.pti.intra /mnt/davs/ (mount a filesystem)
 #	sudo mount | grep davfs (mount a filesystem)
 #	sudo umount /mnt/davs (umount a filesystem)
 # Gerenciador de Arquivos Neno
 #	Ctrl+L
 #		davs://vaamonde@webdav.pti.intra/
+# Navegadores de Internet (Firefox, Chrome, Edge, etc...)
+#	URL: https://webdav.pti.intra/
 #
 # Windows Powershell:
-#	net use W: vaamonde@webdav.pti.intra/
+#	New-PSDrive -Name X -PSProvider FileSystem -Root \\webdav.pti.intra@SSL\webdav
+#	net use W: https://webdav.pti.intra password /USER:vaamonde
+# Windows Explorer:
+#	Este Computador
+#		Computador
+#			Adicionar Local de Rede
+#				<Avançar>;
+#				Escolher um Local de Rede Personalizado <Avançar>;
+#				Endereço de Rede ou na Internet: https://webdav.pti.intra <Avançar>;
+#					Nome do usuário: vaamonde
+#					Senha do usuário: pti@2018 <OK>
+#				Digite o nome para este local de rede: webdav.pti.intra <Avançar>;
+#				Abrir esse local de rede quando eu clicar em Concluir <Concluir>.
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
