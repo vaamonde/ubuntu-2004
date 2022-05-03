@@ -26,6 +26,8 @@
 #
 # Site Oficial do Tomcat: http://tomcat.apache.org/
 # Site Oficial do OpenJDK: https://openjdk.java.net/
+# Site Oficial do WildFly (antigo JBOSS): https://www.wildfly.org/
+# Site Oficial do Payara: https://www.payara.fish
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
