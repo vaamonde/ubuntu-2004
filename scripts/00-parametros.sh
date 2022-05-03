@@ -491,6 +491,7 @@ PORTTOMCATSSL="8443"
 #
 # Variável de download da aplicação Agenda de Contatos em Java feita pelo Prof. José de Assis
 # Github do projeto: https://github.com/professorjosedeassis/javaEE (Link atualizado em: 11/01/2022)
+# YouTUBE do projeto: https://www.youtube.com/playlist?list=PLbEOwbQR9lqz9AnwhrrOLz9cz1-TxoiUg
 AGENDAJAVAEE="https://github.com/professorjosedeassis/javaEE/raw/main/agendaVaamonde.war"
 #
 # Variáveis de criação da Base de Dados da Agenda de Contatos no MySQL

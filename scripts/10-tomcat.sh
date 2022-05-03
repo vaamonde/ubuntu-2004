@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 19/10/2021
-# Data de atualização: 25/04/2022
-# Versão: 0.11
+# Data de atualização: 03/05/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
 #
@@ -28,6 +28,12 @@
 # Site Oficial do OpenJDK: https://openjdk.java.net/
 # Site Oficial do WildFly (antigo JBOSS): https://www.wildfly.org/
 # Site Oficial do Payara: https://www.payara.fish
+#
+# Administrando o Tomcat9 via Navegador
+#	URL: http://pti.intra:8080
+#	Manager Webapp: http://pti.intra:8080/manager/
+#	Aplicativo Agenda: http://pti.intra:8080/agenda/
+#	PhpMyAdmin: http://pti.intra/phpmyadmin
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -97,6 +103,7 @@ echo -n "Verificando as dependências do Apache Tomcat9 Server, aguarde... "
 			echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
 			exit 1; 
 			}
 		sleep 5
