@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 30/04/2022
-# Versão: 0.61
+# Data de atualização: 05/05/2022
+# Versão: 0.62
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -535,22 +535,26 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-E-openssl-tomcat.sh                 #
 #=============================================================================================
 #
-# Arquivos de configuração (conf) do Serviço de Certificados OpenSSL utilizados nesse script
+# Arquivos de configuração (conf) da Unidade Certificado Raiz Confiável do OpenSSL
 # 01. /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
 # 02. /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
 # 03. /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
-# 04. /etc/ssl/ca.conf = arquivo de configuração de Unidade Certificadora CA
-# 05. /etc/ssl/apache2.conf = arquivo de configuração do certificado do Apache2
-# 06. /etc/ssl/vsftpd.conf = arquivo de configuração do certificado do VSFTPd
-# 07. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do HTTPS do Apache2
-# 08. /etc/vsftpd.conf = arquivo de configuração do VSFTPd Server
+# 04. /etc/ssl/ca.conf = arquivo de configuração de Unidade Certificadora Raiz Confiável da CA
+#
+# Arquivos de configuração (conf) da Geração do Certificado do Apache2
+# 01. /etc/ssl/apache2.conf = arquivo de configuração do certificado do Apache2
+# 02. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do HTTPS do Apache2
+#
+# Arquivos de configuração (conf) da Geração do Certificado do VSFTPd
+# 01. /etc/ssl/vsftpd.conf = arquivo de configuração do certificado do VSFTPd
+# 02. /etc/vsftpd.conf = arquivo de configuração do VSFTPd Server
 #
 # Arquivos de monitoramento (log) do Serviço de Certificado OpenSSL utilizados nesse script
 # 01. cat /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
 # 02. cat /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
 # 03. cat /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
 # 04. ls -lh /etc/ssl/ = vários arquivos de configuração dos certificados do OpenSSL
-# 05. ls -lh /etc/ssl/certs/pti-ca.pem = unidade certificado raiz confiável do OpenSSL
+# 05. ls -lh /etc/ssl/certs/pti-ca.pem = unidade certificada raiz confiável do OpenSSL
 #
 # Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
 #
