@@ -549,7 +549,8 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # 01. cat /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
 # 02. cat /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
 # 03. cat /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
-# 04. /etc/ssl/* = vários arquivos de configuração dos certificados do OpenSSL
+# 04. ls -lh /etc/ssl/ = vários arquivos de configuração dos certificados do OpenSSL
+# 05. ls -lh /etc/ssl/certs/pti-ca.pem = unidade certificado raiz confiável do OpenSSL
 #
 # Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
 #
