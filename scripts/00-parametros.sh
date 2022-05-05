@@ -545,6 +545,12 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # 07. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do HTTPS do Apache2
 # 08. /etc/vsftpd.conf = arquivo de configuração do VSFTPd Server
 #
+# Arquivos de monitoramento (log) do Serviço de Certificado OpenSSL utilizados nesse script
+# 01. cat /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
+# 02. cat /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
+# 03. cat /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
+# 04. /etc/ssl/* = vários arquivos de configuração dos certificados do OpenSSL
+#
 # Variáveis utilizadas na geração das chaves privadas/públicas dos certificados do OpenSSL
 #
 # Variável da senha utilizada na geração das chaves privadas/públicas da CA e dos certificados
