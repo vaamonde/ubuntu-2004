@@ -90,16 +90,16 @@
 # o certificado no Navegador Opera a seguinte mensagem de erro aparece para você: 
 # Certification Authority Import Error: The file contained one certificate, which was not 
 # imported: ptispo01ws01.pti.intra: Certificate already exists.
-# Abrir o Easy Setup
-#	Go to full browser settings
-#		Search settings: manage certificates
-#			Security
-#				Manage Certificates
-#					Authorities
-#						Imports
-#							Yes: Trust this certificate for identifying websites
-#							Yes: Trust this certificate for identifying email users
-#							Yes: Trust this certificate for identifying software makers
+# Abrir o Menu de Configuração Fácil
+#	Ir para as configurações completas do navegador
+#		Configurações de pesquisa: certificado
+#			Segurança
+#				Gerenciar Certificados
+#					Autoridades
+#						Importar
+#							Yes: Confie neste certificado para identificar sites
+#							Yes: Confie neste certificado para identificar usuários de e-mail
+#							Yes: Confie neste certificado para identificar fabricantes de software
 #						<OK>
 #					org-Bora para Pratica
 #						ptispo01ws01.pti.intra
