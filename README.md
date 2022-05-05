@@ -451,3 +451,27 @@ Terceiro Vídeo de Configuração do VSFTPd Server do Curso "GRATUITO" de Ubuntu
 [![Access VSFTPd Server](http://img.youtube.com/vi/pea-gtmRh34/0.jpg)](https://www.youtube.com/watch?v=pea-gtmRh34 "Access VSFTPd Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=pea-gtmRh34
+
+## **🔴 10-tomcat.sh Customizando o Script e Arquivos de Configuração do Tomcat9 Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Tomcat9 Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 10-tomcat.sh antes de executar no nosso servidor.
+
+[![Config Tomcat Server](http://img.youtube.com/vi/LLHqBE0DODY/0.jpg)](https://www.youtube.com/watch?v=LLHqBE0DODY "Config Tomcat Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=LLHqBE0DODY
+
+## **🔴 10-tomcat.sh Instalação e Configuração do Tomcat9 Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Tomcat9 Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Tomcat9 Server.
+
+[![Install Tomcat Server](http://img.youtube.com/vi/1PwI5tXFjgo/0.jpg)](https://www.youtube.com/watch?v=1PwI5tXFjgo "Install Tomcat Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=1PwI5tXFjgo
+
+## **🔴 10-tomcat.sh Testes de Acesso e Monitoramento do Tomcat9 Server no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Tomcat9 Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como acessar as páginas do Servidor Web Tomcat9 via Navegador, verificar o suporte ao Java, acessar remotamente o Banco de Dados MySQL utilizando o PhpMyAdmin, e verificar uma aplicação desenvolvida em Java já está funcionando no nosso servidor.
+
+[![Access Tomcat Server](http://img.youtube.com/vi/yhhVFFdWqdM/0.jpg)](https://www.youtube.com/watch?v=yhhVFFdWqdM "Access Tomcat Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=yhhVFFdWqdM

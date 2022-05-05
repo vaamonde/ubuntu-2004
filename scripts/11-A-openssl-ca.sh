@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 28/04/2022
-# Versão: 0.13
+# Data de atualização: 05/05/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -33,6 +33,15 @@
 # Site Oficial do OpenSSL: https://www.openssl.org/
 # Manual do OpenSSL: https://man.openbsd.org/openssl.1
 # Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/
+#
+# CA (Certificate Authority Trust) Autoridades Certificadoras Validas
+# SSL.com: https://www.ssl.com/
+# Secured Signing: https://www.securedsigning.com/
+# Globalsing: https://www.globalsign.com/
+# D-Trust: https://www.d-trust.net/
+# Digicert: https://www.digicert.com
+# Verisign: https://www.verisign.com/
+# Let's Encrypt: https://letsencrypt.org/
 #
 # Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)
 # Abrir menu de Aplicativo
