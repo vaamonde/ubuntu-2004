@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 08/04/2022
-Versão: 0.10
+Data de atualização: 07/05/2022
+Versão: 0.11
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -72,11 +72,11 @@ _
 #25C_ 10-tomcat.sh Testes de acesso ao Apache Tomcat no Windows e Linux - PARTE-03 (13/05/2022)
 _
 #26A1_ 11-A-openssl-ca.sh Customizando o Script e Arquivos de Configuração do OpenSSL CA - PARTE-01 (16/05/2022)
-#26A2_ 11-A-openssl-ca.sh Criação e Configuração da Estrutura do OpenSSL CA - PARTE-01 (18/05/2022)
-#26A3_ 11-A-openssl-ca.sh Instalação e Configuração da CA no Windows e Linux - PARTE-02 (20/05/2022)
-#26B_ 11-openssl-apache.sh Geração do Certificado Assinado TLS/SSL do Apache2 Server - PARTE-01
-#26C_ 11-openssl-vsftpd.sh Geração do Certificado Assinado TLS/SSL do VSFTPd Server - PARTE-01
-#26D_ 11-openssl-mysql.sh Geração do Certificado Assinado TLS/SSL do MySQL Server - PARTE-01
+#26A2_ 11-A-openssl-ca.sh Criação e Configuração da Estrutura do OpenSSL CA - PARTE-02 (18/05/2022)
+#26A3_ 11-A-openssl-ca.sh Instalação e Configuração da CA no Windows e Linux - PARTE-03 (20/05/2022)
+#26B_ 11-openssl-apache.sh Geração do Certificado Assinado TLS/SSL do Apache2 Server - PARTE-01 (23/05/2022)
+#26C_ 11-openssl-vsftpd.sh Geração do Certificado Assinado TLS/SSL do VSFTPd Server - PARTE-01 (25/05/2022)
+#26D_ 11-openssl-mysql.sh Geração do Certificado Assinado TLS/SSL do MySQL Server - PARTE-01 
 #26E_ 11-openssl-tomcat.sh Geração do Certificado Assinado TLS/SSL do Tomcat Server - PARTE-01
 _
 #27A_ 12-webdav.sh Customizando o Script e Arquivos de Configuração do WebDav - PARTE-01

@@ -475,3 +475,27 @@ Terceiro Vídeo de Configuração do Tomcat9 Server do Curso "GRATUITO" de Ubunt
 [![Access Tomcat Server](http://img.youtube.com/vi/yhhVFFdWqdM/0.jpg)](https://www.youtube.com/watch?v=yhhVFFdWqdM "Access Tomcat Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=yhhVFFdWqdM
+
+## **🔴 11-A-openssl-ca.sh Customizando o Script e Arquivos de Configuração do OpenSSL CA - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração da CA (Certificate Authority - Unidade Certificadora Raiz Confiável) do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-A-openssl-ca.sh antes de executar no nosso servidor.
+
+[![Config CA](http://img.youtube.com/vi/9TjmfTp_fWg/0.jpg)](https://www.youtube.com/watch?v=9TjmfTp_fWg "Config CA")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=9TjmfTp_fWg
+
+## **🔴 11-A-openssl-ca.sh Criação e Configuração da Estrutura do OpenSSL CA - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do CA (Certificate Authority - Unidade Certificadora Raiz Confiável) do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de configuração da estrutura e geração dos certificados da nossa CA Local.
+
+[![Create CA](http://img.youtube.com/vi/VhaS3p3j4Ew/0.jpg)](https://www.youtube.com/watch?v=VhaS3p3j4Ew "Create CA")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=VhaS3p3j4Ew
+
+## **🔴 11-A-openssl-ca.sh Instalação e Configuração da CA no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do CA (Certificate Authority - Unidade Certificadora Raiz Confiável) do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como baixar o certificado da nossa CA e fazer a instalação no Microsoft Windows 10 e no Linux Mint, instalar a CA nos navegadores Mozilla Firefox, Google Chrome, Opera e Microsoft Edge, instalar a CA no Sistema Operacional Mint e fazer o mesmo procedimentos no Microsoft Windows 10 (idem para 11, 7, 8, etc...) 
+
+[![Install CA](http://img.youtube.com/vi/N1ljYSn1wxQ/0.jpg)](https://www.youtube.com/watch?v=N1ljYSn1wxQ "Install CA")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=N1ljYSn1wxQ
