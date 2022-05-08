@@ -7,17 +7,26 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 03/04/2022
-Versão: 0.17
+Data de atualização: 08/05/2022
+Versão: 0.18
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+08/05/2022 - Robson Vaamonde - Criação do Bloco de Validação para Bloquear o uso das Teclas: Ctrl+C e Ctrl+Z na hora
+de executar os scripts, esse recurso irá permitir que quando você está rodando o script não pare o mesmo quando você
+pressionar as teclas para abortar o processo. Bloco do script abaixo para testar:
+Link de estudo: https://www.digitalocean.com/community/questions/how-to-prevent-a-user-from-using-ctrl-c-or-ctrl-z-to-stop-a-script
+Link de estudo: https://www.thegeekdiary.com/how-to-disable-ctrlc-or-ctrlz-using-the-trap-command-in-linux/
+2=SIGINT, 15=SIGTERM, 20=SIGTSTP (command: trap -l)
+DISABLETRAP=$(trap ' ' 2 15 20)
+ENABLETRAP=$(trap - 2 15 20)
+
 03/04/2022 - Robson Vaamonde - Estudos e criação do script: 00-phpipam.sh. O PhpIpam IPAM (*IP Address management*) 
-é uma aplicação WEB **open source**, no qual gerencia suas redes, ip’s, Vlans,checagem de host, divisão por sub-redes, 
+é uma aplicação WEB **open source**, no qual gerencia suas redes, ip’s, Vlans, checagem de host, divisão por sub-redes, 
 suporte IPV6… etc.
 
 18/03/2022 - Robson Vaamonde - Indicação do inscrito no Canal do YouTUBE: Patrick Scalco: - Estudos e criação do
-script: 00-bigbluebutton.sh. BigBlueButton é um sistema de webconferência de código aberto projetado para aprendizado 
+script: 00-bigbluebutton.sh. BigBlueButton é um sistema de web-conferência de código aberto projetado para aprendizado 
 online. BigBlueButton é uma ferramenta usada por instrutores, que os ajuda a acessar os Sistemas de Gerenciamento de 
 Aprendizagem, ferramentas de engajamento e análises.
 
