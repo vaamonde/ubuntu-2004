@@ -40,39 +40,60 @@
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
-    <!--
-    # Configuração do suporte ao TLS/SSL do Tomcat utilizar HTTPS
-	# Comando para a geração do certificado do Tomcat TLS/SSL
-	# 	keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
-    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
-		maxThreads="150" scheme="https" secure="true"
-		clientAuth="false" sslProtocol="TLS"
-		keystoreFile="/etc/tomcat9/cert.jks"
-		sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
-		keystorePass="pti@2018" />
-    -->
 
 	<!--
-	# Configuração do suporte ao TLS/SSL do Tomcat utilizar HTTPS
-	# Utilizando o recurso do Online Certificate Status Protocol (OCSP)
+	# Configuração do suporte ao SSL/TLS do Tomcat9 utilizando o OpenSSL com CA Interna
+	# Utilizando o recurso do Online Certificate Status Protocol (OCSP) e Biblioteca do
+	# Apache Portable Runtime (APR) -->
+	<!--
+	<Connector
+		port="8443"
+		maxThreads="200"
+		protocol="org.apache.coyote.http11.Http11AprProtocol"
+		scheme="https"
+		secure="true"
+		SSLEnabled="true"
+		SSLCertificateFile="/etc/ssl/newcerts/tomcat9.crt"
+		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key"
+		SSLVerifyClient="optional" SSLProtocol="TLSv1+TLSv1.1+TLSv1.2" />
+	-->
+	<!--
 	<Connector
 		port="8443"
 		SSLEnabled="true"
-		protocol="org.apache.coyote.http11.Http11NioProtocol"
-		sslImplementationName="org.apache.tomcat.util.net.jsse.JSSEImplementation"
 		secure="true"
-		scheme="https">
+		scheme="https"
+		protocol="org.apache.coyote.http11.Http11NioProtocol"
+		sslImplementationName="org.apache.tomcat.util.net.openssl.OpenSSLImplementation" />
 		<UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
 		<SSLHostConfig>
 			<Certificate
-				caCertificateFile="/etc/ssl/certs/pti-ca.pem"
 				certificateVerification="require"
 				certificateVerificationDepth="10"
+				caCertificateFile="/etc/ssl/certs/pti-ca.pem"
 				certificateFile="/etc/ssl/newcerts/tomcat9.crt"
 				certificateKeyFile="/etc/ssl/private/tomcat9.key" />
 		</SSLHostConfig>
 	</Connector>
 	-->
+
+    <!--
+    # Configuração do suporte ao SSL/TLS do Tomcat9 utilizando o software Keytool
+	# Comando para a geração do certificado do Tomcat9 SSL/TLS
+	# 	keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
+    <Connector
+		port="8443"
+		protocol="HTTP/1.1"
+		scheme="https"
+		secure="true"
+		maxThreads="150"
+		clientAuth="false"
+		SSLEnabled="true" 
+		sslProtocol="TLS"
+		sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
+		keystoreFile="/etc/tomcat9/cert.jks"
+		keystorePass="pti@2018" />
+    -->
 
     <Engine name="Catalina" defaultHost="localhost">
       <Realm className="org.apache.catalina.realm.LockOutRealm">
