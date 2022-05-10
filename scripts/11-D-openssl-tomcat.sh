@@ -180,7 +180,158 @@ sleep 5
 echo -e "Iniciando a Configuração do OpenSSL no Apache Tomcat9, aguarde...\n"
 sleep 5
 #
-# =================== EM DESENVOLVIMENTO ===================
+echo -e "Atualizando o arquivo de configuração do Certificado do Tomcat9, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão adicionando)
+	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
+	cp -v conf/ssl/tomcat9.conf /etc/ssl/ &>> $LOG
+echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando o Chave Privada de: $BITS do Tomcat9, senha padrão: $PASSPHRASE, aguarde..." 
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opções do comando openssl: 
+	# genrsa (command generates an RSA private key),
+	# -criptokey (Encrypt the private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers)
+	# -out (The output file to write to, or standard output if not specified), 
+	# -passout (The output file password source), 
+	# pass: (The actual password is password), 
+	# bits (The size of the private key to generate in bits)
+	#
+	openssl genrsa -$CRIPTOKEY -out /etc/ssl/private/tomcat9.key.old -passout pass:$PASSPHRASE $BITS &>> $LOG
+echo -e "Chave Privada do Tomcat9 criada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Removendo a senha da Chave Privada do Tomcat9, senha padrão: $PASSPHRASE, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opções do comando openssl: 
+	# rsa (command processes RSA keys),
+	# -in (The input file to read from, or standard input if not specified),
+	# -out (The output file to write to, or standard output if not specified),
+	# -passin (The key password source),
+	# pass: (The actual password is password)
+	# opção do comando rm: -v (verbose)
+	#
+	openssl rsa -in /etc/ssl/private/tomcat9.key.old -out /etc/ssl/private/tomcat9.key \
+	-passin pass:$PASSPHRASE &>> $LOG
+	rm -v /etc/ssl/private/tomcat9.key.old &>> $LOG
+echo -e "Senha da Chave Privada do Tomcat9 removida com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o arquivo de Chave Privada do Tomcat9, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opções do comando openssl: 
+	# rsa (command processes RSA keys), 
+	# -noout (Do not output the encoded version of the key), 
+	# -modulus (Print the value of the modulus of the key), 
+	# -in (The input file to read from, or standard input if not specified), 
+	# md5 (The message digest to use MD5 checksums)
+	#
+	openssl rsa -noout -modulus -in /etc/ssl/private/tomcat9.key | openssl md5 &>> $LOG
+echo -e "Arquivo de Chave Privada do Tomcat9 verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração do Certificado do Tomcat9 tomcat9.conf, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/ssl/tomcat9.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando o arquivo CSR (Certificate Signing Request), confirme as mensagens do arquivo: tomcat9.conf, aguarde...\n"
+	# opções do comando openssl: 
+	# req (command primarily creates and processes certificate requests in PKCS#10 format), 
+	# -new (Generate a new certificate request),
+	# -criptocert (The message digest to sign the request with)
+	# -nodes (Do not encrypt the private key),
+	# -key (The file to read the private key from), 
+	# -out (The output file to write to, or standard output if not specified),
+	# -extensions (Specify alternative sections to include certificate extensions), 
+	# -config (Specify an alternative configuration file)
+	#
+	# Criando o arquivo CSR, mensagens que serão solicitadas na criação do CSR
+	# 	Country Name (2 letter code): BR <-- pressione <Enter>
+	# 	State or Province Name (full name): Brasil <-- pressione <Enter>
+	# 	Locality Name (eg, city): Sao Paulo <-- pressione <Enter>
+	# 	Organization Name (eg, company): Bora para Pratica <-- pressione <Enter>
+	# 	Organization Unit Name (eg, section): Procedimentos em TI <-- pressione <Enter>
+	# 	Common Name (eg, server FQDN or YOUR name): pti.intra <-- pressione <Enter>
+	# 	Email Address: pti@pti.intra <-- pressione <Enter>
+	#
+	openssl req -new -$CRIPTOCERT -nodes -key /etc/ssl/private/tomcat9.key -out \
+	/etc/ssl/requests/tomcat9.csr -extensions v3_req -config /etc/ssl/tomcat9.conf
+	echo
+echo -e "Criação do arquivo CSR feito com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o arquivo CSR (Certificate Signing Request) do Tomcat9, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opções do comando openssl: 
+	# req (command primarily creates and processes certificate requests in PKCS#10 format), 
+	# -noout (Do not output the encoded version of the request), 
+	# -text (Print the certificate request in plain text), 
+	# -in (The input file to read a request from, or standard input if not specified)
+	#
+	openssl req -noout -text -in /etc/ssl/requests/tomcat9.csr &>> $LOG
+echo -e "Arquivo CSR verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando o certificado assinado CRT (Certificate Request Trust) do Tomcat9, aguarde...\n"
+	# opção do comando: &>> (redirecionar a saída padrão
+	# opções do comando openssl: 
+	# x509 (command is a multi-purpose certificate utility),
+	# ca (command is a minimal certificate authority (CA) application)
+	# -req (Expect a certificate request on input instead of a certificate),
+	# -days (The number of days to make a certificate valid for),
+	# -criptocert (The message digest to sign the request with),							
+	# -in (The input file to read from, or standard input if not specified),
+	# -CA (The CA certificate to be used for signing),
+	# -CAkey (Set the CA private key to sign a certificate with),
+	# -CAcreateserial (Create the CA serial number file if it does not exist instead of generating an error),
+	# -out (The output file to write to, or standard output if none is specified)
+	# -config (Specify an alternative configuration file)
+	# -extensions (The section to add certificate extensions from),
+	# -extfile (File containing certificate extensions to use).
+	#
+	# Sign the certificate? [y/n]: y <Enter>
+	# 1 out of 1 certificate request certified, commit? [y/n]: y <Enter>
+	#
+	# OPÇÃO DE ASSINATURA DO ARQUIVO CRT SEM UTILIZAR O WIZARD DO CA, CÓDIGO APENAS DE DEMONSTRAÇÃO
+	# openssl x509 -req -days 3650 -$CRIPTOCERT -in /etc/ssl/requests/tomcat9.csr -CA \
+	# /etc/ssl/newcerts/ca.crt -CAkey /etc/ssl/private/ca.key -CAcreateserial \
+	# -out /etc/ssl/newcerts/tomcat9.crt -extensions v3_req -extfile /etc/ssl/tomcat9.conf &>> $LOG
+	#
+	openssl ca -in /etc/ssl/requests/tomcat9.csr -out /etc/ssl/newcerts/tomcat9.crt \
+	-config /etc/ssl/ca.conf -extensions v3_req -extfile /etc/ssl/tomcat9.conf
+	echo
+echo -e "Criação do certificado assinado CRT do Tomcat9 feito com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o arquivo CRT (Certificate Request Trust) do Tomcat9, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opções do comando openssl: 
+	# x509 (command is a multi-purpose certificate utility), 
+	# -noout (Do not output the encoded version of the request),
+	# -text (Print the full certificate in text form), 
+	# -modulus (Print the value of the modulus of the public key contained in the certificate), 
+	# -in (he input file to read from, or standard input if not specified), 
+	# md5 (The message digest to use MD5 checksums)
+	#
+	openssl x509 -noout -modulus -in /etc/ssl/newcerts/tomcat9.crt | openssl md5 &>> $LOG
+	openssl x509 -noout -text -in /etc/ssl/newcerts/tomcat9.crt &>> $LOG
+	cat /etc/ssl/index.txt &>> $LOG
+	cat /etc/ssl/index.txt.attr &>> $LOG
+	cat /etc/ssl/serial &>> $LOG
+echo -e "Arquivo CRT do Apache2 verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para continuar"
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/tomcat9/server.xml
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Reinicializando o serviço do Apache Tomcat9, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	systemctl restart tomcat9 &>> $LOG

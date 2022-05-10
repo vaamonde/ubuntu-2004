@@ -334,6 +334,7 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) do VSFTPd, aguard
 	openssl x509 -noout -modulus -in /etc/ssl/newcerts/vsftpd.crt | openssl md5 &>> $LOG
 	openssl x509 -noout -text -in /etc/ssl/newcerts/vsftpd.crt &>> $LOG
 	cat /etc/ssl/index.txt &>> $LOG
+	cat /etc/ssl/index.txt.attr &>> $LOG
 	cat /etc/ssl/serial &>> $LOG
 echo -e "Arquivo CRT do VSFTPd verificado com sucesso!!!, continuando com o script...\n"
 sleep 5

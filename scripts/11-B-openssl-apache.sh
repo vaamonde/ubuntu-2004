@@ -320,6 +320,7 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) do Apache2, aguar
 	openssl x509 -noout -modulus -in /etc/ssl/newcerts/apache2.crt | openssl md5 &>> $LOG
 	openssl x509 -noout -text -in /etc/ssl/newcerts/apache2.crt &>> $LOG
 	cat /etc/ssl/index.txt &>> $LOG
+	cat /etc/ssl/index.txt.attr &>> $LOG
 	cat /etc/ssl/serial &>> $LOG
 echo -e "Arquivo CRT do Apache2 verificado com sucesso!!!, continuando com o script...\n"
 sleep 5

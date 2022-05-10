@@ -54,13 +54,21 @@
 
 	<!--
 	# Configuração do suporte ao TLS/SSL do Tomcat utilizar HTTPS
-	<Connector port="8443" maxHttpHeaderSize="8192"
-		maxThreads="150"
-		enableLookups="false" disableUploadTimeout="true"
-		acceptCount="100" scheme="https" secure="true"
+	# Utilizando o recurso do Online Certificate Status Protocol (OCSP)
+	<Connector
+		port="8443"
+		protocol="org.apache.coyote.http11.Http11AprProtocol"
+		secure="true"
+		scheme="https"
 		SSLEnabled="true"
-		SSLCertificateFile="/etc/ssl/newcerts/tomcat9.crt"
-		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key" />
+		<SSLHostConfig
+			caCertificateFile="/etc/ssl/certs/pti-ca.pem"
+			certificateVerification="require"
+			certificateVerificationDepth="10" >
+		<Certificate
+			certificateFile="/etc/ssl/newcerts/tomcat9.crt"
+			certificateKeyFile="/etc/ssl/private/tomcat9.key" />
+		</SSLHostConfig>
 	-->
 
     <Engine name="Catalina" defaultHost="localhost">
