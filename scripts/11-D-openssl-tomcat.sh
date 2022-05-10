@@ -325,6 +325,21 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) do Tomcat9, aguar
 echo -e "Arquivo CRT do Apache2 verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+#=================== EM DESENVOLVIMENTO ====================
+#Importando a Unidade Certificado Raiz CA para o Tomcat9
+#keytool -import -alias root -keystore /etc/tomcat9/tomcat9.jks -trustcacerts -file /etc/ssl/newcerts/pti-ca.crt
+#
+#Importando o Certificado Assinado para o Tomcat9
+#keytool -import -alias tomcat -keystore /etc/tomcat9/tomcat9.jks -file /etc/ssl/newcerts/tomcat9.crt
+#
+#openssl pkcs12 -export -in <certfile> -inkey <keyfile> -out <keystorefile> -name tomcat -CAfile <cacertfile> -caname root
+#openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key -out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
+#
+#keytool -importkeystore -deststorepass <keystorepass> -destkeypass <keystorepass> -destkeystore <tomcatkeystorefile> -srckeystore <keystorefile> -srcstoretype PKCS12 -srcstorepass <keystorepass> -alias tomcat
+#keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeystore /etc/tomcat9/tomcat9.jks -srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 -srcstorepass vaamonde -alias tomcat
+#
+#=================== EM DESENVOLVIMENTO ====================
+#
 echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s

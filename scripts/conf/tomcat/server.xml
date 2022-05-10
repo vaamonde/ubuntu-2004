@@ -9,7 +9,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 24/10/2021
 # Data de atualização: 10/05/2022
-# Versão: 0.05
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x e OpenJRE 11.x
 -->
@@ -40,50 +40,15 @@
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
-
-	<!--
-	# Configuração do suporte ao SSL/TLS do Tomcat9 utilizando o OpenSSL com CA Interna
-	# Utilizando o recurso do Online Certificate Status Protocol (OCSP) e Biblioteca do
-	# Apache Portable Runtime (APR) -->
-	<!--
-	<Connector
-		port="8443"
-		maxThreads="200"
-		protocol="org.apache.coyote.http11.Http11AprProtocol"
-		scheme="https"
-		secure="true"
-		clientAuth="optional"
-		SSLEnabled="true"
-		SSLVerifyClient="optional"
-		SSLProtocol="TLSv1+TLSv1.1+TLSv1.2"
-		SSLCertificateFile="/etc/ssl/newcerts/tomcat9.crt"
-		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key" 
-		SSLCACertificateFile="/etc/ssl/certs/pti-ca.pem" />
-	-->
-	<!--
-	<Connector name="Secure"
-		port="8443"
-		scheme="https"
-		secure="true"
-		SSLEnabled="true"
-		protocol="org.apache.coyote.http11.Http11NioProtocol"
-		sslImplementationName="org.apache.tomcat.util.net.openssl.OpenSSLImplementation">
-		<SSLHostConfig sslProtocol="SSL">
-			<Certificate type="..."
-				caCertificateFile="/etc/ssl/certs/pti-ca.pem"
-				certificateFile="/etc/ssl/newcerts/tomcat9.crt"
-				certificateKeyFile="/etc/ssl/private/tomcat9.key" />
-		</SSLHostConfig>
-	</Connector>
-	-->
-
     <!--
     # Configuração do suporte ao SSL/TLS do Tomcat9 utilizando o software Keytool
+	# e Certificados Assinados utilizando o OpenSSL
 	# Comando para a geração do certificado do Tomcat9 SSL/TLS
 	# 	keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
     <Connector
 		port="8443"
 		protocol="HTTP/1.1"
+		connectionTimeout="20000"
 		scheme="https"
 		secure="true"
 		maxThreads="150"
@@ -92,7 +57,7 @@
 		sslProtocol="TLS"
 		sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
 		keystoreFile="/etc/tomcat9/cert.jks"
-		keystorePass="pti@2018" />
+		keystorePass="vaamonde" />
     -->
 
     <Engine name="Catalina" defaultHost="localhost">

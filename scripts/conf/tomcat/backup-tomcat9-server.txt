@@ -1,0 +1,51 @@
+https://docs.jamf.com/technical-articles/Enabling_SSL_on_Tomcat_with_a_Public_Certificate.html#concept-9478
+https://ja.confluence.atlassian.com/kb/how-to-import-an-existing-ssl-certificate-for-use-in-tomcat-838412853.html
+https://stackoverflow.com/questions/31157803/secure-connection-in-localhost-tomcat-not-working
+
+#Importando a Unidade Certificado Raiz CA para o Tomcat9
+#keytool -import -alias root -keystore /etc/tomcat9/tomcat9.jks -trustcacerts -file /etc/ssl/newcerts/pti-ca.crt
+
+#Importando o Certificado Assinado para o Tomcat9
+#keytool -import -alias tomcat -keystore /etc/tomcat9/tomcat9.jks -file /etc/ssl/newcerts/tomcat9.crt
+
+#openssl pkcs12 -export -in <certfile> -inkey <keyfile> -out <keystorefile> -name tomcat -CAfile <cacertfile> -caname root
+openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key -out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
+
+#keytool -importkeystore -deststorepass <keystorepass> -destkeypass <keystorepass> -destkeystore <tomcatkeystorefile> -srckeystore <keystorefile> -srcstoretype PKCS12 -srcstorepass <keystorepass> -alias tomcat
+keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeystore /etc/tomcat9/tomcat9.jks -srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 -srcstorepass vaamonde -alias tomcat
+
+	<!--
+	# Configuração do suporte ao SSL/TLS do Tomcat9 utilizando o OpenSSL com CA Interna
+	# Utilizando o recurso do Online Certificate Status Protocol (OCSP) e Biblioteca do
+	# Apache Portable Runtime (APR) -->
+	<!--
+	<Connector
+		port="8443"
+		maxThreads="200"
+		protocol="org.apache.coyote.http11.Http11AprProtocol"
+		scheme="https"
+		secure="true"
+		clientAuth="optional"
+		SSLEnabled="true"
+		SSLVerifyClient="optional"
+		SSLProtocol="TLSv1+TLSv1.1+TLSv1.2"
+		SSLCertificateFile="/etc/ssl/newcerts/tomcat9.crt"
+		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key" 
+		SSLCACertificateFile="/etc/ssl/certs/pti-ca.pem" />
+	-->
+	<!--
+	<Connector name="Secure"
+		port="8443"
+		scheme="https"
+		secure="true"
+		SSLEnabled="true"
+		protocol="org.apache.coyote.http11.Http11NioProtocol"
+		sslImplementationName="org.apache.tomcat.util.net.openssl.OpenSSLImplementation">
+		<SSLHostConfig sslProtocol="SSL">
+			<Certificate type="..."
+				caCertificateFile="/etc/ssl/certs/pti-ca.pem"
+				certificateFile="/etc/ssl/newcerts/tomcat9.crt"
+				certificateKeyFile="/etc/ssl/private/tomcat9.key" />
+		</SSLHostConfig>
+	</Connector>
+	-->
