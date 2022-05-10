@@ -8,10 +8,10 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 24/10/2021
-# Data de atualização: 26/04/2022
-# Versão: 0.04
+# Data de atualização: 10/05/2022
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
+# Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x e OpenJRE 11.x
 -->
 <Server port="-1" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
@@ -33,8 +33,8 @@
   </GlobalNamingResources>
 
   <!--
-   # Configuração principal do Tomcat referente a Porta padrão (8080), Timeout e
-   # Porta Segura (8443)
+   # Configuração principal do Tomcat referente a Porta padrão (8080 - HTTPS), Timeout e
+   # Porta Segura (8443 - HTTPS)
   -->
   <Service name="Catalina">
     <Connector port="8080" protocol="HTTP/1.1"
@@ -45,12 +45,24 @@
 	# Comando para a geração do certificado do Tomcat TLS/SSL
 	# 	keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
     <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
-           maxThreads="150" scheme="https" secure="true"
-           clientAuth="false" sslProtocol="TLS"
-           keystoreFile="/etc/tomcat9/cert.jks"
-           sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
-           keystorePass="pti@2018" />
+		maxThreads="150" scheme="https" secure="true"
+		clientAuth="false" sslProtocol="TLS"
+		keystoreFile="/etc/tomcat9/cert.jks"
+		sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
+		keystorePass="pti@2018" />
     -->
+
+	<!--
+	# Configuração do suporte ao TLS/SSL do Tomcat utilizar HTTPS
+	<Connector port="8443" maxHttpHeaderSize="8192"
+		maxThreads="150"
+		enableLookups="false" disableUploadTimeout="true"
+		acceptCount="100" scheme="https" secure="true"
+		SSLEnabled="true"
+		SSLCertificateFile="/etc/ssl/newcerts/tomcat9.crt"
+		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key" />
+	-->
+
     <Engine name="Catalina" defaultHost="localhost">
       <Realm className="org.apache.catalina.realm.LockOutRealm">
         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"

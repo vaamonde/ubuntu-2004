@@ -7,13 +7,18 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 02/05/2022
-Versão: 0.59
+Data de atualização: 10/05/2022
+Versão: 0.60
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+10/05/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, acréscimo da instalação das dependências do
+suporte ao HTTPS do Tomcat9, adicionado as bibliotecas: libapr1-dev libssl-dev libtcnative-1, alteração do arquivo de
+configuração do servidor Tomcat9: server.xml, adicionado o bloco de configuração do suporte ao OpenSSL utilizando a 
+Biblioteca nativa baseada em Apache Portable Runtime (APR) para o Tomcat9 utilizar certificados assinados do OpenSSL.
+
 02/05/2022 - Robson Vaamonde - Atualização do script: 13-wordpress.sh, alteração de linha do comando SED referente ao
-SALT do arquivo wp-config.php (alterado de 62r para 64r devido ao acréscimo de comentário no arquivo), adicionado o
+SALT do arquivo wp-config.php (alterado de 62r para 64r devido ao acréscimo de comentários no arquivo), adicionado o
 bloco de configuração do suporte ao HTTPS no Virtual Host do Wordpress arquivo: wordpress.conf, alterado a posição da
 configuração da porta do VSFTPd no arquivo: vsftpd.conf e adicionado o bloco de configuração do BUG: 0019 no final do
 arquivo, alteração do arquivo: 00-parametros.sh mudança do PATH do LogAnalyzer para: /var/www/log, mudança do PATH do
@@ -30,7 +35,7 @@ criação de arquivos utilizando o Windows Explorer no Windows 10 se conectando 
 o VSFTPd (aplicado Patch de correção no arquivo vsftpd.conf e no arquivo vsftpd.allowed_users).
 
 19/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: vsftpd.conf, adicionado a linha: listen_port=21
-e o bloco de configuração do modo passivo de acesso remoto via NAT do Servidor FTP (ainda em testes e análise de BUG),
+e o bloco de configuração do modo passivo de acesso remoto via NAT do Servidor FTP (ainda em testes e análise do BUG),
 alteração do arquivo de configuração: 50-default.conf para habilitar o registro dos Log's do VSFTPd no arquivo de Log
 padrão em: /var/log/vsftpd.log
 

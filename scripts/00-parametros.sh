@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 05/05/2022
-# Versão: 0.62
+# Data de atualização: 10/05/2022
+# Versão: 0.63
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -479,7 +479,9 @@ TOMCATDEP="bind9 bind9utils mysql-server mysql-common apache2 php vsftpd"
 TOMCATDEPINSTALL="openjdk-11-jdk openjdk-11-jre default-jdk"
 #
 # Variável de instalação do serviço de rede Apache Tomcat Server
-TOMCATINSTALL="tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-examples tomcat9-user"
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
+TOMCATINSTALL="tomcat9 tomcat9-admin tomcat9-common tomcat9-docs tomcat9-examples tomcat9-user \
+libapr1-dev libssl-dev libtcnative-1"
 #
 # Variáveis de localização do diretório de Configuração e do Webapp do Tomcat9
 PATHTOMCAT9="/usr/share/tomcat9/"
