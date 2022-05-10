@@ -57,18 +57,21 @@
 	# Utilizando o recurso do Online Certificate Status Protocol (OCSP)
 	<Connector
 		port="8443"
-		protocol="org.apache.coyote.http11.Http11AprProtocol"
-		secure="true"
-		scheme="https"
 		SSLEnabled="true"
-		<SSLHostConfig
-			caCertificateFile="/etc/ssl/certs/pti-ca.pem"
-			certificateVerification="require"
-			certificateVerificationDepth="10" >
-		<Certificate
-			certificateFile="/etc/ssl/newcerts/tomcat9.crt"
-			certificateKeyFile="/etc/ssl/private/tomcat9.key" />
+		protocol="org.apache.coyote.http11.Http11NioProtocol"
+		sslImplementationName="org.apache.tomcat.util.net.jsse.JSSEImplementation"
+		secure="true"
+		scheme="https">
+		<UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+		<SSLHostConfig>
+			<Certificate
+				caCertificateFile="/etc/ssl/certs/pti-ca.pem"
+				certificateVerification="require"
+				certificateVerificationDepth="10"
+				certificateFile="/etc/ssl/newcerts/tomcat9.crt"
+				certificateKeyFile="/etc/ssl/private/tomcat9.key" />
 		</SSLHostConfig>
+	</Connector>
 	-->
 
     <Engine name="Catalina" defaultHost="localhost">
