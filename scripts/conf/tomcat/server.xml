@@ -49,7 +49,7 @@
 	<Connector
 		port="8443"
 		maxThreads="200"
-		protocol="HTTP/1.1"
+		protocol="org.apache.coyote.http11.Http11AprProtocol"
 		scheme="https"
 		secure="true"
 		clientAuth="optional"
@@ -61,18 +61,15 @@
 		SSLCACertificateFile="/etc/ssl/certs/pti-ca.pem" />
 	-->
 	<!--
-	<Connector
+	<Connector name="Secure"
 		port="8443"
-		SSLEnabled="true"
-		secure="true"
 		scheme="https"
+		secure="true"
+		SSLEnabled="true"
 		protocol="org.apache.coyote.http11.Http11NioProtocol"
-		sslImplementationName="org.apache.tomcat.util.net.openssl.OpenSSLImplementation" />
-		<UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
-		<SSLHostConfig>
-			<Certificate
-				certificateVerification="require"
-				certificateVerificationDepth="10"
+		sslImplementationName="org.apache.tomcat.util.net.openssl.OpenSSLImplementation">
+		<SSLHostConfig sslProtocol="SSL">
+			<Certificate type="..."
 				caCertificateFile="/etc/ssl/certs/pti-ca.pem"
 				certificateFile="/etc/ssl/newcerts/tomcat9.crt"
 				certificateKeyFile="/etc/ssl/private/tomcat9.key" />
