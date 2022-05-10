@@ -8,11 +8,11 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 28/03/2022
-# Versão: 0.11
+# Data de atualização: 09/05/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
-# Testado e homologado para a versão do Apache2 v
+# Testado e homologado para a versão do Apache2 v2.4.x
 #
 # OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca 
 # (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza 

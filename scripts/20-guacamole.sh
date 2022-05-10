@@ -41,7 +41,7 @@
 #	sudo apt update
 # 	sudo apt install openssh-server
 #
-# Site Oficial do Projeto: https://guacamole.apache.org/
+# Site Oficial do Projeto Guacamole: https://guacamole.apache.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

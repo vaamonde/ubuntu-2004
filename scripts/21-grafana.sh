@@ -24,7 +24,7 @@
 #	New password: pti@2018
 #	Confirm new password: pti@2018: (Submit)
 #
-# Site Oficial do Projeto: https://grafana.com/
+# Site Oficial do Projeto Grafana: https://grafana.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

@@ -11,7 +11,8 @@
 # Data de atualização: 21/01/2022
 # Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do FusionInventory Server 9.5.x, Agent 2.6.x e GLPI 9.5.x
+# Testado e homologado para a versão do GLPI Help Desk v9.5.x
+# Testado e homologado para a versão do FusionInventory Server 9.5.x e Agent 2.6.x
 #
 # O FusionInventory Agent é um agente multiplataforma genérico. Ele pode executar uma 
 # grande variedade de tarefas de gerenciamento, como inventário local, implantação de 
@@ -37,7 +38,7 @@
 # fusioninventory-wakeonlan: Wake-on-LAN de Computadores FusionInventory, utilizado nas tarefas do GLPI
 # fusioninventory-injector: Ferramenta de Envio de Inventário Remoto do FusionInventory
 # 
-# Site Oficial do Projeto: http://fusioninventory.org/
+# Site Oficial do Projeto FusionInventory: http://fusioninventory.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -155,7 +156,7 @@ echo
 #
 echo -e "Instalação e Configuração do FusionInventory no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo FusionInventory.: TCP 62354\n"
-echo -e "Após a instalação do FusionInventory acesse a URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "Após a instalação do FusionInventory acesse a URL: https://glpi.$(hostname -d | cut -d' ' -f1)/"
 echo -e "As configurações do FusionInventory Server é feita dentro do GLPI Help Desk\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -339,7 +340,7 @@ echo -e "Criando o diretório de download dos Agentes do FusionInventory, aguard
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o diretório de agentes: http://.$(hostname -d | cut -d' ' -f1)/agentes/, aguarde..."
+echo -e "Verificando o diretório de agentes: https://$(hostname -d | cut -d' ' -f1)/agentes/, aguarde..."
 	tree $DOWNLOADAGENT
 echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
 sleep 5

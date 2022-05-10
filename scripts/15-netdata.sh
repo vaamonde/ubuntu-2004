@@ -21,10 +21,10 @@
 # sistema ou aplicativo, sendo uma opção ideal para resolver problemas de desempenho
 # em tempo real.
 #
-# Site oficial do Netdata: https://github.com/netdata/netdata
-# Site oficial do Monitorix: https://www.monitorix.org
-# Site oficial do Alerta: https://alerta.io/
-# Site oficial do MRTG: https://oss.oetiker.ch/mrtg/
+# Site oficial do Projeto Netdata: https://github.com/netdata/netdata
+# Site oficial do Projeto Monitorix: https://www.monitorix.org
+# Site oficial do Projeto Alerta: https://alerta.io/
+# Site oficial do Projeto MRTG: https://oss.oetiker.ch/mrtg/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -127,7 +127,7 @@ echo
 #
 echo -e "Instalação e Configuração do Netdata no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Netdata.: TCP 19999"
-echo -e "Após a instalação do Netdata acessar a URL: http://$(hostname -d | cut -d' ' -f1):19999/\n"
+echo -e "Após a instalação do Netdata acessar a URL: https://$(hostname -d | cut -d' ' -f1):19999/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

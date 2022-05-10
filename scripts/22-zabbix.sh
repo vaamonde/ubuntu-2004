@@ -51,7 +51,7 @@
 # User Default: Admin (com A maiúsculo)
 # Password Default: zabbix
 #
-# Site Oficial do Projeto: https://www.zabbix.com/
+# Site Oficial do Projeto Zabbix: https://www.zabbix.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

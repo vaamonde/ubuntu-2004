@@ -37,7 +37,7 @@
 #	Confirm Password: pti@2018
 #	Language: English (Change Password)
 #
-# Site Oficial do Projeto: https://www.ntop.org/
+# Site Oficial do Projeto NTopNG: https://www.ntop.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

@@ -33,8 +33,8 @@
 # Nome de usuário: admin
 # Senha: admin: Entrar
 #
-# Site Oficial do Projeto: https://www.ansible.com/
-# Site Oficial do Projeto: https://www.rundeck.com/open-source
+# Site Oficial do Projeto Ansible: https://www.ansible.com/
+# Site Oficial do Projeto Rundeck: https://www.rundeck.com/open-source
 #
 # Outros projeto de Front End para o Ansible
 # Ansible AWX: https://github.com/ansible/awx
@@ -205,7 +205,7 @@ echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o Ansible, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
   	apt -y install ansible &>> $LOG
 echo -e "Ansible instalado com sucesso!!!, continuando com o script...\n"
@@ -215,7 +215,7 @@ echo -e "Instalando o Rundeck, aguarde...\n"
 sleep 5
 #
 echo -e "Verificando a versão do Java instalado, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	java -version &>> $LOG
 echo -e "Versão do Java verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -230,7 +230,7 @@ echo -e "Download do Rundeck feito com sucesso!!!, continuando com o script...\n
 sleep 5
 #
 echo -e "Instalando o Rundeck, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando dpkg: -i (install)
   	dpkg -i rundeck.deb &>> $LOG
 echo -e "Rundeck instalado com sucesso!!!, continuando com o script...\n"
@@ -249,14 +249,14 @@ echo -e "Download do Plugin feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o Plugin do Ansible para o Rundeck, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
   	cp -v ansible.jar /var/lib/rundeck/libext/ &>> $LOG
 echo -e "Plugin do Ansible instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando o arquivo de configuração do Rundeck, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	mv -v /etc/rundeck/rundeck-config.properties /etc/rundeck/rundeck-config.properties.old &>> $LOG
@@ -272,7 +272,7 @@ echo -e "Rundeck instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Iniciando o serviço do Rundeck, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl enable rundeckd &>> $LOG
 	systemctl start rundeckd &>> $LOG
 echo -e "Serviço iniciado com sucesso!!!, continuando com o script...\n"

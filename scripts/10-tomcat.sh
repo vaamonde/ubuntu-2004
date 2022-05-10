@@ -11,7 +11,7 @@
 # Data de atualização: 03/05/2022
 # Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
+# Testado e homologado para a versão do Tomcat v9.0.x, OpenJDK v11.x, OpenJRE v11.x
 #
 # O software Tomcat, desenvolvido pela Fundação Apache, permite a execução de 
 # aplicações para web. Sua principal característica técnica é estar centrada 
@@ -24,10 +24,10 @@
 # são implementadas no JDK comercial da Oracle para serem rentabilizadas 
 # posteriormente.
 #
-# Site Oficial do Tomcat: http://tomcat.apache.org/
-# Site Oficial do OpenJDK: https://openjdk.java.net/
-# Site Oficial do WildFly (antigo JBOSS): https://www.wildfly.org/
-# Site Oficial do Payara: https://www.payara.fish
+# Site Oficial do Projeto Tomcat: http://tomcat.apache.org/
+# Site Oficial do Projeto OpenJDK: https://openjdk.java.net/
+# Site Oficial do Projeto WildFly (antigo JBOSS): https://www.wildfly.org/
+# Site Oficial do Projeto Payara: https://www.payara.fish
 #
 # Administrando o Tomcat9 via Navegador
 #	URL: http://pti.intra:8080

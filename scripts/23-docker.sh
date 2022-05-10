@@ -36,9 +36,9 @@
 # Confirm password: pti@2018: Create User;
 # Connect Portainer to the Docker environment you want to manage: Local: Connect
 #
-# Site oficial do Docker Community: https://www.docker.com/docker-community
-# Site oficial do Docker Compose: https://docs.docker.com/compose/
-# Site oficial doPortainer: https://portainer.io/
+# Site oficial do Projeto Docker Community: https://www.docker.com/docker-community
+# Site oficial do Projeto Docker Compose: https://docs.docker.com/compose/
+# Site oficial do Projeto Portainer: https://portainer.io/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

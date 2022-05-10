@@ -86,7 +86,7 @@
 # 19: Do you want to use OCS-Inventory SNMP scans features? <-- pressione <Enter>
 # 20: Do you want to send an inventory of this machine? n, <-- pressione <Enter>
 #
-# Site Oficial do Projeto: https://ocsinventory-ng.org/
+# Site Oficial do Projeto OCS Inventory-NG: https://ocsinventory-ng.org/
 # Projeto no Github: https://github.com/OCSInventory-NG
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
@@ -172,7 +172,7 @@ clear
 echo
 #
 echo -e "Instalação do OCS Inventory no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do OCS Inventory acesse a URL: http://$(hostname -d | cut -d' ' -f1)/ocsreports"
+echo -e "Após a instalação do OCS Inventory acesse a URL: https://$(hostname -d | cut -d' ' -f1)/ocsreports"
 echo -e "Usuário padrão após a instalação do OCS Inventory Reports: admin | Senha padrão: admin\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5

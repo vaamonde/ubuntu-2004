@@ -29,7 +29,7 @@
 # Informações que serão solicitadas na configuração via Web do ZoneMinder
 # Privacy: Accept: Apply
 #
-# Site Oficial do ZoneMinder: https://zoneminder.com/
+# Site Oficial do Projeto ZoneMinder: https://zoneminder.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -114,7 +114,7 @@ clear
 echo
 #
 echo -e "Instalação do ZoneMinder no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do ZoneMinder acessar a URL: http://$(hostname -d | cut -d ' ' -f1)/zm\n"
+echo -e "Após a instalação do ZoneMinder acessar a URL: https://zm.$(hostname -d | cut -d ' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet..."
 sleep 5
 echo

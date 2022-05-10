@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 18/10/2021
-# Data de atualização: 30/04/2022
-# Versão: 0.15
+# Data de atualização: 09/05/2022
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -19,9 +19,9 @@
 # (sites) e blogs online. Criado a partir do extinto b2/cafelog, por Ryan Boren e Matthew 
 # Mullenweg, e distribuído gratuitamente sob a GNU General Public License.
 #
-# Site oficial do Wordpress: https://wordpress.org/
-# Site Oficial do Joomla: https://www.joomla.org/
-# Site Oficial do Drupal: https://www.drupal.org/
+# Site oficial do Projeto Wordpress: https://wordpress.org/
+# Site Oficial do Projeto Joomla: https://www.joomla.org/
+# Site Oficial do Projeto Drupal: https://www.drupal.org/
 #
 # Informações que serão solicitadas na configuração via Web do WordPress
 # Português do Brasil: Continuar;
@@ -88,6 +88,7 @@ echo -n "Verificando as dependências do Wordpress, aguarde... "
 			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-F-openssl-wordpress.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -116,7 +117,7 @@ clear
 echo
 #
 echo -e "Instalação do Wordpress no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do Wordpress acessar a URL: http://wp.$(hostname -d | cut -d' ' -f1)/\n"
+echo -e "Após a instalação do Wordpress acessar a URL: https://wp.$(hostname -d | cut -d' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

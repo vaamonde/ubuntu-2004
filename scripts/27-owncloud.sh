@@ -30,7 +30,7 @@
 # 		Host do banco de dados: localhost: 
 #	Concluir Configuração
 #
-# Site Oficial do ownCloud: https://owncloud.com/
+# Site Oficial do Projeto ownCloud: https://owncloud.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -116,7 +116,7 @@ echo
 #
 echo -e "Instalação do ownCloud no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo ownCloud.: TCP 80 ou 443"
-echo -e "Após a instalação do ownCloud acessar a URL: http://own.$(hostname -d | cut -d ' ' -f1)/\n"
+echo -e "Após a instalação do ownCloud acessar a URL: https://own.$(hostname -d | cut -d ' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -189,7 +189,7 @@ echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Fazendo o download do ownCloud do site Oficial, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
 	rm -v owncloud.tar.bz2 &>> $LOG
@@ -198,14 +198,14 @@ echo -e "Download feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Descompactando o arquivo do ownCloud, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando tar: -j (bzip2), -x (extract), -v (verbose), -f (file)
 	tar -jxvf owncloud.tar.bz2 &>> $LOG
 echo -e "Arquivo descompactado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Movendo o diretório do ownCloud para o Apache2, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
 	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)

@@ -60,7 +60,7 @@
 #
 # Usuário padrão: admin
 #
-# Site Oficial do OpenFire: https://www.igniterealtime.org/projects/openfire/
+# Site Oficial do Projeto OpenFire: https://www.igniterealtime.org/projects/openfire/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

@@ -19,7 +19,7 @@
 # Ele consolida o Syslog/Rsyslog e outros dados de eventos, fornecendo uma página web 
 # de fácil leitura. Os gráficos ajudam a ver as coisas importantes de relance.
 #
-# Site oficial do LogAnalyzer: https://loganalyzer.adiscon.com/
+# Site oficial do Projeto LogAnalyzer: https://loganalyzer.adiscon.com/
 #
 # Informações que serão solicitadas na configuração via Web do LogAnalyzer
 # Step 0 -	Errordetails: Click "here" to Install Adiscon LogAnalyzer!
@@ -156,7 +156,7 @@ echo
 #
 echo -e "Instalação e Configuração do LogAnalyzer no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Syslog/Rsyslog.: UDP 514"
-echo -e "Após a instalação do LogAnalyzer acessar a URL: http://log.$(hostname -d | cut -d' ' -f1)/\n"
+echo -e "Após a instalação do LogAnalyzer acessar a URL: https://log.$(hostname -d | cut -d' ' -f1)/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

@@ -25,9 +25,9 @@
 # de um gerenciamento e histórico de ações de manutenções. Os usuários podem declarar 
 # incidentes ou solicitações (com base no ativo ou não) graças ao recurso de Helpdesk.
 #
-# Site oficial GLPI: https://glpi-project.org/pt-br/
-# Site oficial do OTRS: https://otrs.com/
-# Site oficial do iTop: https://www.combodo.com/itop
+# Site oficial do Projeto GLPI: https://glpi-project.org/pt-br/
+# Site oficial do Projeto OTRS: https://otrs.com/
+# Site oficial do Projeto iTop: https://www.combodo.com/itop
 #
 # Informações que serão solicitadas na configuração via Web do GLPI
 # GLPI Setup
@@ -134,7 +134,7 @@ clear
 echo
 #
 echo -e "Instalação e Configuração do GLPI Help Desk no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do GLPI acessar a URL: http://glpi.$(hostname -d | cut -d' ' -f1)\n"
+echo -e "Após a instalação do GLPI acessar a URL: https://glpi.$(hostname -d | cut -d' ' -f1)\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
