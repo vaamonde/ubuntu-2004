@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 09/05/2022
-# Versão: 0.11
+# Data de atualização: 10/05/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 # Testado e homologado para a versão do Tomcat v9.0.x,
@@ -124,12 +124,12 @@ clear
 echo
 #
 echo -e "Configuração do TLS/SSL do Apache Tomcat9 no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Apache2 Server TLS/SSL.: TCP 443"
+echo -e "Porta padrão utilizada pelo Apache Tomcat9 Server TLS/SSL.: TCP 8443"
 echo -e "Depois de executar a instalação da CA no GNU/Linux e no Windows, testar o acesso seguro abaixo.\n"
-echo -e "Confirmar o acesso com o Endereço IPv4 na URL: https://$(hostname -I | cut -d' ' -f1):8080/"
-echo -e "Confirmar o acesso com o Nome CNAME na URL: https://www.$(hostname -d | cut -d' ' -f1):8080/"
-echo -e "Confirmar o acesso com o Nome Domínio na URL: https://$(hostname -d | cut -d' ' -f1):8080/"
-echo -e "Confirmar o acesso com o Nome FQDN na URL: https://$(hostname -A | cut -d' ' -f1):8080/\n"
+echo -e "Confirmar o acesso com o Endereço IPv4 na URL: https://$(hostname -I | cut -d' ' -f1):8443/"
+echo -e "Confirmar o acesso com o Nome CNAME na URL: https://www.$(hostname -d | cut -d' ' -f1):8443/"
+echo -e "Confirmar o acesso com o Nome Domínio na URL: https://$(hostname -d | cut -d' ' -f1):8443/"
+echo -e "Confirmar o acesso com o Nome FQDN na URL: https://$(hostname -A | cut -d' ' -f1):8443/\n"
 echo -e "Aguarde, esse processo demora um pouco, esse é o script mais complexo desse curso...\n"
 sleep 5
 #
@@ -261,7 +261,7 @@ echo -e "Criando o arquivo CSR (Certificate Signing Request), confirme as mensag
 	openssl req -new -$CRIPTOCERT -nodes -key /etc/ssl/private/tomcat9.key -out \
 	/etc/ssl/requests/tomcat9.csr -extensions v3_req -config /etc/ssl/tomcat9.conf
 	echo
-echo -e "Criação do arquivo CSR feito com sucesso!!!, continuando com o script...\n"
+echo -e "Criação do arquivo CSR do Tomcat9 feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o arquivo CSR (Certificate Signing Request) do Tomcat9, aguarde..."
@@ -273,7 +273,7 @@ echo -e "Verificando o arquivo CSR (Certificate Signing Request) do Tomcat9, agu
 	# -in (The input file to read a request from, or standard input if not specified)
 	#
 	openssl req -noout -text -in /etc/ssl/requests/tomcat9.csr &>> $LOG
-echo -e "Arquivo CSR verificado com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivo CSR do Tomcat9 verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o certificado assinado CRT (Certificate Request Trust) do Tomcat9, aguarde...\n"
@@ -322,7 +322,7 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) do Tomcat9, aguar
 	cat /etc/ssl/index.txt &>> $LOG
 	cat /etc/ssl/index.txt.attr &>> $LOG
 	cat /etc/ssl/serial &>> $LOG
-echo -e "Arquivo CRT do Apache2 verificado com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivo CRT do Tomcat9 verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 #=================== EM DESENVOLVIMENTO ====================
@@ -333,10 +333,12 @@ sleep 5
 #keytool -import -alias tomcat -keystore /etc/tomcat9/tomcat9.jks -file /etc/ssl/newcerts/tomcat9.crt
 #
 #openssl pkcs12 -export -in <certfile> -inkey <keyfile> -out <keystorefile> -name tomcat -CAfile <cacertfile> -caname root
-#openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key -out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
+#openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key -out /etc/tomcat9/tomcat9.pem \
+#-name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
 #
 #keytool -importkeystore -deststorepass <keystorepass> -destkeypass <keystorepass> -destkeystore <tomcatkeystorefile> -srckeystore <keystorefile> -srcstoretype PKCS12 -srcstorepass <keystorepass> -alias tomcat
-#keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeystore /etc/tomcat9/tomcat9.jks -srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 -srcstorepass vaamonde -alias tomcat
+#keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeystore /etc/tomcat9/tomcat9.jks -srckeystore \
+#/etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 -srcstorepass vaamonde -alias tomcat
 #
 #=================== EM DESENVOLVIMENTO ====================
 #
@@ -380,7 +382,7 @@ echo -e "Testando o Certificado TLS/SSL do Tomcat9, aguarde..."
 echo -e "Certificado do Tomcat testado sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Configuração do OpenSSL e TLS/SSL do Tomcat9 feita com Sucesso!!!."
+echo -e "Configuração do OpenSSL e TLS/SSL do Apache Tomcat9 Server feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
