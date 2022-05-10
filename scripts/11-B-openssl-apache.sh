@@ -31,8 +31,15 @@
 # Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e 
 # navegadores web.
 #
-# Site Oficial do Projeto: https://www.openssl.org/
+# O Servidor HTTP Apache (do inglês Apache HTTP Server) ou Servidor Apache ou HTTP 
+# Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por Rob McCool. 
+# É a principal tecnologia da Apache Software Foundation, responsável por mais de uma 
+# dezena de projetos envolvendo tecnologias de transmissão via web, processamento de dados 
+# e execução de aplicativos distribuídos.
+#
+# Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 # Manual do OpenSSL: https://man.openbsd.org/openssl.1
+# Site Oficial do Projeto Apache2: https://www.apache.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

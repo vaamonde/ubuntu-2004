@@ -31,8 +31,14 @@
 # Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e 
 # navegadores web.
 #
-# Site Oficial do Projeto: https://www.openssl.org/
+# O VSFTPd, é um servidor FTP para sistemas do tipo Unix, incluindo Linux. 
+# É o servidor FTP padrão nas distribuições Ubuntu, CentOS, Fedora, NimbleX, 
+# Slackware e RHEL Linux. Está licenciado pela GNU General Public License. 
+# Suporta IPv4, IPv6, TLS e FTPS.
+#
+# Site Oficial do Projeto OpenSSL: https://www.openssl.org/
 # Manual do OpenSSL: https://man.openbsd.org/openssl.1
+# Site Oficial do Projeto VSFTPd: https://security.appspot.com/vsftpd.html
 #
 # Utilização do FTP Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
