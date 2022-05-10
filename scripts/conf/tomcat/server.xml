@@ -49,13 +49,16 @@
 	<Connector
 		port="8443"
 		maxThreads="200"
-		protocol="org.apache.coyote.http11.Http11AprProtocol"
+		protocol="HTTP/1.1"
 		scheme="https"
 		secure="true"
+		clientAuth="optional"
 		SSLEnabled="true"
+		SSLVerifyClient="optional"
+		SSLProtocol="TLSv1+TLSv1.1+TLSv1.2"
 		SSLCertificateFile="/etc/ssl/newcerts/tomcat9.crt"
-		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key"
-		SSLVerifyClient="optional" SSLProtocol="TLSv1+TLSv1.1+TLSv1.2" />
+		SSLCertificateKeyFile="/etc/ssl/private/tomcat9.key" 
+		SSLCACertificateFile="/etc/ssl/certs/pti-ca.pem" />
 	-->
 	<!--
 	<Connector
