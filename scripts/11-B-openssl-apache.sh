@@ -287,7 +287,7 @@ echo -e "Criando o certificado assinado CRT (Certificate Request Trust) do Apach
 	# -in (The input file to read from, or standard input if not specified),
 	# -CA (The CA certificate to be used for signing),
 	# -CAkey (Set the CA private key to sign a certificate with),
-	# -CAcreatesrial (Create the CA serial number file if it does not exist instead of generating an error),
+	# -CAcreateserial (Create the CA serial number file if it does not exist instead of generating an error),
 	# -out (The output file to write to, or standard output if none is specified)
 	# -config (Specify an alternative configuration file)
 	# -extensions (The section to add certificate extensions from),
