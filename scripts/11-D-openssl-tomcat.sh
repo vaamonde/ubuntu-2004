@@ -333,14 +333,30 @@ sleep 5
 #keytool -import -alias tomcat -keystore /etc/tomcat9/tomcat9.jks -file /etc/ssl/newcerts/tomcat9.crt
 #
 #openssl pkcs12 -export -in <certfile> -inkey <keyfile> -out <keystorefile> -name tomcat -CAfile <cacertfile> -caname root
-#openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key -out /etc/tomcat9/tomcat9.pem \
-#-name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
+	# opções do comando openssl: 
+	# pkcs12: (PKCS#12 Data Management.)
+	# -export:
+	# -in: (he input file to read from, or standard input if not specified)
+	# -inkey:
+	# -out: (The output file to write to, or standard output if none is specified)
+	# -name:
+	# -CAfile: 
+	# -caname:
+	openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key \
+	-out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
 #
 #keytool -importkeystore -deststorepass <keystorepass> -destkeypass <keystorepass> -destkeystore <tomcatkeystorefile> -srckeystore <keystorefile> -srcstoretype PKCS12 -srcstorepass <keystorepass> -alias tomcat
-#keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeystore /etc/tomcat9/tomcat9.jks -srckeystore \
-#/etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 -srcstorepass vaamonde -alias tomcat
-#
-#=================== EM DESENVOLVIMENTO ====================
+	# opções do comando keytool: 
+	# importkeystore: (Imports one or all entries from another keystore)
+	# -deststorepass: (Destination keystore password)
+	# -destkeypass: (Destination key password)
+	# -destkeystore: (Destination keystore name)
+	# -srckeystore: (Source keystore name)
+	# -srcstoretype: (Source keystore type)
+	# -srcstorepass: (Source keystore password)
+	# -alias: (Source alias)
+	keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeystore /etc/tomcat9/tomcat9.jks \
+	-srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 -srcstorepass vaamonde -alias tomcat
 #
 echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
