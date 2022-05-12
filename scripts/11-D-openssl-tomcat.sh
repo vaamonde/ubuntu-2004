@@ -326,6 +326,7 @@ echo -e "Arquivo CRT do Tomcat9 verificado com sucesso!!!, continuando com o scr
 sleep 5
 #
 echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, aguarde..."
+	# opção do comando: &>> (redirecionar de saída padrão)
 	# opções do comando openssl: 
 	# pkcs12: (PKCS#12 Data Management)
 	# -export: (The export file PEM PKCS#12 file export with private key data and root certification unit)
@@ -340,11 +341,12 @@ echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, ag
 	# 
 	openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key \
 	-out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root \
-	-passout pass:$PASSPHRASE
+	-passout pass:$PASSPHRASE &>> $LOG
 echo -e "Arquivo PKCS#12 PEM do Tomcat9 exportando com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Importando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) no JKS (Java KeyStore) do Tomcat9, aguarde..."
+	# opção do comando: &>> (redirecionar de saída padrão)
 	# opções do comando keytool: 
 	# importkeystore: (Imports one or all entries from another keystore)
 	# -deststorepass: (Destination keystore password)
