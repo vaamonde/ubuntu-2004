@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 10/05/2022
-# Versão: 0.12
+# Data de atualização: 11/05/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 # Testado e homologado para a versão do Tomcat v9.0.x,
@@ -325,27 +325,22 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) do Tomcat9, aguar
 echo -e "Arquivo CRT do Tomcat9 verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-#=================== EM DESENVOLVIMENTO ====================
-#Importando a Unidade Certificado Raiz CA para o Tomcat9
-#keytool -import -alias root -keystore /etc/tomcat9/tomcat9.jks -trustcacerts -file /etc/ssl/newcerts/pti-ca.crt
-#
-#Importando o Certificado Assinado para o Tomcat9
-#keytool -import -alias tomcat -keystore /etc/tomcat9/tomcat9.jks -file /etc/ssl/newcerts/tomcat9.crt
-#
-#openssl pkcs12 -export -in <certfile> -inkey <keyfile> -out <keystorefile> -name tomcat -CAfile <cacertfile> -caname root
+echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, aguarde..."
 	# opções do comando openssl: 
-	# pkcs12: (PKCS#12 Data Management.)
-	# -export:
-	# -in: (he input file to read from, or standard input if not specified)
-	# -inkey:
+	# pkcs12: (PKCS#12 Data Management)
+	# -export: (The export file PEM PKCS#12 file export with private key data and root certification unit)
+	# -in: (The input file to read from, or standard input if not specified)
+	# -inkey: (The input file private key)
 	# -out: (The output file to write to, or standard output if none is specified)
-	# -name:
-	# -CAfile: 
-	# -caname:
+	# -name: (The alias name of the certificate export)
+	# -CAfile: (The file containing the unit's signed certificate Root Certificate)
+	# -caname: (The Root certification unit name)
 	openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key \
 	-out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
+echo -e "Arquivo PEM do Tomcat9 exportando com sucesso!!!, continuando com o script...\n"
+sleep 5
 #
-#keytool -importkeystore -deststorepass <keystorepass> -destkeypass <keystorepass> -destkeystore <tomcatkeystorefile> -srckeystore <keystorefile> -srcstoretype PKCS12 -srcstorepass <keystorepass> -alias tomcat
+echo -e "Importando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) no JKS (Java KeyStore) do Tomcat9, aguarde..."
 	# opções do comando keytool: 
 	# importkeystore: (Imports one or all entries from another keystore)
 	# -deststorepass: (Destination keystore password)
@@ -355,8 +350,11 @@ sleep 5
 	# -srcstoretype: (Source keystore type)
 	# -srcstorepass: (Source keystore password)
 	# -alias: (Source alias)
-	keytool -importkeystore -deststorepass vaamonde -destkeypass vaamonde -destkeystore /etc/tomcat9/tomcat9.jks \
-	-srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 -srcstorepass vaamonde -alias tomcat
+	keytool -importkeystore -deststorepass $PASSPHRASE -destkeypass $PASSPHRASE -destkeystore \
+	/etc/tomcat9/tomcat9.jks -srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 \
+	-srcstorepass $PASSPHRASE -alias tomcat
+echo -e "Arquivo JKS do Tomcat9 importado com sucesso!!!, continuando com o script...\n"
+sleep 5
 #
 echo -e "Editando o arquivo de configuração server.xml, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)

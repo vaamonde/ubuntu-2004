@@ -551,6 +551,10 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # 01. /etc/ssl/vsftpd.conf = arquivo de configuração do certificado do VSFTPd
 # 02. /etc/vsftpd.conf = arquivo de configuração do VSFTPd Server
 #
+# Arquivos de configuração (conf) da Geração do Certificado do Tomcat9
+# 01. /etc/ssl/tomcat9.conf = arquivo de configuração do certificado do Tomcat9
+# 02. /etc/tomcat9/server.xml = arquivo de configuração do Tomcat9 Server
+#
 # Arquivos de monitoramento (log) do Serviço de Certificado OpenSSL utilizados nesse script
 # 01. cat /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
 # 02. cat /etc/ssl/index.txt.attr = arquivo de configuração dos atributos da base de dados do OpenSSL
