@@ -7,11 +7,18 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 10/05/2022
-Versão: 0.60
+Data de atualização: 12/05/2022
+Versão: 0.61
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+12/05/2022 - Robson Vaamonde - Atualização do script: 11-D-openssl-tomcat.sh, acréscimo das opções de exportação do
+certificado CRT para PKCS#12 PEM, importação do certificado e exportação do arquivo JKS do Tomcat9 para suportar o
+protocolo HTTPS, alteração das opções de configuração do Servidor Tomcat9 no arquivo: server.xml referente a porta
+8443 e protocolo HTTPS, criação do arquivo: tomcat9.conf para a geração dos certificados assinados CRT e CSR do 
+servidor Tomcat9, adicionado as dependências no arquivo: 00-parametros.sh ibapr1-dev, libssl-dev e libtcnative-1 do
+Tomcat9 referente ao suporte ao OpenSSL.
+
 10/05/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, acréscimo da instalação das dependências do
 suporte ao HTTPS do Tomcat9, adicionado as bibliotecas: libapr1-dev libssl-dev libtcnative-1, alteração do arquivo de
 configuração do servidor Tomcat9: server.xml, adicionado o bloco de configuração do suporte ao OpenSSL utilizando a 
