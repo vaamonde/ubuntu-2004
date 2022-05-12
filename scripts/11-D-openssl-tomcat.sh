@@ -337,7 +337,7 @@ echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, ag
 	# -caname: (The Root certification unit name)
 	openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key \
 	-out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
-echo -e "Arquivo PEM do Tomcat9 exportando com sucesso!!!, continuando com o script...\n"
+echo -e "Arquivo PKCS#12 PEM do Tomcat9 exportando com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Importando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) no JKS (Java KeyStore) do Tomcat9, aguarde..."

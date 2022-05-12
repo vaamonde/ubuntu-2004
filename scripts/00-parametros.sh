@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 10/05/2022
-# Versão: 0.63
+# Data de atualização: 12/05/2022
+# Versão: 0.64
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -681,9 +681,11 @@ WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9 openssl"
 # 01. /etc/apt/sources.list.d/webmin.list = arquivo de configuração do source list do Apt
 #
 # Arquivos de monitoramento (log) do Serviço do Webmin e do Usermin utilizados nesse script
-# 01. journalctl -t webmin = todas as mensagens referente ao serviço do Webmin
-# 02. tail -f /var/webmin/* = vários arquivos de Log's do serviço do Webmin
-# 03. tail -f /var/usermin/* = vários arquivos de Log's do serviço do Usermin
+# 01. systemctl status webmin = status do serviço do Webmin
+# 02. systemctl status usermin = status do serviço do Usermin
+# 03. journalctl -t webmin = todas as mensagens referente ao serviço do Webmin
+# 04. tail -f /var/webmin/* = vários arquivos de Log's do serviço do Webmin
+# 05. tail -f /var/usermin/* = vários arquivos de Log's do serviço do Usermin
 #
 # Declarando as variáveis utilizadas nas configurações do Webmin e do Usermin
 # 
@@ -714,9 +716,10 @@ PORTUSERMIN="20000"
 # 05. /usr/lib/netdata/conf.d/python.d/bind_rndc.conf = arquivo de monitoramento do Bind DNS
 #
 # Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
-# 01. journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
-# 02. tail -f /var/log/netdata/* = vários arquivos de Log's do serviço do Netdata
+# 01. systemctl status netdata = status do serviço do Netdata
+# 02. journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
 # 03. tail -f /var/log/syslog | grep netdata = filtrando as mensagens do serviço do Netdata
+# 04. tail -f /var/log/netdata/* = vários arquivos de Log's do serviço do Netdata
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
@@ -889,6 +892,7 @@ libapache2-mod-php xmlrpc-api-utils"
 # 01. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
 #
 # Arquivos de monitoramento (log) do Serviço do FusionInventory utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t fusioninventory-agent = todas as mensagens referente ao serviço do FusionInventory
 # 02. tail -f /var/log/fusioninventory-agent/fusioninventory.log = arquivo de log do agent do FusionInventory
 # 03. tail -f /var/log/syslog | grep -i fusioninventory = filtrando as mensagens do serviço do FusionInventory
@@ -944,9 +948,10 @@ PORTFUSION="62354"
 # 02. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
 #
 # Arquivos de monitoramento (log) do Serviço do ZoneMinder utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t zoneminder = todas as mensagens referente ao serviço do ZoneMinder
-# 02. tail -f /var/log/zm/* = vários arquivos de Log's do serviço do ZoneMinder
-# 03. tail -f /var/log/syslog | grep -i zoneminder = filtrando as mensagens do serviço do ZoneMinder
+# 02. tail -f /var/log/syslog | grep -i zoneminder = filtrando as mensagens do serviço do ZoneMinder
+# 03. tail -f /var/log/zm/* = vários arquivos de Log's do serviço do ZoneMinder
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Câmeras ZoneMinder
 #
@@ -985,6 +990,7 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 # 03. /etc/default/tomcat9 = arquivo de configuração do serviço do Apache Tomcat
 #
 # Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t guacd = todas as mensagens referente ao serviço do Guacamole
 # 02. tail -f /var/log/syslog | grep -i guacamole = filtrando as mensagens do serviço do Guacamole
 # 03. tail -f /var/log/syslog | grep -i guacd = filtrando as mensagens do serviço do Guacamole
@@ -1017,6 +1023,7 @@ PORTGUACAMOLE="4822"
 # 01. /etc/default/grafana-server = arquivo de configuração do serviço do Grafana Server
 #
 # Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t grafana-server = todas as mensagens referente ao serviço do Grafana Server
 # 02. tail -f /var/log/grafana/grafana.log = arquivo de Log do serviço do Grafana Server
 # 03. tail -f /var/log/syslog | grep -i grafana = filtrando as mensagens do serviço do Grafana
@@ -1043,6 +1050,7 @@ PORTGRAFANA="3000"
 # 03. /etc/zabbix/zabbix_agentd.conf = arquivo de configuração do serviço do Zabbix Agent
 #
 # Arquivos de monitoramento (log) do Serviço do Zabbix Server utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. tail -f /var/log/zabbix/zabbix_server.log = arquivo de Log do serviço do Zabbix Server
 # 02. tail -f /var/log/zabbix/zabbix_agentd.log = arquivo de Log do serviço do Zabbix Agent
 # 03. tail -f /var/log/syslog | grep -i zabbix = filtrando as mensagens do serviço do Zabbix
@@ -1093,6 +1101,7 @@ PORTZABBIX2="10051"
 # 01. /etc/systemd/system/portainer.service = arquivo de configuração do serviço do Portainer
 #
 # Arquivos de monitoramento (log) do Serviço do Docker e do Portainer utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t docker = todas as mensagens referente ao serviço do Docker
 # 02. tail -f /var/log/syslog | grep -i docker = filtrando as mensagens do serviço do Docker
 # 02. tail -f /var/log/syslog | grep -i portainer = filtrando as mensagens do serviço do Portainer
@@ -1130,6 +1139,7 @@ PORTPORTAINER="9000"
 # 01. /etc/rundeck/rundeck-config.properties = arquivo de configuração do serviço do Rundeck
 #
 # Arquivos de monitoramento (log) do Serviço do Ansible e Rundeck utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t rundeckd = todas as mensagens referente ao serviço do Rundeck
 # 02. tail -f /var/log/rundeck/*.log = vários arquivos de Logs do serviço do Rundeck
 # 03. tail -f /var/log/syslog | grep -i rundeck = filtrando as mensagens do serviço do Rundeck
@@ -1162,6 +1172,7 @@ PORTRUNDECK="4440"
 # 02. /etc/ntopng/ntopng.start = arquivo de inicialização do serviço do NTop-NG
 #
 # Arquivos de monitoramento (log) do Serviço do NTop-NG utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t ntopng = todas as mensagens referente ao serviço do NTop-NG
 # 02. tail -f /var/log/syslog | grep -i ntopng = filtrando as mensagens do serviço do NTop-NG
 #
@@ -1187,6 +1198,7 @@ PORTNTOPNG="3001"
 # 01. /etc/openfire/openfire.xml = arquivo de configuração do OpenFire (gerado na configuração)
 #
 # Arquivos de monitoramento (log) do Serviço do OpenFire utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. journalctl -t openfire = todas as mensagens referente ao serviço do OpenFire
 # 02. tail -f /var/log/openfire/* = vários arquivos de Logs do serviço do OpenFire
 # 03. tail -f /var/log/syslog | grep -i openfire = filtrando as mensagens do serviço do OpenFire
@@ -1288,6 +1300,7 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 # 07. /etc/cron.d/ocsinventory-agent = arquivo de configuração do CRON do OCS Inventory Agent
 #
 # Arquivos de monitoramento (log) do Serviço do OCS Inventory utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. /var/log/ocs_server_setup.log = arquivo de log da instalação do OCS Inventory
 # 02. /var/log/ocsinventory-server/activity.log = arquivo de log do Servidor OCS Inventory
 # 03. /var/log/ocsinventory-agent/ocsagent.log = arquivo de log do Agent OCS Inventory
@@ -1374,6 +1387,7 @@ OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 # 02. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço de rede 
 #
 # Arquivos de monitoramento (log) do Serviço do Bacula Server e Baculum utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. /var/log/bacula/* = arquivos de Log do serviço do Bacula
 # 02. tail -f /var/log/syslog | grep -i bacula = filtrando as mensagens do serviço do Bacula
 # 03. /var/log/apache2/baculum*.log = vários arquivos de Log do serviço do Baculum-Web
@@ -1408,6 +1422,7 @@ BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-tr
 # 03. /etc/graylog/server/server.conf = arquivo de configuração do Graylog Server
 #
 # Arquivos de monitoramento (log) do Serviço do Graylog Server utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. /var/log/graylog-server/server.log = arquivo de Log do serviço de rede Graylog Server
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Log Graylog Server 
@@ -1468,6 +1483,7 @@ ELASTICSEARCHPORT="9200"
 # 02. /etc/postgresql/14/main/pg_hba.conf = arquivo de liberação de rede do Servidor PostgreSQL
 #
 # Arquivos de monitoramento (log) do Serviço do PostgreSQL Server utilizados nesse script
+# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
 # 01. /var/log/postgresql/postgresql-14-main.log = arquivo de Log do Servidor PostgreSQL
 # 02. tail -f /var/log/syslog | grep -i postgresql = filtrando as mensagens do serviço do PostgreSQL
 # 03. /var/log/pgadmin/pgadmin4.log = arquivo de Log do Serviço via Web PgAdmin4
