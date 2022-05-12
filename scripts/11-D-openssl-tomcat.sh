@@ -325,7 +325,7 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) do Tomcat9, aguar
 echo -e "Arquivo CRT do Tomcat9 verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, aguarde..."
+echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, senha padrão: $PASSPHRASE, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opções do comando openssl: 
 	# pkcs12: (PKCS#12 Data Management)
@@ -345,7 +345,7 @@ echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, ag
 echo -e "Arquivo PKCS#12 PEM do Tomcat9 exportando com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Importando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) no JKS (Java KeyStore) do Tomcat9, aguarde..."
+echo -e "Importando o arquivo PKCS#12 PEM no JKS (Java KeyStore) do Tomcat9, senha padrão: $PASSPHRASE, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opções do comando keytool: 
 	# importkeystore: (Imports one or all entries from another keystore)
@@ -400,7 +400,7 @@ echo -e "Testando o Certificado TLS/SSL do Tomcat9, aguarde..."
 	# -showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
 	#
 	echo | openssl s_client -connect localhost:8443 -servername www.$DOMINIOSERVER -showcerts &>> $LOG
-echo -e "Certificado do Tomcat testado sucesso!!!, continuando com o script...\n"
+echo -e "Certificado do Tomcat9 testado sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configuração do OpenSSL e TLS/SSL do Apache Tomcat9 Server feita com Sucesso!!!."
