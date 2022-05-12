@@ -8,8 +8,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 24/10/2021
-# Data de atualização: 10/05/2022
-# Versão: 0.06
+# Data de atualização: 12/05/2022
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x e OpenJRE 11.x
 -->
@@ -42,9 +42,11 @@
                redirectPort="8443" />
     <!--
     # Configuração do suporte ao SSL/TLS do Tomcat9 utilizando o software Keytool
-	# e Certificados Assinados utilizando o OpenSSL
-	# Comando para a geração do certificado do Tomcat9 SSL/TLS
-	# 	keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
+    # e Certificados Assinados utilizando o OpenSSL
+    # Comando para a geração do certificado do Tomcat9 SSL/TLS não assinado
+    #	keytool -genkey -alias tomcat -keyalg RSA -keystore /etc/tomcat9/cert.jks
+    -->
+    <!--	
     <Connector
 		port="8443"
 		protocol="HTTP/1.1"
@@ -56,7 +58,7 @@
 		SSLEnabled="true" 
 		sslProtocol="TLS"
 		sslEnabledProtocols="TLSv1.2,TLSv1.1,TLSv1,SSLv2Hello"
-		keystoreFile="/etc/tomcat9/cert.jks"
+		keystoreFile="/etc/tomcat9/tomcat9.jks"
 		keystorePass="vaamonde" />
     -->
 
