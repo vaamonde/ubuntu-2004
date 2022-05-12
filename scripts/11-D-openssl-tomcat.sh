@@ -335,8 +335,12 @@ echo -e "Exportando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) do Tomcat9, ag
 	# -name: (The alias name of the certificate export)
 	# -CAfile: (The file containing the unit's signed certificate Root Certificate)
 	# -caname: (The Root certification unit name)
+	# -passout (The output file password source)
+	# pass: (The actual password is password)
+	# 
 	openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat9.crt -inkey /etc/ssl/private/tomcat9.key \
-	-out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root
+	-out /etc/tomcat9/tomcat9.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root \
+	-passout pass:$PASSPHRASE
 echo -e "Arquivo PKCS#12 PEM do Tomcat9 exportando com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -350,6 +354,7 @@ echo -e "Importando o arquivo PKCS#12 PEM (Privacy Enhanced Mail) no JKS (Java K
 	# -srcstoretype: (Source keystore type)
 	# -srcstorepass: (Source keystore password)
 	# -alias: (Source alias)
+	#
 	keytool -importkeystore -deststorepass $PASSPHRASE -destkeypass $PASSPHRASE -destkeystore \
 	/etc/tomcat9/tomcat9.jks -srckeystore /etc/tomcat9/tomcat9.pem -srcstoretype PKCS12 \
 	-srcstorepass $PASSPHRASE -alias tomcat &>> $LOG
