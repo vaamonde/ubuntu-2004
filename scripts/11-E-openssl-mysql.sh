@@ -177,6 +177,9 @@ echo -e "Iniciando a Configuração do OpenSSL no MySQL, aguarde...\n"
 sleep 5
 #
 # =================== EM DESENVOLVIMENTO ===================
+#
+# =================== EM DESENVOLVIMENTO ===================
+#
 echo -e "Verificando o serviço do MySQL, aguarde..."
 	echo -e "MySQL..: $(systemctl status mysql | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
