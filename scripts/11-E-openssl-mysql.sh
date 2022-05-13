@@ -177,7 +177,21 @@ echo -e "Iniciando a Configuração do OpenSSL no MySQL, aguarde...\n"
 sleep 5
 #
 # =================== EM DESENVOLVIMENTO ===================
+#mysql -u root -p
+#	SHOW VARIABLES LIKE '%ssl%';
+#	\s
+#	exit
+#mysql_ssl_rsa_setup --uid=mysql
+#systemctl restart mysql
 #
+#mysql -u root -p --ssl-mode=required
+#	SHOW VARIABLES LIKE '%ssl%';
+#	\s 
+#	exit
+#
+#vim /etc/mysql/mysql.conf.d/mysqld.cnf
+#	require_secure_transport = ON
+#systemctl restart mysql
 # =================== EM DESENVOLVIMENTO ===================
 #
 echo -e "Verificando o serviço do MySQL, aguarde..."
