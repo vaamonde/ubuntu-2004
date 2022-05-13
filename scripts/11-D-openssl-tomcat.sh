@@ -177,7 +177,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Configuração do OpenSSL no Apache Tomcat9, aguarde...\n"
+echo -e "Iniciando a Configuração do OpenSSL TLS/SSL no Apache Tomcat9, aguarde...\n"
 sleep 5
 #
 echo -e "Atualizando o arquivo de configuração do Certificado do Tomcat9, aguarde..."

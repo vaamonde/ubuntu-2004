@@ -95,6 +95,7 @@ echo -n "Verificando as dependências do OpenSSL, aguarde... "
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -177,7 +178,7 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Configuração do OpenSSL SSL/TLS no Apache2, aguarde...\n"
+echo -e "Iniciando a Configuração do OpenSSL TLS/SSL no Apache2, aguarde...\n"
 sleep 5
 #
 echo -e "Atualizando o arquivo de configuração do Certificado do Apache2, aguarde..."

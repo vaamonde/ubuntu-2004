@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 12/05/2022
-Versão: 0.61
+Data de atualização: 13/05/2022
+Versão: 0.62
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+13/05/2022 - Robson Vaamonde - Criação do arquivo: mysql.conf da criação dos certificados assinado do MySQL Server,
+customização do script: 11-E-openssl-mysql.sh para resolver os problemas de criação e geração dos certificados SSL
+do MySQL Server.
+
 12/05/2022 - Robson Vaamonde - Atualização do script: 11-D-openssl-tomcat.sh, acréscimo das opções de exportação do
 certificado CRT para PKCS#12 PEM, importação do certificado e exportação do arquivo JKS do Tomcat9 para suportar o
 protocolo HTTPS, alteração das opções de configuração do Servidor Tomcat9 no arquivo: server.xml referente a porta
