@@ -192,6 +192,7 @@ sleep 5
 #vim /etc/mysql/mysql.conf.d/mysqld.cnf
 #	require_secure_transport = ON
 #systemctl restart mysql
+# https://www.howtoforge.com/tutorial/how-to-enable-ssl-and-remote-connections-for-mysql-on-centos-7/
 # =================== EM DESENVOLVIMENTO ===================
 #
 echo -e "Verificando o serviço do MySQL, aguarde..."
