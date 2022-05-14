@@ -11,5 +11,8 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do MySQL v8.0.x
 #
-# Configurações principais do Cliente de MySQL
+# Configurações principais do Cliente de MySQL Server
 [mysql]
+ssl_ca=/etc/ssl/certs/pti-ca.pem
+ssl_cert=/etc/ssl/newcerts/mysql.crt
+ssl_key=/etc/ssl/private/mysql.key
