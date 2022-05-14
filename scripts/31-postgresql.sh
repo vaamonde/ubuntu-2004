@@ -192,7 +192,7 @@ echo -e "Adicionando o Repositório do PostgreSQL Server, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando wget: -q (quiet) -O (output document file)
 	# opção do comando cp: -v (verbose)
-    wget -qO - $KEYPOSTGRESQL | sudo apt-key add - &>> $LOG
+    wget -qO - $KEYPOSTGRESQL | apt-key add - &>> $LOG
     cp -v conf/postgresql/pgdg.list /etc/apt/sources.list.d/ &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -201,7 +201,7 @@ echo -e "Adicionando o Repositório do PgAdmin4, aguarde..."
 	# opção do comando: &>> (redirecionar de saída padrão)
 	# opção do comando wget: -q (quiet) -O (output document file)
 	# opção do comando cp: -v (verbose)
-    wget -qO - $KEYPGADMIN4 | sudo apt-key add - &>> $LOG
+    wget -qO - $KEYPGADMIN4 | apt-key add - &>> $LOG
     cp -v conf/postgresql/pgadmin4.list /etc/apt/sources.list.d/ &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5

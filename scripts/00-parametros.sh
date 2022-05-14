@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 12/05/2022
-# Versão: 0.64
+# Data de atualização: 14/05/2022
+# Versão: 0.65
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1644,3 +1644,24 @@ DATABASE_NETDISCO="netdisco"
 # Variável da porta de conexão do Netdisco
 PORTNETDISCO="5000"
 #
+#=============================================================================================
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 35-openproject.sh                     #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema OpenProject utilizados nesse script
+# 01. /etc/apt/sources.list.d/openproject.list = arquivo de configuração das Lista do Apt
+# 02. /etc/openproject/installer.dat = arquivo de parâmetros da instalação do OpenProject
+#
+# Arquivos de monitoramento (log) do sistema OpenProject utilizados nesse script
+# 01. 
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de OpenProject
+#
+# # Variável da chave GPG do repositório do OpenProject (Link atualizado no dia 14/05/2022)
+GPGOPENPROJECT="https://dl.packager.io/srv/opf/openproject/key"
+#
+# Variável das dependências do laço de loop do OpenProject
+OPENPROJECTDEP="bind9 apache2 php postgresql postgresql-contrib postgresql-client"
+#
+# Variável de instalação do OpenProject.
+OPENPROJECTINSTALL="openproject"

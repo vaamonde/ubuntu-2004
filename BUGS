@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 28/04/2022
-Versão: 0.19
+Data de atualização: 14/05/2022
+Versão: 0.20
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
@@ -18,24 +18,28 @@ ftp-server-with-windows-explorer, Experts: https://www.experts-exchange.com/ques
 connections-via-Internet-Explorer.html e do Egnyte: https://helpdesk.egnyte.com/hc/en-us/articles/201637914-FTP-Access-
 through-Windows-Explorer, Archlinux: https://bbs.archlinux.org/viewtopic.php?id=158184 (Analisando as soluções para aplicar 
 no arquivo vsftpd.conf).
+STATUS=PENDENTE
 
 0018 - Falha de TCP Wrappers do MySQL Server, arquivo de Log: /var/log/tcpwrappers-allow-mysql.log não é criado com os logs
 de acesso remoto utilizando o Client do MySQL ou MySQL Workbench, analisando o site do Release do MySQL 8.0.2 (17/07/2017)
 no link: https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-2.html no item dos Bugs: 25476479 e 84708 consta a falha
 do suporte ao TCP Wrappers e a geração de vários arquivos de Log de Erros do MySQL. Recomendação para resolver do Bug 84708
-no Link: https://bugs.mysql.com/bug.php?id=84708 (Analisando as soluções para aplicar no arquivo hosts.allow e do MySQL)  
+no Link: https://bugs.mysql.com/bug.php?id=84708 (Analisando as soluções para aplicar no arquivo hosts.allow e do MySQL)
+STATUS=PENDENTE
 
 0017 - Falha de: open pipe file /run/rpc_pipefs/nfs/blocklayout failed: No such file or directory, essa mensagem é mostrada 
 no arquivo de Log do NFS Server utilizando o comando: less -f /var/log/syslog | grep nfs, analisando a falha, conforme 
 vários artigos e comentários em fóruns de GNU/Linux essa mensagem está relacionada ao módulo do Kernel que não é habilitado 
 por padrão no Ubuntu Server, executando o comando: modprobe blocklayoutdriver a falha é resolvida, foi criado o arquivo de 
 configuração: override.conf e adicionado a opção de inicialização do módulo no start inicial do Ubuntu Server.
+STATUS=RESOLVIDO
 
 0016 - Falha de: tftp client does not accept options, mensagem e mostrada nos arquivos de Log do TFTP-HPA Server utilizando
 o comando: less -f /var/log/syslog | grep ntpd, analisando a falha, conforme vários artigos e comentários em fóruns de 
 GNU/Linux essa mensagem e normal, não sendo uma falha do TFTP-HPA Server, está associada ao suporte da BIOS UEFI que está 
 habilitado o recurso do Secure Boot, recomendo deixar a BIOS UEFI em Legacy ou alterar o arquivo de configuração do TFTP-HPA, 
 verificando o recurso de configuração do arquivo tftp-hpa: -r blksize na linha TFTP_OPTIONS="".
+STATUS=RESOLVIDO
 
 0015 - Falha de Relógio do Kernel não Sincronizado (clock-unsynchronized) mensagem e mostrada nos arquivos de Log do NTP 
 Server utilizando o comando: journalctl -t ntpd ou comando: less -f /var/log/syslog | grep ntpd, você recebe a mensagem de: 
@@ -44,34 +48,42 @@ a falha, conforme vários artigos e comentários nos fóruns de GNU/Linux essa m
 Server, está associada inicialmente devido ao sincronismo da data hora com os servidores remotos não ser feita de forma 
 rápida, depois de alguns minutos/horas o sincronismo e feito e a mensagem não aparece mais, muitas vezes a mensagem aparece
 nos Logs na inicialização do sistema.
+STATUS=RESOLVIDO
 
 0014 - Falha de Permissão Negada (Permission denied) no arquivo: /var/log/cron.log, após executar a verificação de erros
 no arquivo do Syslog com o comando: sudo grep -i error /var/log/syslog, recebendo a mensagem: Mar 23 09:58:25 ptispo01ws01 
 rsyslogd: file '/var/log/cron.log': open error: Permission denied [v8.2001.0 try https://www.rsyslog.com/e/2433 ], falha
 relacionada a permissão do arquivo, permissão padrão: -rw-r--r-- 1 root root 0 fev 23 09:57 /var/log/cron.log, alterado
 o dono do arquivo para: sudo chown -v syslog.root /var/log/cron.log, aplicado Path de correção script: 01-openssh.sh
+STATUS=RESOLVIDO
 
 0013 - Falha do Virtual Host do Nextcloud referente ao arquivo: nextcloud.conf do Apache2, erro: AH0056: Syntax error on
 line 42, DAV not allowed in <VirtualHost> context, retirado as linhas do DAV Off do IfModule mod_dav.c e colocado a opção
 do DAV Off no bloco Directory /var/www/html/own. 
+STATUS=RESOLVIDO
 
 0012 - Falha na compilação do Perl no script do OCS Inventory: perl: warning: Falling back to the standard locale ("C")
 correção do Locale para pt_BR.UTF-8 nas variáveis: LANGUAGE = "pt_BR.UTF-8", LC_ALL = "pt_BR.UTF-8" e LANG = "pt_BR.UTF-8"
 aplicada Path de correção no script: 05-ntp.sh
+STATUS=RESOLVIDO
 
 0011 - Falha na compilação do Netdata erro: fatal error: mqtt_wss_client.h: No such file or directory (Makefile:3471 all)
 Error 2 - FAILED, correção do erro no arquivo: 00-parametros.sh mudança da URL: https://github.com/netdata/netdata aplicado
 Path de correção no script: git clone --recurse-submodules https://github.com/netdata/netdata --depth=100
+STATUS=RESOLVIDO
 
-0010 - Falha de analise da Porta UDP utilizando o comando nc, acréscimo da opção u (UDP) nos scripts que utilizam o UDP
+0010 - Falha de analise da Porta UDP utilizando o comando: nc, acréscimo da opção u (UDP) nos scripts que utilizam o UDP.
+STATUS=RESOLVIDO
 
 0009 - Falha de resolução do DNS para endereços Externos executando o comando: ping google.com recebendo a mensagem no 
 terminal: Temporary failure in name resolution ou utilizando o comando: nslookup google.com recendo a mensagem no terminal:
 server can't find google.com: SERVFAIL, falha relacionada a Data e Hora do sistema, muitas vezes devido a restauração de
 um Snapshot ou alteração da data/hora errada no sistema que não sincronizou com o NTP Server, utilizar o comando: data para
 resolver esse problema.
+STATUS=RESOLVIDO
 
 0008 - Falha de atualização do serviço ZoneMinder, executar os comandos: zmupdate.pl -f depois: apt -f install
+STATUS=RESOLVIDO
 
 0007 - Falha na inicialização do serviço do Netdata referente ao erro do SystemD quando utilizado o comando: systemctl status
 netdata - erro: PROCFILE: Cannot open file '/etc/netdata/apps_groups.conf' e PROCFILE: Cannot open file '/proc/54579/status,
@@ -79,30 +91,37 @@ essa falha está associada ao plugin do eBPF Plugin (Netdata's extended Berkeley
 Netdata: https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin, essa mensagem de erro não causa problemas na execução
 do aplicativo, criado o arquivo de configuração do eBPF, consultar o arquivo CHANGELOG referente as mudanças do script de 
 instalação e configuração do Netdata: 13-netdata.sh
+STATUS=RESOLVIDO
 
 0006 - Aplicação de todos os privilégios de acesso remoto ao usuário Root do Mysql, a partir da versão 8.0.x do MySQL o
 procedimento de aplicar as permissões GRANT no Banco de Dados MySQL mudou, sendo necessário criar o usuário root e depois
 aplicar as permissões de privilégios, correção feita no arquivo 00-parametros.sh.
+STATUS=RESOLVIDO
 
 0005 - Instalação do Ubuntu Server 20.04.x LTS no VirtualBOX, após vários testes na versão 20.04.3 LTS do Ubuntu Server x64
 a falha de lentidão no processo de atualização do sistema utilizando os comandos apt ou apt-get está associada ao Source 
 List do BR (Brasil), após a alteração de todas as URL no arquivo: /etc/apt/sources.list de: https://br. para https://us. 
 o processo de instalação/atualização ficou muito mais rápido, testes feito na hora da instalação do servidor também resolveu
 o problema de lentidão no processo de instalação do Kernel e aplicação do Patch de Segurança.
+STATUS=RESOLVIDO
 
 0004 - pti.intra.hosts - Linhas 24 (MX) e 29 (MAIL) Correção da falha do Bind9 referente a mensagens no Systemctl de: MX is 
 a CNAME (illegal), alterado as configurações do MX Mail no arquivo de Zona de Pesquisa direta: pti.intra.hosts, retirado: 
 10 mail.pti.intra. deixado só: 10 mail, mudado a linha: mail IN CNAME ptispo01ws01 para: mail IN A 172.16.1.20.
+STATUS=RESOLVIDO
 
 0003 - pti.intra.hosts - Linha 39 (linha em branco) Correção da falha do Bind9 referente a mensagens no Systemctl de: file 
 does not end with newline, adicionado uma linha no final do arquivo da Zona de Pesquisa direta: pti.intra.hosts (O Bind9 
 espera uma nova linha no final de seus arquivos de configuração. Adicione uma nova linha no final do arquivo após a entrada 
-que você adicionou manualmente.)
+que você adicionou manualmente).
+STATUS=RESOLVIDO
 
 0002 - 03-dns.sh - Linha 144 (comando chown) aplicado o Path de Correção da falha: rndc: connect failed: 127.0.0.1#953: 
 connection refused, referente as permissões de acesso ao arquivo /etc/bind/rndc.key, permissões: bind:bind alterado para:
 root:bind.
+STATUS=RESOLVIDO
 
 0001 - 04-dhcpdns.sh - Linha 122 (comando dnssec-keygen) conforme RFC 2136 o comando dnssec-keygen na versão do BIND 9.13
 foi descontinuado, sendo substituído pelo comando tsig-keygen, adaptando as configurações do Bind e do DHCP server para o
 novo comando de geração de chaves e configuração da atualização dinâmica entre os serviços.
+STATUS=RESOLVIDO

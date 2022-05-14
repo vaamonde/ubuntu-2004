@@ -12,6 +12,10 @@ Versão: 0.62
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+14/05/2022 - Robson Vaamonde - Migração do script: 35-openproject.sh da versão 18.04.x para 20.04.x, atualização do
+script: 00-parametros.sh com as opções de instalação do OpenProject, atualização do arquivo: openproject.list com o
+Source List do OpenProject para a versão 20.04 do Ubuntu.
+
 13/05/2022 - Robson Vaamonde - Criação do arquivo: mysql.conf da criação dos certificados assinado do MySQL Server,
 customização do script: 11-E-openssl-mysql.sh para resolver os problemas de criação e geração dos certificados SSL
 do MySQL Server, criação do arquivo: mysql.cnf do cliente do MySQL Server com suporte ao TLS/SSL, acréscimo das
