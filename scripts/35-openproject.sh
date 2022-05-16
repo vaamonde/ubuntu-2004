@@ -129,7 +129,7 @@ clear
 echo
 #
 echo -e "Instalação do Netdisco no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do OpenProject acessar a URL: http://$(hostname -d | cut -d ' ' -f1)/openproject/\n"
+echo -e "Após a instalação do OpenProject acessar a URL: https://$(hostname -d | cut -d ' ' -f1)/openproject/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

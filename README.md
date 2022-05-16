@@ -106,6 +106,11 @@ Documentação das aulas:<br>
 🔴 SHELL SCRIPT Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/Shell.sh<br>
 🔴 POWERSHELL Básico: https://github.com/vaamonde/ubuntu-2004/blob/main/scripts/settings/PowerShell.sh
 
+Canal do Willian Justen Cursos:<br>
+🔴 YouTUBE: https://www.youtube.com/c/WillianJustenCursos<br>
+🔴 Github: https://github.com/willianjusten<br>
+🔴 Playlist Git e Github: https://www.youtube.com/playlist?list=PLlAbYrWSYTiNqugqFFWWsgONJsmc3eMpg
+
 Canal do Prof. José de Assis:<br>
 🔴 YouTUBE: https://www.youtube.com/c/RoboticapraticaBr<br>
 🔴 Github: https://github.com/professorjosedeassis<br>

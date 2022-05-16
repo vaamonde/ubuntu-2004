@@ -34,19 +34,19 @@ por padrão no Ubuntu Server, executando o comando: modprobe blocklayoutdriver a
 configuração: override.conf e adicionado a opção de inicialização do módulo no start inicial do Ubuntu Server.
 STATUS=RESOLVIDO
 
-0016 - Falha de: tftp client does not accept options, mensagem e mostrada nos arquivos de Log do TFTP-HPA Server utilizando
+0016 - Falha de: tftp client does not accept options, mensagem é mostrada nos arquivos de Log do TFTP-HPA Server utilizando
 o comando: less -f /var/log/syslog | grep ntpd, analisando a falha, conforme vários artigos e comentários em fóruns de 
-GNU/Linux essa mensagem e normal, não sendo uma falha do TFTP-HPA Server, está associada ao suporte da BIOS UEFI que está 
+GNU/Linux essa mensagem é normal, não sendo uma falha do TFTP-HPA Server, está associada ao suporte da BIOS UEFI que está 
 habilitado o recurso do Secure Boot, recomendo deixar a BIOS UEFI em Legacy ou alterar o arquivo de configuração do TFTP-HPA, 
 verificando o recurso de configuração do arquivo tftp-hpa: -r blksize na linha TFTP_OPTIONS="".
 STATUS=RESOLVIDO
 
-0015 - Falha de Relógio do Kernel não Sincronizado (clock-unsynchronized) mensagem e mostrada nos arquivos de Log do NTP 
+0015 - Falha de Relógio do Kernel não Sincronizado (clock-unsynchronized) mensagem é mostrada nos arquivos de Log do NTP 
 Server utilizando o comando: journalctl -t ntpd ou comando: less -f /var/log/syslog | grep ntpd, você recebe a mensagem de: 
 kernel reports TIME_ERROR: 0x2041: Clock Unsynchronized ou kernel reports TIME_ERROR: 0x41: Clock Unsynchronized, analisando 
-a falha, conforme vários artigos e comentários nos fóruns de GNU/Linux essa mensagem e normal, não sendo uma falha do NTP 
+a falha, conforme vários artigos e comentários nos fóruns de GNU/Linux essa mensagem é normal, não sendo uma falha do NTP 
 Server, está associada inicialmente devido ao sincronismo da data hora com os servidores remotos não ser feita de forma 
-rápida, depois de alguns minutos/horas o sincronismo e feito e a mensagem não aparece mais, muitas vezes a mensagem aparece
+rápida, depois de alguns minutos/horas o sincronismo é feito e a mensagem não aparece mais, muitas vezes a mensagem aparece
 nos Logs na inicialização do sistema.
 STATUS=RESOLVIDO
 
@@ -54,7 +54,7 @@ STATUS=RESOLVIDO
 no arquivo do Syslog com o comando: sudo grep -i error /var/log/syslog, recebendo a mensagem: Mar 23 09:58:25 ptispo01ws01 
 rsyslogd: file '/var/log/cron.log': open error: Permission denied [v8.2001.0 try https://www.rsyslog.com/e/2433 ], falha
 relacionada a permissão do arquivo, permissão padrão: -rw-r--r-- 1 root root 0 fev 23 09:57 /var/log/cron.log, alterado
-o dono do arquivo para: sudo chown -v syslog.root /var/log/cron.log, aplicado Path de correção script: 01-openssh.sh
+o dono do arquivo para: sudo chown -v syslog.root /var/log/cron.log, aplicado Path de correção no script: 01-openssh.sh
 STATUS=RESOLVIDO
 
 0013 - Falha do Virtual Host do Nextcloud referente ao arquivo: nextcloud.conf do Apache2, erro: AH0056: Syntax error on
