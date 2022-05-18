@@ -335,10 +335,6 @@ sleep 5
 #	SHOW VARIABLES LIKE '%ssl%';
 #	\s 
 #	exit
-#
-#vim /etc/mysql/mysql.conf.d/mysqld.cnf
-#	require_secure_transport = ON
-#systemctl restart mysql
 # https://www.howtoforge.com/tutorial/how-to-enable-ssl-and-remote-connections-for-mysql-on-centos-7/
 # =================== EM DESENVOLVIMENTO ===================
 #
@@ -346,6 +342,13 @@ echo -e "Editando o arquivo de configuração mysqld.cnf, pressione <Enter> para
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/mysql/mysql.conf.d/mysqld.cnf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração mysql.cnf, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/mysql/mysql.conf.d/mysql.cnf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

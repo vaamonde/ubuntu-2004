@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 13/10/2021
-# Data de atualização: 30/04/2022
-# Versão: 0.18
+# Data de atualização: 18/05/2022
+# Versão: 0.19
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -393,8 +393,9 @@ echo -e "Atualizando o arquivo de configuração do MySQL, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
+	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf.old &>> $LOG
-	cp -v conf/lamp/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf &>> $LOG
+	cp -v conf/lamp/{mysqld.cnf,mysql.cnf} /etc/mysql/mysql.conf.d/ &>> $LOG
 echo -e "Arquivo atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -402,6 +403,13 @@ echo -e "Editando o arquivo de configuração mysqld.cnf, pressione <Enter> para
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/mysql/mysql.conf.d/mysqld.cnf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de configuração mysql.cnf, pressione <Enter> para continuar."
+	# opção do comando read: -s (Do not echo keystrokes)
+	read -s
+	vim /etc/mysql/mysql.conf.d/mysql.cnf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

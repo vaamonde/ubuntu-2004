@@ -507,19 +507,19 @@ Link da vídeo aula: https://www.youtube.com/watch?v=N1ljYSn1wxQ
 
 ## **🔴 11-B-openssl-apache.sh Geração do Certificado Assinado TLS/SSL do Apache2 Server - PARTE-01 🐧**
 
-Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust e PEM Privacy Enhanced Mail) do Apache2 Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-B-openssl-apache2.sh, executar no nosso servidor e testar o acesso seguro HTTPS.
+Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust e PEM Privacy Enhanced Mail) do Apache2 Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-B-openssl-apache.sh, executar no nosso servidor e testar o acesso seguro HTTPS.
 
-[![Config Cert Apache2](http://img.youtube.com/vi//0.jpg)]( "Config Cert Apache2")
+[![Config Cert Apache2](http://img.youtube.com/vi/vAaGdaNkQjY/0.jpg)](https://www.youtube.com/watch?v=vAaGdaNkQjY "Config Cert Apache2")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=vAaGdaNkQjY
 
 ## **🔴 11-C-openssl-vsftpd.sh Geração do Certificado Assinado TLS/SSL do VSFTPd Server - PARTE-01 🐧**
 
 Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust e PEM Privacy Enhanced Mail) do VSFTPd Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-c-openssl-vsftpd.sh, executar no nosso servidor e testar o acesso seguro SFTP.
 
-[![Config Cert Vsftpd](http://img.youtube.com/vi//0.jpg)]( "Config Cert Vsftpd")
+[![Config Cert Vsftpd](http://img.youtube.com/vi/iNbh4bSeTi0/0.jpg)](https://www.youtube.com/watch?v=iNbh4bSeTi0 "Config Cert Vsftpd")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=iNbh4bSeTi0
 
 ## **🔴 11-D-openssl-tomcat.sh Geração do Certificado Assinado TLS/SSL do Tomcat9 Server - PARTE-01 🐧**
 

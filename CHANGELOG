@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 13/05/2022
-Versão: 0.62
+Data de atualização: 18/05/2022
+Versão: 0.63
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+18/05/2022 - Robson Vaamonde - Melhoria na documentação do script: 00-parametros.sh em relação aos arquivos de Conf's
+do OpenSSL e dependência do Bind9 na variável: SSLDEPCA, melhoria nos arquivos: mysqld.cnf e mysql.cnf em relação ao
+suporte ao TLS/SSL, acréscimo da copia e edição do arquivo: mysql.cnf no script: 08-lamp.sh.
+
 14/05/2022 - Robson Vaamonde - Migração do script: 35-openproject.sh da versão 18.04.x para 20.04.x, atualização do
 script: 00-parametros.sh com as opções de instalação do OpenProject, atualização do arquivo: openproject.list com o
 Source List do OpenProject para a versão 20.04 do Ubuntu.
