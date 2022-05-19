@@ -7,11 +7,26 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 14/05/2022
-Versão: 0.20
+Data de atualização: 19/05/2022
+Versão: 0.21
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0020 - Falha de autenticação dos Cliente do MySQL Server e do MySQL Workbench quando e feito a configuração do suporte ao 
+TLS/SSL emitido e assinado pela nossa CA, mensagens de erro nos clientes.
+MySQL Client Localhost: ERROR 2026 (HY000): SSL connection error: SSL is required but the server doesn't support it;
+Falha relacionada ao arquivo de configuração do Client do MySQL: /etc/mysql/mysql.conf.d/mysql.cnf
+MySQL Client Remote: ERROR 2061 (HY000): Authentication plugin 'caching_sha2_password' reported error: Authentication 
+requires secure connection.
+Falha relacionada a falta dos Certificados Assinados do MySQL Server (arquivo PEM, CSR e KEY) de autenticação.
+MySQL Workbench Remote: Authentication plugin 'caching_sha2_password' reported error: Authentication requires secure 
+connections.
+Falha relacionada a falta dos Certificados Assinados do MySQL Server (arquivo PEM, CSR e KEY) de autenticação.
+Aplicativo do PhpMySQL não é afetado com essas mudanças, mais outros aplicativos sim, pois precisa mudar a forma de conexão
+com o Bando de Dados utilizando conexão segura, teste feito com o Aplicativo Agenda desenvolvido em Java e hospedado no
+Tomcat9 teve falha de autenticação no Banco de Dados após as configurações do Certificado e habilitado a segurança TLs/SSL.
+STATUS=PENDENTE
+
 0019 - Falha de criação de arquivos utilizando o Windows Explorer no Windows 10 se conectando remotamente no Servidor FTP
 utilizando o VSFTPd, analisando as soluções do Serverfault: https://serverfault.com/questions/943361/why-cant-i-access-my-
 ftp-server-with-windows-explorer, Experts: https://www.experts-exchange.com/questions/21922754/VSFTPD-not-allowing-

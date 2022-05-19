@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 13/05/2022
-# Versão: 0.12
+# Data de atualização: 19/05/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 # Testado e homologado para a versão do MySQL v8.0.x
@@ -41,8 +41,14 @@
 # Site Oficial do Projeto Oracle MySQL: https://www.mysql.com/
 # Site Oficial do Projeto MariaDB: https://mariadb.org/
 #
+# ============================== EM DESENVOLVIMENTO E ANÁLISE DE BUGS ==============================
+# VEJA O ARQUIVO: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS PARA MAIS INFORMAÇÕES
+# 0020 - Falha de autenticação dos Cliente do MySQL Server e do MySQL Workbench
+#
+# DO DO MATERIAL DE APOIO E ESTUDO PARA A RESOLUÇÃO DAS FALHAS DO MYSQL COM SUPORTE AO TLS/SSL OPENSSL
 # https://www.howtoforge.com/tutorial/how-to-enable-ssl-and-remote-connections-for-mysql-on-centos-7/
-#mysql -u root -p --ssl-mode=required
+#
+# mysql -u root -p --ssl-mode=required
 #	SHOW VARIABLES LIKE '%ssl%';
 #	\s 
 #	exit
