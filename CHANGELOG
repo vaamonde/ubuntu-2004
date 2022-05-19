@@ -7,11 +7,14 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 18/05/2022
-Versão: 0.63
+Data de atualização: 19/05/2022
+Versão: 0.64
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+19/05/2022 - Robson Vaamonde - Adicionando a dependência do Cliente de FTPS no script: 00-parametros.sh do software:
+lftp, acrescentado a opção de testar o certificado TLS/SSL do servidor VSFTPd no script: 11-C-openssl-vsftpd.sh.
+
 18/05/2022 - Robson Vaamonde - Melhoria na documentação do script: 00-parametros.sh em relação aos arquivos de Conf's
 do OpenSSL e dependência do Bind9 na variável: SSLDEPCA, melhoria nos arquivos: mysqld.cnf e mysql.cnf em relação ao
 suporte ao TLS/SSL, acréscimo da copia e edição do arquivo: mysql.cnf no script: 08-lamp.sh.
@@ -20,7 +23,7 @@ suporte ao TLS/SSL, acréscimo da copia e edição do arquivo: mysql.cnf no scri
 script: 00-parametros.sh com as opções de instalação do OpenProject, atualização do arquivo: openproject.list com o
 Source List do OpenProject para a versão 20.04 do Ubuntu.
 
-13/05/2022 - Robson Vaamonde - Criação do arquivo: mysql.conf da criação dos certificados assinado do MySQL Server,
+13/05/2022 - Robson Vaamonde - Criação do arquivo: mysql.conf com as opções dos certificados assinado do MySQL Server,
 customização do script: 11-E-openssl-mysql.sh para resolver os problemas de criação e geração dos certificados SSL
 do MySQL Server, criação do arquivo: mysql.cnf do cliente do MySQL Server com suporte ao TLS/SSL, acréscimo das
 linhas de TLS/SSL no arquivo de configuração: mysqld.conf.

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 14/05/2022
-# Versão: 0.65
+# Data de atualização: 19/05/2022
+# Versão: 0.66
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -449,7 +449,7 @@ PASSWORDFTP=$SENHADEFAULT
 FTPDEP="bind9 bind9utils apache2 openssl"
 #
 # Variável de instalação do serviço de rede VSFTPd Server
-FTPINSTALL="vsftpd"
+FTPINSTALL="vsftpd lftp"
 #
 # Variáveis das portas de conexão padrão do VSFTPd Server
 PORTFTPDATA="20"

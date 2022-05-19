@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 28/03/2022
-# Versão: 0.11
+# Data de atualização: 19/05/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 # Testado e homologado para a versão do VSFTPd v3.0.x
@@ -365,6 +365,19 @@ echo -e "Verificando a porta de conexão do VSFTPd Server, aguarde..."
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iTCP:990 -sTCP:LISTEN
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Testando o Certificado TLS/SSL do VSFTPd, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando echo: | (piper, faz a função de Enter no comando)
+	# opções do comando openssl: 
+	# s_client (command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS)
+	# -connect (The host and port to connect to)
+	# -servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello message)
+	# -showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
+	#
+	echo | openssl s_client -connect $IPV4SERVER:990 -servername ftp.$DOMINIOSERVER -showcerts &>> $LOG
+echo -e "Certificado do VSFTPd testado sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configuração do OpenSSL e TLS/SSL do VSFTPd feita com Sucesso!!!."
