@@ -41,6 +41,12 @@
 # Site Oficial do Projeto Oracle MySQL: https://www.mysql.com/
 # Site Oficial do Projeto MariaDB: https://mariadb.org/
 #
+# https://www.howtoforge.com/tutorial/how-to-enable-ssl-and-remote-connections-for-mysql-on-centos-7/
+#mysql -u root -p --ssl-mode=required
+#	SHOW VARIABLES LIKE '%ssl%';
+#	\s 
+#	exit
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
@@ -323,20 +329,12 @@ echo -e "Verificando o arquivo CRT (Certificate Request Trust) do MySQL, aguarde
 echo -e "Arquivo CRT do MySQL verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-# =================== EM DESENVOLVIMENTO ===================
-#mysql -u root -p
-#	SHOW VARIABLES LIKE '%ssl%';
-#	\s
-#	exit
-#mysql_ssl_rsa_setup --uid=mysql
-#systemctl restart mysql
-#
-#mysql -u root -p --ssl-mode=required
-#	SHOW VARIABLES LIKE '%ssl%';
-#	\s 
-#	exit
-# https://www.howtoforge.com/tutorial/how-to-enable-ssl-and-remote-connections-for-mysql-on-centos-7/
-# =================== EM DESENVOLVIMENTO ===================
+echo -e "Verificando as configurações do TLS/SSL do MySQL, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mysql: -u (user), -p (password) -e (execute), mysql (database) 
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "SHOW VARIABLES LIKE '%ssl_%';" mysql &>> $LOG
+echo -e "Verificação do TLS/SSL do MySQL feita com sucesso!!!, continuando com o script...\n"
+sleep 5
 #
 echo -e "Editando o arquivo de configuração mysqld.cnf, pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
@@ -370,6 +368,26 @@ echo -e "Verificando a porta de conexão do MySQL, aguarde..."
 	# in i), -s (alone directs lsof to display file size at all times)
 	lsof -nP -iTCP:'3306' -sTCP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as novas configurações do TLS/SSL do MySQL, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mysql: -u (user), -p (password) -e (execute), mysql (database) 
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "SHOW VARIABLES LIKE '%ssl_%';" mysql &>> $LOG
+echo -e "Verificação do TLS/SSL do MySQL feita com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Testando o Certificado TLS/SSL do MySQL, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando echo: | (piper, faz a função de Enter no comando)
+	# opções do comando openssl: 
+	# s_client (command implements a generic SSL/TLS client which connects to a remote host using SSL/TLS)
+	# -connect (The host and port to connect to)
+	# -servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello message)
+	# -showcerts (Display the whole server certificate chain: normally only the server certificate itself is displayed)
+	#
+	echo | openssl s_client -connect $IPV4SERVER:3306 -servername mysql.$DOMINIOSERVER -showcerts &>> $LOG
+echo -e "Certificado do Apache2 testado sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configuração do OpenSSL e TLS/SSL do MySQL feita com Sucesso!!!."
