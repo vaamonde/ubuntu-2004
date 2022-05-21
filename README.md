@@ -515,7 +515,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=vAaGdaNkQjY
 
 ## **🔴 11-C-openssl-vsftpd.sh Geração do Certificado Assinado TLS/SSL do VSFTPd Server - PARTE-01 🐧**
 
-Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust e PEM Privacy Enhanced Mail) do VSFTPd Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-c-openssl-vsftpd.sh, executar no nosso servidor e testar o acesso seguro SFTP.
+Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust e PEM Privacy Enhanced Mail) do VSFTPd Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-C-openssl-vsftpd.sh, executar no nosso servidor e testar o acesso seguro SFTP.
 
 [![Config Cert Vsftpd](http://img.youtube.com/vi/iNbh4bSeTi0/0.jpg)](https://www.youtube.com/watch?v=iNbh4bSeTi0 "Config Cert Vsftpd")
 
@@ -525,11 +525,16 @@ Link da vídeo aula: https://www.youtube.com/watch?v=iNbh4bSeTi0
 
 Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust, PEM Privacy Enhanced Mail e JKS Java KeyStore) do Tomcat9 Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-D-openssl-tomcat.sh, executar no nosso servidor e testar o acesso seguro HTTPS.
 
-[![Config Cert Tomcat](http://img.youtube.com/vi//0.jpg)]( "Config Cert Tomcat")
+[![Config Cert Tomcat](http://img.youtube.com/vi/sAs3wzypI0o/0.jpg)](https://www.youtube.com/watch?v=sAs3wzypI0o "Config Cert Tomcat")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=sAs3wzypI0o
 
 ## **🔴 11-E-openssl-mysql.sh Geração do Certificado Assinado TLS/SSL do MySQL Server - PARTE-01 🐧**
+
+OBSERVAÇÃO IMPORTANTE: VÍDEO CONGELADO DEVIDO A BUGS NAS APLICAÇÕES QUE NÃO ESTÃO ENTENDENDO DE FORMA CORRETA O SUPORTE AO TLS/SSL COM CERTIFICADO ASSINADO. MAIS INFORMAÇÕES VEJA OS ARQUIVOS:
+
+BUGS: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS
+CHANGELOG: https://github.com/vaamonde/ubuntu-2004/blob/main/CHANGELOG
 
 Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust, PEM Privacy Enhanced Mail) do MySQL Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-E-openssl-mysql.sh, executar no nosso servidor e testar o acesso seguro MySQL-S.
 
