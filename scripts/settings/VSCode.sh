@@ -121,8 +121,8 @@ Gerenciar
 			C Spell: Enabled Language Ids: 
 				Adicionar Item: shellscript
 			C Spell: Language: en,pt,pt-BR
-			C Spell: Max Duplicate Problems: 5000
-			C Spell: Max Number Of Problems: 100000
+			C Spell: Max Duplicate Problems: 500000
+			C Spell: Max Number Of Problems: 500000
 		Editor
 			Editor: Tab Size: 4
 			Editor: Detect Indentation: False (Off)
