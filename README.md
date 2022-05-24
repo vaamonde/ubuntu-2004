@@ -533,7 +533,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=sAs3wzypI0o
 
 OBSERVAÇÃO IMPORTANTE: VÍDEO CONGELADO DEVIDO A BUGS NAS APLICAÇÕES QUE NÃO ESTÃO ENTENDENDO DE FORMA CORRETA O SUPORTE AO TLS/SSL COM CERTIFICADO ASSINADO. MAIS INFORMAÇÕES VEJA OS ARQUIVOS:
 
-BUGS: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS
+BUGS: https://github.com/vaamonde/ubuntu-2004/blob/main/BUGS<br>
 CHANGELOG: https://github.com/vaamonde/ubuntu-2004/blob/main/CHANGELOG
 
 Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signing Request, CRT Certificate Request Trust, PEM Privacy Enhanced Mail) do MySQL Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 11-E-openssl-mysql.sh, executar no nosso servidor e testar o acesso seguro MySQL-S.
