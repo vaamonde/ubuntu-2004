@@ -33,11 +33,11 @@
 #	sudo netstat -pl | grep 5900
 #	sudo nc -vz 127.0.0.1 5900
 #
-# Instalação do Telnet Server no Ubuntu Server 18.04.x
+# Instalação do Telnet Server no Ubuntu Server 20.04.x
 #	sudo apt update
 #	sudo apt install telnetd
 #
-# Instalação do OpenSSH Sever no Ubuntu Server 18.04.x
+# Instalação do OpenSSH Sever no Ubuntu Server 20.04.x
 #	sudo apt update
 # 	sudo apt install openssh-server
 #

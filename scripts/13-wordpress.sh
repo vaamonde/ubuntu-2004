@@ -88,7 +88,6 @@ echo -n "Verificando as dependências do Wordpress, aguarde... "
 			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 11-F-openssl-wordpress.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5

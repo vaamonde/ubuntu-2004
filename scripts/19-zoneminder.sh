@@ -30,6 +30,8 @@
 # Privacy: Accept: Apply
 #
 # Site Oficial do Projeto ZoneMinder: https://zoneminder.com/
+# Site Oficial do Projeto Shinobi: https://shinobi.video/
+# Site Oficial do Projeto MotionEye: https://github.com/motioneye-project/motioneye
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

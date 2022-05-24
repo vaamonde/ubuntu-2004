@@ -32,6 +32,10 @@
 # portanto, deve funcionar com qualquer configuração de sistema existente, ao invés de 
 # precisar de seu próprio servidor de e-mail, servidor web e assim por diante.
 #
+# O Cloudmin foi projetado para uso por empresas de hospedagem VPS que vendem sistemas 
+# virtuais para seus clientes, mas também é adequado para quem deseja entrar na virtualização 
+# para gerenciamento de aplicativos, testes, controle de um cluster de hosts 
+#
 # Site oficial do Projeto Webmin: http://www.webmin.com/
 # Site oficial do Projeto Usermin: https://www.webmin.com/usermin.html
 # Site oficial do Projeto Virtualmin: https://www.webmin.com/virtualmin.html
