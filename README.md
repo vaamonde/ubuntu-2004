@@ -541,3 +541,51 @@ Primeiro Vídeo de Configuração do Certificado Assinado (CSR Certificate Signi
 [![Config Cert MySQL](http://img.youtube.com/vi//0.jpg)]( "Config Cert MySQL")
 
 Link da vídeo aula:
+
+## **🔴 12-webdav.sh Customizando o Script e Arquivos de Configuração do WebDav Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Webdav Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 12-webdav.sh antes de executar no nosso servidor.
+
+[![Config Webdav Server](http://img.youtube.com/vi//0.jpg)]( "Config Webdav Server")
+
+Link da vídeo aula: 
+
+## **🔴 12-webdav.sh Instalação e Configuração do WebDav Server no Apache2 Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Webdav Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Webdav Server.
+
+[![Install Webdav Server](http://img.youtube.com/vi//0.jpg)]( "Install Webdav Server")
+
+Link da vídeo aula: 
+
+## **🔴 12-webdav.sh Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Webdav Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o Webdav Client nos Clientes Linux e Windows, fazer o mapeamento das pastas compartilhada do Webdav Server e montar nos clientes Windows e Linux, criar e editar arquivos e diretórios nos compartilhamentos do Webdav Server. 
+
+[![Access Webdav Server](http://img.youtube.com/vi//0.jpg)]("Access Webdav Server")
+
+Link da vídeo aula: 
+
+## **🔴 13-wordpress.sh Customizando o Script e Arquivos de Configuração CMS Wordpress - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do CMS Wordpress do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 13-wordpress.sh antes de executar no nosso servidor.
+
+[![Config Wordpress Server](http://img.youtube.com/vi//0.jpg)]( "Config Wordpress Server")
+
+Link da vídeo aula: 
+
+## **🔴 13-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do CMS Wordpress do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do CMS Wordpress.
+
+[![Install Wordpress Server](http://img.youtube.com/vi//0.jpg)]( "Install Wordpress Server")
+
+Link da vídeo aula: 
+
+## **🔴 13-wordpress.sh Testes de Acesso e Instalação e Configuração dos Plugins do Wordpress - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do CMS Wordpress do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o CMS Wordpress, criando o nosso usuário de administraç"ao, fazendo as configurações básicas para criar artigos e páginas no Wordpress e instalar e configurarr os principis Plugins e Templates mais utilizado no CMS Wordpress. 
+
+[![Access Wordpress Server](http://img.youtube.com/vi//0.jpg)]("Access Wordpress Server")
+
+Link da vídeo aula: 

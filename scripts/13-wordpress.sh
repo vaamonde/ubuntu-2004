@@ -32,6 +32,8 @@
 #	Confirme a senha: Confirmar o uso de uma senha fraca;
 #	O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
 #
+# Configurações Básico do Wordpress e Instalação de Plugins
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
@@ -88,6 +90,7 @@ echo -n "Verificando as dependências do Wordpress, aguarde... "
 			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-B-openssl-apache.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -203,7 +206,7 @@ sleep 5
 #
 echo -e "Aplicando as informações do Salt no arquivo wp-config.php, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando sed: 62 (line), r (filename)
+	# opção do comando sed: 64 (line), r (filename)
 	# opção do comando cp: -v (verbose)
 	sed '64r salt.key' $PATHWORDPRESS/wp-config.php > /tmp/wp-config.php
 	cp -v $PATHWORDPRESS/wp-config.php $PATHWORDPRESS/wp-config-semsalt.php &>> $LOG
