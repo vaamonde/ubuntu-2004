@@ -25,7 +25,7 @@ IPTABLES="/sbin/iptables"
 PORTSLIBTCP="$RULES/portslibtcp"            #Portas liberadas TCP
 PORTSLIBUDP="$RULES/portslibudp"            #Portas liberadas UDP
 PORTSBLO="$RULES/portsblo"                  #Portas bloqueadas
-MULTIPORTSLIBTCP="$RULES/multiportslibtcp"  #Multiplas Portas Liberadas TCP
+MULTIPORTSLIBTCP="$RULES/multiportslibtcp"  #Múltiplas Portas Liberadas TCP
 DNSSERVER="$RULES/dnsserver"                #Servidores DNS liberados
 #
 # Declarando as variáveis da Interfaces de Rede e Subrede do IPTables
