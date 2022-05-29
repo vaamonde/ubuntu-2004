@@ -32,7 +32,7 @@
 #	Confirme a senha: Confirmar o uso de uma senha fraca;
 #	O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
 #
-# Configurações Básico do Wordpress e Instalação de Plugins
+# Configurações Básicas do Wordpress e Instalação de Plugins
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

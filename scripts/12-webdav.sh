@@ -27,6 +27,7 @@
 #	sudo apt update && sudo apt install davfs2
 #	sudo usermod -a -G davfs2 vaamonde
 #	sudo mkdir -v /mnt/davs (make directories)
+#	id (print real and effective user and group IDs)
 #	sudo mount -v -t davfs -o rw,noexec,nosuid,nodev,noauto,uid=1000,gid=1000 https://webdav.pti.intra /mnt/davs/ (mount a filesystem)
 #		Username: vaamonde
 #		Password: pti@2018
