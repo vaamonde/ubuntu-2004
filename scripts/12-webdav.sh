@@ -28,6 +28,8 @@
 #	sudo usermod -a -G davfs2 vaamonde
 #	sudo mkdir -v /mnt/davs (make directories)
 #	sudo mount -v -t davfs -o noexec https://webdav.pti.intra /mnt/davs/ (mount a filesystem)
+#		Username: vaamonde
+#		Password: pti@2018
 #	sudo mount | grep davfs (mount a filesystem)
 #	sudo umount /mnt/davs (umount a filesystem)
 # Gerenciador de Arquivos Neno

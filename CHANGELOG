@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 19/05/2022
-Versão: 0.64
+Data de atualização: 29/05/2022
+Versão: 0.65
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+29/05/2022 - Robson Vaamonde - Alteração da localização do diretório do banco de dados do Webdav no arquivos de script
+00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf mudando a linha do banco
+de dados de usuário e senha de acesso ao diretório Webdav.
+
 19/05/2022 - Robson Vaamonde - Adicionando a dependência do Cliente de FTPS no script: 00-parametros.sh do software:
 lftp, acrescentado a opção de testar o certificado TLS/SSL do servidor VSFTPd no script: 11-C-openssl-vsftpd.sh.
 

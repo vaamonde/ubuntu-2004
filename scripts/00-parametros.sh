@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 19/05/2022
-# Versão: 0.66
+# Data de atualização: 29/05/2022
+# Versão: 0.67
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -606,7 +606,7 @@ SSLDEPCA="openssl bind9 apache2"
 PATHWEBDAV="/var/www/webdav/"
 #
 # Variável de criação do diretório padrão do banco de dados do Webdav
-PATHWEBDAVDB="/var/run/apache2/webdav"
+PATHWEBDAVDB="/etc/apache2/webdav"
 #
 # Variável das dependências do laço de loop do Webdav
 WEBDAVDEP="apache2 apache2-utils openssl"
