@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 09/05/2022
-# Versão: 0.12
+# Data de atualização: 29/05/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 # Testado e homologado para a versão do Apache2 v2.4.x
@@ -350,6 +350,11 @@ echo -e "Habilitando o suporte ao TLS/SSL no Site HTTPS do Apache2, aguarde..."
 	apache2ctl configtest &>> $LOG
 echo -e "Site HTTPS do Apache2 habilitado com sucesso!!!, continuando com o script...\n"
 sleep 2
+#
+echo -e "Verificando as configurações do Apache2, aguarde..."
+	apachectl configtest &>> $LOG
+echo -e "Configurações do Apache2 verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)

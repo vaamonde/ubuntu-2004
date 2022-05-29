@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 13/10/2021
-# Data de atualização: 18/05/2022
-# Versão: 0.19
+# Data de atualização: 29/05/2022
+# Versão: 0.20
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -381,6 +381,11 @@ echo -e "Habilitando os principais módulos utilizados pelo Apache2, aguarde..."
 	a2enmod negotiation &>> $LOG
 	a2enmod setenvif &>> $LOG
 echo -e "Módulos habilitados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configurações do Apache2, aguarde..."
+	apachectl configtest &>> $LOG
+echo -e "Configurações do Apache2 verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."

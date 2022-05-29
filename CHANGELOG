@@ -13,7 +13,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 29/05/2022 - Robson Vaamonde - Alteração da localização do diretório do banco de dados do Webdav no arquivos de script
-00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf mudando a linha do banco
+00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf mudado a linha do banco
 de dados de usuário e senha de acesso ao diretório Webdav.
 
 19/05/2022 - Robson Vaamonde - Adicionando a dependência do Cliente de FTPS no script: 00-parametros.sh do software:

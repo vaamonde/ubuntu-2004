@@ -605,8 +605,11 @@ SSLDEPCA="openssl bind9 apache2"
 # Variável de criação do diretório padrão utilizado pelo serviço do Webdav
 PATHWEBDAV="/var/www/webdav/"
 #
+# Variável de criação do diretório padrão da diretiva do DAVLockDB
+PATHDAVLOCK="/var/www/davlockdb"
+#
 # Variável de criação do diretório padrão do banco de dados do Webdav
-PATHWEBDAVDB="/etc/apache2/webdav"
+PATHWEBDAVUSERS="/etc/apache2/webdav"
 #
 # Variável das dependências do laço de loop do Webdav
 WEBDAVDEP="apache2 apache2-utils openssl"

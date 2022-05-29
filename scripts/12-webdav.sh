@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 03/04/2022
-# Versão: 0.07
+# Data de atualização: 29/05/2022
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
@@ -27,7 +27,7 @@
 #	sudo apt update && sudo apt install davfs2
 #	sudo usermod -a -G davfs2 vaamonde
 #	sudo mkdir -v /mnt/davs (make directories)
-#	sudo mount -v -t davfs -o noexec https://webdav.pti.intra /mnt/davs/ (mount a filesystem)
+#	sudo mount -v -t davfs -o rw,noexec,nosuid,nodev,noauto,uid=1000,gid=1000 https://webdav.pti.intra /mnt/davs/ (mount a filesystem)
 #		Username: vaamonde
 #		Password: pti@2018
 #	sudo mount | grep davfs (mount a filesystem)
@@ -37,6 +37,8 @@
 #		davs://vaamonde@webdav.pti.intra/
 # Navegadores de Internet (Firefox, Chrome, Edge, etc...)
 #	URL: https://webdav.pti.intra/
+#		Username: vaamonde
+#		Password: pti@2018
 #
 # Windows Powershell:
 #	New-PSDrive -Name X -PSProvider FileSystem -Root \\webdav.pti.intra@SSL\webdav
@@ -197,29 +199,26 @@ echo -e "Habilitando os módulos do Webdav no Apache2, aguarde..."
 echo -e "Módulos habilitados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o diretório do Webdav no Apache2, aguarde..."
+echo -e "Criando os diretórios do Webdav e do DAVLockDB no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
 	mkdir -v $PATHWEBDAV &>> $LOG
-	chown -v www-data:www-data $PATHWEBDAV &>> $LOG
-echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
+	mkdir -v $PATHDAVLOCK &>> $LOG
+	chown -v www-data:www-data $PATHWEBDAV $PATHDAVLOCK &>> $LOG
+echo -e "Diretórios criados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o diretório do Banco de Dados Webdav no Apache2, aguarde..."
+echo -e "Criando o diretório do Banco de Dados de Usuários do Webdav no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	mkdir -v $PATHWEBDAVDB &>> $LOG
-	chown -v www-data:www-data $PATHWEBDAVDB &>> $LOG
+	mkdir -v $PATHWEBDAVUSERS &>> $LOG
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o arquivo de Banco de Dados de usuários do Webdav, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando chown: -v (verbose), www-data (user), www-data (group)
-	touch $PATHWEBDAVDB/users.password &>> $LOG
-	chown -v www-data:www-data $PATHWEBDAVDB/users.password &>> $LOG
+	touch $PATHWEBDAVUSERS/users.password &>> $LOG
 echo -e "Arquivo criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -242,13 +241,26 @@ echo -e "Habilitando o Virtual Host do Webdav no Apache2, aguarde..."
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Habilitando os módulos do Webdav no Apache2, aguarde..."
+	a2enmod dav &>> $LOG
+	a2enmod dav_fs &>> $LOG
+	a2enmod auth_digest &>> $LOG
+echo -e "Módulos habilitados habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Criando o usuário: $USERWEBDAV do Webdav, senha padrão: $PASSWORDWEBDAV, aguarde..."
 	htdigest $PATHWEBDAVDB/users.password $REALWEBDAV $USERWEBDAV
 echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando as configurações do Apache2, aguarde..."
+	apachectl configtest &>> $LOG
+echo -e "Configurações do Apache2 verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl restart apache2 &>> $LOG
 	systemctl reload apache2 &>> $LOG
 echo -e "Serviço reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
