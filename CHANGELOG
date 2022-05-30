@@ -20,7 +20,8 @@ suporte ao HTTPS utilizando o certificado assinado do Apache2, alteração do sc
 dos arquivos de configuração na nova localização do diretório raiz do Wordpress, atualização do arquivo de configuração:
 tomcat.conf adicionado o suporte ao HTTPS e troca do porta 8443 do suporte ao monitoramento do Netdata. Correção do BUG:
 0022- Falha de autenticação do usuário Root do MySQL utilizando o Webmin, acrescentado as linhas de alteração da senha do
-usuário root@localhost do MySQL nos scripts: 00-parametros.sh e no 08-lamp.sh.
+usuário root@localhost do MySQL nos scripts: 00-parametros.sh e no 08-lamp.sh, atualização do arquivo de configuração do:
+loganalyzer.conf para suportar o protocolo HTTPS e alteração do diretório raiz para: /var/www/log/.
 
 29/05/2022 - Robson Vaamonde - Alteração da localização do diretório do banco de dados do Webdav no arquivos de script
 00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf alterado a linha do banco
