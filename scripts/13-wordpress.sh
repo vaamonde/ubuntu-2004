@@ -11,7 +11,7 @@
 # Data de atualização: 30/05/2022
 # Versão: 0.17
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Wordpress v5.8.x
+# Testado e homologado para a versão do Wordpress v6.0.x
 #
 # WordPress: é um sistema livre e aberto de gestão de conteúdo para internet (do inglês: 
 # Content Management System - CMS), baseado em PHP com banco de dados MySQL, executado em 
@@ -211,7 +211,7 @@ echo -e "Aplicando as informações do Salt no arquivo wp-config.php, aguarde...
 	sed '64r salt.key' $PATHWORDPRESS/wp-config.php > /tmp/wp-config.php
 	cp -v $PATHWORDPRESS/wp-config.php $PATHWORDPRESS/wp-config-semsalt.php &>> $LOG
 	cp -v /tmp/wp-config.php $PATHWORDPRESS &>> $LOG
-echo -e "Arquivos copiados com sucesso!!!, continuando com o script...\n"
+echo -e "Informações de Salt aplicadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Alterando as permissões dos arquivos e diretórios do Wordpress, aguarde..."
@@ -251,14 +251,14 @@ sleep 5
 echo -e "Editando o arquivo de configuração wp-config.php, Pressione <Enter> continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /var/www/html/wp/wp-config.php
+	vim /var/www/wp/wp-config.php
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do .htaccess, Pressione <Enter> para continuar."
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /var/www/html/wp/.htaccess
+	vim /var/www/wp/.htaccess
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

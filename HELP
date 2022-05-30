@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 19/10/2021
-Data de atualização: 28/04/2022
-Versão: 0.15
+Data de atualização: 30/05/2022
+Versão: 0.16
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #======================= COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =======================
@@ -112,6 +112,8 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ Ctrl+C.
 	_ Para analisar o Log após a instalação utilize o comando: sudo less /var/log/01-openssh.sh, para 
 	_ sair do arquivo de Log e só pressionar: q (quit).
+	_ Todos os scripts, arquivos de configuração e serviços de rede gera Logs no servidor Ubuntu Server
+	_ os procedimentos para analisar e debugar os Logs estão no script: 00-parametros.sh
 
 #08_ Atualizando os scripts para o seu cenário.
 	_ É recomendado você fazer um "FORK" do projeto para manter o seu repositório atualizado com as suas

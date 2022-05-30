@@ -14,7 +14,10 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 30/05/2022 - Robson Vaamonde - Alteração da variável: GUACAMOLERDEP para GUACAMOLEDEP no script: 00-parametros.sh,
 acréscimo das linhas de verificação da configuração dos arquivos do Apache2 nos scripts: 13-wordpress.sh, 16-loganalyzer.sh,
-17-glpi.sh e 19-zoneminder.sh, alteração da variável do laço de loop no script: 2-guacamole.sh.
+17-glpi.sh e 19-zoneminder.sh, alteração da variável do laço de loop no script: 20-guacamole.sh, atualização dos 
+arquivos de configuração do: wordpress.conf e wp-config.php migrados para a versão 6.0 do Wordpress e configuração do
+suporte ao HTTPS utilizando o certificado assinado do Apache2, alteração do script: 13-wordpress.sh em relação a edição
+dos arquivos de configuração na nova localização do diretório raiz do Wordpress.
 
 29/05/2022 - Robson Vaamonde - Alteração da localização do diretório do banco de dados do Webdav no arquivos de script
 00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf alterado a linha do banco
