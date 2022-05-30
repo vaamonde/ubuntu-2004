@@ -15,7 +15,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 0022- Falha de autenticação do usuário Root do MySQL utilizando o Webmin, mensagem de error: The full MySQL error message 
 was : mysqladmin: connect to server at 'localhost' failed error: 'Access denied for user 'root'@'localhost' (using 
 password: NO)', falha aparentemente associada ao usuário Root em @Localhost quando utilizado o comando: mysqladmin. Criado
-o script SQL de alteração da seha do usuário do MySQL root no script: 08-lamp.sh e 00-parametros.sh
+o script SQL de alteração da senha do usuário do MySQL root no script: 08-lamp.sh e 00-parametros.sh
 STATUS=RESOLVIDO
 
 0021 - Falha de status de inicialização do ISC-DHCP Server utilizando o Webmin, status do serviços está como "DOWN" mesmo
