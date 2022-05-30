@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 29/05/2022
-# Versão: 0.67
+# Data de atualização: 30/05/2022
+# Versão: 0.68
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -375,8 +375,11 @@ AGAINMYSQL=$SENHAMYSQL
 # identified by (identificado por - senha do usuário)
 # opções do comando GRANT: grant (permissão), all (todos privilégios), on (em ou na | banco ou 
 # tabela), *.* (todos os bancos/tabelas) to (para), user@'%' (usuário @ localhost), 
+# opções do comando ALTER: alter (alterar, user (alteração de usuário), root@localhost (usuário @localhost),
+# identified by (identificado por - senha do usuário), with (com suporte)
 # opção do comando FLUSH: privileges (recarregar as permissões de privilégios)
 CREATEUSER="CREATE USER '$USERMYSQL'@'%' IDENTIFIED BY '$SENHAMYSQL';"
+ALTERUSER="ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$SENHAMYSQL';"
 GRANTALL="GRANT ALL ON *.* TO '$USERMYSQL'@'%';"
 FLUSH="FLUSH PRIVILEGES;"
 #

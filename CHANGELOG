@@ -17,7 +17,10 @@ acréscimo das linhas de verificação da configuração dos arquivos do Apache2
 17-glpi.sh e 19-zoneminder.sh, alteração da variável do laço de loop no script: 20-guacamole.sh, atualização dos 
 arquivos de configuração do: wordpress.conf e wp-config.php migrados para a versão 6.0 do Wordpress e configuração do
 suporte ao HTTPS utilizando o certificado assinado do Apache2, alteração do script: 13-wordpress.sh em relação a edição
-dos arquivos de configuração na nova localização do diretório raiz do Wordpress.
+dos arquivos de configuração na nova localização do diretório raiz do Wordpress, atualização do arquivo de configuração:
+tomcat.conf adicionado o suporte ao HTTPS e troca do porta 8443 do suporte ao monitoramento do Netdata. Correção do BUG:
+0022- Falha de autenticação do usuário Root do MySQL utilizando o Webmin, acrescentado as linhas de alteração da senha do
+usuário root@localhost do MySQL nos scripts: 00-parametros.sh e no 08-lamp.sh.
 
 29/05/2022 - Robson Vaamonde - Alteração da localização do diretório do banco de dados do Webdav no arquivos de script
 00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf alterado a linha do banco

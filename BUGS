@@ -7,11 +7,21 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 19/05/2022
-Versão: 0.21
+Data de atualização: 30/05/2022
+Versão: 0.22
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0022- Falha de autenticação do usuário Root do MySQL utilizando o Webmin, mensagem de error: The full MySQL error message 
+was : mysqladmin: connect to server at 'localhost' failed error: 'Access denied for user 'root'@'localhost' (using 
+password: NO)', falha aparentemente associada ao usuário Root em @Localhost quando utilizado o comando: mysqladmin.
+STATUS=RESOLVIDO
+
+0021 - Falha de status de inicialização do ISC-DHCP Server utilizando o Webmin, status do serviços está como "DOWN" mesmo
+executando o comando: systemctl status isc-dhcp-server estando com o status "ACTIVE - RUNNING" no Webmin ele consta que o
+serviço não está inicializado, verificando as possíveis causas do problema.
+STATUS=PENDENTE
+
 0020 - Falha de autenticação dos Cliente do MySQL Server e do MySQL Workbench quando e feito a configuração do suporte ao 
 TLS/SSL emitido e assinado pela nossa CA, mensagens de erro nos clientes.
 MySQL Client Localhost: ERROR 2026 (HY000): SSL connection error: SSL is required but the server doesn't support it;
