@@ -101,7 +101,7 @@ fi
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
 echo -n "Verificando as dependências do Guacamole, aguarde... "
-	for name in $GUACAMOLERDEP
+	for name in $GUACAMOLEDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
               echo -en "\n\nO software: $name precisa ser instalado. \nUse o comando 'apt install $name'\n";
@@ -111,6 +111,7 @@ echo -n "Verificando as dependências do Guacamole, aguarde... "
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 10-tomcat.sh para resolver as dependências."
             exit 1; 
             }

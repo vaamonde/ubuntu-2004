@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.12
+# Data de atualização: 30/05/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -266,6 +266,11 @@ echo -e "Habilitando o Virtual Host do GLPI no Apache2, aguarde..."
 	a2enconf glpi &>> $LOG
 	a2ensite glpi &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configurações do Apache2, aguarde..."
+	apachectl configtest &>> $LOG
+echo -e "Configurações do Apache2 verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."

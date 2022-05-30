@@ -7,21 +7,25 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 29/05/2022
-Versão: 0.65
+Data de atualização: 30/05/2022
+Versão: 0.66
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+30/05/2022 - Robson Vaamonde - Alteração da variável: GUACAMOLERDEP para GUACAMOLEDEP no script: 00-parametros.sh,
+acréscimo das linhas de verificação da configuração dos arquivos do Apache2 nos scripts: 13-wordpress.sh, 16-loganalyzer.sh,
+17-glpi.sh e 19-zoneminder.sh, alteração da variável do laço de loop no script: 2-guacamole.sh.
+
 29/05/2022 - Robson Vaamonde - Alteração da localização do diretório do banco de dados do Webdav no arquivos de script
-00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf mudado a linha do banco
-de dados de usuário e senha de acesso ao diretório Webdav.
+00-parametros.sh para: /etc/apache2/webdav/, alteração do arquivo de configuração: webdav.conf alterado a linha do banco
+de dados de usuários e senhas de acesso ao diretório Webdav e localização do DAVLockDB.
 
 19/05/2022 - Robson Vaamonde - Adicionando a dependência do Cliente de FTPS no script: 00-parametros.sh do software:
 lftp, acrescentado a opção de testar o certificado TLS/SSL do servidor VSFTPd no script: 11-C-openssl-vsftpd.sh.
 
 18/05/2022 - Robson Vaamonde - Melhoria na documentação do script: 00-parametros.sh em relação aos arquivos de Conf's
 do OpenSSL e dependência do Bind9 na variável: SSLDEPCA, melhoria nos arquivos: mysqld.cnf e mysql.cnf em relação ao
-suporte ao TLS/SSL, acréscimo da copia e edição do arquivo: mysql.cnf no script: 08-lamp.sh.
+suporte ao TLS/SSL, acréscimo da cópia e edição do arquivo: mysql.cnf no script: 08-lamp.sh.
 
 14/05/2022 - Robson Vaamonde - Migração do script: 35-openproject.sh da versão 18.04.x para 20.04.x, atualização do
 script: 00-parametros.sh com as opções de instalação do OpenProject, atualização do arquivo: openproject.list com o

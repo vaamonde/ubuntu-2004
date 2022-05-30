@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 30/04/2022
-# Versão: 0.11
+# Data de atualização: 30/05/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -318,6 +318,11 @@ echo -e "Habilitando o Virtual Host do LogAnalyzer no Apache2, aguarde..."
 	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
 	a2ensite loganalyzer &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configurações do Apache2, aguarde..."
+	apachectl configtest &>> $LOG
+echo -e "Configurações do Apache2 verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."

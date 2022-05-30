@@ -1011,7 +1011,7 @@ GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamol
 GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-auth-jdbc-1.4.0.tar.gz"
 #
 # Variável das dependências do laço de loop do Guacamole Server e Client
-GUACAMOLERDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
+GUACAMOLEDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
 #
 # Variável de instalação das dependências do Guacamole Server
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes

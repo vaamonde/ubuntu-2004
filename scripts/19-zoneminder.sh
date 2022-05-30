@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.09
+# Data de atualização: 30/05/2022
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -239,8 +239,17 @@ echo -e "Habilitando os recursos do Apache2 para o ZoneMinder, aguarde..."
 	a2enmod headers &>> $LOG
 	a2enmod expires &>> $LOG
 	a2enconf zoneminder &>> $LOG
+echo -e "Recursos habilitados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configurações do Apache2, aguarde..."
+	apachectl configtest &>> $LOG
+echo -e "Configurações do Apache2 verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Reinicializando o Serviço do Apache2, aguarde..."
 	systemctl restart apache2 &>> $LOG
-echo -e "Recurso habilitado com sucesso!!!, continuando com o script...\n"
+echo -e "Serviço do Apache2 reinicializado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Habilitando o Serviço do ZoneMinder, aguarde..."

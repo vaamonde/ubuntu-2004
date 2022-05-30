@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 18/10/2021
-# Data de atualização: 09/05/2022
-# Versão: 0.16
+# Data de atualização: 30/05/2022
+# Versão: 0.17
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v5.8.x
 #
@@ -281,6 +281,11 @@ echo -e "Habilitando o Virtual Host do Wordpress no Apache2, aguarde..."
 	a2enmod rewrite &>> $LOG
 	a2ensite wordpress &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as configurações do Apache2, aguarde..."
+	apachectl configtest &>> $LOG
+echo -e "Configurações do Apache2 verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Reinicializando o serviço do Apache2, aguarde..."
