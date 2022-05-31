@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 30/05/2022
+# Data de atualização: 31/05/2022
 # Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
@@ -105,6 +105,8 @@ echo -n "Verificando as dependências do GLPI, aguarde... "
             echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-B-openssl-apache.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -188,7 +190,7 @@ sleep 5
 echo -e "Instalando as dependências do GLPI, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (faz a função de quebra de pagina no comando apt)
-	apt -y install $GLPIINSTALL &>> $LOG
+	apt -y install $GLPIINSTALL9 &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -197,7 +199,7 @@ echo -e "Fazendo o download do GLPI do site Oficial, aguarde..."
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
 	rm -v glpi.tgz &>> $LOG
-	wget $GLPI -O glpi.tgz &>> $LOG
+	wget $GLPI9 -O glpi9.tgz &>> $LOG
 echo -e "Download do GLPI feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -207,31 +209,31 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 	# opção do comando mv: -v (verbose)
 	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
 	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)
-	tar -zxvf glpi.tgz &>> $LOG
-	mv -v glpi/ $PATHGLPI &>> $LOG
+	tar -zxvf glpi9.tgz &>> $LOG
+	mv -v glpi/ $PATHGLPI9 &>> $LOG
 	chown -Rv www-data:www-data $PATHGLPI &>> $LOG
-	chmod -Rv 755 $PATHGLPI &>> $LOG
-	chmod -Rv 777 $PATHGLPI/files/_log &>> $LOG
+	chmod -Rv 755 $PATHGLPI9 &>> $LOG
+	chmod -Rv 777 $PATHGLPI9/files/_log &>> $LOG
 echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o Banco de Dados do GLPI, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_GLPI" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_GLPI" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_GLPI" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_GLPI" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_GLPI" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_GLPI9" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_GLPI9" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_GLPI9" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_GLPI9" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_GLPI9" mysql &>> $LOG
 echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando os arquivos de configuração do GLPI, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/glpi/glpi.conf /etc/apache2/conf-available/ &>> $LOG
-	cp -v conf/glpi/glpi1.conf /etc/apache2/sites-available/glpi.conf &>> $LOG
-	cp -v conf/glpi/glpi-cron /etc/cron.d/ &>> $LOG
+	cp -v conf/glpi/glpi9/glpi.conf /etc/apache2/conf-available/ &>> $LOG
+	cp -v conf/glpi/glpi9/glpi1.conf /etc/apache2/sites-available/glpi.conf &>> $LOG
+	cp -v conf/glpi/glpi9/glpi-cron /etc/cron.d/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -289,7 +291,7 @@ echo -e "Verificando a porta de conexão do Apache2, aguarde..."
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:80 -sTCP:LISTEN
+	lsof -nP -iTCP:443 -sTCP:LISTEN
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -299,7 +301,7 @@ echo -e "Verificando o Virtual Host do GLPI no Apache2, aguarde..."
 echo -e "Virtual Host verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://glpi.$(hostname -d | cut -d' ' -f1)/"
 echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO GLPI HELP DESK, APÓS A"
 echo -e "CONFIGURAÇÃO PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT."
 echo -e "MAIS INFORMAÇÕES NA LINHA 27 DO SCRIPT: $0"
@@ -309,7 +311,7 @@ sleep 5
 echo -e "Removendo o script de instalação do GLPI Help Desk, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
-	mv -v $PATHGLPI/install/install.php $PATHGLPI/install/install.php.old &>> $LOG
+	mv -v $PATHGLPI9/install/install.php $PATHGLPI9/install/install.php.old &>> $LOG
 echo -e "Arquivo removido com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

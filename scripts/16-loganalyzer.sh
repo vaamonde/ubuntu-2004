@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 30/05/2022
+# Data de atualização: 31/05/2022
 # Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
@@ -126,6 +126,8 @@ echo -n "Verificando as dependências do LogAnalyzer, aguarde... "
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-B-openssl-apache.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5

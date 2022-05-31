@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 30/05/2022
-# Versão: 0.68
+# Data de atualização: 31/05/2022
+# Versão: 0.69
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -843,7 +843,8 @@ LOGDEP="mysql-server mysql-common apache2 php bind9"
 LOGINSTALL="rsyslog-mysql"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 17-glpi.sh                         #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 17-A-glpi-9.sh                       #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 17-B-glpi-10.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema GLPI Help Desk utilizados nesse script
@@ -860,10 +861,12 @@ LOGINSTALL="rsyslog-mysql"
 # Declarando as variáveis utilizadas nas configurações do sistema de Help Desk GLPI
 #
 # Variável de localização da instalação do diretório do GLPI Help Desk
-PATHGLPI="/var/www/glpi"
+PATHGLPI9="/var/www/glpi9"
+PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 03/02/2022 - Última versão da série 9.x)
-GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tgz"
+# Variável de download do GLPI (atualizada no dia:31/05/2022 - Última versão da série 9.5.x)
+GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.0/glpi-10.0.0.tgz"
 #
 # Declarando as variáveis para criação da Base de Dados do GLPI
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
@@ -880,20 +883,32 @@ GLPI="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tg
 # OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
-CREATE_DATABASE_GLPI="CREATE DATABASE glpi;"
-CREATE_USER_DATABASE_GLPI="CREATE USER 'glpi' IDENTIFIED BY 'glpi';"
-GRANT_DATABASE_GLPI="GRANT USAGE ON *.* TO 'glpi';"
-GRANT_ALL_DATABASE_GLPI="GRANT ALL PRIVILEGES ON glpi.* TO 'glpi';"
-FLUSH_GLPI="FLUSH PRIVILEGES;"
+CREATE_DATABASE_GLPI9="CREATE DATABASE glpi9;"
+CREATE_USER_DATABASE_GLPI9="CREATE USER 'glpi9' IDENTIFIED BY 'glpi9';"
+GRANT_DATABASE_GLPI9="GRANT USAGE ON *.* TO 'glpi9';"
+GRANT_ALL_DATABASE_GLPI9="GRANT ALL PRIVILEGES ON glpi9.* TO 'glpi9';"
+FLUSH_GLPI9="FLUSH PRIVILEGES;"
+#
+CREATE_DATABASE_GLPI10="CREATE DATABASE glpi10;"
+CREATE_USER_DATABASE_GLPI10="CREATE USER 'glpi10' IDENTIFIED BY 'glpi10';"
+GRANT_DATABASE_GLPI10="GRANT USAGE ON *.* TO 'glpi10';"
+GRANT_ALL_DATABASE_GLPI10="GRANT ALL PRIVILEGES ON glpi10.* TO 'glpi10';"
+FLUSH_GLPI10="FLUSH PRIVILEGES;"
 #
 # Variável das dependências do laço de loop do GLPI Help Desk
 GLPIDEP="mysql-server mysql-common apache2 php bind9"
 #
 # Variável de instalação das dependências do GLPI Help Desk
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
-GLPIINSTALL="php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
+GLPIINSTALL9="php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
 php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json php-xml php-cli \
-libapache2-mod-php xmlrpc-api-utils"
+libapache2-mod-php xmlrpc-api-utils xz-utils bzip2 unzip curl php-soap php-common php-bcmath \
+php-zip php-bz2"
+#
+GLPIINSTALL10="php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
+php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json php-xml php-cli \
+libapache2-mod-php xmlrpc-api-utils xz-utils bzip2 unzip curl php-soap php-common php-bcmath \
+php-zip php-bz2"
 #
 #=============================================================================================
 #                    VARIÁVEIS UTILIZADAS NO SCRIPT: 18-fusioninventory.sh                   #
