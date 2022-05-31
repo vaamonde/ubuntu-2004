@@ -211,7 +211,7 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)
 	tar -zxvf glpi9.tgz &>> $LOG
 	mv -v glpi/ $PATHGLPI9 &>> $LOG
-	chown -Rv www-data:www-data $PATHGLPI &>> $LOG
+	chown -Rv www-data:www-data $PATHGLPI9 &>> $LOG
 	chmod -Rv 755 $PATHGLPI9 &>> $LOG
 	chmod -Rv 777 $PATHGLPI9/files/_log &>> $LOG
 echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
