@@ -16,7 +16,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 para as versões: 9.5.x e 10.0.x, alterado o nome do script 17-glpi.sh para: 17-A-glpi9.sh utilizado na versão 9.5.x,
 criado a estrutura de diretórios: glpi9 e glpi10, alterado a localização do Path padrão do GLPI para as versões 9 e 10,
 alterado os arquivos de configuração do GLPI Help Desk para suportar HTTPS, criação das variáveis da versão 10 no 
-script: 00-parametros.sh.
+script: 00-parametros.sh, criação dos CNAMES no Bind9 DNS: glpi9, glpi10, helpdesk e suporte.
 
 30/05/2022 - Robson Vaamonde - Alteração da variável: GUACAMOLERDEP para GUACAMOLEDEP no script: 00-parametros.sh,
 acréscimo das linhas de verificação da configuração dos arquivos do Apache2 nos scripts: 13-wordpress.sh, 16-loganalyzer.sh,

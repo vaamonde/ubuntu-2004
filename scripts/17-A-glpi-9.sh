@@ -135,8 +135,8 @@ echo -e "Início do script $0 em: $(date +%d/%m/%Y-"("%H:%M")")\n" &>> $LOG
 clear
 echo
 #
-echo -e "Instalação e Configuração do GLPI Help Desk no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do GLPI acessar a URL: https://glpi.$(hostname -d | cut -d' ' -f1)\n"
+echo -e "Instalação e Configuração do GLPI Help Desk 9.5.x no GNU/Linux Ubuntu Server 20.04.x\n"
+echo -e "Após a instalação do GLPI acessar a URL: https://glpi9.$(hostname -d | cut -d' ' -f1)\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -198,7 +198,7 @@ echo -e "Fazendo o download do GLPI do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
-	rm -v glpi.tgz &>> $LOG
+	rm -v glpi9.tgz &>> $LOG
 	wget $GLPI9 -O glpi9.tgz &>> $LOG
 echo -e "Download do GLPI feito com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -208,11 +208,17 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
 	# opção do comando mv: -v (verbose)
 	# opção do comando chown: -R (recursive), -v (verbose), www-data.www-data (user and group)
-	# opção do comando chmod: -R (recursive), -v (verbose), 755 (User=RWX, Group=R-X, Other=R-X)
+	# opção do comando find: . (path), -type d (directory), , type f (file), -exec (execute command)
+	# opção do comando chmod: -v (verbose), 755 (Dono=RWX,Grupo=R-X,Outros=R-X)
+	# opção do comando chmod: -v (verbose), 644 (Dono=RW-,Grupo=R--,Outros=R--)
+	# opção do comando {} \;: executa comandos em lote e aplicar as permissões para cada arquivo/diretório em loop
+	# opção do comando chmod: -R (recursive), -v (verbose), 777 (User=RWX, Group=RWX, Other=RWX)
+	chown -Rfv www-data.www-data $PATHWORDPRESS &>> $LOG
 	tar -zxvf glpi9.tgz &>> $LOG
 	mv -v glpi/ $PATHGLPI9 &>> $LOG
 	chown -Rv www-data:www-data $PATHGLPI9 &>> $LOG
-	chmod -Rv 755 $PATHGLPI9 &>> $LOG
+	find $PATHGLPI9/. -type d -exec chmod -v 755 {} \; &>> $LOG
+	find $PATHGLPI9/. -type f -exec chmod -v 644 {} \; &>> $LOG
 	chmod -Rv 777 $PATHGLPI9/files/_log &>> $LOG
 echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
@@ -231,30 +237,30 @@ sleep 5
 echo -e "Atualizando os arquivos de configuração do GLPI, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-	cp -v conf/glpi/glpi9/glpi.conf /etc/apache2/conf-available/ &>> $LOG
-	cp -v conf/glpi/glpi9/glpi1.conf /etc/apache2/sites-available/glpi.conf &>> $LOG
-	cp -v conf/glpi/glpi9/glpi-cron /etc/cron.d/ &>> $LOG
+	cp -v conf/glpi/glpi9/glpi.conf /etc/apache2/conf-available/glpi9.conf &>> $LOG
+	cp -v conf/glpi/glpi9/glpi1.conf /etc/apache2/sites-available/glpi9.conf &>> $LOG
+	cp -v conf/glpi/glpi9/glpi-cron /etc/cron.d/glpi9-cron &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de configuração do glpi.conf, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /etc/apache2/conf-available/glpi.conf
+	vim /etc/apache2/conf-available/glpi9.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de Virtual Host glpi.conf, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /etc/apache2/sites-available/glpi.conf
+	vim /etc/apache2/sites-available/glpi9.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Editando o arquivo de agendamento glpi-cron, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
-	vim /etc/cron.d/glpi-cron
+	vim /etc/cron.d/glpi9-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -265,8 +271,8 @@ echo -e "Habilitando o Virtual Host do GLPI no Apache2, aguarde..."
 	# opção do comando a2ensite: (habilitar arquivo de virtual host de site do Apache2)
 	# opção do comando systemctl: restart (reinicializar o serviço)
 	phpenmod apcu &>> $LOG
-	a2enconf glpi &>> $LOG
-	a2ensite glpi &>> $LOG
+	a2enconf glpi9 &>> $LOG
+	a2ensite glpi9 &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -297,11 +303,11 @@ sleep 5
 #
 echo -e "Verificando o Virtual Host do GLPI no Apache2, aguarde..."
 	# opção do comando apachectl: -s (a synonym)
-	apache2ctl -S | grep glpi.$DOMINIOSERVER
+	apache2ctl -S | grep glpi9.$DOMINIOSERVER
 echo -e "Virtual Host verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://glpi9.$(hostname -d | cut -d' ' -f1)/"
 echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO GLPI HELP DESK, APÓS A"
 echo -e "CONFIGURAÇÃO PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT."
 echo -e "MAIS INFORMAÇÕES NA LINHA 27 DO SCRIPT: $0"
