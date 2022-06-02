@@ -171,7 +171,7 @@ sleep 5
 echo -e "Adicionando o PPA do ZoneMinder, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando echo |: (faz a função do Enter)
-	echo | sudo add-apt-repository $ZONEMINDER &>> $LOG
+	echo | add-apt-repository $ZONEMINDER &>> $LOG
 echo -e "PPA adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

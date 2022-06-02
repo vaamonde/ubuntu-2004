@@ -215,8 +215,8 @@ sleep 5
 #
 echo -e "Adicionando a chave PGP do Webmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
-	# opção do comando wget: -q (), -O- ()
-	wget -q -O- $WEBMINPGP | sudo apt-key add - &>> $LOG
+	# opção do comando wget: -q (quiet), -O- (output-document)
+	wget -q -O- $WEBMINPGP | apt-key add - &>> $LOG
 echo -e "Chave PGP do Webmin adicionada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
