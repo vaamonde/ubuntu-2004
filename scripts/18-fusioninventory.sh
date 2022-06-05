@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.10
+# Data de atualização: 05/06/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x e Agent 2.6.x
@@ -110,7 +110,9 @@ echo -n "Verificando as dependências do FusionInventory, aguarde... "
             echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 15-glpi.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-B-openssl-apache.sh para resolver as dependência."
+			echo -en "Recomendo utilizar o script: 17-A-glpi-9.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -119,12 +121,12 @@ echo -n "Verificando as dependências do FusionInventory, aguarde... "
 # opção do comando: echo: -e (interpretador de escapes de barra invertida)
 # opção do comando if: [ ] = testa uma expressão, -e = testa se é diretório existe
 echo -e "Verificando se o GLPI Help Desk está instalado, aguarde..."
-	if [ -e "$PATHGLPI" ]
+	if [ -e "$PATHGLPI9" ]
 		then
     		echo -e "O GLPI Help Desk está instalado, tudo OK, continuando com o script..."
 			sleep 5
 	else
-    		echo "O GLPI Help Desk não está instalado, instale o GLPI com o script: 15-glpi.sh"
+    		echo "O GLPI Help Desk não está instalado, instale o GLPI com o script: 17-A-glpi-9.sh"
 			echo "Depois da instalação e configuração do GLPI, execute novamente esse script."
 			exit 1
 			sleep 5
@@ -227,7 +229,7 @@ sleep 5
 echo -e "Movendo o diretório do FusionInventory Server para o diretório do GLPI Help Desk, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
-	mv -v fusioninventory/ $PATHGLPI/plugins/ &>> $LOG
+	mv -v fusioninventory/ $PATHGLPI9/plugins/ &>> $LOG
 echo -e "Diretório do FusionInventory Server movido com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -269,7 +271,7 @@ echo -e "Instalando o FusionInventory Agent e seus aplicativos extras, aguarde..
 echo -e "FusionInventory Agent instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando arquivo de configuração do FusionInventory Agent, aguarde..."
+echo -e "Atualizando o arquivo de configuração do FusionInventory Agent, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando mv: -v (verbose)
@@ -300,7 +302,7 @@ echo -e "Verificando o serviço do FusionInventory Agent, aguarde..."
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: http://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://glpi.$(hostname -d | cut -d' ' -f1)/"
 echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO FUSIONINVENTORY SERVER, APÓS A"
 echo -e "CONFIGURAÇÃO PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT."
 echo -e "MAIS INFORMAÇÕES NA LINHA 21 DO SCRIPT: $0"

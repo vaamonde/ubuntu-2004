@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 31/05/2022
-# Versão: 0.69
+# Data de atualização: 05/06/2022
+# Versão: 0.70
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -864,9 +864,9 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia:31/05/2022 - Última versão da série 9.5.x)
+# Variável de download do GLPI (atualizada no dia: 05/06/2022 - Última versão da série 9.5.7)
 GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.0/glpi-10.0.0.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.1/glpi-10.0.1.tgz"
 #
 # Declarando as variáveis para criação da Base de Dados do GLPI
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
@@ -925,10 +925,10 @@ php-zip php-bz2"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário FusionInventory
 #
-# Variável de download do FusionInventory Server e Agent (atualizada no dia: 30/11/2021)
+# Variável de download do FusionInventory Server e Agent (atualizada no dia: 05/06/2022)
 # OBSERVAÇÃO: O FusionInventory depende do GLPI para funcionar corretamente, é recomendado sempre 
 # manter o GLPI é o FusionInventory atualizados para as últimas versões compatíveis no site.
-FUSIONSERVER="https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B3.0/fusioninventory-9.5+3.0.tar.bz2"
+FUSIONSERVER="https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B4.1/fusioninventory-9.5+4.1.tar.bz2"
 FUSIONAGENT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_2.6-1_all.deb"
 FUSIONCOLLECT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-collect_2.6-1_all.deb"
 FUSIONNETWORK="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-network_2.6-1_all.deb"
