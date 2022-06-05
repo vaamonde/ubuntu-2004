@@ -7,11 +7,17 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 31/05/2022
-Versão: 0.67
+Data de atualização: 05/06/2022
+Versão: 0.68
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+05/06/2022 - Robson Vaamonde - Atualização do script: 14-webmin.sh retirado a opção de: sudo do comando de adicionar
+a chave GPG, atualizado o script: 00-parametros.sh com as versões novas do GLPI 9.x e 10.x, atualização do script
+18-fusioninventory.sh com o PATH da versão do GLPI 9.x, atualização do arquivos de configuração: agent.cfg indicando
+o caminho HTTPS do GLPI 9.x, adicionado e corrigido as dependências do FusionInventory Task WakeOnLan: libnet-write-perl
+libyaml-shell-perl.
+
 31/05/2022 - Robson Vaamonde - Alteração dos scripts e arquivos de configuração do GLPI Help Desk, criado a estrutura
 para as versões: 9.5.x e 10.0.x, alterado o nome do script 17-glpi.sh para: 17-A-glpi9.sh utilizado na versão 9.5.x,
 criado a estrutura de diretórios: glpi9 e glpi10, alterado a localização do Path padrão do GLPI para as versões 9 e 10,
