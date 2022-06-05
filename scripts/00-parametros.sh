@@ -974,8 +974,7 @@ PORTFUSION="62354"
 # 02. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
 #
 # Arquivos de monitoramento (log) do Serviço do ZoneMinder utilizados nesse script
-# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
-# 01. journalctl -t zoneminder = todas as mensagens referente ao serviço do ZoneMinder
+# 01. systemctl status zoneminder = status do serviço do Tomcat Server
 # 02. tail -f /var/log/syslog | grep -i zoneminder = filtrando as mensagens do serviço do ZoneMinder
 # 03. tail -f /var/log/zm/* = vários arquivos de Log's do serviço do ZoneMinder
 #

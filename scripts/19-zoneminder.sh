@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 30/05/2022
+# Data de atualização: 05/06/2022
 # Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
@@ -116,7 +116,7 @@ clear
 echo
 #
 echo -e "Instalação do ZoneMinder no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Após a instalação do ZoneMinder acessar a URL: https://zm.$(hostname -d | cut -d ' ' -f1)/\n"
+echo -e "Após a instalação do ZoneMinder acessar a URL: https://$(hostname -d | cut -d ' ' -f1)/zm/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet..."
 sleep 5
 echo
