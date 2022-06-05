@@ -954,7 +954,7 @@ NETWORKINSTALL="libnet-snmp-perl libcrypt-des-perl libnet-nbname-perl"
 DEPLOYINSTALL="libfile-copy-recursive-perl libparallel-forkmanager-perl"
 #
 # Variável de instalação das dependências do FusionInventory Task WakeOnLan
-WAKEINSTALL="libwrite-net-perl"
+WAKEINSTALL="libnet-write-perl libyaml-shell-perl"
 #
 # Variável de instalação das dependências do FusionInventory SNMPv3
 SNMPINSTALL="libdigest-hmac-perl"
