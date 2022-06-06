@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 14/05/2022
-Versão: 0.19
+Data de atualização: 06/06/2022
+Versão: 0.20
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+06/06/2022 - Robson Vaamonde - Estudos e criação do script: 00-rdiffweb.sh. O Rdiffweb é um software de gerenciamento
+de backup de código aberto que facilita a navegação e a restauração de arquivos por meio de navegação simplificada, 
+incluindo gerenciamento fácil do acesso do usuário.
+
 14/05/2022 - Robson Vaamonde - Migração dos script pendentes da versão 18.04.x para a versão 20.04.x: 35-openproject.sh
 
 08/05/2022 - Robson Vaamonde - Criação do Bloco de Validação para Bloquear o uso das Teclas: Ctrl+C e Ctrl+Z na hora
