@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 05/06/2022
-# Versão: 0.70
+# Data de atualização: 03/07/2022
+# Versão: 0.71
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -847,10 +847,15 @@ LOGINSTALL="rsyslog-mysql"
 #                       VARIÁVEIS UTILIZADAS NO SCRIPT: 17-B-glpi-10.sh                      #
 #=============================================================================================
 #
-# Arquivos de configuração (conf) do sistema GLPI Help Desk utilizados nesse script
-# 01. /etc/apache2/conf-available/glpi.conf = arquivo de configuração do GLPI
-# 02. /etc/apache2/sites-available/glpi.conf = arquivo de configuração do Virtual Host do GLPI
-# 03. /etc/cron.d/glpi-cron = arquivo de configuração do agendamento do CRON do GLPI
+# Arquivos de configuração (conf) do sistema GLPI Help Desk v9 utilizados nesse script
+# 01. /etc/apache2/conf-available/glpi9.conf = arquivo de configuração do GLPI
+# 02. /etc/apache2/sites-available/glpi9.conf = arquivo de configuração do Virtual Host do GLPI
+# 03. /etc/cron.d/glpi9-cron = arquivo de configuração do agendamento do CRON do GLPI
+#
+# Arquivos de configuração (conf) do sistema GLPI Help Desk v10 utilizados nesse script
+# 01. /etc/apache2/conf-available/glpi10.conf = arquivo de configuração do GLPI
+# 02. /etc/apache2/sites-available/glpi10.conf = arquivo de configuração do Virtual Host do GLPI
+# 03. /etc/cron.d/glpi10-cron = arquivo de configuração do agendamento do CRON do GLPI
 #
 # Arquivos de monitoramento (log) do Serviço do GLPI Help Desk utilizados nesse script
 # 01. tail -f /var/log/apache2/access-glpi.log = log de acesso ao GLPI Help Desk
@@ -864,9 +869,9 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 05/06/2022 - Última versão da série 9.5.7)
-GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.7/glpi-9.5.7.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.1/glpi-10.0.1.tgz"
+# Variável de download do GLPI (atualizada no dia: 03/07/2022 - Última versão da série 9.5.8)
+GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.8/glpi-9.5.8.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz"
 #
 # Declarando as variáveis para criação da Base de Dados do GLPI
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)

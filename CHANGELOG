@@ -7,11 +7,14 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 05/06/2022
-Versão: 0.68
+Data de atualização: 03/07/2022
+Versão: 0.69
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+03/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh com a nova versão do GLPI Help Desk v9.5.8 e 
+v10.0.2 e atualização da numeração das versões dos scripts de configuração do GLPI no Apache2.
+
 05/06/2022 - Robson Vaamonde - Atualização do script: 14-webmin.sh retirado a opção de: sudo do comando de adicionar
 a chave GPG, atualizado o script: 00-parametros.sh com as versões novas do GLPI 9.x e 10.x, atualização do script
 18-fusioninventory.sh com o PATH da versão do GLPI 9.x, atualização do arquivos de configuração: agent.cfg indicando
