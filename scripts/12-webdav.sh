@@ -8,7 +8,7 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 29/05/2022
+# Data de atualização: 07/07/2022
 # Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
@@ -240,13 +240,6 @@ sleep 5
 echo -e "Habilitando o Virtual Host do Webdav no Apache2, aguarde..."
 	a2ensite webdav &>> $LOG
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
-echo -e "Habilitando os módulos do Webdav no Apache2, aguarde..."
-	a2enmod dav &>> $LOG
-	a2enmod dav_fs &>> $LOG
-	a2enmod auth_digest &>> $LOG
-echo -e "Módulos habilitados habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o usuário: $USERWEBDAV do Webdav, senha padrão: $PASSWORDWEBDAV, aguarde..."
