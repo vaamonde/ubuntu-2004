@@ -598,7 +598,7 @@ SSLDEPCA="openssl bind9 apache2"
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço de Webdav utilizados nesse script
-# 01. /var/run/apache2/webdav/users.password = banco de dados de usuários e senhas do Webdav
+# 01. /etc/apache2/webdav/users.password = banco de dados de usuários e senhas do Webdav
 # 02. /etc/apache2/sites-available/webdav.conf = arquivo do virtual host do Webdav no Apache2
 #
 # Arquivos de monitoramento (log) do Site do Webdav utilizado nesse script

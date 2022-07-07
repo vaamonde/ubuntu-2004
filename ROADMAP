@@ -81,9 +81,9 @@ _
 #SCRIPT CONGELADO DEVIDO A FALHAS DE UTILIZAÇÃO DAS APLICAÇÕES ENTENDEREM O SUPORTE AO TLS/SSL DO MYSSQL
 #26E_ 11-E-openssl-mysql.sh Geração do Certificado Assinado TLS/SSL do MySQL Server - PARTE-01 ()
 _
-#27A_ 12-webdav.sh Customizando o Script e Arquivos de Configuração do WebDav - PARTE-01 (20/06/2022)
-#27B_ 12-webdav.sh Configuração do WebDav no Apache2 Server - PARTE-02 (22/06/2022)
-#27C_ 12-webdav.sh Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03 (24/06/2022)
+#27A_ 12-webdav.sh Customizando o Script e Arquivos de Configuração do WebDav - PARTE-01 (08/07/2022)
+#27B_ 12-webdav.sh Configuração do WebDav no Apache2 Server - PARTE-02 (12/07/2022)
+#27C_ 12-webdav.sh Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03 (14/07/2022)
 _
 #26A_ 11-wordpress.sh Customizando o Script e Arquivos de Configuração do CMS Wordpress - PARTE-01 (27/06/2022)
 #26B_ 11-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02 (30/06/2022)
