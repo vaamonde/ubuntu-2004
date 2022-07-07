@@ -9,7 +9,7 @@
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
 # Data de atualização: 07/07/2022
-# Versão: 0.08
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
