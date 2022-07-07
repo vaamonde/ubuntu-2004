@@ -242,13 +242,6 @@ echo -e "Habilitando o Virtual Host do Webdav no Apache2, aguarde..."
 echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando os módulos do Webdav no Apache2, aguarde..."
-	a2enmod dav &>> $LOG
-	a2enmod dav_fs &>> $LOG
-	a2enmod auth_digest &>> $LOG
-echo -e "Módulos habilitados habilitado com sucesso!!!, continuando com o script...\n"
-sleep 5
-#
 echo -e "Criando o usuário: $USERWEBDAV do Webdav, senha padrão: $PASSWORDWEBDAV, aguarde..."
 	htdigest $PATHWEBDAVDB/users.password $REALWEBDAV $USERWEBDAV
 echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
