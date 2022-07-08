@@ -554,17 +554,17 @@ Link da vídeo aula: https://www.youtube.com/watch?v=U8zm8xVygSE
 
 Segundo Vídeo de Configuração do Webdav Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Webdav Server.
 
-[![Install Webdav Server](http://img.youtube.com/vi//0.jpg)]( "Install Webdav Server")
+[![Install Webdav Server](http://img.youtube.com/vi/XNRJVSENC4w/0.jpg)](https://www.youtube.com/watch?v=XNRJVSENC4w "Install Webdav Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=XNRJVSENC4w
 
 ## **🔴 12-webdav.sh Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03 🐧**
 
 Terceiro Vídeo de Configuração do Webdav Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o Webdav Client nos Clientes Linux e Windows, fazer o mapeamento das pastas compartilhada do Webdav Server e montar nos clientes Windows e Linux, criar e editar arquivos e diretórios nos compartilhamentos do Webdav Server. 
 
-[![Access Webdav Server](http://img.youtube.com/vi//0.jpg)]("Access Webdav Server")
+[![Access Webdav Server](http://img.youtube.com/vi/J1GINLQUGNQ/0.jpg)](https://www.youtube.com/watch?v=J1GINLQUGNQ "Access Webdav Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=J1GINLQUGNQ
 
 ## **🔴 13-wordpress.sh Customizando o Script e Arquivos de Configuração CMS Wordpress - PARTE-01 🐧**
 
