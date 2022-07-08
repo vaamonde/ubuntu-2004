@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 03/07/2022
-Versão: 0.69
+Data de atualização: 08/07/2022
+Versão: 0.70
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+08/07/2022 - Robson Vaamonde - Atualização do script: 12-webdav.sh em relação a variável do caminho do arquivo de 
+usuários do Webdav de: PATHWEBDAVDB para PATHWEBDAVUSERS, remoção do bloco duplicado de módulos de Apache2 do Webdav
+
+
 03/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh com a nova versão do GLPI Help Desk v9.5.8 e 
 v10.0.2 e atualização da numeração das versões dos scripts de configuração do GLPI no Apache2.
 
