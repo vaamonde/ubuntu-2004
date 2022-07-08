@@ -25,6 +25,7 @@
 # Configuração do Webdav Client no GNU/Linux ou Microsoft Windows
 # Linux Mint Terminal: Ctrl+Alt+T
 #	sudo apt update && sudo apt install davfs2
+#		Usuários sem privilégios podem montar recursos WebDAV? <SIM>
 #	sudo usermod -a -G davfs2 vaamonde
 #	sudo mkdir -v /mnt/davs (make directories)
 #	id (print real and effective user and group IDs)
