@@ -546,7 +546,7 @@ Link da vídeo aula:
 
 Primeiro Vídeo de Configuração do Webdav Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 12-webdav.sh antes de executar no nosso servidor.
 
-[![Config Webdav Server](http://img.youtube.com/vi/U8zm8xVygS/0.jpg)](https://www.youtube.com/watch?v=U8zm8xVygSE "Config Webdav Server")
+[![Config Webdav Server](https://img.youtube.com/vi/U8zm8xVygSE/0.jpg)](https://www.youtube.com/watch?v=U8zm8xVygSE "Config Webdav Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=U8zm8xVygSE
 
