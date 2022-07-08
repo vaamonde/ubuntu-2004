@@ -29,22 +29,22 @@
 #	sudo usermod -a -G davfs2 vaamonde
 #	sudo mkdir -v /mnt/davs (make directories)
 #	id (print real and effective user and group IDs)
+#	sudo cat /etc/groups
 #	sudo mount -v -t davfs -o rw,noexec,nosuid,nodev,noauto,uid=1000,gid=1000 https://webdav.pti.intra /mnt/davs/ (mount a filesystem)
 #		Username: vaamonde
 #		Password: pti@2018
 #	sudo mount | grep davfs (mount a filesystem)
 #	sudo umount /mnt/davs (umount a filesystem)
+#
 # Gerenciador de Arquivos Neno
 #	Ctrl+L
 #		davs://vaamonde@webdav.pti.intra/
+#
 # Navegadores de Internet (Firefox, Chrome, Edge, etc...)
 #	URL: https://webdav.pti.intra/
 #		Username: vaamonde
 #		Password: pti@2018
 #
-# Windows Powershell:
-#	New-PSDrive -Name X -PSProvider FileSystem -Root \\webdav.pti.intra@SSL\webdav
-#	net use W: https://webdav.pti.intra password /USER:vaamonde
 # Windows Explorer:
 #	Este Computador
 #		Computador
@@ -56,6 +56,12 @@
 #					Senha do usuário: pti@2018 <OK>
 #				Digite o nome para este local de rede: webdav.pti.intra <Avançar>;
 #				Abrir esse local de rede quando eu clicar em Concluir <Concluir>.
+#
+# Windows Powershell:
+#	OBSERVAÇÃO IMPORTANTE: conforme comentado no vídeo está sendo analisado as falhas
+#	de autenticação e acesso ao Webdav via Powershell e Net use no Windows 10 e 11
+#	New-PSDrive -Name X -PSProvider FileSystem -Root \\webdav.pti.intra@SSL\webdav
+#	net use W: https://webdav.pti.intra password /USER:vaamonde
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
