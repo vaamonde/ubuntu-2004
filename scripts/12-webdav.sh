@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 07/07/2022
-# Versão: 0.09
+# Data de atualização: 08/07/2022
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
@@ -243,7 +243,7 @@ echo -e "Virtual Host habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o usuário: $USERWEBDAV do Webdav, senha padrão: $PASSWORDWEBDAV, aguarde..."
-	htdigest $PATHWEBDAVDB/users.password $REALWEBDAV $USERWEBDAV
+	htdigest $PATHWEBDAVUSERS/users.password $REALWEBDAV $USERWEBDAV
 echo -e "Usuário criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
