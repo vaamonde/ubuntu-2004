@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 14/05/2022
-Versão: 0.07
+Data de atualização: 09/07/2022
+Versão: 0.08
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 Network: 172.16.1.0/24
@@ -42,7 +42,7 @@ SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 16-loganalyzer.sh ----------> TCP 443 (apache2 HTTPS), TCP 3306 (mysqld), TCP 514 (rsyslogd) e UDP 514 (rsyslogd)
 17-glpi.sh -----------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
 18-fusioninventory.sh ------> TCP 443 (apache2 HTTPS), TCP 3306 (mysqld) e TCP 62354 (fusioninv GLPI)
-19-zoneminder.sh -----------> TCP 443 (apache2 HTTP) e TCP 3306 (mysqld)
+19-zoneminder.sh -----------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
 20-guacamole.sh ------------> TCP 8443 (java HTTPS) e TCP 4822 (guacd)
 21-grafana.sh --------------> TCP 3000 (grafana-s HTTP)
 22-zabbix.sh ---------------> TCP 443 (apache2 HTTP), TCP 3306 (mysqld), TCP 10050 (zabbix_ag) e 10051 (zabbix_se)
@@ -58,3 +58,4 @@ SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 32-nextcloud.sh ------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
 33-asterisk.sh -------------> UDP 5060 (SIP)
 34-netdisco.sh -------------> TCP 5000 (HTTP) e TCP 5432 (postgres)
+35-openproject.sh ----------> TCP 443 (apache2 HTTPS), TCP 5432 (postgres)

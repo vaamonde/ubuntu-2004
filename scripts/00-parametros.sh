@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 03/07/2022
-# Versão: 0.71
+# Data de atualização: 09/07/2022
+# Versão: 0.72
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -615,7 +615,7 @@ PATHDAVLOCK="/var/www/davlockdb"
 PATHWEBDAVUSERS="/etc/apache2/webdav"
 #
 # Variável das dependências do laço de loop do Webdav
-WEBDAVDEP="apache2 apache2-utils openssl"
+WEBDAVDEP="bind9 apache2 apache2-utils openssl"
 #
 # Variável do Nome REAL do Grupo de acesso ao Webdav
 REALWEBDAV="webdav"

@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 19/10/2021
-Data de atualização: 30/05/2022
-Versão: 0.16
+Data de atualização: 09/07/2022
+Versão: 0.17
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #======================= COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =======================
@@ -167,11 +167,17 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ correções e melhorias dos scripts e arquivos de configuração.
 	_ Veja também os COMMITS feito nos scripts ou arquivos de configuração diretamente no Github no Link
 	_ https://github.com/vaamonde/ubuntu-2004/commits/main 
+	_ OBSERVAÇÃO IMPORTANTE: antes de enviar as correções na Guia ISSUES recomendo sempre Debugar os
+	_ arquivos de LOG primeiro, pesquisar a falha, documentar e enviar detalhes para ajudar no processo
+	_ de correção.
 
 #01_ Ajudando na "MELHORIA" dos scripts.
 	_ Para ajudar na MELHORIA dos scripts é recomendado você criar um novo cenário, adaptar os scripts
 	_ para esse cenário e testar se tudo vai funcionar perfeitamente, depois documentar suas melhorias
 	_ e mandar as suas sugestões na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ OBSERVAÇÃO IMPORTANTE: antes de enviar as sugestões na Guia ISSUES recomendo sempre Debugar os
+	_ arquivos de LOG primeiro, pesquisar a falha, documentar e enviar detalhes para ajudar no processo
+	_ de correção.
 
 #02_ Ajudando na "MELHORIA" dos arquivos de configuração.
 	_ Para ajudar na MELHORIA dos arquivos de configuração, esse procedimento é o mais importante, pois
@@ -179,12 +185,18 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ da integração ou da finalidade do serviço que está sendo implementado, para isso é recomendado
 	_ criar um novo cenário, testar as melhorias nos arquivos de configuração e mandar as sugestões na
 	_ Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ OBSERVAÇÃO IMPORTANTE: antes de enviar as melhorias na Guia ISSUES recomendo sempre Debugar os
+	_ arquivos de LOG primeiro, pesquisar a falha, documentar e enviar detalhes para ajudar no processo
+	_ de correção.
 
 #03_ Ajudando na "SEGURANÇA" dos scripts ou arquivos de configuração
 	_ Para ajudar na SEGURANÇA dos scripts e arquivos de configuração é recomendado criar o mesmo cenário
 	_ ou um novo cenário e testar as falhas de segurança, principalmente dos serviços de rede, documentar
 	_ as falhas de segurança, sua correção e os procedimentos que precisa ser feito para resolver a falha
 	_ na Guia ISSUES: https://github.com/vaamonde/ubuntu-2004/issues.
+	_ OBSERVAÇÃO IMPORTANTE: antes de enviar as correções na Guia ISSUES recomendo sempre Debugar os
+	_ arquivos de LOG primeiro, pesquisar a falha, documentar e enviar detalhes para ajudar no processo
+	_ de correção.
 
 #04_ Ajudando no "DESEMPENHO" dos arquivos de configuração
 	_ Para ajudar no DESEMPENHO dos arquivos de configuração é recomendado criar o mesmo cenário ou um 
