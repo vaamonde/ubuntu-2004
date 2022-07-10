@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/10/2021
-Data de atualização: 08/05/2022
-Versão: 0.22
+Data de atualização: 10/07/2022
+Versão: 0.23
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 Comando para verificar todas as versões dos scripts: grep 'Versão:' *.sh
 Comando para verificar todas as datas de atualização dos scripts: grep 'Data de atualização:' *.sh
@@ -18,42 +18,44 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
     paste /tmp/01.txt /tmp/02.txt /tmp/03.txt >> ../RELEASE
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh        Versão: 0.62	 Data de atualização: 05/05/2022
-01-openssh.sh           Versão: 0.27	 Data de atualização: 24/03/2022
-02-dhcp.sh              Versão: 0.14	 Data de atualização: 23/03/2022
-03-dns.sh               Versão: 0.17	 Data de atualização: 31/03/2022
-04-dhcpdns.sh           Versão: 0.14	 Data de atualização: 22/03/2022
-05-ntp.sh               Versão: 0.20	 Data de atualização: 31/03/2022
-06-tftphpa.sh           Versão: 0.11	 Data de atualização: 31/03/2022
-07-nfs.sh               Versão: 0.09	 Data de atualização: 09/04/2022
-08-lamp.sh              Versão: 0.18	 Data de atualização: 30/04/2022
-09-vsftpd.sh            Versão: 0.11	 Data de atualização: 28/04/2022
-10-tomcat.sh            Versão: 0.12	 Data de atualização: 03/05/2022
-11-A-openssl-ca.sh      Versão: 0.14	 Data de atualização: 05/05/2022
-11-B-openssl-apache.sh  Versão: 0.11	 Data de atualização: 28/03/2022
-11-C-openssl-vsftpd.sh	Versão: 0.11	 Data de atualização: 28/03/2022
-11-D-openssl-mysql.sh   Versão: 0.10	 Data de atualização: 12/01/2022
-11-E-openssl-tomcat.sh	Versão: 0.10	 Data de atualização: 12/01/2022
-12-webdav.sh            Versão: 0.07	 Data de atualização: 03/04/2022
-13-wordpress.sh         Versão: 0.15	 Data de atualização: 30/04/2022
-14-webmin.sh            Versão: 0.06	 Data de atualização: 12/01/2022
-15-netdata.sh           Versão: 0.12	 Data de atualização: 20/02/2022
-16-loganalyzer.sh       Versão: 0.11	 Data de atualização: 30/04/2022
-17-glpi.sh              Versão: 0.12	 Data de atualização: 21/01/2022
-18-fusioninventory.sh   Versão: 0.10	 Data de atualização: 21/01/2022
-19-zoneminder.sh        Versão: 0.09	 Data de atualização: 12/01/2022
-20-guacamole.sh         Versão: 0.06	 Data de atualização: 12/01/2022
-21-grafana.sh           Versão: 0.05	 Data de atualização: 21/01/2022
-22-zabbix.sh            Versão: 0.04	 Data de atualização: 12/01/2022
-23-docker.sh            Versão: 0.04	 Data de atualização: 21/01/2022
-24-ansible.sh           Versão: 0.02	 Data de atualização: 12/01/2022
-25-ntopng.sh            Versão: 0.04	 Data de atualização: 21/01/2022
-26-openfire.sh          Versão: 0.03	 Data de atualização: 21/01/2022
-27-owncloud.sh          Versão: 0.04	 Data de atualização: 21/01/2022
-28-ocsinventory.sh      Versão: 0.02	 Data de atualização: 12/01/2022
-29-bacula.sh            Versão: 0.03	 Data de atualização: 12/01/2022
-30-graylog.sh           Versão: 0.03	 Data de atualização: 12/01/2022
-31-postgresql.sh        Versão: 0.03	 Data de atualização: 12/01/2022
-32-nextcloud.sh         Versão: 0.03	 Data de atualização: 21/01/2022
-33-asterisk.sh          Versão: 0.04	 Data de atualização: 18/04/2022
-34-netdisco.sh          Versão: 0.02	 Data de atualização: 13/02/2022
+
+00-parametros.sh	       Versão: 0.72	 Data de atualização: 09/07/2022
+01-openssh.sh	           Versão: 0.27	 Data de atualização: 24/03/2022
+02-dhcp.sh	             Versão: 0.14	 Data de atualização: 23/03/2022
+03-dns.sh	               Versão: 0.17	 Data de atualização: 31/03/2022
+04-dhcpdns.sh	           Versão: 0.14	 Data de atualização: 22/03/2022
+05-ntp.sh	               Versão: 0.20	 Data de atualização: 31/03/2022
+06-tftphpa.sh	           Versão: 0.11	 Data de atualização: 31/03/2022
+07-nfs.sh	               Versão: 0.09	 Data de atualização: 09/04/2022
+08-lamp.sh	             Versão: 0.21	 Data de atualização: 30/05/2022
+09-vsftpd.sh	           Versão: 0.11	 Data de atualização: 28/04/2022
+10-tomcat.sh	           Versão: 0.12	 Data de atualização: 03/05/2022
+11-A-openssl-ca.sh	     Versão: 0.14	 Data de atualização: 05/05/2022
+11-B-openssl-apache.sh   Versão: 0.13	 Data de atualização: 29/05/2022
+11-C-openssl-vsftpd.sh	 Versão: 0.12	 Data de atualização: 19/05/2022
+11-D-openssl-tomcat.sh	 Versão: 0.13	 Data de atualização: 11/05/2022
+11-E-openssl-mysql.sh	   Versão: 0.13	 Data de atualização: 19/05/2022
+12-webdav.sh	           Versão: 0.10	 Data de atualização: 08/07/2022
+13-wordpress.sh	         Versão: 0.17	 Data de atualização: 30/05/2022
+14-webmin.sh	           Versão: 0.06	 Data de atualização: 12/01/2022
+15-netdata.sh	           Versão: 0.13	 Data de atualização: 30/05/2022
+16-loganalyzer.sh	       Versão: 0.12	 Data de atualização: 31/05/2022
+17-A-glpi-9.sh	         Versão: 0.13	 Data de atualização: 31/05/2022
+18-fusioninventory.sh	   Versão: 0.11	 Data de atualização: 05/06/2022
+19-zoneminder.sh	       Versão: 0.10	 Data de atualização: 05/06/2022
+20-guacamole.sh	         Versão: 0.06	 Data de atualização: 12/01/2022
+21-grafana.sh	           Versão: 0.05	 Data de atualização: 21/01/2022
+22-zabbix.sh	           Versão: 0.04	 Data de atualização: 12/01/2022
+23-docker.sh	           Versão: 0.04	 Data de atualização: 21/01/2022
+24-ansible.sh	           Versão: 0.02	 Data de atualização: 12/01/2022
+25-ntopng.sh	           Versão: 0.04	 Data de atualização: 21/01/2022
+26-openfire.sh	         Versão: 0.03	 Data de atualização: 21/01/2022
+27-owncloud.sh	         Versão: 0.04	 Data de atualização: 21/01/2022
+28-ocsinventory.sh	     Versão: 0.02	 Data de atualização: 12/01/2022
+29-bacula.sh	           Versão: 0.03	 Data de atualização: 12/01/2022
+30-graylog.sh	           Versão: 0.03	 Data de atualização: 12/01/2022
+31-postgresql.sh	       Versão: 0.03	 Data de atualização: 12/01/2022
+32-nextcloud.sh	         Versão: 0.03	 Data de atualização: 21/01/2022
+33-asterisk.sh	         Versão: 0.04	 Data de atualização: 18/04/2022
+34-netdisco.sh	         Versão: 0.02	 Data de atualização: 13/02/2022
+35-openproject.sh	       Versão: 0.02	 Data de atualização: 14/05/2022

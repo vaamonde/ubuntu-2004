@@ -7,12 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 30/05/2022
-Versão: 0.22
+Data de atualização: 10/07/2022
+Versão: 0.23
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
-0022- Falha de autenticação do usuário Root do MySQL utilizando o Webmin, mensagem de error: The full MySQL error message 
+0023 - Falha na montagem da compartilhamento do Protocolo Webdav no Powershell utilizando os comando de: New-PSDrive e o
+comando: net use, verificando os erros de autenticação SSL/TLS no Windows 10 e 11.
+STATUS=PENDENTE
+
+0022 - Falha de autenticação do usuário Root do MySQL utilizando o Webmin, mensagem de error: The full MySQL error message 
 was : mysqladmin: connect to server at 'localhost' failed error: 'Access denied for user 'root'@'localhost' (using 
 password: NO)', falha aparentemente associada ao usuário Root em @Localhost quando utilizado o comando: mysqladmin. Criado
 o script SQL de alteração da senha do usuário do MySQL root no script: 08-lamp.sh e 00-parametros.sh

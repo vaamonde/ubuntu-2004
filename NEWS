@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 08/07/2022
-Versão: 0.20
+Data de atualização: 10/07/2022
+Versão: 0.21
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
@@ -56,9 +56,14 @@ verificando a possibilidade de integrar o Guacamole Server para utilizar o Banco
 
 15/01/2022 - Robson Vaamonde - Novas soluções de TI para o Curso de Ubuntu Server 20.04.x LTS, criação dos scripts e
 arquivos de configuração (criado: feito e publicado | dev: em desenvolvimento):
+	
 	_ 00-webdav.sh (criado): extensão do protocolo HTTP para transferência de arquivos;
 	_ 00-nfs.sh (criado): protocolo de compartilhamento de arquivos em rede linux;
 	_ 00-nextcloud.sh (criado): plataforma de colaboração em nuvem de código aberto;
+	_ 00-netdisco.sh (criado): ferramenta de gerenciamento de rede adequada para redes pequenas a muito grandes;
+	_ 00-glpi10.sh (criado): software de Help Desk Open Source (nova versão 10);
+	_ 00-zabbix6.sh (criado): software de monitoramento e gerenciamento de (nova versão 6.0);
+
 	_ 00-samba4.sh (dev): protocolo de compartilhamento de arquivos em rede linux, microsoft ou macos;
 	_ 00-postfix.sh (dev): agente de transferência de e-mails livre e de código aberto;
 	_ 00-netbox.sh (dev): ferramenta de modelagem de recursos de infraestrutura;
@@ -66,14 +71,11 @@ arquivos de configuração (criado: feito e publicado | dev: em desenvolvimento)
 	_ 00-redmine.sh (dev):  gerenciador de projetos baseados na web e ferramenta de gerenciamento de bugs;
 	_ 00-motioneye.sh (dev): software de CFTV de software livre desenvolvido para Linux;
 	_ 00-shinobi.sh (dev): software de CCTV de código aberto escrito em Node.JS;
-	_ 00-netdisco.sh (criado): ferramenta de gerenciamento de rede adequada para redes pequenas a muito grandes;
 	_ 00-thinstation.sh (dev): implementação Linux gratuita e de código aberto de um sistema operacional thin client;
 	_ 00-bastillion.sh (dev): console SSH baseado na web que gerencia o acesso administrativo aos sistemas;
 	_ 00-jenkins.sh (dev): servidor de automação de código aberto;
 	_ 00-awx.sh (dev): oferece software para gerenciar projetos Ansible;
 	_ 00-owa.sh (dev): software para rastrear e analisar o acesso a websites;
-	_ 00-glpi10.sh (dev): software de Help Desk Open Source (nova versão 10);
-	_ 00-zabbix6.sh (dev): software de monitoramento e gerenciamento de (nova versão 6.0);
 	_ 00-hestia.sh (dev): sistemas de gerenciamento de servidores Web;
 	_ 00-aapanel.sh (dev): sistemas de gerenciamento de servidores Web;
 	_ 00-tinycp.sh (dev): sistemas de gerenciamento de servidores Web;

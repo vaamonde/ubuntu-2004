@@ -13,11 +13,11 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 09/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh adicionado no laço de loop a dependência do
-Bind9 no Webdav, atualização dos arquivos de configuração do GLPI nas versões v9.x e v10.x referente as caminhos da
+Bind9 no Webdav, atualização dos arquivos de configuração do GLPI nas versões v9.x e v10.x referente os caminhos da
 instalação e numeração das versões nos scripts.
 
 08/07/2022 - Robson Vaamonde - Atualização do script: 12-webdav.sh em relação a variável do caminho do arquivo de 
-usuários do Webdav de: PATHWEBDAVDB para PATHWEBDAVUSERS, remoção do bloco duplicado de módulos de Apache2 do Webdav
+usuários do Webdav de: PATHWEBDAVDB para PATHWEBDAVUSERS, remoção do bloco duplicado de módulos de Apache2 do Webdav.
 
 03/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh com a nova versão do GLPI Help Desk v9.5.8 e 
 v10.0.2 e atualização da numeração das versões dos scripts de configuração do GLPI no Apache2.
