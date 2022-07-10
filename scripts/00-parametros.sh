@@ -858,8 +858,8 @@ LOGINSTALL="rsyslog-mysql"
 # 03. /etc/cron.d/glpi10-cron = arquivo de configuração do agendamento do CRON do GLPI
 #
 # Arquivos de monitoramento (log) do Serviço do GLPI Help Desk utilizados nesse script
-# 01. tail -f /var/log/apache2/access-glpi.log = log de acesso ao GLPI Help Desk
-# 02. tail -f /var/log/apache2/error-glpi.log = log de erro de acesso ao GLPI Help Desk
+# 01. tail -f /var/log/apache2/access-glpi*.log = log de acesso ao GLPI Help Desk
+# 02. tail -f /var/log/apache2/error-glpi*.log = log de erro de acesso ao GLPI Help Desk
 # 03. tail -f /var/log/syslog | grep -i glpi = filtrando as mensagens do serviço do GLPI Help Desk
 # 04. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
@@ -923,7 +923,7 @@ php-zip php-bz2"
 # 01. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
 #
 # Arquivos de monitoramento (log) do Serviço do FusionInventory utilizados nesse script
-# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
+# 01. systemctl status fusioninventory-agent = status do serviço do FusionInventory Agent
 # 01. journalctl -t fusioninventory-agent = todas as mensagens referente ao serviço do FusionInventory
 # 02. tail -f /var/log/fusioninventory-agent/fusioninventory.log = arquivo de log do agent do FusionInventory
 # 03. tail -f /var/log/syslog | grep -i fusioninventory = filtrando as mensagens do serviço do FusionInventory
