@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 08/07/2022
-# Versão: 0.10
+# Data de atualização: 10/07/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
@@ -26,7 +26,7 @@
 # Linux Mint Terminal: Ctrl+Alt+T
 #	sudo apt update && sudo apt install davfs2
 #		Usuários sem privilégios podem montar recursos WebDAV? <SIM>
-#	sudo usermod -a -G davfs2 vaamonde
+#	sudo usermod -a -G davfs2 vaamonde (modify a user account)
 #	sudo mkdir -v /mnt/davs (make directories)
 #	id (print real and effective user and group IDs)
 #	sudo cat /etc/groups
@@ -58,10 +58,19 @@
 #				Abrir esse local de rede quando eu clicar em Concluir <Concluir>.
 #
 # Windows Powershell:
-#	OBSERVAÇÃO IMPORTANTE: conforme comentado no vídeo está sendo analisado as falhas
-#	de autenticação e acesso ao Webdav via Powershell e Net use no Windows 10 e 11
-#	New-PSDrive -Name X -PSProvider FileSystem -Root \\webdav.pti.intra@SSL\webdav
-#	net use W: https://webdav.pti.intra password /USER:vaamonde
+#	OBSERVAÇÃO IMPORTANTE: conforme comentado no vídeo está sendo analisado as falhas de autenticação e acesso 
+#	ao Webdav via Powershell e Net use no Windows 10 e 11 verificar o arquivo BUG: 0023 - Falha na montagem do 
+#	compartilhamento do Protocolo Webdav
+#	Executar o Powershell como Administrador 
+#		Get-Service WebClient
+#		Start-Service WebClient
+#		Set-Service WebClient –StartupType Automatic
+#	Fechar o Powershell e abrir em modo normal
+#
+#	OBSERVAÇÃO IMPORTANTE: o comando New-PSDriver do Powershell não aparece o compartilhamento no Windows Explorer
+#	já o comando Net Use aparece no compartilhamento
+#	New-PSDrive -Name W -PSProvider FileSystem -Root \\webdav.pti.intra@SSL\webdav -Credential vaamonde
+#	net use X: https://webdav.pti.intra /USER:vaamonde pti@2018
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

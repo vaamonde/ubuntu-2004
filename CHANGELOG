@@ -14,7 +14,9 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 10/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: ntp.conf adicionado os endereços IPv4 dos
 servidores do NTP.br para resolver a falha do Bind9 em relação a data e hora errada e ocasionando as falhas de
-resolução de nomes conforme o BUG: 0009 - Falha de resolução do DNS para endereços Externos
+resolução de nomes conforme o BUG: 0009 - Falha de resolução do DNS para endereços Externos, resolvido a falha de
+mapeamento do Webdav utilizando o PowerShell e o comando Net Use no Windows 10/11 referente ao BUG: 0023 - Falha na 
+montagem da compartilhamento do Protocolo Webdav no Powershell.
 
 09/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh adicionado no laço de loop a dependência do
 Bind9 no Webdav, atualização dos arquivos de configuração do GLPI nas versões v9.x e v10.x referente os caminhos da

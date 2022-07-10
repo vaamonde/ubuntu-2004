@@ -14,7 +14,11 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
 0023 - Falha na montagem da compartilhamento do Protocolo Webdav no Powershell utilizando os comando de: New-PSDrive e o
 comando: net use, verificando os erros de autenticação SSL/TLS no Windows 10 e 11.
-STATUS=PENDENTE
+Error do comando net use: Erro de sistema 1244 (A operação requisitada não foi executada porque o usuário não foi autenticado)
+No Windows 10 somente funciona o comando net use após se autenticar com o usuário e senha via modo gráfico de adicionar unidade 
+de rede.
+Resolvido os problemas do Powershell e do Net Use utilizando as opções de usuário e senha e habilitando o serviço do WebClient
+STATUS=RESOLVIDO
 
 0022 - Falha de autenticação do usuário Root do MySQL utilizando o Webmin, mensagem de error: The full MySQL error message 
 was : mysqladmin: connect to server at 'localhost' failed error: 'Access denied for user 'root'@'localhost' (using 
