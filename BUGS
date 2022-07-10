@@ -109,7 +109,7 @@ STATUS=RESOLVIDO
 terminal: Temporary failure in name resolution ou utilizando o comando: nslookup google.com recendo a mensagem no terminal:
 server can't find google.com: SERVFAIL, falha relacionada a Data e Hora do sistema, muitas vezes devido a restauração de
 um Snapshot ou alteração da data/hora errada no sistema que não sincronizou com o NTP Server, utilizar o comando: data para
-resolver esse problema.
+resolver esse problema, adicionado no arquivo: ntp.conf os endereços IPv4 dos servidores NTP.br.
 STATUS=RESOLVIDO
 
 0008 - Falha de atualização do serviço ZoneMinder, executar os comandos: zmupdate.pl -f depois: apt -f install
