@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 09/07/2022
-# Versão: 0.72
+# Data de atualização: 12/07/2022
+# Versão: 0.73
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1031,9 +1031,20 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.4.0/source/guacamole-server-1.4.0.tar.gz"
 GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-1.4.0.war"
 GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-auth-jdbc-1.4.0.tar.gz"
+GUACAMOLEMYSQL="https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java_8.0.29-1ubuntu20.04_all.deb"
+#
+# OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
+# 07-lamp.sh LINHAS: 261 até 262
+DATABASE_GUACAMOLE="guacamole"
+CREATE_DATABASE_GUACAMOLE="CREATE DATABASE guacamole;"
+CREATE_USER_DATABASE_GUACAMOLE="CREATE USER 'guacamole' IDENTIFIED BY 'guacamole';"
+GRANT_DATABASE_GUACAMOLE="GRANT USAGE ON *.* TO 'guacamole';"
+GRANT_ALL_DATABASE_GUACAMOLE="GRANT ALL PRIVILEGES ON guacamole.* TO 'guacamole';"
+FLUSH_GUACAMOLE="FLUSH PRIVILEGES;"
 #
 # Variável das dependências do laço de loop do Guacamole Server e Client
-GUACAMOLEDEP="tomcat9 tomcat9-admin tomcat9-user bind9"
+GUACAMOLEDEP="tomcat9 tomcat9-admin tomcat9-user bind9 mysql-server mysql-common"
 #
 # Variável de instalação das dependências do Guacamole Server
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes

@@ -8,10 +8,10 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.06
+# Data de atualização: 12/07/2022
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Apache Guacamole Server 1.3.x e Cliente 1.3.x
+# Testado e homologado para a versão do Apache Guacamole Server 1.4.x e Cliente 1.4.x
 #
 # O Apache Guacamole é um gateway de desktop remoto sem cliente, ele suporta protocolos 
 # padrão como VNC, RDP e SSH., ele é chamado de Clientless porque nenhum plug-in ou 
@@ -113,6 +113,7 @@ echo -n "Verificando as dependências do Guacamole, aguarde... "
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 10-tomcat.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-D-openssl-tomcat.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
@@ -197,7 +198,13 @@ sleep 5
 echo -e "Instalando as Dependências do Apache Guacamole Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
+	# opção do comando rm: -v (verbose)
+	# opção do comando wget: -O (output document file)
+	# opção do comando dpkg: -i (install)
 	apt -y install $GUACAMOLEINSTALL &>> $LOG
+	rm -v connectorj.deb &>> $LOG
+	wget $GUACAMOLEMYSQL -O connectorj.deb &>> $LOG
+	dpkg -i connectorj.deb &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -257,6 +264,40 @@ echo -e "Criando os diretórios e baixando o Apache Guacamole Client, aguarde...
 echo -e "Download do Apache Guacamole Client feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Baixando o Apache Guacamole Authentication JDBC MySQL Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando rm: -v (verbose), -f (force), -R (recursive)
+	# opção do comando wget: -O (output document file)
+	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
+	rm -v guacamole-mysql.tar.gz &>> $LOG
+	rm -Rfv guacamole-server-*/ &>> $LOG
+	wget $GUACAMOLEJDBC -O guacamole-mysql.tar.gz &>> $LOG
+	tar -zxvf guacamole-mysql.tar.gz &>> $LOG
+	cp -v guacamole-auth*/mysql/guacamole-auth*.jar /etc/guacamole/extensions/ &>> $LOG
+	cp -v /usr/share/java/mysql-connector-java*.jar /etc/guacamole/libs/ &>> $LOG
+echo -e "Download do Apache Guacamole Authentication JDBC MySQL Server feito com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando a Base de Dados do Apache Guacamole Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_GUACAMOLE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_GUACAMOLE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_GUACAMOLE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_GUACAMOLE" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_GUACAMOLE" mysql &>> $LOG
+echo -e "Base de Dados do Apache Guacamole Server criada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Populando a Base de Dados do Apache Guacamole Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do redirecionado de saída | (piper): Conecta a saída padrão com a entrada padrão de outro comando
+	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
+	cat guacamole-auth*/mysql/schema/*.sql | mysql -u $USERMYSQL -p$SENHAMYSQL $DATABASE_GUACAMOLE
+echo -e "Base de Dados Populada com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+
 echo -e "Atualizando os arquivos de configuração do Apache Guacamole Client, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
@@ -275,12 +316,13 @@ echo -e "Editando o arquivo de configuração guacamole.properties, pressione <E
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração user-mapping.xml, pressione <Enter> para continuar"
+#BLOCO DESATIVADO, AUTENTICAÇÃO DO USUÁRIO AGORA E FEITA VIA BANCO DE DADOS MYSQL SERVER
+#echo -e "Editando o arquivo de configuração user-mapping.xml, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
-	read -s
-	vim /etc/guacamole/user-mapping.xml
-echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-sleep 5
+#	read -s
+#	vim /etc/guacamole/user-mapping.xml
+#echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+#sleep 5
 #
 echo -e "Editando o arquivo de configuração tomcat9, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)

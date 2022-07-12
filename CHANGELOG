@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 10/07/2022
-Versão: 0.72
+Data de atualização: 12/07/2022
+Versão: 0.73
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+12/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente a criação da Base de Dados do Apache
+Guacamole, dependências do MySQL, Bind9, e Conector MySQL-Java, atualização do script: 20-guacamole.sh com as opções
+de criação do Banco de Dados e Conector MySQL-Java, atualização do arquivo de configuração: guacamole-properties com
+as opções de conexão com o Banco de Dados MySQL. Mudanças feito conforme o arquivo NEWS do dia: 03/02/2022
+
 10/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: ntp.conf adicionado os endereços IPv4 dos
 servidores do NTP.br para resolver a falha do Bind9 em relação a data e hora errada e ocasionando as falhas de
 resolução de nomes conforme o BUG: 0009 - Falha de resolução do DNS para endereços Externos, resolvido a falha de
