@@ -58,19 +58,21 @@
 #				Abrir esse local de rede quando eu clicar em Concluir <Concluir>.
 #
 # Windows Powershell:
-#	OBSERVAÇÃO IMPORTANTE: conforme comentado no vídeo está sendo analisado as falhas de autenticação e acesso 
-#	ao Webdav via Powershell e Net use no Windows 10 e 11 verificar o arquivo BUG: 0023 - Falha na montagem do 
+#	OBSERVAÇÃO IMPORTANTE: conforme comentado no vídeo está sendo analisado as falhas de autenticação de acesso 
+#	ao Webdav via Powershell e Net Use no Windows 10 e 11 verificar o arquivo BUG: 0023 - Falha na montagem do 
 #	compartilhamento do Protocolo Webdav
 #	Executar o Powershell como Administrador 
 #		Get-Service WebClient
 #		Start-Service WebClient
 #		Set-Service WebClient –StartupType Automatic
-#	Fechar o Powershell e abrir em modo normal
+#	Fechar o Powershell e abrir em modo de usuário normal
 #
 #	OBSERVAÇÃO IMPORTANTE: o comando New-PSDriver do Powershell não aparece o compartilhamento no Windows Explorer
-#	já o comando Net Use aparece no compartilhamento
+#	já o comando Net Use aparece no compartilhamento do Windows Explorer (recomendado)
 #	New-PSDrive -Name W -PSProvider FileSystem -Root \\webdav.pti.intra@SSL\webdav -Credential vaamonde
+#		cd w:
 #	net use X: https://webdav.pti.intra /USER:vaamonde pti@2018
+#		cd x:
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
