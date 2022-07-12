@@ -143,9 +143,9 @@ clear
 echo
 #
 echo -e "Instalação do Apache Guacamole Server e Client no GNU/Linux Ubuntu Server 20.04.x\n"
-echo -e "Porta padrão utilizada pelo Apache Tomcat9...: TCP 8080"
+echo -e "Porta padrão utilizada pelo Apache Tomcat9...: TCP 8443"
 echo -e "Porta padrão utilizada pelo Guacamole Server.: TCP 4822\n"
-echo -e "Após a instalação do Apache Guacamole acesse a URL: http://$(hostname -d | cut -d' ' -f1):8080/guacamole\n"
+echo -e "Após a instalação do Apache Guacamole acesse a URL: https://$(hostname -d | cut -d' ' -f1):8443/guacamole\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
@@ -274,7 +274,7 @@ echo -e "Baixando o Apache Guacamole Authentication JDBC MySQL Server, aguarde..
 	wget $GUACAMOLEJDBC -O guacamole-mysql.tar.gz &>> $LOG
 	tar -zxvf guacamole-mysql.tar.gz &>> $LOG
 	cp -v guacamole-auth*/mysql/guacamole-auth*.jar /etc/guacamole/extensions/ &>> $LOG
-	cp -v /usr/share/java/mysql-connector-java*.jar /etc/guacamole/libs/ &>> $LOG
+	cp -v /usr/share/java/mysql-connector-java*.jar /etc/guacamole/lib/ &>> $LOG
 echo -e "Download do Apache Guacamole Authentication JDBC MySQL Server feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -293,11 +293,10 @@ echo -e "Populando a Base de Dados do Apache Guacamole Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do redirecionado de saída | (piper): Conecta a saída padrão com a entrada padrão de outro comando
 	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
-	cat guacamole-auth*/mysql/schema/*.sql | mysql -u $USERMYSQL -p$SENHAMYSQL $DATABASE_GUACAMOLE
+	cat guacamole-auth*/mysql/schema/*.sql | mysql -u $USERMYSQL -p$SENHAMYSQL $DATABASE_GUACAMOLE &>> $LOG
 echo -e "Base de Dados Populada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-
 echo -e "Atualizando os arquivos de configuração do Apache Guacamole Client, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
@@ -315,14 +314,6 @@ echo -e "Editando o arquivo de configuração guacamole.properties, pressione <E
 	vim /etc/guacamole/guacamole.properties
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
-#
-#BLOCO DESATIVADO, AUTENTICAÇÃO DO USUÁRIO AGORA E FEITA VIA BANCO DE DADOS MYSQL SERVER
-#echo -e "Editando o arquivo de configuração user-mapping.xml, pressione <Enter> para continuar"
-	# opção do comando read: -s (Do not echo keystrokes)
-#	read -s
-#	vim /etc/guacamole/user-mapping.xml
-#echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
-#sleep 5
 #
 echo -e "Editando o arquivo de configuração tomcat9, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
@@ -349,7 +340,7 @@ echo -e "Verificando as portas de conexões do Apache Tomcat9 e do Guacamole Ser
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
-	lsof -nP -iTCP:'8080,4822' -sTCP:LISTEN
+	lsof -nP -iTCP:'8443,4822' -sTCP:LISTEN
 echo -e "Portas verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
