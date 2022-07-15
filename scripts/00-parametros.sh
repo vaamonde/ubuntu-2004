@@ -1033,7 +1033,7 @@ GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamol
 GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-auth-jdbc-1.4.0.tar.gz"
 GUACAMOLEMYSQL="https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java_8.0.29-1ubuntu20.04_all.deb"
 #
-# OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# OBSERVAÇÃO: NO SCRIPT: 15-GUACAMOLE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
 DATABASE_GUACAMOLE="guacamole"

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 10/07/2022
-# Versão: 0.11
+# Data de atualização: 15/07/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
@@ -29,6 +29,7 @@
 #	sudo usermod -a -G davfs2 vaamonde (modify a user account)
 #	sudo mkdir -v /mnt/davs (make directories)
 #	id (print real and effective user and group IDs)
+#	groups (print the groups a user is in)
 #	sudo cat /etc/groups
 #	sudo mount -v -t davfs -o rw,noexec,nosuid,nodev,noauto,uid=1000,gid=1000 https://webdav.pti.intra /mnt/davs/ (mount a filesystem)
 #		Username: vaamonde
@@ -60,7 +61,7 @@
 # Windows Powershell:
 #	OBSERVAÇÃO IMPORTANTE: conforme comentado no vídeo está sendo analisado as falhas de autenticação de acesso 
 #	ao Webdav via Powershell e Net Use no Windows 10 e 11 verificar o arquivo BUG: 0023 - Falha na montagem do 
-#	compartilhamento do Protocolo Webdav
+#	compartilhamento do Protocolo Webdav - STATUS: RESOLVIDO
 #	Executar o Powershell como Administrador 
 #		Get-Service WebClient
 #		Start-Service WebClient
