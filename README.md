@@ -570,17 +570,17 @@ Link da vídeo aula: https://www.youtube.com/watch?v=J1GINLQUGNQ
 
 Primeiro Vídeo de Configuração do CMS Wordpress do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 13-wordpress.sh antes de executar no nosso servidor.
 
-[![Config Wordpress Server](http://img.youtube.com/vi//0.jpg)]( "Config Wordpress Server")
+[![Config Wordpress Server](http://img.youtube.com/vi/wzg5pfPYH30/0.jpg)](https://www.youtube.com/watch?v=wzg5pfPYH30 "Config Wordpress Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=wzg5pfPYH30
 
 ## **🔴 13-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02 🐧**
 
 Segundo Vídeo de Configuração do CMS Wordpress do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do CMS Wordpress.
 
-[![Install Wordpress Server](http://img.youtube.com/vi//0.jpg)]( "Install Wordpress Server")
+[![Install Wordpress Server](http://img.youtube.com/vi/E2D23OJBx5I/0.jpg)](https://www.youtube.com/watch?v=E2D23OJBx5I "Install Wordpress Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=E2D23OJBx5I
 
 ## **🔴 13-wordpress.sh Testes de Acesso e Instalação e Configuração dos Plugins do Wordpress - PARTE-03 🐧**
 
