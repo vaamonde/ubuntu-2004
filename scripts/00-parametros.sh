@@ -631,8 +631,8 @@ PASSWORDWEBDAV=$SENHADEFAULT
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Site CMS Wordpress utilizados nesse script
-# 01. /var/www/html/wp/wp-config.php = arquivo de configuração do site Wordpress
-# 02. /var/www/html/wp/.htaccess = arquivo de segurança de páginas e diretórios do Wordpress
+# 01. /var/www/wp/wp-config.php = arquivo de configuração do site Wordpress
+# 02. /var/www/wp/.htaccess = arquivo de segurança de páginas e diretórios do Wordpress
 # 03. /etc/vsftpd.allowed_users = arquivo de configuração da base de dados de usuários do VSFTPd
 # 04. /etc/apache2/sites-available/wordpress.conf = arquivo de configuração do Virtual Host
 #
