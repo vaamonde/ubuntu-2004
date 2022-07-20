@@ -66,6 +66,9 @@
 #			Gutenberg: “editor de blocos” que apresenta uma abordagem modular para modificar todo o seu site.
 #				Instalar Agora
 #				Ativar
+#			Wordfence Security: inclui um firewall de endpoint e um scanner de malware que foram construídos para proteger o WordPress.
+#				Instalar Agora
+#				Ativa
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
