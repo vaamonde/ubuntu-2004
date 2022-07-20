@@ -34,15 +34,38 @@
 #		O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
 #
 # Configurações Básicas do Wordpress e Instalação de Plugins
+# URL: https://wp.pti.intra/wp-login.php
+#
 # Instalação do Tema: Astra Child
+# Aparência
+#	Temas
+#		Adicionar novo
+#			Pesquisar temas: Astra
+#				Astra: Instalar
+#				Astra: Ativar
 #
 # Instalação do Plugins:
-#Companion auto update: atualiza automaticamente os plugins e temas mantendo o seu site mais seguro;
-#Ewww image optimizar: otimizador de imagens existentes no Wordpress;
-#Imsanity: Redimensione automaticamente grandes uploads de imagens com o Imsanity;
-#Microthemer: Um editor visual leve e poderoso para personalizar o estilo CSS de qualquer aspecto do seu site;
-#Astra widgets: O plugin Astra Widgets pode ser instalado como qualquer outro plugin WordPress;
-#Gutenberg: “editor de blocos” que apresenta uma abordagem modular para modificar todo o seu site.
+# Plugins
+#	Adicionar novo
+#		Pesquisar plugins: 
+#			Companion auto update: atualiza automaticamente os plugins e temas mantendo o seu site mais seguro;
+#				Instalar Agora
+#				Ativar
+#			EWWW image optimizer: otimizador de imagens existentes no Wordpress;
+#				Instalar Agora
+#				Ativar
+#			Imsanity: Redimensione automaticamente grandes uploads de imagens com o Imsanity;
+#				Instalar Agora
+#				Ativar
+#			Microthemer: Um editor visual leve e poderoso para personalizar o estilo CSS de qualquer aspecto do seu site;
+#				Instalar Agora
+#				Ativar
+#			Astra widgets: O plugin Astra Widgets pode ser instalado como qualquer outro plugin WordPress;
+#				Instalar Agora
+#				Ativar
+#			Gutenberg: “editor de blocos” que apresenta uma abordagem modular para modificar todo o seu site.
+#				Instalar Agora
+#				Ativa
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
