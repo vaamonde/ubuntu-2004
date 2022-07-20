@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 18/10/2021
-# Data de atualização: 30/05/2022
-# Versão: 0.17
+# Data de atualização: 20/07/2022
+# Versão: 0.18
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v6.0.x
 #
@@ -24,15 +24,25 @@
 # Site Oficial do Projeto Drupal: https://www.drupal.org/
 #
 # Informações que serão solicitadas na configuração via Web do WordPress
-# Português do Brasil: Continuar;
-# Informação necessária
-#	Título do site: Bora para Prática;
-#	Nome de usuário: admin;
-#	Senha: pti@2018;
-#	Confirme a senha: Confirmar o uso de uma senha fraca;
-#	O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
+# URL: https://wp.pti.intra
+# 	Português do Brasil: Continuar;
+# 	Informação necessária
+#		Título do site: Bora para Prática;
+#		Nome de usuário: admin;
+#		Senha: pti@2018;
+#		Confirme a senha: Confirmar o uso de uma senha fraca;
+#		O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
 #
 # Configurações Básicas do Wordpress e Instalação de Plugins
+# Instalação do Tema: Astra Child
+#
+# Instalação do Plugins:
+#Companion auto update: atualiza automaticamente os plugins e temas mantendo o seu site mais seguro;
+#Ewww image optimizar: otimizador de imagens existentes no Wordpress;
+#Imsanity: Redimensione automaticamente grandes uploads de imagens com o Imsanity;
+#Microthemer: Um editor visual leve e poderoso para personalizar o estilo CSS de qualquer aspecto do seu site;
+#Astra widgets: O plugin Astra Widgets pode ser instalado como qualquer outro plugin WordPress;
+#Gutenberg: “editor de blocos” que apresenta uma abordagem modular para modificar todo o seu site.
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
