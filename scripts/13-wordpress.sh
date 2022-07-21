@@ -37,9 +37,14 @@
 # URL: https://wp.pti.intra/wp-login.php
 #
 # Indicação de Temas e Plugins utilizados pelos Docentes/Professores e Profissional de TI:
-# José de Assis: https://www.linkedin.com/in/professorjosedeassis/
-# Sirlene Sanches: https://www.linkedin.com/in/sirlene-sanches/
-# Tales Wallef: https://www.linkedin.com/in/tallis-wallef-330508166/
+# José de Assis: 
+#	Linkedin: https://www.linkedin.com/in/professorjosedeassis/
+#	Github..: https://github.com/professorjosedeassis
+#	YouTUBE.: https://www.youtube.com/c/RoboticapraticaBr
+# Sirlene Sanches: 
+#	Linkedin: https://www.linkedin.com/in/sirlene-sanches/
+# Tales Wallef: 
+#	Linkedin: https://www.linkedin.com/in/tallis-wallef-330508166/
 #
 # Instalação do Tema: Astra Child
 # Aparência
