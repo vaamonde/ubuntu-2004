@@ -86,6 +86,14 @@
 #				Ativar
 #					Skip
 #
+# Utilização do FTP Client no GNU/Linux ou Microsoft Windows
+#	Cliente de FTP FileZilla
+#		sudo apt update && sudo apt install filezilla
+#			Host...: ftp.pti.intra
+#			Usuário: wordpress
+#			Senha..: pti@2018
+#			Porta..: 990
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
@@ -143,6 +151,7 @@ echo -n "Verificando as dependências do Wordpress, aguarde... "
 			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-B-openssl-apache.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-C-openssl-vsftpd.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5
