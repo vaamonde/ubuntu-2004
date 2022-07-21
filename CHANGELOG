@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 12/07/2022
-Versão: 0.73
+Data de atualização: 21/07/2022
+Versão: 0.74
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+21/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: php.ini com as opções recomendadas do Wordpress,
+atualização do script: 13-wordpress.sh com as indicações de Temas e Plugins dos Docentes: José de Assis, Sirlene Sanches
+e do Profissional de TI Tales Wallef.
+
 12/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente a criação da Base de Dados do Apache
 Guacamole, dependências do MySQL, Bind9, e Conector MySQL-Java, atualização do script: 20-guacamole.sh com as opções
 de criação do Banco de Dados e Conector MySQL-Java, atualização do arquivo de configuração: guacamole-properties com
