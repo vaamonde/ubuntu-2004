@@ -584,8 +584,32 @@ Link da vídeo aula: https://www.youtube.com/watch?v=E2D23OJBx5I
 
 ## **🔴 13-wordpress.sh Testes de Acesso e Instalação e Configuração dos Plugins do Wordpress - PARTE-03 🐧**
 
-Terceiro Vídeo de Configuração do CMS Wordpress do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o CMS Wordpress, criando o nosso usuário de administraç"ao, fazendo as configurações básicas para criar artigos e páginas no Wordpress e instalar e configurarr os principis Plugins e Templates mais utilizado no CMS Wordpress. 
+Terceiro Vídeo de Configuração do CMS Wordpress do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o CMS Wordpress, criar o nosso usuário de administração, fazer as configurações básicas para criar artigos e páginas no Wordpress e fazer a instalação dos principais Plugins e Temas mais utilizado no CMS Wordpress. 
 
-[![Access Wordpress Server](http://img.youtube.com/vi//0.jpg)]("Access Wordpress Server")
+[![Access Wordpress Server](http://img.youtube.com/vi/M1pW_-qE0KU/0.jpg)](https://www.youtube.com/watch?v=M1pW_-qE0KU "Access Wordpress Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=M1pW_-qE0KU
+
+## **🔴 14-webmin.sh Customizando o Script e Arquivos de Configuração do Webmin e Usermin - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Webmin e Usermin do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 14-webmin.sh antes de executar no nosso servidor.
+
+[![Config Webmin Server](http://img.youtube.com/vi//0.jpg)]( "Config Webmin Server")
 
 Link da vídeo aula: 
+
+## **🔴 14-webmin.sh Instalação e Configuração do Webmin e Usermin - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Webmin e Usermin do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Webmin e Usermin.
+
+[![Install Webmin Server](http://img.youtube.com/vi//0.jpg)]( "Install Webmin Server")
+
+Link da vídeo aula:
+
+## **🔴 14-webmin.sh Utilização Básica do Webmin e Usermin - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Webmin e Usermin do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como utilizar o Webmin para administrar o nosso servidor, fazer a instalação de Plugins, editar os arquivos de configurações e serviços de rede e utilizar o Usermin para administrar os recursos dos usuários do nosso servidor. 
+
+[![Access Webmin Server](http://img.youtube.com/vi//0.jpg)]( "Access Webmin Server")
+
+Link da vídeo aula:

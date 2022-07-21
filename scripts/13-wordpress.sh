@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 18/10/2021
-# Data de atualização: 20/07/2022
-# Versão: 0.18
+# Data de atualização: 21/07/2022
+# Versão: 0.19
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Wordpress v6.0.x
 #
@@ -31,7 +31,8 @@
 #		Nome de usuário: admin;
 #		Senha: pti@2018;
 #		Confirme a senha: Confirmar o uso de uma senha fraca;
-#		O seu e-mail: vaamonde@vaamonde.pti; Instalar WordPress.
+#		O seu e-mail: admin@pti.intra; 
+#		<Instalar WordPress>.
 #
 # Configurações Básicas do Wordpress e Instalação de Plugins
 # URL: https://wp.pti.intra/wp-login.php
@@ -93,7 +94,6 @@
 #
 # Utilização do FTP Client no GNU/Linux ou Microsoft Windows
 #	Cliente de FTP FileZilla
-#		sudo apt update && sudo apt install filezilla
 #			Host...: ftp.pti.intra
 #			Usuário: wordpress
 #			Senha..: pti@2018
