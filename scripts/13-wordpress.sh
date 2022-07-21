@@ -36,6 +36,11 @@
 # Configurações Básicas do Wordpress e Instalação de Plugins
 # URL: https://wp.pti.intra/wp-login.php
 #
+# Indicação de Temas e Plugins utilizados pelos Docentes/Professores e Profissional de TI:
+# José de Assis: https://www.linkedin.com/in/professorjosedeassis/
+# Sirlene Sanches: https://www.linkedin.com/in/sirlene-sanches/
+# Tales Wallef: https://www.linkedin.com/in/tallis-wallef-330508166/
+#
 # Instalação do Tema: Astra Child
 # Aparência
 #	Temas
