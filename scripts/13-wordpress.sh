@@ -68,7 +68,13 @@
 #				Ativar
 #			Wordfence Security: inclui um firewall de endpoint e um scanner de malware que foram construídos para proteger o WordPress.
 #				Instalar Agora
-#				Ativa
+#				Ativar
+#			W3 Total Cache: melhora o SEO, experiência geral do usuário do seu site, aumentando o desempenho do site e reduz os tempos de carregamento.
+#				Instalar Agora
+#				Ativar
+#			Yoast SEO: otimização de mecanismos de pesquisa para WordPress
+#				Instalar Agora
+#				Ativar
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
