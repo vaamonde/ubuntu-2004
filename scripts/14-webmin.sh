@@ -58,6 +58,7 @@
 #			Install From: From upload file
 #				(Selecione o arquivo do VSFTPd Server)
 #			<Install Module>
+# Refresh Modules
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
