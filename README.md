@@ -594,22 +594,22 @@ Link da vídeo aula: https://www.youtube.com/watch?v=M1pW_-qE0KU
 
 Primeiro Vídeo de Configuração do Webmin e Usermin do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 14-webmin.sh antes de executar no nosso servidor.
 
-[![Config Webmin Server](http://img.youtube.com/vi//0.jpg)]( "Config Webmin Server")
+[![Config Webmin Server](http://img.youtube.com/vi/zAeLm8_8LPM/0.jpg)](https://www.youtube.com/watch?v=zAeLm8_8LPM "Config Webmin Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=zAeLm8_8LPM
 
 ## **🔴 14-webmin.sh Instalação e Configuração do Webmin e Usermin - PARTE-02 🐧**
 
 Segundo Vídeo de Configuração do Webmin e Usermin do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Webmin e Usermin.
 
-[![Install Webmin Server](http://img.youtube.com/vi//0.jpg)]( "Install Webmin Server")
+[![Install Webmin Server](http://img.youtube.com/vi/QmdXNBKEgeQ/0.jpg)](https://www.youtube.com/watch?v=QmdXNBKEgeQ "Install Webmin Server")
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=QmdXNBKEgeQ
 
 ## **🔴 14-webmin.sh Utilização Básica do Webmin e Usermin - PARTE-03 🐧**
 
 Terceiro Vídeo de Configuração do Webmin e Usermin do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como utilizar o Webmin para administrar o nosso servidor, fazer a instalação de Plugins, editar os arquivos de configurações e serviços de rede e utilizar o Usermin para administrar os recursos dos usuários do nosso servidor. 
 
-[![Access Webmin Server](http://img.youtube.com/vi//0.jpg)]( "Access Webmin Server")
+[![Access Webmin Server](http://img.youtube.com/vi/QBt7lteBLa8/0.jpg)](https://www.youtube.com/watch?v=QBt7lteBLa8 "Access Webmin Server")
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=QBt7lteBLa8

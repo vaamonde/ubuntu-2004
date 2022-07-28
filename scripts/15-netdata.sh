@@ -8,10 +8,10 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 30/05/2022
+# Data de atualização: 23/07/2022
 # Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Netdata v1.34.x
+# Testado e homologado para a versão do Netdata v1.35.x
 #
 # O Netdata é uma ferramenta para visualizar e monitorar métricas em tempo real, 
 # otimizado para acumular todos os tipos de dados, como uso da CPU, atividade do 
@@ -129,7 +129,7 @@ echo
 #
 echo -e "Instalação e Configuração do Netdata no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Netdata.: TCP 19999"
-echo -e "Após a instalação do Netdata acessar a URL: https://$(hostname -d | cut -d' ' -f1):19999/\n"
+echo -e "Após a instalação do Netdata acessar a URL: http://$(hostname -d | cut -d' ' -f1):19999/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #
