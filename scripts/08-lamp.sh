@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 13/10/2021
-# Data de atualização: 30/05/2022
-# Versão: 0.21
+# Data de atualização: 28/07/2022
+# Versão: 0.22
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache2 v2.4.x, MySQL v8.0.x, PHP v7.4.x, 
 # Perl v5.30.x, Python v2.x e v3.x, PhpMyAdmin v4.9.x
@@ -432,6 +432,7 @@ echo -e "Permitindo o Root do MySQL se autenticar remotamente, aguarde..."
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$ALTERUSER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANTALL" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$SELECTUSER" mysql &>> $LOG
 echo -e "Permissão alterada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 12/07/2022
-# Versão: 0.73
+# Data de atualização: 28/07/2022
+# Versão: 0.74
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -379,9 +379,10 @@ AGAINMYSQL=$SENHAMYSQL
 # identified by (identificado por - senha do usuário), with (com suporte)
 # opção do comando FLUSH: privileges (recarregar as permissões de privilégios)
 CREATEUSER="CREATE USER '$USERMYSQL'@'%' IDENTIFIED BY '$SENHAMYSQL';"
-ALTERUSER="ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$SENHAMYSQL';"
-GRANTALL="GRANT ALL ON *.* TO '$USERMYSQL'@'%';"
+ALTERUSER="ALTER USER '$USERMYSQL'@'localhost' IDENTIFIED WITH mysql_native_password BY '$SENHAMYSQL';"
+GRANTALL="GRANT ALL ON *.* TO '$USERMYSQL'@'localhost';"
 FLUSH="FLUSH PRIVILEGES;"
+SELECTUSER="SELECT user,host FROM user;"
 #
 # Variável de configuração do usuário padrão de administração do PhpMyAdmin (Root do MySQL)
 ADMINUSER=$USERMYSQL

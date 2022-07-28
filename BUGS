@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 10/07/2022
-Versão: 0.23
+Data de atualização: 28/07/2022
+Versão: 0.24
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
@@ -16,15 +16,16 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 comando: net use, verificando os erros de autenticação SSL/TLS no Windows 10 e 11.
 Error do comando net use: Erro de sistema 1244 (A operação requisitada não foi executada porque o usuário não foi autenticado)
 No Windows 10 somente funciona o comando net use após se autenticar com o usuário e senha via modo gráfico de adicionar unidade 
-de rede.
-Resolvido os problemas do Powershell e do Net Use utilizando as opções de usuário e senha e habilitando o serviço do WebClient
-conforme descrito no script: 12-webdav.sh
+de rede. Resolvido os problemas do Powershell e do Net Use utilizando as opções de usuário e senha e habilitando o serviço do 
+WebClient conforme descrito no script: 12-webdav.sh
 STATUS=RESOLVIDO
 
 0022 - Falha de autenticação do usuário Root do MySQL utilizando o Webmin, mensagem de error: The full MySQL error message 
 was : mysqladmin: connect to server at 'localhost' failed error: 'Access denied for user 'root'@'localhost' (using 
-password: NO)', falha aparentemente associada ao usuário Root em @Localhost quando utilizado o comando: mysqladmin. Criado
-o script SQL de alteração da senha do usuário do MySQL root no script: 08-lamp.sh e 00-parametros.sh
+password: NO)' - depois da autenticação do usuário root a mensagem: MySQL safe mode : SQL select host from user where user 
+= ? failed : Access denied for user 'root'@'localhost' (using password: NO) , falha aparentemente associada ao usuário Root 
+em @Localhost quando utilizado o comando: mysqladmin. Criado o script SQL de alteração da senha do usuário do MySQL root no 
+script: 08-lamp.sh e 00-parametros.sh
 STATUS=RESOLVIDO
 
 0021 - Falha de status de inicialização do ISC-DHCP Server utilizando o Webmin, status do serviços está como "DOWN" mesmo
