@@ -722,10 +722,16 @@ PORTUSERMIN="20000"
 #
 # Arquivos de configuração (conf) do sistema Netdata utilizados nesse script
 # 01. /usr/lib/netdata/conf.d/python.d/apache.conf = arquivo de monitoramento do Apache2
-# 02. /usr/lib/netdata/conf.d/python.d/mysql.conf = arquivo de monitoramento do MySQL
-# 03. /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf = arquivo de monitoramento do ISC DHCP
-# 04. /usr/lib/netdata/conf.d/python.d/tomcat.conf = arquivo de monitoramento do Tomcat
-# 05. /usr/lib/netdata/conf.d/python.d/bind_rndc.conf = arquivo de monitoramento do Bind DNS
+# 02. /usr/lib/netdata/conf.d/python.d/bind_rndc.conf = arquivo de monitoramento do Bind DNS
+# 03. /usr/lib/netdata/conf.d/python.d/docker.conf = arquivo de monitoramento do Docker
+# 04. /usr/lib/netdata/conf.d/python.d/elasticsearch.conf = arquivo de monitoramento do ElasticSearch
+# 05. /usr/lib/netdata/conf.d/python.d/isc_dhcpd.conf = arquivo de monitoramento do ISC DHCP
+# 06. /usr/lib/netdata/conf.d/python.d/mongodb.conf = arquivo de monitoramento do MongoDB
+# 07. /usr/lib/netdata/conf.d/python.d/mysql.conf = arquivo de monitoramento do MySQL
+# 08. /usr/lib/netdata/conf.d/python.d/redis.conf = arquivo de monitoramento do Redis
+# 09. /usr/lib/netdata/conf.d/python.d/tomcat.conf = arquivo de monitoramento do Tomcat
+# 10. /etc/netdata/apps_groups.conf = arquivo de configuração dos Aplicativos de Grupos do Netdata
+# 11. /etc/netdata/netdata.conf = arquivo de configuração do serviço do Netdata Server
 #
 # Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
 # 01. systemctl status netdata = status do serviço do Netdata
@@ -741,7 +747,7 @@ PORTUSERMIN="20000"
 NETDATA="https://github.com/netdata/netdata --depth=100"
 #
 # Variável das dependências do laço de loop do Netdata
-NETDATADEP="mysql-server mysql-common apache2 php vsftpd bind9 isc-dhcp-server"
+NETDATADEP="mysql-server mysql-common apache2 php vsftpd bind9 isc-dhcp-server ntp"
 #
 # Variável de instalação das dependências do Netdata
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes

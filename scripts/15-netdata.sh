@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 23/07/2022
-# Versão: 0.13
+# Data de atualização: 28/07/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.35.x
 #
@@ -25,6 +25,13 @@
 # Site oficial do Projeto Monitorix: https://www.monitorix.org
 # Site oficial do Projeto Alerta: https://alerta.io/
 # Site oficial do Projeto MRTG: https://oss.oetiker.ch/mrtg/
+#
+# Informações que serão solicitadas na configuração via Web do Netdata
+# URL: https://pti.intra:19999
+#	
+# OBSERVAÇÃO IMPORTANTE: por padrão o Netdata não faz atualização automática de versão,
+# precisando executar manualmente o script de Update localizado em: /usr/libexec/netdata
+#	./netdata-updater.sh
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -95,7 +102,8 @@ echo -n "Verificando as dependências do Netdata, aguarde... "
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
             echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
-			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 05-ntp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 08-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 09-vsftpd.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 10-tomcat.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
@@ -294,6 +302,14 @@ echo -e "Editando o arquivo de monitoramento redis.conf, pressione <Enter> para 
 	# teste de debug: /usr/libexec/netdata/plugins.d/python.d.plugin debug redis
 	read -s
 	vim /usr/lib/netdata/conf.d/python.d/redis.conf
+echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Editando o arquivo de monitoramento ntpd.conf, pressione <Enter> para editar"
+	# opção do comando read: -s (Do not echo keystrokes)
+	# teste de debug: /usr/libexec/netdata/plugins.d/python.d.plugin debug ntpd
+	read -s
+	vim /usr/lib/netdata/conf.d/python.d/ntpd.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
