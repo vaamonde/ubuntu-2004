@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 21/07/2022
-Versão: 0.15
+Data de atualização: 29/07/2022
+Versão: 0.16
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -93,13 +93,13 @@ _
 #27B_ 14-webmin.sh Instalação e Configuração do Webmin e Usermin - PARTE-02 (28/07/2022)
 #27C_ 14-webmin.sh Utilização Básica do Webmin e Usermin - PARTE-03 (29/07/2022)
 _
-#28A_ 15-netdata.sh Customizando o Script e Arquivos de Configuração do Netdata - PARTE-01
-#28B_ 15-netdata.sh Instalação e Configuração do Netdata - PARTE-02
-#28C_ 15-netdata.sh Monitoramento dos Recursos do Netdata - PARTE-03
+#28A_ 15-netdata.sh Customizando o Script e Arquivos de Configuração do Netdata - PARTE-01 (01/08/2022)
+#28B_ 15-netdata.sh Instalação e Configuração do Netdata - PARTE-02 (03/08/2022)
+#28C_ 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 (05/08/2022)
 _
-#29A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01
-#29B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02
-#29C_ 16-loganalyzer.sh Monitoramento dos Logs no LogAnalyzer - PARTE-03
+#29A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (08/08/2022)
+#29B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 (10/08/2022)
+#29C_ 16-loganalyzer.sh Monitoramento dos Logs no LogAnalyzer - PARTE-03 (12/08/2022)
 _
 #30A_ 17-A-glpi.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk - PARTE-01
 #30B_ 17-A-glpi.sh Instalação e Configuração do GLPI Help Desk - PARTE-02

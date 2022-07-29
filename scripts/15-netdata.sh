@@ -28,9 +28,12 @@
 #
 # Informações que serão solicitadas na configuração via Web do Netdata
 # URL: https://pti.intra:19999
-#	
+#	Remember my choice: Yes
+#		Later, stay at the agent dashboard
+#
 # OBSERVAÇÃO IMPORTANTE: por padrão o Netdata não faz atualização automática de versão,
 # precisando executar manualmente o script de Update localizado em: /usr/libexec/netdata
+# ou criar um arquivo de CRON para essa finalidade, recomendo usar manualmente o update.
 #	./netdata-updater.sh
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script

@@ -613,3 +613,27 @@ Terceiro Vídeo de Configuração do Webmin e Usermin do Curso "GRATUITO" de Ubu
 [![Access Webmin Server](http://img.youtube.com/vi/QBt7lteBLa8/0.jpg)](https://www.youtube.com/watch?v=QBt7lteBLa8 "Access Webmin Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=QBt7lteBLa8
+
+## **🔴 15-netdata.sh Customizando o Script e Arquivos de Configuração do Netdata - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 15-netdata.sh antes de executar no nosso servidor.
+
+[![Config Netdata Server](http://img.youtube.com/vi/mCrXQsJTR2k/0.jpg)](https://www.youtube.com/watch?v=mCrXQsJTR2k "Config Netdata Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=mCrXQsJTR2k
+
+## **🔴 15-netdata.sh Instalação e Configuração do Netdata - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Netdata.
+
+[![Install Netdata Server](http://img.youtube.com/vi/SmR2aTA8T0k/0.jpg)](https://www.youtube.com/watch?v=SmR2aTA8T0k "Install Netdata Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=SmR2aTA8T0k
+
+## **🔴 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como utilizar o Netdata para monitorar em tempo real o nosso servidor Ubuntu Server, verificar os gráficos e monitoramento dos serviços de rede. 
+
+[![Access Netdata Server](http://img.youtube.com/vi/bVivYQ3RMEs/0.jpg)](https://www.youtube.com/watch?v=bVivYQ3RMEs "Access Netdata Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=bVivYQ3RMEs
