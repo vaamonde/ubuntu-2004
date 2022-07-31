@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 28/07/2022
-Versão: 0.75
+Data de atualização: 31/07/2022
+Versão: 0.76
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+31/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: pti.intra.hosts com o CNAME do Netdata, criação
+do arquivo de configuração: netdata-ssl.conf do Apache2 para suportar o Virtual Host do Netdata, Proxy e autenticação
+baseada no arquivo .htpasswd e utilização do TLS/SSL configurado do Apache2.
+
 28/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a dependência do NTP server no laço
 de loop do Netdata, adicionado os arquivos de configuração: ntpd.conf e netdata.conf, alterado o script: 15-netdata.sh
 acrescentado a edição do arquivo: ntpd.conf, alterado o script: 08-lamp.sh e 00-parametros.sh para resolver o BUG-022
