@@ -14,7 +14,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 31/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: pti.intra.hosts com o CNAME do Netdata, criação
 do arquivo de configuração: netdata-ssl.conf do Apache2 para suportar o Virtual Host do Netdata, Proxy e autenticação
-baseada no arquivo .htpasswd e utilização do TLS/SSL configurado do Apache2.
+baseada no arquivo .htpasswd e utilização do TLS/SSL configurado do Apache2, alteração do arquivo de configuração do:
+netdata.conf para permitir somente as redes e nomes CNAME acessar o Dashboard do Netdata.
 
 28/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a dependência do NTP server no laço
 de loop do Netdata, adicionado os arquivos de configuração: ntpd.conf e netdata.conf, alterado o script: 15-netdata.sh
