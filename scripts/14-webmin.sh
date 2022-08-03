@@ -217,11 +217,11 @@ echo -e "Atualizando o arquivo do Source List do Apt com o repositório do Webmi
 echo -e "Source List do Apt atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Adicionando a chave PGP do Webmin, aguarde..."
+echo -e "Adicionando a chave GPG do Webmin, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando wget: -q (quiet), -O- (output-document)
 	wget -q -O- $WEBMINPGP | apt-key add - &>> $LOG
-echo -e "Chave PGP do Webmin adicionada com sucesso!!!, continuando com o script...\n"
+echo -e "Chave GPG do Webmin adicionada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Atualizando as Listas do Apt com o novo Repositório do Webmin, aguarde..."

@@ -701,7 +701,7 @@ WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9 openssl"
 #
 # Declarando as variáveis utilizadas nas configurações do Webmin e do Usermin
 # 
-# Variável de download da Chave PGP do Webmin (Link atualizado no dia 30/11/2021)
+# Variável de download da Chave GPG do Webmin (Link atualizado no dia 30/11/2021)
 WEBMINPGP="http://www.webmin.com/jcameron-key.asc"
 #
 # Variável da instalação das dependências do Webmin e do Usermin
