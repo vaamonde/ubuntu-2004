@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 28/07/2022
-# Versão: 0.74
+# Data de atualização: 04/08/2022
+# Versão: 0.75
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -732,12 +732,16 @@ PORTUSERMIN="20000"
 # 09. /usr/lib/netdata/conf.d/python.d/tomcat.conf = arquivo de monitoramento do Tomcat
 # 10. /etc/netdata/apps_groups.conf = arquivo de configuração dos Aplicativos de Grupos do Netdata
 # 11. /etc/netdata/netdata.conf = arquivo de configuração do serviço do Netdata Server
+# 12. /etc/apache/sites-available/netdata-ssl.conf = arquivo do Virtual Host do Netdata Server
+# 13. /etc/netdata/.htpasswd = arquivo de usuário e senha do Proxy do Apache utilziado no Netdata
 #
 # Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
 # 01. systemctl status netdata = status do serviço do Netdata
 # 02. journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
 # 03. tail -f /var/log/syslog | grep netdata = filtrando as mensagens do serviço do Netdata
 # 04. tail -f /var/log/netdata/* = vários arquivos de Log's do serviço do Netdata
+# 05. tail -f /var/log/apache2/netdata-error.log = log de erro de acesso ao Proxy do Netdata
+# 06. tail -f /var/log/apache2/netdata-access.log - log de acesso ao Proxy do Netdata
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
