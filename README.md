@@ -640,8 +640,8 @@ Link da vídeo aula: https://www.youtube.com/watch?v=bVivYQ3RMEs
 
 ## **🔴 15-netdata.sh Segurança de Acesso ao Netdata - PARTE-04 🐧**
 
-Quarto Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar a segurança de acesso ao sistema de monitoramento em tempo real do Netdata utilizando os conceitos de Proxy no Apache2 e Autenticação. 
+Quarto Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar a segurança de acesso ao sistema de monitoramento em tempo real do Netdata utilizando os conceitos de Proxy no Apache2 e Autenticação Digest. 
 
-[![Security Netdata Server](http://img.youtube.com/vi//0.jpg)]( "Security Netdata Server")
+[![Security Netdata Server](http://img.youtube.com/vi/nhi3dNh4Jz4/0.jpg)](https://www.youtube.com/watch?v=nhi3dNh4Jz4 "Security Netdata Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=nhi3dNh4Jz4
