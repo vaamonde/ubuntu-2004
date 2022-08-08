@@ -941,10 +941,10 @@ php-zip php-bz2"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário FusionInventory
 #
-# Variável de download do FusionInventory Server e Agent (atualizada no dia: 05/06/2022)
+# Variável de download do FusionInventory Server e Agent (atualizada no dia: 08/08/2022)
 # OBSERVAÇÃO: O FusionInventory depende do GLPI para funcionar corretamente, é recomendado sempre 
 # manter o GLPI é o FusionInventory atualizados para as últimas versões compatíveis no site.
-FUSIONSERVER="https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B4.1/fusioninventory-9.5+4.1.tar.bz2"
+FUSIONSERVER="https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B4.2/fusioninventory-9.5+4.2.tar.bz2"
 FUSIONAGENT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent_2.6-1_all.deb"
 FUSIONCOLLECT="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-collect_2.6-1_all.deb"
 FUSIONNETWORK="https://github.com/fusioninventory/fusioninventory-agent/releases/download/2.6/fusioninventory-agent-task-network_2.6-1_all.deb"
@@ -1165,8 +1165,8 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
-# Variável de download do Docker Compose (Link atualizado no dia 30/04/2022)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64"
+# Variável de download do Docker Compose (Link atualizado no dia 08/08/2022)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
@@ -1201,11 +1201,11 @@ PORTPORTAINER="9000"
 # Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
 ANSIBLEPPA="ppa:ansible/ansible"
 #
-# Variável de download do Rundeck (Link atualizado no dia 16/12/2021)
-RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_3.4.8.20211214-1_all.deb/download.deb"
+# Variável de download do Rundeck (Link atualizado no dia 08/08/2022)
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.4.0.20220714-1_all.deb/download.deb"
 #
-# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 30/04/2022)
-PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.0/ansible-plugin-3.2.0.jar"
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 08/08/2022)
+PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.1/ansible-plugin-3.2.1.jar"
 #
 # Variável das dependências do laço de loop do Rundeck
 RUNDECKDEP="bind9 software-properties-common openjdk-11-jdk openjdk-11-jre default-jdk"
@@ -1590,8 +1590,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 30/04/2022).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-23.0.4.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 08/08/2022).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-24.0.3.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
@@ -1638,11 +1638,11 @@ NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de VoIP Asterisk
 #
-# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 30/04/2022)
+# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 08/08/2022)
 DAHDIINSTALL="git://git.asterisk.org/dahdi/linux"
 DAHDITOOLSINSTALL="git://git.asterisk.org/dahdi/tools"
 LIBPRIINSTALL="https://gerrit.asterisk.org/libpri"
-ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19.3.3.tar.gz"
+ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19-current.tar.gz"
 SOUNDPTBRCORE="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-core-pt-BR-3.8.3.zip"
 SOUNDPTBREXTRA="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-extra-pt-BR-1.11.10.zip"
 #

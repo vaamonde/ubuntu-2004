@@ -645,3 +645,27 @@ Quarto Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 
 [![Security Netdata Server](http://img.youtube.com/vi/nhi3dNh4Jz4/0.jpg)](https://www.youtube.com/watch?v=nhi3dNh4Jz4 "Security Netdata Server")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=nhi3dNh4Jz4
+
+## **🔴 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 16-loganalyzer.sh antes de executar no nosso servidor.
+
+[![Config LogAnalyzer Server](http://img.youtube.com/vi//0.jpg)]( "Config LogAnalyzer Server")
+
+Link da vídeo aula: 
+
+## **🔴 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do LogAnalyzer.
+
+[![Install LogAnalyzer Server](http://img.youtube.com/vi//0.jpg)]( "Install LogAnalyzer Server")
+
+Link da vídeo aula: 
+
+## **🔴 16-loganalyzer.sh Testes de Acesso e Monitoramento dos Recursos do LogAnalyzer - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como utilizar o LogAnalyzer para monitorar em tempo real os Log's do nosso servidor Ubuntu Server, verificar os gráficos e monitoramento dos serviços de rede. 
+
+[![Access LogAnalyzer Server](http://img.youtube.com/vi//0.jpg)]( "Access LogAnalyzer Server")
+
+Link da vídeo aula: 
