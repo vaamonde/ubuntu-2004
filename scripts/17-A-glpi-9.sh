@@ -39,7 +39,7 @@
 #	SQL server(MariaDB ou MySQL): localhost
 #	Usuário SQL: glpi
 #	Senha SQL: glpi: Continuar;
-# Etapa 2: Conexão com banco de dados: glpi: Continuar;
+# Etapa 2: Conexão com banco de dados: glpi9: Continuar;
 # Etapa 3: Iniciando banco de dados: Continuar;
 # Etapa 4: Coletar dados: Continuar;
 # Etapa 5: Uma última coisa antes de começar: Continuar;
