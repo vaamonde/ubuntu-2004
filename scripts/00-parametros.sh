@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 04/08/2022
-# Versão: 0.75
+# Data de atualização: 09/08/2022
+# Versão: 0.76
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -745,7 +745,7 @@ PORTUSERMIN="20000"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Netdata
 #
-# Variável de download do Netdata (Link atualizado no dia 10/09/2022)
+# Variável de download do Netdata (Link atualizado no dia 10/07/2022)
 # opção do comando git clone --depth=100: Cria um clone superficial com um histórico truncado 
 # para o número especificado de confirmações (somente os últimos commit geral do repositório)
 NETDATA="https://github.com/netdata/netdata --depth=100"
@@ -1109,8 +1109,8 @@ PORTGRAFANA="3000"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
 #
-# Variável de download do Repositório do Zabbix Server (Link atualizado no dia 15/12/2021)
-ZABBIXIREP="wget https://repo.zabbix.com/zabbix/5.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb"
+# Variável de download do Repositório do Zabbix Server (Link atualizado no dia 09/08/2022)
+ZABBIXIREP="wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-1+ubuntu20.04_all.deb"
 #
 # Variável de instalação do Zabbix Server e suas Dependências.
 ZABBIXINSTALL="install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent \
@@ -1257,8 +1257,8 @@ PORTNTOPNG="3001"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de mensageria OpenFire
 #
-# Variável de download do instalador do OpenFire (Link atualizado no dia 30/04/2022).
-OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.7.1_all.deb"
+# Variável de download do instalador do OpenFire (Link atualizado no dia 08/08/2022).
+OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.7.3_all.deb"
 #
 # Variável da instalação das dependências do OpenFire
 OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-headless"
@@ -1360,11 +1360,11 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário OCS Inventory
 #
-# Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 19/12/2021).
-OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.9.2/OCSNG_UNIX_SERVER-2.9.2.tar.gz"
+# Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 09/08/2022).
+OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.10.0/OCSNG_UNIX_SERVER-2.10.0.tar.gz"
 #
-# Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 30/04/2022).
-OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.9.1/Ocsinventory-Unix-Agent-2.9.1.tar.gz"
+# Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 09/08/2022).
+OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.9.3/Ocsinventory-Unix-Agent-2.9.3.tar.gz"
 #
 # Variável de verificação do Chip Gráfico da NVIDIA
 # opção do comando lshw: -class display (lista as informações da placa de vídeo)
@@ -1717,3 +1717,4 @@ OPENPROJECTDEP="bind9 apache2 php postgresql postgresql-contrib postgresql-clien
 #
 # Variável de instalação do OpenProject.
 OPENPROJECTINSTALL="openproject"
+#
