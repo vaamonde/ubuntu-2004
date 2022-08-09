@@ -42,7 +42,7 @@ Link de referência: https://sourceforge.net/p/webadmin/discussion/600155/thread
 Link de referência: https://sourceforge.net/p/webadmin/bugs/3707/
 STATUS=RESOLVIDO
 
-0020 - Falha de autenticação dos Cliente do MySQL Server e do MySQL Workbench quando e feito a configuração do suporte ao 
+0020 - Falha de autenticação dos Cliente do MySQL Server e do MySQL Workbench quando é feito a configuração do suporte ao 
 TLS/SSL emitido e assinado pela nossa CA, mensagens de erro nos clientes.
 MySQL Client Localhost: ERROR 2026 (HY000): SSL connection error: SSL is required but the server doesn't support it;
 Falha relacionada ao arquivo de configuração do Client do MySQL: /etc/mysql/mysql.conf.d/mysql.cnf

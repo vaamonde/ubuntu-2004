@@ -14,6 +14,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 09/08/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente aos software: FusionInventory 9.5.4.2,
 Docker Compose 2.9.0, Rundeck 4.4.0, Nextcloud 24.0.3, Asterisk 19, Zabbix 6.2, OpenFire 4.7.3, OCS Invetory 2.10.
+Correção do BUG: 0021 Falha de status de inicialização do ISC-DHCP Server utilizando o Webmin.
 
 31/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: pti.intra.hosts com o CNAME do Netdata, criação
 do arquivo de configuração: netdata-ssl.conf do Apache2 para suportar o Virtual Host do Netdata, Proxy e autenticação
