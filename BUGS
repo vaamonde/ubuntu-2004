@@ -7,9 +7,13 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 28/07/2022
-Versão: 0.24
+Data de atualização: 09/09/2022
+Versão: 0.25
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+
+TOTAL DE BUGS..: 23
+BUGS RESOLVIDOS: 20
+BUGS PENDENTES.: 03 
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
 0023 - Falha na montagem da compartilhamento do Protocolo Webdav no Powershell utilizando os comando de: New-PSDrive e o
@@ -30,8 +34,13 @@ STATUS=RESOLVIDO
 
 0021 - Falha de status de inicialização do ISC-DHCP Server utilizando o Webmin, status do serviços está como "DOWN" mesmo
 executando o comando: systemctl status isc-dhcp-server estando com o status "ACTIVE - RUNNING" no Webmin ele consta que o
-serviço não está inicializado, verificando as possíveis causas do problema.
-STATUS=PENDENTE
+serviço não está inicializado, verificando as possíveis causas do problema. Error está associado ao arquivo de configuração
+do Serviço do ISC-DHCP Server localizado em: /lib/systemd/system/isc-dhcp-server.service alterado a linha: /run/dhcp-server/
+dhcpd.pid para: /var/run/dhcpd.pid, aplicado o Patch de Correção no script: 02-dhcp.sh, criação do arquivo de serviço do ISC
+DHCP Server: isc-dhcp-server.service.
+Link de referência: https://sourceforge.net/p/webadmin/discussion/600155/thread/719d2b844d/
+Link de referência: https://sourceforge.net/p/webadmin/bugs/3707/
+STATUS=RESOLVIDO
 
 0020 - Falha de autenticação dos Cliente do MySQL Server e do MySQL Workbench quando e feito a configuração do suporte ao 
 TLS/SSL emitido e assinado pela nossa CA, mensagens de erro nos clientes.
