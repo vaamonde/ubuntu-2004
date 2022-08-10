@@ -6,15 +6,11 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 21/12/2021
-# Data de atualização: 21/12/2021
-# Versão: 0.1
+# Data de atualização: 10/08/2022
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do Bacula Server 11.x e do Baculum 11.x
+# Testado e homologado para a versão do Bacula Server 13.x e do Baculum 11.x
 
-# Repositório da versão do Ubuntu Server 18.04.x LTS (desativado)
-#deb [ arch=amd64 ] http://bacula.org/downloads/baculum/stable-11/ubuntu bionic main
-#deb-src http://bacula.org/downloads/baculum/stable-11/ubuntu bionic main
-#
 # Repositório da versão do Ubuntu Server 20.04.x LTS (ativado)
 deb [ arch=amd64 ] http://bacula.org/downloads/baculum/stable-11/ubuntu focal main
 deb-src http://bacula.org/downloads/baculum/stable-11/ubuntu focal main

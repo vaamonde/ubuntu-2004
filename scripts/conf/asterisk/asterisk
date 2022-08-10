@@ -18,7 +18,7 @@ AST_GROUP="asterisk"
 # Habilitando o recurso de cores no terminal do Asterisk
 COLOR=yes
 
-# Localizaçãodo arquivo de configuração padrão do Asterisk
+# Localização do arquivo de configuração padrão do Asterisk
 ALTCONF=/etc/asterisk/asterisk.conf
 
 # Configurações padrão do Asterisk, só descomentar se for necessário

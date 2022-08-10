@@ -7,11 +7,14 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 09/08/2022
-Versão: 0.77
+Data de atualização: 10/08/2022
+Versão: 0.78
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+10/08/2022 - Robson Vaamonde - Atualização de vários arquivos no repositório com foco em documentação e correções de
+escrita dos scripts, melhoria no cabeçalho e versões de software.
+
 09/08/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente aos software: FusionInventory 9.5.4.2,
 Docker Compose 2.9.0, Rundeck 4.4.0, Nextcloud 24.0.3, Asterisk 19, Zabbix 6.2, OpenFire 4.7.3, OCS Invetory 2.10.
 Correção do BUG: 0021 Falha de status de inicialização do ISC-DHCP Server utilizando o Webmin.
