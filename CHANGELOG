@@ -21,12 +21,12 @@ Correção do BUG: 0021 Falha de status de inicialização do ISC-DHCP Server ut
 
 31/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: pti.intra.hosts com o CNAME do Netdata, criação
 do arquivo de configuração: netdata-ssl.conf do Apache2 para suportar o Virtual Host do Netdata, Proxy e autenticação
-baseada no arquivo .htpasswd e utilização do TLS/SSL configurado do Apache2, alteração do arquivo de configuração do:
+baseada no arquivo .htpasswd e utilização do TLS/SSL configurado no Apache2, alteração do arquivo de configuração do:
 netdata.conf para permitir somente as redes e nomes CNAME acessar o Dashboard do Netdata.
 
-28/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a dependência do NTP server no laço
+28/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a dependência do NTP Server no laço
 de loop do Netdata, adicionado os arquivos de configuração: ntpd.conf e netdata.conf, alterado o script: 15-netdata.sh
-acrescentado a edição do arquivo: ntpd.conf, alterado o script: 08-lamp.sh e 00-parametros.sh para resolver o BUG-022
+acrescentado a edição do arquivo: ntpd.conf, alterado o script: 08-lamp.sh e 00-parametros.sh para resolver o BUG-0022
 referente ao Webmin não acessar o MySQL.
 
 21/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: php.ini com as opções recomendadas do Wordpress,
@@ -34,17 +34,17 @@ atualização do script: 13-wordpress.sh com as indicações de Temas e Plugins 
 e do Profissional de TI Tales Wallef.
 
 12/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente a criação da Base de Dados do Apache
-Guacamole, dependências do MySQL, Bind9, e Conector MySQL-Java, atualização do script: 20-guacamole.sh com as opções
+Guacamole, dependências do MySQL, Bind9 e Conector MySQL-Java, atualização do script: 20-guacamole.sh com as opções
 de criação do Banco de Dados e Conector MySQL-Java, atualização do arquivo de configuração: guacamole-properties com
 as opções de conexão com o Banco de Dados MySQL. Mudanças feito conforme o arquivo NEWS do dia: 03/02/2022
 
 10/07/2022 - Robson Vaamonde - Atualização do arquivo de configuração: ntp.conf adicionado os endereços IPv4 dos
 servidores do NTP.br para resolver a falha do Bind9 em relação a data e hora errada e ocasionando as falhas de
 resolução de nomes conforme o BUG: 0009 - Falha de resolução do DNS para endereços Externos, resolvido a falha de
-mapeamento do Webdav utilizando o PowerShell e o comando Net Use no Windows 10/11 referente ao BUG: 0023 - Falha na 
-montagem da compartilhamento do Protocolo Webdav no Powershell.
+mapeamento do Webdav utilizando o PowerShell e do comando Net Use no Windows 10/11 referente ao BUG: 0023 - Falha na 
+montagem de compartilhamento do Protocolo Webdav no Powershell.
 
-09/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh adicionado no laço de loop a dependência do
+09/07/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh adicionado no laço de loop da dependência do
 Bind9 no Webdav, atualização dos arquivos de configuração do GLPI nas versões v9.x e v10.x referente os caminhos da
 instalação e numeração das versões nos scripts.
 
@@ -56,7 +56,7 @@ v10.0.2 e atualização da numeração das versões dos scripts de configuraçã
 
 05/06/2022 - Robson Vaamonde - Atualização do script: 14-webmin.sh retirado a opção de: sudo do comando de adicionar
 a chave GPG, atualizado o script: 00-parametros.sh com as versões novas do GLPI 9.x e 10.x, atualização do script
-18-fusioninventory.sh com o PATH da versão do GLPI 9.x, atualização do arquivos de configuração: agent.cfg indicando
+18-fusioninventory.sh com o PATH da versão do GLPI 9.x, atualização do arquivo de configuração: agent.cfg indicando
 o caminho HTTPS do GLPI 9.x, adicionado e corrigido as dependências do FusionInventory Task WakeOnLan: libnet-write-perl
 libyaml-shell-perl.
 
@@ -72,7 +72,7 @@ acréscimo das linhas de verificação da configuração dos arquivos do Apache2
 arquivos de configuração do: wordpress.conf e wp-config.php migrados para a versão 6.0 do Wordpress e configuração do
 suporte ao HTTPS utilizando o certificado assinado do Apache2, alteração do script: 13-wordpress.sh em relação a edição
 dos arquivos de configuração na nova localização do diretório raiz do Wordpress, atualização do arquivo de configuração:
-tomcat.conf adicionado o suporte ao HTTPS e troca do porta 8443 do suporte ao monitoramento do Netdata. Correção do BUG:
+tomcat.conf adicionado o suporte ao HTTPS e troca da porta 8443 do suporte ao monitoramento do Netdata. Correção do BUG:
 0022- Falha de autenticação do usuário Root do MySQL utilizando o Webmin, acrescentado as linhas de alteração da senha do
 usuário root@localhost do MySQL nos scripts: 00-parametros.sh e no 08-lamp.sh, atualização do arquivo de configuração do:
 loganalyzer.conf para suportar o protocolo HTTPS e alteração do diretório raiz para: /var/www/log/.
@@ -84,7 +84,7 @@ de dados de usuários e senhas de acesso ao diretório Webdav e localização do
 19/05/2022 - Robson Vaamonde - Adicionando a dependência do Cliente de FTPS no script: 00-parametros.sh do software:
 lftp, acrescentado a opção de testar o certificado TLS/SSL do servidor VSFTPd no script: 11-C-openssl-vsftpd.sh.
 
-18/05/2022 - Robson Vaamonde - Melhoria na documentação do script: 00-parametros.sh em relação aos arquivos de Conf's
+18/05/2022 - Robson Vaamonde - Melhoria na documentação do script: 00-parametros.sh em relação aos arquivos de Confs
 do OpenSSL e dependência do Bind9 na variável: SSLDEPCA, melhoria nos arquivos: mysqld.cnf e mysql.cnf em relação ao
 suporte ao TLS/SSL, acréscimo da cópia e edição do arquivo: mysql.cnf no script: 08-lamp.sh.
 
@@ -122,13 +122,13 @@ LAMP-Server.
 Mint no script: 11-A-openssl-ca.sh, melhoria na documentação do script: 09-vsftpd.sh, adicionado a alteração da
 permissão do arquivo de log: vsftpd.log junto com a criação do arquivo, melhoria na documentação do arquivo de 
 configuração do Tomcat9: server.xml, acréscimo das opções de FTP Passivo e suporte ao NAT no arquivo do VSFTPd
-vsftpd.conf, analise dos BUG's: 0018 - Falha de TCP Wrappers do MySQL Server e 0019 (Ainda sem solução) - Falha de 
+vsftpd.conf, analise dos BUGs: 0018 - Falha de TCP Wrappers do MySQL Server e 0019 (Ainda sem solução) - Falha de 
 criação de arquivos utilizando o Windows Explorer no Windows 10 se conectando remotamente no Servidor FTP utilizando 
 o VSFTPd (aplicado Patch de correção no arquivo vsftpd.conf e no arquivo vsftpd.allowed_users).
 
 19/04/2022 - Robson Vaamonde - Melhoria no arquivo de configuração: vsftpd.conf, adicionado a linha: listen_port=21
 e o bloco de configuração do modo passivo de acesso remoto via NAT do Servidor FTP (ainda em testes e análise do BUG),
-alteração do arquivo de configuração: 50-default.conf para habilitar o registro dos Log's do VSFTPd no arquivo de Log
+alteração do arquivo de configuração: 50-default.conf para habilitar o registro dos Logs do VSFTPd no arquivo de Log
 padrão em: /var/log/vsftpd.log
 
 17/04/2022 - Robson Vaamonde - Melhoria nos arquivos de configuração e scripts do OpenSSL: 11-A-openssl-ca.sh, ca.conf,
