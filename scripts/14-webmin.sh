@@ -39,6 +39,8 @@
 # Site oficial do Projeto Webmin: http://www.webmin.com/
 # Site oficial do Projeto Usermin: https://www.webmin.com/usermin.html
 # Site oficial do Projeto Virtualmin: https://www.webmin.com/virtualmin.html
+#
+# # Soluções Open Source de Gerenciamento via Web
 # Site oficial do Projeto Cokipit: https://cockpit-project.org/
 # Site oficial do Projeto ISPConfig: https://www.ispconfig.org/
 # Site oficial do Projeto Ajenti: https://ajenti.org/core/

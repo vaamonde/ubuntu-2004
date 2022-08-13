@@ -23,6 +23,8 @@
 # mantido pelo Internet Systems Consortium.
 #
 # Site Oficial do Projeto Bind: https://www.isc.org/bind/
+#
+# Soluções Open Source de Servidor de DNS
 # Site Oficial do Projeto Dnsmasq: https://thekelleys.org.uk/dnsmasq/doc.html
 # Site Oficial do Projeto Powerdns: https://www.powerdns.com/
 #

@@ -19,6 +19,8 @@
 # Suporta IPv4, IPv6, TLS e FTPS.
 #
 # Site Oficial do Projeto VSFTPd: https://security.appspot.com/vsftpd.html
+#
+# Soluções Open Source de Servidor de FTP
 # Site Oficial do Projeto ProFTPD: http://www.proftpd.org/
 # Site Oficial do Projeto Pure-FTPD: https://www.pureftpd.org/project/pure-ftpd/
 # Site Oficial do Projeto FileZilla: https://filezilla-project.org/

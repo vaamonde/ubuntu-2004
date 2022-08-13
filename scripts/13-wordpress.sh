@@ -20,6 +20,8 @@
 # Mullenweg, e distribuído gratuitamente sob a GNU General Public License.
 #
 # Site oficial do Projeto Wordpress: https://wordpress.org/
+#
+# Soluções Open Source de CMS
 # Site Oficial do Projeto Joomla: https://www.joomla.org/
 # Site Oficial do Projeto Drupal: https://www.drupal.org/
 #

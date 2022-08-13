@@ -22,9 +22,9 @@
 # Site oficial do Projeto LogAnalyzer: https://loganalyzer.adiscon.com/
 #
 # Soluções Open Source de Log Analyzer
-# Graylog: https://www.graylog.org/
-# Logstash: https://www.elastic.co/pt/logstash/
-# Fluentd: https://www.fluentd.org/
+# Site oficial do Projeto Graylog: https://www.graylog.org/
+# Site oficial do Projeto Logstash: https://www.elastic.co/pt/logstash/
+# Site oficial do Projeto Fluentd: https://www.fluentd.org/
 #
 # Informações que serão solicitadas na configuração via Web do LogAnalyzer
 # Step 0 -	Errordetails: Click "here" to Install Adiscon LogAnalyzer!

@@ -22,6 +22,8 @@
 # em tempo real.
 #
 # Site oficial do Projeto Netdata: https://github.com/netdata/netdata
+#
+# Soluções Open Source de Monitoramento
 # Site oficial do Projeto Monitorix: https://www.monitorix.org
 # Site oficial do Projeto Alerta: https://alerta.io/
 # Site oficial do Projeto MRTG: https://oss.oetiker.ch/mrtg/

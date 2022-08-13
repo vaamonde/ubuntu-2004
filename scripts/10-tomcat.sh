@@ -25,6 +25,8 @@
 # posteriormente.
 #
 # Site Oficial do Projeto Tomcat: http://tomcat.apache.org/
+#
+# Soluções Open Source de Servidor de Aplicativo
 # Site Oficial do Projeto OpenJDK: https://openjdk.java.net/
 # Site Oficial do Projeto WildFly (antigo JBOSS): https://www.wildfly.org/
 # Site Oficial do Projeto Payara: https://www.payara.fish

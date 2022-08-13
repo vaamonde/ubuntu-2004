@@ -26,6 +26,8 @@
 # incidentes ou solicitações (com base no ativo ou não) graças ao recurso de Helpdesk.
 #
 # Site oficial do Projeto GLPI: https://glpi-project.org/pt-br/
+#
+# Soluções Open Source de Help Desk
 # Site oficial do Projeto OTRS: https://otrs.com/
 # Site oficial do Projeto iTop: https://www.combodo.com/itop
 #

@@ -21,7 +21,7 @@
 # outros para permitir "contêineres" independentes para executar dentro de uma única 
 # instância Linux, evitando a sobrecarga de iniciar e manter máquinas virtuais (VMs).
 #
-# O Docker O Compose é uma ferramenta para definir e executar aplicativos Docker de vários 
+# O Docker Compose é uma ferramenta para definir e executar aplicativos Docker de vários 
 # contêineres. Com o Compose, você usa um arquivo YAML para configurar os serviços do seu 
 # aplicativo. Então, com um único comando, você cria e inicia todos os serviços da sua 
 # configuração. Para saber mais sobre todos os recursos do Compose.

@@ -40,7 +40,7 @@
 # 
 # Site Oficial do Projeto FusionInventory: http://fusioninventory.org/
 #
-# Software de Inventário de Rede
+# Soluções Open Source de Inventário de Rede
 # Site Oficial do Projeto OCS Inventory: https://ocsinventory-ng.org
 # Site Oficial do Projeto Snipe-IT: https://snipeitapp.com/
 # Site Oficial do Projeto Open-Audit: https://www.open-audit.org/
