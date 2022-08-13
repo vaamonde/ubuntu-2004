@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 03/08/2022
-Versão: 0.17
+Data de atualização: 13/08/2022
+Versão: 0.18
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -98,17 +98,17 @@ _
 #28C_ 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 (05/08/2022)
 #28D_ 15-netdata.sh Segurança de Acesso ao Netdata - PARTE-04 (08/08/2022)
 _
-#29A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (08/08/2022)
-#29B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 (10/08/2022)
-#29C_ 16-loganalyzer.sh Monitoramento dos Logs no LogAnalyzer - PARTE-03 (12/08/2022)
+#29A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (15/08/2022)
+#29B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 (17/08/2022)
+#29C_ 16-loganalyzer.sh Monitoramento dos Logs no LogAnalyzer - PARTE-03 (19/08/2022)
 _
-#30A_ 17-A-glpi.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk - PARTE-01
-#30B_ 17-A-glpi.sh Instalação e Configuração do GLPI Help Desk - PARTE-02
-#30C_ 17-A-glpi.sh Utilização e Criação de Chamados no GLPI Help Desk - PARTE-03
+#30A_ 17-A-glpi-9.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk 9.x - PARTE-01 (22/08/2022)
+#30B_ 17-A-glpi-9.sh Instalação e Configuração do GLPI Help Desk 9.x - PARTE-02 (24/08/2022)
+#30C_ 17-A-glpi-9.sh Utilização e Criação de Chamados no GLPI Help Desk 9.x - PARTE-03 (26/08/2022)
 _
-#31A_ 18-fusioninventory.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01
-#31B_ 18-fusioninventory.sh Instalação e Configuração do FusionInventory - PARTE-02
-#31C_ 18-fusioninventory.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03
+#31A_ 18-fusioninventory.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01 (29/08/2022)
+#31B_ 18-fusioninventory.sh Instalação e Configuração do FusionInventory - PARTE-02 (31/08/2022)
+#31C_ 18-fusioninventory.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03 (02/09/2022)
 _
 #32A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
 #32B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
@@ -166,3 +166,38 @@ _
 #48A_ 33-asterisk.sh Customizando o Script e Arquivos de Configuração do Asterisk - PARTE-01
 #48B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
 #48C_ 33-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
+_
+#49A_ 34-netdisco.sh Customizando o Script e Arquivos de Configuração do Netdisco - PARTE-01
+#49B_ 34-netdisco.sh Instalação e Configuração do Netdisco - PARTE-02
+#49C_ 34-netdisco.sh Escaneando Rede Cisco utilizando o SNMP do Netdisco - PARTE-03
+_
+#50A_ 35-openproject.sh Customizando o Script e Arquivos de Configuração do OpenProject - PARTE-01
+#50B_ 35-openproject.sh Instalação e Configuração do OpenProject - PARTE-02
+#50C_ 35-openproject.sh Testes de Acesso e Criação de Projeto no OpenProject - PARTE-03
+
+#= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
+
+00-iperf.sh (dev): software utilizado para testar a largura de banda e desempenho de redes de computadores;
+00-speedtest.sh (dev): aplicativo de teste de velocidade de internet multiplataforma;
+00-rdiffweb.sh (dev): software de gerenciamento de backup eue facilita o backup e a restauração de arquivos;
+00-phpipam.sh (dev): aplicativo de gerenciamento de rede, ip’s, Vlans, checagem de host e divisão por sub-redes;
+00-bigbluebutton.sh (dev): sistema de web-conferência de código aberto projetado para aprendizado online;
+00-passbolt.sh (dev): gerenciador de senhas de código aberto projetado para colaboração em equipe;
+00-metabase.sh (dev): ferramenta de business intelligence gratuita e de código aberto;
+00-samba4.sh (dev): protocolo de compartilhamento de arquivos em rede linux, microsoft ou macos;
+00-postfix.sh (dev): agente de transferência de e-mails livre e de código aberto;
+00-netbox.sh (dev): ferramenta de modelagem de recursos de infraestrutura;
+00-gitlab.sh (dev): gerenciador de repositório de software baseado em git;
+00-redmine.sh (dev):  gerenciador de projetos baseados na web e ferramenta de gerenciamento de bugs;
+00-motioneye.sh (dev): software de CFTV de software livre desenvolvido para Linux;
+00-shinobi.sh (dev): software de CCTV de código aberto escrito em Node.JS;
+00-thinstation.sh (dev): implementação Linux gratuita e de código aberto de um sistema operacional thin client;
+00-bastillion.sh (dev): console SSH baseado na web que gerencia o acesso administrativo aos sistemas;
+00-jenkins.sh (dev): servidor de automação de código aberto;
+00-awx.sh (dev): oferece software para gerenciar projetos Ansible;
+00-owa.sh (dev): software para rastrear e analisar o acesso a websites;
+00-hestia.sh (dev): sistemas de gerenciamento de servidores Web;
+00-aapanel.sh (dev): sistemas de gerenciamento de servidores Web;
+00-tinycp.sh (dev): sistemas de gerenciamento de servidores Web;
+00-moodle.sh (dev): um software livre, de apoio à aprendizagem, executado num ambiente virtual;
+00-mkdocs.sh (dev): é um gerador de site estático rápido voltado para a construção de documentação.

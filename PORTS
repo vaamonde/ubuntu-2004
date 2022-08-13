@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 04/08/2022
-Versão: 0.09
+Data de atualização: 13/08/2022
+Versão: 0.10
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 Network: 172.16.1.0/24
@@ -40,7 +40,7 @@ SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 14-webmin.sh ---------------> TCP 10000 (miniserv HTTPS) e TCP 20000 (miniserv HTTPS)
 15-netdata.sh --------------> TCP 443 (apache2 HTTPS) e TCP 19999 (netdata HTTP)
 16-loganalyzer.sh ----------> TCP 443 (apache2 HTTPS), TCP 3306 (mysqld), TCP 514 (rsyslogd) e UDP 514 (rsyslogd)
-17-glpi.sh -----------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
+17-A-glpi-9.sh -------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
 18-fusioninventory.sh ------> TCP 443 (apache2 HTTPS), TCP 3306 (mysqld) e TCP 62354 (fusioninv GLPI)
 19-zoneminder.sh -----------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
 20-guacamole.sh ------------> TCP 8443 (java HTTPS) e TCP 4822 (guacd)
