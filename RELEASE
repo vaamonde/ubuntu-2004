@@ -12,10 +12,12 @@ Versão: 0.24
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 Comando para verificar todas as versões dos scripts: grep 'Versão:' *.sh
 Comando para verificar todas as datas de atualização dos scripts: grep 'Data de atualização:' *.sh
-    ls -1 *.sh > /tmp/01.txt
-    grep 'Versão:' *.sh | cut -d '#' -f2 > /tmp/02.txt
-    grep 'Data de atualização:' *.sh | cut -d '#' -f2 > /tmp/03.txt
-    paste /tmp/01.txt /tmp/02.txt /tmp/03.txt >> ../RELEASE
+  #script para automatizar a geração dos Releases das Versões dos Scripts
+    cd scripts/
+      ls -1 *.sh > /tmp/01.txt
+      grep 'Versão:' *.sh | cut -d '#' -f2 > /tmp/02.txt
+      grep 'Data de atualização:' *.sh | cut -d '#' -f2 > /tmp/03.txt
+      paste /tmp/01.txt /tmp/02.txt /tmp/03.txt | column -t >> ../RELEASE
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
 
