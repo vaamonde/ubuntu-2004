@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 31/05/2022
-# Versão: 0.13
+# Data de atualização: 12/08/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -37,8 +37,8 @@
 # Etapa 0: Verificação do ambiente: Continuar;
 # Etapa 1: Instalação da conexão com o bando de dados:
 #	SQL server(MariaDB ou MySQL): localhost
-#	Usuário SQL: glpi
-#	Senha SQL: glpi: Continuar;
+#	Usuário SQL: glpi9
+#	Senha SQL: glpi9: Continuar;
 # Etapa 2: Conexão com banco de dados: glpi9: Continuar;
 # Etapa 3: Iniciando banco de dados: Continuar;
 # Etapa 4: Coletar dados: Continuar;
@@ -213,7 +213,6 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 	# opção do comando chmod: -v (verbose), 644 (Dono=RW-,Grupo=R--,Outros=R--)
 	# opção do comando {} \;: executa comandos em lote e aplicar as permissões para cada arquivo/diretório em loop
 	# opção do comando chmod: -R (recursive), -v (verbose), 777 (User=RWX, Group=RWX, Other=RWX)
-	chown -Rfv www-data.www-data $PATHWORDPRESS &>> $LOG
 	tar -zxvf glpi9.tgz &>> $LOG
 	mv -v glpi/ $PATHGLPI9 &>> $LOG
 	chown -Rv www-data:www-data $PATHGLPI9 &>> $LOG
