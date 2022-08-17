@@ -650,21 +650,21 @@ Link da vídeo aula: https://www.youtube.com/watch?v=nhi3dNh4Jz4
 
 Primeiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 16-loganalyzer.sh antes de executar no nosso servidor.
 
-[![Config LogAnalyzer Server](http://img.youtube.com/vi//0.jpg)]( "Config LogAnalyzer Server")
+[![Config LogAnalyzer Server](http://img.youtube.com/vi/nPJmm8e6uxs/0.jpg)](https://www.youtube.com/watch?v=nPJmm8e6uxs "Config LogAnalyzer Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=nPJmm8e6uxs
 
 ## **🔴 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 🐧**
 
 Segundo Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do LogAnalyzer.
 
-[![Install LogAnalyzer Server](http://img.youtube.com/vi//0.jpg)]( "Install LogAnalyzer Server")
+[![Install LogAnalyzer Server](http://img.youtube.com/vi/DSj50Hfi9U8/0.jpg)](https://www.youtube.com/watch?v=DSj50Hfi9U8 "Install LogAnalyzer Server")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=DSj50Hfi9U8
 
 ## **🔴 16-loganalyzer.sh Testes de Acesso e Monitoramento dos Recursos do LogAnalyzer - PARTE-03 🐧**
 
-Terceiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como utilizar o LogAnalyzer para monitorar em tempo real os Log's do nosso servidor Ubuntu Server, verificar os gráficos e monitoramento dos serviços de rede. 
+Terceiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como utilizar o LogAnalyzer para monitorar em tempo real os Log's do nosso servidor Ubuntu Server, verificar os gráficos e monitorar os serviços de rede. 
 
 [![Access LogAnalyzer Server](http://img.youtube.com/vi//0.jpg)]( "Access LogAnalyzer Server")
 
