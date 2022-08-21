@@ -8,7 +8,7 @@ Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
 Data de atualização: 21/08/2022
-Versão: 0.78
+Versão: 0.79
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
@@ -17,6 +17,10 @@ criação das variáveis: MEMTEST86V9 e MEMTEST86V4 para suportar as novas vers�
 adquiriu o Memtest86 PassMark. Alteração do arquivo de configuração: dhcpd.conf com a linha para mudar o escopo padrão
 para configurar o DNS Server apontando para o servidor Ubuntu Server. Alteração do arquivo de configuração do serviço
 do VSFTPd: vsftpd.allowed_users alterado os usuários do GLPI9 e GLPI10. 
+
+20/08/2022 - Robson Vaamonde - Criação do arquivo de configuração: grafana.ini, alteração do script: 21-grafana.sh com
+suporte para copiar o arquivo de configuração customizado do grafana.ini e editar o arquivo. Preparativos para a criação
+do script de geração do certificado TLS/SSL do Grafana.
 
 10/08/2022 - Robson Vaamonde - Atualização de vários arquivos no repositório com foco em documentação e correções de
 escrita dos scripts, melhoria no cabeçalho e versões de software.
