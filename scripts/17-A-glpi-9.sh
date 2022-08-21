@@ -94,7 +94,7 @@ fi
 # -n (permite nova linha), || (operador lógico OU), 2> (redirecionar de saída de erro STDERR), 
 # && = operador lógico AND, { } = agrupa comandos em blocos, [ ] = testa uma expressão, retornando 
 # 0 ou 1, -ne = é diferente (NotEqual)
-echo -n "Verificando as dependências do GLPI, aguarde... "
+echo -n "Verificando as dependências do GLPI Help Desk 9.5.x, aguarde... "
 	for name in $GLPIDEP
 	do
   		[[ $(dpkg -s $name 2> /dev/null) ]] || { 
@@ -186,17 +186,17 @@ echo -e "Removendo todos os software desnecessários, aguarde..."
 echo -e "Software removidos com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Iniciando a Instalação e Configuração do GLPI Help Desk, aguarde...\n"
+echo -e "Iniciando a Instalação e Configuração do GLPI Help Desk 9.5.x, aguarde...\n"
 sleep 5
 #
-echo -e "Instalando as dependências do GLPI, aguarde..."
+echo -e "Instalando as dependências do GLPI Help Desk 9.5.x, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes), \ (faz a função de quebra de pagina no comando apt)
 	apt -y install $GLPIINSTALL9 &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Fazendo o download do GLPI do site Oficial, aguarde..."
+echo -e "Fazendo o download do GLPI Help Desk 9.5.x do site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saida padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
@@ -205,7 +205,7 @@ echo -e "Fazendo o download do GLPI do site Oficial, aguarde..."
 echo -e "Download do GLPI feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
+echo -e "Descompactando e Instalando o GLPI Help Desk 9.5.x no site do Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
 	# opção do comando mv: -v (verbose)
@@ -224,7 +224,7 @@ echo -e "Descompactando e Instalando o GLPI no site do Apache2, aguarde..."
 echo -e "GLPI instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o Banco de Dados do GLPI, aguarde..."
+echo -e "Criando o Banco de Dados do GLPI Help Desk 9.5.x, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), mysql (database)
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_DATABASE_GLPI9" mysql &>> $LOG
@@ -235,7 +235,7 @@ echo -e "Criando o Banco de Dados do GLPI, aguarde..."
 echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizando os arquivos de configuração do GLPI, aguarde..."
+echo -e "Atualizando os arquivos de configuração do GLPI Help Desk 9.5.x, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
 	cp -v conf/glpi/glpi9/glpi.conf /etc/apache2/conf-available/glpi9.conf &>> $LOG
@@ -244,28 +244,28 @@ echo -e "Atualizando os arquivos de configuração do GLPI, aguarde..."
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de configuração do glpi.conf, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de configuração do glpi9.conf, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/apache2/conf-available/glpi9.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de Virtual Host glpi.conf, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de Virtual Host glpi9.conf, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/apache2/sites-available/glpi9.conf
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Editando o arquivo de agendamento glpi-cron, pressione <Enter> para continuar"
+echo -e "Editando o arquivo de agendamento glpi9-cron, pressione <Enter> para continuar"
 	# opção do comando read: -s (Do not echo keystrokes)
 	read -s
 	vim /etc/cron.d/glpi9-cron
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Habilitando o Virtual Host do GLPI no Apache2, aguarde..."
+echo -e "Habilitando o Virtual Host do GLPI Help Desk 9.5.x no Apache2, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando phpenmod: (habilitar módulos do PHP)
 	# opção do comando a2enconf: (habilitar arquivo de configuração de site do Apache2)
@@ -302,7 +302,7 @@ echo -e "Verificando a porta de conexão do Apache2, aguarde..."
 echo -e "Porta de conexão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o Virtual Host do GLPI no Apache2, aguarde..."
+echo -e "Verificando o Virtual Host do GLPI Help Desk 9.5.x no Apache2, aguarde..."
 	# opção do comando apachectl: -s (a synonym)
 	apache2ctl -S | grep glpi9.$DOMINIOSERVER
 echo -e "Virtual Host verificado com sucesso!!!, continuando com o script...\n"
@@ -315,14 +315,14 @@ echo -e "MAIS INFORMAÇÕES NA LINHA 27 DO SCRIPT: $0"
 read
 sleep 5
 #
-echo -e "Removendo o script de instalação do GLPI Help Desk, aguarde..."
+echo -e "Removendo o script de instalação do GLPI Help Desk 9.5.x, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	mv -v $PATHGLPI9/install/install.php $PATHGLPI9/install/install.php.old &>> $LOG
 echo -e "Arquivo removido com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Instalação do GLPI Help Desk feita com Sucesso!!!."
+echo -e "Instalação do GLPI Help Desk 9.5.x feita com Sucesso!!!."
 	# script para calcular o tempo gasto (SCRIPT MELHORADO, CORRIGIDO FALHA DE HORA:MINUTO:SEGUNDOS)
 	# opção do comando date: +%T (Time)
 	HORAFINAL=$(date +%T)
