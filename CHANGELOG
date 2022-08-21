@@ -7,11 +7,17 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 10/08/2022
+Data de atualização: 21/08/2022
 Versão: 0.78
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+21/08/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh com o novo caminho da imagem do Memtest86,
+criação das variáveis: MEMTEST86V9 e MEMTEST86V4 para suportar as novas versões do Memtest86 mantida pela empresa que
+adquiriu o Memtest86 PassMark. Alteração do arquivo de configuração: dhcpd.conf com a linha para mudar o escopo padrão
+para configurar o DNS Server apontando para o servidor Ubuntu Server. Alteração do arquivo de configuração do serviço
+do VSFTPd: vsftpd.allowed_users alterado os usuários do GLPI9 e GLPI10. 
+
 10/08/2022 - Robson Vaamonde - Atualização de vários arquivos no repositório com foco em documentação e correções de
 escrita dos scripts, melhoria no cabeçalho e versões de software.
 

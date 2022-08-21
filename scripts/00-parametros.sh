@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 09/08/2022
-# Versão: 0.76
+# Data de atualização: 21/08/2022
+# Versão: 0.77
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -290,8 +290,10 @@ PATHTFTP="/var/lib/tftpboot"
 PATHPXE="/usr/lib/PXELINUX"
 PATHSYSLINUX="/usr/lib/syslinux"
 #
-# Variável de download do software de teste de memória Memtest86 (Link atualizado em: 31/03/2022)
-MEMTEST86="http://www.memtest.org/download/5.31b/memtest86+-5.31b.bin.gz"
+# Variável de download do software de teste de memória Memtest86 (Link atualizado em: 21/08/2022)
+MEMTEST86="https://www.memtest.org/download/archives/5.31b/memtest86+-5.31b.bin.gz"
+MEMTEST86V9="https://www.memtest86.com/downloads/memtest86-usb.zip"
+MEMTEST86V4="https://www.memtest86.com/downloads/memtest86-4.3.7-usb.tar.gz"
 #
 # Variável das dependências do laço de loop do TFTP-HPA Server
 TFTPDEP="bind9 bind9utils isc-dhcp-server"
