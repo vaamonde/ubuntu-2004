@@ -163,7 +163,7 @@ echo
 #
 echo -e "Instalação e Configuração do FusionInventory no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo FusionInventory.: TCP 62354\n"
-echo -e "Após a instalação do FusionInventory acesse a URL: https://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "Após a instalação do FusionInventory acesse a URL: https://glpi9.$(hostname -d | cut -d' ' -f1)/"
 echo -e "As configurações do FusionInventory Server é feita dentro do GLPI Help Desk\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
@@ -307,7 +307,7 @@ echo -e "Verificando o serviço do FusionInventory Agent, aguarde..."
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://glpi.$(hostname -d | cut -d' ' -f1)/"
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://glpi9.$(hostname -d | cut -d' ' -f1)/"
 echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO FUSIONINVENTORY SERVER, APÓS A"
 echo -e "CONFIGURAÇÃO PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT."
 echo -e "MAIS INFORMAÇÕES NA LINHA 21 DO SCRIPT: $0"

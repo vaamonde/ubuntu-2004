@@ -33,19 +33,19 @@
 #
 # Informações que serão solicitadas na configuração via Web do GLPI
 # GLPI Setup
-# Select your language: Português do Brasil: OK;
-# Licença: Eu li e ACEITO os termos de licença acima: Continuar;
-# Início da instalação: Instalar;
-# Etapa 0: Verificação do ambiente: Continuar;
-# Etapa 1: Instalação da conexão com o bando de dados:
+# Selecione seu idioma: Português do Brasil: <OK>;
+# Licença: <Continuar>;
+# Início da instalação: <Instalar>;
+# Etapa 0: Verificando a compatibilidade do seu ambiente para a execução do GLPI: <Continuar>;
+# Etapa 1: Instalação da conexão com o banco de dados:
 #	SQL server(MariaDB ou MySQL): localhost
 #	Usuário SQL: glpi10
-#	Senha SQL: glpi10: Continuar;
-# Etapa 2: Conexão com banco de dados: glpi10: Continuar;
-# Etapa 3: Iniciando banco de dados: Continuar;
-# Etapa 4: Coletar dados: Continuar;
-# Etapa 5: Uma última coisa antes de começar: Continuar;
-# Etapa 6: A instalação foi concluída: Usar GLPI
+#	Senha SQL: glpi10: <Continuar>;
+# Etapa 2: Teste de conexão com o banco de dados: glpi10: <Continuar>;
+# Etapa 3: Iniciando banco de dados: <Continuar>;
+# Etapa 4: Coletar dados: <Continuar>;
+# Etapa 5: Uma última coisa antes de começar: <Continuar>;
+# Etapa 6: A instalação foi concluída: <Usar GLPI>
 #
 # Usuário/Senha: glpi/glpi - conta do usuário administrador
 # Usuário/Senha: tech/tech - conta do usuário técnico
