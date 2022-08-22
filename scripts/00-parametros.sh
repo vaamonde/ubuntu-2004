@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 21/08/2022
-# Versão: 0.77
+# Data de atualização: 22/08/2022
+# Versão: 0.78
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1138,7 +1138,7 @@ CREATE_USER_DATABASE_ZABBIX="CREATE USER 'zabbix' IDENTIFIED BY 'zabbix';"
 GRANT_DATABASE_ZABBIX="GRANT USAGE ON *.* TO 'zabbix';"
 GRANT_ALL_DATABASE_ZABBIX="GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix';"
 FLUSH_ZABBIX="FLUSH PRIVILEGES;"
-CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-sql-scripts/mysql/create.sql.gz"
+CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz"
 #
 # Variável das dependências do laço de loop do Zabbix Server
 ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"

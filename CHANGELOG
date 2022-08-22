@@ -17,7 +17,8 @@ criação das variáveis: MEMTEST86V9 e MEMTEST86V4 para suportar as novas vers�
 adquiriu o Memtest86 PassMark. Alteração do arquivo de configuração: dhcpd.conf com a linha para mudar o escopo padrão
 para configurar o DNS Server apontando para o servidor Ubuntu Server. Alteração do arquivo de configuração do serviço
 do VSFTPd: vsftpd.allowed_users alterado os usuários do GLPI9 e GLPI10. Criação do script: 17-B-glpi-10.sh, alteração 
-do nome do script: 18-A-fusioninventory-9.sh pois foi lançado o suporte para o GLPI 10.
+do nome do script: 18-A-fusioninventory-9.sh pois foi lançado o suporte para o GLPI 10. Correção do caminho do script
+da criação da Base de Dados do Zabbix, caminho estava correto só no nome que alterou para: server.sql.gz.
 
 20/08/2022 - Robson Vaamonde - Criação do arquivo de configuração: grafana.ini, alteração do script: 21-grafana.sh com
 suporte para copiar o arquivo de configuração customizado do grafana.ini e editar o arquivo. Preparativos para a criação
