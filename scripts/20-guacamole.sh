@@ -29,7 +29,7 @@
 #	sudo gsettings set org.gnome.Vino prompt-enabled true
 #	sudo gsettings set org.gnome.Vino require-encryption false
 #	cd /usr/lib/vino/
-#	./vino-server &
+#		./vino-server &
 #	sudo netstat -pl | grep 5900
 #	sudo nc -vz 127.0.0.1 5900
 #

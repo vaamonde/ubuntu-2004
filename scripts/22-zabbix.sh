@@ -8,10 +8,10 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.04
+# Data de atualização: 22/08/2022
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Zabbix Server e Agent v5.4.x 
+# Testado e homologado para a versão do Zabbix Server e Agent v6.2.x 
 #
 # O Zabbix é uma ferramenta de software de monitoramento de código aberto para diversos 
 # componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. 
@@ -20,7 +20,7 @@
 # monitoramento e alertas.
 #
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
-# Welcome to Zabbix 5.4: 
+# Welcome to Zabbix 6.2: 
 #   	Default language: English (en_US): 
 #	Next step;
 # Check of pre-requisites: 
@@ -52,6 +52,12 @@
 # Password Default: zabbix
 #
 # Site Oficial do Projeto Zabbix: https://www.zabbix.com/
+#
+# Alternativas ao Zabbix
+# Site Oficial do Nagios: https://www.nagios.org/
+# Site Oficial do OpenNMS: https://www.opennms.com/
+# Site Oficial do Cacti: https://www.cacti.net/
+# Site Oficial do LibreMNS: https://www.librenms.org/ 
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
