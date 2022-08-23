@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 22/08/2022
-# Versão: 0.78
+# Data de atualização: 23/08/2022
+# Versão: 0.79
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -712,7 +712,7 @@ WEBMINDEP="perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime lib
 apt-show-versions python unzip apt-transport-https software-properties-common"
 #
 # Variável de instalação do serviço de rede Webmin e Usermin
-WEBMINNSTALL="webmin usermin"
+WEBMININSTALL="webmin usermin"
 #
 # Variáveis das portas de conexão padrão do Webmin e Usermin
 PORTWEBMIN="10000"
@@ -999,7 +999,8 @@ PORTFUSION="62354"
 # Declarando as variáveis utilizadas nas configurações do sistema de Câmeras ZoneMinder
 #
 # Variável do PPA (Personal Package Archive) do ZoneMinder (Link atualizado no dia 03/12/2021)
-ZONEMINDER="ppa:iconnor/zoneminder-master"
+ZONEMINDER="ppa:iconnor/zoneminder-proposed"
+#ZONEMINDER="ppa:iconnor/zoneminder-master"
 #
 # Declarando as variáveis para criação da Base de Dados do ZoneMinder
 # opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
@@ -1013,12 +1014,15 @@ ZONEMINDER="ppa:iconnor/zoneminder-master"
 # OBSERVAÇÃO: NO SCRIPT: 15-ZONEMINDER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
-DROP_DATABASE_ZONEMINDER="zm"
+DROP_DATABASE_ZONEMINDER="DROP DATABASE zm;"
 CREATE_TABLE_ZONEMINDER="/usr/share/zoneminder/db/zm_create.sql"
 ALTER_USER_DATABASE_ZONEMINDER="ALTER USER 'zmuser'@localhost IDENTIFIED BY 'zmpass';"
 GRANT_DATABASE_ZONEMINDER="GRANT USAGE ON *.* TO 'zmuser'@'localhost';"
 GRANT_ALL_DATABASE_ZONEMINDER="GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;"
 FLUSH_ZONEMINDER="FLUSH PRIVILEGES;"
+#
+# Variável de instalação do serviço de rede ZoneMinder
+ZONEMINDERINSTALL="zoneminder msmtp tzdata gnupg"
 #
 # Variável das dependências do laço de loop do ZoneMinder
 ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php bind9"

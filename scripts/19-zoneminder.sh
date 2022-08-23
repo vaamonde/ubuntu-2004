@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 05/06/2022
-# Versão: 0.10
+# Data de atualização: 23/08/2022
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -204,15 +204,15 @@ sleep 5
 echo -e "Instalando o ZoneMinder, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install zoneminder &>> $LOG
+	apt -y install $ZONEMINDERINSTALL &>> $LOG
 echo -e "ZoneMinder instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Criando o Banco de Dados do ZoneMinder, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), < (Redirecionador de Entrada STDIN)
-	#mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
-	#mysql -u $USERMYSQL -p$SENHAMYSQL < $CREATE_DATABASE_ZONEMINDER &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL < $CREATE_DATABASE_ZONEMINDER &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$ALTER_USER_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_ZONEMINDER" mysql &>> $LOG

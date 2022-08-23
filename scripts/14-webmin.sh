@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.06
+# Data de atualização: 23/08/2022
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Webmin v1.9x e do Usermin v1.8x 
 #
@@ -235,7 +235,7 @@ sleep 5
 echo -e "Instalando o Webmin e Usermin, esse processo demora um pouco, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install $WEBMINNSTALL &>> $LOG
+	apt -y install $WEBMININSTALL &>> $LOG
 echo -e "Instalação do Webmin e do Usermin feita com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
