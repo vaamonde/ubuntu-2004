@@ -218,7 +218,7 @@ echo -e "Instalando as dependências do LogAnalyzer, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
 	echo "rsyslog-mysql rsyslog-mysql/dbconfig-install boolean false" | debconf-set-selections &>> $LOG
-    debconf-show rsyslog-mysql &>> $LOG
+	debconf-show rsyslog-mysql &>> $LOG
 	apt -y install $LOGINSTALL &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
