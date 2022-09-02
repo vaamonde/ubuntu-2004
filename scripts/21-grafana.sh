@@ -26,6 +26,12 @@
 #
 # Site Oficial do Projeto Grafana: https://grafana.com/
 #
+# Soluções Open Source de Visualização de Dados
+# Site Oficial do Projeto Metabase: https://www.metabase.com/
+# Site Oficial do Projeto Wazuh: https://wazuh.com/
+# Site Oficial do Projeto OpenSearch: https://opensearch.org/
+# Site Oficial do Projeto Cyclotron: https://www.cyclotron.io/
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #

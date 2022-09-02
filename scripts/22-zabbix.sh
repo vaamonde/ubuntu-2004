@@ -53,7 +53,7 @@
 #
 # Site Oficial do Projeto Zabbix: https://www.zabbix.com/
 #
-# Alternativas ao Zabbix
+# Soluções Open Source de Monitoramento do Rede 
 # Site Oficial do Nagios: https://www.nagios.org/
 # Site Oficial do OpenNMS: https://www.opennms.com/
 # Site Oficial do Cacti: https://www.cacti.net/

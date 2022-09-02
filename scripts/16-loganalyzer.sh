@@ -21,7 +21,7 @@
 #
 # Site oficial do Projeto LogAnalyzer: https://loganalyzer.adiscon.com/
 #
-# Soluções Open Source de Log Analyzer
+# Soluções Open Source de Análise de Logs
 # Site oficial do Projeto Graylog: https://www.graylog.org/
 # Site oficial do Projeto Logstash: https://www.elastic.co/pt/logstash/
 # Site oficial do Projeto Fluentd: https://www.fluentd.org/

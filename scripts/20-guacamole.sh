@@ -43,6 +43,11 @@
 #
 # Site Oficial do Projeto Guacamole: https://guacamole.apache.org/
 #
+# Soluções Open Source de Gateway de Desktop
+# Site Oficial do Projeto No Machine: https://www.nomachine.com/pt-pt
+# Site Oficial do Projeto Mesh Commander: https://github.com/Ylianst/MeshCentral
+# Site Oficial do RustDesk: https://github.com/rustdesk/rustdesk
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
