@@ -31,6 +31,10 @@
 # Site oficial do Projeto OTRS: https://otrs.com/
 # Site oficial do Projeto iTop: https://www.combodo.com/itop
 #
+# Indicação de Profissionais de Help Desk GLPI no Brasil:
+# Site: https://www.servicedeskbrasil.com.br/
+# YouTUBE: https://www.youtube.com/ServicedeskBrasil
+#
 # Informações que serão solicitadas na configuração via Web do GLPI
 # GLPI Setup
 # Selecione seu idioma: Português do Brasil: <OK>;
