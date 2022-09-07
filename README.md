@@ -666,6 +666,30 @@ Link da vídeo aula: https://www.youtube.com/watch?v=DSj50Hfi9U8
 
 Terceiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como utilizar o LogAnalyzer para monitorar em tempo real os Log's do nosso servidor Ubuntu Server, verificar os gráficos e monitorar os serviços de rede. 
 
-[![Access LogAnalyzer Server](http://img.youtube.com/vi//0.jpg)]( "Access LogAnalyzer Server")
+[![Access LogAnalyzer Server](http://img.youtube.com/vi/Z5B4KeysjN0/0.jpg)](https://www.youtube.com/watch?v=Z5B4KeysjN0 "Access LogAnalyzer Server")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Z5B4KeysjN0
+
+## **🔴 17-A-glpi-9.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk v9.x - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do GLPI Help Desk v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 17-A-glpi-9.sh antes de executar no nosso servidor.
+
+[![Config GLPI 9.x](http://img.youtube.com/vi/RiZFfc635wY/0.jpg)](https://www.youtube.com/watch?v=RiZFfc635wY "Config GLPI 9.x")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=RiZFfc635wY
+
+## **🔴 17-A-glpi-9.sh Instalação e Configuração do GLPI Help Desk v9.x - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do GLPI Help Desk v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do GLPI Help Desk v9.x.
+
+[![Install GLPI 9.x](http://img.youtube.com/vi//0.jpg)]( "Install GLPI 9.x")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=ItoWHnytRzI
+
+## **🔴 17-A-glpi-9.sh Configurações Básicas e Monitoramento do GLPI Help Desk v9.x - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do GLPI Help Desk v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do GLPI Help Desk v9.x, monitorar o seu acesso e banco de dados, conhecer os recursos básicos e fazer um chamado simples. 
+
+[![Access GLPI 9.x](http://img.youtube.com/vi//0.jpg)]( "Access GLPI 9.x")
 
 Link da vídeo aula: 
