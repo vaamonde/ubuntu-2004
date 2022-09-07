@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 12/08/2022
-# Versão: 0.14
+# Data de atualização: 07/09/2022
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -31,9 +31,10 @@
 # Site oficial do Projeto OTRS: https://otrs.com/
 # Site oficial do Projeto iTop: https://www.combodo.com/itop
 #
-# Indicação de Profissionais de Help Desk GLPI no Brasil:
-# Site: https://www.servicedeskbrasil.com.br/
-# YouTUBE: https://www.youtube.com/ServicedeskBrasil
+# Indicação da Empresa Especializada em GLPI Help Desk no Brasil
+# ServiceDesk Brasil site: https://www.servicedeskbrasil.com.br/
+# Blog da ServiceDesk Brasil: https://blog.servicedeskbrasil.com.br/
+# Canal do YouTUBE: https://www.youtube.com/servicedeskbrasil
 #
 # Informações que serão solicitadas na configuração via Web do GLPI
 # GLPI Setup
@@ -108,7 +109,6 @@ echo -n "Verificando as dependências do GLPI Help Desk 9.5.x, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
@@ -201,7 +201,7 @@ echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Fazendo o download do GLPI Help Desk 9.5.x do site Oficial, aguarde..."
-	# opção do comando: &>> (redirecionar a saida padrão)
+	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
 	rm -v glpi9.tgz &>> $LOG
