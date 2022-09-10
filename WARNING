@@ -1,0 +1,64 @@
+Autor: Robson Vaamonde
+Site: www.procedimentosemti.com.br
+Facebook: facebook.com/ProcedimentosEmTI
+Facebook: facebook.com/BoraParaPratica
+YouTube: youtube.com/BoraParaPratica
+Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+Github: https://github.com/vaamonde
+Data de criação: 10/09/2022
+Data de atualização: 10/09/2022
+Versão: 0.01
+Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+
+#=================== CUIDADO AO UTILIZAR VÁRIOS SERVIÇOS NO MESMO SERVIDOR ===================
+SCRIPT                 RECOMENDAÇÃO                                  OBSERVAÇÃO
+
+01-openssh.sh          Pode ser utilizado em todos os servidores     Editar para cada servidor.
+                       da sua rede.
+
+02-dhcp.sh             Instalar o serviço de DHCP Server somente     Editar para cada servidor,
+                       se você não esteja utilizando servidores      utilizar somente um server
+                       de controlador de domínio.                    na rede.
+
+03-dns.sh              Instalar o serviço de DNS Server somente      Editar para cada servidor,
+                       se você não esteja utilizando servidores      pode instalar e configurar
+                       de controlador de domínio ou caso queira      junto com o DHCP Server.
+                       gerenciar a sua rede individualmente.
+
+04-dhcpdns.sh          Fazer a  integração  do DNS Server com o      Editar para cada servidor,
+                       DHCP Server  somente se  você não esteja      necessário a instalação e
+                       utilizando servidores de controlador  de      configuração do DHCP e DNS
+                       domínio  ou caso queira  gerenciar a sua      Server no mesmo servidor.
+                       rede individualmente.
+
+05-ntp.sh              Instalar o serviço do NTP Server somente      Editar para cada servidor,
+                       se você não esteja utilizando servidores      pode instalar e configurar
+                       de controlador de domínio ou caso queira      junto com o DHCP Server.
+                       gerenciar a sua rede individualmente.
+
+06-tftphpa.sh          Instalar o  serviço  do TFTP Server caso      Editar para cada servidor,
+                       precise  trabalhar  com backup remoto ou      pode instalar e configurar
+                       Thin Client com suporte ao PXE.               junto com o DHCP Server.
+
+07-nfs.sh              Instalar o serviço do NFS Server somente      Editar para cada servidor,
+                       se você não tenha servidores de  Storage      indicado fazer a instalação 
+                       ou Arquivos na sua rede  como o  SAMBA-4      do NFS Server em um server
+                       ou Windows Server e precise compartilhar      dedicado para esse serviço.
+                       arquivos e diretórios na rede.
+
+08-lamp.sh             Instalar o  serviço do  LAMP  Server  em      Editar para cada servidor,
+                       Servidores  Dedicados  para essa tarefa,      indicado que o MySQL fique
+                       não recomendo instalar  outros  serviços      em outro servidor.
+                       de rede no mesmo servidor.
+
+09-vsftpd.sh           Instalar o serviço  do  VSFTPd Server em      Editar para cada servidor,
+                       Servidores Dedicados ou junto com o LAMP      pode instalar e configurar
+                       Server para gerenciar as Páginas HTML do      junto com o LAMP Server.
+                       do site ou em Servidores Dedicados  para
+                       compartilhar arquivos na rede.
+
+10-tomcat.sh           Instalar o  serviço  do Tomcat Server em      Editar para cada servidor,
+                       Servidores Dedicados, recomendo  fazer a      pode instalar e configurar
+                       instalação e  configuração  separada  do      junto com o LAMP Server e
+                       do LAMP Server.                               VSFTPd Server.

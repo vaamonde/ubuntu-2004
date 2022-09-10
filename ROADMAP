@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 13/08/2022
-Versão: 0.18
+Data de atualização: 10/09/2022
+Versão: 0.19
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -85,30 +85,34 @@ _
 #27B_ 12-webdav.sh Configuração do WebDav no Apache2 Server - PARTE-02 (12/07/2022)
 #27C_ 12-webdav.sh Testes de Acesso e Monitoramento do WebDav Client no Windows e Linux - PARTE-03 (14/07/2022)
 _
-#26A_ 13-wordpress.sh Customizando o Script e Arquivos de Configuração do CMS Wordpress - PARTE-01 (18/07/2022)
-#26B_ 13-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02 (20/07/2022)
-#26C_ 13-wordpress.sh Testes de Acesso, Instalação e Configuração dos Plugins do Wordpress - PARTE-03 (22/07/2022)
+#28A_ 13-wordpress.sh Customizando o Script e Arquivos de Configuração do CMS Wordpress - PARTE-01 (18/07/2022)
+#28B_ 13-wordpress.sh Instalação e Configuração do CMS Wordpress - PARTE-02 (20/07/2022)
+#28C_ 13-wordpress.sh Testes de Acesso, Instalação e Configuração dos Plugins do Wordpress - PARTE-03 (22/07/2022)
 _
-#27A_ 14-webmin.sh Customizando o Script e Arquivos de Configuração do Webmin e Usermin - PARTE-01 (27/07/2022)
-#27B_ 14-webmin.sh Instalação e Configuração do Webmin e Usermin - PARTE-02 (28/07/2022)
-#27C_ 14-webmin.sh Utilização Básica do Webmin e Usermin - PARTE-03 (29/07/2022)
+#29A_ 14-webmin.sh Customizando o Script e Arquivos de Configuração do Webmin e Usermin - PARTE-01 (27/07/2022)
+#29B_ 14-webmin.sh Instalação e Configuração do Webmin e Usermin - PARTE-02 (28/07/2022)
+#29C_ 14-webmin.sh Utilização Básica do Webmin e Usermin - PARTE-03 (29/07/2022)
 _
-#28A_ 15-netdata.sh Customizando o Script e Arquivos de Configuração do Netdata - PARTE-01 (01/08/2022)
-#28B_ 15-netdata.sh Instalação e Configuração do Netdata - PARTE-02 (03/08/2022)
-#28C_ 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 (05/08/2022)
-#28D_ 15-netdata.sh Segurança de Acesso ao Netdata - PARTE-04 (08/08/2022)
+#30A_ 15-netdata.sh Customizando o Script e Arquivos de Configuração do Netdata - PARTE-01 (01/08/2022)
+#30B_ 15-netdata.sh Instalação e Configuração do Netdata - PARTE-02 (03/08/2022)
+#30C_ 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 (05/08/2022)
+#30D_ 15-netdata.sh Segurança de Acesso ao Netdata - PARTE-04 (08/08/2022)
 _
-#29A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (15/08/2022)
-#29B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 (17/08/2022)
-#29C_ 16-loganalyzer.sh Monitoramento dos Logs no LogAnalyzer - PARTE-03 (19/08/2022)
+#31A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (16/08/2022)
+#31B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 (18/08/2022)
+#31C_ 16-loganalyzer.sh Monitoramento dos Logs no LogAnalyzer - PARTE-03 (06/09/2022)
 _
-#30A_ 17-A-glpi-9.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk 9.x - PARTE-01 (22/08/2022)
-#30B_ 17-A-glpi-9.sh Instalação e Configuração do GLPI Help Desk 9.x - PARTE-02 (24/08/2022)
-#30C_ 17-A-glpi-9.sh Utilização e Criação de Chamados no GLPI Help Desk 9.x - PARTE-03 (26/08/2022)
+#32A_ 17-A-glpi-9.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk 9.x - PARTE-01 (08/09/2022)
+#32B_ 17-A-glpi-9.sh Instalação e Configuração do GLPI Help Desk 9.x - PARTE-02 (12/09/2022)
+#32C_ 17-A-glpi-9.sh Utilização e Criação de Chamados no GLPI Help Desk 9.x - PARTE-03 (14/09/2022)
 _
-#31A_ 18-fusioninventory.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01 (29/08/2022)
-#31B_ 18-fusioninventory.sh Instalação e Configuração do FusionInventory - PARTE-02 (31/08/2022)
-#31C_ 18-fusioninventory.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03 (02/09/2022)
+#33A_ 17-B-glpi-10.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk 10.x - PARTE-01
+#33B_ 17-B-glpi-10.sh Instalação e Configuração do GLPI Help Desk 10.x - PARTE-02
+#33C_ 17-B-glpi-10.sh Utilização e Criação de Chamados no GLPI Help Desk 10.x - PARTE-03
+_
+#34A_ 18-fusioninventory-9.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01
+#34B_ 18-fusioninventory-9.sh Instalação e Configuração do FusionInventory - PARTE-02
+#34C_ 18-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03
 _
 #32A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
 #32B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
@@ -136,6 +140,7 @@ _
 _
 #38A_ 23-ntopng.sh Customizando o Script e Arquivos de Configuração do NTop-NG - PARTE-01
 #38B_ 23-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
+#38C_ 23-ntopng.sh Utilização e Monitoramento do NTop-NG - PARTE-03
 _
 #39A_ 24-openfire.sh Customizando o Script e Arquivos de Configuração do OpenFire - PARTE-01
 #39B_ 24-openfire.sh Instalação e Configuração do OpenFire - PARTE-02
@@ -159,21 +164,21 @@ _
 #44A_ 29-postgresql.sh Customizando o Script e Arquivos de Configuração do PostgreSQL - PARTE-01
 #44B_ 29-postgresql.sh Instalação e Configuração do PostgreSQL - PARTE-02
 _
-#47A_ 32-nextcloud.sh Customizando o Script e Arquivos de Configuração do NextCloud - PARTE-01
-#47B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
-#47C_ 25-nextcloud.sh Configuração e Monitoramento do NextCloud Client no Windows e Linux - PARTE-03
+#45A_ 32-nextcloud.sh Customizando o Script e Arquivos de Configuração do NextCloud - PARTE-01
+#45B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
+#45C_ 25-nextcloud.sh Configuração e Monitoramento do NextCloud Client no Windows e Linux - PARTE-03
 _
-#48A_ 33-asterisk.sh Customizando o Script e Arquivos de Configuração do Asterisk - PARTE-01
-#48B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
-#48C_ 33-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
+#46A_ 33-asterisk.sh Customizando o Script e Arquivos de Configuração do Asterisk - PARTE-01
+#46B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
+#46C_ 33-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
 _
-#49A_ 34-netdisco.sh Customizando o Script e Arquivos de Configuração do Netdisco - PARTE-01
-#49B_ 34-netdisco.sh Instalação e Configuração do Netdisco - PARTE-02
-#49C_ 34-netdisco.sh Escaneando Rede Cisco utilizando o SNMP do Netdisco - PARTE-03
+#47A_ 34-netdisco.sh Customizando o Script e Arquivos de Configuração do Netdisco - PARTE-01
+#47B_ 34-netdisco.sh Instalação e Configuração do Netdisco - PARTE-02
+#47C_ 34-netdisco.sh Escaneando Rede Cisco utilizando o SNMP do Netdisco - PARTE-03
 _
-#50A_ 35-openproject.sh Customizando o Script e Arquivos de Configuração do OpenProject - PARTE-01
-#50B_ 35-openproject.sh Instalação e Configuração do OpenProject - PARTE-02
-#50C_ 35-openproject.sh Testes de Acesso e Criação de Projeto no OpenProject - PARTE-03
+#48A_ 35-openproject.sh Customizando o Script e Arquivos de Configuração do OpenProject - PARTE-01
+#48B_ 35-openproject.sh Instalação e Configuração do OpenProject - PARTE-02
+#48C_ 35-openproject.sh Testes de Acesso e Criação de Projeto no OpenProject - PARTE-03
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
 
