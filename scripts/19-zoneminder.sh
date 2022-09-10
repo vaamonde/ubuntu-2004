@@ -211,7 +211,7 @@ sleep 5
 echo -e "Criando o Banco de Dados do ZoneMinder, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), < (Redirecionador de Entrada STDIN)
-	#mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL < $CREATE_DATABASE_ZONEMINDER &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$ALTER_USER_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_ZONEMINDER" mysql &>> $LOG
