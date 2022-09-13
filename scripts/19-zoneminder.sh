@@ -26,6 +26,10 @@
 # com o recurso de movimento horizontal, vertical e de zoom - Pan = Panorâmica Horizontal - 
 # Tilt = Vertical | Zoom - Aproximar)
 #
+# ONVIF ( Open Network Video Interface Forum ) é um fórum global e aberto a todos, tem o 
+# objetivo de ajudar no desenvolvimento de um padrão aberto para a interface de produtos 
+# de segurança físicos baseados em IP.
+#
 # Informações que serão solicitadas na configuração via Web do ZoneMinder
 # Privacy: Accept: Apply
 #
