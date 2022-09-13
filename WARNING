@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/09/2022
-Data de atualização: 10/09/2022
-Versão: 0.01
+Data de atualização: 13/09/2022
+Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #=================== CUIDADO AO UTILIZAR VÁRIOS SERVIÇOS NO MESMO SERVIDOR ===================
@@ -62,3 +62,8 @@ SCRIPT                 RECOMENDAÇÃO                                  OBSERVAÇ
                        Servidores Dedicados, recomendo  fazer a      pode instalar e configurar
                        instalação e  configuração  separada  do      junto com o LAMP Server e
                        do LAMP Server.                               VSFTPd Server.
+
+11-A-openssl-ca-.sh    Instalar o serviço de CA  do  OpenSSL em      Editar para cada servidor.
+                       qualquer servidor na sua rede.
+
+11-
