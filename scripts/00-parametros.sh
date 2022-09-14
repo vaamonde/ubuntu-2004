@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 23/08/2022
-# Versão: 0.79
+# Data de atualização: 14/09/2022
+# Versão: 0.80
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -666,7 +666,7 @@ WORDPRESSSALT="https://api.wordpress.org/secret-key/1.1/salt/"
 # by (identificado por - senha do usuário), password (senha)
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
-# OBSERVAÇÃO: NO SCRIPT: 11-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# OBSERVAÇÃO: NO SCRIPT: 13-WORDPRESS.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_WORDPRESS="CREATE DATABASE wordpress;"
@@ -772,7 +772,7 @@ PORTNETDATA="19999"
 # *.* (todos os bancos/tabelas), to (para), user (usuário)
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
-# OBSERVAÇÃO: NO SCRIPT: 13-NETDATA.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# OBSERVAÇÃO: NO SCRIPT: 15-NETDATA.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
 CREATE_USER_NETDATA="CREATE USER 'netdata'@'localhost';"
@@ -840,7 +840,7 @@ INSTALL_DATABASE_SYSLOG="/usr/share/dbconfig-common/data/rsyslog-mysql/install/m
 # by (identificado por - senha do usuário), password (senha)
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
-# OBSERVAÇÃO: NO SCRIPT: 14-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# OBSERVAÇÃO: NO SCRIPT: 16-LOGANALYZER.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_LOGANALYZER="CREATE DATABASE loganalyzer;"
@@ -882,9 +882,14 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 03/07/2022 - Última versão da série 9.5.8)
+# Variável de download do GLPI (atualizada no dia: 14/09/2022 - Última versão da série 9.5.8)
 GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.8/glpi-9.5.8.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.2.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.3/glpi-10.0.3.tgz"
+#
+# Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para versão 10.x)
+AGENTGLPIWINDOWS="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x64.msi"
+AGENTGLPIMAC="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4_x86_64.dmg"
+AGENTGLPILINUX="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent_1.4-1_all.deb"
 #
 # Declarando as variáveis para criação da Base de Dados do GLPI
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
@@ -898,7 +903,7 @@ GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.2/glpi-10.0.
 # by (identificado por - senha do usuário), password (senha)
 # opções do comando FLUSH: flush (atualizar), privileges (recarregar as permissões)
 #
-# OBSERVAÇÃO: NO SCRIPT: 15-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
+# OBSERVAÇÃO: NO SCRIPT: 17-*-GLPI.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
 CREATE_DATABASE_GLPI9="CREATE DATABASE glpi9;"

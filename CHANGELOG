@@ -7,11 +7,21 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 21/08/2022
-Versão: 0.79
+Data de atualização: 14/09/2022
+Versão: 0.80
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+14/09/2022 - Robson Vaamonde - Criação do arquivo: WARNING que tem o objetivo de explicar o uso de cada script dos
+serviços de rede se pode ou não ser instalado no mesmo servidor ou servidor dedicado, facilitando o uso dos scripts
+em vários servidores diferentes, atualização do script: 00-parametros.sh com a nova versão do GLPI Help Desk 10.0.3
+e adicionado os links dos download do Agent do GLPI, analisando a Falha: 0024 do ZoneMinder, ainda sem solução, o erro
+de acesso ao console continua tanto na versão: 1.36 como na versão 1.37, alterado a variável: WEBMININSTALL que estava
+faltando um "i", alterado o PPA do ZoneMinder de: ppa:iconnor/zoneminder-master para: ppa:iconnor/zoneminder-proposed,
+corrigido as falhas de variáveis no script: 19-zoneminder.sh, alteração do caminho de criação da Base de Dados do
+Zabbix para: usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz, alteração do caminho para o envio do inventário do
+FusionInventory para o servidor de GLPI 9.x para: https://glpi9.pti.intra/plugins/fusioninventory/.
+
 21/08/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh com o novo caminho da imagem do Memtest86,
 criação das variáveis: MEMTEST86V9 e MEMTEST86V4 para suportar as novas versões do Memtest86 mantida pela empresa que
 adquiriu o Memtest86 PassMark. Alteração do arquivo de configuração: dhcpd.conf com a linha para mudar o escopo padrão
