@@ -886,10 +886,13 @@ PATHGLPI10="/var/www/glpi10"
 GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.8/glpi-9.5.8.tgz"
 GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.3/glpi-10.0.3.tgz"
 #
-# Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para versão 10.x)
+# Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
 AGENTGLPIWINDOWS="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x64.msi"
 AGENTGLPIMAC="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4_x86_64.dmg"
 AGENTGLPILINUX="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent_1.4-1_all.deb"
+#
+# Variável do diretório de Download dos Agentes e arquivos de configuração do Inventário do GLPI
+DOWNLOADAGENTGLPI="/var/www/html/agentesglpi"
 #
 # Declarando as variáveis para criação da Base de Dados do GLPI
 # opções do comando CREATE: create (criação), database (base de dados), base (banco de dados)
@@ -983,7 +986,7 @@ WAKEINSTALL="libnet-write-perl libyaml-shell-perl"
 SNMPINSTALL="libdigest-hmac-perl"
 #
 # Variável do diretório de Download dos Agentes e arquivos de configuração do FusionInventory
-DOWNLOADAGENT="/var/www/html/agentes"
+DOWNLOADAGENTFS="/var/www/html/agentesfusion"
 #
 # Variável da porta de conexão padrão do FusionInventory Server
 PORTFUSION="62354"

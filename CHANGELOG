@@ -20,7 +20,12 @@ de acesso ao console continua tanto na versão: 1.36 como na versão 1.37, alter
 faltando um "i", alterado o PPA do ZoneMinder de: ppa:iconnor/zoneminder-master para: ppa:iconnor/zoneminder-proposed,
 corrigido as falhas de variáveis no script: 19-zoneminder.sh, alteração do caminho de criação da Base de Dados do
 Zabbix para: usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz, alteração do caminho para o envio do inventário do
-FusionInventory para o servidor de GLPI 9.x para: https://glpi9.pti.intra/plugins/fusioninventory/.
+FusionInventory para o servidor de GLPI 9.x para: https://glpi9.pti.intra/plugins/fusioninventory/, acréscimo das
+variáveis de download dos Agentes do GLPI Help Desk 10.0.x no script: 00-parametros.sh, e criação dos diretórios de
+download dos agentes no Apache2, atualização do comando do download dos Agentes do FusionInventory para não conflitar
+com os Agentes do GLPI Help Desk, atualização do script: 17-B-glpi10.sh com as opções de criar o diretório do download
+dos Agentes e fazer o download do Github dos agentes do GLPI Help Desk 10.0.x, criação do arquivo de configuração:
+agent.cfg do GLPI Help Desk Agent.
 
 21/08/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh com o novo caminho da imagem do Memtest86,
 criação das variáveis: MEMTEST86V9 e MEMTEST86V4 para suportar as novas versões do Memtest86 mantida pela empresa que

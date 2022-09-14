@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 05/06/2022
-# Versão: 0.11
+# Data de atualização: 14/09/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x e Agent 2.6.x
@@ -112,7 +112,6 @@ echo -n "Verificando as dependências do FusionInventory, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: 02-dhcp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
@@ -336,19 +335,19 @@ echo -e "Criando o diretório de download dos Agentes do FusionInventory, aguard
 	# opção do comando chmod: -v (verbose)
 	# opção do comando cp: -v (verbose)
 	# opção do comando wget: -O (output document file)
-	mkdir -v $DOWNLOADAGENT &>> $LOG
-	chown -v www-data.www-data $DOWNLOADAGENT &>> $LOG
-	chmod -v 755 $DOWNLOADAGENT &>> $LOG
-	cp -v conf/fusioninventory/agent.cfg $DOWNLOADAGENT &>> $LOG
-	wget $AGENTWINDOWS32 -O $DOWNLOADAGENT/agent_windows32.exe &>> $LOG
-	wget $AGENTWINDOWS64 -O $DOWNLOADAGENT/agent_windows64.exe &>> $LOG
-	wget $AGENTMACOS -O $DOWNLOADAGENT/agent_macos.dmg &>> $LOG
-	wget $FUSIONAGENT -O $DOWNLOADAGENT/agent_linux.deb &>> $LOG
+	mkdir -v $DOWNLOADAGENTFS &>> $LOG
+	chown -v www-data.www-data $DOWNLOADAGENTFS &>> $LOG
+	chmod -v 755 $DOWNLOADAGENTFS &>> $LOG
+	cp -v conf/fusioninventory/agent.cfg $DOWNLOADAGENTFS &>> $LOG
+	wget $AGENTWINDOWS32 -O $DOWNLOADAGENTFS/agent_windows32.exe &>> $LOG
+	wget $AGENTWINDOWS64 -O $DOWNLOADAGENTFS/agent_windows64.exe &>> $LOG
+	wget $AGENTMACOS -O $DOWNLOADAGENTFS/agent_macos.dmg &>> $LOG
+	wget $FUSIONAGENT -O $DOWNLOADAGENTFS/agent_linux.deb &>> $LOG
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o diretório de agentes: https://$(hostname -d | cut -d' ' -f1)/agentes/, aguarde..."
-	tree $DOWNLOADAGENT
+echo -e "Verificando o diretório de agentes: https://$(hostname -d | cut -d' ' -f1)/agentesfusion/, aguarde..."
+	tree $DOWNLOADAGENTFS
 echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #

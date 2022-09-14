@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 22/08/2022
-# Data de atualização: 07/09/2022
-# Versão: 0.02
+# Data de atualização: 14/09/2022
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v10.0.x
 #
@@ -324,6 +324,28 @@ echo -e "Removendo o script de instalação do GLPI Help Desk 10.0.x, aguarde...
 	# opção do comando mv: -v (verbose)
 	mv -v $PATHGLPI10/install/install.php $PATHGLPI10/install/install.php.old &>> $LOG
 echo -e "Arquivo removido com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando o diretório de download dos Agentes do GLPI Help Desk 10.0.x, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando mkdir: -v (verbose)
+	# opção do comando chown: -v (verbose)
+	# opção do comando chmod: -v (verbose)
+	# opção do comando cp: -v (verbose)
+	# opção do comando wget: -O (output document file)
+	mkdir -v $DOWNLOADAGENTGLPI &>> $LOG
+	chown -v www-data.www-data $DOWNLOADAGENTGLPI &>> $LOG
+	chmod -v 755 $DOWNLOADAGENTGLPI &>> $LOG
+	cp -v conf/glpi/glpi10/agent.cfg $DOWNLOADAGENTGLPI &>> $LOG
+	wget $AGENTGLPIWINDOWS -O $DOWNLOADAGENTGLPI/agent_windows64.exe &>> $LOG
+	wget $AGENTGLPIMAC -O $DOWNLOADAGENTGLPI/agent_macos.dmg &>> $LOG
+	wget $AGENTGLPILINUX -O $DOWNLOADAGENTGLPI/agent_linux.deb &>> $LOG
+echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando o diretório de agentes: https://$(hostname -d | cut -d' ' -f1)/agentesglpi/, aguarde..."
+	tree $DOWNLOADAGENTFS
+echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do GLPI Help Desk 10.0.x feita com Sucesso!!!."
