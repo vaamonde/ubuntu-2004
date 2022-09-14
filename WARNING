@@ -66,4 +66,45 @@ SCRIPT                 RECOMENDAÇÃO                                  OBSERVAÇ
 11-A-openssl-ca-.sh    Instalar o serviço de CA  do  OpenSSL em      Editar para cada servidor.
                        qualquer servidor na sua rede.
 
-11-
+11-B-openssl-apache.sh Instalar o certificado assinado do Apache     Editar para cada servidor.
+                       no mesmo servidor que você  configurou  o
+                       o serviço da CA ou copiar os arquivos para
+                       esse servidor antes de criar o certificado.
+
+11-C-openssl-vsftpd.sh Instalar o certificado assinado do VSFTPd     Editar para cada servidor.
+                       no mesmo servidor que você  configurou  o
+                       o serviço da CA ou copiar os arquivos para
+                       esse servidor antes de criar o certificado.
+
+11-D-openssl-tomcat.sh Instalar o certificado assinado do VSFTPd     Editar para cada servidor.
+                       no mesmo servidor que você  configurou  o
+                       o serviço da CA ou copiar os arquivos para
+                       esse servidor antes de criar o certificado.
+
+11-E-openssl-mysql.sh  Instalar o certificado assinado do MySQL      Editar para cada servidor.
+                       no mesmo servidor que você  configurou  o
+                       o serviço da CA ou copiar os arquivos para
+                       esse servidor antes de criar o certificado.
+
+12-webdav.sh           Instalar o serviço  do  Webdav junto com o    Editar para cada servidor,
+                       servidor Apache2, é recomendo somente usar    pode instalar junto do LAMP,
+                       o serviço do Webdav em servidores Web sem     Server ou servidor dedicado.
+                       suporte ao Bando de Dados, esse serviço é
+                       parecido  com o NFS e FTP, sendo  indicado
+                       um servidor dedicado para essa finalidade. 
+
+13-wordpress.sh        Instalar o serviço do Wordpress junto com     Editar para cada servidor.
+                       o serviço do LAMP Server, criar um server
+                       dedicado somente em caso de grande acesso
+                       ao servidor.
+
+14-webmin.sh           Pode ser utilizado em todos os servidores     Sem necessidade de editar
+                       da sua rede.                                  os arquivos de conf.
+
+15-A-netdata.sh        Pode ser utilizado em todos os servidores     Editar para cada servidor.
+                       da sua rede.
+
+15-B-netdata.sh        Configurar o acesso  seguro ao serviço do     Editar para cada servidor.
+                       Netdata somente se estiver  utilizando  o
+                       Apache no mesmo servidor ou em outro server
+
