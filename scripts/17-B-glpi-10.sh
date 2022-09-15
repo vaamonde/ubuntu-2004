@@ -57,6 +57,21 @@
 # Usuário/Senha: normal/normal - conta do usuário normal
 # Usuário/Senha: post-only/postonly - conta do usuário postonly
 #
+# Configurações básicas pós instalação do GLPI Help Desk v9.x
+# Administração
+#	Usuários
+#		Alterar senha: glpi
+#			Senha: pti@2018
+#			Confirmação de senha: pti@2018
+#		Desativar contas: normal, post-only, tech
+#		Adicionar novo usuário: vaamonde
+#			Usuário: vaamonde
+#			Sobrenome: Vaamonde
+#			Nome: Robson
+#			Senha: pti@2018
+#			Confirmação da senha: pti@2018
+#			Perfil: Super-Admin
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
