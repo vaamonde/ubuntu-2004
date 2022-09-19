@@ -359,7 +359,7 @@ echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o diretório de agentes: https://$(hostname -d | cut -d' ' -f1)/agentesglpi/, aguarde..."
-	tree $DOWNLOADAGENTFS
+	tree $DOWNLOADAGENTGLPI
 echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
