@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 10/09/2022
-Versão: 0.19
+Data de atualização: 19/09/2022
+Versão: 0.20
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
@@ -104,16 +104,17 @@ _
 _
 #32A_ 17-A-glpi-9.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk 9.x - PARTE-01 (08/09/2022)
 #32B_ 17-A-glpi-9.sh Instalação e Configuração do GLPI Help Desk 9.x - PARTE-02 (12/09/2022)
-#32C_ 17-A-glpi-9.sh Utilização e Criação de Chamados no GLPI Help Desk 9.x - PARTE-03 (14/09/2022)
+#32C_ 17-A-glpi-9.sh Utilização e Criação de Chamados no GLPI Help Desk 9.x - PARTE-03 (20/09/2022)
 _
-#33A_ 17-B-glpi-10.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk 10.x - PARTE-01
-#33B_ 17-B-glpi-10.sh Instalação e Configuração do GLPI Help Desk 10.x - PARTE-02
-#33C_ 17-B-glpi-10.sh Utilização e Criação de Chamados no GLPI Help Desk 10.x - PARTE-03
+#33A_ 17-B-glpi-10.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk 10.x - PARTE-01 (22/09/2022)
+#33B_ 17-B-glpi-10.sh Instalação e Configuração do GLPI Help Desk 10.x - PARTE-02 (26/09/2022)
+#33C_ 17-B-glpi-10.sh Utilização e Criação de Chamados no GLPI Help Desk 10.x - PARTE-03 (28/09/2022)
 _
 #34A_ 18-fusioninventory-9.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01
 #34B_ 18-fusioninventory-9.sh Instalação e Configuração do FusionInventory - PARTE-02
 #34C_ 18-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03
 _
+#SCRIPT CONGELADO DEVIDO A FALHAS DE ACESSO AO AMBIENTE GRÁFICA
 #32A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
 #32B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
 #32C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03

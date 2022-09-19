@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 22/08/2022
-# Data de atualização: 14/09/2022
-# Versão: 0.03
+# Data de atualização: 19/09/2022
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v10.0.x
 #
@@ -57,7 +57,7 @@
 # Usuário/Senha: normal/normal - conta do usuário normal
 # Usuário/Senha: post-only/postonly - conta do usuário postonly
 #
-# Configurações básicas pós instalação do GLPI Help Desk v9.x
+# Configurações básicas pós instalação do GLPI Help Desk v10.x
 # Administração
 #	Usuários
 #		Alterar senha: glpi
@@ -158,6 +158,7 @@ echo
 #
 echo -e "Instalação e Configuração do GLPI Help Desk 10.0.x no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Após a instalação do GLPI acessar a URL: https://glpi10.$(hostname -d | cut -d' ' -f1)\n"
+echo -e "Link de download dos Agentes do GLPI URL: https://$(hostname -d | cut -d' ' -f1)/agentesglpi\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

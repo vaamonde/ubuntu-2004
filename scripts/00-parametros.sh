@@ -937,7 +937,7 @@ libapache2-mod-php xmlrpc-api-utils xz-utils bzip2 unzip curl php-soap php-commo
 php-zip php-bz2"
 #
 #=============================================================================================
-#                    VARIÁVEIS UTILIZADAS NO SCRIPT: 18-fusioninventory.sh                   #
+#                  VARIÁVEIS UTILIZADAS NO SCRIPT: 18-A-fusioninventory-9.sh                 #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema FusionInventory utilizados nesse script

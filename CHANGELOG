@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 14/09/2022
-Versão: 0.80
+Data de atualização: 19/09/2022
+Versão: 0.81
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+19/09/2022 - Robson Vaamonde - Correção do caminho do PATH dos Agentes do GLPI no script: 17-B-glpi-10.sh, alteração
+da variável: $DOWNLOADAGENTGLPI, alteração do arquivo php.ini referente ao suporte a segurança de acesso ao GLPI na 
+versão 10.0.3 que exige a configuração da Sessão nas opções: session.cookie_secure = on e session.cookie_httponly = 
+on, atualização do arquivo: 00-parametros,sh com a nova versão do GLPI Help Desk v9.5.9.
+
 14/09/2022 - Robson Vaamonde - Criação do arquivo: WARNING que tem o objetivo de explicar o uso de cada script dos
 serviços de rede se pode ou não ser instalado no mesmo servidor ou servidor dedicado, facilitando o uso dos scripts
 em vários servidores diferentes, atualização do script: 00-parametros.sh com a nova versão do GLPI Help Desk 10.0.3
