@@ -882,8 +882,8 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 14/09/2022 - Última versão da série 9.5.8)
-GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.8/glpi-9.5.8.tgz"
+# Variável de download do GLPI (atualizada no dia: 19/09/2022 - Última versão da série 9.5.9)
+GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.9/glpi-9.5.9.tgz"
 GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.3/glpi-10.0.3.tgz"
 #
 # Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
