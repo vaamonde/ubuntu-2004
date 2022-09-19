@@ -97,6 +97,7 @@ _
 #30B_ 15-netdata.sh Instalação e Configuração do Netdata - PARTE-02 (03/08/2022)
 #30C_ 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 (05/08/2022)
 #30D_ 15-netdata.sh Segurança de Acesso ao Netdata - PARTE-04 (08/08/2022)
+#30#_ 15-netdata.sh Configuração do Netdata Cloud e Client PARTE-05 ()
 _
 #31A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (16/08/2022)
 #31B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 (18/08/2022)
@@ -110,11 +111,11 @@ _
 #33B_ 17-B-glpi-10.sh Instalação e Configuração do GLPI Help Desk 10.x - PARTE-02 (26/09/2022)
 #33C_ 17-B-glpi-10.sh Utilização e Criação de Chamados no GLPI Help Desk 10.x - PARTE-03 (28/09/2022)
 _
-#34A_ 18-fusioninventory-9.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01
-#34B_ 18-fusioninventory-9.sh Instalação e Configuração do FusionInventory - PARTE-02
-#34C_ 18-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03
+#34A_ 18-A-fusioninventory-9.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01
+#34B_ 18-A-fusioninventory-9.sh Instalação e Configuração do FusionInventory - PARTE-02
+#34C_ 18-A-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03
 _
-#SCRIPT CONGELADO DEVIDO A FALHAS DE ACESSO AO AMBIENTE GRÁFICA
+#SCRIPT CONGELADO DEVIDO A FALHAS DE ACESSO AO AMBIENTE GRÁFICO DO ZONEMINDER
 #32A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
 #32B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
 #32C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03

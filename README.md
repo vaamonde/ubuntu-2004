@@ -710,10 +710,10 @@ Segundo Vídeo de Configuração do GLPI Help Desk v9.x do Curso "GRATUITO" de U
 
 Link da vídeo aula: https://www.youtube.com/watch?v=0PH9TOdTYu8
 
-## **🔴 17-B-glpi-9.sh Configurações Básicas e Monitoramento do GLPI Help Desk v10.x - PARTE-03 🐧**
+## **🔴 17-B-glpi-10.sh Configurações Básicas e Monitoramento do GLPI Help Desk v10.x - PARTE-03 🐧**
 
 Terceiro Vídeo de Configuração do GLPI Help Desk v10.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do GLPI Help Desk v10.x, acessar a aba de usuários, fazer a troca da senha do usuário padrão do GLPI, desativar contas e criar um novo usuário de administração do GLPI Help Desk v10.x, monitorar o seu acesso e banco de dados, arquivo de LOG's, conhecer os recursos básicos e fazer um chamado simples.
 
-[![Custom GLPI 10.x](http://img.youtube.com/vi//0.jpg)]( "Custom GLPI 10.x")
+[![Custom GLPI 10.x](http://img.youtube.com/vi/ZOLpn0U8e3c/0.jpg)](https://www.youtube.com/watch?v=ZOLpn0U8e3c "Custom GLPI 10.x")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=ZOLpn0U8e3c
