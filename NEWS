@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 10/07/2022
-Versão: 0.21
+Data de atualização: 24/09/2022
+Versão: 0.22
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+24/09/2022 - Robson Vaamonde - Estudos e criação do script: 00-checkmk.sh. Checkmk é um software desenvolvido em 
+Python e C ++ para monitoramento de infraestrutura de TI. É utilizado para monitoramento de servidores, aplicativos, 
+redes, infraestruturas em nuvem, containers, storage, bancos de dados e sensores de ambiente.
+
 08/07/2022 - Robson Vaamonde - Estudos e criação do script: 00-iperf.sh e 00-speedtest.sh. Iperf é um software utilizado 
 para testar a largura de banda, podendo realizar injeção de pacotes para medir o desempenho de redes de computadores. 
 Ele não possui interface gráfica, necessitando de linha de comando. OpenSpeedTest é um aplicativo de teste de velocidade 

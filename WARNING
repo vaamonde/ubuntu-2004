@@ -12,7 +12,7 @@ Versão: 0.03
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #=================== CUIDADO AO UTILIZAR VÁRIOS SERVIÇOS NO MESMO SERVIDOR ===================
-SCRIPT                 RECOMENDAÇÃO                                  OBSERVAÇÃO
+SCRIPT                  RECOMENDAÇÃO                                  OBSERVAÇÃO
 
 01-openssh.sh           Pode ser utilizado em todos os servidores     Editar para cada servidor.
                         da sua rede.
