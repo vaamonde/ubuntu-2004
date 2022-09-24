@@ -257,7 +257,7 @@ echo -e "Fazendo o download do FusionInventory Agent do site Oficial, aguarde...
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
-	rm -v agent.deb task.deb deploy.deb snmp.deb &>> $LOG
+	rm -v agent.deb task.deb deploy.deb network.deb &>> $LOG
 	wget $FUSIONAGENT -O agent.deb &>> $LOG
 	wget $FUSIONCOLLECT -O task.deb &>> $LOG
 	wget $FUSIONDEPLOY -O deploy.deb &>> $LOG

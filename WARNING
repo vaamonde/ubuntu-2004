@@ -7,104 +7,124 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/09/2022
-Data de atualização: 13/09/2022
-Versão: 0.02
+Data de atualização: 24/09/2022
+Versão: 0.03
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #=================== CUIDADO AO UTILIZAR VÁRIOS SERVIÇOS NO MESMO SERVIDOR ===================
 SCRIPT                 RECOMENDAÇÃO                                  OBSERVAÇÃO
 
-01-openssh.sh          Pode ser utilizado em todos os servidores     Editar para cada servidor.
-                       da sua rede.
+01-openssh.sh           Pode ser utilizado em todos os servidores     Editar para cada servidor.
+                        da sua rede.
 
-02-dhcp.sh             Instalar o serviço de DHCP Server somente     Editar para cada servidor,
-                       se você não esteja utilizando servidores      utilizar somente um server
-                       de controlador de domínio.                    na rede.
+02-dhcp.sh              Instalar o serviço de DHCP Server somente     Editar para cada servidor,
+                        se você não esteja utilizando servidores      utilizar somente um server
+                        de controlador de domínio.                    na rede.
 
-03-dns.sh              Instalar o serviço de DNS Server somente      Editar para cada servidor,
-                       se você não esteja utilizando servidores      pode instalar e configurar
-                       de controlador de domínio ou caso queira      junto com o DHCP Server.
-                       gerenciar a sua rede individualmente.
+03-dns.sh               Instalar o serviço de DNS Server somente      Editar para cada servidor,
+                        se você não esteja utilizando servidores      pode instalar e configurar
+                        de controlador de domínio ou caso queira      junto com o DHCP Server.
+                        gerenciar a sua rede individualmente.
 
-04-dhcpdns.sh          Fazer a  integração  do DNS Server com o      Editar para cada servidor,
-                       DHCP Server  somente se  você não esteja      necessário a instalação e
-                       utilizando servidores de controlador  de      configuração do DHCP e DNS
-                       domínio  ou caso queira  gerenciar a sua      Server no mesmo servidor.
-                       rede individualmente.
+04-dhcpdns.sh           Fazer a  integração  do DNS Server com o      Editar para cada servidor,
+                        DHCP Server  somente se  você não esteja      necessário a instalação e
+                        utilizando servidores de controlador  de      configuração do DHCP e DNS
+                        domínio  ou caso queira  gerenciar a sua      Server no mesmo servidor.
+                        rede individualmente.
 
-05-ntp.sh              Instalar o serviço do NTP Server somente      Editar para cada servidor,
-                       se você não esteja utilizando servidores      pode instalar e configurar
-                       de controlador de domínio ou caso queira      junto com o DHCP Server.
-                       gerenciar a sua rede individualmente.
+05-ntp.sh               Instalar o serviço do NTP Server somente      Editar para cada servidor,
+                        se você não esteja utilizando servidores      pode instalar e configurar
+                        de controlador de domínio ou caso queira      junto com o DHCP Server.
+                        gerenciar a sua rede individualmente.
 
-06-tftphpa.sh          Instalar o  serviço  do TFTP Server caso      Editar para cada servidor,
-                       precise  trabalhar  com backup remoto ou      pode instalar e configurar
-                       Thin Client com suporte ao PXE.               junto com o DHCP Server.
+06-tftphpa.sh           Instalar o  serviço  do TFTP Server caso      Editar para cada servidor,
+                        precise  trabalhar  com backup remoto ou      pode instalar e configurar
+                        Thin Client com suporte ao PXE.               junto com o DHCP Server.
 
-07-nfs.sh              Instalar o serviço do NFS Server somente      Editar para cada servidor,
-                       se você não tenha servidores de  Storage      indicado fazer a instalação 
-                       ou Arquivos na sua rede  como o  SAMBA-4      do NFS Server em um server
-                       ou Windows Server e precise compartilhar      dedicado para esse serviço.
-                       arquivos e diretórios na rede.
+07-nfs.sh               Instalar o serviço do NFS Server somente      Editar para cada servidor,
+                        se você não tenha servidores de  Storage      indicado fazer a instalação 
+                        ou Arquivos na sua rede  como o  SAMBA-4      do NFS Server em um server
+                        ou Windows Server e precise compartilhar      dedicado para esse serviço.
+                        arquivos e diretórios na rede.
 
-08-lamp.sh             Instalar o  serviço do  LAMP  Server  em      Editar para cada servidor,
-                       Servidores  Dedicados  para essa tarefa,      indicado que o MySQL fique
-                       não recomendo instalar  outros  serviços      em outro servidor.
-                       de rede no mesmo servidor.
+08-lamp.sh              Instalar o  serviço do  LAMP  Server  em      Editar para cada servidor,
+                        Servidores  Dedicados  para essa tarefa,      indicado que o MySQL fique
+                        não recomendo instalar  outros  serviços      em outro servidor.
+                        de rede no mesmo servidor.
 
-09-vsftpd.sh           Instalar o serviço  do  VSFTPd Server em      Editar para cada servidor,
-                       Servidores Dedicados ou junto com o LAMP      pode instalar e configurar
-                       Server para gerenciar as Páginas HTML do      junto com o LAMP Server.
-                       do site ou em Servidores Dedicados  para
-                       compartilhar arquivos na rede.
+09-vsftpd.sh            Instalar o serviço  do  VSFTPd Server em      Editar para cada servidor,
+                        Servidores Dedicados ou junto com o LAMP      pode instalar e configurar
+                        Server para gerenciar as Páginas HTML do      junto com o LAMP Server.
+                        do site ou em Servidores Dedicados  para
+                        compartilhar arquivos na rede.
 
-10-tomcat.sh           Instalar o  serviço  do Tomcat Server em      Editar para cada servidor,
-                       Servidores Dedicados, recomendo  fazer a      pode instalar e configurar
-                       instalação e  configuração  separada  do      junto com o LAMP Server e
-                       do LAMP Server.                               VSFTPd Server.
+10-tomcat.sh            Instalar o  serviço  do Tomcat Server em      Editar para cada servidor,
+                        Servidores Dedicados, recomendo  fazer a      pode instalar e configurar
+                        instalação e  configuração  separada  do      junto com o LAMP Server e
+                        do LAMP Server.                               VSFTPd Server.
 
-11-A-openssl-ca-.sh    Instalar o serviço de CA  do  OpenSSL em      Editar para cada servidor.
-                       qualquer servidor na sua rede.
+11-A-openssl-ca-.sh     Instalar o serviço de CA  do  OpenSSL em      Editar para cada servidor.
+                        qualquer servidor na sua rede.
 
-11-B-openssl-apache.sh Instalar o certificado assinado do Apache     Editar para cada servidor.
-                       no mesmo servidor que você  configurou  o
-                       o serviço da CA ou copiar os arquivos para
-                       esse servidor antes de criar o certificado.
+11-B-openssl-apache.sh  Instalar o certificado assinado do Apache     Editar para cada servidor.
+                        no mesmo servidor que você  configurou  o
+                        o serviço da CA ou copiar os arquivos para
+                        esse servidor antes de criar o certificado.
 
-11-C-openssl-vsftpd.sh Instalar o certificado assinado do VSFTPd     Editar para cada servidor.
-                       no mesmo servidor que você  configurou  o
-                       o serviço da CA ou copiar os arquivos para
-                       esse servidor antes de criar o certificado.
+11-C-openssl-vsftpd.sh  Instalar o certificado assinado do VSFTPd     Editar para cada servidor.
+                        no mesmo servidor que você  configurou  o
+                        o serviço da CA ou copiar os arquivos para
+                        esse servidor antes de criar o certificado.
 
-11-D-openssl-tomcat.sh Instalar o certificado assinado do VSFTPd     Editar para cada servidor.
-                       no mesmo servidor que você  configurou  o
-                       o serviço da CA ou copiar os arquivos para
-                       esse servidor antes de criar o certificado.
+11-D-openssl-tomcat.sh  Instalar o certificado assinado do VSFTPd     Editar para cada servidor.
+                        no mesmo servidor que você  configurou  o
+                        o serviço da CA ou copiar os arquivos para
+                        esse servidor antes de criar o certificado.
 
-11-E-openssl-mysql.sh  Instalar o certificado assinado do MySQL      Editar para cada servidor.
-                       no mesmo servidor que você  configurou  o
-                       o serviço da CA ou copiar os arquivos para
-                       esse servidor antes de criar o certificado.
+11-E-openssl-mysql.sh   Instalar o certificado assinado do MySQL      Editar para cada servidor.
+                        no mesmo servidor que você  configurou  o
+                        o serviço da CA ou copiar os arquivos para
+                        esse servidor antes de criar o certificado.
 
-12-webdav.sh           Instalar o serviço  do  Webdav junto com o    Editar para cada servidor,
-                       servidor Apache2, é recomendo somente usar    pode instalar junto do LAMP,
-                       o serviço do Webdav em servidores Web sem     Server ou servidor dedicado.
-                       suporte ao Bando de Dados, esse serviço é
-                       parecido  com o NFS e FTP, sendo  indicado
-                       um servidor dedicado para essa finalidade. 
+12-webdav.sh            Instalar o serviço  do  Webdav junto com o    Editar para cada servidor,
+                        servidor Apache2, é recomendo somente usar    pode instalar junto do LAMP,
+                        o serviço do Webdav em servidores Web sem     Server ou servidor dedicado.
+                        suporte ao Bando de Dados, esse serviço é
+                        parecido  com o NFS e FTP, sendo  indicado
+                        um servidor dedicado para essa finalidade. 
 
-13-wordpress.sh        Instalar o serviço do Wordpress junto com     Editar para cada servidor.
-                       o serviço do LAMP Server, criar um server
-                       dedicado somente em caso de grande acesso
-                       ao servidor.
+13-wordpress.sh         Instalar o serviço do Wordpress junto com     Editar para cada servidor.
+                        o serviço do LAMP Server, criar um server
+                        dedicado somente em caso de grande acesso
+                        ao servidor.
 
-14-webmin.sh           Pode ser utilizado em todos os servidores     Sem necessidade de editar
-                       da sua rede.                                  os arquivos de conf.
+14-webmin.sh            Pode ser utilizado em todos os servidores     Sem necessidade de editar
+                        da sua rede.                                  os arquivos de conf.
 
-15-A-netdata.sh        Pode ser utilizado em todos os servidores     Editar para cada servidor.
-                       da sua rede.
+15-A-netdata.sh         Pode ser utilizado em todos os servidores     Editar para cada servidor
+                        da sua rede.                                  os arquivos conf.
 
-15-B-netdata.sh        Configurar o acesso  seguro ao serviço do     Editar para cada servidor.
-                       Netdata somente se estiver  utilizando  o
-                       Apache no mesmo servidor ou em outro server
+15-B-netdata.sh         Configurar o acesso  seguro ao serviço do     Editar para cada servidor.
+                        Netdata somente se estiver  utilizando  o
+                        Apache no mesmo servidor ou em outro server
 
+16-loganalyzer.sh       Instalar o serviço do LogAnalyzer junto com   Editar para cada servidor.
+                        o serviço do LAMP Server, criar um server
+                        dedicado somente em caso de grande acesso
+                        ao servidor.
+
+17-A-glpi-9.sh          Instalar o serviço do GLPI Help Desk v9.x     Editar para cada servidor
+                        junto com o serviço do LAMP Server, criar     os arquivos conf.
+                        um  server  dedicado  somente  em caso de
+                        grande acesso ao servidor.
+
+17-B-glpi-10.sh         Instalar o serviço do GLPI Help Desk v9.x     Editar para cada servidor
+                        junto com o serviço do LAMP Server, criar     os arquivos conf.
+                        um  server  dedicado  somente  em caso de
+                        grande acesso ao servidor.
+
+18-A-fusioninventory.sh Instalar  o  serviço  do  FusionInventory     Editar para cada servidor
+                        junto com o serviço do LAMP Server  e  do     os arquivos conf.
+                        GLPI  Help  Desk  v9.x,  criar  um server
+                        dedicado somente em caso de grande acesso
+                        ao servidor. 

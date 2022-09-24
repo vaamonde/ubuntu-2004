@@ -694,7 +694,7 @@ Terceiro Vídeo de Configuração do GLPI Help Desk v9.x do Curso "GRATUITO" de 
 
 Link da vídeo aula: https://www.youtube.com/watch?v=tGAyKX-_i-I
 
-## **🔴 17-B-glpi-10.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk v1-.x - PARTE-01 🐧**
+## **🔴 17-B-glpi-10.sh Customizando o Script e Arquivos de Configuração do GLPI Help Desk v10.x - PARTE-01 🐧**
 
 Primeiro Vídeo de Configuração do GLPI Help Desk v10.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 17-B-glpi-10.sh antes de executar no nosso servidor.
 
@@ -717,3 +717,19 @@ Terceiro Vídeo de Configuração do GLPI Help Desk v10.x do Curso "GRATUITO" de
 [![Custom GLPI 10.x](http://img.youtube.com/vi/ZOLpn0U8e3c/0.jpg)](https://www.youtube.com/watch?v=ZOLpn0U8e3c "Custom GLPI 10.x")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=ZOLpn0U8e3c
+
+## **🔴 18-A-fusioninventory-9.sh Customizando o Script e Arquivos de Configuração do FusionInventory v9.x - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 18-A-fusioninventory-9.sh antes de executar no nosso servidor.
+
+[![Config Fusion 9.x](http://img.youtube.com/vi/RlN0tC115n/0.jpg)](https://www.youtube.com/watch?v=RlN0tC115nA "Config  Fusion 9.x")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=RlN0tC115nA
+
+## **🔴 18-A-fusioninventory-9.sh Instalação e Configuração do FusionInventory v9.x - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do FusionInventory v9.x.
+
+[![Install Fusion 9.x](http://img.youtube.com/vi/ilj0fwnHcaM/0.jpg)](https://www.youtube.com/watch?v=ilj0fwnHcaM "Install Fusion 9.x")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=ilj0fwnHcaM
