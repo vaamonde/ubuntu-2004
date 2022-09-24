@@ -728,8 +728,16 @@ Link da vídeo aula: https://www.youtube.com/watch?v=RlN0tC115nA
 
 ## **🔴 18-A-fusioninventory-9.sh Instalação e Configuração do FusionInventory v9.x - PARTE-02 🐧**
 
-Segundo Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do FusionInventory v9.x.
+Segundo Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do FusionInventory v9.x Server no GLPI Help Desk v9.x.
 
 [![Install Fusion 9.x](http://img.youtube.com/vi/ilj0fwnHcaM/0.jpg)](https://www.youtube.com/watch?v=ilj0fwnHcaM "Install Fusion 9.x")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=ilj0fwnHcaM
+
+## **🔴 18-A-fusioninventory-9.sh Instalação dos Agentes do FusionInventory no Windows e Linux - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como instalar e configurar o Agente do FusionInventory nos Desktops Microsoft Windows e GNU/Linux.
+
+[![Agent Fusion 9.x](http://img.youtube.com/vi//0.jpg)]( "Agent Fusion 9.x")
+
+Link da vídeo aula:
