@@ -887,9 +887,13 @@ GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.9/glpi-9.5.9.t
 GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.3/glpi-10.0.3.tgz"
 #
 # Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
-AGENTGLPIWINDOWS="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x64.msi"
+AGENTGLPIWINDOWS32="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x86.msi"
+AGENTGLPIWINDOWS64="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x64.msi"
 AGENTGLPIMAC="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4_x86_64.dmg"
 AGENTGLPILINUX="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent_1.4-1_all.deb"
+AGENTGLPILINUXNETWORK="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent-task-network_1.4-1_all.deb"
+AGENTGLPILINUXCOLLECT="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent-task-collect_1.4-1_all.deb"
+AGENTGLPILINUXDEPLOY="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent-task-deploy_1.4-1_all.deb"
 #
 # Variável do diretório de Download dos Agentes e arquivos de configuração do Inventário do GLPI
 DOWNLOADAGENTGLPI="/var/www/html/agentesglpi"

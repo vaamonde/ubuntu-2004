@@ -12,9 +12,11 @@ Versão: 0.82
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-25/09/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a variável AGENTGLPIINSTALL10 com
+25/09/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a variável $AGENTGLPIINSTALL10 com
 as opções da instalação das dependências dos Agentes do GLPI Help Desk v10.x, correção das dependências duplicadas
-do OCS Inventory e melhoria na indentação das bibliotecas do Perl, 
+do OCS Inventory e melhoria na indentação das bibliotecas do Perl, criação das variáveis de download dos Agentes extra 
+do GLPI Help Desk v10.x: $AGENTGLPILINUXNETWORK, $AGENTGLPILINUXCOLLECT, $AGENTGLPILINUXDEPLOY, alteração do script
+17-B-glpi-10.sh com a opção do download dos Agentes do Windows 32, Linux Network, Linux Collect e Linux Deploy.
 
 19/09/2022 - Robson Vaamonde - Correção do caminho do PATH dos Agentes do GLPI no script: 17-B-glpi-10.sh, alteração
 da variável: $DOWNLOADAGENTGLPI, alteração do arquivo php.ini referente ao suporte a segurança de acesso ao GLPI na 
@@ -25,7 +27,7 @@ on, atualização do arquivo: 00-parametros,sh com a nova versão do GLPI Help D
 serviços de rede se pode ou não ser instalado no mesmo servidor ou servidor dedicado, facilitando o uso dos scripts
 em vários servidores diferentes, atualização do script: 00-parametros.sh com a nova versão do GLPI Help Desk 10.0.3
 e adicionado os links dos download do Agent do GLPI, analisando a Falha: 0024 do ZoneMinder, ainda sem solução, o erro
-de acesso ao console continua tanto na versão: 1.36 como na versão 1.37, alterado a variável: WEBMININSTALL que estava
+de acesso ao console continua tanto na versão: 1.36 como na versão 1.37, alterado a variável: $WEBMININSTALL que estava
 faltando um "i", alterado o PPA do ZoneMinder de: ppa:iconnor/zoneminder-master para: ppa:iconnor/zoneminder-proposed,
 corrigido as falhas de variáveis no script: 19-zoneminder.sh, alteração do caminho de criação da Base de Dados do
 Zabbix para: usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz, alteração do caminho para o envio do inventário do

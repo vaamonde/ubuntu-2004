@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 22/08/2022
-# Data de atualização: 19/09/2022
-# Versão: 0.04
+# Data de atualização: 25/09/2022
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v10.0.x
 #
@@ -353,9 +353,13 @@ echo -e "Criando o diretório de download dos Agentes do GLPI Help Desk 10.0.x, 
 	chown -v www-data.www-data $DOWNLOADAGENTGLPI &>> $LOG
 	chmod -v 755 $DOWNLOADAGENTGLPI &>> $LOG
 	cp -v conf/glpi/glpi10/agent.cfg $DOWNLOADAGENTGLPI &>> $LOG
-	wget $AGENTGLPIWINDOWS -O $DOWNLOADAGENTGLPI/agent_windows64.exe &>> $LOG
+	wget $AGENTGLPIWINDOWS32 -O $DOWNLOADAGENTGLPI/agent_windows32.exe &>> $LOG
+	wget $AGENTGLPIWINDOWS64 -O $DOWNLOADAGENTGLPI/agent_windows64.exe &>> $LOG
 	wget $AGENTGLPIMAC -O $DOWNLOADAGENTGLPI/agent_macos.dmg &>> $LOG
 	wget $AGENTGLPILINUX -O $DOWNLOADAGENTGLPI/agent_linux.deb &>> $LOG
+	wget $AGENTGLPILINUXNETWORK -O $DOWNLOADAGENTGLPI/agent_linux_network.deb &>> $LOG
+	wget $AGENTGLPILINUXCOLLECT -O $DOWNLOADAGENTGLPI/agent_linux_collect.deb &>> $LOG
+	wget $AGENTGLPILINUXDEPLOY -O $DOWNLOADAGENTGLPI/agent_linux_deploy.deb &>> $LOG
 echo -e "Diretório criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
