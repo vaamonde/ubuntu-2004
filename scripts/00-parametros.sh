@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 14/09/2022
-# Versão: 0.80
+# Data de atualização: 25/09/2022
+# Versão: 0.81
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -735,7 +735,7 @@ PORTUSERMIN="20000"
 # 10. /etc/netdata/apps_groups.conf = arquivo de configuração dos Aplicativos de Grupos do Netdata
 # 11. /etc/netdata/netdata.conf = arquivo de configuração do serviço do Netdata Server
 # 12. /etc/apache/sites-available/netdata-ssl.conf = arquivo do Virtual Host do Netdata Server
-# 13. /etc/netdata/.htpasswd = arquivo de usuário e senha do Proxy do Apache utilziado no Netdata
+# 13. /etc/netdata/.htpasswd = arquivo de usuário e senha do Proxy do Apache utilizado no Netdata
 #
 # Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
 # 01. systemctl status netdata = status do serviço do Netdata
@@ -924,17 +924,31 @@ FLUSH_GLPI10="FLUSH PRIVILEGES;"
 # Variável das dependências do laço de loop do GLPI Help Desk
 GLPIDEP="mysql-server mysql-common apache2 php bind9"
 #
-# Variável de instalação das dependências do GLPI Help Desk
+# Variável de instalação das dependências do GLPI Help Desk v9.x
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 GLPIINSTALL9="php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
 php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json php-xml php-cli \
 libapache2-mod-php xmlrpc-api-utils xz-utils bzip2 unzip curl php-soap php-common php-bcmath \
 php-zip php-bz2"
 #
+# Variável de instalação das dependências do GLPI Help Desk v10.x
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 GLPIINSTALL10="php-curl php-gd php-intl php-pear php-imagick php-imap php-memcache php-pspell \
 php-mysql php-tidy php-xmlrpc php-mbstring php-ldap php-cas php-apcu php-json php-xml php-cli \
 libapache2-mod-php xmlrpc-api-utils xz-utils bzip2 unzip curl php-soap php-common php-bcmath \
 php-zip php-bz2"
+#
+# Variável de instalação das dependências do Agent do GLPI Help Desk v10.x
+# opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
+AGENTGLPILINUXINSTALL10="libfile-which-perl liblwp-useragent-determined-perl libnet-ip-perl \
+libtext-template-perl libuniversal-require-perl libxml-treepp-perl libcpanel-json-xs-perl \
+libcompress-raw-zlib-perl libio-compress-perl libhttp-daemon-perl libio-socket-ssl-perl \
+liblwp-protocol-https-perl libproc-daemon-perl libproc-pid-file-perl libnet-cups-perl \
+libparse-edid-perl libdatetime-perl libthread-queue-any-perl libnet-nbname-perl libnet-snmp-perl \
+libcrypt-des-perl libnet-write-perl libarchive-extract-perl libdigest-sha-perl \
+libfile-copy-recursive-perl libjson-pp-perl liburi-escape-xs-perl libnet-ping-external-perl \
+libparallel-forkmanager-perl dmidecode lspci hdparm monitor-get-edid-using-vbe monitor-get-edid \
+get-edid ssh-keyscan arp 7zip"
 #
 #=============================================================================================
 #                  VARIÁVEIS UTILIZADAS NO SCRIPT: 18-A-fusioninventory-9.sh                 #
@@ -1402,20 +1416,19 @@ php-mysql php-pclzip php-json php-mbstring php-curl php-imap php-ldap zlib1g-dev
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 OCSINVENTORYINSTALLPERL="libc6-dev libcompress-raw-zlib-perl libwww-perl libdigest-md5-file-perl \
 libnet-ssleay-perl libcrypt-ssleay-perl libnet-snmp-perl libproc-pid-file-perl libproc-daemon-perl \
-libarchive-zip-perl libnet-cups-perl libmysqlclient-dev libapache2-mod-perl2 \
-libapache2-mod-php libnet-netmask-perl libio-compress-perl libxml-simple-perl libdbi-perl \
-libdbd-mysql-perl libapache-dbi-perl libsoap-lite-perl libnet-ip-perl libmodule-build-perl \
-libmodule-install-perl libfile-which-perl libfile-copy-recursive-perl libuniversal-require-perl \
-libtest-http-server-simple-perl libhttp-server-simple-authen-perl libhttp-proxy-perl libio-capture-perl \
-libipc-run-perl libnet-telnet-cisco-perl libtest-compile-perl libtest-deep-perl libtest-exception-perl \
+libarchive-zip-perl libnet-cups-perl libmysqlclient-dev libapache2-mod-perl2 libapache2-mod-php \
+libnet-netmask-perl libio-compress-perl libxml-simple-perl libdbi-perl libdbd-mysql-perl \
+libapache-dbi-perl libsoap-lite-perl libnet-ip-perl libmodule-build-perl libmodule-install-perl \
+libfile-which-perl libfile-copy-recursive-perl libuniversal-require-perl libtest-http-server-simple-perl \
+libhttp-server-simple-authen-perl libhttp-proxy-perl libio-capture-perl libipc-run-perl \
+libnet-telnet-cisco-perl libtest-compile-perl libtest-deep-perl libtest-exception-perl \
 libtest-mockmodule-perl libtest-mockobject-perl libtest-nowarnings-perl libxml-treepp-perl \
 libparallel-forkmanager-perl libparse-edid-perl libdigest-sha-perl libtext-template-perl \
 libsocket-getaddrinfo-perl libcrypt-des-perl libnet-nbname-perl libyaml-perl libyaml-shell-perl \
 libyaml-libyaml-perl libdata-structure-util-perl liblwp-useragent-determined-perl libio-socket-ssl-perl \
 libdatetime-perl libthread-queue-any-perl libnet-write-perl libarchive-extract-perl libjson-pp-perl \
-liburi-escape-xs-perl liblwp-protocol-https-perl libnmap-parser-perl \
-libmojolicious-perl libswitch-perl libplack-perl liblwp-useragent-determined-perl \
-libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libsoap-lite-perl"
+liburi-escape-xs-perl liblwp-protocol-https-perl libnmap-parser-perl libmojolicious-perl libswitch-perl \
+libplack-perl libdigest-hmac-perl libossp-uuid-perl libperl-dev libsnmp-perl libsnmp-dev libsoap-lite-perl"
 #
 # Variável de alteração de senha do OCS Inventory Reports no Banco de Dados do MySQL
 # 'ocs'@'localhost' usuário de administração do banco de dados do OCS Inventory
