@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 23/08/2022
-# Versão: 0.11
+# Data de atualização: 25/08/2022
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -30,14 +30,14 @@
 # objetivo de ajudar no desenvolvimento de um padrão aberto para a interface de produtos 
 # de segurança físicos baseados em IP.
 #
-# Informações que serão solicitadas na configuração via Web do ZoneMinder
-# Privacy: Accept: Apply
-#
 # Site Oficial do Projeto ZoneMinder: https://zoneminder.com/
 #
 # Soluções Open Source de Monitoramento de CFTV
 # Site Oficial do Projeto Shinobi: https://shinobi.video/
 # Site Oficial do Projeto MotionEye: https://github.com/motioneye-project/motioneye
+#
+# Informações que serão solicitadas na configuração via Web do ZoneMinder
+# Privacy: Accept: Apply
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -215,8 +215,8 @@ sleep 5
 echo -e "Criando o Banco de Dados do ZoneMinder, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), < (Redirecionador de Entrada STDIN)
-	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
-	mysql -u $USERMYSQL -p$SENHAMYSQL < $CREATE_DATABASE_ZONEMINDER &>> $LOG
+	#mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
+	#mysql -u $USERMYSQL -p$SENHAMYSQL < $CREATE_DATABASE_ZONEMINDER &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$ALTER_USER_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_ZONEMINDER" mysql &>> $LOG

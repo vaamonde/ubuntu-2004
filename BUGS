@@ -7,13 +7,13 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 22/08/2022
-Versão: 0.26
+Data de atualização: 25/09/2022
+Versão: 0.27
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 TOTAL DE BUGS..: 24
-BUGS RESOLVIDOS: 20
-BUGS PENDENTES.: 04 
+BUGS RESOLVIDOS: 21
+BUGS PENDENTES.: 03 
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
 0024 - Falha de acesso ao console de gerenciamento do ZoneMinder versão 1.36 (1.37) quando executado o script de instalação
@@ -26,7 +26,10 @@ a base de dados no MySQL. Aplicado correção no arquivo: 00-parametros.sh e 19-
   mysql -e "GRANT ALL PRIVILEGES ON zm.* TO 'zmuser'@'localhost' WITH GRANT OPTION;"
   mysql -e "FLUSH PRIVILEGES ;"
   #zmupdate.pl -f depois: apt -f install
-STATUS=PENDENTE
+Falha está associada as configurações do arquivo php.ini em relação a opção do: zlib.output_compression, no script do 
+Wordpress a opção indicada é: On no ZoneMinder precisar ser: Off se não a página não aparece no navegador é o servidor
+entra em Loop gerando uma sobrecarga da processamento.
+STATUS=RESOLVIDO
 
 0023 - Falha na montagem da compartilhamento do Protocolo Webdav no Powershell utilizando os comando de: New-PSDrive e o
 comando: net use, verificando os erros de autenticação SSL/TLS no Windows 10 e 11.
