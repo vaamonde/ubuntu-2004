@@ -7,9 +7,37 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 24/09/2022
-Versão: 0.21
+Data de atualização: 25/09/2022
+Versão: 0.22
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
+
+#= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
+
+00-checkmk.sh (dev): software desenvolvido em Python e C ++ para monitoramento de infraestrutura de TI;
+00-iperf.sh (dev): software utilizado para testar a largura de banda e desempenho de redes de computadores;
+00-speedtest.sh (dev): aplicativo de teste de velocidade de internet multiplataforma;
+00-rdiffweb.sh (dev): software de gerenciamento de backup eue facilita o backup e a restauração de arquivos;
+00-phpipam.sh (dev): aplicativo de gerenciamento de rede, ip’s, Vlans, checagem de host e divisão por sub-redes;
+00-bigbluebutton.sh (dev): sistema de web-conferência de código aberto projetado para aprendizado online;
+00-passbolt.sh (dev): gerenciador de senhas de código aberto projetado para colaboração em equipe;
+00-metabase.sh (dev): ferramenta de business intelligence gratuita e de código aberto;
+00-samba4.sh (dev): protocolo de compartilhamento de arquivos em rede linux, microsoft ou macos;
+00-postfix.sh (dev): agente de transferência de e-mails livre e de código aberto;
+00-netbox.sh (dev): ferramenta de modelagem de recursos de infraestrutura;
+00-gitlab.sh (dev): gerenciador de repositório de software baseado em git;
+00-redmine.sh (dev):  gerenciador de projetos baseados na web e ferramenta de gerenciamento de bugs;
+00-motioneye.sh (dev): software de CFTV de software livre desenvolvido para Linux;
+00-shinobi.sh (dev): software de CCTV de código aberto escrito em Node.JS;
+00-thinstation.sh (dev): implementação Linux gratuita e de código aberto de um sistema operacional thin client;
+00-bastillion.sh (dev): console SSH baseado na web que gerencia o acesso administrativo aos sistemas;
+00-jenkins.sh (dev): servidor de automação de código aberto;
+00-awx.sh (dev): oferece software para gerenciar projetos Ansible;
+00-owa.sh (dev): software para rastrear e analisar o acesso a websites;
+00-hestia.sh (dev): sistemas de gerenciamento de servidores Web;
+00-aapanel.sh (dev): sistemas de gerenciamento de servidores Web;
+00-tinycp.sh (dev): sistemas de gerenciamento de servidores Web;
+00-moodle.sh (dev): um software livre, de apoio à aprendizagem, executado num ambiente virtual;
+00-mkdocs.sh (dev): é um gerador de site estático rápido voltado para a construção de documentação.
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
 
@@ -115,96 +143,68 @@ _
 #34B_ 18-A-fusioninventory-9.sh Instalação e Configuração do FusionInventory - PARTE-02 (03/10/2022)
 #34C_ 18-A-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03 ()
 _
-#SCRIPT CONGELADO DEVIDO A FALHAS DE ACESSO AO AMBIENTE GRÁFICO DO ZONEMINDER
-#32A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
-#32B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
-#32C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03
+#35A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
+#35B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02
+#35C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03
 _
-#33A_ 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole - PARTE-01
-#33B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02
-#33C_ 20-guacamole.sh Acesso Remoto ao Servidor e Clientes no Guacamole - PARTE-03
+#36A_ 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole - PARTE-01
+#36B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02
+#36C_ 20-guacamole.sh Acesso Remoto ao Servidor e Clientes no Guacamole - PARTE-03
 _
-#34A_ 19-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana - PARTE-01
-#34B_ 19-grafana.sh Instalação e Configuração do Grafana - PARTE-02
-#34C_ 19-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03
+#37A_ 19-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana - PARTE-01
+#37B_ 19-grafana.sh Instalação e Configuração do Grafana - PARTE-02
+#37C_ 19-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03
 _
-#35A_ 20-zabbix.sh Customizando o Script e Arquivos de Configuração do Zabbix - PARTE-01
-#35B_ 20-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
-#35C_ 20-zabbix.sh Configuração e Monitoramento do Zabbix Agent - PARTE-03
+#38A_ 20-zabbix.sh Customizando o Script e Arquivos de Configuração do Zabbix - PARTE-01
+#38B_ 20-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
+#38C_ 20-zabbix.sh Configuração e Monitoramento do Zabbix Agent - PARTE-03
 _
-#36A_ 21-docker.sh Customizando o Script e Arquivos de Configuração do Docker - PARTE-01
-#36B_ 21-docker.sh Instalação e Configuração do Docker - PARTE-02
-#36C_ 21-docker.sh Criando Container no Docker e Portainer - PARTE-03
+#39A_ 21-docker.sh Customizando o Script e Arquivos de Configuração do Docker - PARTE-01
+#39B_ 21-docker.sh Instalação e Configuração do Docker - PARTE-02
+#39C_ 21-docker.sh Criando Container no Docker e Portainer - PARTE-03
 _
-#37A_ 22-ansible.sh Customizando o Script e Arquivos de Configuração do Ansible - PARTE-01
-#37B_ 22-ansible.sh Instalação e Configuração do Ansible - PARTE-02
-#37C_ 22-ansible.sh Criando um Playbook simples com o Ansible - PARTE-03
+#40A_ 22-ansible.sh Customizando o Script e Arquivos de Configuração do Ansible - PARTE-01
+#40B_ 22-ansible.sh Instalação e Configuração do Ansible - PARTE-02
+#40C_ 22-ansible.sh Criando um Playbook simples com o Ansible - PARTE-03
 _
-#38A_ 23-ntopng.sh Customizando o Script e Arquivos de Configuração do NTop-NG - PARTE-01
-#38B_ 23-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
-#38C_ 23-ntopng.sh Utilização e Monitoramento do NTop-NG - PARTE-03
+#41A_ 23-ntopng.sh Customizando o Script e Arquivos de Configuração do NTop-NG - PARTE-01
+#41B_ 23-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
+#41C_ 23-ntopng.sh Utilização e Monitoramento do NTop-NG - PARTE-03
 _
-#39A_ 24-openfire.sh Customizando o Script e Arquivos de Configuração do OpenFire - PARTE-01
-#39B_ 24-openfire.sh Instalação e Configuração do OpenFire - PARTE-02
-#39C_ 24-openfire.sh Instalação do OpenFire Client no Windows e Linux - PARTE-03
+#42A_ 24-openfire.sh Customizando o Script e Arquivos de Configuração do OpenFire - PARTE-01
+#42B_ 24-openfire.sh Instalação e Configuração do OpenFire - PARTE-02
+#42C_ 24-openfire.sh Instalação do OpenFire Client no Windows e Linux - PARTE-03
 _
-#40A_ 25-owncloud.sh Customizando o Script e Arquivos de Configuração do ownCloud - PARTE-01
-#40B_ 25-owncloud.sh Instalação e Configuração do ownCloud - PARTE-02
-#40C_ 25-owncloud.sh Instalação do ownCloud Client no Windows e Linux - PARTE-03
+#43A_ 25-owncloud.sh Customizando o Script e Arquivos de Configuração do ownCloud - PARTE-01
+#43B_ 25-owncloud.sh Instalação e Configuração do ownCloud - PARTE-02
+#43C_ 25-owncloud.sh Instalação do ownCloud Client no Windows e Linux - PARTE-03
 _
-#41A_ 26-ocsinventory.sh Customizando o Script e Arquivos de Configuração do OCS Inventory - PARTE-01
-#41B_ 26-ocsinventory.sh Instalação e Configuração do OCS Inventory - PARTE-02
-#41C_ 26-ocsinventory.sh Inventário no Windows e Linux do OCS Inventory - PARTE-03
+#44A_ 26-ocsinventory.sh Customizando o Script e Arquivos de Configuração do OCS Inventory - PARTE-01
+#44B_ 26-ocsinventory.sh Instalação e Configuração do OCS Inventory - PARTE-02
+#44C_ 26-ocsinventory.sh Inventário no Windows e Linux do OCS Inventory - PARTE-03
 _
-#42A_ 27-bacula.sh Customizando o Script e Arquivos de Configuração do Bacula - PARTE-01
-#42B_ 27-bacula.sh Instalação e Configuração do Bacula - PARTE-02
-#42C_ 27-bacula.sh Configurando um Job de Backup no Bacula - PARTE-03
+#45A_ 27-bacula.sh Customizando o Script e Arquivos de Configuração do Bacula - PARTE-01
+#45B_ 27-bacula.sh Instalação e Configuração do Bacula - PARTE-02
+#45C_ 27-bacula.sh Configurando um Job de Backup no Bacula - PARTE-03
 _
-#43A_ 28-graylog.sh Customizando o Script e Arquivos de Configuração do Graylog - PARTE-01
-#43B_ 28-graylog.sh Instalação e Configuração do Graylog - PARTE-02
+#46A_ 28-graylog.sh Customizando o Script e Arquivos de Configuração do Graylog - PARTE-01
+#46B_ 28-graylog.sh Instalação e Configuração do Graylog - PARTE-02
 _
-#44A_ 29-postgresql.sh Customizando o Script e Arquivos de Configuração do PostgreSQL - PARTE-01
-#44B_ 29-postgresql.sh Instalação e Configuração do PostgreSQL - PARTE-02
+#47A_ 29-postgresql.sh Customizando o Script e Arquivos de Configuração do PostgreSQL - PARTE-01
+#47B_ 29-postgresql.sh Instalação e Configuração do PostgreSQL - PARTE-02
 _
-#45A_ 32-nextcloud.sh Customizando o Script e Arquivos de Configuração do NextCloud - PARTE-01
-#45B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
-#45C_ 25-nextcloud.sh Configuração e Monitoramento do NextCloud Client no Windows e Linux - PARTE-03
+#48A_ 32-nextcloud.sh Customizando o Script e Arquivos de Configuração do NextCloud - PARTE-01
+#48B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
+#48C_ 25-nextcloud.sh Configuração e Monitoramento do NextCloud Client no Windows e Linux - PARTE-03
 _
-#46A_ 33-asterisk.sh Customizando o Script e Arquivos de Configuração do Asterisk - PARTE-01
-#46B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
-#46C_ 33-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
+#49A_ 33-asterisk.sh Customizando o Script e Arquivos de Configuração do Asterisk - PARTE-01
+#49B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
+#49C_ 33-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
 _
-#47A_ 34-netdisco.sh Customizando o Script e Arquivos de Configuração do Netdisco - PARTE-01
-#47B_ 34-netdisco.sh Instalação e Configuração do Netdisco - PARTE-02
-#47C_ 34-netdisco.sh Escaneando Rede Cisco utilizando o SNMP do Netdisco - PARTE-03
+#50A_ 34-netdisco.sh Customizando o Script e Arquivos de Configuração do Netdisco - PARTE-01
+#50B_ 34-netdisco.sh Instalação e Configuração do Netdisco - PARTE-02
+#50C_ 34-netdisco.sh Escaneando Rede Cisco utilizando o SNMP do Netdisco - PARTE-03
 _
-#48A_ 35-openproject.sh Customizando o Script e Arquivos de Configuração do OpenProject - PARTE-01
-#48B_ 35-openproject.sh Instalação e Configuração do OpenProject - PARTE-02
-#48C_ 35-openproject.sh Testes de Acesso e Criação de Projeto no OpenProject - PARTE-03
-
-#= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
-
-00-iperf.sh (dev): software utilizado para testar a largura de banda e desempenho de redes de computadores;
-00-speedtest.sh (dev): aplicativo de teste de velocidade de internet multiplataforma;
-00-rdiffweb.sh (dev): software de gerenciamento de backup eue facilita o backup e a restauração de arquivos;
-00-phpipam.sh (dev): aplicativo de gerenciamento de rede, ip’s, Vlans, checagem de host e divisão por sub-redes;
-00-bigbluebutton.sh (dev): sistema de web-conferência de código aberto projetado para aprendizado online;
-00-passbolt.sh (dev): gerenciador de senhas de código aberto projetado para colaboração em equipe;
-00-metabase.sh (dev): ferramenta de business intelligence gratuita e de código aberto;
-00-samba4.sh (dev): protocolo de compartilhamento de arquivos em rede linux, microsoft ou macos;
-00-postfix.sh (dev): agente de transferência de e-mails livre e de código aberto;
-00-netbox.sh (dev): ferramenta de modelagem de recursos de infraestrutura;
-00-gitlab.sh (dev): gerenciador de repositório de software baseado em git;
-00-redmine.sh (dev):  gerenciador de projetos baseados na web e ferramenta de gerenciamento de bugs;
-00-motioneye.sh (dev): software de CFTV de software livre desenvolvido para Linux;
-00-shinobi.sh (dev): software de CCTV de código aberto escrito em Node.JS;
-00-thinstation.sh (dev): implementação Linux gratuita e de código aberto de um sistema operacional thin client;
-00-bastillion.sh (dev): console SSH baseado na web que gerencia o acesso administrativo aos sistemas;
-00-jenkins.sh (dev): servidor de automação de código aberto;
-00-awx.sh (dev): oferece software para gerenciar projetos Ansible;
-00-owa.sh (dev): software para rastrear e analisar o acesso a websites;
-00-hestia.sh (dev): sistemas de gerenciamento de servidores Web;
-00-aapanel.sh (dev): sistemas de gerenciamento de servidores Web;
-00-tinycp.sh (dev): sistemas de gerenciamento de servidores Web;
-00-moodle.sh (dev): um software livre, de apoio à aprendizagem, executado num ambiente virtual;
-00-mkdocs.sh (dev): é um gerador de site estático rápido voltado para a construção de documentação.
+#51A_ 35-openproject.sh Customizando o Script e Arquivos de Configuração do OpenProject - PARTE-01
+#51B_ 35-openproject.sh Instalação e Configuração do OpenProject - PARTE-02
+#51C_ 35-openproject.sh Testes de Acesso e Criação de Projeto no OpenProject - PARTE-03
