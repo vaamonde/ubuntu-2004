@@ -72,6 +72,13 @@
 #			Confirmação da senha: pti@2018
 #			Perfil: Super-Admin
 #
+# Software utilizados pelo Agente do GLPI Help Desk v10.x
+# glpi-agent: Agente de Inventário e Tarefas Local do GLPI Help Desk v10.x
+# glpi-injector: Uma ferramenta para enviar inventário em um Inventário OCS ou servidor compatível.
+# glpi-inventory: Inventário autônomo do GLPI Help Desk v10.x
+# glpi-remote: Uma ferramenta para escanear, gerenciar e inicializar agentes remotos virtuais
+# glpi-wakeonlan: Wake-on-lan autônomo do GLPI Help Desk v10.x
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #

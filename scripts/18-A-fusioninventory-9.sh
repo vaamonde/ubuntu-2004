@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 14/09/2022
-# Versão: 0.12
+# Data de atualização: 25/09/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x e Agent 2.6.x
@@ -19,6 +19,13 @@
 # software ou descoberta de rede. Ele pode ser usado autônomo ou em combinação com um 
 # servidor compatível (OCS Inventory, GLPI, OTRS, Uranos, etc..) atuando como um ponto 
 # de controle centralizado.
+#
+# Site Oficial do Projeto FusionInventory: http://fusioninventory.org/
+#
+# Soluções Open Source de Inventário de Rede
+# Site Oficial do Projeto OCS Inventory: https://ocsinventory-ng.org
+# Site Oficial do Projeto Snipe-IT: https://snipeitapp.com/
+# Site Oficial do Projeto Open-Audit: https://www.open-audit.org/
 #
 # Informações que serão solicitadas na configuração via Web do FusionInventory Server no GLPI
 # Configurar
@@ -31,19 +38,12 @@
 #
 # Software utilizados pelo FusionInventory:
 # fusioninventory-agent: Agente de Inventário e Tarefas Local do FusionInventory
+# fusioninventory-injector: Ferramenta de Envio de Inventário Remoto do FusionInventory
 # fusioninventory-inventory: Inventário Autônomo do FusionInventory, utilizado nas tarefas do GLPI
-# fusioninventory-remoteinventory: Ferramenta de Inventário Remoto do FusionInventory
 # fusioninventory-netdiscovery: Descoberta de Rede Autônomo do FusionInventory, utilizado nas tarefas do GLPI
 # fusioninventory-netinventory: Inventário de Rede Autônomo do FusionInventory, utilizado nas tarefas do GLPI
+# fusioninventory-remoteinventory: Ferramenta de Inventário Remoto do FusionInventory
 # fusioninventory-wakeonlan: Wake-on-LAN de Computadores FusionInventory, utilizado nas tarefas do GLPI
-# fusioninventory-injector: Ferramenta de Envio de Inventário Remoto do FusionInventory
-# 
-# Site Oficial do Projeto FusionInventory: http://fusioninventory.org/
-#
-# Soluções Open Source de Inventário de Rede
-# Site Oficial do Projeto OCS Inventory: https://ocsinventory-ng.org
-# Site Oficial do Projeto Snipe-IT: https://snipeitapp.com/
-# Site Oficial do Projeto Open-Audit: https://www.open-audit.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -164,6 +164,7 @@ echo -e "Instalação e Configuração do FusionInventory no GNU/Linux Ubuntu Se
 echo -e "Porta padrão utilizada pelo FusionInventory.: TCP 62354\n"
 echo -e "Após a instalação do FusionInventory acesse a URL: https://glpi9.$(hostname -d | cut -d' ' -f1)/"
 echo -e "As configurações do FusionInventory Server é feita dentro do GLPI Help Desk\n"
+echo -e "Link de download dos Agentes do FusionInventory URL: https://$(hostname -d | cut -d' ' -f1)/agentesfusion\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

@@ -956,6 +956,7 @@ get-edid ssh-keyscan arp 7zip"
 #
 #=============================================================================================
 #                  VARIÁVEIS UTILIZADAS NO SCRIPT: 18-A-fusioninventory-9.sh                 #
+#                  VARIÁVEIS UTILIZADAS NO SCRIPT: 18-B-fusioninventory-10.sh                #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema FusionInventory utilizados nesse script
@@ -986,10 +987,11 @@ FUSIONDEP="mysql-server mysql-common apache2 php bind9"
 #
 # Variável de instalação das dependências do FusionInventory Agent
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
-AGENTINSTALL="dmidecode hwdata ucf hdparm perl libuniversal-require-perl libwww-perl libparse-edid-perl \
-libproc-daemon-perl libfile-which-perl libhttp-daemon-perl libxml-treepp-perl libyaml-perl libnet-cups-perl \
-libnet-ip-perl libdigest-sha-perl libsocket-getaddrinfo-perl libtext-template-perl libxml-xpath-perl \
-libyaml-tiny-perl libio-socket-ssl-perl libnet-ssleay-perl libcrypt-ssleay-perl"
+AGENTINSTALL="dmidecode hwdata ucf hdparm perl libuniversal-require-perl libwww-perl \
+libparse-edid-perl libproc-daemon-perl libfile-which-perl libhttp-daemon-perl libxml-treepp-perl \
+libyaml-perl libnet-cups-perl libnet-ip-perl libdigest-sha-perl libsocket-getaddrinfo-perl \
+libtext-template-perl libxml-xpath-perl libyaml-tiny-perl libio-socket-ssl-perl libnet-ssleay-perl \
+libcrypt-ssleay-perl"
 #
 # Variável de instalação das dependências do FusionInventory Task Network
 NETWORKINSTALL="libnet-snmp-perl libcrypt-des-perl libnet-nbname-perl"
