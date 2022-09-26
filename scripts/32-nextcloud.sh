@@ -18,6 +18,8 @@
 # desenvolvimento começou em julho de 2016, por Frank Karlitschek e outros ex-funcionários 
 # da OwnCloud Inc., quando foi iniciado como uma bifurcação, ou fork do OwnCloud.
 #
+# Site Oficial do Nextcloud: https://nextcloud.com/
+#
 # Informações que serão solicitadas na configuração via Web do Nextcloud
 # 		Nome do usuário: admin
 # 		Senha: pti@2018
@@ -27,8 +29,6 @@
 # 		Nome do banco de dados: nextcloud
 # 		Host do banco de dados: localhost: 
 #	Concluir Configuração
-#
-# Site Oficial do Nextcloud: https://nextcloud.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

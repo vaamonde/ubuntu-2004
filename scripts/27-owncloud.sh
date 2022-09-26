@@ -20,6 +20,8 @@
 # espaço de armazenamento (com exceção da capacidade do disco rígido) ou o número de 
 # clientes conectados.
 #
+# Site Oficial do Projeto ownCloud: https://owncloud.com/
+#
 # Informações que serão solicitadas na configuração via Web do ownCloud
 # 		Nome do usuário: admin
 # 		Senha: pti@2018
@@ -29,8 +31,6 @@
 # 		Nome do banco de dados: owncloud
 # 		Host do banco de dados: localhost: 
 #	Concluir Configuração
-#
-# Site Oficial do Projeto ownCloud: https://owncloud.com/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

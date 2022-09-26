@@ -30,15 +30,20 @@
 # facilmente os seus hosts Docker e clusters com Docker Swarm através de uma interface web 
 # limpa, simples e intuitiva.
 #
+# Site oficial do Projeto Docker Community: https://www.docker.com/docker-community
+# Site oficial do Projeto Docker Compose: https://docs.docker.com/compose/
+# Site oficial do Projeto Portainer: https://portainer.io/
+#
+# Soluções Open Source de Container
+# Site Oficial do Projeto ContainerD: https://containerd.io/
+# Site Oficial do Projeto LXC: https://linuxcontainers.org/
+# Site Oficial do Kubernetes: https://kubernetes.io/pt-br/
+#
 # Informações que serão solicitadas na configuração via Web do Portainer.io
 # Username: admin;
 # Password: pti@2018;
 # Confirm password: pti@2018: Create User;
 # Connect Portainer to the Docker environment you want to manage: Local: Connect
-#
-# Site oficial do Projeto Docker Community: https://www.docker.com/docker-community
-# Site oficial do Projeto Docker Compose: https://docs.docker.com/compose/
-# Site oficial do Projeto Portainer: https://portainer.io/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

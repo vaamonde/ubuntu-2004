@@ -19,6 +19,14 @@
 # carga de uso CPU e consumo de espaço em disco, entre vários outros recursos de 
 # monitoramento e alertas.
 #
+# Site Oficial do Projeto Zabbix: https://www.zabbix.com/
+#
+# Soluções Open Source de Monitoramento do Rede 
+# Site Oficial do Nagios: https://www.nagios.org/
+# Site Oficial do OpenNMS: https://www.opennms.com/
+# Site Oficial do Cacti: https://www.cacti.net/
+# Site Oficial do LibreMNS: https://www.librenms.org/ 
+#
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
 # Welcome to Zabbix 6.2: 
 #   	Default language: English (en_US): 
@@ -50,14 +58,6 @@
 #
 # User Default: Admin (com A maiúsculo)
 # Password Default: zabbix
-#
-# Site Oficial do Projeto Zabbix: https://www.zabbix.com/
-#
-# Soluções Open Source de Monitoramento do Rede 
-# Site Oficial do Nagios: https://www.nagios.org/
-# Site Oficial do OpenNMS: https://www.opennms.com/
-# Site Oficial do Cacti: https://www.cacti.net/
-# Site Oficial do LibreMNS: https://www.librenms.org/ 
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -168,7 +168,7 @@ echo
 #
 echo -e "Instalação do Zabbix Server e Agent no GNU/Linux Ubuntu Server 20.04.x\n"
 echo -e "Porta padrão utilizada pelo Zabbix Server.: TCP 10050 e 10051\n"
-echo -e "Após a instalação do Zabbix Server acesse a URL: http://$(hostname -d | cut -d' ' -f1)/zabbix/\n"
+echo -e "Após a instalação do Zabbix Server acesse a URL: https://$(hostname -d | cut -d' ' -f1)/zabbix/\n"
 echo -e "Aguarde, esse processo demora um pouco dependendo do seu Link de Internet...\n"
 sleep 5
 #

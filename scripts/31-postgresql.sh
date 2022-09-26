@@ -23,6 +23,9 @@
 # banco de dados relacionados. Escrito em Python e jQuery, ele suporta todos os 
 # recursos encontrados no PostgreSQL por linha de comando (console).
 # 
+# Site oficial: https://www.postgresql.org/
+# Site oficial: https://www.pgadmin.org/
+#
 # Mensagem da configuração da senha do PostgreSQL
 # Enter new password: postgres
 # Enter it again: postgres
@@ -35,9 +38,6 @@
 # configuring the pgAdmin 4 application to mount at /pgadmin4. Do you wish to continue (y/n)? y <Enter>
 # The Apache web server is running and must be restarted for the pgAdmin 4 installation to complete. 
 # Continue (y/n)? y <Enter>
-# 
-# Site oficial: https://www.postgresql.org/
-# Site oficial: https://www.pgadmin.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

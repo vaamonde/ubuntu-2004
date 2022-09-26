@@ -19,6 +19,13 @@
 # uma vez que o Apache Guacamole é instalado em um servidor, tudo que você precisa para 
 # acessar seus desktops é um navegador da web.
 #
+# Site Oficial do Projeto Guacamole: https://guacamole.apache.org/
+#
+# Soluções Open Source de Gateway de Desktop
+# Site Oficial do Projeto No Machine: https://www.nomachine.com/pt-pt
+# Site Oficial do Projeto Mesh Commander: https://github.com/Ylianst/MeshCentral
+# Site Oficial do RustDesk: https://github.com/rustdesk/rustdesk
+#
 # Informações que serão solicitadas na configuração via Web do Apache Guacamole
 # Username: guacadmin
 # Password: guacadmin
@@ -40,13 +47,6 @@
 # Instalação do OpenSSH Sever no Ubuntu Server 20.04.x
 #	sudo apt update
 # 	sudo apt install openssh-server
-#
-# Site Oficial do Projeto Guacamole: https://guacamole.apache.org/
-#
-# Soluções Open Source de Gateway de Desktop
-# Site Oficial do Projeto No Machine: https://www.nomachine.com/pt-pt
-# Site Oficial do Projeto Mesh Commander: https://github.com/Ylianst/MeshCentral
-# Site Oficial do RustDesk: https://github.com/rustdesk/rustdesk
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

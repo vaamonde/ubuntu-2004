@@ -18,6 +18,8 @@
 # lançado sob a GNU General Public License Versão 3 e está disponível como uma edição 
 # da comunidade e uma Enterprise Edition.
 #
+# Site oficial do Projeto OpenProject: https://www.openproject.org/
+#
 # Informações que serão solicitadas na configuração via Console do OpenProject
 # Obs: informações utilizadas no arquivo: installer.dat ele será utilizado com o comando: openproject configure
 # 01. Select your OpenProject Edition: default <OK>
@@ -42,8 +44,6 @@
 # Confirm password: BoraParaPratica (Save)
 # Language: Português Brasileiro (Save)
 # Tour Virtual (Pular)
-#
-# Site oficial do Projeto OpenProject: https://www.openproject.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

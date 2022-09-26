@@ -22,13 +22,13 @@
 # Apache Lucene)e no MongoDB (MongoDB é um software de banco de dados orientado a 
 # documentos NoSQL).
 #
-# Informações que serão solicitadas na configuração via Web do Graylog
-# Username: admin
-# Password: graylog: Sign In
-#
 # Site Oficial do Projeto: https://www.graylog.org/
 # Site Oficial do MongoDB: https://www.mongodb.com/
 # Site Oficial do Elasticsearch: https://www.elastic.co/pt/
+#
+# Informações que serão solicitadas na configuração via Web do Graylog
+# Username: admin
+# Password: graylog: Sign In
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

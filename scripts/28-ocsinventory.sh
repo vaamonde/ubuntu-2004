@@ -20,6 +20,9 @@
 # em computadores de acordo com critérios de busca. O IpDiscover do lado do agente possibilita descobrir a 
 # totalidade de computadores e dispositivos em rede.
 #
+# Site Oficial do Projeto OCS Inventory-NG: https://ocsinventory-ng.org/
+# Projeto no Github: https://github.com/OCSInventory-NG
+#
 # MENSAGENS QUE SERÃO SOLICITADAS NA INSTALAÇÃO DO OCS INVENTORY SERVER E REPORTS:
 # 01. Do you wish to continue ([y]/n): y <-- digite y pressione <Enter>;
 # 02. Which host is running database server [localhost]?: Deixe o padrão pressione <Enter>;
@@ -85,9 +88,6 @@
 # 18: Do you want to use OCS-Inventory software deployment feature? <-- pressione <Enter>
 # 19: Do you want to use OCS-Inventory SNMP scans features? <-- pressione <Enter>
 # 20: Do you want to send an inventory of this machine? n, <-- pressione <Enter>
-#
-# Site Oficial do Projeto OCS Inventory-NG: https://ocsinventory-ng.org/
-# Projeto no Github: https://github.com/OCSInventory-NG
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

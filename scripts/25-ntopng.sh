@@ -27,6 +27,8 @@
 # /Monitoramento) ou em alguns casos no Modo Trunk (Tronco), também é recomendado que 
 # a Interface de Rede do Servidor esteja no Promiscuous Mode (Modo Promíscuo) 
 #
+# Site Oficial do Projeto NTopNG: https://www.ntop.org/
+#
 # Informações que serão solicitadas na configuração via Web do NTop-NG
 #
 # Username: admin
@@ -36,8 +38,6 @@
 #	Password: pti@2018
 #	Confirm Password: pti@2018
 #	Language: English (Change Password)
-#
-# Site Oficial do Projeto NTopNG: https://www.ntop.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

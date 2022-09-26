@@ -25,10 +25,12 @@
 # ferramentas conectadas criam um ambiente web para facilitar o trabalho com os programas 
 # da Comunidade Bacula. 
 #
+# Site Oficial do Projeto Bacula: https://www.bacula.org/
+# Site Oficial do Projeto Baculum: https://baculum.app/
+#
 # Informações que serão solicitadas na configuração via Web do Baculum WEB/API
 # Endereço padrão do Baculum WEB: http://localhost:9095
 # Endereço padrão do Baculum API: http://localhost:9096
-
 #
 # PRIMEIRA ETAPA: CONFIGURAR O BACULUM API: http://localhost:9096
 # Usuário padrão: admin - Senha padrão: admin
@@ -105,9 +107,6 @@
 #	<Next>
 # 04. Step 4 - Finish
 #	<Save>
-#
-# Site Oficial do Projeto Bacula: https://www.bacula.org/
-# Site Oficial do Projeto Baculum: https://baculum.app/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

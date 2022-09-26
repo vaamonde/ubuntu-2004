@@ -24,6 +24,8 @@
 # mensagens instantâneas e de conversas em grupo que usa o servidor XMPP escrito em Java 
 # e licenciado sob a licença Apache 2.0.
 #
+# Site Oficial do Projeto OpenFire: https://www.igniterealtime.org/projects/openfire/
+#
 # Informações que serão solicitadas na configuração via Web do OpenFire
 # Welcome to Setup:
 #		Português Brasileiro (pt_BR)
@@ -59,8 +61,6 @@
 # Loge-se no console de administração.
 #
 # Usuário padrão: admin
-#
-# Site Oficial do Projeto OpenFire: https://www.igniterealtime.org/projects/openfire/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

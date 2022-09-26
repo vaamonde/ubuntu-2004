@@ -17,13 +17,6 @@
 # interativa da web. Ele fornece tabelas, gráficos e alertas para a Web quando conectado 
 # a fontes de dados suportadas. É expansível através de um sistema de plug-in.
 #
-# Informações que serão solicitadas na configuração via Web do Grafana
-# Email or username: admin
-# Password: admin: (Log In)
-# Change Password
-#	New password: pti@2018
-#	Confirm new password: pti@2018: (Submit)
-#
 # Site Oficial do Projeto Grafana: https://grafana.com/
 #
 # Soluções Open Source de Visualização de Dados
@@ -31,6 +24,13 @@
 # Site Oficial do Projeto Wazuh: https://wazuh.com/
 # Site Oficial do Projeto OpenSearch: https://opensearch.org/
 # Site Oficial do Projeto Cyclotron: https://www.cyclotron.io/
+#
+# Informações que serão solicitadas na configuração via Web do Grafana
+# Email or username: admin
+# Password: admin: (Log In)
+# Change Password
+#	New password: pti@2018
+#	Confirm new password: pti@2018: (Submit)
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

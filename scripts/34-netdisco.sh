@@ -17,6 +17,8 @@
 # a muito grandes. Os dados de endereço IP e endereço MAC são coletados em um banco 
 # de dados PostgreSQL usando SNMP, CLI ou APIs de dispositivo.
 #
+# Site Oficial do Netdisco: http://netdisco.org/
+#
 # MENSAGENS QUE SERÃO SOLICITADAS NA INSTALAÇÃO (DEPLOYMENT) DO NETDISCO:
 # 01. digitar o comando: netdisco-deploy <Enter>
 # 02. So, is all of the above in place? [y/N]:  y <Enter>
@@ -26,8 +28,6 @@
 # 06. Download and update vendor MAC prefixes (OUI data)? [y/N]: y <Enter>
 # 07. Download and update MIB files? [y/N]: y <Enter>
 # 08. digitar o comando para sair: exit <Enter>
-#
-# Site Oficial do Netdisco: http://netdisco.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
@@ -96,7 +96,7 @@ echo -n "Verificando as dependências do Netdisco, aguarde... "
 	done
 		[[ $deps -ne 1 ]] && echo "Dependências.: OK" || { 
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
-            echo -en "Recomendo utilizar o script: 29-postgresql.sh para resolver as dependências."
+            echo -en "Recomendo utilizar o script: 31-postgresql.sh para resolver as dependências."
             exit 1; 
             }
 		sleep 5

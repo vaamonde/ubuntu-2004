@@ -38,6 +38,8 @@
 # de comunicação de áudio e vídeo numa rede de computadores. O H.323 é um protocolo relativamente 
 # antigo que está atualmente sendo substituído pelo SIP.
 #
+# Site Oficial do Asterisk: https://www.asterisk.org/
+#
 # Informações que serão solicitadas na configuração dos Módulos do Asterisk: (Utilizar TAB e ENTER)
 # Add-ons (See README-addons.txt): --- Extended ---
 #	* chan_ooh323
@@ -60,8 +62,6 @@
 #	* check_expr
 #	* check_expr2
 # <Save and Exit>
-#
-# Site Oficial do Asterisk: https://www.asterisk.org/
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

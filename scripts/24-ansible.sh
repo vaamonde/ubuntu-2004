@@ -29,16 +29,16 @@
 # Contínua, onde em pequenos ciclos novas versões de software são construídas, 
 # testadas e liberadas de forma confiável e em curtos períodos de tempo.
 #
-# Informações que serão solicitadas na configuração via Web do Rundeck
-# Nome de usuário: admin
-# Senha: admin: Entrar
-#
 # Site Oficial do Projeto Ansible: https://www.ansible.com/
 # Site Oficial do Projeto Rundeck: https://www.rundeck.com/open-source
 #
 # Outros projeto de Front End para o Ansible
 # Ansible AWX: https://github.com/ansible/awx
 # Polemarch..: https://polemarch.org/
+#
+# Informações que serão solicitadas na configuração via Web do Rundeck
+# Nome de usuário: admin
+# Senha: admin: Entrar
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
