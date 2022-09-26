@@ -28,7 +28,7 @@ a base de dados no MySQL. Aplicado correção no arquivo: 00-parametros.sh e 19-
   #zmupdate.pl -f depois: apt -f install
 Falha está associada as configurações do arquivo php.ini em relação a opção do: zlib.output_compression, no script do 
 Wordpress a opção indicada é: On no ZoneMinder precisar ser: Off se não a página não aparece no navegador é o servidor
-entra em Loop gerando uma sobrecarga da processamento.
+entra em Loop gerando uma sobrecarga de processamento.
 STATUS=RESOLVIDO
 
 0023 - Falha na montagem da compartilhamento do Protocolo Webdav no Powershell utilizando os comando de: New-PSDrive e o

@@ -16,7 +16,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 as opções da instalação das dependências dos Agentes do GLPI Help Desk v10.x, correção das dependências duplicadas
 do OCS Inventory e melhoria na indentação das bibliotecas do Perl, criação das variáveis de download dos Agentes extra 
 do GLPI Help Desk v10.x: $AGENTGLPILINUXNETWORK, $AGENTGLPILINUXCOLLECT, $AGENTGLPILINUXDEPLOY, alteração do script
-17-B-glpi-10.sh com a opção do download dos Agentes do Windows 32, Linux Network, Linux Collect e Linux Deploy.
+17-B-glpi-10.sh com a opção do download dos Agentes do Windows 32, Linux Network, Linux Collect e Linux Deploy, correção
+do BUG: 0024 referente a falha do ZoneMinder de acesso ao Painel de Controle.
 
 19/09/2022 - Robson Vaamonde - Correção do caminho do PATH dos Agentes do GLPI no script: 17-B-glpi-10.sh, alteração
 da variável: $DOWNLOADAGENTGLPI, alteração do arquivo php.ini referente ao suporte a segurança de acesso ao GLPI na 
