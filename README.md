@@ -213,17 +213,25 @@ Décimo Segundo vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps S
 
 Link da vídeo aula: https://www.youtube.com/watch?v=mGAlRLrrDLM
 
-## **🔴 #13_ Como utilizar o VSCODE para Customizar os Scripts antes de executar no seu Servidor Ubuntu Server 20.04.x LTS 🐧**
+## **🔴 #13_ Conhecendo o arquivo WARNING do Curso de Ubuntu Server 20.04.x LTS 🐧**
 
-Décimo Terceiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes de como customizar os arquivos de script e logo em seguida os arquivos de configuração utilizando o Visual Studio Code VSCODE junto com o comando Git e integrado com o Github antes de executar os scripts no nosso servidor.
+Décimo Terceiro vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes sobre o arquivo "WARNING" (Aviso - Alerta), arquivo que fica registrado todos os scripts, observações e dependências de cada script que você vai executar no seu servidor.
+
+[![Arquivo Warning](http://img.youtube.com/vi/1A_AAB5VsXk/0.jpg)](https://www.youtube.com/watch?v=1A_AAB5VsXk "Arquivo Warning")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=1A_AAB5VsXk
+
+## **🔴 #14_ Como utilizar o VSCODE para Customizar os Scripts antes de executar no seu Servidor Ubuntu Server 20.04.x LTS 🐧**
+
+Décimo Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou falar mais detalhes de como customizar os arquivos de script e logo em seguida os arquivos de configuração utilizando o Visual Studio Code VSCODE junto com o comando Git e integrado com o Github antes de executar os scripts no nosso servidor.
 
 [![Arquivo Parâmetros](http://img.youtube.com/vi/aUcrnHF0g4I/0.jpg)](https://www.youtube.com/watch?v=aUcrnHF0g4I "Arquivo Parâmetros")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=aUcrnHF0g4I
 
-## **🔴 #14_ Instalação e Configuração do Ubuntu Server 20.04.x LTS Focal Fossa 🐧**
+## **🔴 #15_ Instalação e Configuração do Ubuntu Server 20.04.x LTS Focal Fossa 🐧**
 
-Décimo Quarto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar a instalação e configuração do Ubuntu Server 20.04.3 LTS x64 Bits Focal Fossa, vamos fazer o download da ISO, criar a máquina virtual, instalar o Ubuntu Server, fazer sua configuração do cenário e já deixar o sistema todo atualizado para as próximas etapas.
+Décimo Quinto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar a instalação e configuração do Ubuntu Server 20.04.3 LTS x64 Bits Focal Fossa, vamos fazer o download da ISO, criar a máquina virtual, instalar o Ubuntu Server, fazer sua configuração do cenário e já deixar o sistema todo atualizado para as próximas etapas.
 
 [![Instalação Ubuntu](http://img.youtube.com/vi/EAB1PQBxb00/0.jpg)](https://www.youtube.com/watch?v=EAB1PQBxb00 "Instalação Ubuntu")
 
@@ -231,9 +239,9 @@ Link da vídeo aula: https://www.youtube.com/watch?v=EAB1PQBxb00
 
 Script utilizado nesse vídeo: https://github.com/vaamonde/ubuntu-2004/blob/main/01-InstalacaoDoUbuntuServer-20.04.3-LTS.md
 
-## **🔴 #15_ Configurações Básicas do Ubuntu Server 20.04.x LTS Focal Fossa 🐧**
+## **🔴 #16_ Configurações Básicas do Ubuntu Server 20.04.x LTS Focal Fossa 🐧**
 
-Décimo Quinto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas pós instalação do Ubuntu Server, configurações de Locale, Timezone, localização do arquivo de configuração da Placa de Rede utilizando o Netplan, comandos: sudo, history, etc... acessando remotamente o servidor utilizando o Protocolo SSH e reinicializando o sistema para testar as mudanças.
+Décimo Sexto vídeo do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas pós instalação do Ubuntu Server, configurações de Locale, Timezone, localização do arquivo de configuração da Placa de Rede utilizando o Netplan, comandos: sudo, history, etc... acessando remotamente o servidor utilizando o Protocolo SSH e reinicializando o sistema para testar as mudanças.
 
 [![Configuração Ubuntu](http://img.youtube.com/vi/VHHWBcnb-8A/0.jpg)](https://www.youtube.com/watch?v=VHHWBcnb-8A "Configuração Ubuntu")
 
