@@ -730,7 +730,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=ZOLpn0U8e3c
 
 Primeiro Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 18-A-fusioninventory-9.sh antes de executar no nosso servidor.
 
-[![Config Fusion 9.x](http://img.youtube.com/vi/RlN0tC115n/0.jpg)](https://www.youtube.com/watch?v=RlN0tC115nA "Config  Fusion 9.x")
+[![Config Fusion 9.x](http://img.youtube.com/vi/RlN0tC115nA/0.jpg)](https://www.youtube.com/watch?v=RlN0tC115nA "Config  Fusion 9.x")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=RlN0tC115nA
 
