@@ -53,6 +53,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #10_ Conhecendo o arquivo RELEASE do Curso de Ubuntu Server 20.04.x LTS (14/02/2022)
 #11_ Conhecendo o arquivo PORTS do Curso de Ubuntu Server 20.04.x LTS (16/02/2022)
 #12_ Conhecendo o arquivo FAQ do Curso de Ubuntu Server 20.04.x LTS (18/02/2022)
+#13_ Conhecendo o arquivo WARNING do Curso de Ubuntu Server 20.04.x LTS (05/10/2022)
 _
 #13_ Como utilizar o VSCODE para Customizar os Scripts antes de executar no seu Servidor Ubuntu (21/02/2022)
 _
@@ -141,7 +142,7 @@ _
 _
 #34A_ 18-A-fusioninventory-9.sh Customizando o Script e Arquivos de Configuração do FusionInventory - PARTE-01 (30/09/2022)
 #34B_ 18-A-fusioninventory-9.sh Instalação e Configuração do FusionInventory - PARTE-02 (03/10/2022)
-#34C_ 18-A-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03 ()
+#34C_ 18-A-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03 (07/10/2022)
 _
 #35A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01
 #35B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02

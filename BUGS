@@ -7,13 +7,13 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 25/09/2022
-Versão: 0.27
+Data de atualização: 03/10/2022
+Versão: 0.28
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 TOTAL DE BUGS..: 24
 BUGS RESOLVIDOS: 21
-BUGS PENDENTES.: 03 
+BUGS PENDENTES.: 03 (0020, 0019, 0018)
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
 0024 - Falha de acesso ao console de gerenciamento do ZoneMinder versão 1.36 (1.37) quando executado o script de instalação
@@ -27,14 +27,14 @@ a base de dados no MySQL. Aplicado correção no arquivo: 00-parametros.sh e 19-
   mysql -e "FLUSH PRIVILEGES ;"
   #zmupdate.pl -f depois: apt -f install
 Falha está associada as configurações do arquivo php.ini em relação a opção do: zlib.output_compression, no script do 
-Wordpress a opção indicada é: On no ZoneMinder precisar ser: Off se não a página não aparece no navegador é o servidor
+Wordpress a opção indicada é: On no ZoneMinder precisar ser: Off se não a página não aparece no navegador e o servidor
 entra em Loop gerando uma sobrecarga de processamento.
 STATUS=RESOLVIDO
 
-0023 - Falha na montagem da compartilhamento do Protocolo Webdav no Powershell utilizando os comando de: New-PSDrive e o
+0023 - Falha na montagem do compartilhamento do Protocolo Webdav no Powershell utilizando os comandos de: New-PSDrive e o
 comando: net use, verificando os erros de autenticação SSL/TLS no Windows 10 e 11.
 Error do comando net use: Erro de sistema 1244 (A operação requisitada não foi executada porque o usuário não foi autenticado)
-No Windows 10 somente funciona o comando net use após se autenticar com o usuário e senha via modo gráfico de adicionar unidade 
+No Windows 10 somente funciona o comando net use após se autenticar com o usuário e senha via modo gráfico e adicionar a unidade 
 de rede. Resolvido os problemas do Powershell e do Net Use utilizando as opções de usuário e senha e habilitando o serviço do 
 WebClient conforme descrito no script: 12-webdav.sh
 STATUS=RESOLVIDO
@@ -68,8 +68,8 @@ MySQL Workbench Remote: Authentication plugin 'caching_sha2_password' reported e
 connections.
 Falha relacionada a falta dos Certificados Assinados do MySQL Server (arquivo PEM, CSR e KEY) de autenticação.
 Aplicativo do PhpMySQL não é afetado com essas mudanças, mais outros aplicativos sim, pois precisa mudar a forma de conexão
-com o Bando de Dados utilizando conexão segura, teste feito com o Aplicativo Agenda desenvolvido em Java e hospedado no
-Tomcat9 teve falha de autenticação no Banco de Dados após as configurações do Certificado e habilitado a segurança TLs/SSL.
+com o Banco de Dados utilizando conexão segura, teste feito com o Aplicativo Agenda desenvolvido em Java e hospedado no
+Tomcat9 teve falha de autenticação no Banco de Dados após as configurações do Certificado e habilitado a segurança TLS/SSL.
 STATUS=PENDENTE
 
 0019 - Falha de criação de arquivos utilizando o Windows Explorer no Windows 10 se conectando remotamente no Servidor FTP
@@ -95,7 +95,7 @@ configuração: override.conf e adicionado a opção de inicialização do módu
 STATUS=RESOLVIDO
 
 0016 - Falha de: tftp client does not accept options, mensagem é mostrada nos arquivos de Log do TFTP-HPA Server utilizando
-o comando: less -f /var/log/syslog | grep ntpd, analisando a falha, conforme vários artigos e comentários em fóruns de 
+o comando: less -f /var/log/syslog | grep tftp, analisando a falha, conforme vários artigos e comentários em fóruns de 
 GNU/Linux essa mensagem é normal, não sendo uma falha do TFTP-HPA Server, está associada ao suporte da BIOS UEFI que está 
 habilitado o recurso do Secure Boot, recomendo deixar a BIOS UEFI em Legacy ou alterar o arquivo de configuração do TFTP-HPA, 
 verificando o recurso de configuração do arquivo tftp-hpa: -r blksize na linha TFTP_OPTIONS="".
@@ -136,9 +136,9 @@ STATUS=RESOLVIDO
 STATUS=RESOLVIDO
 
 0009 - Falha de resolução do DNS para endereços Externos executando o comando: ping google.com recebendo a mensagem no 
-terminal: Temporary failure in name resolution ou utilizando o comando: nslookup google.com recendo a mensagem no terminal:
+terminal: Temporary failure in name resolution ou utilizando o comando: nslookup google.com recebe a mensagem no terminal:
 server can't find google.com: SERVFAIL, falha relacionada a Data e Hora do sistema, muitas vezes devido a restauração de
-um Snapshot ou alteração da data/hora errada no sistema que não sincronizou com o NTP Server, utilizar o comando: data para
+um Snapshot ou alteração da data/hora errada no sistema que não sincronizou com o NTP Server, utilizar o comando: date para
 resolver esse problema, adicionado no arquivo: ntp.conf os endereços IPv4 dos servidores NTP.br.
 STATUS=RESOLVIDO
 

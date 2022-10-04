@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/09/2022
-Data de atualização: 26/09/2022
-Versão: 0.04
+Data de atualização: 03/10/2022
+Versão: 0.05
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #================================== CUIDADO AO UTILIZAR VÁRIOS SERVIÇOS NO MESMO SERVIDOR =================================
@@ -153,3 +153,25 @@ SCRIPT                  RECOMENDAÇÃO                                  OBSERVA�
                                                                                                      11-A-openssl-ca.sh
                                                                                                      11-B-openssl-apache.sh
                                                                                                      11-D-openssl-tomcat.sh
+
+21-grafana.sh           Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
+                        em um servidor dedicado, sem a necessidade                                   03-dns.sh
+                        de instalar outros serviços de rede.
+
+22-zabbix.sh            Instalar o serviço do Zabbix junto com o      Editar para cada servidor.     01-openssh.sh
+                        serviço do LAMP Server, criar um  server                                     03-dns.sh
+                        dedicado para essa finalidade.                                               08-lamp.sh
+                                                                                                     11-A-openssl-ca.sh
+                                                                                                     11-B-openssl-apache.sh
+
+23-docker.sh            Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
+                        em um servidor dedicado, sem a necessidade                                   03-dns.sh
+                        de instalar outros serviços de rede.
+
+24-ansible.sh           Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
+                        em um servidor dedicado, sem a necessidade                                   03-dns.sh
+                        de instalar outros serviços de rede.
+
+25-ntopng.sh            Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
+                        em um servidor dedicado, sem a necessidade                                   03-dns.sh
+                        de instalar outros serviços de rede.

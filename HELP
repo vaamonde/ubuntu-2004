@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 19/10/2021
-Data de atualização: 09/07/2022
-Versão: 0.17
+Data de atualização: 03/10/2022
+Versão: 0.18
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #======================= COMO UTILIZAR OS SCRIPTS DESSE CURSO NO SEU SERVIDOR =======================
@@ -33,6 +33,7 @@ Quarto..: Dúvidas, críticas ou sugestões mande na Guia "ISSUES" (Questões) d
 	_ RELEASE: arquivo das versões homologadas de cada script após os testes finais e análise dos Logs.
 	_ ROADMAP: arquivo com a sequência das gravações das vídeo aulas desse curso (Guia Projects).
 	_ PORTS: arquivo de portas e protocolos TCP ou UDP utilizados pelos serviços de rede desse curso.
+	_ WARNING: arquivo de informações importantes sobre os scripts e arquivos de configuração.
 	_ scripts/: diretório dos scripts desse curso, numerados por sequência de uso e prioridade.
 	_ scripts/conf/: diretório dos arquivos de configuração (conf) dos serviços de rede desse curso.
 	_ scripts/install: diretório dos arquivos de instalação e configuração do Ubuntu Server.
