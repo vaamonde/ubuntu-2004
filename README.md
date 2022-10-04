@@ -654,6 +654,14 @@ Quarto Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 
 
 Link da vídeo aula: https://www.youtube.com/watch?v=nhi3dNh4Jz4
 
+## **🔴 15-netdata.sh Configurando o Netdata Cloud integrado com o Netdata Agent - PARTE-05 🐧**
+
+Quinto Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o recurso do monitoramento centralizado utilizando o Netdata Cloud. O Netdata Cloud permiti transmitir todas as métricas de todos os servidores físicos e virtuais, contêineres e dispositivos IoT para um painel, em tempo real, reduzindo o tempo de resolução com a solução de problemas assistida por inteligência e baseada em equipe.
+
+[![Netdata Cloud](http://img.youtube.com/vi/5MrH8L5cSIU/0.jpg)](https://www.youtube.com/watch?v=5MrH8L5cSIU "Netdata Cloud")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=5MrH8L5cSIU
+
 ## **🔴 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 🐧**
 
 Primeiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 16-loganalyzer.sh antes de executar no nosso servidor.
@@ -746,6 +754,6 @@ Link da vídeo aula: https://www.youtube.com/watch?v=ilj0fwnHcaM
 
 Terceiro Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como instalar e configurar o Agente do FusionInventory nos Desktops Microsoft Windows e GNU/Linux.
 
-[![Agent Fusion 9.x](http://img.youtube.com/vi//0.jpg)]( "Agent Fusion 9.x")
+[![Agent Fusion 9.x](http://img.youtube.com/vi/1oF_8Xxbk_E/0.jpg)](https://www.youtube.com/watch?v=1oF_8Xxbk_E "Agent Fusion 9.x")
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=1oF_8Xxbk_E
