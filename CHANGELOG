@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 04/10/2022
-Versão: 0.83
+Data de atualização: 05/10/2022
+Versão: 0.84
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+05/10/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh em relação a variável de instalação do CFTV
+ZoneMinder, alterado para a versão: MASTER que suportar a versão: 1.37.x, melhoria na documentação de configuração
+das câmeras de CFTV IPCam e IPWebCam.
+
 04/10/2022 - Robson Vaamonde - Preparação do material de monitoramento do Microsoft Windows utilizando o agente do
 Prometheus Windows Exporter junto com o Netdata, criação do arquivo de configuração: wmi.conf. Preparação e testes 
 da configuração do Netdata Cloud.
