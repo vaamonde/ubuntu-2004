@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 25/08/2022
-# Versão: 0.12
+# Data de atualização: 05/10/2022
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -21,14 +21,14 @@
 # três modos de operação: monitoramento (sem gravação), gravação após movimento detectado e 
 # gravação permanente.
 #
-# CCTV / CFTV = (Closed-Circuit Television - Circuito fechado de televisão);
+# CCTV / CFTV = (Closed-Circuit Television - Circuito Fechado de Televisão);
 # PTZ Pan/Tilt/Zoom (Uma câmera de rede PTZ oferece funcionalidade de vídeo em rede combinada 
 # com o recurso de movimento horizontal, vertical e de zoom - Pan = Panorâmica Horizontal - 
 # Tilt = Vertical | Zoom - Aproximar)
 #
-# ONVIF ( Open Network Video Interface Forum ) é um fórum global e aberto a todos, tem o 
-# objetivo de ajudar no desenvolvimento de um padrão aberto para a interface de produtos 
-# de segurança físicos baseados em IP.
+# ONVIF (Open Network Video Interface Forum) é um fórum global e aberto a todos, tem o objetivo 
+# de ajudar no desenvolvimento de um padrão aberto para a interface de produtos de segurança 
+# físicos baseados em IP.
 #
 # Site Oficial do Projeto ZoneMinder: https://zoneminder.com/
 #
@@ -93,6 +93,8 @@ echo -n "Verificando as dependências do ZoneMinder, aguarde... "
             echo -en "\nInstale as dependências acima e execute novamente este script\n";
 			echo -en "Recomendo utilizar o script: 03-dns.sh para resolver as dependências."
 			echo -en "Recomendo utilizar o script: 07-lamp.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-A-openssl-ca.sh para resolver as dependências."
+			echo -en "Recomendo utilizar o script: 11-B-openssl-apache.sh para resolver as dependência."
             exit 1; 
             }
 		sleep 5
