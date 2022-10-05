@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/09/2022
-Data de atualização: 03/10/2022
-Versão: 0.05
+Data de atualização: 05/10/2022
+Versão: 0.06
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #================================== CUIDADO AO UTILIZAR VÁRIOS SERVIÇOS NO MESMO SERVIDOR =================================
@@ -175,3 +175,55 @@ SCRIPT                  RECOMENDAÇÃO                                  OBSERVA�
 25-ntopng.sh            Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
                         em um servidor dedicado, sem a necessidade                                   03-dns.sh
                         de instalar outros serviços de rede.
+
+26-openfire.sh          Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
+                        em um servidor  dedicado,  pode  instalar                                    03-dns.sh
+                        junto com o serviço do LAMP.                                                 08-lamp.sh
+
+27-owncloud.sh          Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
+                        em um servidor  dedicado,  pode  instalar     os arquivos conf.              03-dns.sh
+                        junto com o serviço do LAMP.                                                 08-lamp.sh
+                                                                                                     11-A-openssl-ca.sh
+                                                                                                     11-B-openssl-apache.sh
+
+28-ocsinventory.sh      Instalar  o  serviço  do  FusionInventory     Editar para cada servidor      01-openssh.sh
+                        junto com o serviço do LAMP Server  e  do     os arquivos conf.              03-dns.sh
+                        GLPI  Help  Desk  v9.x,  criar  um server                                    08-lamp.sh
+                        dedicado somente em caso de grande acesso                                    11-A-openssl-ca.sh
+                        ao servidor.                                                                 11-B-openssl-apache.sh
+                                                                                                     17-A-glpi-9.sh
+
+29-bacula.sh            Instalar o serviço do Bacula Server junto     Editar para cada servidor      01-openssh.sh
+                        com o serviço do LAMP  Server,  recomendo     os arquivos conf.              03-dns.sh
+                        um servidor dedicado.                                                        08-lamp.sh
+                                                                                                     11-A-openssl-ca.sh
+                                                                                                     11-B-openssl-apache.sh
+
+30-graylog.sh           Instalar o serviço do Graylog Server  em      Editar para cada servidor      01-openssh.sh
+                        servidor dedicado.                                                           03-dns.sh
+
+31-postgres.sh          Instalar o serviço do  PostgreSQL Server      Editar para cada servidor      01-openssh.sh
+                        em  servidor  dedicado ,  pode  instalar                                     03-dns.sh
+                        junto com o LAMP Server.                                                     08-lamp.sh
+                                                                                                     11-A-openssl-ca.sh
+                                                                                                     11-B-openssl-apache.sh
+
+32-nextcloud.sh         Recomendo fazer a instalação e configurar     Editar para cada servidor.     01-openssh.sh
+                        em um servidor  dedicado,  pode  instalar     os arquivos conf.              03-dns.sh
+                        junto com o serviço do LAMP.                                                 08-lamp.sh
+                                                                                                     11-A-openssl-ca.sh
+                                                                                                     11-B-openssl-apache.sh
+ 
+33-asterisk.sh          Instalar o  serviço do  Asterisk  Server      Editar para cada servidor      01-openssh.sh
+                        em servidor dedicado.                         os arquivos conf.              03-dns.sh
+
+34-netdisco.sh          Instalar o  serviço do  Netdisco  Server      Editar para cada servidor      01-openssh.sh
+                        em servidor dedicado.                         os arquivos conf.              03-dns.sh
+                                                                                                     31-postgres.sh
+
+35-openproject.sh       Instalar o  serviço do  Asterisk  Server      Editar para cada servidor      01-openssh.sh
+                        em  servidor  dedicado ,  pode  instalar      os arquivos conf.              03-dns.sh
+                        junto com o serviço do LAMP.                                                 08-lamp.sh
+                                                                                                     11-A-openssl-ca.sh
+                                                                                                     11-B-openssl-apache.sh
+                                                                                                     31-postgres.sh
