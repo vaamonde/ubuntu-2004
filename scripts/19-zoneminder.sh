@@ -11,7 +11,7 @@
 # Data de atualização: 05/10/2022
 # Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do ZoneMinder 1.37.x
+# Testado e homologado para a versão do ZoneMinder 1.36.x
 #
 # ZoneMinder é um sistema de CFTV (Circuito Fechado de televisão) Open Source, desenvolvido 
 # para sistemas operacionais Linux. Ele é liberado sob os termos da GNU General Public 
@@ -38,6 +38,55 @@
 #
 # Informações que serão solicitadas na configuração via Web do ZoneMinder
 # Privacy: Accept: Apply
+#
+# Configurações básicas do ZoneMinder
+# #01_ Alteração da Linguagem;
+#	Options
+#		System
+#			LANG_DEFAULT: pt_br
+#
+# #02_ Habilitando a Autenticação;
+#	Options
+#		System
+#			OPT_USE_AUTH: ON
+#				Uername Default.: admin
+#				Password Default: admin
+#
+# Localizando dispositivos de Rede IP (CFTV/CCTV) na Rede com NMAP
+# Terminal (Ctrl + Alt + T)
+#	#opções do comando nmap: -sP (Ping Scan), .0/24 (All Subnet Address)
+#	sudo nmap -sP 192.168.0.0/24
+#
+# Adicionando Monitor (Câmeras) no ZoneMinder
+# #01_ Câmera PTZ IPCAM <Adicionar Monitor>
+#	General
+#		Nome: IPCAM
+#		Tipo de Origem: Remoto
+#		Função: Monitor
+#	Origem
+#		Remote Protocol: HTTP
+#		Remote Method: Simple
+#		Nome do host remoto: admin:admin@192.168.0.189
+#		Porta do host remoto: 80
+#		Caminho do host remoto: /videostream.cgi
+#		Largura de Captura (pixels): 640
+#		Altura de Captura (pixels): 480
+#	<Salvar>
+#
+# #02_ Câmera IPWEBCAM <Adicionar Monitor>
+#	General
+#		Nome: IPWEBCAM
+#		Tipo de Origem: Remoto
+#		Função: Monitor
+#	Origem
+#		Remote Protocol: HTTP
+#		Remote Method: Simple
+#		Nome do host remoto: admin:admin@192.168.0.177
+#		Porta do host remoto: 8080
+#		Caminho do host remoto: /video
+#		Largura de Captura (pixels): 640
+#		Altura de Captura (pixels): 480
+#	<Salvar>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
