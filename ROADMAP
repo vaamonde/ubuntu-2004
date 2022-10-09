@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 04/10/2022
-Versão: 0.23
+Data de atualização: 09/10/2022
+Versão: 0.24
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -127,6 +127,7 @@ _
 #30C_ 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 (05/08/2022)
 #30D_ 15-netdata.sh Segurança de Acesso ao Netdata - PARTE-04 (08/08/2022)
 #30E_ 15-netdata.sh Configuração do Netdata Cloud e Client PARTE-05 (07/10/2022)
+#30F_ 15-netdata.sh Configuração do Monitoramento do Windows no Netdata PARTE-06 ()
 _
 #31A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (16/08/2022)
 #31B_ 16-loganalyzer.sh Instalação e Configuração do LogAnalyzer - PARTE-02 (18/08/2022)
