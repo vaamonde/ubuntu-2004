@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/10/2021
-Data de atualização: 24/09/2022
-Versão: 0.26
+Data de atualização: 10/10/2022
+Versão: 0.27
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 Comando para verificar todas as versões dos scripts: grep 'Versão:' *.sh
 Comando para verificar todas as datas de atualização dos scripts: grep 'Data de atualização:' *.sh
@@ -20,7 +20,7 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
       paste /tmp/01.txt /tmp/02.txt /tmp/03.txt | column -t >> ../RELEASE
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh           Versão:  0.80  Data  de  atualização:  14/09/2022
+00-parametros.sh           Versão:  0.82  Data  de  atualização:  05/10/2022
 01-openssh.sh              Versão:  0.27  Data  de  atualização:  24/03/2022
 02-dhcp.sh                 Versão:  0.15  Data  de  atualização:  09/09/2022
 03-dns.sh                  Versão:  0.17  Data  de  atualização:  31/03/2022
@@ -42,9 +42,9 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
 15-netdata.sh              Versão:  0.14  Data  de  atualização:  28/07/2022
 16-loganalyzer.sh          Versão:  0.12  Data  de  atualização:  31/05/2022
 17-A-glpi-9.sh             Versão:  0.15  Data  de  atualização:  07/09/2022
-17-B-glpi-10.sh            Versão:  0.04  Data  de  atualização:  19/09/2022
-18-A-fusioninventory-9.sh  Versão:  0.12  Data  de  atualização:  14/09/2022
-19-zoneminder.sh           Versão:  0.11  Data  de  atualização:  23/08/2022
+17-B-glpi-10.sh            Versão:  0.05  Data  de  atualização:  25/09/2022
+18-A-fusioninventory-9.sh  Versão:  0.13  Data  de  atualização:  25/09/2022
+19-zoneminder.sh           Versão:  0.13  Data  de  atualização:  05/10/2022
 20-guacamole.sh            Versão:  0.07  Data  de  atualização:  12/07/2022
 21-grafana.sh              Versão:  0.06  Data  de  atualização:  20/08/2022
 22-zabbix.sh               Versão:  0.05  Data  de  atualização:  22/08/2022
