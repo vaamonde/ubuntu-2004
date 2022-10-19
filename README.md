@@ -666,9 +666,9 @@ Link da vídeo aula: https://www.youtube.com/watch?v=5MrH8L5cSIU
 
 Sexto Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o recurso do monitoramento do Sistema Operacional Microsoft Windows utilizando o Prometheus Windows Exporters. Um Prometheus Exporter é um software que pode buscar estatísticas de outro sistema não Prometheus, pode transformar essas estatísticas em métricas do Prometheus, usando uma biblioteca cliente.
 
-[![Netdata WMI](http://img.youtube.com/vi//0.jpg)]( "Netdata WMI")
+[![Netdata WMI](http://img.youtube.com/vi/bXR8q7hg4oM/0.jpg)](https://www.youtube.com/watch?v=bXR8q7hg4oM "Netdata WMI")
 
-Link da vídeo aula:
+Link da vídeo aula: https://www.youtube.com/watch?v=bXR8q7hg4oM
 
 ## **🔴 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 🐧**
 

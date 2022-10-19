@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 10/10/2022
-Versão: 0.25
+Data de atualização: 18/10/2022
+Versão: 0.26
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -127,7 +127,7 @@ _
 #30C_ 15-netdata.sh Testes de Acesso e Monitoramento dos Recursos do Netdata - PARTE-03 (05/08/2022)
 #30D_ 15-netdata.sh Segurança de Acesso ao Netdata - PARTE-04 (08/08/2022)
 #30E_ 15-netdata.sh Configuração do Netdata Cloud e Client PARTE-05 (07/10/2022)
-#30F_ 15-netdata.sh Configuração do Monitoramento do Windows no Netdata PARTE-06 ()
+#30F_ 15-netdata.sh Configuração do Monitoramento do Windows no Netdata PARTE-06 (20/10/2022)
 #30G_ 15-netdata.sh Customizando o Dashboard Personalizado do Netdata PARTE-07 ()
 _
 #31A_ 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 (16/08/2022)
@@ -146,9 +146,9 @@ _
 #34B_ 18-A-fusioninventory-9.sh Instalação e Configuração do FusionInventory - PARTE-02 (03/10/2022)
 #34C_ 18-A-fusioninventory-9.sh Inventário no Windows e Linux do FusionInventory Agent - PARTE-03 (07/10/2022)
 _
-#35A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01 (17/10/2022)
-#35B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02 (19/10/2022)
-#35C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03 (21/10/2022)
+#35A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01 (24/10/2022)
+#35B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02 (26/10/2022)
+#35C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03 (28/10/2022)
 _
 #36A_ 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole - PARTE-01
 #36B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02

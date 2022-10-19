@@ -52,9 +52,10 @@
 #				Uername Default.: admin
 #				Password Default: admin
 #
-# Localizando dispositivos de Rede IP (CFTV/CCTV) na Rede com NMAP
+# Localizando dispositivos de Rede IP (CFTV/CCTV) na Rede com NMAP (Network Mapper)
 # Terminal (Ctrl + Alt + T)
 #	#opções do comando nmap: -sP (Ping Scan), .0/24 (All Subnet Address)
+#	sudo apt install nmap
 #	sudo nmap -sP 192.168.0.0/24
 #
 # Adicionando Monitor (Câmeras) no ZoneMinder
