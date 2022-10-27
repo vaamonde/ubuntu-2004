@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 18/10/2022
-Versão: 0.26
+Data de atualização: 27/10/2022
+Versão: 0.27
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -37,7 +37,8 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 00-aapanel.sh (dev): sistemas de gerenciamento de servidores Web;
 00-tinycp.sh (dev): sistemas de gerenciamento de servidores Web;
 00-moodle.sh (dev): um software livre, de apoio à aprendizagem, executado num ambiente virtual;
-00-mkdocs.sh (dev): é um gerador de site estático rápido voltado para a construção de documentação.
+00-mkdocs.sh (dev): é um gerador de site estático rápido voltado para a construção de documentação;
+00-wazuh.sh (dev): plataforma de segurança gratuita e de código aberto que unifica os recursos de XDR e SIEM.
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
 

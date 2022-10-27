@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 24/09/2022
-Versão: 0.22
+Data de atualização: 27/10/2022
+Versão: 0.23
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
+27/10/2022 - Robson Vaamonde - Estudos e criação do script: 00-wazuh.sh. Wazuh uma plataforma de segurança gratuita 
+e de código aberto que unifica os recursos de XDR e SIEM, o que não apenas permite que as empresas detectem ameaças 
+sofisticadas, mas também pode ajudar imensamente na prevenção de violações e vazamentos de dados.
+
 24/09/2022 - Robson Vaamonde - Estudos e criação do script: 00-checkmk.sh. Checkmk é um software desenvolvido em 
 Python e C ++ para monitoramento de infraestrutura de TI. É utilizado para monitoramento de servidores, aplicativos, 
 redes, infraestruturas em nuvem, containers, storage, bancos de dados e sensores de ambiente.
