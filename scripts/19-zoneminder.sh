@@ -13,7 +13,7 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
-# ZoneMinder é um sistema de CFTV (Circuito Fechado de televisão) Open Source, desenvolvido 
+# ZoneMinder é um sistema de CFTV (Circuito Fechado de Televisão) Open Source, desenvolvido 
 # para sistemas operacionais Linux. Ele é liberado sob os termos da GNU General Public 
 # License (GPL). Os usuários controlam o ZoneMinder através de uma interface baseada na Web; 
 # também fornece LiveCD. O aplicativo pode usar câmeras padrão (por meio de uma placa de 
