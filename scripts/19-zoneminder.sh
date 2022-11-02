@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 05/10/2022
-# Versão: 0.13
+# Data de atualização: 02/11/2022
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -264,7 +264,7 @@ echo -e "Instalando o ZoneMinder, esse processo demora um pouco, aguarde..."
 echo -e "ZoneMinder instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Criando o Banco de Dados do ZoneMinder, aguarde..."
+echo -e "Atualizando o Banco de Dados do ZoneMinder, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mysql: -u (user), -p (password), -e (execute), < (Redirecionador de Entrada STDIN)
 	#mysql -u $USERMYSQL -p$SENHAMYSQL -e "$DROP_DATABASE_ZONEMINDER" mysql &>> $LOG
@@ -273,7 +273,7 @@ echo -e "Criando o Banco de Dados do ZoneMinder, aguarde..."
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_ZONEMINDER" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_ZONEMINDER" mysql &>> $LOG
-echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
+echo -e "Banco de Dados atualizado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Alterando as permissões dos arquivos e diretórios do ZoneMinder, aguarde..."
@@ -316,9 +316,20 @@ echo -e "Habilitando o Serviço do ZoneMinder, aguarde..."
 echo -e "Serviço habilitado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando o serviço do ZoneMinder, aguarde..."
+echo -e "Verificando os serviços do Apache2, MySQL e do ZoneMinder, aguarde..."
+	echo -e "Apache2...: $(systemctl status apache2 | grep Active)"
+	echo -e "MySQL.....: $(systemctl status mysql | grep Active)"
 	echo -e "Zoneminder: $(systemctl status zoneminder | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as portas de conexão do Apache2 e do MySQL, aguarde..."
+	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
+	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
+	# -i (selects the listing of files any of whose Internet address matches the address specified 
+	# in i), -s (alone directs lsof to display file size at all times)
+	lsof -nP -iTCP:'80,443,3306' -sTCP:LISTEN
+echo -e "Portas de conexões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalação do ZoneMinder feita com Sucesso!!!"

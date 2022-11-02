@@ -765,3 +765,27 @@ Terceiro Vídeo de Configuração do FusionInventory v9.x do Curso "GRATUITO" de
 [![Agent Fusion 9.x](http://img.youtube.com/vi/1oF_8Xxbk_E/0.jpg)](https://www.youtube.com/watch?v=1oF_8Xxbk_E "Agent Fusion 9.x")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=1oF_8Xxbk_E
+
+## **🔴 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder CFTV - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do ZoneMinder CFTV do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 19-zoneminder.sh antes de executar no nosso servidor.
+
+[![Config ZoneMinder](http://img.youtube.com/vi/kZqc4eoNPc4/0.jpg)](https://www.youtube.com/watch?v=kZqc4eoNPc4 "Config ZoneMinder")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=kZqc4eoNPc4
+
+## **🔴 19-zoneminder.sh Instalação e Configuração do ZoneMinder CFTV - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do ZoneMinder CFTV do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do ZoneMinder CFTV.
+
+[![Install ZoneMinder](http://img.youtube.com/vi/0Ijj06HQuOw/0.jpg)](https://www.youtube.com/watch?v=0Ijj06HQuOw "Install ZoneMinder")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=0Ijj06HQuOw
+
+## **🔴 19-zoneminder.sh Configurações Básicas e Monitoramento do ZoneMinder CFTV - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do GLPI Help Desk v10.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do ZoneMinder CFTV, acessar o gerenciador de câmeras, fazer a sua configuração básica de segurança e adicionar câmeras PTZ IPv4, IP Webcam e uma integração simples com o DVR (Digital Video Recorder).
+
+[![Access ZoneMinder](http://img.youtube.com/vi//0.jpg)]( "Access ZoneMinder")
+
+Link da vídeo aula: 
