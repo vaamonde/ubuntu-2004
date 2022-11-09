@@ -8,13 +8,16 @@ Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
 Data de atualização: 27/10/2022
-Versão: 0.23
+Versão: 0.24
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= CRIAÇÃO DE NOVOS SCRIPTS =============================================
 27/10/2022 - Robson Vaamonde - Estudos e criação do script: 00-wazuh.sh. Wazuh uma plataforma de segurança gratuita 
 e de código aberto que unifica os recursos de XDR e SIEM, o que não apenas permite que as empresas detectem ameaças 
 sofisticadas, mas também pode ajudar imensamente na prevenção de violações e vazamentos de dados.
+
+21/10/2022 - Robson Vaamonde - Estudos e criação do script: 00-fengoffice.sh. O Feng Office Community Edition é uma 
+plataforma de colaboração de código aberto desenvolvida e suportada pelo Feng Office e pela comunidade OpenGoo.
 
 24/09/2022 - Robson Vaamonde - Estudos e criação do script: 00-checkmk.sh. Checkmk é um software desenvolvido em 
 Python e C ++ para monitoramento de infraestrutura de TI. É utilizado para monitoramento de servidores, aplicativos, 

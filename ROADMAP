@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 02/11/2022
-Versão: 0.28
+Data de atualização: 09/11/2022
+Versão: 0.29
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -39,6 +39,7 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 00-moodle.sh (dev): um software livre, de apoio à aprendizagem, executado num ambiente virtual;
 00-mkdocs.sh (dev): é um gerador de site estático rápido voltado para a construção de documentação;
 00-wazuh.sh (dev): plataforma de segurança gratuita e de código aberto que unifica os recursos de XDR e SIEM.
+00-fengoffice.sh (dev): plataforma de colaboração de código aberto desenvolvida pela Feng Office.
 
 #= Roadmap do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script =#
 
@@ -149,7 +150,7 @@ _
 _
 #35A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01 (01/11/2022)
 #35B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02 (03/11/2022)
-#35C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03 (08/11/2022)
+#35C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03 (14/11/2022)
 _
 #36A_ 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole - PARTE-01
 #36B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02
