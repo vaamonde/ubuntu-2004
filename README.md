@@ -784,7 +784,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=0Ijj06HQuOw
 
 ## **🔴 19-zoneminder.sh Configurações Básicas e Monitoramento do ZoneMinder CFTV - PARTE-03 🐧**
 
-Terceiro Vídeo de Configuração do GLPI Help Desk v10.x do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do ZoneMinder CFTV, acessar o gerenciador de câmeras, fazer a sua configuração básica de segurança e adicionar câmeras PTZ IPv4, IP Webcam e uma integração simples com o DVR (Digital Video Recorder).
+Terceiro Vídeo de Configuração do ZoneMinder CFTV do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do ZoneMinder CFTV, acessar o gerenciador de câmeras, fazer a sua configuração básica de segurança e adicionar câmeras PTZ IPv4, IP Webcam e uma integração simples com o DVR (Digital Video Recorder).
 
 [![Access ZoneMinder](http://img.youtube.com/vi//0.jpg)]( "Access ZoneMinder")
 
