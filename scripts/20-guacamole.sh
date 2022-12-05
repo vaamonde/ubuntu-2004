@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 12/07/2022
-# Versão: 0.07
+# Data de atualização: 04/12/2022
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache Guacamole Server 1.4.x e Cliente 1.4.x
 #
@@ -27,9 +27,54 @@
 # Site Oficial do RustDesk: https://github.com/rustdesk/rustdesk
 #
 # Informações que serão solicitadas na configuração via Web do Apache Guacamole
-# Username: guacadmin
-# Password: guacadmin
+# Navegador: https://pti.intra:8443/guacamole
+# 			 Username: guacadmin
+# 			 Password: guacadmin
 #
+# Configurações básicas do Guacamole Admin
+# guacadmin
+#	Configurações
+#		Preferências
+#			Idioma: Português
+#			Fuso Horário: America - São Paulo
+#		Alterar Senha
+#			Senha Atual: guacadmin
+#			Nova Senha: pti@2018
+#			Confirme a Nova Senha: pti@2018
+#		<Alterar senha>
+#		Método de Entrada Padrão
+#			Nenhum: ON (Default)
+#
+# Criação dos Grupos Padrão do Guacamole
+# guacadmin
+#	Grupos
+#		<Novo Grupo>
+#			Editar Grupo
+#				Nome do grupo: GnuLinux
+#			Restrições de Grupo
+#				Desativado: Off (Default)
+#			Permissões
+#				Administrar o sistema: Off (Default)
+#				Criar novos usuários: Off (Default)
+#				Criar novos grupos de usuários: Off (Default)
+#				Criar novas conexões: Off (Default)
+#				Criar novos grupos de conexões: Off (Default)
+#				Criar novos perfis de compartilhamentos: Off (Default)
+#			Grupos Pai
+#				Default
+#			Grupos Membros
+#				Default
+#			Usuários Membros
+#				guacadmin: On
+#			Conexões
+#				Default
+#		<Salvar>
+#
+# Criação das Conexões
+# guacadmin
+#	Conexões
+#		<Nova conexão>
+#			
 # Instalação do Vino VNC Server no Linux Mint 19.x e 20.x
 # 	sudo apt update
 #	sudo apt install vino
@@ -37,16 +82,30 @@
 #	sudo gsettings set org.gnome.Vino require-encryption false
 #	cd /usr/lib/vino/
 #		./vino-server &
-#	sudo netstat -pl | grep 5900
-#	sudo nc -vz 127.0.0.1 5900
+#	sudo lsof -nP -iTCP:'5900' -sTCP:LISTEN
 #
-# Instalação do Telnet Server no Ubuntu Server 20.04.x
+# Instalação do Telnet Server no Linux Mint 19.x e 20.x
 #	sudo apt update
 #	sudo apt install telnetd
+#	sudo systemctl status inetd
+#	sudo lsof -nP -iTCP:'23' -sTCP:LISTEN
+#	telnet 127.0.0.1
 #
-# Instalação do OpenSSH Sever no Ubuntu Server 20.04.x
+# Instalação do OpenSSH Sever no Linux Mint 19.x e 20.x
 #	sudo apt update
 # 	sudo apt install openssh-server
+#	sudo vim /etc/ssh/sshd_config
+#		INSERT
+#	 		Port 22
+#			ListenAddress 0.0.0.0
+#			PubkeyAcceptedKeyTypes +ssh-rsa
+#			KexAlgorithms +diffie-hellman-group14-sha1
+#			HostKeyAlgorithms +ssh-rsa
+#		ESC SHIFT : x <Enter>
+#	sudo systemctl restart ssh
+#	sudo systemctl status ssh
+#	sudo lsof -nP -iTCP:'22' -sTCP:LISTEN
+#	ssh vaamonde@127.0.0.1
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
