@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 04/12/2022
-# Versão: 0.16
+# Data de atualização: 06/12/2022
+# Versão: 0.17
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.37.x
 #
@@ -43,12 +43,15 @@
 #
 # Habilitando o Auto-Update do Netdata: 
 #	sudo /usr/libexec/netdata/netdata-updater.sh --enable-auto-updates
+#	sudo ls -lh /etc/cron.daily/netdata-updater
+#
 # Desabilitando o Auto-Update do Netdata: 
 #	sudo /usr/libexec/netdata/netdata-updater.sh --disable-auto-updates
 #
 # Atualizando o Netdata:
 #	sudo /usr/libexec/netdata/netdata-updater.sh
 #	sudo netdata -v
+#	sudo systemctl status netdata
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
