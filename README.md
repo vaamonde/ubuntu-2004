@@ -670,6 +670,14 @@ Sexto Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 2
 
 Link da vídeo aula: https://www.youtube.com/watch?v=bXR8q7hg4oM
 
+## **🔴 15-netdata.sh Ativando a Atualização Automática do Netdata PARTE-07 🐧**
+
+Sétimo Vídeo de Configuração do Netdata do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como configurar o recurso de atualização automática do Netdata e fazer a atualização do sistema para a última versão.
+
+[![Netdata Update](http://img.youtube.com/vi/D4N0auP9iT8/0.jpg)](https://www.youtube.com/watch?v=D4N0auP9iT8 "Netdata Update")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=D4N0auP9iT8
+
 ## **🔴 16-loganalyzer.sh Customizando o Script e Arquivos de Configuração do LogAnalyzer - PARTE-01 🐧**
 
 Primeiro Vídeo de Configuração do LogAnalyzer do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 16-loganalyzer.sh antes de executar no nosso servidor.
