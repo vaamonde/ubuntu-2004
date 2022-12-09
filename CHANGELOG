@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 04/12/2022
-Versão: 0.85
+Data de atualização: 09/12/2022
+Versão: 0.86
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+09/12/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh atualização da versão do LogAnalyzer 4.1.13,
+atualização do GLPI Help Desk 9.5.11 e 10.0.5, atualização do Docker Compose 2.14.0, atualização do RunDeck 4.8.0,
+atualização do Plugin do Ansible 3.2.2, atualização do OCS Inventory 2.11.1, atualização do OCS Agent 2.10.0,
+atualização do Nextcloud 25.0.1.
+
 04/12/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh com mais uma dependência do Guacamole Server,
 melhoria na documentação do script: 20-guacamole.sh em relação a configuração dos recursos de conexão remota: VNC, 
 SSH, Telnet, RDP, melhoria no script: 15-netdata.sh em relação aos recursos de atualização do sistema.
