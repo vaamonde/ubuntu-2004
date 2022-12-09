@@ -799,8 +799,8 @@ FLUSH_NETDATA="FLUSH PRIVILEGES;"
 # Variável de localização da instalação do diretório do LogAnalyzer
 PATHLOGANALYZER="/var/www/log"
 #
-# Variável de download do LogAnalyzer (atualizada no dia: 02/11/2021)
-LOGANALYZER="http://download.adiscon.com/loganalyzer/loganalyzer-4.1.12.tar.gz"
+# Variável de download do LogAnalyzer (atualizada no dia: 04/12/2022)
+LOGANALYZER="https://download.adiscon.com/loganalyzer/loganalyzer-4.1.13.tar.gz"
 #
 # Variável de download do Plugin de Tradução PT-BR do LogAnalyzer (atualizada no dia: 02/11/2021)
 LOGPTBR="https://loganalyzer.adiscon.com/plugins/files/translations/loganalyzer_lang_pt_BR_3.2.3.zip"
@@ -882,9 +882,9 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 19/09/2022 - Última versão da série 9.5.9)
-GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.9/glpi-9.5.9.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.3/glpi-10.0.3.tgz"
+# Variável de download do GLPI (atualizada no dia: 04/12/2022 - Última versão da série 9.5.11)
+GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.11/glpi-9.5.11.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.5/glpi-10.0.5.tgz"
 #
 # Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
 AGENTGLPIWINDOWS32="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x86.msi"
@@ -1203,8 +1203,8 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
-# Variável de download do Docker Compose (Link atualizado no dia 08/08/2022)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.9.0/docker-compose-linux-x86_64"
+# Variável de download do Docker Compose (Link atualizado no dia 04/12/2022)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
@@ -1239,11 +1239,11 @@ PORTPORTAINER="9000"
 # Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
 ANSIBLEPPA="ppa:ansible/ansible"
 #
-# Variável de download do Rundeck (Link atualizado no dia 08/08/2022)
-RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.4.0.20220714-1_all.deb/download.deb"
+# Variável de download do Rundeck (Link atualizado no dia 04/12/2022)
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.8.0.20221110-1_all.deb/download.deb"
 #
-# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 08/08/2022)
-PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.1/ansible-plugin-3.2.1.jar"
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 04/12/2022)
+PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.2/ansible-plugin-3.2.2.jar"
 #
 # Variável das dependências do laço de loop do Rundeck
 RUNDECKDEP="bind9 software-properties-common openjdk-11-jdk openjdk-11-jre default-jdk"
@@ -1398,11 +1398,11 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário OCS Inventory
 #
-# Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 09/08/2022).
-OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.10.0/OCSNG_UNIX_SERVER-2.10.0.tar.gz"
+# Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 04/12/2022).
+OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.11.1/OCSNG_UNIX_SERVER-2.11.1.tar.gz"
 #
-# Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 09/08/2022).
-OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.9.3/Ocsinventory-Unix-Agent-2.9.3.tar.gz"
+# Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 04/12/2022).
+OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.10.0/Ocsinventory-Unix-Agent-2.10.0.tar.gz"
 #
 # Variável de verificação do Chip Gráfico da NVIDIA
 # opção do comando lshw: -class display (lista as informações da placa de vídeo)
@@ -1629,8 +1629,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 08/08/2022).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-24.0.3.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 04/12/2022).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-25.0.1.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
