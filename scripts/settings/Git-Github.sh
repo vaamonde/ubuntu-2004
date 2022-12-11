@@ -82,6 +82,10 @@ https://github.com
 #Criando um Token para acesso remoto utilizando o comando git
 Link da geração do Token: https://github.com/settings/tokens
 Gerando um novo Token
+	Confirma a sua senha novamente
+		Note: Nome do Token
+		Expiration: Tempo de Expiração do Token
+		
 
 #Clonando um Repositório Remoto do Github.
 git clone https://github.com/vaamonde/devops.git
