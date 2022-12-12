@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 04/12/2022
-# Versão: 0.83
+# Data de atualização: 12/12/2022
+# Versão: 0.84
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1296,8 +1296,8 @@ PORTNTOPNG="3001"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de mensageria OpenFire
 #
-# Variável de download do instalador do OpenFire (Link atualizado no dia 08/08/2022).
-OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.7.3_all.deb"
+# Variável de download do instalador do OpenFire (Link atualizado no dia 11/12/2022).
+OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.7.4_all.deb"
 #
 # Variável da instalação das dependências do OpenFire
 OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-headless"
@@ -1677,11 +1677,11 @@ NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de VoIP Asterisk
 #
-# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 08/08/2022)
+# Variáveis de Download do Asterisk e pacotes Extras (Link atualizado no dia 12/12/2022)
 DAHDIINSTALL="git://git.asterisk.org/dahdi/linux"
 DAHDITOOLSINSTALL="git://git.asterisk.org/dahdi/tools"
 LIBPRIINSTALL="https://gerrit.asterisk.org/libpri"
-ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-19-current.tar.gz"
+ASTERISKINSTALL="http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-20-current.tar.gz"
 SOUNDPTBRCORE="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-core-pt-BR-3.8.3.zip"
 SOUNDPTBREXTRA="https://www.asterisksounds.org/sites/asterisksounds.org/files/sounds/pt-BR/download/asterisk-sounds-extra-pt-BR-1.11.10.zip"
 #

@@ -7,11 +7,14 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 09/12/2022
-Versão: 0.86
+Data de atualização: 12/12/2022
+Versão: 0.87
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+12/12/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh atualização da versão do OpenFire 4.7.4,
+atualização do Asterisk 20.
+
 09/12/2022 - Robson Vaamonde - Atualização do script: 00-parametros.sh atualização da versão do LogAnalyzer 4.1.13,
 atualização do GLPI Help Desk 9.5.11 e 10.0.5, atualização do Docker Compose 2.14.0, atualização do RunDeck 4.8.0,
 atualização do Plugin do Ansible 3.2.2, atualização do OCS Inventory 2.11.1, atualização do OCS Agent 2.10.0,
