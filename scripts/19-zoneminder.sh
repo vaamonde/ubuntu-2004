@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 02/11/2022
-# Versão: 0.14
+# Data de atualização: 14/12/2022
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -29,6 +29,11 @@
 # ONVIF (Open Network Video Interface Forum) é um fórum global e aberto a todos, tem o objetivo 
 # de ajudar no desenvolvimento de um padrão aberto para a interface de produtos de segurança 
 # físicos baseados em IP.
+#
+# RTSP (Real Time Streaming Protocol) é um protocolo a nível de aplicação desenvolvido pela 
+# IETF em 1998 com a RFC 2326 para controle na transferência de dados com propriedades de 
+# tempo real. RTSP torna possível a transferência, sob demanda, de dados em tempo real como 
+# áudio e vídeo.
 #
 # Site Oficial do Projeto ZoneMinder: https://zoneminder.com/
 #
@@ -88,6 +93,16 @@
 #		Largura de Captura (pixels): 640
 #		Altura de Captura (pixels): 480
 #	<Salvar>
+#
+# #03_ Câmera IPEGA <Adicionar Monitor>
+#	General
+#		Nome: IPEGA
+#		Tipo de Origem: Remoto
+#		Função: Monitor
+#	Origem
+#		Remote Protocol: 
+#			rtsp://192.168.18.159:554/onvif1
+#			rtsp://admin:admin@192.168.159:554/onvif1
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
