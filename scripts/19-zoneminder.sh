@@ -101,7 +101,7 @@
 #		Função: Monitor
 #	Origem
 #		Remote Protocol: 
-#			rtsp://192.168.18.159:554/onvif1
+#			rtsp://192.168.0.188:554/onvif1
 #			rtsp://admin:admin@192.168.159:554/onvif1
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
