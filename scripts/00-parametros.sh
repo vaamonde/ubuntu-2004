@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 12/12/2022
-# Versão: 0.84
+# Data de atualização: 25/01/2023
+# Versão: 0.85
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -882,9 +882,9 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 04/12/2022 - Última versão da série 9.5.11)
-GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.11/glpi-9.5.11.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.5/glpi-10.0.5.tgz"
+# Variável de download do GLPI (atualizada no dia: 24/01/2023 - Última versão da série 9.5.11)
+GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.11/glpi-9.5.12.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.5/glpi-10.0.6.tgz"
 #
 # Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
 AGENTGLPIWINDOWS32="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x86.msi"
@@ -1146,8 +1146,8 @@ PORTGRAFANA="3000"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
 #
-# Variável de download do Repositório do Zabbix Server (Link atualizado no dia 09/08/2022)
-ZABBIXIREP="wget https://repo.zabbix.com/zabbix/6.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.2-1+ubuntu20.04_all.deb"
+# Variável de download do Repositório do Zabbix Server (Link atualizado no dia 25/01/2023)
+ZABBIXIREP="wget https://repo.zabbix.com/zabbix/6.3/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.3-1%2Bubuntu20.04_all.deb"
 #
 # Variável de instalação do Zabbix Server e suas Dependências.
 ZABBIXINSTALL="install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent \
@@ -1203,8 +1203,8 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
-# Variável de download do Docker Compose (Link atualizado no dia 04/12/2022)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-x86_64"
+# Variável de download do Docker Compose (Link atualizado no dia 25/01/2023)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
@@ -1239,8 +1239,8 @@ PORTPORTAINER="9000"
 # Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
 ANSIBLEPPA="ppa:ansible/ansible"
 #
-# Variável de download do Rundeck (Link atualizado no dia 04/12/2022)
-RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.8.0.20221110-1_all.deb/download.deb"
+# Variável de download do Rundeck (Link atualizado no dia 25/01/2023)
+RUNDECKINSTALL="https://packages.rundeck.com/pagerduty/rundeck/packages/any/any/rundeck_4.9.0.20230111-1_all.deb"
 #
 # Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 04/12/2022)
 PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.2/ansible-plugin-3.2.2.jar"
@@ -1530,8 +1530,8 @@ GPGKEYELASTICSEARCH="https://artifacts.elastic.co/GPG-KEY-elasticsearch"
 # Variável da instalação do ElasticSearch
 ELASTICSEARCHINSTALL="elasticsearch-oss"
 #
-# Variável do download do repositório do Graylog Server (Link atualizado no dia 30/04/2022)
-REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-4.3-repository_latest.deb"
+# Variável do download do repositório do Graylog Server (Link atualizado no dia 25/01/2023)
+REPGRAYLOG="https://packages.graylog2.org/repo/packages/graylog-5.0-repository_latest.deb"
 #
 # Variável do usuário do serviço do Graylog Server
 USERGRAYLOG="graylog"
@@ -1629,8 +1629,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 04/12/2022).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-25.0.1.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 25/01/2023).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-25.0.3.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
