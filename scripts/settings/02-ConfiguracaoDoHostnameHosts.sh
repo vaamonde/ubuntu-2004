@@ -32,7 +32,6 @@
 #
 # Hosts.allow e Hosts.Deny: formato de arquivos de controle de acesso ao host
 #
-#
 # Alterando o nome do servidor
 sudo vim /etc/hostname
 #
