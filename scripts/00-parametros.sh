@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 25/01/2023
-# Versão: 0.85
+# Data de atualização: 25/03/2023
+# Versão: 0.86
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -882,9 +882,9 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 24/01/2023 - Última versão da série 9.5.11)
-GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.11/glpi-9.5.12.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.5/glpi-10.0.6.tgz"
+# Variável de download do GLPI (atualizada no dia: 25/03/2023 - Última versão da série 9.5.12)
+GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz"
 #
 # Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
 AGENTGLPIWINDOWS32="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x86.msi"
@@ -1073,11 +1073,11 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
-# Variável de download do Apache Guacamole (Links atualizados no dia 18/01/2022)
-GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.4.0/source/guacamole-server-1.4.0.tar.gz"
-GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-1.4.0.war"
-GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.4.0/binary/guacamole-auth-jdbc-1.4.0.tar.gz"
-GUACAMOLEMYSQL="https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java_8.0.29-1ubuntu20.04_all.deb"
+# Variável de download do Apache Guacamole (Links atualizados no dia 25/03/2023)
+GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.5.0/source/guacamole-server-1.5.0.tar.gz"
+GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.5.0/binary/guacamole-1.5.0.war"
+GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.5.0/binary/guacamole-auth-jdbc-1.5.0.tar.gz"
+GUACAMOLEMYSQL="https://downloads.mysql.com/archives/get/p/3/file/mysql-connector-j_8.0.31-1ubuntu20.04_all.deb"
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GUACAMOLE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
@@ -1147,7 +1147,7 @@ PORTGRAFANA="3000"
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento Zabbix Server
 #
 # Variável de download do Repositório do Zabbix Server (Link atualizado no dia 25/01/2023)
-ZABBIXIREP="wget https://repo.zabbix.com/zabbix/6.3/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.3-1%2Bubuntu20.04_all.deb"
+ZABBIXIREP="wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu20.04_all.deb"
 #
 # Variável de instalação do Zabbix Server e suas Dependências.
 ZABBIXINSTALL="install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent \
@@ -1204,7 +1204,7 @@ DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
 # Variável de download do Docker Compose (Link atualizado no dia 25/01/2023)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.15.1/docker-compose-linux-x86_64"
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.17.1/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
@@ -1239,11 +1239,11 @@ PORTPORTAINER="9000"
 # Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
 ANSIBLEPPA="ppa:ansible/ansible"
 #
-# Variável de download do Rundeck (Link atualizado no dia 25/01/2023)
-RUNDECKINSTALL="https://packages.rundeck.com/pagerduty/rundeck/packages/any/any/rundeck_4.9.0.20230111-1_all.deb"
+# Variável de download do Rundeck (Link atualizado no dia 25/03/2023)
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.11.0.20230313-1_all.deb/download.deb?distro_version_id=35"
 #
-# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 04/12/2022)
-PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.2/ansible-plugin-3.2.2.jar"
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 25/03/2023)
+PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.3/ansible-plugin-3.2.3.jar"
 #
 # Variável das dependências do laço de loop do Rundeck
 RUNDECKDEP="bind9 software-properties-common openjdk-11-jdk openjdk-11-jre default-jdk"
@@ -1629,8 +1629,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 25/01/2023).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-25.0.3.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 25/03/2023).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-26.0.0.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
