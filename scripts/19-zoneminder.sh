@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 14/12/2022
-# Versão: 0.15
+# Data de atualização: 08/04/2023
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -42,7 +42,8 @@
 # Site Oficial do Projeto MotionEye: https://github.com/motioneye-project/motioneye
 #
 # Informações que serão solicitadas na configuração via Web do ZoneMinder
-# Privacy: Accept: Apply
+# URL: https://pti.intra/zm
+# 	Privacy: Accept: Apply
 #
 # Configurações básicas do ZoneMinder
 # #01_ Alteração da Linguagem;
@@ -101,13 +102,17 @@
 #		Nome: IPEGA
 #		Tipo de Origem: Remoto
 #	Origem
-#		Remote Protocol: 
-#			rtsp://192.168.0.188:554/onvif1
-#			rtsp://admin:admin@192.168.159:554/onvif1
+#		Remote Protocol: RTSP
+#		Remote Method: RTP/Unicast
+#		Nome do host remoto: admin:admin@192.168.188
+#		Porta do host remoto: 554
+#		Caminho do host remoto: /onvif1
+#		Largura de Captura (pixels): 640
+#		Altura de Captura (pixels): 480
 #	Recording
 #		Video Writer: Disable
 #	<Salvar>
-
+#
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
