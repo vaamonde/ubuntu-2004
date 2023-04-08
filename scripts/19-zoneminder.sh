@@ -68,7 +68,6 @@
 #	General
 #		Nome: IPCAM
 #		Tipo de Origem: Remoto
-#		Função: Monitor
 #	Origem
 #		Remote Protocol: HTTP
 #		Remote Method: Simple
@@ -77,13 +76,14 @@
 #		Caminho do host remoto: /videostream.cgi
 #		Largura de Captura (pixels): 640
 #		Altura de Captura (pixels): 480
+#	Recording
+#		Video Writer: Disable
 #	<Salvar>
 #
 # #02_ Câmera IPWEBCAM <Adicionar Monitor>
 #	General
 #		Nome: IPWEBCAM
 #		Tipo de Origem: Remoto
-#		Função: Monitor
 #	Origem
 #		Remote Protocol: HTTP
 #		Remote Method: Simple
@@ -92,18 +92,22 @@
 #		Caminho do host remoto: /video
 #		Largura de Captura (pixels): 640
 #		Altura de Captura (pixels): 480
+#	Recording
+#		Video Writer: Disable
 #	<Salvar>
 #
 # #03_ Câmera IPEGA <Adicionar Monitor>
 #	General
 #		Nome: IPEGA
 #		Tipo de Origem: Remoto
-#		Função: Monitor
 #	Origem
 #		Remote Protocol: 
 #			rtsp://192.168.0.188:554/onvif1
 #			rtsp://admin:admin@192.168.159:554/onvif1
-#
+#	Recording
+#		Video Writer: Disable
+#	<Salvar>
+
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
 #
