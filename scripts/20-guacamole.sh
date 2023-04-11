@@ -9,7 +9,7 @@
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
 # Data de atualização: 11/04/2023
-# Versão: 0.09
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache Guacamole Server 1.5.x e Cliente 1.5.x
 #
@@ -338,7 +338,7 @@ echo -e "Baixando o Apache Guacamole Authentication JDBC MySQL Server, aguarde..
 	wget $GUACAMOLEJDBC -O guacamole-mysql.tar.gz &>> $LOG
 	tar -zxvf guacamole-mysql.tar.gz &>> $LOG
 	cp -v guacamole-auth*/mysql/guacamole-auth*.jar /etc/guacamole/extensions/ &>> $LOG
-	cp -v /usr/share/java/mysql-connector-java*.jar /etc/guacamole/lib/ &>> $LOG
+	cp -v /usr/share/java/mysql-connector-*.jar /etc/guacamole/lib/ &>> $LOG
 echo -e "Download do Apache Guacamole Authentication JDBC MySQL Server feito com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -367,7 +367,7 @@ echo -e "Atualizando os arquivos de configuração do Apache Guacamole Client, a
 	# opção do comando cp: -v (verbose)
 	# opção do bloco e agrupamentos {}: (Agrupa comandos em um bloco)
 	mv -v /etc/default/tomcat9 /etc/default/tomcat9.old &>> $LOG
-	cp -v conf/guacamole/{guacamole.properties,user-mapping.xml} /etc/guacamole/ &>> $LOG
+	cp -v conf/guacamole/guacamole.properties /etc/guacamole/ &>> $LOG
 	cp -v conf/guacamole/tomcat9 /etc/default/ &>> $LOG
 echo -e "Arquivos atualizados com sucesso!!!, continuando com o script...\n"
 sleep 5
