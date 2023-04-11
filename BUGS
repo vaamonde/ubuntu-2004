@@ -16,9 +16,10 @@ BUGS RESOLVIDOS: 21
 BUGS PENDENTES.: 04 (0025, 0020, 0019, 0018)
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
-0025 - Falha de configuração do Software IPWebcam na hora de configuração no monitoramento do ZoneMinder, a imagem da câmera
+0025 - Falha de configuração do Software IPWebcam na hora da configuração do monitoramento no ZoneMinder, a imagem da câmera
 não aparece no monitoramento, falha de configuração da Câmera Ípega no Protocolo RTSP, imagem não aparece no monitoramento,
 analisando as falhas no Fórum do ZoneMinder, ainda sem solução.
+STATUS=PENDENTE
 
 0024 - Falha de acesso ao console de gerenciamento do ZoneMinder versão 1.36 (1.37) quando executado o script de instalação
 pela primeira vez, conforme descrito no Fórum (https://forums.zoneminder.com/viewtopic.php?t=30563) do ZoneMinder, refazer 
