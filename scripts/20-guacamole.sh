@@ -8,10 +8,10 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 04/12/2022
-# Versão: 0.08
+# Data de atualização: 11/04/2023
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Apache Guacamole Server 1.4.x e Cliente 1.4.x
+# Testado e homologado para a versão do Apache Guacamole Server 1.5.x e Cliente 1.5.x
 #
 # O Apache Guacamole é um gateway de desktop remoto sem cliente, ele suporta protocolos 
 # padrão como VNC, RDP e SSH., ele é chamado de Clientless porque nenhum plug-in ou 
@@ -294,7 +294,7 @@ echo -e "Instalando o Apache Guacamole Server, aguarde esse processo demora um p
 	# opção do comando autoreconf: -f (force), -i (install)
 	cd guacamole-server-*/ &>> $LOG
 		autoreconf -fi &>> $LOG
-		./configure --with-init-dir=/etc/init.d &>> $LOG
+		./configure --with-systemd-dir=/etc/systemd/system/ &>> $LOG
 		make &>> $LOG
 		make install &>> $LOG
 		ldconfig &>> $LOG
