@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 09/11/2022
-Versão: 0.29
+Data de atualização: 11/04/2023
+Versão: 0.30
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -150,11 +150,11 @@ _
 _
 #35A_ 19-zoneminder.sh Customizando o Script e Arquivos de Configuração do ZoneMinder - PARTE-01 (01/11/2022)
 #35B_ 19-zoneminder.sh Instalação e Configuração do ZoneMinder - PARTE-02 (03/11/2022)
-#35C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03 (14/11/2022)
+#35C_ 19-zoneminder.sh Configuração de Câmeras IP no ZoneMinder - PARTE-03 (12/04/2022)
 _
-#36A_ 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole - PARTE-01
-#36B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02
-#36C_ 20-guacamole.sh Acesso Remoto ao Servidor e Clientes no Guacamole - PARTE-03
+#36A_ 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole - PARTE-01 (17/04/2023)
+#36B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02 (19/04/2023)
+#36C_ 20-guacamole.sh Acesso Remoto ao Servidor e Clientes no Guacamole - PARTE-03 (21/04/2023)
 _
 #37A_ 19-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana - PARTE-01
 #37B_ 19-grafana.sh Instalação e Configuração do Grafana - PARTE-02
