@@ -11,6 +11,7 @@
 # Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache Guacamole Server 1.4.x e Cliente 1.4.x
+# Testado e homologado para a versão do Apache Guacamole Server 1.5.x e Cliente 1.5.x
 #
 # comando para a geração da senha: echo -n guacadmin | openssl md5 | cut -d ' ' -f2
 # comando para a geração da senha: printf '%s' guacadmin | md5sum | cut -d ' ' -f1

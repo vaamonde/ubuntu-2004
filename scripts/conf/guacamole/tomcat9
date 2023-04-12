@@ -10,7 +10,7 @@
 # Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat 9.0.x, OpenJDK 11.x, OpenJRE 11.x
-# Testado e homologado para a versão do Apache Guacamole Server 1.4.x e Cliente 1.4.x
+# Testado e homologado para a versão do Apache Guacamole Server 1.5.x e Cliente 1.5.x
 
 # Parâmetros de inicialização padrão do JAVA do Tomcat9 utilizados pelo Guacamole Server
 JAVA_OPTS="-Djava.awt.headless=true -XX:+UseG1GC"
