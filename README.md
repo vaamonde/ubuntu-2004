@@ -797,3 +797,27 @@ Terceiro Vídeo de Configuração do ZoneMinder CFTV do Curso "GRATUITO" de Ubun
 [![Access ZoneMinder](http://img.youtube.com/vi/oxD9JCLZRJI/0.jpg)](https://www.youtube.com/watch?v=oxD9JCLZRJI "Access ZoneMinder")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=oxD9JCLZRJI
+
+## **🔴 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole Server e Client - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Apache Guacamole Server e Client do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 20-guacamole.sh antes de executar no nosso servidor.
+
+[![Config Guacamole](http://img.youtube.com/vi/7ZF2_fv9BIc/0.jpg)](https://www.youtube.com/watch?v=7ZF2_fv9BIc "Config Guacamole")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=7ZF2_fv9BIc
+
+## **🔴 20-guacamole.sh Instalação e Configuração do Apache Guacamole Server e Client - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Apache Guacamole Server e Client do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Apache Guacamole Server e Client.
+
+[![Install Guacamole](http://img.youtube.com/vi//0.jpg)]( "Install Guacamole")
+
+Link da vídeo aula: 
+
+## **🔴 20-guacamole.sh Configurações Básicas e Monitoramento do Apache Guacamole Server e Client - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Apache Guacamole Server e Client do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Apache Guacamole Server, acessar o ambiente, criar usuários e grupos e fazer a configuração dos acessos remotos utilizando os protocolos RDP, SSH, Telnet e VNC.
+
+[![Access Guacamole](http://img.youtube.com/vi//0.jpg)]( "Access Guacamole")
+
+Link da vídeo aula: 
