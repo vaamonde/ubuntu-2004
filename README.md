@@ -810,9 +810,9 @@ Link da vídeo aula: https://www.youtube.com/watch?v=7ZF2_fv9BIc
 
 Segundo Vídeo de Configuração do Apache Guacamole Server e Client do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Apache Guacamole Server e Client.
 
-[![Install Guacamole](http://img.youtube.com/vi//0.jpg)]( "Install Guacamole")
+[![Install Guacamole](http://img.youtube.com/vi/EVxi6f5hZNA/0.jpg)](https://www.youtube.com/watch?v=EVxi6f5hZNA "Install Guacamole")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=EVxi6f5hZNA
 
 ## **🔴 20-guacamole.sh Configurações Básicas e Monitoramento do Apache Guacamole Server e Client - PARTE-03 🐧**
 

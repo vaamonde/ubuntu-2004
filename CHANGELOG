@@ -7,19 +7,19 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 11/04/2023
-Versão: 0.90
+Data de atualização: 13/04/2023
+Versão: 0.91
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
-11/04/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente a dependência do Guacamole Server
-libpng-dev, libjpeg-dev, libcairo2-dev, libavcodec-dev, libavformat-dev, libssh2-1-dev, libswscale-dev, libtelnet-dev,
-libvncserver-dev, libvorbis-dev, libpulse-dev, libwebp-dev, freerdp2-dev, libpango1.0-dev, libossp-uuid-dev, libtool-bin
-após a atualização do Guacamole Server para a versão 1.5.0 as dependências para a complicação exigiu mais bibliotecas,
-atualização do script: 20-guacamole.sh referente a alteração das opções de compilação da inicialização do Guacamole
-Server de Init para Systemd, alterado a linha: ./configure --with-systemd-dir=/etc/systemd/system/, atualização da
-linha da versão do Conector do Java do MySQL para: /usr/share/java/mysql-connector-*.jar referente a copia para o 
-diretório: /etc/guacamole/lib, remoção da copia do arquivo: user-mapping.xml do script: 20-guacamole.sh.
+13/04/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente a dependência do Guacamole Server
+biblioteca libjpeg-turbo8-dev estava entrando em conflito com a biblioteca libjpeg62-dev, retirado do script parâmetros
+a biblioteca libjpeg62-dev, após a atualização do Guacamole Server para a versão 1.5.0 as dependências para a complicação 
+exigiu mais bibliotecas, foi adicionado as novas no script parâmetros, atualização do script: 20-guacamole.sh referente 
+a alteração das opções de compilação da inicialização do GuacamoleServer de Init para Systemd, alterado a linha: 
+./configure --with-systemd-dir=/etc/systemd/system/, atualização da linha da versão do Conector do Java do MySQL para: 
+/usr/share/java/mysql-connector-*.jar referente a copia para o diretório: /etc/guacamole/lib, remoção da copia do 
+arquivo: user-mapping.xml do script: 20-guacamole.sh.
 
 25/03/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente aos softwares: GLPI Help v9.5.12,
 Guacamole Server e Client v1.5.0, Zabbix Server Repo v6.4.1, Docker Compose v2.17.1, Rundeck v4.11 e Plugin v3.2.3
