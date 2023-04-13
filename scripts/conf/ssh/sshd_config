@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 11/10/2021
-# Data de atualização: 20/01/2022
-# Versão: 0.06
+# Data de atualização: 13/04/2023
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -34,7 +34,12 @@ ListenAddress 172.16.1.20
 # OBSERVAÇÃO: O Shell-In-a-Box não tem suporte a autenticação via Chave Pública somente 
 # autenticação padrão, para esse cenário é recomendado utilizar a solução Bastillion 
 # (https://www.bastillion.io/)
+#
+# OBSERVAÇÃO IMPORTANTE: se você for utilizar o Apache Guacamole Server para acesso via
+# SSH o mesmo não suporta autenticação com Chave Pública e Senha, você deve escolher qual
+# tipo de autenticação usar: Usuário e Senha ou Usuário e Chave Pública.
 #AuthenticationMethods publickey,password
+#AuthenticationMethods publickey
 AuthenticationMethods password
 #
 # Autenticação utilizando chaves públicas geradas no cliente com o comando: ssh-keygen 
