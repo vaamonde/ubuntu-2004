@@ -1097,8 +1097,8 @@ GUACAMOLEDEP="tomcat9 tomcat9-admin tomcat9-user bind9 mysql-server mysql-common
 GUACAMOLEINSTALL="libcairo2-dev libjpeg-dev libpng-dev libtool-bin libossp-uuid-dev \
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
-libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-x11 libjpeg62-dev \
-libjpeg8-dev"
+libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-x11 libjpeg8-dev \
+libjpeg-turbo8-dev"
 #
 # Variável da porta de conexão padrão do Guacamole Server
 PORTGUACAMOLE="4822"
