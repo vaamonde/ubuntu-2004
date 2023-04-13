@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 11/04/2023
-# Versão: 0.87
+# Data de atualização: 12/04/2023
+# Versão: 0.88
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1094,13 +1094,10 @@ GUACAMOLEDEP="tomcat9 tomcat9-admin tomcat9-user bind9 mysql-server mysql-common
 #
 # Variável de instalação das dependências do Guacamole Server
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
-GUACAMOLEINSTALL="libcairo2-dev libjpeg-turbo8-dev libpng-dev libtool-bin libossp-uuid-dev \
+GUACAMOLEINSTALL="libcairo2-dev libjpeg-dev libpng-dev libtool-bin libossp-uuid-dev \
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
-libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-dev freerdp2-x11 \
-libjpeg62-dev libpng-dev libjpeg-dev libcairo2-dev libavcodec-dev libavformat-dev \
-libssh2-1-dev libswscale-dev libtelnet-dev libvncserver-dev libvorbis-dev libpulse-dev \
-libwebp-dev freerdp2-dev libpango1.0-dev libossp-uuid-dev libtool-bin"
+libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-x11 libjpeg62-dev"
 #
 # Variável da porta de conexão padrão do Guacamole Server
 PORTGUACAMOLE="4822"
