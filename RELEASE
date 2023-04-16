@@ -20,7 +20,7 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
       paste /tmp/01.txt /tmp/02.txt /tmp/03.txt | column -t >> ../RELEASE
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh           Versão:  0.84  Data  de  atualização:  12/12/2022
+00-parametros.sh           Versão:  0.88  Data  de  atualização:  12/04/2023
 01-openssh.sh              Versão:  0.27  Data  de  atualização:  24/03/2022
 02-dhcp.sh                 Versão:  0.15  Data  de  atualização:  09/09/2022
 03-dns.sh                  Versão:  0.17  Data  de  atualização:  31/03/2022
@@ -44,8 +44,8 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
 17-A-glpi-9.sh             Versão:  0.15  Data  de  atualização:  07/09/2022
 17-B-glpi-10.sh            Versão:  0.05  Data  de  atualização:  25/09/2022
 18-A-fusioninventory-9.sh  Versão:  0.13  Data  de  atualização:  25/09/2022
-19-zoneminder.sh           Versão:  0.15  Data  de  atualização:  14/12/2022
-20-guacamole.sh            Versão:  0.08  Data  de  atualização:  04/12/2022
+19-zoneminder.sh           Versão:  0.16  Data  de  atualização:  08/04/2023
+20-guacamole.sh            Versão:  0.10  Data  de  atualização:  11/04/2023
 21-grafana.sh              Versão:  0.06  Data  de  atualização:  20/08/2022
 22-zabbix.sh               Versão:  0.05  Data  de  atualização:  22/08/2022
 23-docker.sh               Versão:  0.04  Data  de  atualização:  21/01/2022
