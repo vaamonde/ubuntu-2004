@@ -202,7 +202,7 @@ SCRIPT                  RECOMENDAÇÃO                                  OBSERVA�
 30-graylog.sh           Instalar o serviço do Graylog Server  em      Editar para cada servidor      01-openssh.sh
                         servidor dedicado.                                                           03-dns.sh
 
-31-postgres.sh          Instalar o serviço do  PostgreSQL Server      Editar para cada servidor      01-openssh.sh
+31-postgresql.sh        Instalar o serviço do  PostgreSQL Server      Editar para cada servidor      01-openssh.sh
                         em  servidor  dedicado ,  pode  instalar                                     03-dns.sh
                         junto com o LAMP Server.                                                     08-lamp.sh
                                                                                                      11-A-openssl-ca.sh
