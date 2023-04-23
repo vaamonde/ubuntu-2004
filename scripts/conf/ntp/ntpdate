@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 20/01/2022
-# Data de atualização: 20/01/2022
-# Versão: 0.01
+# Data de atualização: 23/04/2023
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Ntpdate v4.2.x
 #
@@ -17,7 +17,7 @@ NTPDATE_USE_NTP_CONF=yes
 #
 # Configuração da lista de servidores padrão utilizado pelo ntpdate caso o
 # arquivo localizado em: /etc/ntp.conf não exista.
-NTPSERVERS="a.st1.ntp.br a.ntp.br"
+NTPSERVERS="200.160.7.186 201.49.148.135"
 #
 # Configurações adicionais passadas para o comando ntpdate por padrão
 NTPOPTIONS=""
