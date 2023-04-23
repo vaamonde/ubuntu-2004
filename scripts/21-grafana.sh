@@ -11,7 +11,7 @@
 # Data de atualização: 20/08/2022
 # Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Grafana Server v9.1.x
+# Testado e homologado para a versão do Grafana Server v9.4.x
 #
 # Grafana é uma aplicação web de análise de código aberto multiplataforma e visualização 
 # interativa da web. Ele fornece tabelas, gráficos e alertas para a Web quando conectado 

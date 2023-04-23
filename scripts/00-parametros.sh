@@ -9,7 +9,7 @@
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
 # Data de atualização: 23/04/2023
-# Versão: 0.89
+# Versão: 0.90
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1168,12 +1168,13 @@ zabbix-sql-scripts traceroute nmap snmp snmpd snmp-mibs-downloader"
 # OBSERVAÇÃO: NO SCRIPT: 20-ZABBIX.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
 # 07-lamp.sh LINHAS: 261 até 262
-CREATE_DATABASE_ZABBIX="CREATE DATABASE zabbix character set utf8 collate utf8_bin;"
-CREATE_USER_DATABASE_ZABBIX="CREATE USER 'zabbix' IDENTIFIED BY 'zabbix';"
-GRANT_DATABASE_ZABBIX="GRANT USAGE ON *.* TO 'zabbix';"
-GRANT_ALL_DATABASE_ZABBIX="GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix';"
+CREATE_DATABASE_ZABBIX="CREATE DATABASE zabbix CHARACTER SET utf8mb4 collate utf8mb4_bin;"
+CREATE_USER_DATABASE_ZABBIX="CREATE USER 'zabbix'@'localhost' IDENTIFIED BY 'zabbix';"
+GRANT_DATABASE_ZABBIX="GRANT USAGE ON *.* TO 'zabbix'@'localhost';"
+GRANT_ALL_DATABASE_ZABBIX="GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost';"
+SET_GLOBAL_ZABBIX="SET GLOBAL log_bin_trust_function_creators = 1;"
 FLUSH_ZABBIX="FLUSH PRIVILEGES;"
-CREATE_TABLE_ZABBIX="/usr/share/doc/zabbix-sql-scripts/mysql/server.sql.gz"
+CREATE_TABLE_ZABBIX="/usr/share/zabbix-sql-scripts/mysql/server.sql.gz"
 #
 # Variável das dependências do laço de loop do Zabbix Server
 ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"

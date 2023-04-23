@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 22/08/2022
-# Versão: 0.05
+# Data de atualização: 23/04/2023
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Zabbix Server e Agent v6.4.x 
 #
@@ -252,6 +252,7 @@ echo -e "Criando o Banco de Dados e Populando as Tabelas do Zabbix Server, aguar
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$CREATE_USER_DATABASE_ZABBIX" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_DATABASE_ZABBIX" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$GRANT_ALL_DATABASE_ZABBIX" mysql &>> $LOG
+	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$SET_GLOBAL_ZABBIX" mysql &>> $LOG
 	mysql -u $USERMYSQL -p$SENHAMYSQL -e "$FLUSH_ZABBIX" mysql &>> $LOG
 	zcat -v $CREATE_TABLE_ZABBIX | mysql -uzabbix -pzabbix zabbix &>> $LOG
 echo -e "Banco de Dados criado com sucesso!!!, continuando com o script...\n"
