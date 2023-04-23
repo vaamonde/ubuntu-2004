@@ -11,7 +11,7 @@
 # Data de atualização: 22/08/2022
 # Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Zabbix Server e Agent v6.2.x 
+# Testado e homologado para a versão do Zabbix Server e Agent v6.4.x 
 #
 # O Zabbix é uma ferramenta de software de monitoramento de código aberto para diversos 
 # componentes de TI, incluindo redes, servidores, máquinas virtuais e serviços em nuvem. 
