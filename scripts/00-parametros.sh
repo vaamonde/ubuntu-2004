@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 12/04/2023
-# Versão: 0.88
+# Data de atualização: 23/04/2023
+# Versão: 0.89
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1756,4 +1756,30 @@ OPENPROJECTDEP="bind9 apache2 php postgresql postgresql-contrib postgresql-clien
 #
 # Variável de instalação do OpenProject.
 OPENPROJECTINSTALL="openproject"
+#
+#=============================================================================================
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 00-prometheus.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Prometheus utilizados nesse script
+# 01. /etc/prometheus/prometheus.yml = arquivo de configuração do serviço do Prometheus
+#
+# Arquivos de monitoramento (log) do sistema Prometheus utilizados nesse script
+# 01. sudo systemctl status prometheus = status do serviço do Prometheus 
+# 02. sudo journalctl -u prometheus -f --no-pager = todas as mensagens de Log do Prometheus
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de Prometheus
+#
+# Link de download do Projeto do Prometheus (Link atualizado no dia 23/04/2023)
+PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz"
+#
+# Variável das dependências do laço de loop do OpenProject
+PROMETHEUSDEP="bind9 grafana"
+#
+# Variável da porta do Prometheus
+PORTPROMETHEUS="9091"
+#
+# Variáveis de criação do Grupo e Usuário de Sistema do Prometheus
+GROUPPROMETHEUS="prometheus"
+USERPROMETHEUS="prometheus"
 #

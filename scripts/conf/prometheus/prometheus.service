@@ -9,7 +9,7 @@
 # Data de atualização: 09/09/2022
 # Versão: 0.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
-# Testado e homologado para a versão do Prometheus v
+# Testado e homologado para a versão do Prometheus v2.43.
 
 [Unit]
 Description=Prometheus
