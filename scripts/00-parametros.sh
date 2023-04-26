@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 23/04/2023
-# Versão: 0.90
+# Data de atualização: 26/04/2023
+# Versão: 0.91
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -882,9 +882,9 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 25/03/2023 - Última versão da série 9.5.12)
-GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.12/glpi-9.5.12.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.6/glpi-10.0.6.tgz"
+# Variável de download do GLPI (atualizada no dia: 26/04/2023 - Última versão da série 9.5.12)
+GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.13/glpi-9.5.13.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.7/glpi-10.0.7.tgz"
 #
 # Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
 AGENTGLPIWINDOWS32="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x86.msi"
@@ -1127,6 +1127,32 @@ GRAFANADEP="mysql-server mysql-common bind9 apt-transport-https software-propert
 #
 # Variável da porta de conexão padrão do Grafana Server
 PORTGRAFANA="3000"
+#
+#=============================================================================================
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 02-prometheus.sh                      #
+#=============================================================================================
+#
+# Arquivos de configuração (conf) do sistema Prometheus utilizados nesse script
+# 01. /etc/prometheus/prometheus.yml = arquivo de configuração do serviço do Prometheus
+#
+# Arquivos de monitoramento (log) do sistema Prometheus utilizados nesse script
+# 01. sudo systemctl status prometheus = status do serviço do Prometheus 
+# 02. sudo journalctl -u prometheus -f --no-pager = todas as mensagens de Log do Prometheus
+#
+# Declarando as variáveis utilizadas nas configurações do sistema de Prometheus
+#
+# Link de download do Projeto do Prometheus (Link atualizado no dia 23/04/2023)
+PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz"
+#
+# Variável das dependências do laço de loop do OpenProject
+PROMETHEUSDEP="bind9 grafana"
+#
+# Variável da porta do Prometheus
+PORTPROMETHEUS="9091"
+#
+# Variáveis de criação do Grupo e Usuário de Sistema do Prometheus
+GROUPPROMETHEUS="prometheus"
+USERPROMETHEUS="prometheus"
 #
 #=============================================================================================
 #                         VARIÁVEIS UTILIZADAS NO SCRIPT: 22-zabbix.sh                       #
@@ -1630,8 +1656,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 25/03/2023).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-26.0.0.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 26/04/2023).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-26.0.1.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
@@ -1757,30 +1783,4 @@ OPENPROJECTDEP="bind9 apache2 php postgresql postgresql-contrib postgresql-clien
 #
 # Variável de instalação do OpenProject.
 OPENPROJECTINSTALL="openproject"
-#
-#=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 00-prometheus.sh                      #
-#=============================================================================================
-#
-# Arquivos de configuração (conf) do sistema Prometheus utilizados nesse script
-# 01. /etc/prometheus/prometheus.yml = arquivo de configuração do serviço do Prometheus
-#
-# Arquivos de monitoramento (log) do sistema Prometheus utilizados nesse script
-# 01. sudo systemctl status prometheus = status do serviço do Prometheus 
-# 02. sudo journalctl -u prometheus -f --no-pager = todas as mensagens de Log do Prometheus
-#
-# Declarando as variáveis utilizadas nas configurações do sistema de Prometheus
-#
-# Link de download do Projeto do Prometheus (Link atualizado no dia 23/04/2023)
-PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz"
-#
-# Variável das dependências do laço de loop do OpenProject
-PROMETHEUSDEP="bind9 grafana"
-#
-# Variável da porta do Prometheus
-PORTPROMETHEUS="9091"
-#
-# Variáveis de criação do Grupo e Usuário de Sistema do Prometheus
-GROUPPROMETHEUS="prometheus"
-USERPROMETHEUS="prometheus"
 #

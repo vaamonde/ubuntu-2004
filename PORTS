@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 13/08/2022
-Versão: 0.10
+Data de atualização: 26/04/2023
+Versão: 0.11
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 Network: 172.16.1.0/24
@@ -46,17 +46,18 @@ SCRIPT                        PROTOCOLO/PORTA/SERVIÇO (Daemon)
 19-zoneminder.sh -----------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
 20-guacamole.sh ------------> TCP 8443 (java HTTPS) e TCP 4822 (guacd)
 21-grafana.sh --------------> TCP 3000 (grafana-s HTTP)
-22-zabbix.sh ---------------> TCP 443 (apache2 HTTP), TCP 3306 (mysqld), TCP 10050 (zabbix_ag) e 10051 (zabbix_se)
-23-docker.sh ---------------> TCP 9000 (docker-pr HTTP)
-24-ansible.sh --------------> TCP 4440 (java HTTP)
-25-ntopng.sh ---------------> TCP 3001 (ntopng HTTP) e TCP 6379 (redis-ser)
-26-openfire.sh -------------> TCP 9090 (java HTTP)
-27-owncloud.sh -------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
-28-ocsinventory.sh ---------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld) 
-29-bacula.sh ---------------> TCP 9101 (bacula-di), TCP 9102 (bacula-fd), TCP 9103 (bacula-sd), TCP 9095 (baculum HTTP) e TCP 9096 (baculum HTTP)
-30-graylog.sh --------------> TCP 9200 (java ElasticSearch), TCP 19000 (java HTTP) e TCP 27017 (mongod)
-31-postgresql.sh -----------> TCP 5432 (postgres) e TCP 443 (apache2 HTTPS)
-32-nextcloud.sh ------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
-33-asterisk.sh -------------> UDP 5060 (SIP)
-34-netdisco.sh -------------> TCP 5000 (HTTP) e TCP 5432 (postgres)
-35-openproject.sh ----------> TCP 443 (apache2 HTTPS), TCP 5432 (postgres)
+22-prometheus.sh -----------> TCP 9091 (prometheus HTTP)
+23-zabbix.sh ---------------> TCP 443 (apache2 HTTP), TCP 3306 (mysqld), TCP 10050 (zabbix_ag) e 10051 (zabbix_se)
+24-docker.sh ---------------> TCP 9000 (docker-pr HTTP)
+25-ansible.sh --------------> TCP 4440 (java HTTP)
+26-ntopng.sh ---------------> TCP 3001 (ntopng HTTP) e TCP 6379 (redis-ser)
+27-openfire.sh -------------> TCP 9090 (java HTTP)
+28-owncloud.sh -------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
+29-ocsinventory.sh ---------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld) 
+30-bacula.sh ---------------> TCP 9101 (bacula-di), TCP 9102 (bacula-fd), TCP 9103 (bacula-sd), TCP 9095 (baculum HTTP) e TCP 9096 (baculum HTTP)
+31-graylog.sh --------------> TCP 9200 (java ElasticSearch), TCP 19000 (java HTTP) e TCP 27017 (mongod)
+32-postgresql.sh -----------> TCP 5432 (postgres) e TCP 443 (apache2 HTTPS)
+33-nextcloud.sh ------------> TCP 443 (apache2 HTTPS) e TCP 3306 (mysqld)
+34-asterisk.sh -------------> UDP 5060 (SIP)
+35-netdisco.sh -------------> TCP 5000 (HTTP) e TCP 5432 (postgres)
+36-openproject.sh ----------> TCP 443 (apache2 HTTPS), TCP 5432 (postgres)

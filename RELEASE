@@ -20,7 +20,7 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
       paste /tmp/01.txt /tmp/02.txt /tmp/03.txt | column -t >> ../RELEASE
 
 ============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
-00-parametros.sh           Versão:  0.88  Data  de  atualização:  12/04/2023
+00-parametros.sh           Versão:  0.91  Data  de  atualização:  26/04/2023
 01-openssh.sh              Versão:  0.27  Data  de  atualização:  24/03/2022
 02-dhcp.sh                 Versão:  0.15  Data  de  atualização:  09/09/2022
 03-dns.sh                  Versão:  0.17  Data  de  atualização:  31/03/2022
@@ -47,17 +47,18 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
 19-zoneminder.sh           Versão:  0.16  Data  de  atualização:  08/04/2023
 20-guacamole.sh            Versão:  0.10  Data  de  atualização:  11/04/2023
 21-grafana.sh              Versão:  0.06  Data  de  atualização:  20/08/2022
-22-zabbix.sh               Versão:  0.05  Data  de  atualização:  22/08/2022
-23-docker.sh               Versão:  0.04  Data  de  atualização:  21/01/2022
-24-ansible.sh              Versão:  0.02  Data  de  atualização:  12/01/2022
-25-ntopng.sh               Versão:  0.04  Data  de  atualização:  21/01/2022
-26-openfire.sh             Versão:  0.03  Data  de  atualização:  21/01/2022
-27-owncloud.sh             Versão:  0.04  Data  de  atualização:  21/01/2022
-28-ocsinventory.sh         Versão:  0.02  Data  de  atualização:  12/01/2022
-29-bacula.sh               Versão:  0.03  Data  de  atualização:  12/01/2022
-30-graylog.sh              Versão:  0.03  Data  de  atualização:  12/01/2022
-31-postgresql.sh           Versão:  0.03  Data  de  atualização:  12/01/2022
-32-nextcloud.sh            Versão:  0.03  Data  de  atualização:  21/01/2022
-33-asterisk.sh             Versão:  0.04  Data  de  atualização:  18/04/2022
-34-netdisco.sh             Versão:  0.02  Data  de  atualização:  13/02/2022
-35-openproject.sh          Versão:  0.02  Data  de  atualização:  14/05/2022
+22-prometheus.sh           Versão:  0.01  Data  de  atualização:  23/04/2023
+23-zabbix.sh               Versão:  0.06  Data  de  atualização:  23/04/2023
+24-docker.sh               Versão:  0.04  Data  de  atualização:  21/01/2022
+25-ansible.sh              Versão:  0.02  Data  de  atualização:  12/01/2022
+26-ntopng.sh               Versão:  0.04  Data  de  atualização:  21/01/2022
+27-openfire.sh             Versão:  0.03  Data  de  atualização:  21/01/2022
+28-owncloud.sh             Versão:  0.04  Data  de  atualização:  21/01/2022
+29-ocsinventory.sh         Versão:  0.02  Data  de  atualização:  12/01/2022
+30-bacula.sh               Versão:  0.03  Data  de  atualização:  12/01/2022
+31-graylog.sh              Versão:  0.03  Data  de  atualização:  12/01/2022
+32-postgresql.sh           Versão:  0.03  Data  de  atualização:  12/01/2022
+33-nextcloud.sh            Versão:  0.03  Data  de  atualização:  21/01/2022
+34-asterisk.sh             Versão:  0.04  Data  de  atualização:  18/04/2022
+35-netdisco.sh             Versão:  0.02  Data  de  atualização:  13/02/2022
+36-openproject.sh          Versão:  0.02  Data  de  atualização:  14/05/2022

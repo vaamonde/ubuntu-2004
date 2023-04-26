@@ -7,11 +7,18 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 13/04/2023
-Versão: 0.91
+Data de atualização: 26/04/2023
+Versão: 0.92
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+26/04/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente ao bloco de configuração do script
+do Prometheus, criação do script: 22-prometheus.sh, atualização da sequência do número do scripts depois do script do
+Prometheus, atualização da Versão do GLPI9 para 9.5.13 e do GLPI10 para 10.0.7, atualização da versão do Nextcloud
+para 26.0.1, atualização do script de criação da Base de Dados do Zabbix, alteração da localização do arquivo de
+criação da tabelas do Zabbix, alteração dos arquivos de configuração: ntpdate timesyncd.conf para os endereços IPv4
+do NTP.br.
+
 13/04/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente a dependência do Guacamole Server
 biblioteca libjpeg-turbo8-dev estava entrando em conflito com a biblioteca libjpeg62-dev, retirado do script parâmetros
 a biblioteca libjpeg62-dev, após a atualização do Guacamole Server para a versão 1.5.0 as dependências para a complicação 
