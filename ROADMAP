@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 11/04/2023
-Versão: 0.30
+Data de atualização: 27/04/2023
+Versão: 0.31
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -154,62 +154,66 @@ _
 _
 #36A_ 20-guacamole.sh Customizando o Script e Arquivos de Configuração do Apache Guacamole - PARTE-01 (17/04/2023)
 #36B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02 (19/04/2023)
-#36C_ 20-guacamole.sh Acesso Remoto ao Servidor e Clientes no Guacamole - PARTE-03 (21/04/2023)
+#36C_ 20-guacamole.sh Acesso Remoto ao Servidor e Clientes no Guacamole - PARTE-03 (27/04/2023)
 _
-#37A_ 19-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana - PARTE-01
-#37B_ 19-grafana.sh Instalação e Configuração do Grafana - PARTE-02
-#37C_ 19-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03
+#37A_ 21-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana - PARTE-01
+#37B_ 21-grafana.sh Instalação e Configuração do Grafana - PARTE-02
+#37C_ 21-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03
 _
-#38A_ 20-zabbix.sh Customizando o Script e Arquivos de Configuração do Zabbix - PARTE-01
-#38B_ 20-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
-#38C_ 20-zabbix.sh Configuração e Monitoramento do Zabbix Agent - PARTE-03
+#38A_ 22-prometheus.sh Customizando o Script e Arquivos de Configuração do Prometheus - PARTE-01
+#38B_ 22-prometheus.sh Instalação e Configuração do Prometheus - PARTE-02
+#38C_ 22-prometheus.sh Configuração e Monitoramento do Prometheus Agent - PARTE-03
 _
-#39A_ 21-docker.sh Customizando o Script e Arquivos de Configuração do Docker - PARTE-01
-#39B_ 21-docker.sh Instalação e Configuração do Docker - PARTE-02
-#39C_ 21-docker.sh Criando Container no Docker e Portainer - PARTE-03
+#39A_ 23-zabbix.sh Customizando o Script e Arquivos de Configuração do Zabbix - PARTE-01
+#39B_ 23-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
+#39C_ 23-zabbix.sh Configuração e Monitoramento do Zabbix Agent - PARTE-03
 _
-#40A_ 22-ansible.sh Customizando o Script e Arquivos de Configuração do Ansible - PARTE-01
-#40B_ 22-ansible.sh Instalação e Configuração do Ansible - PARTE-02
-#40C_ 22-ansible.sh Criando um Playbook simples com o Ansible - PARTE-03
+#40A_ 24-docker.sh Customizando o Script e Arquivos de Configuração do Docker - PARTE-01
+#40B_ 24-docker.sh Instalação e Configuração do Docker - PARTE-02
+#40C_ 24-docker.sh Criando Container no Docker e Portainer - PARTE-03
 _
-#41A_ 23-ntopng.sh Customizando o Script e Arquivos de Configuração do NTop-NG - PARTE-01
-#41B_ 23-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
-#41C_ 23-ntopng.sh Utilização e Monitoramento do NTop-NG - PARTE-03
+#41A_ 25-ansible.sh Customizando o Script e Arquivos de Configuração do Ansible - PARTE-01
+#41B_ 25-ansible.sh Instalação e Configuração do Ansible - PARTE-02
+#41C_ 25-ansible.sh Criando um Playbook simples com o Ansible - PARTE-03
 _
-#42A_ 24-openfire.sh Customizando o Script e Arquivos de Configuração do OpenFire - PARTE-01
-#42B_ 24-openfire.sh Instalação e Configuração do OpenFire - PARTE-02
-#42C_ 24-openfire.sh Instalação do OpenFire Client no Windows e Linux - PARTE-03
+#42A_ 26-ntopng.sh Customizando o Script e Arquivos de Configuração do NTop-NG - PARTE-01
+#42B_ 26-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
+#42C_ 26-ntopng.sh Utilização e Monitoramento do NTop-NG - PARTE-03
 _
-#43A_ 25-owncloud.sh Customizando o Script e Arquivos de Configuração do ownCloud - PARTE-01
-#43B_ 25-owncloud.sh Instalação e Configuração do ownCloud - PARTE-02
-#43C_ 25-owncloud.sh Instalação do ownCloud Client no Windows e Linux - PARTE-03
+#43A_ 27-openfire.sh Customizando o Script e Arquivos de Configuração do OpenFire - PARTE-01
+#43B_ 27-openfire.sh Instalação e Configuração do OpenFire - PARTE-02
+#43C_ 27-openfire.sh Instalação do OpenFire Client no Windows e Linux - PARTE-03
 _
-#44A_ 26-ocsinventory.sh Customizando o Script e Arquivos de Configuração do OCS Inventory - PARTE-01
-#44B_ 26-ocsinventory.sh Instalação e Configuração do OCS Inventory - PARTE-02
-#44C_ 26-ocsinventory.sh Inventário no Windows e Linux do OCS Inventory - PARTE-03
+#44A_ 28-owncloud.sh Customizando o Script e Arquivos de Configuração do ownCloud - PARTE-01
+#44B_ 28-owncloud.sh Instalação e Configuração do ownCloud - PARTE-02
+#44C_ 28-owncloud.sh Instalação do ownCloud Client no Windows e Linux - PARTE-03
 _
-#45A_ 27-bacula.sh Customizando o Script e Arquivos de Configuração do Bacula - PARTE-01
-#45B_ 27-bacula.sh Instalação e Configuração do Bacula - PARTE-02
-#45C_ 27-bacula.sh Configurando um Job de Backup no Bacula - PARTE-03
+#45A_ 29-ocsinventory.sh Customizando o Script e Arquivos de Configuração do OCS Inventory - PARTE-01
+#45B_ 29-ocsinventory.sh Instalação e Configuração do OCS Inventory - PARTE-02
+#45C_ 29-ocsinventory.sh Inventário no Windows e Linux do OCS Inventory - PARTE-03
 _
-#46A_ 28-graylog.sh Customizando o Script e Arquivos de Configuração do Graylog - PARTE-01
-#46B_ 28-graylog.sh Instalação e Configuração do Graylog - PARTE-02
+#46A_ 30-bacula.sh Customizando o Script e Arquivos de Configuração do Bacula - PARTE-01
+#46B_ 30-bacula.sh Instalação e Configuração do Bacula - PARTE-02
+#46C_ 30-bacula.sh Configurando um Job de Backup no Bacula - PARTE-03
 _
-#47A_ 29-postgresql.sh Customizando o Script e Arquivos de Configuração do PostgreSQL - PARTE-01
-#47B_ 29-postgresql.sh Instalação e Configuração do PostgreSQL - PARTE-02
+#47A_ 31-graylog.sh Customizando o Script e Arquivos de Configuração do Graylog - PARTE-01
+#47B_ 31-graylog.sh Instalação e Configuração do Graylog - PARTE-02
 _
-#48A_ 32-nextcloud.sh Customizando o Script e Arquivos de Configuração do NextCloud - PARTE-01
-#48B_ 32-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
-#48C_ 25-nextcloud.sh Configuração e Monitoramento do NextCloud Client no Windows e Linux - PARTE-03
+#48A_ 32-postgresql.sh Customizando o Script e Arquivos de Configuração do PostgreSQL - PARTE-01
+#48B_ 32-postgresql.sh Instalação e Configuração do PostgreSQL - PARTE-02
 _
-#49A_ 33-asterisk.sh Customizando o Script e Arquivos de Configuração do Asterisk - PARTE-01
-#49B_ 33-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
-#49C_ 33-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
+#49A_ 33-nextcloud.sh Customizando o Script e Arquivos de Configuração do NextCloud - PARTE-01
+#49B_ 33-nextcloud.sh Instalação e Configuração do NextCloud - PARTE-02
+#49C_ 33-nextcloud.sh Configuração e Monitoramento do NextCloud Client no Windows e Linux - PARTE-03
 _
-#50A_ 34-netdisco.sh Customizando o Script e Arquivos de Configuração do Netdisco - PARTE-01
-#50B_ 34-netdisco.sh Instalação e Configuração do Netdisco - PARTE-02
-#50C_ 34-netdisco.sh Escaneando Rede Cisco utilizando o SNMP do Netdisco - PARTE-03
+#50A_ 34-asterisk.sh Customizando o Script e Arquivos de Configuração do Asterisk - PARTE-01
+#50B_ 34-asterisk.sh Instalação e Configuração do Asterisk - PARTE-02
+#50C_ 34-asterisk.sh Configuração do Software Phone no Windows e Linux - PARTE-03
 _
-#51A_ 35-openproject.sh Customizando o Script e Arquivos de Configuração do OpenProject - PARTE-01
-#51B_ 35-openproject.sh Instalação e Configuração do OpenProject - PARTE-02
-#51C_ 35-openproject.sh Testes de Acesso e Criação de Projeto no OpenProject - PARTE-03
+#51A_ 35-netdisco.sh Customizando o Script e Arquivos de Configuração do Netdisco - PARTE-01
+#51B_ 35-netdisco.sh Instalação e Configuração do Netdisco - PARTE-02
+#51C_ 35-netdisco.sh Escaneando Rede Cisco utilizando o SNMP do Netdisco - PARTE-03
+_
+#52A_ 36-openproject.sh Customizando o Script e Arquivos de Configuração do OpenProject - PARTE-01
+#52B_ 36-openproject.sh Instalação e Configuração do OpenProject - PARTE-02
+#52C_ 36-openproject.sh Testes de Acesso e Criação de Projeto no OpenProject - PARTE-03

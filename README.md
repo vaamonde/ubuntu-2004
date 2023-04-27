@@ -818,6 +818,6 @@ Link da vídeo aula: https://www.youtube.com/watch?v=EVxi6f5hZNA
 
 Terceiro Vídeo de Configuração do Apache Guacamole Server e Client do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Apache Guacamole Server, acessar o ambiente, criar usuários e grupos e fazer a configuração dos acessos remotos utilizando os protocolos RDP, SSH, Telnet e VNC.
 
-[![Access Guacamole](http://img.youtube.com/vi//0.jpg)]( "Access Guacamole")
+[![Access Guacamole](http://img.youtube.com/vi/9etqHFhxlwM/0.jpg)](https://www.youtube.com/watch?v=9etqHFhxlwM "Access Guacamole")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=9etqHFhxlwM
