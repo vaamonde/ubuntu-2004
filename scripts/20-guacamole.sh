@@ -70,6 +70,37 @@
 #				Default
 #		<Salvar>
 #
+# guacadmin
+#	Usuários
+#		<Novo Usuário>
+#			Editar Usuário
+#				Usuário: vaamonde
+#				Senha: pti@2018
+#				Repita a senha: pti@2018
+#			Perfil
+#				Nome Completo: Robson vaamonde
+#				Endereço de E-mail: robsonvaamonde@gmail.com
+#				Organização: Bora para Prática
+#				Função: Adm. de Redes
+#			Restrições de Conta
+#				Login desativado: Off
+#				Senha expirada: Off
+#				Permitir acesso após: Default
+#				Não permitir acesso após: Default
+#				Ativar conta após: Default
+#				Fuso horário do usuário: America Sao Paulo
+#			Permissões
+#				Administrar o sistema: On (Enable)
+#				Criar novos usuários: Off
+#				Criar novos grupos de usuário: Off
+#				Criar novas conexões: On (Enable)
+#				Criar novos grupos de conexão: Off
+#				Criar novos perfis de compartilhamento: Off
+#				Alterar a própria senha: On (Enable)
+#			Grupos
+#				GnuLinux
+#		<Save>
+#		
 # Criação das Conexões
 # guacadmin
 #	Conexões
@@ -307,14 +338,17 @@ echo -e "Criando o Usuário de Serviço do Apache Guacamole Server, aguarde..."
 	# opção do comando useradd: -M (), -d (), -r (), -s (), -c ()
 	# opção do comando mkdir: -v (verbose)
 	# opção do comando chown: -R (recursive), -v (verbose)
+	# opção do comando sed: -i (insert text)
 	useradd -M -d $GUACAMOLELIB -r -s /sbin/nologin -c "Guacd User" $GUACAMOLEUSER &>> $LOG
-	mkdir -v $GUACAMOLELIB
-	chown -Rv $GUACAMOLEUSER: $GUACAMOLELIB
+	mkdir -v $GUACAMOLELIB &>> $LOG
+	chown -Rv $GUACAMOLEUSER: $GUACAMOLELIB &>> $LOG
+	sed -i 's/daemon/guacd/' /etc/systemd/system/guacd.service &>> $LOG
 echo -e "Usuário de serviço criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Iniciando o serviço do Apache Guacamole Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	systemctl daemon-reload &>> $LOG
 	systemctl enable guacd &>> $LOG
 	systemctl start guacd &>> $LOG
 echo -e "Serviço do Apache Guacamole Server iniciado com sucesso!!!, continuando com o script...\n"
