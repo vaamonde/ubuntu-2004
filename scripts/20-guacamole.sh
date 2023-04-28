@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 11/04/2023
-# Versão: 0.10
+# Data de atualização: 28/04/2023
+# Versão: 0.11
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Apache Guacamole Server 1.5.x e Cliente 1.5.x
 #
@@ -300,6 +300,17 @@ echo -e "Instalando o Apache Guacamole Server, aguarde esse processo demora um p
 		ldconfig &>> $LOG
 	cd .. &>> $LOG
 echo -e "Apache Guacamole Server instalado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Criando o Usuário de Serviço do Apache Guacamole Server, aguarde..."
+	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando useradd: -M (), -d (), -r (), -s (), -c ()
+	# opção do comando mkdir: -v (verbose)
+	# opção do comando chown: -R (recursive), -v (verbose)
+	useradd -M -d $GUACAMOLELIB -r -s /sbin/nologin -c "Guacd User" $GUACAMOLEUSER &>> $LOG
+	mkdir -v $GUACAMOLELIB
+	chown -Rv $GUACAMOLEUSER: $GUACAMOLELIB
+echo -e "Usuário de serviço criado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Iniciando o serviço do Apache Guacamole Server, aguarde..."

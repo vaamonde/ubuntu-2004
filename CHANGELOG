@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 26/04/2023
-Versão: 0.92
+Data de atualização: 28/04/2023
+Versão: 0.93
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+28/04/2023 - Robson Vaamonde - Analisando o BUG: 0027 - Falha de autenticação do RDP utilizado o Apache Guacamole Server 
+Versão: 1.5.0 referente ao Erro do RDP, atualização do script: 00-parametros.sh da versão do Apache Guacamole Server
+para: 1.5.1, atualizado script: 20-guacamole.sh adicionado as linhas de criar o usuário de serviço do Apache Guacamole
+Server e diretório de lib.
+
 26/04/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh referente ao bloco de configuração do script
 do Prometheus, criação do script: 22-prometheus.sh, atualização da sequência do número do scripts depois do script do
 Prometheus, atualização da Versão do GLPI9 para 9.5.13 e do GLPI10 para 10.0.7, atualização da versão do Nextcloud

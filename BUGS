@@ -7,19 +7,27 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 13/04/2023
-Versão: 0.30
+Data de atualização: 28/04/2023
+Versão: 0.31
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
-TOTAL DE BUGS..: 26
+TOTAL DE BUGS..: 27
 BUGS RESOLVIDOS: 21
-BUGS PENDENTES.: 05 (0026, 0025, 0020, 0019, 0018)
+BUGS PENDENTES.: 06 (0027, 0026, 0025, 0020, 0019, 0018)
 
 ============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+0027 - Falha de autenticação do RDP utilizado o Apache Guacamole Server Versão: 1.5.0, após vários testes de conexão via 
+RDP no Windows 10 a seguinte mensagem de erro é mostrada no monitoramento do Log do Apache Guacamole Server utilizando o
+comando: tail -f /var/log/syslog | grep -i guacd - guacd[19759]: INFO:#011RDP server closed/refused connection: Security 
+negotiation failed (wrong security type?), foi desabiltiado a opção de não verificar o certificado do cliente remoto do RDP
+uma nova mensagem é apresentada: RDP server closed/refused connection: Upstream error. e a mensagem: guacd[32631]: INFO:#011RDP 
+server closed/refused connection: Upstream error.
+STATUS=PENDENTE
+
 0026 - Falha de autenticação do SSH utilizando Chave Privada no Apache Guacamole Server versão: 1.5.0, após vários testes
 de conexão via SSH no Servidor Ubuntu Server utilizando o Guacamole Client, a configuração utilizando Chave Priavada não 
 funcionou, somente autenticação simples, conforme descrito no Fórum do Guacamole a falha está na versão do libssh2, por 
-padrão o Ubuntu Server 20.04.x está na versão 1.08.x o suporte a Chave Priavada no Guacamole Server versão 1.5.0 precisa
+padrão o Ubuntu Server 20.04.x está na versão 1.08.x o suporte a Chave Privada no Guacamole Server versão 1.5.0 precisa
 do libssh2 na versão 2.09.x ou superior, indicado a versão 2.10.x, verificando a possibilidade de compilação ou atualização
 da versão.
 STATUS=PENDENTE
