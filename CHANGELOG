@@ -7,11 +7,18 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 28/04/2023
-Versão: 0.93
+Data de atualização: 29/04/2023
+Versão: 0.94
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+29/04/2023 - Robson Vaamonde - Atualização dos script: 00-parametros.sh referente a localização do download do arquivo
+de Conector do MySQL Java utilizado pelo Guacamole, atualização dos script: 20-guacamole.sh referente a remoção do
+diretório do plugins de autenticação do MySQL, adicionado a criação do usuário de administração do serviço do Guacamole,
+alteração do arquivo de serviço do Guacamole para o usuário de serviço, adicionado no arquivo Conf: guacamole.properties
+as opção do recurso de TOTP Two Factor Authentication atualizado a Versão do Guacamole Server para v1.5.1 com objetivo
+de corrigir as falhas do protocolo RDP.
+
 28/04/2023 - Robson Vaamonde - Analisando o BUG: 0027 - Falha de autenticação do RDP utilizado o Apache Guacamole Server 
 Versão: 1.5.0 referente ao Erro do RDP, atualização do script: 00-parametros.sh da versão do Apache Guacamole Server
 para: 1.5.1, atualizado script: 20-guacamole.sh adicionado as linhas de criar o usuário de serviço do Apache Guacamole
