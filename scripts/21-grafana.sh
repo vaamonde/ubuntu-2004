@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 20/08/2022
-# Versão: 0.06
+# Data de atualização: 29/04/2023
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Grafana Server v9.4.x
 #
@@ -31,6 +31,53 @@
 # Change Password
 #	New password: pti@2018
 #	Confirm new password: pti@2018: (Submit)
+#
+# Criando um Data Source do MySQL
+# Dashboard
+#	Data Sources
+#		Add data source
+#			SQL
+#				MySQL
+#					Name: ptispo01ws01
+#					MySQL Connection
+#						Host: localhost:3306
+#						Database: dbagenda
+#						User: dbagenda
+#						Password: dbagenda
+#				<Save & Test>
+#
+# Dashboard
+#	Dashboards
+#		<+ Add visualization>
+#			Query1
+#				Data source: ptispo01ws01
+#			Builder
+#				Dataset: dbagenda   Tabela: contatos
+#				Columm: nome   Aggregation: COUNT (Contar)   Alias: Choose (Default)
+#			<Run query>
+#			Panel Title
+#				<Open visualization suggestions>
+#					Suggestions: Gauge
+#						Panel options
+#							Tile: Total de Contatos
+#							Description: Total de Contatos cadastrado no banco DBAgenda
+#					<Save> - <Save>
+#					<Apply>
+#		<Add>
+#			Visualization
+#			Query1
+#				Data source: ptispo01ws01
+#			Builder
+#				Dataset: dbagenda   Tabela: contatos
+#				Columm: nome   Aggregation: Choose (Default)   Alias: Choose (Default)
+#			<Run query>
+#			Panel Title
+#				<Switch to table>
+#					Panel options
+#						Tile: Contatos do DBAgenda
+#						Description: Nome dos contatos do banco DBAgenda
+#				<Save> - <Save>
+#				<Apply>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
