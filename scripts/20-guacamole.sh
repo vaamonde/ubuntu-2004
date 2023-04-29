@@ -379,7 +379,7 @@ echo -e "Baixando o Apache Guacamole Authentication JDBC MySQL Server, aguarde..
 	# opção do comando wget: -O (output document file)
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
 	rm -v guacamole-mysql.tar.gz &>> $LOG
-	rm -Rfv guacamole-server-*/ &>> $LOG
+	rm -Rfv guacamole-auth-*/ &>> $LOG
 	wget $GUACAMOLEJDBC -O guacamole-mysql.tar.gz &>> $LOG
 	tar -zxvf guacamole-mysql.tar.gz &>> $LOG
 	cp -v guacamole-auth*/mysql/guacamole-auth*.jar /etc/guacamole/extensions/ &>> $LOG
