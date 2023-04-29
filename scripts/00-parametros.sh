@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 28/04/2023
-# Versão: 0.92
+# Data de atualização: 29/04/2023
+# Versão: 0.93
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1073,12 +1073,12 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
-# Variável de download do Apache Guacamole (Links atualizados no dia 18/03/2023)
+# Variável de download do Apache Guacamole (Links atualizados no dia 29/04/2023)
 GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.5.1/source/guacamole-server-1.5.1.tar.gz"
 GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-1.5.1.war"
 GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-auth-jdbc-1.5.1.tar.gz"
 GUACAMOLETOTP="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-auth-totp-1.5.1.tar.gz"
-GUACAMOLEMYSQL="https://downloads.mysql.com/archives/get/p/3/file/mysql-connector-j_8.0.33-1ubuntu20.04_all.deb"
+GUACAMOLEMYSQL="https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-j_8.0.33-1ubuntu20.04_all.deb"
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GUACAMOLE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
 # DO ROOT DO MYSQL CONFIGURADAS NO BLOCO DAS LINHAS: 366 até 371, VARIÁVEIS UTILIZADAS NO SCRIPT: 
