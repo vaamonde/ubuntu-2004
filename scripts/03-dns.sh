@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 31/03/2022
-# Versão: 0.17
+# Data de atualização: 30/04/2023
+# Versão: 0.18
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 # Testado e homologado para a versão do Bind DNS Sever v9.16.x
@@ -335,8 +335,14 @@ echo -e "Serviços inicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando o serviço do Bind DNS Server, aguarde..."
-	echo -e "Bind DNS: $(systemctl status bind9 | grep Active)"
+	echo -e "Bind DNS Server: $(systemctl status bind9 | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a versão do serviço instalado, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Bind DNS Server..: $(dpkg-query -W -f '${version}\n' bind9)"
+echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexões do Bind DNS Server, aguarde..."

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 17/10/2021
-# Data de atualização: 28/04/2022
-# Versão: 0.11
+# Data de atualização: 30/04/2023
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do VSFTPD v3.0.x
 #
@@ -308,6 +308,12 @@ sleep 5
 echo -e "Verificando o serviço do Vsftpd Server, aguarde..."
 	echo -e "VSFTPd: $(systemctl status vsftpd | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a versão do serviço instalado, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "VSFTPd Server..: $(dpkg-query -W -f '${version}\n' vsftpd)"
+echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Vsftpd Server, aguarde..."

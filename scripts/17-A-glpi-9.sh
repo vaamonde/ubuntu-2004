@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 07/09/2022
-# Versão: 0.15
+# Data de atualização: 30/04/2023
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 #
@@ -310,6 +310,14 @@ sleep 5
 echo -e "Verificando o serviço do Apache2, aguarde..."
 	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Apache2 Server....: $(dpkg-query -W -f '${version}\n' apache2)"
+	echo -e "GLPI 9 Help Desk..: $()"
+	echo -e "OpenSSL...........: $(dpkg-query -W -f '${version}\n' openssl)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Apache2, aguarde..."

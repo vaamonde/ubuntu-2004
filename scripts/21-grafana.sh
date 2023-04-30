@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 29/04/2023
-# Versão: 0.07
+# Data de atualização: 30/04/2023
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Grafana Server v9.4.x
 #
@@ -289,6 +289,12 @@ sleep 5
 echo -e "Verificando o serviço do Grafana Server, aguarde..."
 	echo -e "Grafana: $(systemctl status grafana-server | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a versão do serviço instalado, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Grafana..: $(dpkg-query -W -f '${version}\n' grafana)"
+echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Grafana Server, aguarde..."

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 23/04/2023
-# Data de atualização: 23/04/2023
-# Versão: 0.01
+# Data de atualização: 30/04/2023
+# Versão: 0.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Prometheus v2.43.x
 #
@@ -231,6 +231,11 @@ sleep 5
 echo -e "Verificando o serviço do Prometheus, aguarde..."
 	echo -e "Prometheus: $(systemctl status prometheus | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a versão do serviço instalado, aguarde..."
+	echo -e "Prometheus..: $(prometheus --version | grep prometheus)"
+echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Prometheus, aguarde..."

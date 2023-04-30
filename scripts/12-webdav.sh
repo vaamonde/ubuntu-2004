@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 08/01/2022
-# Data de atualização: 15/07/2022
-# Versão: 0.12
+# Data de atualização: 30/04/2023
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do Apache2 v2.4.x
 #
@@ -281,6 +281,18 @@ sleep 5
 echo -e "Verificando o serviço do Apache2, aguarde..."
 	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	echo -e "Apache2 Server..: $(apache2ctl -V | grep -i "server version" | cut -d':' -f2)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Apache2 Server..: $(dpkg-query -W -f '${version}\n' apache2)"
+	echo -e "OpenSSL.........: $(dpkg-query -W -f '${version}\n' openssl)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Apache2, aguarde..."

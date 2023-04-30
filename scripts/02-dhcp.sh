@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 09/09/2022
-# Versão: 0.15
+# Data de atualização: 30/04/2023
+# Versão: 0.16
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x
 #
@@ -233,6 +233,12 @@ sleep 5
 echo -e "Verificando o serviço do ISC DHCP Server, aguarde..."
 	echo -e "ISC DHCP: $(systemctl status isc-dhcp-server | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a versão do serviço instalado, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "ISC DHCP Server..: $(dpkg-query -W -f '${version}\n' isc-dhcp-server)"
+echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do ISC DHCP Server, aguarde..."

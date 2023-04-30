@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 27/04/2023
-Versão: 0.31
+Data de atualização: 30/04/2023
+Versão: 0.32
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -156,9 +156,9 @@ _
 #36B_ 20-guacamole.sh Instalação e Configuração do Apache Guacamole - PARTE-02 (19/04/2023)
 #36C_ 20-guacamole.sh Acesso Remoto ao Servidor e Clientes no Guacamole - PARTE-03 (27/04/2023)
 _
-#37A_ 21-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana - PARTE-01
-#37B_ 21-grafana.sh Instalação e Configuração do Grafana - PARTE-02
-#37C_ 21-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03
+#37A_ 21-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana - PARTE-01 (01/05/2023)
+#37B_ 21-grafana.sh Instalação e Configuração do Grafana - PARTE-02 (03/05/2023)
+#37C_ 21-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03 (05/05/2023)
 _
 #38A_ 22-prometheus.sh Customizando o Script e Arquivos de Configuração do Prometheus - PARTE-01
 #38B_ 22-prometheus.sh Instalação e Configuração do Prometheus - PARTE-02

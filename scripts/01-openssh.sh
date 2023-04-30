@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 24/03/2022
-# Versão: 0.27
+# Data de atualização: 30/04/2023
+# Versão: 0.28
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do OpenSSH Server v8.2.x
 #
@@ -385,6 +385,14 @@ echo -e "Verificando os serviços do OpenSSH Server e do Shell-In-a-Box, aguarde
 	echo -e "OpenSSH....: $(systemctl status sshd | grep Active)"
 	echo -e "Shellinabox: $(systemctl status shellinabox | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Neofetch.....: $(dpkg-query -W -f '${version}\n' neofetch)"
+	echo -e "OpenSSH......: $(dpkg-query -W -f '${version}\n' openssh-server)"
+	echo -e "Shellinabox..: $(dpkg-query -W -f '${version}\n' shellinabox)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexões do OpenSSH Server e do Shell-In-a-Box, aguarde..."

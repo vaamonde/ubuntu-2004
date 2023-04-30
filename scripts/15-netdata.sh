@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 06/12/2022
-# Versão: 0.17
+# Data de atualização: 30/04/2023
+# Versão: 0.18
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Netdata v1.37.x
 #
@@ -342,6 +342,12 @@ sleep 5
 echo -e "Verificando o serviço do Netdata, aguarde..."
 	echo -e "Netdata: $(systemctl status netdata | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a versão do serviço instalado, aguarde..."
+	# opção do comando netdata: -v (version)
+	echo -e "Netdata Server..: $(netdata -v)"
+echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Netdata, aguarde..."

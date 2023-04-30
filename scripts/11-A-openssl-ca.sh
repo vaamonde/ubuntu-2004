@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/10/2021
-# Data de atualização: 05/05/2022
-# Versão: 0.14
+# Data de atualização: 30/04/2023
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OpenSSL v1.1.x
 #
@@ -435,6 +435,12 @@ sleep 2
 echo -e "Verificando o diretório de download: http://$(hostname -d | cut -d' ' -f1)/download/, aguarde..."
 	tree $DOWNLOADCERT
 echo -e "Diretório verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando a versão do serviço instalado, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "OpenSSL..: $(dpkg-query -W -f '${version}\n' openssl)"
+echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Configuração da Autoridade Certificadora CA feita com Sucesso!!!."

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 31/03/2022
-# Versão: 0.11
+# Data de atualização: 30/04/2023
+# Versão: 0.12
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do TFTP-HPA v5.2.x
 #
@@ -289,6 +289,13 @@ echo -e "Verificando os serviços do ISC DHCP Server e do Bind DNS Server, aguar
 	echo -e "ISC DHCP.: $(systemctl status isc-dhcp-server | grep Active)"
 	echo -e "TFTPD-HPA: $(systemctl status tftpd-hpa | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "ISC DHCP Server..: $(dpkg-query -W -f '${version}\n' isc-dhcp-server)"
+	echo -e "TFTP-HPA Server..: $(dpkg-query -W -f '${version}\n' tftpd-hpa)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexão do ISC-DHCP Server e do Tftpd-Hpa Server, aguarde..."

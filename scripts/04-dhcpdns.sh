@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 22/03/2022
-# Versão: 0.14
+# Data de atualização: 30/04/2023
+# Versão: 0.15
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 # Testado e homologado para a versão do ISC DHCP Server v4.4.x e Bind DNS Sever v9.16.x
 #
@@ -264,6 +264,13 @@ echo -e "Verificando os serviços do ISC DHCP Server e do Bind DNS Server, aguar
 	echo -e "ISC DHCP: $(systemctl status isc-dhcp-server | grep Active)"
 	echo -e "Bind DNS: $(systemctl status bind9 | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Bind DNS Server..: $(dpkg-query -W -f '${version}\n' bind9)"
+	echo -e "ISC DHCP Server..: $(dpkg-query -W -f '${version}\n' isc-dhcp-server)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexão do Bind9 DNS Server e do ISC DHCP Server, aguarde..."

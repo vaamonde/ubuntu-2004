@@ -367,6 +367,14 @@ echo -e "Verificando o serviço do Apache2, aguarde..."
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Apache2 Server..: $(dpkg-query -W -f '${version}\n' apache2)"
+	echo -e "OpenSSL.........: $(dpkg-query -W -f '${version}\n' openssl)"
+	echo -e "Wordpress CMS...: $(grep "wp_version =" /var/www/wp/wp-includes/version.php)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando a porta de conexão do Apache2, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 

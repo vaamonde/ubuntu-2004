@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 19/10/2021
-# Data de atualização: 03/05/2022
-# Versão: 0.12
+# Data de atualização: 30/04/2023
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Tomcat v9.0.x, OpenJDK v11.x, OpenJRE v11.x
 #
@@ -264,6 +264,13 @@ sleep 5
 echo -e "Verificando o serviço do Apache Tomcat9, aguarde..."
 	echo -e "Tomcat9: $(systemctl status tomcat9 | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Java OpenJDK...: $(dpkg-query -W -f '${version}\n' openjdk-11-jdk)"
+	echo -e "Tomcat Server..: $(dpkg-query -W -f '${version}\n' tomcat9)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Apache Tomcat9, aguarde..."

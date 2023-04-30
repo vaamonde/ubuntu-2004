@@ -444,6 +444,15 @@ echo -e "Verificando os serviços do Tomcat9 e do Apache Guacamole, aguarde..."
 echo -e "Serviços verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Apache Guacamole..: $(guacd -v)"
+	echo -e "Java OpenJDK......: $(dpkg-query -W -f '${version}\n' openjdk-11-jdk)"
+	echo -e "OpenSSL...........: $(dpkg-query -W -f '${version}\n' openssl)"
+	echo -e "Tomcat Server.....: $(dpkg-query -W -f '${version}\n' tomcat9)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando as portas de conexões do Apache Tomcat9 e do Guacamole Server, aguarde..."
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 

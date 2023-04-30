@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 03/12/2021
-# Data de atualização: 08/04/2023
-# Versão: 0.16
+# Data de atualização: 30/04/2023
+# Versão: 0.17
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do ZoneMinder 1.37.x
 #
@@ -345,6 +345,15 @@ echo -e "Verificando os serviços do Apache2, MySQL e do ZoneMinder, aguarde..."
 	echo -e "MySQL.....: $(systemctl status mysql | grep Active)"
 	echo -e "Zoneminder: $(systemctl status zoneminder | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Apache2 Server..: $(dpkg-query -W -f '${version}\n' apache2)"
+	echo -e "MySQL Server....: $(dpkg-query -W -f '${version}\n' mysql-server)"
+	echo -e "OpenSSL.........: $(dpkg-query -W -f '${version}\n' openssl)"
+	echo -e "Zoneminder......: $(dpkg-query -W -f '${version}\n' zoneminder)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexão do Apache2 e do MySQL, aguarde..."

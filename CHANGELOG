@@ -7,11 +7,16 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 29/04/2023
-Versão: 0.94
+Data de atualização: 30/04/2023
+Versão: 0.95
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+30/04/2023 - Robson Vaamonde - Atualização de todos os scripts, acréscimo do bloco de verificação da versão de todos
+os softwares instalados utilizando os recursos do comando DPKG (dpkg-query -W -f '${version}\n' software) nos software
+que tem esse suporte, alguns software não são instalado via DPKG ou APT, nesse caso será utilizado os comandos para
+verificar a versão no seu lugar.
+
 29/04/2023 - Robson Vaamonde - Atualização dos script: 00-parametros.sh referente a localização do download do arquivo
 de Conector do MySQL Java utilizado pelo Guacamole, atualização dos script: 20-guacamole.sh referente a remoção do
 diretório do plugins de autenticação do MySQL, adicionado a criação do usuário de administração do serviço do Guacamole,

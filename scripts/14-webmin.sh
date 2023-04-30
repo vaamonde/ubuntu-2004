@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 23/08/2022
-# Versão: 0.07
+# Data de atualização: 30/04/2023
+# Versão: 0.08
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Webmin v1.9x e do Usermin v1.8x 
 #
@@ -250,6 +250,13 @@ echo -e "Verificando os serviços do Webmin e do Usermin, aguarde..."
 	echo -e "Webmin.: $(systemctl status webmin | grep Active)"
 	echo -e "Usermin: $(systemctl status usermin | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Usermin Server..: $(dpkg-query -W -f '${version}\n' usermin)"
+	echo -e "Webmin Server...: $(dpkg-query -W -f '${version}\n' webmin)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexões do Webmin e do Usermin, aguarde..."

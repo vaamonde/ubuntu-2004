@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 02/11/2021
-# Data de atualização: 31/05/2022
-# Versão: 0.12
+# Data de atualização: 30/04/2023
+# Versão: 0.13
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do LogAnalyzer v4.1.x
 #
@@ -343,6 +343,14 @@ echo -e "Verificando os serviços do Syslog e do Rsyslog, aguarde..."
 	echo -e "Rsyslog: $(systemctl status rsyslog | grep Active)"
 	echo -e "Apache2: $(systemctl status apache2 | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Apache2 Server..: $(dpkg-query -W -f '${version}\n' apache2)"
+	echo -e "LogAnalyzer.....: $()"
+	echo -e "Rsyslog.........: $(dpkg-query -W -f '${version}\n' rsyslog)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as portas de conexões do Syslog/Rsyslog, aguarde..."

@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 23/04/2023
-# Versão: 0.06
+# Data de atualização: 30/04/2023
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Zabbix Server e Agent v6.4.x 
 #
@@ -291,17 +291,36 @@ echo -e "Editando o arquivo de configuração zabbix_agentd.conf, pressione <Ent
 echo -e "Arquivo editado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Reinicializando os serviços do Zabbix Server e Agent, aguarde..."
+echo -e "Reinicializando os serviços do Zabbix Server, Agent e do Apache2,  aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	systemctl enable zabbix-server zabbix-agent &>> $LOG
 	systemctl restart zabbix-server zabbix-agent apache2 &>> $LOG
 echo -e "Serviços reinicializados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Verificando os serviços do Zabbix Server e Agent, aguarde..."
-	echo -e "Zabbix Server: $(systemctl status zabbix-server | grep Active)"
-	echo -e "Zabbix Agent.: $(systemctl status zabbix-agent | grep Active)"
+echo -e "Verificando os serviços do Zabbix Server, Agent e do Apache2, aguarde..."
+	echo -e "Zabbix Server...: $(systemctl status zabbix-server | grep Active)"
+	echo -e "Zabbix Agent....: $(systemctl status zabbix-agent | grep Active)"
+	echo -e "Apache2 Server..: $(systemctl status apache2 | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "Apache2 Server..: $(dpkg-query -W -f '${version}\n' apache2)"
+	echo -e "MySQL Server....: $(dpkg-query -W -f '${version}\n' mysql-server)"
+	echo -e "SNMP Server.....: $(dpkg-query -W -f '${version}\n' snmp)"
+	echo -e "PHP.............: $(dpkg-query -W -f '${version}\n' php)"
+	echo -e "Zabbix Agent....: $(dpkg-query -W -f '${version}\n' zabbix-agent)"
+	echo -e "Zabbix Server...: $(dpkg-query -W -f '${version}\n' zabbix-server-mysql)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://$(hostname -d | cut -d' ' -f1)/zabbix/"
+echo -e "PARA FINALIZAR A CONFIGURAÇÃO VIA WEB DO ZABBIX SERVER, APÓS A"
+echo -e "CONFIGURAÇÃO PRESSIONE <ENTER> PARA CONTINUAR COM O SCRIPT."
+echo -e "MAIS INFORMAÇÕES NA LINHA 30 DO SCRIPT: $0"
+read
 sleep 5
 #
 echo -e "Verificando as portas de conexão do Zabbix Server, aguarde..."

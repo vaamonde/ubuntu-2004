@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 25/11/2021
-# Data de atualização: 25/09/2022
-# Versão: 0.13
+# Data de atualização: 30/04/2023
+# Versão: 0.14
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do GLPI Help Desk v9.5.x
 # Testado e homologado para a versão do FusionInventory Server 9.5.x e Agent 2.6.x
@@ -305,6 +305,15 @@ sleep 5
 echo -e "Verificando o serviço do FusionInventory Agent, aguarde..."
 	echo -e "Agent: $(systemctl status fusioninventory-agent | grep Active)"
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	echo -e "FusionInventory Agent....: $(dpkg-query -W -f '${version}\n' fusioninventory-agent)"
+	echo -e "FusionInventory Collect..: $(dpkg-query -W -f '${version}\n' fusioninventory-agent-task-collect)"
+	echo -e "FusionInventory Deploy...: $(dpkg-query -W -f '${version}\n' fusioninventory-agent-task-deploy)"
+	echo -e "FusionInventory Network..: $(dpkg-query -W -f '${version}\n' fusioninventory-agent-task-network)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "ANTES DE CONTINUAR COM O SCRIPT ACESSE A URL: https://glpi9.$(hostname -d | cut -d' ' -f1)/"
