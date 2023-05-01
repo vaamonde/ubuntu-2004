@@ -821,3 +821,27 @@ Terceiro Vídeo de Configuração do Apache Guacamole Server e Client do Curso "
 [![Access Guacamole](http://img.youtube.com/vi/9etqHFhxlwM/0.jpg)](https://www.youtube.com/watch?v=9etqHFhxlwM "Access Guacamole")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=9etqHFhxlwM
+
+## **🔴 21-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana Server - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Apache Guacamole Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 21-grafana.sh antes de executar no nosso servidor.
+
+[![Config Grafana](http://img.youtube.com/vi/lGEn7D0jpfc/0.jpg)](https://www.youtube.com/watch?v=lGEn7D0jpfc "Config Grafana")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=lGEn7D0jpfc
+
+## **🔴 21-grafana.sh Instalação e Configuração do Grafana Server - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Grafana Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Apache Grafana Server.
+
+[![Install Grafana](http://img.youtube.com/vi/tYSAxf-JUu8/0.jpg)](https://www.youtube.com/watch?v=tYSAxf-JUu8 "Install Grafana")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=tYSAxf-JUu8
+
+## **🔴 21-grafana.sh Configurações Básicas e Monitoramento do Grafana Server - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Grafana Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Grafana Server, acessar o ambiente, criar um data collection e fazer a primeira criação de um Dashboard utilizando o MySQL Server.
+
+[![Access Grafana](http://img.youtube.com/vi/dOYAmQ73AFU/0.jpg)](https://www.youtube.com/watch?v=dOYAmQ73AFU "Access Grafana")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=dOYAmQ73AFU
