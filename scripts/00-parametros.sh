@@ -1117,7 +1117,7 @@ PORTGUACAMOLE="4822"
 # 02. /etc/default/grafana.ini = arquivo de configuração de inicialização do serviço do Grafana
 #
 # Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
-# 01. systemctl status grafana = status do serviço do Grafana Server
+# 01. systemctl status grafana-server = status do serviço do Grafana Server
 # 02. journalctl -t grafana-server = todas as mensagens referente ao serviço do Grafana Server
 # 03. tail -f /var/log/grafana/grafana.log = arquivo de Log do serviço do Grafana Server
 # 04. tail -f /var/log/syslog | grep -i grafana = filtrando as mensagens do serviço do Grafana
