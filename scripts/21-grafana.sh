@@ -250,7 +250,7 @@ echo -e "Instalando o Grafana Server, aguarde..."
 echo -e "Grafana instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
-echo -e "Atualizandos os arquivos de configuração Grafana Server, aguarde..."
+echo -e "Atualizando os arquivos de configuração Grafana Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando mv: -v (verbose)
 	# opção do comando cp: -v (verbose)
