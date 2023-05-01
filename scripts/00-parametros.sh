@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 29/04/2023
-# Versão: 0.93
+# Data de atualização: 01/05/2023
+# Versão: 0.94
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1114,6 +1114,7 @@ PORTGUACAMOLE="4822"
 #
 # Arquivos de configuração (conf) do sistema Grafana Server utilizados nesse script
 # 01. /etc/default/grafana-server = arquivo de configuração do serviço do Grafana Server
+# 02. /etc/default/grafana.ini = arquivo de configuração de inicialização do serviço do Grafana
 #
 # Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
 # 01. systemctl status grafana = status do serviço do Grafana Server
@@ -1129,6 +1130,9 @@ GRAFANAAPT="deb https://packages.grafana.com/oss/deb stable main"
 #
 # Variável das dependências do laço de loop do Grafana Server
 GRAFANADEP="mysql-server mysql-common bind9 apt-transport-https software-properties-common"
+#
+# Variável de instalação do serviço do Grafana Server
+GRAFANAINSTALL="grafana"
 #
 # Variável da porta de conexão padrão do Grafana Server
 PORTGRAFANA="3000"

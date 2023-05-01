@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 30/04/2023
-# Versão: 0.08
+# Data de atualização: 01/05/2023
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Grafana Server v9.4.x
 #
@@ -246,7 +246,7 @@ sleep 5
 echo -e "Instalando o Grafana Server, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-	apt -y install grafana &>> $LOG
+	apt -y install $GRAFANAINSTALL &>> $LOG
 echo -e "Grafana instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
