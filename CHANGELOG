@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 30/04/2023
-Versão: 0.95
+Data de atualização: 01/05/2023
+Versão: 0.96
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+01/05/2023 - Robson Vaamonde - Atualização do arquivo de conf: prometheus.yml referente ao monitoramento das métricas
+do Linux Mint e do Windows 10 utilizando os recursos do Node e Windows Exporter, criação do arquivo de serviço do Node
+Exporter do Prometheus: nodeexporter.service utilizado em distribuições GNU/Linux.
+
 30/04/2023 - Robson Vaamonde - Atualização de todos os scripts, acréscimo do bloco de verificação da versão de todos
 os softwares instalados utilizando os recursos do comando DPKG (dpkg-query -W -f '${version}\n' software) nos software
 que tem esse suporte, alguns software não são instalado via DPKG ou APT, nesse caso será utilizado os comandos para

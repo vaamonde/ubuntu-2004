@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 23/04/2023
-# Data de atualização: 30/04/2023
-# Versão: 0.02
+# Data de atualização: 01/05/2023
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Prometheus v2.43.x
 #
@@ -20,6 +20,42 @@
 # mantido independentemente de qualquer empresa.
 #
 # Site Oficial do Projeto Prometheus: https://prometheus.io/
+# Projeto Github Node Exporter Linux: https://github.com/prometheus/node_exporter/
+# Projeto Github Windows Exporter...: https://github.com/prometheus-community/windows_exporter
+#
+# Informações que serão solicitadas na configuração via Web do Prometheus
+# URL padrão do Prometheus: http://pti.intra:9100
+# URL das targets do Prometheus: http://pti.intra:9100/targets
+#
+# Instalação e configuração da coleta de métricas do Prometheus no Linux e Windows
+#
+# Instalação do Node Exporter Linux
+# #01_ download do exportador de métricas: https://github.com/prometheus/node_exporter/releases/ (versão 1.5.0 - 29/11/2022)
+# #02_ descompactar o conteúdo da pasta: node_exporter-*.linux-amd64
+# #03_ executar o aplicativo: ./node_exporter
+# #04_ acessar as métricas na URL: http://localhost:9100
+# #05_ filtrando as métricas do Node no Prometheus: {job="linuxmint"}
+#		a) Expression: node_os_info{job="linuxmint"} <Execute>
+#		b) Expression: node_disk_info{job="linuxmint"} <Execute>
+#		c) Expression: node_dmi_info{job="linuxmint"} <Execute>
+#		d) Expression: node_memory_Active_bytes{job="linuxmint"} <Execute> - <Graph>
+#		e) Expression: node_cpu_seconds_total{job="linuxmint"} <Execute> - <Graph>
+#		f) Expression: rate(node_cpu_seconds_total{job="linuxmint"}[1m]) <Execute> - <Graph>
+#
+# Instalação do Windows Exporter
+# #01_ download do exportador de métricas: https://github.com/prometheus-community/windows_exporter/releases (versão 0.22.0 - 26/03/2023)
+# #02_ executar a instalação do Windows Exporter via Powershell
+# 	OBSERVAÇÃO IMPORTANTE: fazer a instalação do Prometheus Windows Exporter utilizando o Powershell em modo Administrador.
+# #03_ acessar o diretório de download e executar a instalação: msiexec -i windows_exporter-*-amd64.msi ENABLED_COLLECTORS=cpu,memory,net,logical_disk,os,system,logon,thermalzone
+# #04_ verificar a porta de conexão do Windows Exporter: netstat -an | findstr 9182
+# #05_ acessar as métricas na URL: http://localhost:9182/metrics
+# #06_ filtrando as métricas no Windows Exporter no Prometheus: {job="windows10"}
+#		a) Expression: windows_os_info{job="windows10"} <Execute>
+#		b) Expression: windows_logical_disk_reads_total{job="windows10"} <Execute> - <Graph>
+#		c) Expression: windows_net_bytes_total{job="windows10"} <Execute> - <Graph>
+#		d) Expression: rate(windows_memory_available_bytes{job="windows10"}[1m]) <Execute> - <Graph>
+#		e) Expression: rate(windows_cpu_time_total{job="windows10"}[1m]) <Execute> - <Graph>
+#		f) Expression: windows_net_packets_sent_total{job="windows10"} <Execute> - <Graph>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
