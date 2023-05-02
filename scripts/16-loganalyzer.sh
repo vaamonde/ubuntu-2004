@@ -346,7 +346,7 @@ echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando as versões dos serviços instalados, aguarde..."
-	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (packge information), \n (newline)
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (package information), \n (newline)
 	echo -e "Apache2 Server..: $(dpkg-query -W -f '${version}\n' apache2)"
 	echo -e "LogAnalyzer.....: $()"
 	echo -e "Rsyslog.........: $(dpkg-query -W -f '${version}\n' rsyslog)"

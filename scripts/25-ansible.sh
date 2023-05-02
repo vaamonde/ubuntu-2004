@@ -8,10 +8,10 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/12/2021
-# Data de atualização: 12/01/2022
-# Versão: 0.02
+# Data de atualização: 02/05/2023
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Ansible 2.9.x e do Rundeck 3.4.x
+# Testado e homologado para a versão do Ansible v2.15.x e do Rundeck v4.12.x
 #
 # O Ansible é uma ferramenta de provisionamento de software de código aberto, 
 # gerenciamento de configuração e implementação de aplicativos. Ele é executado 
@@ -207,7 +207,7 @@ sleep 5
 echo -e "Instalando o Ansible, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-  	apt -y install ansible &>> $LOG
+  	apt -y install $ANSIBLEINSTALL &>> $LOG
 echo -e "Ansible instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -283,7 +283,15 @@ echo -e "Verificando o serviço do Rundeck, aguarde..."
 echo -e "Serviço verificado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (package information), \n (newline)
+	echo -e "Ansible..: $(dpkg-query -W -f '${version}\n' ansible)"
+	echo -e "Rundeck..: $(dpkg-query -W -f '${version}\n' rundeck)"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
 echo -e "Verificando a porta de conexão do Rundeck, aguarde..."
+	# opção do comando nc: -v (verbose), -z (DCC mode)
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 

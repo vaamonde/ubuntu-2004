@@ -28,7 +28,7 @@
 # Site Oficial do LibreMNS: https://www.librenms.org/ 
 #
 # Informações que serão solicitadas na configuração via Web do Zabbix Server
-# Welcome to Zabbix 6.2: 
+# Welcome to Zabbix 6.4: 
 #   	Default language: English (en_US): 
 #	Next step;
 # Check of pre-requisites: 

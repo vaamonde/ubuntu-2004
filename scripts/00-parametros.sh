@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 01/05/2023
-# Versão: 0.94
+# Data de atualização: 02/05/2023
+# Versão: 0.95
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1280,6 +1280,9 @@ RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/runde
 #
 # Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 25/03/2023)
 PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.3/ansible-plugin-3.2.3.jar"
+#
+# Variável de instalação do Ansible
+ANSIBLEINSTALL="ansible"
 #
 # Variável das dependências do laço de loop do Rundeck
 RUNDECKDEP="bind9 software-properties-common openjdk-11-jdk openjdk-11-jre default-jdk"

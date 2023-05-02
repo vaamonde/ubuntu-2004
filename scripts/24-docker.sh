@@ -8,10 +8,10 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 15/12/2021
-# Data de atualização: 21/01/2022
-# Versão: 0.04
+# Data de atualização: 02/05/2023
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Docker v20.10.x e Portainer v2.9.x
+# Testado e homologado para a versão do Docker v23.x e Portainer v2.18.x
 #
 # O Docker é uma tecnologia de software que fornece contêineres, promovido pela empresa 
 # Docker, Inc. O Docker fornece uma camada adicional de abstração e automação de 
@@ -305,6 +305,14 @@ echo -e "Verificando os serviços do Docker e Portainer.io, aguarde..."
 	echo -e "Docker...: $(systemctl status docker | grep Active)"
 	echo -e "Portainer: $(systemctl status portainer | grep Active)"
 echo -e "Serviços verificados com sucesso!!!, continuando com o script...\n"
+sleep 5
+#
+echo -e "Verificando as versões dos serviços instalados, aguarde..."
+	# opção do comando dpkg-query: -W (show), -f (showformat), ${version} (package information), \n (newline)
+	echo -e "Docker Compose..: $(docker-compose --version)"
+	echo -e "Docker Server...: $(dpkg-query -W -f '${version}\n' docker-ce)"
+	echo -e "Portainer.io....: $()"
+echo -e "Versões verificadas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Portainer.io, aguarde..."

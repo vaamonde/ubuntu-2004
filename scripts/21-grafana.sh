@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 01/05/2023
-# Versão: 0.09
+# Data de atualização: 02/05/2023
+# Versão: 0.10
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Grafana Server v9.4.x
 #
@@ -298,10 +298,12 @@ echo -e "Versão verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Verificando a porta de conexão do Grafana Server, aguarde..."
+	# opção do comando nc: -v (verbose), -z (DCC mode)
 	# opção do comando lsof: -n (inhibits the conversion of network numbers to host names for 
 	# network files), -P (inhibits the conversion of port numbers to port names for network files), 
 	# -i (selects the listing of files any of whose Internet address matches the address specified 
 	# in i), -s (alone directs lsof to display file size at all times)
+	nc -vz localhost 3000 &>> $LOG
 	lsof -nP -iTCP:3000 -sTCP:LISTEN
 echo -e "Porta verificada com sucesso!!!, continuando com o script...\n"
 sleep 5
