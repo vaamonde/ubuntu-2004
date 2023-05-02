@@ -233,7 +233,9 @@ sleep 5
 #
 echo -e "Descompactando o arquivo do Prometheus, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando rm: -R (recursive), -f (force), -v (verbose)
 	# opção do comando tar: -z (gzip), -x (extract), -v (verbose), -f (file)
+	rm -Rfv prometheus-*/ &>> $LOG
 	tar -zxvf prometheus.tar.gz &>> $LOG
 echo -e "Descompactação do Prometheus feita com sucesso!!!, continuando com o script...\n"
 sleep 5

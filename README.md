@@ -824,7 +824,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=9etqHFhxlwM
 
 ## **🔴 21-grafana.sh Customizando o Script e Arquivos de Configuração do Grafana Server - PARTE-01 🐧**
 
-Primeiro Vídeo de Configuração do Apache Guacamole Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 21-grafana.sh antes de executar no nosso servidor.
+Primeiro Vídeo de Configuração do Grafana Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 21-grafana.sh antes de executar no nosso servidor.
 
 [![Config Grafana](http://img.youtube.com/vi/lGEn7D0jpfc/0.jpg)](https://www.youtube.com/watch?v=lGEn7D0jpfc "Config Grafana")
 
@@ -832,7 +832,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=lGEn7D0jpfc
 
 ## **🔴 21-grafana.sh Instalação e Configuração do Grafana Server - PARTE-02 🐧**
 
-Segundo Vídeo de Configuração do Grafana Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Apache Grafana Server.
+Segundo Vídeo de Configuração do Grafana Server do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Grafana Server.
 
 [![Install Grafana](http://img.youtube.com/vi/tYSAxf-JUu8/0.jpg)](https://www.youtube.com/watch?v=tYSAxf-JUu8 "Install Grafana")
 
@@ -845,3 +845,27 @@ Terceiro Vídeo de Configuração do Grafana Server do Curso "GRATUITO" de Ubunt
 [![Access Grafana](http://img.youtube.com/vi/dOYAmQ73AFU/0.jpg)](https://www.youtube.com/watch?v=dOYAmQ73AFU "Access Grafana")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=dOYAmQ73AFU
+
+## **🔴 22-prometheus.sh Customizando o Script e Arquivos de Configuração do Prometheus - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Prometheus do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 22-prometheus.sh antes de executar no nosso servidor.
+
+[![Config Prometheus](http://img.youtube.com/vi/UBvEMizCb28/0.jpg)](https://www.youtube.com/watch?v=UBvEMizCb28 "Config Prometheus")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=UBvEMizCb28
+
+## **🔴 22-prometheus.sh Instalação e Configuração do Prometheus - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Prometheus do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Prometheus.
+
+[![Install Prometheus](http://img.youtube.com/vi/w0RTl9E9U1w/0.jpg)](https://www.youtube.com/watch?v=w0RTl9E9U1w"Install Prometheus")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=w0RTl9E9U1w
+
+## **🔴 22-prometheus.sh Configurações Básicas e Monitoramento do Prometheus - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Prometheus do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Prometheus, acessar o ambiente, criar um target e fazer a primeira criação de de expressões para listar métricas do Desktop Linux e Microsoft Windows.
+
+[![Access Prometheus](http://img.youtube.com/vi/q-YNR6otlDI/0.jpg)](https://www.youtube.com/watch?v=q-YNR6otlDI "Access Prometheus")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=q-YNR6otlDI
