@@ -6,8 +6,8 @@
 # Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Data de criação: 04/02/2022
-# Data de atualização: 01/05/2023
-# Versão: 0.02
+# Data de atualização: 02/05/2023
+# Versão: 0.03
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 #
 # Configurações Globais do Prometheus
@@ -43,4 +43,4 @@ scrape_configs:
 #     - targets: ["ptispo01dt001:9100"]
 # - job_name: "windows10"
 #   static_configs:
-#     - targets: ["ptispo01dt002:9100"]
+#     - targets: ["ptispo01dt002:9182"]

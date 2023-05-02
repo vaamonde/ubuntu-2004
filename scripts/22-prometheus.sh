@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 23/04/2023
-# Data de atualização: 01/05/2023
-# Versão: 0.03
+# Data de atualização: 02/05/2023
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Prometheus v2.43.x
 #
@@ -224,7 +224,9 @@ sleep 5
 #
 echo -e "Fazendo o download do Prometheus do Site Oficial, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
+	# opção do comando rm: -v (verbose)
 	# opção do comando wget: -O (output document file)
+	rm -v prometheus.tar.gz &>> $LOG
 	wget -O prometheus.tar.gz $PROMETHEUS &>> $LOG
 echo -e "Download do Prometheus feito com sucesso!!!, continuando com o script...\n"
 sleep 5

@@ -1153,7 +1153,7 @@ PORTGRAFANA="3000"
 # Link de download do Projeto do Prometheus (Link atualizado no dia 23/04/2023)
 PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz"
 #
-# Variável das dependências do laço de loop do OpenProject
+# Variável das dependências do laço de loop do Prometheus
 PROMETHEUSDEP="bind9 grafana"
 #
 # Variável da porta do Prometheus
