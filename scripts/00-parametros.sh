@@ -108,8 +108,8 @@ NETPLAN="/etc/netplan/00-installer-config.yaml"
 # 13. /etc/rsyslog.d/50-default.conf = arquivo de configuração do Syslog/Rsyslog
 #
 # Arquivos de monitoramento (log) do Serviço de Rede OpenSSH Server utilizados nesse script
-# 01. systemctl status ssh = status do serviço do OpenSSH
-# 02. journalctl -t sshd = todas as mensagens referente ao serviço do OpenSSH
+# 01. sudo systemctl status ssh = status do serviço do OpenSSH
+# 02. sudo journalctl -t sshd = todas as mensagens referente ao serviço do OpenSSH
 # 03. tail -f /var/log/syslog | grep sshd = filtrando as mensagens do serviço do OpenSSH
 # 04. tail -f /var/log/auth.log | grep ssh = filtrando as mensagens de autenticação do OpenSSH
 # 05. tail -f /var/log/tcpwrappers-allow-ssh.log = filtrando as conexões permitidas do OpenSSH
@@ -138,13 +138,13 @@ PORTSHELLINABOX="4200"
 # 03. /etc/default/isc-dhcp-server = arquivo de configuração do serviço do ISC DHCP Server
 #
 # Arquivos de monitoramento (log) do Serviço de Rede ISC DHCP Server utilizados nesse script
-# 01. systemctl status isc-dhcp-server = status do serviço do ISC DHCP
-# 02. journalctl -t dhcpd = todas as mensagens referente ao serviço do ISC DHCP
+# 01. sudo systemctl status isc-dhcp-server = status do serviço do ISC DHCP
+# 02. sudo journalctl -t dhcpd = todas as mensagens referente ao serviço do ISC DHCP
 # 03. tail -f /var/log/syslog | grep dhcpd = filtrando as mensagens do serviço do ISC DHCP
 # 04. tail -f /var/log/dmesg | grep dhcpd = filtrando as mensagens de erros do ISC DHCP
 # 05. less /var/lib/dhcp/dhcpd.leases = filtrando os alugueis de endereços IPv4 do ISC DHCP
-# 06. dhcp-lease-list = comando utilizado para mostrar os leases dos endereços IPv4 do ISC DHCP
-# 07. tcpdump -vv -n -i enp0s3 port bootps or port bootpc = dump dos pacotes do ISC DHCP
+# 06. sudo dhcp-lease-list = comando utilizado para mostrar os leases dos endereços IPv4 do ISC DHCP
+# 07. sudo tcpdump -vv -n -i enp0s3 port bootps or port bootpc = dump dos pacotes do ISC DHCP
 #
 # Variável de instalação do serviço de rede ISC DHCP Server
 DHCPINSTALL="isc-dhcp-server net-tools"
@@ -177,8 +177,8 @@ PORTDHCP="67"
 # 15. /etc/logrotate.d/rndcstats = arquivo de configuração do Logrotate das Estatísticas
 #
 # Arquivos de monitoramento (log) do Serviço de Rede Bind DNS Server utilizados nesse script
-# 01. systemctl status bind9 = status do serviço do Bind DNS
-# 02. journalctl -t named = todas as mensagens referente ao serviço do Bind DNS
+# 01. sudo systemctl status bind9 = status do serviço do Bind DNS
+# 02. sudo journalctl -t named = todas as mensagens referente ao serviço do Bind DNS
 # 03. tail -f /var/log/syslog | grep named = filtrando as mensagens do serviço do Bind DNS
 # 04. tail -f /var/log/named/* = vários arquivos de Log's dos serviços do Bind DNS
 # 05. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
@@ -241,8 +241,8 @@ DHCPDNSDEP="isc-dhcp-server bind9"
 # 05. /etc/dhcp/dhcpd.conf = arquivo de configuração do Servidor ISC DHCP Server
 #
 # Arquivos de monitoramento (log) do Serviço de Rede NTP Server utilizados nesse script
-# 01. systemctl status ntp = status do serviço do NTP Server
-# 02. journalctl -t ntpd = todas as mensagens referente ao serviço do NTP Server
+# 01. sudo systemctl status ntp = status do serviço do NTP Server
+# 02. sudo journalctl -t ntpd = todas as mensagens referente ao serviço do NTP Server
 # 03. tail -f /var/log/syslog | grep ntpd = vários arquivos de Log's dos serviços do NTP Server
 # 04. tail -f /var/log/ntpstats/* = vários arquivos de monitoramento de tempo do NTP Server
 #
@@ -277,8 +277,8 @@ PORTNTP="123"
 # 04. /var/lib/tftpboot/pxelinux.cfg/default = arquivo de configuração do Boot GRUB do PXE
 #
 # Arquivos de monitoramento (log) do Serviço de Rede TFTP-HPA Server utilizados nesse script
-# 01. systemctl status tftpd-hpa = status do serviço do TFTP-HPA
-# 02. journalctl -t tftpd-hpa = todas as mensagens referente ao serviço do TFTP-HPA
+# 01. sudo systemctl status tftpd-hpa = status do serviço do TFTP-HPA
+# 02. sudo journalctl -t tftpd-hpa = todas as mensagens referente ao serviço do TFTP-HPA
 # 03. tail -f /var/log/syslog | grep tftp = filtrando as mensagens do serviço do TFTP-HPA
 # 04. tail -f /var/log/tcpwrappers-allow-tftpd.log = filtrando as conexões permitidas do TFTP-HPA
 # 05. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do TFTP-HPA
@@ -316,13 +316,13 @@ PORTTFTP="69"
 # 05. /etc/systemd/system/nfs-blkmap.service.d/override.conf = módulo do Kernel do NFS Server
 #
 # Arquivos de monitoramento (log) do Serviço de Rede NFS Server utilizados nesse script
-# 01. systemctl status nfs-kernel-server = status do serviço do NFS Server
-# 02. journalctl -t nfs-server-generator = todas as mensagens referente ao serviço do NFS Server
+# 01. sudo systemctl status nfs-kernel-server = status do serviço do NFS Server
+# 02. sudo journalctl -t nfs-server-generator = todas as mensagens referente ao serviço do NFS Server
 # 03. tail -f /var/log/syslog | grep nfs = filtrando as mensagens do serviço do NFS Server
 # 04. tail -f /var/log/tcpwrappers-allow-nfs.log = filtrando as conexões permitidas do NFS Server
-# 05. nfsstat -sv = exibe estatísticas mantidas sobre a atividade do cliente e do NFS Server
-# 06. nfswatch = monitora todo o tráfego de rede de entrada para um servidor de arquivos NFS Server
-# 07. nfstrace = ferramenta de rastreamento/monitoramento/captura/análise de NFS Server e CIFS/SMB
+# 05. sudo nfsstat -sv = exibe estatísticas mantidas sobre a atividade do cliente e do NFS Server
+# 06. sudo nfswatch = monitora todo o tráfego de rede de entrada para um servidor de arquivos NFS Server
+# 07. sudo nfstrace = ferramenta de rastreamento/monitoramento/captura/análise de NFS Server e CIFS/SMB
 #
 # Variável de criação do diretório padrão utilizado pelo serviço do NFS Server
 PATHNFS="/mnt/nfs/"
@@ -353,14 +353,14 @@ PORTNFSPORTMAPPER="111"
 # 12. /etc/cron.d/awstatsupdate-cron = arquivo de atualização das estatísticas do AWStats
 #
 # Arquivos de monitoramento (log) do Serviço de Rede LAMP Server utilizados nesse script
-# 01. systemctl status apache2 = status do serviço do Apache2
-# 02. journalctl -t apache2.postinst = todas as mensagens referente ao serviço do Apache2
+# 01. sudo systemctl status apache2 = status do serviço do Apache2
+# 02. sudo journalctl -t apache2.postinst = todas as mensagens referente ao serviço do Apache2
 # 03. tail -f /var/log/apache2/* = vários arquivos de Log's do serviço do Apache2
-# 04. systemctl status mysql = status do serviço do Oracle MySQL
+# 04. sudo systemctl status mysql = status do serviço do Oracle MySQL
 # 05. tail -f /var/log/mysql/* = vários arquivos de Log's do serviço do MySQL
 # 06. tail -f /var/log/tcpwrappers-allow-mysql.log = filtrando as conexões permitidas do MySQL
 # 07. tail -f /var/log/tcpwrappers-deny.log = filtrando as conexões negadas do MySQL
-# 08. journalctl -t phpmyadmin = todas as mensagens referente ao serviço do PhpMyAdmin
+# 08. sudo journalctl -t phpmyadmin = todas as mensagens referente ao serviço do PhpMyAdmin
 # 09. tail -f /var/log/cron.log = filtrando as mensagens do serviço do CRON
 #
 # Declarando as variáveis utilizadas nas configurações dos Serviços do LAMP-Server
@@ -434,8 +434,8 @@ PORTMYSQL="3306"
 # 06. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço
 #
 # Arquivos de monitoramento (log) do Serviço de Rede VSFTPd Server utilizados nesse script
-# 01. systemctl status vsftpd = status do serviço do VSFTPd Server
-# 02. journalctl -t vsftpd = todas as mensagens referente ao serviço do VSFTPd Server
+# 01. sudo systemctl status vsftpd = status do serviço do VSFTPd Server
+# 02. sudo journalctl -t vsftpd = todas as mensagens referente ao serviço do VSFTPd Server
 # 03. tail -f /var/log/vsftpd.log = arquivo de Log's principal do serviço do VSFTPd Server
 # 04. tail -f /var/log/syslog | grep vsftpd = filtrando as mensagens do serviço do VSFTPd Server
 # 05. tail -f /var/log/tcpwrappers-allow-vsftpd.log = filtrando as conexões permitidas do VSFTPd
@@ -471,8 +471,8 @@ PORTFTPSSL="990"
 # 02. /etc/tomcat9/server.xml = arquivo de configuração do servidor Tomcat
 #
 # Arquivos de monitoramento (log) do Serviço de Rede Tomcat Server utilizados nesse script
-# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
-# 02. journalctl -t tomcat9 = todas as mensagens referente ao serviço do Tomcat9
+# 01. sudo systemctl status tomcat9 = status do serviço do Tomcat Server
+# 02. sudo journalctl -t tomcat9 = todas as mensagens referente ao serviço do Tomcat9
 # 03. tail -f /var/log/syslog | grep tomcat9 = filtrando as mensagens do serviço do Tomcat9
 # 04. tail -f /var/log/tomcat9/* = vários arquivos de Log's do serviço do Tomcat9
 #
@@ -695,9 +695,9 @@ WORDPRESSDEP="mysql-server mysql-common apache2 php vsftpd bind9 openssl"
 # 01. /etc/apt/sources.list.d/webmin.list = arquivo de configuração do source list do Apt
 #
 # Arquivos de monitoramento (log) do Serviço do Webmin e do Usermin utilizados nesse script
-# 01. systemctl status webmin = status do serviço do Webmin
-# 02. systemctl status usermin = status do serviço do Usermin
-# 03. journalctl -t webmin = todas as mensagens referente ao serviço do Webmin
+# 01. sudo systemctl status webmin = status do serviço do Webmin
+# 02. sudo systemctl status usermin = status do serviço do Usermin
+# 03. sudo journalctl -t webmin = todas as mensagens referente ao serviço do Webmin
 # 04. tail -f /var/webmin/* = vários arquivos de Log's do serviço do Webmin
 # 05. tail -f /var/usermin/* = vários arquivos de Log's do serviço do Usermin
 #
@@ -738,8 +738,8 @@ PORTUSERMIN="20000"
 # 13. /etc/netdata/.htpasswd = arquivo de usuário e senha do Proxy do Apache utilizado no Netdata
 #
 # Arquivos de monitoramento (log) do Serviço do Netdata utilizados nesse script
-# 01. systemctl status netdata = status do serviço do Netdata
-# 02. journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
+# 01. sudo systemctl status netdata = status do serviço do Netdata
+# 02. sudo journalctl -t netdata = todas as mensagens referente ao serviço do Netdata
 # 03. tail -f /var/log/syslog | grep netdata = filtrando as mensagens do serviço do Netdata
 # 04. tail -f /var/log/netdata/* = vários arquivos de Log's do serviço do Netdata
 # 05. tail -f /var/log/apache2/netdata-error.log = log de erro de acesso ao Proxy do Netdata
@@ -789,7 +789,7 @@ FLUSH_NETDATA="FLUSH PRIVILEGES;"
 # 03. /etc/apache2/sites-available/loganalyzer.conf = arquivo de configuração do Virtual host
 #
 # Arquivos de monitoramento (log) do Serviço do LogAnalyzer utilizados nesse script
-# 01. journalctl -t rsyslogd = todas as mensagens referente ao serviço do Rsyslogd
+# 01. sudo journalctl -t rsyslogd = todas as mensagens referente ao serviço do Rsyslogd
 # 02. tail -f /var/log/syslog = todos os Log's de serviços do Rsyslog
 # 03. tail -f /var/log/apache2/access-loganalyzer.log = log de acesso ao LogAnalyzer
 # 04. tail -f /var/log/apache2/error-loganalyzer.log = log de erro de acesso ao LogAnalyzer
@@ -963,8 +963,8 @@ get-edid ssh-keyscan arp 7zip"
 # 01. /etc/fusioninventory/agent.cfg = arquivo de configuração do agent do FusionInventory
 #
 # Arquivos de monitoramento (log) do Serviço do FusionInventory utilizados nesse script
-# 01. systemctl status fusioninventory-agent = status do serviço do FusionInventory Agent
-# 02. journalctl -t fusioninventory-agent = todas as mensagens referente ao serviço do FusionInventory
+# 01. sudo systemctl status fusioninventory-agent = status do serviço do FusionInventory Agent
+# 02. sudo journalctl -t fusioninventory-agent = todas as mensagens referente ao serviço do FusionInventory
 # 03. tail -f /var/log/fusioninventory-agent/fusioninventory.log = arquivo de log do agent do FusionInventory
 # 04. tail -f /var/log/syslog | grep -i fusioninventory = filtrando as mensagens do serviço do FusionInventory
 #
@@ -1020,7 +1020,7 @@ PORTFUSION="62354"
 # 02. /etc/php/7.4/apache2/php.ini = arquivo de configuração do PHP
 #
 # Arquivos de monitoramento (log) do Serviço do ZoneMinder utilizados nesse script
-# 01. systemctl status zoneminder = status do serviço do ZoneMinder Server
+# 01. sudo systemctl status zoneminder = status do serviço do ZoneMinder Server
 # 02. tail -f /var/log/syslog | grep -i zoneminder = filtrando as mensagens do serviço do ZoneMinder
 # 03. tail -f /var/log/zm/* = vários arquivos de Log's do serviço do ZoneMinder
 #
@@ -1065,9 +1065,9 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 # 03. /etc/default/tomcat9 = arquivo de configuração do serviço do Apache Tomcat
 #
 # Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
-# 01. systemctl status tomcat9 = status do serviço do Tomcat Server
-# 02. systemctl status guacd = status do serviço do Guacamole Server
-# 03. journalctl -t guacd = todas as mensagens referente ao serviço do Guacamole
+# 01. sudo systemctl status tomcat9 = status do serviço do Tomcat Server
+# 02. sudo systemctl status guacd = status do serviço do Guacamole Server
+# 03. sudo journalctl -t guacd = todas as mensagens referente ao serviço do Guacamole
 # 04. tail -f /var/log/syslog | grep -i guacamole = filtrando as mensagens do serviço do Guacamole
 # 05. tail -f /var/log/syslog | grep -i guacd = filtrando as mensagens do serviço do Guacamole
 #
@@ -1117,8 +1117,8 @@ PORTGUACAMOLE="4822"
 # 02. /etc/default/grafana.ini = arquivo de configuração de inicialização do serviço do Grafana
 #
 # Arquivos de monitoramento (log) do Serviço do Guacamole utilizados nesse script
-# 01. systemctl status grafana-server = status do serviço do Grafana Server
-# 02. journalctl -t grafana-server = todas as mensagens referente ao serviço do Grafana Server
+# 01. sudo systemctl status grafana-server = status do serviço do Grafana Server
+# 02. sudo journalctl -t grafana-server = todas as mensagens referente ao serviço do Grafana Server
 # 03. tail -f /var/log/grafana/grafana.log = arquivo de Log do serviço do Grafana Server
 # 04. tail -f /var/log/syslog | grep -i grafana = filtrando as mensagens do serviço do Grafana
 #
@@ -1173,8 +1173,8 @@ USERPROMETHEUS="prometheus"
 # 03. /etc/zabbix/zabbix_agentd.conf = arquivo de configuração do serviço do Zabbix Agent
 #
 # Arquivos de monitoramento (log) do Serviço do Zabbix Server utilizados nesse script
-# 01. systemctl status zabbix-server = status do serviço do Zabbix Server
-# 02. systemctl status zabbix-agent = status do serviço do Zabbix Agent
+# 01. sudo systemctl status zabbix-server = status do serviço do Zabbix Server
+# 02. sudo systemctl status zabbix-agent = status do serviço do Zabbix Agent
 # 03. tail -f /var/log/zabbix/zabbix_server.log = arquivo de Log do serviço do Zabbix Server
 # 04. tail -f /var/log/zabbix/zabbix_agentd.log = arquivo de Log do serviço do Zabbix Agent
 # 05. tail -f /var/log/syslog | grep -i zabbix = filtrando as mensagens do serviço do Zabbix
@@ -1226,9 +1226,9 @@ PORTZABBIX2="10051"
 # 01. /etc/systemd/system/portainer.service = arquivo de configuração do serviço do Portainer
 #
 # Arquivos de monitoramento (log) do Serviço do Docker e do Portainer utilizados nesse script
-# 01. systemctl status docker = status do serviço do Docker Server
-# 02. systemctl status portainer = status do serviço do Portainer
-# 03. journalctl -t docker = todas as mensagens referente ao serviço do Docker
+# 01. sudo systemctl status docker = status do serviço do Docker Server
+# 02. sudo systemctl status portainer = status do serviço do Portainer
+# 03. sudo journalctl -t docker = todas as mensagens referente ao serviço do Docker
 # 04. tail -f /var/log/syslog | grep -i docker = filtrando as mensagens do serviço do Docker
 # 05. tail -f /var/log/syslog | grep -i portainer = filtrando as mensagens do serviço do Portainer
 #
@@ -1265,8 +1265,8 @@ PORTPORTAINER="9000"
 # 01. /etc/rundeck/rundeck-config.properties = arquivo de configuração do serviço do Rundeck
 #
 # Arquivos de monitoramento (log) do Serviço do Ansible e Rundeck utilizados nesse script
-# 01. systemctl status rundeckd = status do serviço do Rundeck Server
-# 02. journalctl -t rundeckd = todas as mensagens referente ao serviço do Rundeck
+# 01. sudo systemctl status rundeckd = status do serviço do Rundeck Server
+# 02. sudo journalctl -t rundeckd = todas as mensagens referente ao serviço do Rundeck
 # 03. tail -f /var/log/rundeck/*.log = vários arquivos de Logs do serviço do Rundeck
 # 04. tail -f /var/log/syslog | grep -i rundeck = filtrando as mensagens do serviço do Rundeck
 #
@@ -1301,9 +1301,9 @@ PORTRUNDECK="4440"
 # 02. /etc/ntopng/ntopng.start = arquivo de inicialização do serviço do NTop-NG
 #
 # Arquivos de monitoramento (log) do Serviço do NTop-NG utilizados nesse script
-# 01. systemctl status ntopng = status do serviço do NTop-NG Server
-# 02. systemctl status redis-server = status do serviço do Redis Server
-# 03. journalctl -t ntopng = todas as mensagens referente ao serviço do NTop-NG
+# 01. sudo systemctl status ntopng = status do serviço do NTop-NG Server
+# 02. sudo systemctl status redis-server = status do serviço do Redis Server
+# 03. sudo journalctl -t ntopng = todas as mensagens referente ao serviço do NTop-NG
 # 04. tail -f /var/log/syslog | grep -i ntopng = filtrando as mensagens do serviço do NTop-NG
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de monitoramento NTop-NG
@@ -1328,8 +1328,8 @@ PORTNTOPNG="3001"
 # 01. /etc/openfire/openfire.xml = arquivo de configuração do OpenFire (gerado na configuração)
 #
 # Arquivos de monitoramento (log) do Serviço do OpenFire utilizados nesse script
-# 01. systemctl status openfire = status do serviço do OpenFire Server
-# 02. journalctl -t openfire = todas as mensagens referente ao serviço do OpenFire
+# 01. sudo systemctl status openfire = status do serviço do OpenFire Server
+# 02. sudo journalctl -t openfire = todas as mensagens referente ao serviço do OpenFire
 # 03. tail -f /var/log/openfire/* = vários arquivos de Logs do serviço do OpenFire
 # 04. tail -f /var/log/syslog | grep -i openfire = filtrando as mensagens do serviço do OpenFire
 #
@@ -1515,9 +1515,9 @@ OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 # 02. /etc/hosts.allow = arquivo de configuração de liberação de hosts por serviço de rede 
 #
 # Arquivos de monitoramento (log) do Serviço do Bacula Server e Baculum utilizados nesse script
-# 01. systemctl status bacula-fd = status do serviço do Bacula-FD Server
-# 02. systemctl status bacula-sd = status do serviço do Bacula-SD Server
-# 03. systemctl status bacula-dir = status do serviço do Bacula-DIR Server
+# 01. sudo systemctl status bacula-fd = status do serviço do Bacula-FD Server
+# 02. sudo systemctl status bacula-sd = status do serviço do Bacula-SD Server
+# 03. sudo systemctl status bacula-dir = status do serviço do Bacula-DIR Server
 # 04. /var/log/bacula/* = arquivos de Log do serviço do Bacula
 # 05. tail -f /var/log/syslog | grep -i bacula = filtrando as mensagens do serviço do Bacula
 # 06. /var/log/apache2/baculum*.log = vários arquivos de Log do serviço do Baculum-Web
@@ -1552,7 +1552,7 @@ BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-tr
 # 03. /etc/graylog/server/server.conf = arquivo de configuração do Graylog Server
 #
 # Arquivos de monitoramento (log) do Serviço do Graylog Server utilizados nesse script
-# 01. systemctl status graylog = status do serviço do Graylog Server
+# 01. sudo systemctl status graylog = status do serviço do Graylog Server
 # 02. /var/log/graylog-server/server.log = arquivo de Log do serviço de rede Graylog Server
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Log Graylog Server 
@@ -1613,7 +1613,7 @@ ELASTICSEARCHPORT="9200"
 # 02. /etc/postgresql/14/main/pg_hba.conf = arquivo de liberação de rede do Servidor PostgreSQL
 #
 # Arquivos de monitoramento (log) do Serviço do PostgreSQL Server utilizados nesse script
-# 01. systemctl status postgresql-14 = status do serviço do PostgreSQL Server
+# 01. sudo systemctl status postgresql-14 = status do serviço do PostgreSQL Server
 # 02. /var/log/postgresql/postgresql-14-main.log = arquivo de Log do Servidor PostgreSQL
 # 03. tail -f /var/log/syslog | grep -i postgresql = filtrando as mensagens do serviço do PostgreSQL
 # 04. /var/log/pgadmin/pgadmin4.log = arquivo de Log do Serviço via Web PgAdmin4
