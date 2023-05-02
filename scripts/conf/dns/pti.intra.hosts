@@ -6,8 +6,8 @@
 ; Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 ; Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 ; Data de criação: 10/10/2021
-; Data de atualização: 10/08/2022
-; Versão: 0.16
+; Data de atualização: 01/05/2023
+; Versão: 0.17
 ; Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ; Testado e homologado para a versão do Bind9 DNS Server v9.16.x
 ;
@@ -46,6 +46,7 @@ mail            IN 		A 		172.16.1.20
 ;
 cloud           IN		CNAME	ptispo01ws01
 ftp             IN		CNAME	ptispo01ws01
+grafana         IN		CNAME	ptispo01ws01
 glpi9           IN		CNAME	ptispo01ws01
 glpi10          IN		CNAME	ptispo01ws01
 helpdesk        IN		CNAME	ptispo01ws01

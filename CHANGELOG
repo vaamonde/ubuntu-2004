@@ -14,7 +14,11 @@ Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
 01/05/2023 - Robson Vaamonde - Atualização do arquivo de conf: prometheus.yml referente ao monitoramento das métricas
 do Linux Mint e do Windows 10 utilizando os recursos do Node e Windows Exporter, criação do arquivo de serviço do Node
-Exporter do Prometheus: nodeexporter.service utilizado em distribuições GNU/Linux.
+Exporter do Prometheus: nodeexporter.service utilizado em distribuições GNU/Linux, atualização do arquivo de conf:
+pri.intra.hosts com a entrada do Grafana, criação do script: 11-E-openssl-grafana.sh, alteração dos arquivos confs: 
+grafana-server e grafana.ini para habilitar o suporte TLS/SSL, criação do arquivo conf: grafana.conf para a criação do
+certificado assinado do servidor, alteração do script: 00-parametros.sh adicionado a variável: GRAFANAINSTALL="grafana"
+alterado o script: 21-grafana.sh e adicionado a variável $GRAFANAINSTALL na linha do apt install. 
 
 30/04/2023 - Robson Vaamonde - Atualização de todos os scripts, acréscimo do bloco de verificação da versão de todos
 os softwares instalados utilizando os recursos do comando DPKG (dpkg-query -W -f '${version}\n' software) nos software
