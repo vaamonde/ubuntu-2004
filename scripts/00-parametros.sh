@@ -1138,7 +1138,7 @@ GRAFANAINSTALL="grafana"
 PORTGRAFANA="3000"
 #
 #=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 02-prometheus.sh                      #
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 22-prometheus.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Prometheus utilizados nesse script
@@ -1164,7 +1164,7 @@ GROUPPROMETHEUS="prometheus"
 USERPROMETHEUS="prometheus"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 22-zabbix.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 23-zabbix.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Zabbix Server utilizados nesse script
