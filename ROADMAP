@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 30/04/2023
-Versão: 0.32
+Data de atualização: 04/05/2023
+Versão: 0.33
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -160,13 +160,13 @@ _
 #37B_ 21-grafana.sh Instalação e Configuração do Grafana - PARTE-02 (03/05/2023)
 #37C_ 21-grafana.sh Criando Dashboard no Grafana com Prometheus - PARTE-03 (05/05/2023)
 _
-#38A_ 22-prometheus.sh Customizando o Script e Arquivos de Configuração do Prometheus - PARTE-01
-#38B_ 22-prometheus.sh Instalação e Configuração do Prometheus - PARTE-02
-#38C_ 22-prometheus.sh Configuração e Monitoramento do Prometheus Agent - PARTE-03
+#38A_ 22-prometheus.sh Customizando o Script e Arquivos de Configuração do Prometheus - PARTE-01 (08/05/2023)
+#38B_ 22-prometheus.sh Instalação e Configuração do Prometheus - PARTE-02 (10/05/2023)
+#38C_ 22-prometheus.sh Configuração e Monitoramento do Prometheus Agent - PARTE-03 (12/05/2023)
 _
-#39A_ 23-zabbix.sh Customizando o Script e Arquivos de Configuração do Zabbix - PARTE-01
-#39B_ 23-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02
-#39C_ 23-zabbix.sh Configuração e Monitoramento do Zabbix Agent - PARTE-03
+#39A_ 23-zabbix.sh Customizando o Script e Arquivos de Configuração do Zabbix - PARTE-01 (15/05/2023)
+#39B_ 23-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02 (17/05/2023)
+#39C_ 23-zabbix.sh Configuração e Monitoramento do Zabbix Agent - PARTE-03 (19/05/2023)
 _
 #40A_ 24-docker.sh Customizando o Script e Arquivos de Configuração do Docker - PARTE-01
 #40B_ 24-docker.sh Instalação e Configuração do Docker - PARTE-02

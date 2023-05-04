@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 02/05/2023
-# Versão: 0.95
+# Data de atualização: 04/05/2023
+# Versão: 0.96
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -541,6 +541,7 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-C-openssl-vsftpd.sh                 #
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-D-openssl-tomcat.sh                 #
 #                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-E-openssl-mysql.sh                  #
+#                     VARIÁVEIS UTILIZADAS NO SCRIPT: 11-F-openssl-grafana.sh                #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) da Unidade Certificado Raiz Confiável do OpenSSL
@@ -549,22 +550,26 @@ CREATE_TABLE_JAVAEE="CREATE TABLE contatos (
 # 03. /etc/ssl/serial = arquivo de configuração da geração serial dos certificados
 # 04. /etc/ssl/ca.conf = arquivo de configuração de Unidade Certificadora Raiz Confiável da CA
 #
-# Arquivos de configuração (conf) da Geração do Certificado do Apache2
+# Arquivos de configuração (conf) da Geração do Certificado do Apache2 Server
 # 01. /etc/ssl/apache2.conf = arquivo de configuração do certificado do Apache2
 # 02. /etc/apache2/sites-available/default-ssl.conf = arquivo de configuração do HTTPS do Apache2
 #
-# Arquivos de configuração (conf) da Geração do Certificado do VSFTPd
+# Arquivos de configuração (conf) da Geração do Certificado do VSFTPd Server
 # 01. /etc/ssl/vsftpd.conf = arquivo de configuração do certificado do VSFTPd
 # 02. /etc/vsftpd.conf = arquivo de configuração do VSFTPd Server
 #
-# Arquivos de configuração (conf) da Geração do Certificado do Tomcat9
+# Arquivos de configuração (conf) da Geração do Certificado do Tomcat9 Server
 # 01. /etc/ssl/tomcat9.conf = arquivo de configuração do certificado do Tomcat9
 # 02. /etc/tomcat9/server.xml = arquivo de configuração do Tomcat9 Server
 #
-# Arquivos de configuração (conf) da Geração do Certificado do MySQL
+# Arquivos de configuração (conf) da Geração do Certificado do MySQL Server
 # 01. /etc/ssl/mysql.conf = arquivo de configuração do certificado do MySQL
 # 02. /etc/mysql/mysql.conf.d/mysqld.cnf = arquivo de configuração do MySQL Server
 # 03. /etc/mysql/mysql.conf.d/mysql.cnf = arquivo de configuração do MySQL Client
+#
+# Arquivos de configuração (conf) da Geração do Certificado do Grafana Server
+# 01. /etc/ssl/grafana.conf = arquivo de configuração do certificado do Grafana
+# 02. /etc/grafana/grafana-server = arquivo de configuração do Grafana Server
 #
 # Arquivos de monitoramento (log) do Serviço de Certificado OpenSSL utilizados nesse script
 # 01. cat /etc/ssl/index.txt = arquivo de configuração da base de dados do OpenSSL
@@ -1219,7 +1224,7 @@ PORTZABBIX1="10050"
 PORTZABBIX2="10051"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 23-docker.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 24-docker.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Docker e do Portainer utilizados nesse script
@@ -1258,7 +1263,7 @@ DOCKERINSTALL="docker-ce cgroup-lite"
 PORTPORTAINER="9000"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 24-ansible.sh                       #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 25-ansible.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Ansible e Rundeck utilizados nesse script
@@ -1293,7 +1298,7 @@ RUNDECKDEPINSTALL="python openjdk-11-jdk-headless"
 PORTRUNDECK="4440"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 25-ntopng.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 26-ntopng.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema NTop-NG utilizados nesse script
@@ -1321,7 +1326,7 @@ NTOPNGINSTALL="ntopng ntopng-data"
 PORTNTOPNG="3001"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 26-openfire.sh                      #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 27-openfire.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema OpenFire utilizados nesse script
@@ -1371,7 +1376,7 @@ OPENFIREDEP="bind9 mysql-server mysql-common"
 PORTOPENFIRE="9090"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 27-owncloud.sh                      #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 28-owncloud.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema ownCloud utilizados nesse script
@@ -1417,7 +1422,7 @@ FLUSH_OWNCLOUD="FLUSH PRIVILEGES;"
 OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 #=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 28-ocsinventory.sh                    #
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 29-ocsinventory.sh                    #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema OCS Inventory utilizados nesse script
@@ -1507,7 +1512,7 @@ FLUSH_OCSINVENTORY="FLUSH PRIVILEGES;"
 OCSINVENTORYDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 29-bacula.sh                       #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 30-bacula.sh                       #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Bacula Server e Baculum utilizados nesse script
@@ -1543,7 +1548,7 @@ BACULUMAPIINSTALL="baculum-common baculum-api-apache2"
 BACULUMDEP="bind9 mysql-server mysql-common apache2 php python2.7 python3 apt-transport-https"
 #
 #=============================================================================================
-#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 30-graylog.sh                      #
+#                         VARIÁVEIS UTILIZADAS NO SCRIPT: 31-graylog.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Graylog Server utilizados nesse script
@@ -1605,7 +1610,7 @@ MONGODBPORT="27017"
 ELASTICSEARCHPORT="9200"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 31-postgresl.sh                      #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 32-postgresl.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do Serviço do PostgreSQL Server utilizados nesse script
@@ -1656,7 +1661,7 @@ PGADMININSTALL="pgadmin4 pgadmin4-web"
 POSTGRESQLPORT="5432"
 #
 #=============================================================================================
-#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 32-nextcloud.sh                      #
+#                       VARIÁVEIS UTILIZADAS NO SCRIPT: 33-nextcloud.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema Nextcloud utilizados nesse script
@@ -1701,7 +1706,7 @@ FLUSH_NEXTCLOUD="FLUSH PRIVILEGES;"
 NEXTCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 33-asterisk.sh                      #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 34-asterisk.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema de VoIP Asterisk utilizados nesse script
@@ -1742,7 +1747,7 @@ COUNTRYCODE="55"
 PORTSIP="5060"
 #
 #=============================================================================================
-#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 34-netdisco.sh                      #
+#                        VARIÁVEIS UTILIZADAS NO SCRIPT: 35-netdisco.sh                      #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema de Rede Netdisco utilizados nesse script
@@ -1775,7 +1780,7 @@ DATABASE_NETDISCO="netdisco"
 PORTNETDISCO="5000"
 #
 #=============================================================================================
-#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 35-openproject.sh                     #
+#                      VARIÁVEIS UTILIZADAS NO SCRIPT: 36-openproject.sh                     #
 #=============================================================================================
 #
 # Arquivos de configuração (conf) do sistema OpenProject utilizados nesse script

@@ -858,7 +858,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=UBvEMizCb28
 
 Segundo Vídeo de Configuração do Prometheus do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Prometheus.
 
-[![Install Prometheus](http://img.youtube.com/vi/w0RTl9E9U1w/0.jpg)](https://www.youtube.com/watch?v=w0RTl9E9U1w"Install Prometheus")
+[![Install Prometheus](http://img.youtube.com/vi/w0RTl9E9U1w/0.jpg)](https://www.youtube.com/watch?v=w0RTl9E9U1w "Install Prometheus")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=w0RTl9E9U1w
 
@@ -869,3 +869,27 @@ Terceiro Vídeo de Configuração do Prometheus do Curso "GRATUITO" de Ubuntu Se
 [![Access Prometheus](http://img.youtube.com/vi/q-YNR6otlDI/0.jpg)](https://www.youtube.com/watch?v=q-YNR6otlDI "Access Prometheus")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=q-YNR6otlDI
+
+## **🔴 23-zabbix.sh Customizando o Script e Arquivos de Configuração do Zabbix Server e Agent - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Zabbix Server e Agent do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 23-zabbix.sh antes de executar no nosso servidor.
+
+[![Config Zabbix](http://img.youtube.com/vi/6Fc2gfVSFng/0.jpg)](https://www.youtube.com/watch?v=6Fc2gfVSFng "Config Zabbix")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=6Fc2gfVSFng
+
+## **🔴 23-zabbix.sh Instalação e Configuração do Zabbix Server e Agent - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Zabbix Server e Agent do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Zabbix Server e Agent.
+
+[![Install Zabbix](http://img.youtube.com/vi/bThBG6khiR4/0.jpg)](https://www.youtube.com/watch?v=bThBG6khiR4 "Install Zabbix")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=bThBG6khiR4
+
+## **🔴 23-zabbix.sh Configurações Básicas e Monitoramento do Zabbix Server e Agent - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Zabbix Server e Agent do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Zabbix Server e Agent, acessar o ambiente, analisar os menus e opções do Zabbix Server e fazer um monitoramento simples de serviço.
+
+[![Access Zabbix](http://img.youtube.com/vi//0.jpg)]( "Access Zabbix")
+
+Link da vídeo aula: 
