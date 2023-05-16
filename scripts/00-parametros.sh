@@ -1220,7 +1220,7 @@ CREATE_TABLE_ZABBIX="/usr/share/zabbix-sql-scripts/mysql/server.sql.gz"
 # Variável das dependências do laço de loop do Zabbix Server
 ZABBIXDEP="mysql-server mysql-common apache2 php bind9 apt-transport-https software-properties-common"
 #
-# Variáveis das portas de conexão padrão do Zabbix Server
+# Variáveis das portas de conexão padrão do Zabbix Server e Agent
 PORTZABBIX1="10050"
 PORTZABBIX2="10051"
 #
