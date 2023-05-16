@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 04/05/2023
-# Versão: 0.96
+# Data de atualização: 06/05/2023
+# Versão: 0.97
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1083,6 +1083,7 @@ GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.5.1/source/guacamol
 GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-1.5.1.war"
 GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-auth-jdbc-1.5.1.tar.gz"
 GUACAMOLETOTP="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-auth-totp-1.5.1.tar.gz"
+GUACAMOLEHISTORY="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-history-recording-storage-1.5.1.tar.gz"
 GUACAMOLEMYSQL="https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-j_8.0.33-1ubuntu20.04_all.deb"
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GUACAMOLE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
