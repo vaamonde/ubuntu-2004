@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 01/05/2023
+Data de atualização: 06/05/2023
 Versão: 0.97
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+06/05/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a opção de baixar o Plugin do
+Guacamole Server History Recording Storage, alteração do arquivo conf: guacamole-properties com as opções para 
+habilitar os Plugins History Recording Storage e TOTP Two-Factor Authentication.
+
 01/05/2023 - Robson Vaamonde - Atualização do arquivo de conf: prometheus.yml referente ao monitoramento das métricas
 do Linux Mint e do Windows 10 utilizando os recursos do Node e Windows Exporter, criação do arquivo de serviço do Node
 Exporter do Prometheus: nodeexporter.service utilizado em distribuições GNU/Linux, atualização do arquivo de conf:

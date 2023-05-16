@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 11/12/2021
-# Data de atualização: 05/05/2023
-# Versão: 0.08
+# Data de atualização: 16/05/2023
+# Versão: 0.09
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Zabbix Server e Agent v6.4.x 
 #
@@ -73,12 +73,12 @@
 # Instalação Manual do Zabbix Agent para GNU/Linux:
 #	Terminal (Ctrl + Alt + T)
 #		wget PACOTE_ZABBIX_AGENT.deb
-#		sudo dpkg -i PACOTE_ZABBIX_AGENT.deb
+#		sudo dpkg -i zabbix-release*.deb
 #		sudo apt update
 #		sudo apt install zabbix-agent vim
 #		sudo vim /etc/zabbix/zabbix_agentd.conf
 #			INSERT
-#				#alterar as linhas:
+#				#alterar as linhas 117, 171 e 182:
 #				Server=ptispo01ws01.pti.intra
 #				ServerActive=ptispo01ws01.pti.intra
 #				Hostname=ptispo01dt001.pti.intra
@@ -95,29 +95,75 @@
 #	Zabbix Version: 6.4
 #	Encryption: OpenSSL
 #	Packaging: MSI
+#	Zabbix Release: 6.4.x <Download>
 #
 # Instalação Manual do Zabbix Agent para Microsoft
 # Pasta de Download
 #	Welcome to the Zabbix Agent (64-bit) Setup Wizard <Next>
 #	End-User License Agreement
-#		On I acept the therms in the License Agreement <Next>
+#		On I accept the therms in the License Agreement <Next>
+#	Custom Setup
+#		On Zabbix Agent <Next>
 #	Zabbix Agent service configuration
 #		Host name: ptispo01dt002.pti.intra
 #		Zabbix server IP/DNS: ptispo01ws01.pti.intra
 #		Agent listen port: 10050
 #		Server or Proxy for active checks: ptispo01ws01.pti.intra
-#		On Enable PSK
+#		Off Enable PSK
 #		On Add agent location to the PATH <Next>
-#	Zabbix Agent pre-shared key configuration
-#		Pre-shared key identity: Default
-#		Pre-shared key value: Default <Next>
-#	Custom Setup <Next>
 #	Ready to install Zabbix Agent (64-bit) <Install>
+#		Zabbix Agent MSI package (64)-bit <Sim>
 #	Completed the Zabbix Agent (64-bit) <Finish>
 #
 # Powershell
+#	hostname
 #	netstat -an | findstr 10050
 #	Get-Service Zabbix-Agent
+#
+# Criação dos Host GNU/Linux e Microsoft Windows no Zabbix Server
+# Data collection
+#	Hosts
+#		<Create host>
+#			Host
+#				Host name: ptispo01dt001.pti.intra
+#				Visible name: ptispo01dt001.pti.intra
+#				Templates: <Select>
+#					Template group: <Select>
+#						Templates/Operating systems
+#						Linux by Zabbix agent <Select>
+#				Host groups: <select>
+#					Discovered hosts <Select>
+#				Interfaces: Add:
+#					Agent: 
+#						DNS name: ptispo01dt001.pti.intra
+#						Connect to: DNS
+#						Port: 10050
+#				Description: Desktop GNU/Linux Mint
+#				Monitored by proxy: (no proxy)
+#				Enable: On
+#			<Add>
+#
+# Data collection
+#	Hosts
+#		<Create host>
+#			Host
+#				Host name: ptispo01dt002.pti.intra
+#				Visible name: ptispo01dt002.pti.intra
+#				Templates: <Select>
+#					Template group: <Select>
+#						Templates/Operating systems
+#						Windows by Zabbix agent <Select>
+#				Host groups: <select>
+#					Discovered hosts <Select>
+#				Interfaces: Add:
+#					Agent: 
+#						DNS name: ptispo01dt002.pti.intra
+#						Connect to: DNS
+#						Port: 10050
+#				Description: Desktop Microsoft Windows 10
+#				Monitored by proxy: (no proxy)
+#				Enable: On
+#			<Add>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
