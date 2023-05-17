@@ -888,7 +888,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=bThBG6khiR4
 
 ## **🔴 23-zabbix.sh Configurações Básicas e Monitoramento do Zabbix Server e Agent - PARTE-03 🐧**
 
-Terceiro Vídeo de Configuração do Zabbix Server e Agent do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Zabbix Server e Agent, acessar o ambiente, analisar os menus e opções do Zabbix Server e fazer um monitoramento simples de serviço.
+Terceiro Vídeo de Configuração do Zabbix Server e Agent do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Zabbix Server e Agent, acessar o ambiente, analisar os menus e opções do Zabbix Server e fazer um monitoramento simples de serviço instalando os Agentes no GNU/Linux Mint e no Microsoft Windows 10.
 
 [![Access Zabbix](http://img.youtube.com/vi//0.jpg)]( "Access Zabbix")
 
