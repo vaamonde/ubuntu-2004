@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 06/05/2023
-# Versão: 0.97
+# Data de atualização: 19/05/2023
+# Versão: 0.98
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1245,8 +1245,8 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
-# Variável de download do Docker Compose (Link atualizado no dia 25/01/2023)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.17.1/docker-compose-linux-x86_64"
+# Variável de download do Docker Compose (Link atualizado no dia 20/05/2023)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
