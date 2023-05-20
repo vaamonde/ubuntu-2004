@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 15/12/2021
-# Data de atualização: 02/05/2023
-# Versão: 0.05
+# Data de atualização: 20/05/2023
+# Versão: 0.06
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Docker v23.x e Portainer v2.18.x
 #
@@ -41,8 +41,8 @@
 #
 # Informações que serão solicitadas na configuração via Web do Portainer.io
 # Username: admin;
-# Password: pti@2018;
-# Confirm password: pti@2018: Create User;
+# Password: vaamonde@2018;
+# Confirm password: vaamonde@2018: Create User;
 # Connect Portainer to the Docker environment you want to manage: Local: Connect
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
