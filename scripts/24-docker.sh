@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 15/12/2021
-# Data de atualização: 20/05/2023
-# Versão: 0.06
+# Data de atualização: 26/05/2023
+# Versão: 0.07
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Docker v23.x e Portainer v2.18.x
 #
@@ -38,6 +38,18 @@
 # Site Oficial do Projeto ContainerD: https://containerd.io/
 # Site Oficial do Projeto LXC: https://linuxcontainers.org/
 # Site Oficial do Kubernetes: https://kubernetes.io/pt-br/
+#
+# Comandos básicos do Docker no Terminal
+#	docker version              #versão do docker
+#	docker-compose version      #versão do docker-compose
+#	docker info                 #informações do docker
+#	docker system info          #informações do sistema do docker
+#	docker search hello-world   #pesquisando um container no docker
+#	docker run hello-world      #rodando um container no docker
+#	docker search ubuntu        #pesquisando um container no docker
+#	docker run -it ubuntu bash  #rodando um container no docker
+#	docker images               #verificando as imagens de container no docker
+#	docker ps                   #verificando so processos do docker
 #
 # Informações que serão solicitadas na configuração via Web do Portainer.io
 # Username: admin;

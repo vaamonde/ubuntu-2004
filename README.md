@@ -893,3 +893,27 @@ Terceiro Vídeo de Configuração do Zabbix Server e Agent do Curso "GRATUITO" d
 [![Access Zabbix](http://img.youtube.com/vi/2wKVf3du4Iw/0.jpg)](https://www.youtube.com/watch?v=2wKVf3du4Iw "Access Zabbix")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=2wKVf3du4Iw
+
+## **🔴 24-docker.sh Customizando o Script e Arquivos de Configuração do Docker Server e Portainer.io - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Docker Server e Portainer.io do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 24-docker.sh antes de executar no nosso servidor.
+
+[![Config Docker](http://img.youtube.com/vi/NDijGwojKuc/0.jpg)](https://www.youtube.com/watch?v=NDijGwojKuc "Config Docker")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=NDijGwojKuc
+
+## **🔴 24-docker.sh Instalação e Configuração do Docker Server e Portainer.io - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Docker Server e Portainer.io do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Docker Server e Portainer.io.
+
+[![Install Docker](http://img.youtube.com/vi/kfit7hjzTMU/0.jpg)](https://www.youtube.com/watch?v=kfit7hjzTMU "Install Docker")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=kfit7hjzTMU
+
+## **🔴 24-docker.sh Configurações Básicas e Monitoramento do Docker Server e Portainer.io - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Docker Server e Portainer.io do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Docker Server e Portainer.io, acessar o ambiente gráfico do Portainer.io, verificar os containers criados no Docker, iniciar, acessar e parar os containers e utilizando um ambiente gráfico que facilita a administração.
+
+[![Access Docker](http://img.youtube.com/vi//0.jpg)]( "Access Docker")
+
+Link da vídeo aula: 
