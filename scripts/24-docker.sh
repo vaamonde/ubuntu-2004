@@ -49,7 +49,16 @@
 #	docker search ubuntu        #pesquisando um container no docker
 #	docker run -it ubuntu bash  #rodando um container no docker
 #	docker images               #verificando as imagens de container no docker
-#	docker ps                   #verificando so processos do docker
+#	docker ps                   #verificando os processos do docker
+#
+# Configuração do Docker Compose do NGINX
+#services:
+# web:
+#  image: nginx:latest
+#  container_name: nginx
+#  restart: always
+#  ports:
+#   - "8080:80"
 #
 # Informações que serão solicitadas na configuração via Web do Portainer.io
 # Username: admin;
