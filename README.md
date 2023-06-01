@@ -914,6 +914,6 @@ Link da vídeo aula: https://www.youtube.com/watch?v=kfit7hjzTMU
 
 Terceiro Vídeo de Configuração do Docker Server e Portainer.io do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Docker Server e Portainer.io, acessar o ambiente gráfico do Portainer.io, verificar os containers criados no Docker, iniciar, acessar e parar os containers e utilizando um ambiente gráfico que facilita a administração.
 
-[![Access Docker](http://img.youtube.com/vi//0.jpg)]( "Access Docker")
+[![Access Docker](http://img.youtube.com/vi/5jRAXfW7Wbk/0.jpg)](https://www.youtube.com/watch?v=5jRAXfW7Wbk "Access Docker")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=5jRAXfW7Wbk
