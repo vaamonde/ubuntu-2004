@@ -51,7 +51,21 @@
 #	docker images               #verificando as imagens de container no docker
 #	docker ps                   #verificando os processos do docker
 #
+# Informações que serão solicitadas na configuração via Web do Portainer.io
+# URL: http://pti.intra:9000
+# Username: admin;
+# Password: vaamonde@2018;
+# Confirm password: vaamonde@2018: Create User;
+# Connect Portainer to the Docker environment you want to manage: Local: Connect
+#
 # Configuração do Docker Compose do NGINX
+#   Local:
+#       Stacks:
+#           Add stack:
+#               Name: webserver
+#               Web editor: (copiar o docker-compose do NGIX)
+#               Enable Access Control: OFF
+#               Deploy the Stack.
 #services:
 # web:
 #  image: nginx:latest
@@ -59,12 +73,6 @@
 #  restart: always
 #  ports:
 #   - "8080:80"
-#
-# Informações que serão solicitadas na configuração via Web do Portainer.io
-# Username: admin;
-# Password: vaamonde@2018;
-# Confirm password: vaamonde@2018: Create User;
-# Connect Portainer to the Docker environment you want to manage: Local: Connect
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh
