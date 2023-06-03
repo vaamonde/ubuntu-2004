@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 19/05/2023
-# Versão: 0.98
+# Data de atualização: 03/06/2023
+# Versão: 0.99
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1281,11 +1281,11 @@ PORTPORTAINER="9000"
 # Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
 ANSIBLEPPA="ppa:ansible/ansible"
 #
-# Variável de download do Rundeck (Link atualizado no dia 25/03/2023)
-RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.11.0.20230313-1_all.deb/download.deb?distro_version_id=35"
+# Variável de download do Rundeck (Link atualizado no dia 03/06/2023)
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.13.0.20230515-1_all.deb?distro_version_id=35"
 #
-# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 25/03/2023)
-PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.3/ansible-plugin-3.2.3.jar"
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 06/03/2023)
+PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.4/ansible-plugin-3.2.4.jar"
 #
 # Variável de instalação do Ansible
 ANSIBLEINSTALL="ansible"
