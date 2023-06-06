@@ -1282,7 +1282,7 @@ PORTPORTAINER="9000"
 ANSIBLEPPA="ppa:ansible/ansible"
 #
 # Variável de download do Rundeck (Link atualizado no dia 03/06/2023)
-RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.13.0.20230515-1_all.deb?distro_version_id=35"
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.13.0.20230515-1_all.deb/download.deb?distro_version_id=35"
 #
 # Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 06/03/2023)
 PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.4/ansible-plugin-3.2.4.jar"
