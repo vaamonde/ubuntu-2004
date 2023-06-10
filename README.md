@@ -917,3 +917,27 @@ Terceiro Vídeo de Configuração do Docker Server e Portainer.io do Curso "GRAT
 [![Access Docker](http://img.youtube.com/vi/5jRAXfW7Wbk/0.jpg)](https://www.youtube.com/watch?v=5jRAXfW7Wbk "Access Docker")
 
 Link da vídeo aula: https://www.youtube.com/watch?v=5jRAXfW7Wbk
+
+## **🔴 25-ansible.sh Customizando o Script e Arquivos de Configuração do Ansible e do Rundeck - PARTE-01 🐧**
+
+Primeiro Vídeo de Configuração do Ansible e do Rundeck do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como customizar os arquivos de configuração, arquivo parâmetros e o script 25-ansible.sh antes de executar no nosso servidor.
+
+[![Config Ansible](http://img.youtube.com/vi/G_g5-9ApvJE/0.jpg)](https://www.youtube.com/watch?v=G_g5-9ApvJE "Config Ansible")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=G_g5-9ApvJE
+
+## **🔴 25-ansible.sh Instalação e Configuração do Ansible e do Rundeck - PARTE-02 🐧**
+
+Segundo Vídeo de Configuração do Ansible e do Rundeck do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar como atualizar o repositório no nosso servidor, acessar o repositório local e executar o script de instalação e configuração do Ansible e do Rundeck.
+
+[![Install Ansible](http://img.youtube.com/vi/6f744x-FctM/0.jpg)](https://www.youtube.com/watch?v=6f744x-FctM "Install Ansible")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=6f744x-FctM
+
+## **🔴 25-ansible.sh Configurações Básicas e Monitoramento do Ansible e do Rundeck - PARTE-03 🐧**
+
+Terceiro Vídeo de Configuração do Ansible e do Rundeck do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Ansible e do Rundeck, acessar o ambiente gráfico do Rundeck, verificar sua confgurações básicas e utilizar o Ansible para fazer um inventário simples.
+
+[![Access Ansible](http://img.youtube.com/vi//0.jpg)]( "Access Ansible")
+
+Link da vídeo aula: 

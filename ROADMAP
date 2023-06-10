@@ -7,8 +7,8 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 13/01/2022
-Data de atualização: 04/05/2023
-Versão: 0.33
+Data de atualização: 10/06/2023
+Versão: 0.34
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 #= Roadmap de Novos Scripts do Curso de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
@@ -168,13 +168,13 @@ _
 #39B_ 23-zabbix.sh Instalação e Configuração do Zabbix - PARTE-02 (17/05/2023)
 #39C_ 23-zabbix.sh Configuração e Monitoramento do Zabbix Agent - PARTE-03 (19/05/2023)
 _
-#40A_ 24-docker.sh Customizando o Script e Arquivos de Configuração do Docker - PARTE-01
-#40B_ 24-docker.sh Instalação e Configuração do Docker - PARTE-02
-#40C_ 24-docker.sh Criando Container no Docker e Portainer - PARTE-03
+#40A_ 24-docker.sh Customizando o Script e Arquivos de Configuração do Docker - PARTE-01 (29/05/2023)
+#40B_ 24-docker.sh Instalação e Configuração do Docker - PARTE-02 (31/05/2023)
+#40C_ 24-docker.sh Criando Container no Docker e Portainer - PARTE-03 (02/06/2023)
 _
-#41A_ 25-ansible.sh Customizando o Script e Arquivos de Configuração do Ansible - PARTE-01
-#41B_ 25-ansible.sh Instalação e Configuração do Ansible - PARTE-02
-#41C_ 25-ansible.sh Criando um Playbook simples com o Ansible - PARTE-03
+#41A_ 25-ansible.sh Customizando o Script e Arquivos de Configuração do Ansible - PARTE-01 (12/06/2023)
+#41B_ 25-ansible.sh Instalação e Configuração do Ansible - PARTE-02 (14/06/2023)
+#41C_ 25-ansible.sh Criando um Playbook simples com o Ansible - PARTE-03 ()
 _
 #42A_ 26-ntopng.sh Customizando o Script e Arquivos de Configuração do NTop-NG - PARTE-01
 #42B_ 26-ntopng.sh Instalação e Configuração do NTop-NG - PARTE-02
