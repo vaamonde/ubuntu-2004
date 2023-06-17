@@ -37,6 +37,7 @@
 # Polemarch..: https://polemarch.org/
 #
 # Informações que serão solicitadas na configuração via Web do Rundeck
+# URL do Rundeck: http://pti.intra:4440/
 # Nome de usuário: admin
 # Senha: admin: Entrar
 #
@@ -192,22 +193,22 @@ sleep 5
 echo -e "Adicionando o repositório PPA do Ansible, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt-add-repository: -y (yes)
-  	apt-add-repository -y $ANSIBLEPPA &>> $LOG
-  	apt update &>> $LOG
+	apt-add-repository -y $ANSIBLEPPA &>> $LOG
+	apt update &>> $LOG
 echo -e "Repositório adicionado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando as dependências do Ansible e do Rundeck, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-  	apt -y install $RUNDECKDEPINSTALL &>> $LOG
+	apt -y install $RUNDECKDEPINSTALL &>> $LOG
 echo -e "Dependências instaladas com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
 echo -e "Instalando o Ansible, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando apt: -y (yes)
-  	apt -y install $ANSIBLEINSTALL &>> $LOG
+	apt -y install $ANSIBLEINSTALL &>> $LOG
 echo -e "Ansible instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
