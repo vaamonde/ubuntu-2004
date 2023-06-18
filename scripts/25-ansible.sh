@@ -36,6 +36,30 @@
 # Ansible AWX: https://github.com/ansible/awx
 # Polemarch..: https://polemarch.org/
 #
+# Configurações Básicas do Ansible
+# URL: https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html
+# URL: https://docs.ansible.com/ansible/latest/reference_appendices/config.html
+# opção do comando mkdir: -v (verbose)
+# opção do comando chmod: -R (recursive), -v (verbose), 666 (User=RW-,Group=RW-Other=RW-)
+# sudo vim /etc/ansible/hosts
+# sudo vim /etc/ansible/ansible.cfg
+# sudo mkdir -v /var/log/ansible
+# sudo touch /var/log/ansible/ansible.log
+# sudo chmod -Rv 666 /var/log/ansible/
+#
+# Comandos Básicos AD HOC (one-time tasks) do Ansbile
+# URL: https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html
+# URL: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ping_module.html
+# URL: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
+# URL: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html
+# URL: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html
+# opções do comando ansible: -m (module-name), -a (args)
+# sudo ansible localhost -m ping 
+# sudo ansible localhost -m shell -a "cat /etc/os-release"
+# sudo ansible localhost -m apt -a "update_cache=yes name=python3 state=present"
+# sudo ansible localhost -m shell -a "apt list python3"
+# sudo ansible localhost -m setup
+#
 # Informações que serão solicitadas na configuração via Web do Rundeck
 # URL do Rundeck: http://pti.intra:4440/
 # Nome de usuário: admin
