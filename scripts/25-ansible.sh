@@ -8,10 +8,10 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 16/12/2021
-# Data de atualização: 02/05/2023
-# Versão: 0.03
+# Data de atualização: 18/06/2023
+# Versão: 0.04
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
-# Testado e homologado para a versão do Ansible v2.15.x e do Rundeck v4.12.x
+# Testado e homologado para a versão do Ansible v2.18.x e do Rundeck v4.13.x
 #
 # O Ansible é uma ferramenta de provisionamento de software de código aberto, 
 # gerenciamento de configuração e implementação de aplicativos. Ele é executado 
@@ -40,6 +40,15 @@
 # URL do Rundeck: http://pti.intra:4440/
 # Nome de usuário: admin
 # Senha: admin: Entrar
+#
+# Criando um Projeto Simples no Rundeck
+# <Create a New Project>
+#	Create a new Project
+#		Detail
+#			Project Name: ptispo01ws01
+#			Label: WebServer
+#			Description: Servidor Ubuntu Server
+#	<Criar>
 #
 # Arquivo de configuração dos parâmetros utilizados nesse script
 source 00-parametros.sh

@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 06/06/2023
-Versão: 0.98
+Data de atualização: 18/06/2023
+Versão: 0.99
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+18/06/2023 - Robson Vaamonde - Atualização do arquivo de configuração: rundeck-config-properties referente a falha de
+inicialização do serviço na versão 4.13.x, após a atualização do arquivo o acesso ao ambiente gráfico foi feito com
+sucesso.
+
 06/06/2023 - Robson Vaamonde - Atualização do script: 00-parametros.sh, adicionado a versão nova do Rundeck 4.13.x e
 atualizado o link de download, atualizado o Plugin do Ansible para o Rundeck para a versão v3.2.4, atualização do 
 Docker Compose para versão v2.18.1.
