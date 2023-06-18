@@ -8,15 +8,21 @@
 # Github: https://github.com/vaamonde
 # Data de criação: 16/12/2021
 # Data de atualização: 18/06/2023
-# Versão: 0.04
+# Versão: 0.05
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do Ansible v2.18.x e do Rundeck v4.13.x
+# 
+# Opções de conexões do comando ansible
+# -u vaamonde    ---------> Usuário utilizar para se conectar no servidor
+# --ask-pass     ---------> Solicita a senha do usuário
+# -b (--become)  ---------> Roda como sudo, default é o usuário: root
+# -K (--ask-become-pass)--> Senha para virar sudo
 #
 # Bloco de configuração dos Hosts pertencentes ao grupo 'servers'
 [servers]
 172.16.1.20
 ptispo01ws01 ansible_host=172.16.1.20
-webserver ansible_host=172.16.1.20 ansible_user=root
+webserver ansible_host=172.16.1.20 ansible_user=vaamonde
 #
 # Bloco de configuração das Variáveis de todos os Hosts do Inventário
 [all:vars]

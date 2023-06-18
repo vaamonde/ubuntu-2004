@@ -47,7 +47,7 @@
 # sudo touch /var/log/ansible/ansible.log
 # sudo chmod -Rv 666 /var/log/ansible/
 #
-# Comandos Básicos AD HOC (one-time tasks) do Ansbile
+# Comandos Básicos AD HOC (one-time tasks) do Ansible
 # URL: https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html
 # URL: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/ping_module.html
 # URL: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html
@@ -266,7 +266,7 @@ sleep 5
 echo -e "Instalando o Rundeck, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando dpkg: -i (install)
-  	dpkg -i rundeck.deb &>> $LOG
+	dpkg -i rundeck.deb &>> $LOG
 echo -e "Rundeck instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
@@ -285,7 +285,7 @@ sleep 5
 echo -e "Instalando o Plugin do Ansible para o Rundeck, aguarde..."
 	# opção do comando: &>> (redirecionar a saída padrão)
 	# opção do comando cp: -v (verbose)
-  	cp -v ansible.jar /var/lib/rundeck/libext/ &>> $LOG
+	cp -v ansible.jar /var/lib/rundeck/libext/ &>> $LOG
 echo -e "Plugin do Ansible instalado com sucesso!!!, continuando com o script...\n"
 sleep 5
 #
