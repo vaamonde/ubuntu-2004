@@ -13,12 +13,13 @@
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64x
 # Testado e homologado para a versão do OCS Inventory Server v2.9.x e Agent 2.9.x
 #
-# O OCS Inventory (Open Computer and Software Inventory Next Generation) é um software livre que permite 
-# aos usuários inventariar ativos de TI. O OCS-NG coleta informações sobre o hardware e o software das 
-# máquinas conectadas, executando um programa cliente do OCS ("OCS Inventory Agent"). O OCS pode visualizar 
-# o inventário por meio de uma interface web. Além disso, o OCS inclui a capacidade de implantar aplicações 
-# em computadores de acordo com critérios de busca. O IpDiscover do lado do agente possibilita descobrir a 
-# totalidade de computadores e dispositivos em rede.
+# O OCS Inventory (Open Computer and Software Inventory Next Generation) é um software livre 
+# que permite aos usuários inventariar ativos de TI. O OCS-NG coleta informações sobre o 
+# hardware e o software das máquinas conectadas, executando um programa cliente do OCS ("OCS 
+# Inventory Agent"). O OCS pode visualizar o inventário por meio de uma interface web. Além 
+# disso, o OCS inclui a capacidade de implantar aplicações em computadores de acordo com 
+# critérios de busca. O IpDiscover do lado do agente possibilita descobrir a totalidade de 
+# computadores e dispositivos em rede.
 #
 # Site Oficial do Projeto OCS Inventory-NG: https://ocsinventory-ng.org/
 # Projeto no Github: https://github.com/OCSInventory-NG
