@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 10/06/2023
-# Versão: 1.00
+# Data de atualização: 25/07/2023
+# Versão: 1.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -887,18 +887,18 @@ LOGINSTALL="rsyslog-mysql"
 PATHGLPI9="/var/www/glpi9"
 PATHGLPI10="/var/www/glpi10"
 #
-# Variável de download do GLPI (atualizada no dia: 26/04/2023 - Última versão da série 9.5.12)
+# Variável de download do GLPI (atualizada no dia: 25/07/2023 - Última versão da série 9.5.13)
 GLPI9="https://github.com/glpi-project/glpi/releases/download/9.5.13/glpi-9.5.13.tgz"
-GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.7/glpi-10.0.7.tgz"
+GLPI10="https://github.com/glpi-project/glpi/releases/download/10.0.9/glpi-10.0.9.tgz"
 #
-# Variáveis de download do GLPI Agent (atualizada no dia: 14/09/2022 - Suporte para a versão 10.x)
-AGENTGLPIWINDOWS32="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x86.msi"
-AGENTGLPIWINDOWS64="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4-x64.msi"
-AGENTGLPIMAC="https://github.com/glpi-project/glpi-agent/releases/download/1.4/GLPI-Agent-1.4_x86_64.dmg"
-AGENTGLPILINUX="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent_1.4-1_all.deb"
-AGENTGLPILINUXNETWORK="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent-task-network_1.4-1_all.deb"
-AGENTGLPILINUXCOLLECT="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent-task-collect_1.4-1_all.deb"
-AGENTGLPILINUXDEPLOY="https://github.com/glpi-project/glpi-agent/releases/download/1.4/glpi-agent-task-deploy_1.4-1_all.deb"
+# Variáveis de download do GLPI Agent (atualizada no dia: 25/07/2023 - Suporte para a versão 10.x)
+AGENTGLPIWINDOWS32="https://github.com/glpi-project/glpi-agent/releases/download/1.5/GLPI-Agent-1.5-x86.msi"
+AGENTGLPIWINDOWS64="https://github.com/glpi-project/glpi-agent/releases/download/1.5/GLPI-Agent-1.5-x64.msi"
+AGENTGLPIMAC="https://github.com/glpi-project/glpi-agent/releases/download/1.5/GLPI-Agent-1.5_x86_64.dmg"
+AGENTGLPILINUX="https://github.com/glpi-project/glpi-agent/releases/download/1.5/glpi-agent_1.5-1_all.deb"
+AGENTGLPILINUXNETWORK="https://github.com/glpi-project/glpi-agent/releases/download/1.5/glpi-agent-task-network_1.5-1_all.deb"
+AGENTGLPILINUXCOLLECT="https://github.com/glpi-project/glpi-agent/releases/download/1.5/glpi-agent-task-collect_1.5-1_all.deb"
+AGENTGLPILINUXDEPLOY="https://github.com/glpi-project/glpi-agent/releases/download/1.5/glpi-agent-task-deploy_1.5-1_all.deb"
 #
 # Variável do diretório de Download dos Agentes e arquivos de configuração do Inventário do GLPI
 DOWNLOADAGENTGLPI="/var/www/html/agentesglpi"
@@ -1078,12 +1078,12 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
-# Variável de download do Apache Guacamole (Links atualizados no dia 29/04/2023)
-GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.5.1/source/guacamole-server-1.5.1.tar.gz"
-GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-1.5.1.war"
-GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-auth-jdbc-1.5.1.tar.gz"
-GUACAMOLETOTP="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-auth-totp-1.5.1.tar.gz"
-GUACAMOLEHISTORY="https://archive.apache.org/dist/guacamole/1.5.1/binary/guacamole-history-recording-storage-1.5.1.tar.gz"
+# Variável de download do Apache Guacamole (Links atualizados no dia 25/07/2023)
+GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.5.2/source/guacamole-server-1.5.2.tar.gz"
+GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-1.5.2.war"
+GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-auth-jdbc-1.5.2.tar.gz"
+GUACAMOLETOTP="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-auth-totp-1.5.2.tar.gz"
+GUACAMOLEHISTORY="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-history-recording-storage-1.5.2.tar.gz"
 GUACAMOLEMYSQL="https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-j_8.0.33-1ubuntu20.04_all.deb"
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GUACAMOLE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
@@ -1156,8 +1156,8 @@ PORTGRAFANA="3000"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Prometheus
 #
-# Link de download do Projeto do Prometheus (Link atualizado no dia 23/04/2023)
-PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.43.0/prometheus-2.43.0.linux-amd64.tar.gz"
+# Link de download do Projeto do Prometheus (Link atualizado no dia 25/07/2023)
+PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.46.0/prometheus-2.46.0.linux-amd64.tar.gz"
 #
 # Variável das dependências do laço de loop do Prometheus
 PROMETHEUSDEP="bind9 grafana"
@@ -1245,8 +1245,8 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
-# Variável de download do Docker Compose (Link atualizado no dia 20/05/2023)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64"
+# Variável de download do Docker Compose (Link atualizado no dia 25/07/2023)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
@@ -1281,11 +1281,11 @@ PORTPORTAINER="9000"
 # Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
 ANSIBLEPPA="ppa:ansible/ansible"
 #
-# Variável de download do Rundeck (Link atualizado no dia 03/06/2023)
-RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.13.0.20230515-1_all.deb/download.deb?distro_version_id=35"
+# Variável de download do Rundeck (Link atualizado no dia 25/07/2023)
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.15.0.20230725-1_all.deb/download.deb?distro_version_id=35"
 #
-# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 06/03/2023)
-PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.4/ansible-plugin-3.2.4.jar"
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 25/07/2023)
+PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.5/ansible-plugin-3.2.5.jar"
 #
 # Variável de instalação do Ansible
 ANSIBLEINSTALL="ansible"
@@ -1341,8 +1341,8 @@ PORTNTOPNG="3001"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de mensageria OpenFire
 #
-# Variável de download do instalador do OpenFire (Link atualizado no dia 11/12/2022).
-OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.7.4_all.deb"
+# Variável de download do instalador do OpenFire (Link atualizado no dia 25/07/2023).
+OPENFIREINSTALL="https://www.igniterealtime.org/downloadServlet?filename=openfire/openfire_4.7.5_all.deb"
 #
 # Variável da instalação das dependências do OpenFire
 OPENFIREINSTALLDEP="openjdk-11-jdk openjdk-11-jre default-jdk openjdk-11-jdk-headless"
@@ -1443,8 +1443,8 @@ OWNCLOUDDEP="bind9 mysql-server mysql-common apache2 php"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de inventário OCS Inventory
 #
-# Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 04/12/2022).
-OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.11.1/OCSNG_UNIX_SERVER-2.11.1.tar.gz"
+# Variável de download do instalador do OCS Inventory Server (Link atualizado no dia 25/07/2023).
+OCSINVENTORYSERVERINSTALL="https://github.com/OCSInventory-NG/OCSInventory-ocsreports/releases/download/2.12.0/OCSNG_UNIX_SERVER-2.12.0.tar.gz"
 #
 # Variável de download do instalador do OCS Inventory Agent (Link atualizado no dia 04/12/2022).
 OCSINVENTORYAGENTINSTALL="https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.10.0/Ocsinventory-Unix-Agent-2.10.0.tar.gz"
@@ -1674,8 +1674,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 26/04/2023).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-26.0.1.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 25/07/2023).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-27.0.1.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
