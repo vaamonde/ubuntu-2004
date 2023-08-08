@@ -9,8 +9,7 @@ YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/<br>
 Github Procedimentos em TI: https://github.com/vaamonde<br>
 Data de criação: 26/02/2022<br>
-Data de atualização: 02/03/2022<br>
-Versão: 0.02<br>
+Data de atualização: 07/08/2023<br>
 Testado e homologado no GNU/Linux Ubuntu Server 20.04.4 LTS
 
 Release Notes Ubuntu Server 20.04.4: https://wiki.ubuntu.com/FocalFossa/ReleaseNotes<br>
@@ -26,6 +25,9 @@ OBSERVAÇÃO IMPORTANTE: após vários testes na versão 20.04.4 LTS do Ubuntu S
 no processo de atualização do sistema utilizando os comandos apt ou apt-get está associada ao Sources List<br>
 do BR (Brasil), após a alteração no arquivo: /etc/apt/sources.list de: https://br. para https://us. em <br>
 todas as linhas o processo de atualização ficou muito mais rápido.
+
+OBSERVAÇÃO IMPORTANTE: após a instalação de vários serviços de rede no Ubuntu Server 20.04.4 LTS x64 e <br>
+sua integração de serviços, recomendo aumentar o tamanho do Hard Disk padrão de 50GB para 100GB.
 
 Primeira etapa: Download da ISO do Ubuntu Server 20.04.4 LTS
 
@@ -59,7 +61,7 @@ Link de download do Oracle VirtualBOX: https://www.virtualbox.org/wiki/Downloads
 	_	<Próximo>
 	_ 07. Localização e tamanho do arquivo
 	_		Localização: (deixar o padrão do sistema)
-	_		Tamanho do disco: 50GB
+	_		Tamanho do disco: 100GB (recomendado)
 	_	<Criar>
 	_ 08. Configurações da Máquina Virtual  Webserver-Ubuntu-2004 (Propriedades/Configurações)
 	_	Sistema
@@ -103,7 +105,7 @@ Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 	_ 01. Use UP, DOWN and ENTER keys to select your language
 	_ 		English - <Enter>
 	_ 02. Installer update available
-	_	<Continue without updating>
+	_		<Continue without updating>
 	_ 03. Keyboard configuration
 	_ 		Layout: [English (US)] ou [Portuguese (Brazil)]
 	_ 		Variant: [English (US)] ou [Portuguese (Brazil)]
@@ -126,15 +128,15 @@ Instalação do Ubuntu Server: https://ubuntu.com/server/docs/installation
 		<Done>
 	_ 07. Guided storage configuration
 	_	(X) Use an entire disk
-	_		[VBOX_HARDISK local disk 50.000G]
+	_		[VBOX_HARDISK local disk 100.000G]
 	_		(X) Set up this disk as an LVM group
 	_	<Done>
 	_ 08. Storage configuration
 	_	USED DEVICES
-	_		ubuntu-lv	new, to be formatted as ext4, mounted at /	24.498G 
+	_		ubuntu-lv	new, to be formatted as ext4, mounted at /	49.246G 
 	_			Edit
 	_				Name: ubuntu-lv
-	_				Size: 48.996G
+	_				Size: 98.496G
 	_				Format: ext4
 	_				Mount: /
 	_			<Save>
