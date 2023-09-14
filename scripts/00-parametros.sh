@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 25/07/2023
-# Versão: 1.01
+# Data de atualização: 14/09/2023
+# Versão: 1.02
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1032,8 +1032,8 @@ PORTFUSION="62354"
 # Declarando as variáveis utilizadas nas configurações do sistema de Câmeras ZoneMinder
 #
 # Variável do PPA (Personal Package Archive) do ZoneMinder (Link atualizado no dia 05/10/2022)
-#ZONEMINDER="ppa:iconnor/zoneminder-proposed"	#versões => 1.36.x
-ZONEMINDER="ppa:iconnor/zoneminder-master"		#versões => 1.37.x
+#ZONEMINDER="ppa:iconnor/zoneminder-proposed"   #versões => 1.36.x
+ZONEMINDER="ppa:iconnor/zoneminder-master"      #versões => 1.37.x
 #
 # Declarando as variáveis para criação da Base de Dados do ZoneMinder
 # opções do comando GRANT: grant (permissão), usage (uso em | uso na), *.* (todos os bancos/
@@ -1078,12 +1078,16 @@ ZONEMINDERDEP="apache2 mysql-server mysql-common software-properties-common php 
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de acesso remoto Guacamole
 #
-# Variável de download do Apache Guacamole (Links atualizados no dia 25/07/2023)
-GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.5.2/source/guacamole-server-1.5.2.tar.gz"
-GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-1.5.2.war"
-GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-auth-jdbc-1.5.2.tar.gz"
-GUACAMOLETOTP="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-auth-totp-1.5.2.tar.gz"
-GUACAMOLEHISTORY="https://archive.apache.org/dist/guacamole/1.5.2/binary/guacamole-history-recording-storage-1.5.2.tar.gz"
+# Variável de download do Apache Guacamole (Links atualizados no dia 14/09/2023)
+GUACAMOLESERVER="https://archive.apache.org/dist/guacamole/1.5.3/source/guacamole-server-1.5.3.tar.gz"
+GUACAMOLECLIENT="https://archive.apache.org/dist/guacamole/1.5.3/binary/guacamole-1.5.3.war"
+GUACAMOLEJDBC="https://archive.apache.org/dist/guacamole/1.5.3/binary/guacamole-auth-jdbc-1.5.3.tar.gz"
+GUACAMOLETOTP="https://archive.apache.org/dist/guacamole/1.5.3/binary/guacamole-auth-totp-1.5.3.tar.gz"
+GUACAMOLEHISTORY="https://archive.apache.org/dist/guacamole/1.5.3/binary/guacamole-history-recording-storage-1.5.3.tar.gz"
+#
+# Variável de download do Conector do MySQL em Java do Apache Guacamole (Link atualizado no dia 14/09/2023)
+# Link para pesquisar a versão: https://dev.mysql.com/downloads/connector/j/ 
+# Link das versões antigas: https://downloads.mysql.com/archives/c-j/
 GUACAMOLEMYSQL="https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-j_8.0.33-1ubuntu20.04_all.deb"
 #
 # OBSERVAÇÃO: NO SCRIPT: 15-GUACAMOLE.SH É UTILIZADO AS VARIÁVEIS DO MYSQL DE USUÁRIO E SENHA
@@ -1156,8 +1160,8 @@ PORTGRAFANA="3000"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de Prometheus
 #
-# Link de download do Projeto do Prometheus (Link atualizado no dia 25/07/2023)
-PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.46.0/prometheus-2.46.0.linux-amd64.tar.gz"
+# Link de download do Projeto do Prometheus (Link atualizado no dia 14/09/2023)
+PROMETHEUS="https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz"
 #
 # Variável das dependências do laço de loop do Prometheus
 PROMETHEUSDEP="bind9 grafana"
@@ -1245,8 +1249,8 @@ DOCKERGPG="https://download.docker.com/linux/ubuntu/gpg"
 DOCKERKEY="0EBFCD88"
 DOCKERREP="deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 #
-# Variável de download do Docker Compose (Link atualizado no dia 25/07/2023)
-DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-linux-x86_64"
+# Variável de download do Docker Compose (Link atualizado no dia 14/09/2023)
+DOCKERCOMPOSE="https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-linux-x86_64"
 #
 # Variável das dependências do laço de loop do Docker Community 
 DOCKERDEP="bind9"
@@ -1281,11 +1285,11 @@ PORTPORTAINER="9000"
 # Variável do PPA (Personal Package Archive) do Ansible (Link atualizado no dia 16/12/2021)
 ANSIBLEPPA="ppa:ansible/ansible"
 #
-# Variável de download do Rundeck (Link atualizado no dia 25/07/2023)
-RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.15.0.20230725-1_all.deb/download.deb?distro_version_id=35"
+# Variável de download do Rundeck (Link atualizado no dia 14/09/2023)
+RUNDECKINSTALL="https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_4.16.0.20230825-1_all.deb/download.deb?distro_version_id=35"
 #
-# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 25/07/2023)
-PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.5/ansible-plugin-3.2.5.jar"
+# Variável de download do Plugin do Ansible para o Rundeck (Link atualizado no dia 14/09/2023)
+PLUGINANSIBLE="https://github.com/rundeck-plugins/ansible-plugin/releases/download/v3.2.7/ansible-plugin-3.2.7.jar"
 #
 # Variável de instalação do Ansible
 ANSIBLEINSTALL="ansible"
@@ -1674,8 +1678,8 @@ POSTGRESQLPORT="5432"
 #
 # Declarando as variáveis utilizadas nas configurações do sistema de cloud Nextcloud
 #
-# Variável de download do instalador do Nextcloud (Link atualizado no dia 25/07/2023).
-NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-27.0.1.tar.bz2"
+# Variável de download do instalador do Nextcloud (Link atualizado no dia 14/09/2023).
+NEXTCLOUDINSTALL="https://download.nextcloud.com/server/releases/nextcloud-27.0.2.tar.bz2"
 #
 # Variável da instalação das dependências do Nextcloud
 # opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
