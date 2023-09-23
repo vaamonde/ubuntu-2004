@@ -8,8 +8,8 @@
 # Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 # Github: https://github.com/vaamonde
 # Data de criação: 10/10/2021
-# Data de atualização: 14/09/2023
-# Versão: 1.02
+# Data de atualização: 23/09/2023
+# Versão: 1.01
 # Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 #
 # Parâmetros (variáveis de ambiente) utilizados nos scripts de instalação dos Serviços de Rede
@@ -1109,7 +1109,7 @@ GUACAMOLEINSTALL="libcairo2-dev libjpeg-dev libpng-dev libtool-bin libossp-uuid-
 libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freerdp2-dev libpango1.0-dev \
 libssh2-1-dev libtelnet-dev libvncserver-dev libwebsockets-dev libpulse-dev libssl-dev \
 libvorbis-dev libwebp-dev gcc-10 g++-10 make libfreerdp2-2 freerdp2-x11 libjpeg8-dev \
-libjpeg-turbo8-dev"
+libjpeg-turbo8-dev build-essential"
 #
 # Variável do usuário de serviço do Guacamole Server
 GUACAMOLEUSER="guacd"

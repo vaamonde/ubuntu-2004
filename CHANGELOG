@@ -7,11 +7,15 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 10/10/2021
-Data de atualização: 14/09/2023
-Versão: 1.01
+Data de atualização: 23/09/2023
+Versão: 1.02
 Testado e homologado para a versão do Ubuntu Server 20.04.x LTS x64
 
 ============================================= ATUALIZAÇÕES DOS SCRIPTS =============================================
+23/09/2023 - Robson Vaamonde - Analise do erro reportado na na Guia ISSUE: Guacamole #18 postado pelo AlexandreTesser
+referente a falha na compilação do Guacamole, erro está associado a dependência do: build-essentials na nova versão,
+atualizado o arquivo: 00-paramentros.sh com a nova dependência.
+
 14/09/2023 - Robson Vaamonde - Falha na atualização do repositório do Apt referente ao Source List do Grafana, falha
 referente a expiração da Chave GPG adicionada no servidor, para resolver essa falha foi adicionado novamente a chave
 GPG do Grafana com o comando: wget -q -O - https://packages.grafana.com/gpg.key | apt-key add - && sudo apt update,
