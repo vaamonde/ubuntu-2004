@@ -936,7 +936,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=6f744x-FctM
 
 ## **🔴 25-ansible.sh Configurações Básicas e Monitoramento do Ansible e do Rundeck - PARTE-03 🐧**
 
-Terceiro Vídeo de Configuração do Ansible e do Rundeck do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Ansible e do Rundeck, acessar o ambiente gráfico do Rundeck, verificar sua confgurações básicas e utilizar o Ansible para fazer um inventário simples.
+Terceiro Vídeo de Configuração do Ansible e do Rundeck do Curso "GRATUITO" de Ubuntu Server 20.04.x LTS DevOps Shell Script, nesse vídeo vou mostrar as configurações básicas do Ansible e do Rundeck, acessar o ambiente gráfico do Rundeck, verificar sua configurações básicas e utilizar o Ansible para fazer um inventário simples.
 
 [![Access Ansible](http://img.youtube.com/vi//0.jpg)]( "Access Ansible")
 
