@@ -1,4 +1,4 @@
-# Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
+# REPOSITÓRIO CONGELADO: Curso GRÁTIS de GNU/Linux Ubuntu Server 20.04.x LTS DevOps utilizando Shell Script
 
 ## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos e materiais gratuitos para o Canal do YouTUBE
 ## 💰 Chave PIX do projeto: robsonvaamonde@gmail.com
